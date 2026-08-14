@@ -70,11 +70,10 @@ For each essay, output a JSON object:
   "organization": 3,
   "development": 3,
   "conventions": 3,
+  "argumentation": 3,
   "holistic_score": 3,
   "rationale": "one sentence explaining the holistic score, referencing the traits above, not length"
 }
 ```
 
-Score every essay independently on its own merits. Do not compare essays in the same batch to
-each other, do not let earlier essays in the batch anchor later scores, and do not adjust for
-where you guess the average score "should" land.
+Score every essay independently on its own merits. Do not compare essays in the same batch to each other, do not let earlier essays in the batch anchor later scores, and do not adjust for where you guess the average score "should" land.
