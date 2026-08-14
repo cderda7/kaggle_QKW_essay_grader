@@ -49,6 +49,7 @@ USAGE:
 import argparse
 import csv
 import json
+import math
 import os
 import sys
 
@@ -114,47 +115,51 @@ def validate_v3_gate(item, sub_score_fields):
         )
 
     if severe:
+        n_ones = sum(1 for v in traits.values() if v == 1)
         if holistic > 3:
             violations.append(f"severe weakness present {traits} but holistic_score={holistic} > 3")
-        elif any(v == 1 for v in traits.values()):
-            if holistic > 2:
+        elif n_ones >= 2:
+            if holistic != 1:
                 violations.append(
-                    f"a trait scored 1 {traits} so holistic_score should be 1 or 2, got {holistic}"
+                    f"2+ traits scored 1 {traits} so holistic_score should be 1 no matter what, got {holistic}"
                 )
-        else:  # lowest == 2, nothing == 1
+        elif n_ones == 1:
+            avg = sum(traits.values()) / 4
+            if avg < 2:
+                expected = 1
+            else:
+                expected = min(3, math.floor(avg + 0.5))  # round-half-up, capped at 3
+            if holistic != expected:
+                violations.append(
+                    f"exactly one trait ==1 {traits} (avg={avg:.2f}) so holistic_score should be "
+                    f"{expected} (1 if avg<2, else round-half-up avg capped at 3), got {holistic}"
+                )
+        elif n_severe >= 2:  # lowest == 2, two or more traits <=2, none ==1
+            if holistic != 2:
+                violations.append(
+                    f"{n_severe} traits <=2 {traits} (none ==1) so holistic_score should be 2, got {holistic}"
+                )
+        else:  # exactly one trait == 2, nothing lower, nothing else <=2
             if holistic not in (2, 3):
                 violations.append(
-                    f"lowest trait score is 2 {traits} so holistic_score should be 2 or 3, got {holistic}"
+                    f"exactly one trait ==2 {traits} so holistic_score should be 2 or 3, got {holistic}"
                 )
-        if n_severe >= 2 and holistic == 3:
-            # soft check only -- rubric says "weight toward the lower end", not an absolute ban
-            violations.append(
-                f"SOFT: {n_severe} traits <=2 {traits} but holistic_score=3 (top of its allowed "
-                f"range) -- rubric says weight toward the lower end when multiple traits are weak"
-            )
     else:
-        # KNOWN v3 DESIGN GAP (decisions_log.md #38): the gate's "severe" trigger is trait<=2, but
-        # the official rubric's disjunctive/compensatory boundary is really between holistic 3 and
-        # 4. An essay with all four traits == 3 is not "severe" (>2) but also can't structurally
-        # clear the 4-threshold below ("3 of 4 traits >=4"). Both patterns showed up in the actual
-        # v3 run. Rather than silently accept or silently reject the grader's judgment call in that
-        # gap, these two checks are SOFT (informational) instead of hard rule violations -- flagging
-        # every instance so the gap's real frequency is visible, not smoothed over.
+        # No severe weakness: compensatory band is now 3-6. Check threshold rules for each band.
         n_at_least = lambda t: sum(1 for v in traits.values() if v >= t)
-        if holistic < 4:
+
+        if holistic == 3 and not (n_at_least(3) >= 3 and lowest >= 3):
             violations.append(
-                f"SOFT: no severe weakness {traits} but holistic_score={holistic} < 4 -- likely "
-                f"the all-3s dead zone (see decision #38), not necessarily a grading error"
+                f"holistic_score=3 (compensatory floor) requires >=3 traits >=3 and none <3, got {traits}"
             )
         elif holistic == 4 and not (n_at_least(4) >= 3 and lowest >= 3):
             violations.append(
-                f"SOFT: holistic_score=4 without cleanly meeting '>=3 traits >=4', got {traits} "
-                f"-- likely the all-3s dead zone (see decision #38), not necessarily a grading error"
+                f"holistic_score=4 requires >=3 traits >=4 and none <3, got {traits}"
             )
-        if holistic == 6 and not (n_at_least(5) == 4 and n_at_least(6) >= 2):
-            violations.append(f"holistic_score=6 requires all traits >=5 and >=2 traits ==6, got {traits}")
         elif holistic == 5 and not (n_at_least(5) >= 3 and lowest >= 4):
             violations.append(f"holistic_score=5 requires >=3 traits >=5 and none <4, got {traits}")
+        elif holistic == 6 and not (n_at_least(5) == 4 and n_at_least(6) >= 2):
+            violations.append(f"holistic_score=6 requires all traits >=5 and >=2 traits ==6, got {traits}")
 
     return violations
 

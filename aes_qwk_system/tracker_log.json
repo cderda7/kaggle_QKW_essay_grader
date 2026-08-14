@@ -23,5 +23,19 @@
     "delta": "prompt - if no essay question visible, generate hypothesis task to grade against, rubric - is prompt answered as new metric (Quality of Argumentation)",
     "rationale": "",
     "concerns": ""
+  },
+  {
+    "commit_sha": "3a6989b699658b440c2518e1a2a283abb10fc146",
+    "iteration_index": 3,
+    "label": "second iteration",
+    "qwk": 0.6381990351974272,
+    "qwk_source": "aes_qwk_system/evaluation/results_v3.json",
+    "qwk_notes": [
+      "exact agreement from 51% \u2192 43%",
+      "adjacent agreement from 96% \u2192 92%"
+    ],
+    "delta": "rubric specifications from kaggle",
+    "rationale": "clarify 1-6 scale",
+    "concerns": ""
   }
 ]
