@@ -30,11 +30,20 @@ VERSIONING:
                -> grading/batch_results/*.json           -> predictions_v1.csv
   v2 rubric  -> 4 sub-scores (+ argumentation), argumentation==1 caps holistic_score at 3
                -> grading/batch_results_v2/*.json         -> predictions_v2.csv
+  v3 rubric  -> same 4 sub-scores, but a general severe-weakness GATE (see validate_v3_gate()):
+               any sub-score <=2 gates the essay into holistic in {1,2,3} with severity-graduated
+               placement; otherwise holistic in {4,5,6} requires a "3-of-4 traits at/above
+               threshold" compensatory rule. This replaces v2's single-field cap_rule, which only
+               ever checked argumentation==1. Output also carries gate_applied/gate_rationale
+               (written through to predictions_v3.csv as system_gate_applied) so the gate's actual
+               effect is auditable per-essay, not just in aggregate. See decisions_log.md #27-37.
+               -> grading/batch_results_v3/*.json         -> predictions_v3.csv
   Same batches.json (essay_id split) is reused across versions so runs are directly comparable.
 
 USAGE:
     python3 grade_essays.py --assemble --version v1
     python3 grade_essays.py --assemble --version v2
+    python3 grade_essays.py --assemble --version v3
 """
 
 import argparse
@@ -52,6 +61,7 @@ VERSION_CONFIG = {
         "predictions_file": os.path.join(HERE, "predictions_v1.csv"),
         "sub_score_fields": ["organization", "development", "conventions"],
         "cap_rule": None,
+        "extra_fields": [],
     },
     "v2": {
         "batch_results_dir": os.path.join(HERE, "batch_results_v2"),
@@ -59,8 +69,94 @@ VERSION_CONFIG = {
         "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
         # (field, value) that caps holistic_score at cap_value
         "cap_rule": {"field": "argumentation", "trigger_value": 1, "cap_value": 3},
+        "extra_fields": [],
+    },
+    "v3": {
+        "batch_results_dir": os.path.join(HERE, "batch_results_v3"),
+        "predictions_file": os.path.join(HERE, "predictions_v3.csv"),
+        "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
+        "cap_rule": None,  # superseded by validate_v3_gate() below
+        "gate_rule": "v3_severe_weakness",
+        # (json field, csv column header) pairs written straight through to the predictions CSV,
+        # beyond the standard essay_id/human_score/holistic/sub-scores/word_count/rationale columns
+        "extra_fields": [("gate_applied", "system_gate_applied")],
     },
 }
+
+
+def validate_v3_gate(item, sub_score_fields):
+    """Check one graded essay against rubric_v3.md's step 6/7 gate logic (decisions_log.md #27-37).
+
+    Returns a list of human-readable violation strings (empty if the essay is fully compliant).
+    Checks three independent things:
+      1. Band membership: does holistic_score fall in the band the trait scores imply?
+      2. Severity-graduated placement *within* the 1-3 band, when gated.
+      3. The compensatory "N of 4 traits at/above threshold" rule, when not gated.
+    Also cross-checks the grader's own self-reported `gate_applied` field against what the trait
+    scores actually imply, since that field exists specifically to be auditable (decision #35) --
+    a grader that says "compensatory" while a trait is <=2 (or vice versa) is a real error, not
+    just an inconsistency in the write-up.
+    """
+    traits = {f: item[f] for f in sub_score_fields}
+    lowest = min(traits.values())
+    holistic = item["holistic_score"]
+    severe = lowest <= 2
+    n_severe = sum(1 for v in traits.values() if v <= 2)
+    violations = []
+
+    reported_gate = item.get("gate_applied")
+    expected_gate = "disjunctive" if severe else "compensatory"
+    if reported_gate not in ("disjunctive", "compensatory"):
+        violations.append(f"gate_applied missing/invalid: {reported_gate!r}")
+    elif reported_gate != expected_gate:
+        violations.append(
+            f"gate_applied={reported_gate!r} but trait scores {traits} imply {expected_gate!r}"
+        )
+
+    if severe:
+        if holistic > 3:
+            violations.append(f"severe weakness present {traits} but holistic_score={holistic} > 3")
+        elif any(v == 1 for v in traits.values()):
+            if holistic > 2:
+                violations.append(
+                    f"a trait scored 1 {traits} so holistic_score should be 1 or 2, got {holistic}"
+                )
+        else:  # lowest == 2, nothing == 1
+            if holistic not in (2, 3):
+                violations.append(
+                    f"lowest trait score is 2 {traits} so holistic_score should be 2 or 3, got {holistic}"
+                )
+        if n_severe >= 2 and holistic == 3:
+            # soft check only -- rubric says "weight toward the lower end", not an absolute ban
+            violations.append(
+                f"SOFT: {n_severe} traits <=2 {traits} but holistic_score=3 (top of its allowed "
+                f"range) -- rubric says weight toward the lower end when multiple traits are weak"
+            )
+    else:
+        # KNOWN v3 DESIGN GAP (decisions_log.md #38): the gate's "severe" trigger is trait<=2, but
+        # the official rubric's disjunctive/compensatory boundary is really between holistic 3 and
+        # 4. An essay with all four traits == 3 is not "severe" (>2) but also can't structurally
+        # clear the 4-threshold below ("3 of 4 traits >=4"). Both patterns showed up in the actual
+        # v3 run. Rather than silently accept or silently reject the grader's judgment call in that
+        # gap, these two checks are SOFT (informational) instead of hard rule violations -- flagging
+        # every instance so the gap's real frequency is visible, not smoothed over.
+        n_at_least = lambda t: sum(1 for v in traits.values() if v >= t)
+        if holistic < 4:
+            violations.append(
+                f"SOFT: no severe weakness {traits} but holistic_score={holistic} < 4 -- likely "
+                f"the all-3s dead zone (see decision #38), not necessarily a grading error"
+            )
+        elif holistic == 4 and not (n_at_least(4) >= 3 and lowest >= 3):
+            violations.append(
+                f"SOFT: holistic_score=4 without cleanly meeting '>=3 traits >=4', got {traits} "
+                f"-- likely the all-3s dead zone (see decision #38), not necessarily a grading error"
+            )
+        if holistic == 6 and not (n_at_least(5) == 4 and n_at_least(6) >= 2):
+            violations.append(f"holistic_score=6 requires all traits >=5 and >=2 traits ==6, got {traits}")
+        elif holistic == 5 and not (n_at_least(5) >= 3 and lowest >= 4):
+            violations.append(f"holistic_score=5 requires >=3 traits >=5 and none <4, got {traits}")
+
+    return violations
 
 
 def score_essay_batch(essay_ids, csv_path, rubric_text):
@@ -87,7 +183,11 @@ def load_source_scores(source_csv_path):
 def assemble(source_csv_path, version):
     cfg = VERSION_CONFIG[version]
     sub_score_fields = cfg["sub_score_fields"]
+    extra_fields = cfg.get("extra_fields", [])
+    gate_rule = cfg.get("gate_rule")
     required_fields = ["essay_id", "evidence_notes", *sub_score_fields, "holistic_score", "rationale"]
+    if gate_rule == "v3_severe_weakness":
+        required_fields += ["gate_applied", "gate_rationale"]
 
     human_scores, word_counts = load_source_scores(source_csv_path)
 
@@ -102,6 +202,8 @@ def assemble(source_csv_path, version):
         sys.exit(1)
 
     cap_violations = []
+    gate_violations = []
+    soft_gate_notes = []
     for fname in sorted(os.listdir(batch_results_dir)):
         if not fname.endswith(".json"):
             continue
@@ -120,11 +222,25 @@ def assemble(source_csv_path, version):
             cap = cfg["cap_rule"]
             if cap and item[cap["field"]] == cap["trigger_value"] and item["holistic_score"] > cap["cap_value"]:
                 cap_violations.append((item["essay_id"], item[cap["field"]], item["holistic_score"]))
+            if gate_rule == "v3_severe_weakness":
+                issues = validate_v3_gate(item, sub_score_fields)
+                hard = [i for i in issues if not i.startswith("SOFT:")]
+                soft = [i for i in issues if i.startswith("SOFT:")]
+                if hard:
+                    gate_violations.append((item["essay_id"], hard))
+                if soft:
+                    soft_gate_notes.append((item["essay_id"], soft))
             results[item["essay_id"]] = item
 
     if cap_violations:
         print(f"WARNING: {len(cap_violations)} cap-rule violations (grader didn't apply the rule "
               f"correctly): {cap_violations}", file=sys.stderr)
+    if gate_violations:
+        print(f"WARNING: {len(gate_violations)} v3 gate-rule violations (grader didn't apply the "
+              f"disjunctive/compensatory logic correctly): {gate_violations}", file=sys.stderr)
+    if soft_gate_notes:
+        print(f"NOTE: {len(soft_gate_notes)} soft v3 gate advisories (not hard rule violations): "
+              f"{soft_gate_notes}", file=sys.stderr)
 
     missing_ids = set(expected_ids) - set(results.keys())
     extra_ids = set(results.keys()) - set(expected_ids)
@@ -140,6 +256,7 @@ def assemble(source_csv_path, version):
         writer.writerow([
             "essay_id", "human_score", "system_holistic_score",
             *[f"system_{field}" for field in sub_score_fields],
+            *[header for (_, header) in extra_fields],
             "word_count", "rationale",
         ])
         for eid in expected_ids:
@@ -147,10 +264,13 @@ def assemble(source_csv_path, version):
             writer.writerow([
                 eid, human_scores[eid], r["holistic_score"],
                 *[r[field] for field in sub_score_fields],
+                *[r[json_field] for (json_field, _) in extra_fields],
                 word_counts[eid], r["rationale"],
             ])
 
     print(f"Wrote {len(expected_ids)} rows to {predictions_file}")
+    return {"cap_violations": cap_violations, "gate_violations": gate_violations,
+            "soft_gate_notes": soft_gate_notes}
 
 
 if __name__ == "__main__":

@@ -1,0 +1,122 @@
+[
+  {
+    "essay_id": "019b862",
+    "evidence_notes": "Main claim is that Venus exploration/colonization is survivable despite dangers; cites source text on gravity ('vehicle hovering over Venus'), temperature ('170 degrees fahrenheit'), and air pressure ('close to sea level') from paragraph 5, but the reasoning connecting evidence to the claim is often garbled, and the conclusion pivots to an incoherent, unrelated list of historical/current events (Adam and Eve, Hitler/Nazis, Chicago murders, Trump's wall) as 'proof' humans can survive Venus.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 1,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "argumentation scored 1 because the concluding logic is an incoherent non-sequitur that fails to support the claim, and organization/development/conventions all scored 2 due to garbled reasoning and frequent language errors, so multiple severe weaknesses compound and push the essay to the low end of the 1-2 range.",
+    "holistic_score": 1,
+    "rationale": "The essay engages with real source evidence on Venus's dangers but the reasoning is confused throughout and collapses into an incoherent non-sequitur conclusion, and combined with pervasive language errors this reflects very little mastery, placing it at the bottom of the disjunctive band."
+  },
+  {
+    "essay_id": "019e2c4",
+    "evidence_notes": "Main claim: limiting car use reduces pollution, smog, and protects the environment; supports this with a businessman's quote on stress/pollution, Paris's partial driving ban and 22-euro fine/60% congestion drop, and an EPA highway-funding statistic, though several paragraphs end on tangential, underdeveloped asides (e.g., a stray sentence on animal suffering) that weaken the connection between evidence and claim.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none - no trait scored 2 or below, so the essay is evaluated under the compensatory 4-6 process.",
+    "holistic_score": 3,
+    "rationale": "All four traits land at a solid-but-unexceptional 3 (adequate but sometimes under-explained evidence, workable but occasionally tangential organization, moderate mechanical errors, and competent but not deeply original argumentation), so none of the compensatory thresholds for 4, 5, or 6 are met and the score defaults to the lower adjacent value."
+  },
+  {
+    "essay_id": "019e8c3",
+    "evidence_notes": "Thesis clearly states three reasons driverless cars shouldn't be developed (lack of attention, computer errors, liability); each body paragraph pairs a direct source quote (e.g., 'the human driver must remain alert...', 'none of the cars developed so far are completely driverless', 'if the technology fails and someone is injured, who is at fault') with explanation connecting it to the danger being argued.",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none - no trait scored 2 or below.",
+    "holistic_score": 4,
+    "rationale": "Organization is strong (clear three-reason thesis carried through matching body paragraphs and a restated conclusion) and development/conventions/argumentation are all solidly 4, meeting the compensatory threshold for a 4 (at least 3 of 4 traits >=4, none below 3) but falling short of the 5 threshold since only organization reaches a 5."
+  },
+  {
+    "essay_id": "01a0d33",
+    "evidence_notes": "Thesis argues driverless cars are positive; cites the source's '500,000 miles without a crash' statistic and quotes about sensors and self-steering/braking capability, but the rebuttal to negative views ('all of this evidence... clearly states they are very positive') doesn't seriously engage counter-evidence, and even treats the article's own caveat that cars 'aren't truly driverless' as a positive.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "argumentation scored 2 because the essay dismisses counterarguments without real engagement and misreads a source caveat as support for its own position, which is a severe-enough weakness in critical thinking to trigger the gate on its own.",
+    "holistic_score": 3,
+    "rationale": "Organization, development, and conventions are all a consistent, adequate 3, but the one-sided, under-engaged handling of counterevidence pulls argumentation down to 2, gating the essay into the disjunctive band; since only one of the four traits is weak and the rest are solidly adequate, it sits at the higher end of that range."
+  },
+  {
+    "essay_id": "01a39ed",
+    "evidence_notes": "Thesis argues driverless cars make roads more dangerous; develops three well-explained points from the source (driver complacency per 'the human driver must remain alert...', the risk of texting since displays 'can be turned off instantly... something not available to drivers trying to text', and the liability question of 'who is at fault - the driver or the manufacturer') with a concrete hypothetical (a child running into the road) showing genuine reasoning.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 5,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none - no trait scored 2 or below.",
+    "holistic_score": 5,
+    "rationale": "Organization, development, and argumentation are all a strong 5 with clear progression, specific well-explained evidence, and a genuinely reasoned hypothetical scenario, meeting the compensatory 5 threshold (at least 3 of 4 traits >=5, none below 4) even though conventions holds at 4 due to a handful of recurring word-choice and spelling errors."
+  },
+  {
+    "essay_id": "01a53e1",
+    "evidence_notes": "Attempts to weigh pros (Venus as a 'backup planet' similar to Earth) and cons (volcanoes, earthquakes, lightning making it hard to live on) using source quotes, but one quoted passage is mislabeled/misattributed to the wrong paragraph and the reasoning connecting evidence to claims is frequently vague or garbled (e.g., 'it would help us humans alot if the popluation kept on growing').",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "development, conventions, and argumentation all scored 2 due to confused/misattributed source use, frequent spelling and syntax errors, and a vague, uncommitted final stance, so three of four traits triggering the gate pushes the essay to the lower end of the 2-3 range.",
+    "holistic_score": 2,
+    "rationale": "Organization holds together loosely around a pro/con structure, but weak, sometimes misattributed evidence, dense mechanical errors, and a mushy, uncommitted conclusion reflect little mastery across three of the four traits, landing the holistic score at 2."
+  },
+  {
+    "essay_id": "01ad79e",
+    "evidence_notes": "Essay takes a deliberately non-committal 'in the middle' stance on whether school computers should detect student emotions, offering only personal assertions (privacy concerns, suicide-prevention benefit) with no reference to any source text, and explicitly declines to pick a side ('i dont know evryone isin't the same').",
+    "organization": 2,
+    "development": 1,
+    "conventions": 1,
+    "argumentation": 1,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "development, conventions, and argumentation all scored 1 - there is essentially no evidence or source engagement, pervasive spelling/mechanical errors on nearly every line, and no viable point of view is ever committed to - so with three of four traits at the most severe level the essay is weighted to the bottom of the range.",
+    "holistic_score": 1,
+    "rationale": "The essay never develops a real position, cites no evidence, and is riddled with pervasive spelling and mechanical errors that interfere with readability, which together reflect very little to no mastery and place it at the lowest holistic score."
+  },
+  {
+    "essay_id": "01ae85f",
+    "evidence_notes": "Letter to a State Senator lists three reasons to abolish the Electoral College (60% prefer direct election, electors rather than direct votes choose the president, winner-take-all unfairness), but much of the supporting language appears lifted near-verbatim from the source ('the arguments against direct elections are spurious at best') without original elaboration, and each paragraph mechanically closes with 'That was the [nth] reason...'",
+    "organization": 3,
+    "development": 2,
+    "conventions": 4,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "development scored 2 because the reasons are stated but barely elaborated in the writer's own words (including a factual muddle conflating electors with the House of Representatives), and argumentation scored 2 because the essay leans on restating source content rather than demonstrating independent critical thinking, so two traits <=2 trigger the gate.",
+    "holistic_score": 2,
+    "rationale": "Clean conventions and a recognizable three-reason structure keep organization and conventions in decent shape, but thin, largely borrowed development and limited independent critical thinking in the argumentation trigger the severe-weakness gate and, with two traits affected, pull the holistic score to the lower end of the 2-3 range."
+  },
+  {
+    "essay_id": "01b55c8",
+    "evidence_notes": "Argues for limiting car usage citing specific source evidence (Vauban, Germany's car-free housing stats: $40,000 garage spaces, ~70% of families without cars) and Paris's smog-driven driving ban, but mixes this with speculative, poorly-reasoned claims (e.g., limiting cars will reduce drunk driving because people would 'be forced to call a cab') and long, informal run-on sentences.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "conventions scored 2 due to pervasive run-on sentences, misspellings, and an informal register unsuited to the letter format, and argumentation scored 2 because several of its central claims (drunk driving, family time) are unsupported or non-sequitur leaps rather than reasoned argument, so two traits <=2 trigger the gate.",
+    "holistic_score": 2,
+    "rationale": "Genuine source-based evidence (the Vauban and Paris examples) keeps organization and development at an adequate level, but frequent mechanical/run-on errors and repeatedly weak, unsupported reasoning in two of the four traits gate the essay into the disjunctive band at the lower end."
+  },
+  {
+    "essay_id": "01b9b63",
+    "evidence_notes": "Argues against using the Facial Action Coding System in schools for three stated reasons (asking students directly works as well, cost, privacy invasion), adding in the body that stress could 'throw the machine off,' but none of these points is elaborated with specific evidence or source citation beyond bare assertion.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "development scored 2 because the reasons given are stated but not elaborated with specific evidence or examples beyond bare assertion, which alone is enough to trigger the gate even though the other three traits are adequate.",
+    "holistic_score": 3,
+    "rationale": "With only development among the four traits scoring 2 and organization, conventions, and argumentation each landing at a workable 3, the essay sits at the upper end of the gated 2-3 range, reflecting a clear but thinly supported stance."
+  }
+]

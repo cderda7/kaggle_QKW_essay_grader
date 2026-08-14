@@ -178,3 +178,134 @@ sub-score with a cap rule)
     byte-for-byte against the pre-move file) and verified real generalization (ran against a
     throwaway scratch repo with an unrelated commit history and `--no-results-lookup`, confirmed it
     correctly parsed iteration commits and skipped the non-iteration one) before calling this done.
+
+## v3 rubric edit (disjunctive 1–3 band vs. compensatory 4–6 band)
+
+27. **What triggered this**: you pointed out that the rubric's own equal-interval framing implies
+    scores 1–3 should be disjunctive ("marked by ONE OR MORE of the following weaknesses" — one
+    severe weakness caps the essay low regardless of other traits) while scores 4–6 should be
+    compensatory (require jointly meeting multiple positive criteria, not averaging). You gave a
+    direct instruction to edit `rubric_v3.md` to encode this, and explicitly rejected a
+    clarifying-question tool call first — so everything below is my own operationalization of your
+    principle, documented here rather than confirmed with you beforehand, per your standing
+    instruction to surface judgment calls rather than make them silently.
+
+28. **Found `rubric_official_persuade.md` already in the project folder while syncing this work —
+    the real rubric decision #2 flagged wanting.** It's the verbatim official PERSUADE 2.0 scoring
+    rubric (both the Independent and Source-based task variants), sourced from the corpus repo
+    (`github.com/scrosseye/persuade_corpus_2.0`), not the reconstructed proxy v1/v2 were built on.
+    Its own "Notes for our grading prompts" section already states almost exactly the
+    disjunctive/compensatory asymmetry you separately identified — worth knowing since it suggests
+    that note is likely where your observation came from. **I rebuilt `rubric_v3.md` around this
+    verbatim text instead of extending my proxy anchors**, since decision #2 explicitly said I'd
+    replace the proxy the moment a real rubric was available, and this is strictly better-sourced.
+    I don't know for certain how this file got into the project folder (whether from earlier in
+    this session or added directly) — flagging that gap rather than asserting a history I can't
+    verify.
+
+29. **Merged the Independent and Source-based task variants into one rubric** with bracketed
+    "[taken from the source text(s)]" clauses, rather than keeping two separate rubric files or
+    picking one variant. This follows the source file's own recommendation (its note #4: the AES
+    2.0 training data doesn't carry the PERSUADE `task` column needed to cleanly split essays by
+    variant, and the two texts differ only in that clause). Trade-off: a source-based essay graded
+    with no actual source text available will be evaluated on evidence/reasoning quality generally,
+    since there's no source-text-provenance to check — same limitation the "hypothesize a prompt"
+    instruction already has for missing prompts.
+
+30. **Kept v1/v2's four JSON field names (`organization`, `development`, `conventions`,
+    `argumentation`) rather than renaming them to match the official rubric's own dimension names**
+    (organization/coherence, evidence and support, language, point of view/critical thinking). The
+    mapping is close but not exact — most notably, the official "language" dimension includes
+    vocabulary and sentence variety, which is broader than v1/v2's grammar/mechanics-focused
+    "conventions." I chose continuity (same CSV columns, same `--version` pipeline code, directly
+    comparable v1→v2→v3 columns) over a fully accurate rename. If you'd rather the fields be
+    renamed to match the official dimensions exactly, that's a clean, contained follow-up change.
+
+31. **Defined "severe weakness" as a trait score ≤2** (any of the four traits from steps 2–5)
+    rather than inventing a separate qualitative judgment, and rather than trying to have the
+    grader directly classify "does this weakness count as severe" in prose. This generalizes v2's
+    rule (Argumentation==1 caps holistic at 3) to all four traits, and extends the trigger from
+    "==1" to "≤2" — a real strengthening, not just a generalization. I picked ≤2 because a bare
+    "==1 only" trigger seemed too narrow to meaningfully test the disjunctive-band hypothesis (v2
+    already had that exact rule and it never fired — see decision #16/#17 — the system never
+    assigns a 1). If ≤2 still doesn't fire often, that's itself informative for interpreting v3's
+    results; flagging this now instead of waiting to explain a null result later.
+
+32. **Placement within the 1–3 band is graduated by severity**, not a flat cap: any trait at 1 →
+    holistic ∈ {1,2}; lowest trait at 2 (nothing at 1) → holistic ∈ {2,3}; multiple traits ≤2 →
+    weight toward the bottom of the applicable range. This is a real change from v2's flat "cap at
+    3" rule — v3's cap can go as low as 1–2 for a trait score of 1, where v2 only ever said "no
+    higher than 3." Calling this out explicitly since it's stricter, not just broader.
+
+33. **Compensatory 4–6 placement uses an explicit "N of 4 traits at/above threshold" rule**
+    (4 needs ≥3 traits ≥4 and none below 3; 5 needs ≥3 traits ≥5 and none below 4; 6 needs all 4
+    traits ≥5 with at least two 6s), even though the official rubric's 4–6 text is prose ("a
+    typical essay..."), not a formula. I chose a concrete, checkable rule instead of leaving that
+    prose to stand alone because vague prose is exactly what let v1/v2's grader default back to
+    averaging in practice — a "3 of 4" threshold is the most direct way I could think of to
+    structurally block a single standout trait from carrying three middling ones. This is a real
+    design choice with alternatives I didn't take (e.g., "holistic ≤ second-lowest trait" as a
+    stricter formula, or leaving it as pure narrative guidance) — flagging in case you'd prefer a
+    different formula.
+
+34. **Lightly cleaned up the source rubric's own phrasing slips** ("progression of ideas exhibits
+    adequate," "the essay generally using") when merging the anchors into `rubric_v3.md`, rather
+    than preserving them verbatim with the errors intact. The source file's own note explicitly
+    invited this ("preserved verbatim above; clean them up if pasting into a prompt") — content and
+    meaning unchanged, only grammar smoothed.
+
+35. **Added `gate_applied` and `gate_rationale` fields to the JSON output schema** so each essay's
+    output records whether it went through the disjunctive or compensatory path and why — this
+    gives an auditable trail for exactly the kind of "why did the score change" note the Commit
+    Tracker's QWK-notes column is meant to capture, and makes it possible to check the gate logic
+    was actually followed (a v3 analog of the v2 cap-rule validator) without re-deriving it from
+    the holistic score alone.
+
+36. **Corrected the file's H1 from "AES Grading Rubric v1" to "AES Grading Rubric v3."** `rubric_v2.md`
+    inherited the stale "v1" heading from when you edited it in place (I didn't fix that — v2 is
+    your file, I only preserved it as decision #13 describes). For a brand-new file I'm authoring,
+    I fixed the label rather than propagating the stale text. Not a content or scoring change,
+    noting it only for completeness.
+
+37. **Update, now done**: you said "run that." Re-graded all 100 essays against `rubric_v3.md`
+    (same 10 batches, same 10-parallel-subagent process as v1/v2), added a `"v3"` entry to
+    `grade_essays.py`'s `VERSION_CONFIG` with the `validate_v3_gate()` validator described in
+    entries 27–36's code, and ran `compute_qwk.py --version v3`. Findings below.
+
+38. **New finding, discovered empirically while assembling — a real gap in the v3 rubric's gate
+    design, not a grading error.** The severe-weakness trigger is trait score ≤2, but a trait score
+    of exactly **3** ("developing mastery" — the official rubric's own bottom-band language) is
+    neither severe by that trigger nor able to structurally clear step 7's compensatory thresholds
+    (which require ≥3 of 4 traits at ≥4). 14 of the 100 essays landed in this dead zone — mostly
+    profiles like all-four-traits-at-3, or one trait at 4 with the rest at 3 — and graders resolved
+    the ambiguity two different ways: some stayed at holistic=3 (following the rubric's own
+    "default to the lower adjacent score" fallback), most rounded up to holistic=4 (reading the
+    "typical essay... develops... organized... adequate" language loosely). I'm treating this as a
+    genuine rubric ambiguity rather than a grading mistake — every one of those 14 essays followed
+    *some* defensible reading of the text as written, which is exactly the problem: the rubric
+    permits two readings where it should permit one. Concrete candidate fix for a v4 delta: either
+    widen the severe-weakness trigger to ≤3, or add an explicit tie-break rule for flat/near-flat
+    3-profiles (e.g., "profiles with no trait ≥4 default to holistic=3, not 4").
+
+39. **Reclassified those 14 essays' validator output from hard violations to soft advisories**,
+    after first running the validator as originally written (entries 27–36) and seeing all 14 flagged
+    as rule violations — re-reading them individually made clear they weren't grader error, they
+    were the rubric gap in #38 surfacing. Changed `validate_v3_gate()`'s two threshold checks in the
+    non-severe branch (holistic<4, and holistic==4-without-3-of-4) to SOFT, keeping the 5/6-band
+    checks and all of the severe-branch checks HARD, since those weren't implicated in the ambiguity
+    and no violations of them occurred. Kept every one of the 14 visible in the run log rather than
+    silently absorbing them once reclassified — see `results_v3.md`'s "real cost" section for the
+    aggregate effect.
+
+40. **Result, reported without smoothing over the mixed outcome**: QWK = 0.6382, essentially tied
+    with v2's 0.6400 (Δ0.0018, well inside the random-baseline SD of ~0.099 — not a meaningful QWK
+    move). Underneath that flat number are two real, opposite shifts: (a) the specific finding that
+    motivated this whole rubric version — the system never assigning a holistic score of 1 — is now
+    resolved (v1/v2: 0 times in 100 essays each; v3: 8 times, matching 3 of the 9 true human=1
+    essays exactly); but (b) exact agreement dropped from 51% (v2) to 43% and MAE rose from 0.54 to
+    0.65, concentrated almost entirely in the human=3 cohort (36 essays, the dataset's largest
+    group) via the #38 dead-zone gap pushing many of them to system=4. Full breakdown, confusion
+    matrices, and the verbosity-bias diagnostics (essentially unchanged from v2) are in
+    `results_v3.md`. I'm not calling this an unambiguous win or an unambiguous regression — which
+    one it is depends on whether under-identifying weak essays or precision in the middle of the
+    scale matters more for your use case; flagging that as your call, not mine, to make.

@@ -1,0 +1,122 @@
+[
+  {
+    "essay_id": "00f3984",
+    "evidence_notes": "Claim: the 'Face' is just a natural landform, not alien-made. Supports it with the Viking 1 discovery, the 1998 Mars Global Surveyor photos, and Jim Garvin's mesa/butte comparison, all correctly drawn from the source and presented in chronological order.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 3,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none - no trait scored <=2",
+    "holistic_score": 4,
+    "rationale": "Organization and development both reach 4 (clear intro-body-conclusion, accurate source evidence tied directly to the claim) and conventions is adequate despite a few spelling slips, meeting the 3-of-4->=4 threshold for a 4 even though argumentation stays at basic synthesis of the source's own conclusion rather than original insight."
+  },
+  {
+    "essay_id": "00f6383",
+    "evidence_notes": "Claim: popular vote is preferable to the electoral college. Quotes source paragraphs 10 and 13 on electors substituting for direct votes and on winner-take-all disadvantaging non-swing-state voters, both explicitly linked back to the thesis.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none - no trait scored <=2",
+    "holistic_score": 4,
+    "rationale": "A multi-paragraph argument with correctly cited source evidence and a stance that anticipates disagreement meets the level-4 threshold (org/dev/arg >=4, none below 3), with conventions held at 3 by an accumulation of usage errors (e.g. 'thought' for 'taught') and run-ons."
+  },
+  {
+    "essay_id": "00f6ac7",
+    "evidence_notes": "Claim: the author does a poor job justifying why Venus exploration is worth the danger. Cites Venus's Earth-like size/density and a direct quote about space-travel proximity, then argues in each case the author fails to explain the payoff.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none - no trait scored <=2",
+    "holistic_score": 4,
+    "rationale": "The essay evaluates the author's rhetorical effectiveness rather than merely restating it, giving genuinely insightful argumentation (5), but frequent spelling errors keep conventions at 3, which blocks the level-5 requirement that no trait fall below 4, so the essay lands at 4."
+  },
+  {
+    "essay_id": "00fca9b",
+    "evidence_notes": "Claim: the author's case that exploring Venus is worthwhile is well supported, via three named points (worthy pursuit, curiosity leading to danger, astronomers' fascination). Each point gets one short quote with almost no explanation of how it proves the claim.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Development, conventions, and argumentation all scored <=2: quotes are dropped in with little to no analysis (one quote about Venus being 'challenging' is used to support 'worthy pursuit', a mismatch), sentence structure is a tangle of run-ons with frequent misspellings, and the conclusion offers no reasoning of the student's own.",
+    "holistic_score": 2,
+    "rationale": "With three of four traits at or below 2 and none above 3, the two-or-more-weaknesses rule weights the essay to the low end of the 2-3 disjunctive band."
+  },
+  {
+    "essay_id": "00fd564",
+    "evidence_notes": "Claim: the Facial Action Coding System should be adopted in classrooms. Body drifts through disconnected assertions (texting culture, standardized-test failure rates, laziness, PTSD therapy) without any source quotation or citation tying them to the classroom claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Organization, development, and argumentation all scored <=2: the essay is a sequence of single-sentence, topically unrelated paragraphs with no source evidence and no coherent throughline connecting them to a single defended claim.",
+    "holistic_score": 2,
+    "rationale": "Three traits at or below 2 with relatively clean sentence-level conventions as the lone stronger trait; the disorganized, unsupported argument structure weights the essay to the low end of the 2-3 band."
+  },
+  {
+    "essay_id": "00feec3",
+    "evidence_notes": "Mostly a factual recap of Venus conditions (97% CO2, 800°F, 90x Earth atmospheric pressure) and NASA's silicon-carbide electronics test, with a single unreturned-to claim that going is 'worth the try.'",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Organization, conventions, and argumentation all scored <=2: the opening is an incoherent run-on, sentence structure and word choice are frequently broken throughout, and the essay never develops or returns to defend the one position it states.",
+    "holistic_score": 2,
+    "rationale": "Accurate factual detail keeps development at 3, but three other traits at or below 2 (weak coherence, frequent language errors, and a claim that is stated but never argued) weight the essay to the low end of the 2-3 band."
+  },
+  {
+    "essay_id": "0105e2e",
+    "evidence_notes": "Claim: the 'Face' is shadow-created, not alien. Cites paragraph two on the original 'mesa' identification and paragraph ten on the later cloudless-day photo that resolved remaining doubt, building a tight cause-and-effect chain.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none - no trait scored <=2",
+    "holistic_score": 4,
+    "rationale": "All four traits reach 4 (focused structure, precisely cited evidence, clean mechanics, and engagement with the skeptics' counterpoint), satisfying the level-4 threshold; it does not clear level 5's requirement of 3 traits >=5, so it holds at 4 despite its brevity per the anti-verbosity instruction."
+  },
+  {
+    "essay_id": "0123792",
+    "evidence_notes": "Claim: the author supports Venus exploration well. Addresses two of the author's own points in turn (toxic atmosphere vs. Earth-like appeal; failed landings vs. silicon-carbide tech advances), each with accurately quoted and cited evidence.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 5,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none - no trait scored <=2",
+    "holistic_score": 5,
+    "rationale": "Organization, development, and argumentation all reach 5, with none of the four traits below 4, meeting the level-5 threshold; conventions at 4 (an accumulation of minor errors) keeps it below level 6, which requires all four traits >=5."
+  },
+  {
+    "essay_id": "01247bc",
+    "evidence_notes": "Recounts Luke's Seagoing Cowboy experiences (games aboard ship, being drafted, sights in Greece and Venice) largely as unsourced summary, then appends a one-line, unsupported recommendation that readers try it themselves.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Development, conventions, and argumentation all scored <=2: no evidence is drawn from or cited to the source to support the closing recommendation, spelling/word-choice errors are frequent, and the endorsement ('It helps for life like school does') is vague and unreasoned.",
+    "holistic_score": 2,
+    "rationale": "Three traits at or below 2 with only organization above that level weight the essay to the low end of the 2-3 band."
+  },
+  {
+    "essay_id": "01267d1",
+    "evidence_notes": "Claim: the 'Face' is a natural landform, not an alien monument. Structure follows the source chronologically (Viking 1, 1998 photo, 2001 photo) but nearly every substantive sentence is a direct quotation introduced by 'the text states,' with the intro/conclusion also repeating an internally inconsistent date (2001) for what the essay itself later attributes to Viking 1.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Argumentation alone scored <=2: the essay strings together correctly-cited quotations with only formulaic connective phrasing ('the text states...') repeated four times, adding no original synthesis, interpretation, or insight beyond restating the source's own conclusions in its own words.",
+    "holistic_score": 3,
+    "rationale": "Only argumentation triggered the gate while organization, development, and conventions are each consistently at the developing-mastery level (3), so per 'lowest trait is 2 -> 2 or 3' without the two-or-more-weaknesses downweighting, placement lands at 3 rather than 2."
+  }
+]

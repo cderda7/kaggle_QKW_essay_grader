@@ -1,0 +1,122 @@
+[
+  {
+    "essay_id": "01bb061",
+    "evidence_notes": "Claim: limiting car usage has advantages. Evidence is drawn from four named sources (German suburb, Paris smog ban, Bogota car-free day, 'end of car culture') but is largely restated as source titles/summaries rather than explained; the same list of sources is repeated almost verbatim in the intro and conclusion.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Organization, development, and argumentation all scored 2 (repetitive source-listing structure, shallow source summary in place of explained support, minimal original reasoning), triggering the severe-weakness gate with three traits at or below 2.",
+    "holistic_score": 2,
+    "rationale": "With three of four traits at the severe-weakness threshold of 2, the essay is weighted toward the low end of the applicable 2-3 range rather than the higher end, since the essay largely re-lists source titles instead of developing an argument connecting them to the claim."
+  },
+  {
+    "essay_id": "01bb07c",
+    "evidence_notes": "Claim: the electoral college system is unfair and should end. Supporting reasons (voters elect electors not the president, electors need not hold office, 17 states unvisited in 2000) are independent-writing style points, each given its own paragraph but developed mainly through repeated rhetorical questions rather than elaborated reasoning.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none",
+    "holistic_score": 4,
+    "rationale": "No trait scored at or below 2, so the essay falls in the compensatory 4-6 band; since only one trait (organization) clears the 4 threshold while development, conventions, and argumentation sit at 3, the essay is placed at 4, the floor of that band, per the rubric's instruction to default low rather than round up when thresholds aren't clearly met."
+  },
+  {
+    "essay_id": "01bb2f3",
+    "evidence_notes": "Claim: driverless cars are not truly developed/safe. Three body paragraphs each quote the source directly (driver must remain alert, driver still steers/brakes, none are completely driverless) but the sub-points overlap heavily and the reasoning linking each quote to the 'unsafe' conclusion is thin (e.g., 'This car isn't really that helpful').",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Argumentation alone scored 2 (repetitive restating of 'not completely driverless' with little critical analysis connecting evidence to the conclusion), triggering the gate on a single trait.",
+    "holistic_score": 3,
+    "rationale": "Only one trait (argumentation) is at the severe-weakness threshold while organization, development, and conventions are solidly at 3, so within the applicable 2-3 range the essay lands at the higher end, 3."
+  },
+  {
+    "essay_id": "01bd69c",
+    "evidence_notes": "Claim: the essay supports the Facial Action Coding System technology. It cites two source quotes (universal facial expressions, Da Vinci's anatomical study) but supports them mainly with personal musing about the Mona Lisa's smile rather than developed reasoning, ending in a simplistic 'so im all for it.'",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Development and argumentation both scored 2 (thin, anecdotal support in place of developed reasoning; simplistic, surface-level stance), triggering the gate with two traits at or below 2.",
+    "holistic_score": 2,
+    "rationale": "With two of four traits at the severe-weakness threshold, the essay is weighted toward the lower end of the applicable 2-3 range because the argument is carried mainly by personal impression rather than evidence-based reasoning."
+  },
+  {
+    "essay_id": "01c1169",
+    "evidence_notes": "Claim: schools should adopt emotion-reading software. Cites a source quote about detecting confusion/boredom and extends it to a plausible but underdeveloped connection to preventing school shootings; conclusion lists three benefits (grades, engagement, safety) that were only briefly touched on in a single body paragraph.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none",
+    "holistic_score": 4,
+    "rationale": "No trait scored at or below 2, placing the essay in the compensatory 4-6 band; since only conventions clears 4 while the other three traits sit at 3, the essay defaults to 4, the floor of that band, rather than being rounded up without three traits clearing the threshold."
+  },
+  {
+    "essay_id": "01c3e09",
+    "evidence_notes": "Ostensible claim is that studying Venus is 'worthy' despite its dangers, but the entire essay is a single run-on paragraph packed with disconnected facts (density, 800°F surface, sulfuric acid clouds, silicon electronics) without a clear line of reasoning connecting them to a defended position.",
+    "organization": 1,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 1,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Organization and argumentation both scored 1 (no discernible paragraph structure or coherent progression; no clear, followable point of view), the most severe tier of the gate.",
+    "holistic_score": 1,
+    "rationale": "With two traits at 1 and the other two at 2, the essay is placed at the bottom of the 1-2 range because it lacks both a coherent structure and a viable, followable argument."
+  },
+  {
+    "essay_id": "01c46fa",
+    "evidence_notes": "The essay describes the Facial Action Coding System using direct source quotes (the '83 percent happy' statistic, Eckman's six emotions) but never clearly states or argues a position on whether the technology is 'valuable,' functioning more as an expository summary than an argued essay.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "Argumentation alone scored 2 (the essay never establishes or defends a clear point of view on the prompt's value question, mostly synthesizing source facts), triggering the gate on a single trait.",
+    "holistic_score": 3,
+    "rationale": "Only argumentation falls at the severe-weakness threshold while organization, development, and conventions are solidly at 3, so the essay lands at the higher end of the applicable 2-3 range."
+  },
+  {
+    "essay_id": "01c5073",
+    "evidence_notes": "Claim: opposed to using this technology given privacy concerns, though nuanced. Three distinct reasons (privacy, redundancy with human intuition, and people's ability to mask emotions) are each supported with source quotes and original reasoning, including the insight that the technology 'knows what's on the outside' but not what's felt inside.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none",
+    "holistic_score": 4,
+    "rationale": "No trait scored at or below 2, and three of four traits (organization, development, argumentation) meet or exceed 4 with none below 3, satisfying the compensatory threshold for a 4."
+  },
+  {
+    "essay_id": "01c5750",
+    "evidence_notes": "Claim: curiosity justifies the risks of studying Venus. Support drifts between an off-topic Mount Everest analogy and long, largely undigested verbatim quotes from the source (mechanical computers, Venus's geology) with minimal explanation of how they connect to the claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "gate_applied": "disjunctive",
+    "gate_rationale": "All four traits scored 2 (rambling, unfocused structure; evidence pasted in without explanation; pervasive spelling errors; superficial, rhetorical-question-driven reasoning), triggering the gate broadly across the essay.",
+    "holistic_score": 2,
+    "rationale": "With all four traits at the severe-weakness threshold and none at 1, the essay is weighted to the low end of the applicable 2-3 range given the breadth of weakness across every dimension."
+  },
+  {
+    "essay_id": "01c5e87",
+    "evidence_notes": "Claim: opposed to driverless cars until proven fully safe. Three reasons (liability/fault, cars not truly driverless, still requiring human attention) are each supported with substantial, well-integrated source quotes and explanatory reasoning (e.g., discussing manufacturer testing obligations and what 'truly driverless' means).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "gate_applied": "compensatory",
+    "gate_rationale": "none",
+    "holistic_score": 4,
+    "rationale": "No trait scored at or below 2, and three of four traits (organization, development, argumentation) meet or exceed 4 with none below 3, satisfying the compensatory threshold for a 4."
+  }
+]

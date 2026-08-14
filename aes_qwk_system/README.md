@@ -3,28 +3,38 @@
 An automated essay grading system for `personal_training_set.csv` (100 essays from the Learning
 Agency Lab / PERSUADE "Automated Essay Scoring 2.0" data), validated against the human gold scores
 using Quadratic Weighted Kappa (QWK), the competition's own metric. Built as versioned, diffable
-runs — v1 is the original implementation, v2 is a rubric revision — so each change's effect on QWK
-is directly comparable rather than overwriting prior results.
+runs — v1 is the original implementation, v2 and v3 are rubric revisions — so each change's effect
+on QWK is directly comparable rather than overwriting prior results.
 
-**Latest result: v2 QWK = 0.640** (substantial agreement; v1 was 0.594, moderate). Full
-interpretation in `evaluation/results_v2.md`; v1's is preserved in `evaluation/results_v1.md`.
+**Latest result: v3 QWK = 0.638** — essentially tied with v2 (0.640; v1 was 0.594). Not a clean
+"win": v3 fixed a real structural failure (the system never assigned a holistic score of 1 in
+v1/v2; it does now, correctly, 3 of 9 times) but introduced a different one (a rubric gap inflates
+~14% of essays, concentrated in the largest human-score cohort, worsening exact agreement 51%→43%
+and MAE 0.54→0.65). Full breakdown and the tradeoff discussion in `evaluation/results_v3.md`; v1/v2
+preserved unchanged in `evaluation/results_v1.md` / `results_v2.md`.
 
 ## How this was built (short version)
 
-1. A fixed rubric (`rubric_v1.md` / `rubric_v2.md`) walks the grader through evidence extraction →
-   sub-scores (v1: Organization, Development, Conventions; v2 adds Argumentation, with a rule that
-   Argumentation=1 caps the holistic score at 3) → a holistic 1–6 score, with an explicit
-   instruction not to use essay length as a scoring signal in either direction.
+1. A fixed rubric (`rubric_v1.md` / `rubric_v2.md` / `rubric_v3.md`) walks the grader through
+   evidence extraction → sub-scores (v1: Organization, Development, Conventions; v2 adds
+   Argumentation, with a rule that Argumentation=1 caps the holistic score at 3; v3 keeps the same
+   4 sub-scores, now grounded in the verbatim official PERSUADE rubric, and replaces the single-field
+   cap with a general severe-weakness gate — any sub-score ≤2 caps the essay in a disjunctive 1–3
+   band, otherwise it must jointly clear multiple traits to reach a compensatory 4–6 band) → a
+   holistic 1–6 score, with an explicit instruction not to use essay length as a scoring signal in
+   either direction.
 2. `personal_training_set.csv`'s 100 essays were split into 10 batches of 10
    (`grading/batches.json`, reused across versions so runs are essay-for-essay comparable) and
    graded in parallel by 10 independent Claude subagents per version, each reading the rubric and
    the source CSV directly, blind to the `score` column, and writing its results to
-   `grading/batch_results/batch_NN.json` (v1) or `grading/batch_results_v2/batch_NN.json` (v2).
-3. `grading/grade_essays.py --assemble --version v1|v2` merges and validates those batch results
-   into `grading/predictions_v1.csv` / `predictions_v2.csv` (one row per essay: human score, system
-   holistic + sub-scores, word count, rationale). It also checks version-specific rules, like v2's
-   Argumentation-caps-holistic rule, and flags any violations.
-4. `evaluation/compute_qwk.py --version v1|v2` computes QWK, a confusion matrix, agreement rates,
+   `grading/batch_results/batch_NN.json` (v1), `grading/batch_results_v2/batch_NN.json` (v2), or
+   `grading/batch_results_v3/batch_NN.json` (v3).
+3. `grading/grade_essays.py --assemble --version v1|v2|v3` merges and validates those batch results
+   into `grading/predictions_<version>.csv` (one row per essay: human score, system holistic +
+   sub-scores, word count, rationale). It also checks version-specific rules — v2's
+   Argumentation-caps-holistic rule, v3's full disjunctive/compensatory gate via
+   `validate_v3_gate()` — and flags any violations (hard) or ambiguous edge cases (soft).
+4. `evaluation/compute_qwk.py --version v1|v2|v3` computes QWK, a confusion matrix, agreement rates,
    a random-shuffle baseline (is the QWK distinguishable from chance?), and — specifically because
    you flagged verbosity bias as a concern — correlations between word count and (a) human score,
    (b) system score, (c) the system-minus-human residual, so the bias question is answered
@@ -40,18 +50,31 @@ aes_qwk_system/
   rubric_v1.md                        — original grading rubric (3 sub-scores)
   rubric_v2.md                        — your revised rubric: teacher persona, hypothesize-prompt
                                          instruction, + Argumentation sub-score with a cap rule
+  rubric_v3.md                        — graded (all 100 essays): restructures scoring into a
+                                         disjunctive 1–3 band (one severe trait weakness caps the
+                                         essay) vs. compensatory 4–6 band (requires jointly clearing
+                                         multiple traits), grounded in the verbatim official
+                                         PERSUADE rubric (rubric_official_persuade.md) rather than
+                                         the reconstructed proxy v1/v2 used — see decisions_log.md
+                                         #27–40
+  rubric_official_persuade.md         — verbatim official PERSUADE 2.0 rubric (Independent +
+                                         Source-based variants), sourced from the corpus repo;
+                                         supersedes the "reconstructed proxy" caveat from decision #2
   grading/
     grading_prompt_template.md        — exact prompt shape used per batch, and why essays are read
                                          from disk rather than pasted inline
     batches.json                      — the 10 batches of 10 essay_ids, shared by every version
     batch_results/batch_00..09.json   — raw v1 grading output (one array of 10 objects each)
     batch_results_v2/batch_00..09.json — raw v2 grading output
+    batch_results_v3/batch_00..09.json — raw v3 grading output (includes gate_applied/gate_rationale)
     grade_essays.py                   — version-aware orchestration: assembles + validates batch
                                          results into predictions_<version>.csv; docstring documents
                                          the two ways to make this fully headless (real API call vs.
-                                         this run's in-session subagent grading)
+                                         this run's in-session subagent grading); validate_v3_gate()
+                                         is the v3-specific disjunctive/compensatory rule checker
     predictions_v1.csv                — v1 per-essay results
     predictions_v2.csv                — v2 per-essay results (adds system_argumentation column)
+    predictions_v3.csv                — v3 per-essay results (adds system_gate_applied column)
   evaluation/
     compute_qwk.py                    — version-aware: computes QWK + all diagnostics from any
                                          predictions_<version>.csv
@@ -59,6 +82,9 @@ aes_qwk_system/
     results_v2.json / results_v2.md   — v2 metrics + narrative interpretation, including a
                                          side-by-side comparison against v1 and whether the rubric
                                          change fixed the specific gap that motivated it
+    results_v3.json / results_v3.md   — v3 metrics + narrative interpretation: the never-assigns-1
+                                         fix confirmed, and the new "all-3s dead zone" cost it traded
+                                         against (decisions_log.md #38-40)
   tracker_log.json                    — structured log of iteration commits (QWK, ∆, rationale)
                                          for this project; canonical source for its Google Doc
                                          commit tracker. The AGENT ITSELF (run_tracker.py,
@@ -73,15 +99,21 @@ existing location in the project folder, so there's a single source of truth.
 ## Re-running / extending
 
 - To re-assemble predictions from existing batch results:
-  `cd grading && python3 grade_essays.py --assemble --version v1` (or `v2`)
-- To recompute metrics: `cd evaluation && python3 compute_qwk.py --version v1` (or `v2`)
-- For a v3 (or any future rubric change): add `rubric_v3.md`, grade into a new
-  `batch_results_v3/`, then run both scripts with `--version v3` — no other code should need to
-  change. `decisions_log.md` documents this as the intended delta workflow.
+  `cd grading && python3 grade_essays.py --assemble --version v1` (or `v2`, `v3`) — note this
+  needs `PERSONAL_TRAINING_SET_CSV=<path to personal_training_set.csv>` set in the environment if
+  it isn't sitting two directories up from `grading/` (see the script's `--source-csv`/env-var
+  handling).
+- To recompute metrics: `cd evaluation && python3 compute_qwk.py --version v1` (or `v2`, `v3`)
+- For a v4 (or any future rubric change): add `rubric_v4.md`, grade into a new `batch_results_v4/`,
+  add a `"v4"` entry to `VERSION_CONFIG` in `grade_essays.py`, then run both scripts with
+  `--version v4`. A concrete, already-identified v4 candidate: close the "all-3s dead zone" gap
+  found in v3 (decisions_log.md #38) — e.g. widen the severe-weakness trigger or add an explicit
+  tie-break rule for flat-3 trait profiles.
 
 See `decisions_log.md` for every place a judgment call was made instead of an objectively-correct
-choice, and why — including how the v1→v2 transition itself was handled (entries 13–18) and how
-the Commit Tracker agent works around this environment's real constraints (entries 19–25).
+choice, and why — including how the v1→v2 transition itself was handled (entries 13–18), the v3
+rubric redesign and grading run (entries 27–40), and how the Commit Tracker agent works around this
+environment's real constraints (entries 19–25).
 
 ## Commit Tracker agent
 
