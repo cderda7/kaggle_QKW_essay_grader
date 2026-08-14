@@ -42,9 +42,12 @@
     "commit_sha": "18b6ea52950deef887a0ba5acbcefbbe68fbe05c",
     "iteration_index": 4,
     "label": "third iteration",
-    "qwk": 0.645,
-    "qwk_source": "commit message (no results file found)",
-    "qwk_notes": null,
+    "qwk": 0.6446754348748409,
+    "qwk_source": "aes_qwk_system/evaluation/results_v3.json",
+    "qwk_notes": [
+      "exact agreement from 43% \u2192 54%",
+      "adjacent agreement from 92% \u2192 93%"
+    ],
     "delta": "4-6 compensatory band now 3-6 compensatory band \u2013 a student with no individual score less than 3 is guaranteed at least a 3, not at least a 4 as previously , 2 traits = 1 \u2192 holistic = 1",
     "rationale": "",
     "concerns": ""
