@@ -163,3 +163,18 @@ sub-score with a cap rule)
     https://docs.google.com/document/d/1FkArThVoWQBWUEfb9wJq-SLgfKvZN9A3Fyg4yInvrqk/edit) renders
     as a real table, confirmed via `read_file_content` after upload, not just assumed from the
     local PDF preview.
+
+26. **Relocated the agent to `projects/claude-agents/commit-tracker/` after you flagged that it
+    should be reusable across projects, not scoped to this one.** Moving across the two separately
+    mounted device folders meant `mv` couldn't delete the source files (only rename-within-a-mount
+    is permitted here) — the old copies were moved to this project's `_to_delete/tracker/` instead
+    of vanishing silently; you'll want to empty that yourself. Generalized `run_tracker.py` in the
+    process: `--results-pattern` (default unchanged, so this project's behavior is identical) and
+    `--no-results-lookup` for projects with no comparable results file, and changed the *default*
+    log path (only relevant to NEW projects) from an aes_qwk_system-specific path to
+    `<repo>/.commit_tracker/tracker_log.json`. This project keeps using its existing
+    `aes_qwk_system/tracker_log.json` via an explicit `--log` flag — nothing about this project's
+    own data moved or changed. Verified no regression (re-ran against this repo, diffed the output
+    byte-for-byte against the pre-move file) and verified real generalization (ran against a
+    throwaway scratch repo with an unrelated commit history and `--no-results-lookup`, confirmed it
+    correctly parsed iteration commits and skipped the non-iteration one) before calling this done.

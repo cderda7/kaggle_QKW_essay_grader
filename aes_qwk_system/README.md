@@ -60,15 +60,11 @@ aes_qwk_system/
                                          side-by-side comparison against v1 and whether the rubric
                                          change fixed the specific gap that motivated it
   tracker_log.json                    — structured log of iteration commits (QWK, ∆, rationale)
-                                         that the tracker agent reads/writes; canonical source for
-                                         the Google Doc commit tracker
-  tracker/
-    run_tracker.py                    — the agent's git-log-parsing half: run on your Mac, updates
-                                         tracker_log.json from new commits
-    build_tracker_doc.js              — the agent's doc-building half: run by Claude, turns
-                                         tracker_log.json into a .docx matching the tracker Doc's
-                                         table layout, for upload to Google Drive
-    README.md                         — how the tracker agent works and how to run a sync
+                                         for this project; canonical source for its Google Doc
+                                         commit tracker. The AGENT ITSELF (run_tracker.py,
+                                         build_tracker_doc.js) now lives outside this project, at
+                                         projects/claude-agents/commit-tracker/ — see below — so it
+                                         can be reused across projects rather than copied per-repo.
 ```
 
 `personal_training_set.csv` itself is **not duplicated** here — everything reads it from its
@@ -89,7 +85,11 @@ the Commit Tracker agent works around this environment's real constraints (entri
 
 ## Commit Tracker agent
 
-`tracker/` turns your structured commit messages (`<label> ; QWK: ... ; Delta: ... ; rationale:
-...`) into the Google Doc tracking table you built by hand in `Template GitHub Commit Tracker`. It
-runs on-demand (ask Claude to "run the commit tracker") rather than automatically in the
-background — see `tracker/README.md` for why, and exactly what each run does.
+Turns this project's structured commit messages (`<label> ; QWK: ... ; Delta: ... ; rationale:
+...`) into the Google Doc tracking table you built by hand in `Template GitHub Commit Tracker`.
+**Moved out of this project** on 2026-08-14 to `projects/claude-agents/commit-tracker/` so it's
+reusable for any project, not just this one — see that folder's README for how it works, and
+`projects/claude-agents/README.md` for the catalog of every such shared agent. Only
+`tracker_log.json` (this project's data) stays here; the agent itself does not. It runs on-demand
+(ask Claude to "run the commit tracker for this project") rather than automatically in the
+background — see the agent's own README for why.
