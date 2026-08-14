@@ -6,73 +6,88 @@
     2,
     3,
     4,
-    5
+    5,
+    6
   ],
-  "qwk": 0.6381990351974272,
+  "qwk": 0.6446754348748409,
   "confusion_matrix": {
     "labels": [
       1,
       2,
       3,
       4,
-      5
+      5,
+      6
     ],
     "matrix": [
       [
         3,
-        5,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        16,
+        6,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        7,
+        22,
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        9,
+        13,
+        4,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
         1,
         0,
         0
       ],
       [
-        5,
-        14,
-        3,
-        3,
-        0
-      ],
-      [
-        0,
-        8,
-        11,
-        17,
-        0
-      ],
-      [
-        0,
-        3,
-        3,
-        15,
-        7
-      ],
-      [
         0,
         0,
-        1,
-        1,
+        0,
+        0,
+        0,
         0
       ]
     ],
     "note": "rows=human_score, cols=system_score"
   },
-  "exact_agreement_rate": 0.43,
-  "adjacent_agreement_rate_within_1": 0.92,
-  "mean_absolute_error": 0.65,
-  "mean_signed_error_system_minus_human": 0.15,
+  "exact_agreement_rate": 0.54,
+  "adjacent_agreement_rate_within_1": 0.93,
+  "mean_absolute_error": 0.53,
+  "mean_signed_error_system_minus_human": 0.09,
   "verbosity_bias_diagnostics": {
     "corr_word_count_human_score": 0.6883305509978268,
-    "corr_word_count_system_score": 0.4310651913252274,
-    "corr_word_count_residual": -0.21424461391060773,
+    "corr_word_count_system_score": 0.49558526454273033,
+    "corr_word_count_residual": -0.24391199087279705,
     "human_baseline_note": "0.688 measured independently on this same 100-row file during data recon before any grading"
   },
   "randomness_baseline": {
     "method": "system_holistic_score randomly re-paired with human_score, 2000 shuffles, seed=42",
-    "mean_qwk": -0.001005002680007169,
-    "sd_qwk": 0.09850995811622726,
-    "min_qwk": -0.35340360907629087,
-    "max_qwk": 0.3701983205288547,
+    "mean_qwk": 0.0005091217649556118,
+    "sd_qwk": 0.09948227037583252,
+    "min_qwk": -0.34174798472634693,
+    "max_qwk": 0.3052609249045398,
     "always_predict_mode_qwk": 0.0,
-    "actual_qwk_stds_above_random_mean": 6.488725100494587
+    "actual_qwk_stds_above_random_mean": 6.47518709289906
   }
 }
