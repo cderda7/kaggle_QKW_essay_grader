@@ -1,0 +1,27 @@
+[
+  {
+    "commit_sha": "d6d17337f76d9d67dfc3513866ef8c24e38fcd1b",
+    "iteration_index": 1,
+    "label": "rough draft",
+    "qwk": 0.5943427255783358,
+    "qwk_source": "evaluation/results_v1.json",
+    "qwk_notes": null,
+    "delta": "",
+    "rationale": "verbosity bias",
+    "concerns": ""
+  },
+  {
+    "commit_sha": "46ecb769c0feffb61ac6595b09301f4e2ffdab71",
+    "iteration_index": 2,
+    "label": "first iteration",
+    "qwk": 0.6400130904330752,
+    "qwk_source": "evaluation/results_v2.json",
+    "qwk_notes": [
+      "exact agreement from 53% \u2192 51%",
+      "adjacent agreement from 95% \u2192 96%"
+    ],
+    "delta": "prompt - if no essay question visible, generate hypothesis task to grade against, rubric - is prompt answered as new metric (Quality of Argumentation)",
+    "rationale": "",
+    "concerns": ""
+  }
+]

@@ -59,6 +59,16 @@ aes_qwk_system/
     results_v2.json / results_v2.md   — v2 metrics + narrative interpretation, including a
                                          side-by-side comparison against v1 and whether the rubric
                                          change fixed the specific gap that motivated it
+  tracker_log.json                    — structured log of iteration commits (QWK, ∆, rationale)
+                                         that the tracker agent reads/writes; canonical source for
+                                         the Google Doc commit tracker
+  tracker/
+    run_tracker.py                    — the agent's git-log-parsing half: run on your Mac, updates
+                                         tracker_log.json from new commits
+    build_tracker_doc.js              — the agent's doc-building half: run by Claude, turns
+                                         tracker_log.json into a .docx matching the tracker Doc's
+                                         table layout, for upload to Google Drive
+    README.md                         — how the tracker agent works and how to run a sync
 ```
 
 `personal_training_set.csv` itself is **not duplicated** here — everything reads it from its
@@ -74,4 +84,12 @@ existing location in the project folder, so there's a single source of truth.
   change. `decisions_log.md` documents this as the intended delta workflow.
 
 See `decisions_log.md` for every place a judgment call was made instead of an objectively-correct
-choice, and why — including how the v1→v2 transition itself was handled (entries 13–18).
+choice, and why — including how the v1→v2 transition itself was handled (entries 13–18) and how
+the Commit Tracker agent works around this environment's real constraints (entries 19–25).
+
+## Commit Tracker agent
+
+`tracker/` turns your structured commit messages (`<label> ; QWK: ... ; Delta: ... ; rationale:
+...`) into the Google Doc tracking table you built by hand in `Template GitHub Commit Tracker`. It
+runs on-demand (ask Claude to "run the commit tracker") rather than automatically in the
+background — see `tracker/README.md` for why, and exactly what each run does.

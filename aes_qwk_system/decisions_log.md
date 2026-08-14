@@ -117,3 +117,49 @@ sub-score with a cap rule)
     treating "QWK went up overall" as proof the specific problem was solved — the aggregate metric
     improved for a mix of reasons (see `evaluation/results_v2.md`), and this particular essay is
     only partially better.
+
+## Commit Tracker agent (`tracker/`) — turning commits into the Google Doc tracking table
+
+19. **No GitHub API/connector is reachable from this cloud sandbox** (`api.github.com` calls are
+    proxy-blocked; no GitHub MCP is installed or available in the registry). The agent reads commits
+    from your actual local git clone via the device bridge instead — functionally equivalent as
+    long as you've pushed, but it means a run only succeeds while your Mac + the Claude desktop app
+    are connected. You already accepted this trade-off (chose "on-demand" over a background
+    scheduled trigger) when I scoped this feature.
+
+20. **There is no tool to edit an existing Google Doc's body content** — `update_file` only touches
+    title/parent metadata, and no better-suited connector (Sheets, etc.) exists in this
+    environment. So "populate the doc" can only mean fully regenerating it and replacing the file
+    each run (trash old copy, create new copy, re-apply sharing) — you chose this ("recreate on
+    each run") over a manual-paste-only fallback, accepting that the Doc's URL changes every sync.
+
+21. **Plain text/markdown does not convert into a real Google Docs table on upload** — pipe
+    characters render as literal text, not a formatted table. The agent builds a real `.docx` (via
+    `docx`-js, per the `docx` skill) and lets Google Drive's docx→Google-Docs conversion produce a
+    native table. Verified end-to-end: rendered the docx locally to a PDF/JPEG to confirm layout,
+    then uploaded and re-read the live Doc's content to confirm Drive's conversion preserved the
+    table structure and the exact cell values (see `tracker/README.md`).
+
+22. **Version-mapping convention**: the Nth commit with a `; QWK:` segment (chronological, 1-indexed)
+    is assumed to map to `evaluation/results_v<N>.json` in the CURRENT working tree — not a
+    historical git-blob lookup at that commit's SHA. Simpler and matches this project's actual
+    history exactly, but it's a real assumption that breaks if a version number is ever skipped or
+    iteration commits are reordered relative to when their results file was produced. Flagged in
+    `run_tracker.py`'s docstring, not just here.
+
+23. **Commits without a `; QWK:` segment are silently skipped** (not given a blank row) — matches
+    the template doc's own behavior (`syntax edit` and the v1-vs-v2-preservation commit aren't
+    rows in your hand-built template either).
+
+24. **`run_tracker.py` never auto-commits `tracker_log.json` to git**, and never writes to the
+    `concerns` column — both are explicitly yours, consistent with how judgment calls have been
+    handled all session (I write, you review and commit; per your own words, you'll document
+    concerns yourself).
+
+25. **First real run, against your actual repo**: `tracker_log.json` reproduced the hand-built
+    template's values exactly (0.594 / blank / "verbosity bias"; 0.640 + both agreement-rate deltas
+    / the prompt+rubric text / blank), and the uploaded Doc
+    (`kaggle_QKW_essay_grader — Commit Tracker`,
+    https://docs.google.com/document/d/1FkArThVoWQBWUEfb9wJq-SLgfKvZN9A3Fyg4yInvrqk/edit) renders
+    as a real table, confirmed via `read_file_content` after upload, not just assumed from the
+    local PDF preview.
