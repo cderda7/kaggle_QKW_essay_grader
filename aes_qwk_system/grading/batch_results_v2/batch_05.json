@@ -1,0 +1,102 @@
+[
+  {
+    "essay_id": "00f3984",
+    "evidence_notes": "Main claim: the Face on Mars is a natural landform, not an alien artifact. Supports it with a chronological sequence of evidence from the source text (Viking 1 photo, 1998 Mars Global Surveyor photo, Jim Garvin's mesa/butte comparison), each directly tied back to the claim.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "Clear, logically sequenced argument with specific textual evidence directly tied to the claim (organization, development, argumentation), held back from a higher score by recurring spelling/mechanics errors (conventions)."
+  },
+  {
+    "essay_id": "00f6383",
+    "evidence_notes": "Main claim: popular vote is superior to the Electoral College. Supports with two quoted passages about how electors work and the winner-take-all dynamic, though the reasoning connecting quotes to the claim is somewhat asserted rather than fully unpacked.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "A clear, organized position supported by textual quotes, but the reasoning linking evidence to the claim stays fairly surface-level (development, argumentation) and mechanics errors are frequent (conventions)."
+  },
+  {
+    "essay_id": "00f6ac7",
+    "evidence_notes": "Main claim: the author fails to adequately justify why studying Venus is worth the danger. Cites Venus's Earth-like features and one direct quote about Venus as a travel option, then repeats the 'author gives little insight' point across paragraphs rather than developing new support.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4,
+    "holistic_score": 3,
+    "rationale": "An original, evaluative stance on the source's own persuasiveness (argumentation) is organized clearly, but the point is repeated rather than deepened (development) and frequent spelling errors impede polish (conventions)."
+  },
+  {
+    "essay_id": "00fca9b",
+    "evidence_notes": "Main claim: the author successfully supports that exploring Venus is worthwhile. Lists three reasons (human curiosity, difficulty as evidence of worthiness, Earth-like features) each with a quote, but the link between quote and reason is often just asserted, not explained.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay names a structure and cites quotes but does little to explain how the evidence supports each claimed reason (development, argumentation), compounded by frequent spelling errors (conventions)."
+  },
+  {
+    "essay_id": "00fd564",
+    "evidence_notes": "Main claim: the Facial Action Coding System should be implemented in schools. Reasoning drifts across loosely related tangents (texting habits, standardized testing, PTSD therapy) without citing the source text or tying claims together with evidence.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay asserts a position but the paragraphs drift between disconnected ideas without textual evidence or a logical throughline (organization, development, argumentation), even though sentence-level mechanics are relatively clean (conventions)."
+  },
+  {
+    "essay_id": "00feec3",
+    "evidence_notes": "Main claim (implicit): studying Venus is worth the danger. Lists isolated facts (CO2 percentage, temperature, NASA's silicon carbide electronics) without explicitly connecting them back to a reasoned claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 1,
+    "holistic_score": 2,
+    "rationale": "The essay recites facts about Venus but never builds them into a reasoned argument connecting evidence to a claim (argumentation, development), and frequent grammar/mechanics errors compound the weakness (conventions); per the rubric, argumentation of 1 caps the holistic score, and the other traits independently support a low score."
+  },
+  {
+    "essay_id": "0105e2e",
+    "evidence_notes": "Main claim: the Face on Mars is not an alien creation but a shadow/landform effect. Supports with two direct quotes describing the 1998 and 2001 photos that disproved the face illusion.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "A short but complete and correctly evidenced argument (development, argumentation) with adequate paragraphing (organization) and generally controlled mechanics (conventions)."
+  },
+  {
+    "essay_id": "0123792",
+    "evidence_notes": "Main claim: the author successfully argues that exploring Venus is worth the danger despite acknowledging major obstacles. Traces the author's concession-and-rebuttal structure (toxic atmosphere vs. Earth-like qualities; failed landings vs. new silicon carbide electronics) with quoted evidence for each.",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5,
+    "holistic_score": 5,
+    "rationale": "The essay goes beyond summarizing the source by analyzing the author's rhetorical concession-and-rebuttal strategy with well-integrated quotes (argumentation, development), organized into clear parallel body paragraphs (organization), with mechanics mostly under control (conventions)."
+  },
+  {
+    "essay_id": "01247bc",
+    "evidence_notes": "Main claim: being a Seagoing Cowboy is a valuable, fun experience worth trying. Mostly recounts narrative details (games played, travel to Greece/Italy, farm work) with a thinly supported closing recommendation rather than developed reasoning.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay is largely narrative recounting rather than developed argument, with the closing recommendation minimally supported by reasoning (development, argumentation), loosely connected paragraphs (organization), and frequent spelling errors (conventions)."
+  },
+  {
+    "essay_id": "01267d1",
+    "evidence_notes": "Main claim: the Face on Mars is a natural landform, not an alien monument. Builds a clear chronological case using dated, paragraph-cited quotes from the source (1998 Malin photo, 2001 Mars Global Surveyor photo) that directly disprove the alien-face theory.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 3,
+    "holistic_score": 4,
+    "rationale": "A clearly sequenced, well-evidenced argument (organization, development) with clean mechanics (conventions), though the argumentation stays close to straightforward synthesis of the source rather than offering original analysis."
+  }
+]

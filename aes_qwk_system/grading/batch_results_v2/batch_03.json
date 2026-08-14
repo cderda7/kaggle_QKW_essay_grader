@@ -1,0 +1,102 @@
+[
+  {
+    "essay_id": "00a6693",
+    "evidence_notes": "Main claim: all citizens should join the Seagoing Cowboys/UNRRA program. Support: nine personal trips, seeing the Acropolis, China, and a Venetian gondola ride, and a rebuttal to the objection that it costs too much time/risk by citing onboard recreational activities.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "The essay builds logically from a personal hook through specific travel/service details to a counterargument and rebuttal, giving a clear, reasonably developed argument despite frequent but non-blocking spelling errors."
+  },
+  {
+    "essay_id": "00a6e71",
+    "evidence_notes": "Main claim: cars shouldn't be eliminated but their use should be limited. Support: statistic that passenger cars cause up to 50% of greenhouse gases in car-heavy areas, cost savings, and reduced accident/drunk-driving risk; the essay cuts off mid-sentence in the conclusion.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The argument is recognizable and lists three reasons, but reasoning stays generic and list-like, the essay is left incomplete, and frequent spelling errors compound the underdeveloped support."
+  },
+  {
+    "essay_id": "00aa6de",
+    "evidence_notes": "Main claim: emotion-recognition software would be beneficial in classrooms. Support: general assertion that a student's feelings toward a class affect their grades, and that schools could use the data to improve engagement; no source-text evidence is used.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay states a plausible claim but reasoning is thin, generic, and unsupported by specific evidence, with only two short paragraphs and no engagement with any prompt text."
+  },
+  {
+    "essay_id": "00b2fe2",
+    "evidence_notes": "Main claim: driverless cars are a good idea. Support: reduced accidents from drunk/distracted driving, a cited claim from Sergey Brin about halved fuel use, and a scenario about efficient rerouting around construction.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "The essay is clearly organized around three distinct benefits and cites source material, but the reasoning stays fairly surface-level and casual in tone rather than tightly argued."
+  },
+  {
+    "essay_id": "00b3311",
+    "evidence_notes": "Main claim (implied): studying Venus is worthwhile despite the challenges. Support: NASA's silicon-carbide electronics tests and interest in mechanical computers, plus a list of harsh Venusian conditions (97% CO2, 800-degree temperatures, high pressure), but these are combined into one unstructured paragraph.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay includes specific facts from the source but crams two loosely connected topics into a single sprawling paragraph and ends in a nearly unreadable sentence, so organization, development, and conventions all remain weak."
+  },
+  {
+    "essay_id": "00bee4c",
+    "evidence_notes": "Main claim: driverless cars are risky and people shouldn't over-trust them. Support: scenarios of drivers texting/sleeping while technology fails (engine dying, brakes failing) and a pointed question about who is to blame when the car can't respond.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "The essay builds a logical chain of concrete failure scenarios to a clear, original stance on the risks of over-reliance on driverless technology, with organization and conventions well under control throughout."
+  },
+  {
+    "essay_id": "00c3589",
+    "evidence_notes": "Main claim: the article's author effectively supports his argument that studying Venus is worthwhile. Support: direct quotes about a blimp-like vehicle idea, Venus's density/size similarity to Earth, and the author's closing statement about curiosity and innovation.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "The essay is clearly structured around the author's supporting techniques and uses direct textual evidence, but the analysis (e.g., mislabeling statistics as pathos) stays surface-level and close to summary rather than original argument."
+  },
+  {
+    "essay_id": "00cb5dc",
+    "evidence_notes": "Main claim: the author's suggestion to study Venus should be accepted despite the risks. Support: a single long quote about scientists needing close-up rock/gas samples, restated with minimal added reasoning.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay is too thin and repetitive to develop its claim beyond restating one quoted passage, leaving reasoning and structure underdeveloped despite readable prose."
+  },
+  {
+    "essay_id": "00ccc2d",
+    "evidence_notes": "Main claim: the article's author is correct that studying Venus is a worthy pursuit. Support: direct quotes on Venus's harsh conditions, its Earth-like features suggesting possible past life, and the author's point about human curiosity driving future endeavors.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 4,
+    "holistic_score": 5,
+    "rationale": "The essay builds a well-organized, multi-part argument with extensive, clearly explained textual evidence connecting each point back to the central claim, with only minor convention slips."
+  },
+  {
+    "essay_id": "00d027f",
+    "evidence_notes": "Main claim: emotion-recognizing classroom software will improve education. Support: quotes from Nick D'Alto and Dr. Huang about ad-recognition analogies and software that can modify lessons like a human instructor, extended to homeschool/online learning.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "The essay is clearly organized and supports its claim with quoted evidence, but leans heavily on restating those quotes rather than building independent reasoning or examples."
+  }
+]

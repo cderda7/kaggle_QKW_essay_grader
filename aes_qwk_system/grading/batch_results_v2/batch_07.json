@@ -1,0 +1,102 @@
+[
+  {
+    "essay_id": "016010c",
+    "evidence_notes": "Claim: driverless cars are beneficial and safe. Supports with sensor/technology details and safety features drawn from a source, and includes a counterargument paragraph (\"letting a car be in control is just absurd\") followed by a rebuttal urging drivers stay alert.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 4,
+    "rationale": "Clear multi-paragraph structure with an addressed counterargument supports a 4, but development leans on restating source facts rather than original analysis and conventions errors (\"senors,\" \"agrue,\" \"absurb\") keep it from a higher score."
+  },
+  {
+    "essay_id": "0163804",
+    "evidence_notes": "Claim: giving up cars benefits people and the environment. Supports with cited quotes from three sources (Vauban resident, Paris ban, Bogota businessman), each followed by an explanation of its relevance to the claim.",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "Well-organized synthesis of multiple sources with topic-sentence paragraphs and explained quotes earns a solid 4, though frequent spelling/usage errors (\"enviroment,\" \"oppurtunity\") and moderately formulaic explanations cap it below a 5."
+  },
+  {
+    "essay_id": "01665d5",
+    "evidence_notes": "Claim: the facial action coding system is good for reading emotions. Supports with three quoted details (mixed emotions, facial feedback theory) followed by vague restatement (\"That means that...\") rather than developed analysis.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The formulaic three-reason structure gives basic organization, but thin, repetitive explanation of evidence, frequent spelling/grammar errors, and minimal original argumentation keep the holistic score low."
+  },
+  {
+    "essay_id": "016ed64",
+    "evidence_notes": "Claim: Venus is worth exploring despite its harsh atmosphere. Supports with quoted evidence about spacecraft failing to survive and Venus possibly having oceans, each followed by an explanatory sentence, though one inference (\"where there is water, there must be life\") overreaches.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "Clear three-reason structure and explained quotes support the organization score, but a logical overreach in the reasoning, inconsistent capitalization/spelling, and largely source-restating argumentation keep the holistic score at a solid-but-unremarkable 3."
+  },
+  {
+    "essay_id": "01711c3",
+    "evidence_notes": "Claim: driverless cars are a good enhancement to society (save money/time, strong safety record, advanced technology). Supports with cited quotes on Google's crash-free mileage and sensor technology, plus a paragraph acknowledging drivers must stay alert.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "A clear three-reason structure with a brief counterpoint gives reasonable organization and argumentation, but development stays close to paraphrasing source quotes and conventions errors (\"driveless,\" \"Their has been\") hold the essay to a typical 3."
+  },
+  {
+    "essay_id": "01846d8",
+    "evidence_notes": "Claim: not having cars is good for small suburban cities. Supports with generic, unsourced reasoning (less pollution, more social interaction, exercise) with no textual evidence or citations.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay states a position and a few reasons but lacks paragraph structure, specific evidence, or source engagement, and run-on sentences and casual/incorrect mechanics further limit the score."
+  },
+  {
+    "essay_id": "0187e96",
+    "evidence_notes": "Claim: living with fewer cars would reduce stress and pollution. Supports with specific cited statistics and quotes from multiple sources (Vauban parking costs, Paris pollution drop, Bogota bike paths, national driving-mile trends), each tied back to the claim.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 4,
+    "holistic_score": 5,
+    "rationale": "Well-organized, well-developed argument that integrates specific, varied evidence from four sources with clear reasoning and mostly clean conventions earns a strong holistic score just short of a 6 due to somewhat conventional synthesis rather than deeper original analysis."
+  },
+  {
+    "essay_id": "018985d",
+    "evidence_notes": "Claim: FACS technology is valuable for identifying emotions. Supports with an explanation of the six core emotions and video-imagery method, an original classroom application scenario, and a cited example about actor Stanislavsky using facial muscles to produce emotion.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 3,
+    "holistic_score": 4,
+    "rationale": "Clean prose and a developed classroom illustration that goes slightly beyond restating the source support a 4, though the overall argument still leans mainly on explaining source content rather than offering deeper original analysis."
+  },
+  {
+    "essay_id": "018fbeb",
+    "evidence_notes": "Claim: driverless cars are a bad idea because people want control. Supports with several loosely connected analogies (marriage control, NASCAR jobs, tapes/CDs decline, the Model-T replacing horses) that are original but poorly reasoned and disjointed.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay attempts an original argument through analogy rather than simple source synthesis, but the reasoning is thin and disorganized, transitions don't build logically, and frequent convention errors (\"lisense,\" \"saftey,\" \"roit\") impede clarity, matching the thin/disorganized band."
+  },
+  {
+    "essay_id": "018ff85",
+    "evidence_notes": "Claim: driverless cars are the future and close to full readiness. Supports with extensive long direct quotes from the source (Google's mileage record, sensor technology, manufacturer timelines) connected by brief transitional commentary.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 3,
+    "rationale": "The essay is organized around a logical sequence of quoted evidence, but it leans on long verbatim quotations with minimal original elaboration between them (basic synthesis rather than independent analysis), and frequent spelling errors (\"Thier,\" \"aern't,\" \"mirrior\") further limit the holistic score."
+  }
+]

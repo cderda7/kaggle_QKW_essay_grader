@@ -72,3 +72,48 @@ point at the entry number.
     system's own scores against the human scores) so "is this real agreement or noise" has an
     empirical answer (actual QWK ≈ 6 SDs above the random-pairing mean) rather than relying on the
     kappa-band interpretation alone.
+
+## v2 run (rubric edit — teacher persona, hypothesize-prompt instruction, new Argumentation
+sub-score with a cap rule)
+
+13. **You edited `rubric_v1.md` in place on disk rather than creating a new file.** To keep the
+    versioned-and-diffable convention I set up intact (v1's predictions/results should stay
+    reproducible against the rubric that actually produced them), I restored `rubric_v1.md` to its
+    original content (unchanged in the cloud workspace, so no data was lost) and saved your edited
+    version as `rubric_v2.md`. If you'd rather I edit rubrics in place going forward and not keep
+    old versions around, say so and I'll drop the versioning scheme — right now I'm defaulting to
+    "keep everything diffable" since that's what I told you the system was designed to do.
+
+14. **Re-graded all 100 essays from scratch against `rubric_v2.md`**, rather than trying to patch
+    v1's predictions. The rubric change added a whole new sub-score (Argumentation) and a
+    persona/hypothesized-prompt framing — not a scoring-only tweak — so a partial patch wouldn't
+    have been meaningful. Same 10 batches of 10 (`batches.json`, unchanged) so v1 and v2 essay-level
+    results are directly comparable row-by-row.
+
+15. **`grade_essays.py` and `compute_qwk.py` were both refactored to be version-aware** (`--version
+    v1`/`v2`, separate `batch_results_v2/` dir, separate `predictions_v2.csv`/`results_v2.json`)
+    instead of writing one-off v2-specific scripts. This is infrastructure for the delta workflow
+    you described wanting going forward — a v3 rubric change should only need a new `rubric_v3.md`,
+    a new batch_results dir, and two `--version v3` runs, not new scripts.
+
+16. **Added a cap-rule validator** (in `grade_essays.py`'s assembly step): checks that no essay
+    with `argumentation == 1` was scored `holistic_score > 3`, since that's a rule you gave the
+    grader to self-enforce rather than something the assembly script computes independently.
+    Zero violations found across all 100 v2 grades — the rule was applied correctly in every case
+    it wasn't triggered incorrectly (though it also never triggered, since no essay in this run got
+    an Argumentation score of 1 — see finding #17).
+
+17. **New finding, surfaced rather than smoothed over:** the system still never assigned a holistic
+    score of 1 anywhere in v2 (same as v1). This persists across both rubric versions, so it looks
+    like a more structural reluctance (the model treating "1" as reserved for something more
+    extreme than any essay in this set) rather than something the Argumentation addition would be
+    expected to fix. Flagging as a separate, still-open issue from the Argumentation-dimension
+    question — a candidate v3 change if you want to address it (e.g., explicit instruction that the
+    full 1–6 range should be used, or revisiting the 1-band anchor description).
+
+18. **The essay that motivated the rubric change (`01267d1`) improved but wasn't fully fixed** (v1:
+    human=1/system=5, a 4-point miss; v2: human=1/system=4, a 3-point miss — Argumentation was
+    scored 3, not 1, so the cap rule never triggered for it). Reporting this directly rather than
+    treating "QWK went up overall" as proof the specific problem was solved — the aggregate metric
+    improved for a mix of reasons (see `evaluation/results_v2.md`), and this particular essay is
+    only partially better.

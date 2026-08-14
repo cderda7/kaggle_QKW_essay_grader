@@ -1,0 +1,102 @@
+[
+  {
+    "essay_id": "00d4911",
+    "evidence_notes": "Main claim: the electoral college should be abolished. Supports with the 2000 election (Gore won popular vote, lost electorally), a cited Gallup poll (Source 2, 60% prefer direct vote), and historical faithless-elector examples (1960s Hawaii/Louisiana, Nixon); also concedes and rebuts the counterargument that the EC guarantees certainty of outcome.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "Clear letter-format structure with intro, evidence-driven body, a genuine counterargument concession/rebuttal, and a conclusion, supported by specific historical evidence, though frequent capitalization/spelling errors keep conventions in the mid range."
+  },
+  {
+    "essay_id": "00d576b",
+    "evidence_notes": "Claim is muddled: essay opens defending keeping the electoral college, quotes the source calling it \"unfair, outdated, and irrational,\" then reverses to oppose it by the final paragraphs, without resolving the contradiction; reasoning stays largely at the level of restating process mechanics rather than connecting evidence to a stable claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay is disorganized and self-contradictory (arguing both for and against the electoral college), with thin, confused reasoning and frequent grammar/mechanics errors that together undercut Organization, Development, and Argumentation alike."
+  },
+  {
+    "essay_id": "00da297",
+    "evidence_notes": "Claim: studying Venus is worth the risk. Cites two source quotes (silicon-carbide electronics chamber test; Venus's earth-like surface features) but the connecting reasoning is loose or non sequitur (e.g., concluding humans could \"be on there for a 2 weeks and leave\" from a quote about unmanned electronics lasting 3 weeks).",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 1,
+    "holistic_score": 2,
+    "rationale": "Although a basic pro-Venus-study stance and two textual quotes are present, the reasoning linking evidence to claim is confused or non sequitur rather than genuine analysis, and frequent mechanical errors compound weak organization, capping this essay at argumentation=1 and holding the holistic score to 2."
+  },
+  {
+    "essay_id": "00daaa2",
+    "evidence_notes": "Claim: citizens should limit car usage. Supports with specific statistics (67% of French vehicles run diesel vs. 53.3% European average), a quoted description of Paris's driving ban and fines, and a detailed account of Bogota's car-free day and its infrastructure improvements.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 4,
+    "rationale": "The essay is clearly organized into distinct evidence-based paragraphs (fuel/diesel data, Paris ban, Bogota car-free day) with specific figures and quotations, giving solid Development, though the argumentation stays close to source synthesis and conventions include recurring errors like sentence fragments."
+  },
+  {
+    "essay_id": "00dd003",
+    "evidence_notes": "Claim: the Facial Action Coding System has no place in classrooms. Reasons given include wasted school money, distraction, and risk of bullying if emotions are exposed, with two brief supporting quotes (\"Empathy...\", \"Imagine being able to detect...\") though the link between quote and claim is asserted rather than developed.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "A recognizable, organized three-reason argument (cost, distraction, bullying risk) with some textual support, but the reasoning connecting quotes to claims stays fairly asserted rather than deeply developed, keeping this a solidly average essay across traits."
+  },
+  {
+    "essay_id": "00e047b",
+    "evidence_notes": "Claim: limiting car usage has environmental and personal benefits. Supports with detailed, sourced evidence: Paris's plate-based driving ban and its results, Bogota's Day Without Cars, Vauban Germany's car-light urban planning (57% of families sold cars), and a national statistic on declining licensure among 16-39 year-olds.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 4,
+    "holistic_score": 5,
+    "rationale": "The essay is well-organized around distinct, clearly transitioned evidence clusters drawn from four different sources, with specific statistics and quotations giving strong Development, held just below top marks by recurring spelling/mechanics slips and argumentation that synthesizes sources capably without especially original analysis."
+  },
+  {
+    "essay_id": "00e3edb",
+    "evidence_notes": "Claim: studying Venus is worthwhile despite danger. Reasoning drifts into speculative, source-unsupported tangents (e.g., needing Venus as a refuge if \"a war happens with the usa and the blow up america\") rather than citing or engaging the article's actual claims about Venus's similarity to Earth.",
+    "organization": 2,
+    "development": 1,
+    "conventions": 2,
+    "argumentation": 1,
+    "holistic_score": 2,
+    "rationale": "The essay barely engages the source material, substituting unsupported speculation for evidence-based reasoning, which along with weak organization and frequent mechanical errors places argumentation at 1 and caps the holistic score at 2."
+  },
+  {
+    "essay_id": "00e5687",
+    "evidence_notes": "Claim: Venus research is worthwhile. Structured around repeated \"the author states\" quotations (Venus as Earth's \"twin,\" past oceans, engineering challenges) but each is largely restated rather than analyzed, and the conclusion introduces an unsupported resource-scarcity argument not grounded in the source.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 3,
+    "rationale": "The essay is organized around multiple relevant quotations giving it moderate Development, but the reasoning mostly restates the source rather than analyzing it, and frequent spelling errors and choppy paragraphing (including a one-line fragment paragraph) hold Conventions and Organization down."
+  },
+  {
+    "essay_id": "00eabc5",
+    "evidence_notes": "Claim: FACS technology has no merit in classrooms. Original reasoning includes a disability-based counterargument (students with autism or physical disabilities whose expressions can't be reliably read) and a critique of the Facial Feedback Theory implying students could \"beat the system\" by faking expressions, both extending beyond the source text.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5,
+    "holistic_score": 5,
+    "rationale": "This essay has a clear title, strong topic sentences, and a logical progression through distinct, well-elaborated reasons (weak scientific basis, disability-related failure cases, and susceptibility to manipulation) that go beyond restating the source, with clean control of language throughout, earning strong marks on every trait."
+  },
+  {
+    "essay_id": "00ef89f",
+    "evidence_notes": "Claim: technology reading students' emotional expressions is a bad idea. Reasoning is delivered as a First/Second/Third list but stays vague and repetitive, and the essay conflates the source's emotion-detection technology with unrelated photo-editing (\"changing someone's pictures to make them look happy\"), suggesting limited engagement with the actual source claims.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The listed-reasons structure gives only a thin scaffold for Organization, the reasoning stays vague and repetitive rather than developed, and the essay's conflation of emotion-detection with photo editing signals weak, unoriginal engagement with the prompt, all compounded by frequent spelling and sentence-construction errors."
+  }
+]

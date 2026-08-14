@@ -1,0 +1,102 @@
+[
+  {
+    "essay_id": "0079f2a",
+    "evidence_notes": "Main claim (implicit): Venus is unlikely to be livable due to its atmosphere; support is a list of facts (CO2 blanket, sulfuric acid clouds, past Earth-like conditions) that are stated but not tied together with reasoning, and a duplicated sentence ('Also whats possibly on Also whats possibly on Mars') suggests a drafting error.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay lists relevant facts but organization is disrupted by a repeated/garbled sentence, development stays at the level of restated facts rather than connected reasoning, and frequent spelling/mechanics errors (dioixde, Venu's, 'too see') further limit clarity."
+  },
+  {
+    "essay_id": "007db64",
+    "evidence_notes": "Claim: facial-recognition technology is good because it makes people happier and improves human-computer communication; supports this with a statistic (83% happy) and one direct quote from the source, then pivots into a sweeping, loosely connected claim that the technology will bring world peace.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "There is a discernible claim backed by a cited statistic and quote, but the reasoning leaps to an unsupported conclusion (no more violence/argument), and frequent spelling errors (gald, workd, pefrom, xepress) make conventions weak."
+  },
+  {
+    "essay_id": "0081f18",
+    "evidence_notes": "Claim: self-driving cars should be built and sold because they reduce wrecks and improve safety; supports this with a drunk-driving scenario and an economic argument, and directly engages a counterpoint about liability for crashes involving self-driving cars.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "The essay has a clear thesis, multiple distinct supporting reasons, and even raises and briefly addresses a liability counterargument, but conventions (no capitalization, spelling like 'wreaks'/'somthing') are inconsistent and reasoning stays fairly surface-level."
+  },
+  {
+    "essay_id": "008341a",
+    "evidence_notes": "Claim (as first-person persuasive letter): join the UNRRA as a Seagoing Cowboy; supports this with an emotional appeal (imagining being war-devastated) and concrete specific evidence of personal benefit (naming the Acropolis, a Venice gondola ride, an excavated Crete castle, the Panama Canal).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "The persona-based persuasive structure moves logically from appeal to specific evidence to a direct call to action, and the concrete, named landmarks give real specificity to the development, though recurring spelling slips (devestated, expirience, hisoric) hold conventions back a notch."
+  },
+  {
+    "essay_id": "0084f6c",
+    "evidence_notes": "Claim: the Facial Action Coding System could help identify hidden student emotions and prevent long-term problems; supports this with two direct quotes from 'Making Mona Lisa Smile' and extends the reasoning to a specific classroom scenario (students who don't ask for help and fall behind).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "The essay integrates source quotes with its own extended reasoning about struggling students rather than just restating the article, giving it solid organization and development, with conventions mostly under control aside from scattered misspellings (indivuals, insturctor, diffucult)."
+  },
+  {
+    "essay_id": "0087059",
+    "evidence_notes": "The essay lists facts about Venus (temperature, pressure, difficulty of ground observation, NASA silicon-carbide electronics) under First/Secondly/Lastly headings but never states a clear position on whether exploring Venus is worthwhile, so the facts function as a report rather than an argument.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 1,
+    "argumentation": 1,
+    "holistic_score": 2,
+    "rationale": "Because no discernible stance or claim is ever articulated (argumentation=1, capping the holistic score at 3), and severe, pervasive convention errors ('teh close planet', 'Venus is so closer to the sumfor that reason', run-on sentences) frequently impede comprehension, the holistic score is low despite the attempted First/Secondly/Lastly organizational scaffold."
+  },
+  {
+    "essay_id": "0098ef4",
+    "evidence_notes": "Claim: limiting car usage benefits society by reducing pollution and increasing physical activity; supports this with multiple direct quotes from 'Car-Free Cities' (Vauban's low-car design, Bogota's bike paths, greenhouse gas percentages) each paired with a brief explanatory sentence.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 4,
+    "rationale": "The essay is clearly organized into topic-focused paragraphs that consistently pair textual evidence with explanation, giving it strong development, though the reasoning largely paraphrases and restates the source's points rather than adding much original analysis, and conventions have occasional slips (advantanges, respondible)."
+  },
+  {
+    "essay_id": "00a3575",
+    "evidence_notes": "Claim is muddled from the outset ('exploring Venus is not a great idea. Studying Venus is a worthy...' presents contradictory framing in back-to-back sentences); the essay then cites two quotes about Venus's extreme heat/pressure and observational limitations but ends abruptly without a conclusion.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The self-contradictory opening claim and abrupt, conclusion-less ending undercut organization and argumentation, and while relevant quotes are included, they aren't developed beyond restating the source, compounded by mechanical errors (challege, closes, atandard)."
+  },
+  {
+    "essay_id": "00a4469",
+    "evidence_notes": "Claim, stated clearly up front: FACS is valuable because it helps students learn in tailored ways, prevents stress/anger, and makes students feel valued; each of the three reasons gets its own developed paragraph connecting the technology's function to a specific student behavior (hiding emotions from fear of judgment).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "A clearly previewed three-part structure is followed consistently through the body and restated in the conclusion, each reason is developed with a specific mechanism rather than just summary, and conventions are largely clean, making this a well-controlled, purposeful essay."
+  },
+  {
+    "essay_id": "00a541a",
+    "evidence_notes": "The essay largely reports the source author's argument (that studying Venus is worthwhile despite danger) rather than asserting its own position, using two attributed direct quotes (Venus's Earth-like features, NASA's silicon carbide tests) to explain the author's reasoning.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2,
+    "holistic_score": 3,
+    "rationale": "The essay is coherently organized with quotes integrated and explained, but because it mainly restates and paraphrases the source author's stance rather than building its own original argument, argumentation and therefore the overall holistic judgment stay moderate."
+  }
+]

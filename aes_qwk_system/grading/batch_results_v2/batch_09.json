@@ -1,0 +1,102 @@
+[
+  {
+    "essay_id": "01bb061",
+    "evidence_notes": "Main claim is 'there are many advantages of limiting car usage,' supported almost entirely by summarizing four sources (Germany, Paris, Bogota, 'end of car culture') with paragraph citations rather than original reasoning; the intro and conclusion nearly repeat the same source list verbatim.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay has a recognizable structure but development is largely source-summary rather than analysis, argumentation never explains why the cited facts constitute an 'advantage' beyond restating them, and frequent mechanical errors (spacing, run-ons) further weaken the piece."
+  },
+  {
+    "essay_id": "01bb07c",
+    "evidence_notes": "Claim: the electoral college system is unfair and should end. Reasons: voters vote for electors not the president, electors need not hold public office, and 17 states went unvisited in 2000; each reason gets its own paragraph and the conclusion ties back to the founders' intent.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "Organization is clear with one reason per paragraph and a purposeful conclusion, development uses specific facts though somewhat repetitively, and frequent capitalization/spacing/run-on errors keep conventions and overall polish in the mid-range despite a genuine, focused argument."
+  },
+  {
+    "essay_id": "01bb2f3",
+    "evidence_notes": "Claim: driverless cars aren't truly developed yet. Reasons: the driver must stay alert and take over, the technology is 'challenging' to use, and the cars still can't handle much beyond basic alerts; each reason is paired with a direct quote from the source text.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The five-paragraph structure is present but development is thin and repetitive (the same 'not completely driverless' idea is restated across all three body paragraphs rather than deepened), and spelling/capitalization errors plus limited original synthesis keep conventions and argumentation low."
+  },
+  {
+    "essay_id": "01bd69c",
+    "evidence_notes": "Claim: the writer supports using the Facial Action Coding System technology. Support includes a comparison to old-fashioned portrait sitting, a reference to Da Vinci's anatomical study for the Mona Lisa, and a quoted line about universal facial expressions.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay has intro/body/conclusion structure and references specific source details, but the reasoning stays at a surface, personal-reaction level ('I do smile and think...') without developing why the technology matters, and comma splices/capitalization errors are frequent."
+  },
+  {
+    "essay_id": "01c1169",
+    "evidence_notes": "Claim: schools should try the emotion-recognition software. Main support is a quoted line about detecting confusion/boredom, extended with the writer's own reasoning that it could help adjust lessons and even flag mental-health risks like potential school shootings.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "Conventions are comparatively clean and one central reason is developed with a specific quote plus a somewhat original extension to student safety, but the essay promises 'many reasons' while only substantively developing one, limiting organization and argumentation depth."
+  },
+  {
+    "essay_id": "01c3e09",
+    "evidence_notes": "The essay's implicit claim is that Venus is worth studying despite being hard to explore; support (harsh atmosphere, extreme heat, potential resources, NASA's silicon-based instruments) is delivered as one continuous run-on sentence with no paragraph breaks.",
+    "organization": 1,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 1,
+    "holistic_score": 2,
+    "rationale": "The near-total absence of sentence and paragraph boundaries makes the argument hard to follow and the piece reads as an unfocused information dump rather than a developed argumentative stance, so per the rubric's argumentation-1 rule the holistic score is capped and reflects mainly a scattering of relevant facts."
+  },
+  {
+    "essay_id": "01c46fa",
+    "evidence_notes": "Claim: using technology to read students' emotional expressions is valuable. Support draws three quotes from the source text (percentages of emotion, universality of expressions, classification of six basic emotions) each anchoring a body paragraph.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "The essay is organized around distinct quoted evidence and connects some of it to plausible classroom scenarios, but part of the analysis (e.g., the 'friend is mad' aside) drifts from the classroom-technology argument, and capitalization/spelling errors keep conventions modest."
+  },
+  {
+    "essay_id": "01c5073",
+    "evidence_notes": "Claim: the writer opposes using emotion-reading technology on students, citing privacy concerns, redundancy with human intuition (illustrated by a personal texting example), and the fact that people can fake emotions, even questioning the validity of the source's own Mona Lisa example.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "Three distinct, well-organized reasons are each developed with specific, sometimes original reasoning -- including a critical pushback on the source's own evidence -- which reflects genuine argumentative engagement beyond simple summary, despite some spelling errors."
+  },
+  {
+    "essay_id": "01c5750",
+    "evidence_notes": "Claim: curiosity makes studying Venus worth the danger. Support includes an analogy to climbing Mount Everest and quoted material about mechanical computers and Venus's Earth-like past, but the connections between these points and the central claim are loose.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay gestures at an argument (curiosity justifies risk) but wanders through tangential analogies and quotes without clearly tying them back to the claim, and frequent spelling and run-on errors compound the disorganization."
+  },
+  {
+    "essay_id": "01c5e87",
+    "evidence_notes": "Claim: the writer disagrees with driverless cars. Reasons: unclear liability if a crash occurs, cars are not actually fully autonomous, and human attention/skill is still required; each point is supported with a direct quote and follow-up reasoning.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 4,
+    "rationale": "Three clearly organized reasons are each backed by specific quoted evidence and genuine reasoning (especially the liability question), giving a well-developed and reasonably original argument despite a number of spelling errors that keep conventions from being strong."
+  }
+]

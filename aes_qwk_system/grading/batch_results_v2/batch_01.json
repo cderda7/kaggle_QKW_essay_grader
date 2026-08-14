@@ -1,0 +1,102 @@
+[
+  {
+    "essay_id": "004229b",
+    "evidence_notes": "Main claim: driverless cars are unsafe. Supporting reasons: cars can't reliably detect traffic-light rules or jaywalking pedestrians, and mechanical/software malfunction (e.g., brake failure) could kill passengers; briefly cites the article's statement that the cars 'need to be proven more safe' as external support.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "A recognizable, consistently stated position with basic first/next/finally structure and generic but connected reasons, held back by thin elaboration and frequent minor convention errors (lowercase 'i', comma splices)."
+  },
+  {
+    "essay_id": "0047cb3",
+    "evidence_notes": "Implicit claim: limiting car use reduces stress and pollution. Evidence is almost entirely block quotes from the German suburb and Paris smog articles, with brief one-line connective statements after each quote rather than original reasoning.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay strings together quotations with minimal original synthesis or paragraphing, so the argument is present but thin and mostly derivative rather than independently reasoned."
+  },
+  {
+    "essay_id": "005a72e",
+    "evidence_notes": "Main claim: driverless cars are a beneficial, revolutionary technology. Supports with specific cited details (BMW 'Traffic Jam Assistant' in paragraph 7, a vibrating warning seat, and a laser-sensor 3-D model from paragraph 4) and extends the argument to elderly users and navigation scenarios.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "Clear, logically sequenced argument (First/Next/After that/In conclusion) that ties specific textual evidence to concrete benefits, with reasoning that goes a bit beyond the source text, offset by frequent spelling errors that don't block comprehension."
+  },
+  {
+    "essay_id": "00613e3",
+    "evidence_notes": "Main claim: presidents should be chosen by popular vote, not the electoral college. Cites specific figures (538 electors, 270 needed, 60% of voters preferring direct election) and explicitly presents and rebuts the counterargument that electors are 'qualified government hired officials.'",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4,
+    "holistic_score": 3,
+    "rationale": "The essay's deliberate counterargument-and-rebuttal structure shows real argumentative sophistication and organization, but frequent spelling/grammar errors (colledge, wnt, run-ons) and moderately developed reasoning keep the holistic score at a solid-but-not-strong 3-4 band."
+  },
+  {
+    "essay_id": "0065bd6",
+    "evidence_notes": "Main claim: driverless cars should not exist because they endanger people. Uses direct quotes from paragraphs 7 and 9 (fault when technology fails; cars not fully driverless; laws assume a human driver) and extends them into hypothetical accident scenarios.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "A recognizable, evidence-supported argument with basic paragraph organization tied to specific quoted evidence, limited by run-on sentences and repeated spelling errors ('exsist') that are noticeable but don't block comprehension."
+  },
+  {
+    "essay_id": "0066c7c",
+    "evidence_notes": "Main claim: driverless cars are bad because of distrust. Lists three reasons (accidents from system malfunction, traffic/junkyard overflow from too many driverless cars, pollution), but the traffic and pollution reasoning is internally confused and not well connected to the claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "Although the essay signals a list structure (first/second/last reason), the reasoning chains are frequently illogical or unsupported (e.g., the junkyard-overflow and pollution arguments), and frequent spelling errors add to the overall thin, disorganized impression."
+  },
+  {
+    "essay_id": "006c931",
+    "evidence_notes": "Main claim: facial-emotion-reading technology is unfair because people have a right to keep feelings private. Cites Dr. Huang's quotes about universal facial expressions and mixed-emotion percentages, and poses an original rhetorical example (the Mona Lisa's measured '9 percent disgusted') to question the technology's value.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "The essay builds a clear, logically ordered argument from hook to conclusion and adds an original, well-chosen example (the Mona Lisa) beyond the source text, though moderate spelling/word-choice errors keep conventions from being strong."
+  },
+  {
+    "essay_id": "006d0e1",
+    "evidence_notes": "Main claim: readers should become Seagoing Cowboys for the hard work, experience, and service it provides. Each of the three body paragraphs opens by naming and rebutting a counterargument ('Some may say... but I disagree/in reality...') before elaborating the point.",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "A well-organized five-paragraph persuasive structure with a clear thesis, matching conclusion, and repeated counterargument-rebuttal moves shows strong argumentative control, supported by comparatively clean conventions and specific (if not deeply evidenced) elaboration."
+  },
+  {
+    "essay_id": "0072128",
+    "evidence_notes": "Main claim: limiting car usage benefits the environment and communities. Supports with specific cited statistics (12%/50% of greenhouse emissions, congestion down 60% in Paris) and concrete examples from three different cities (Vauban, Paris, Bogota).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 5,
+    "holistic_score": 4,
+    "rationale": "Strong, well-organized argument built on precise, sourced statistics from multiple named examples with a clear call-to-action conclusion, though frequent spelling errors (revovle, otherhand, poplution) keep conventions from matching the strength of the reasoning."
+  },
+  {
+    "essay_id": "0079938",
+    "evidence_notes": "Main claim: opposes driverless cars generally but carves out exceptions for the blind and short local trips; later undercuts itself by stating 'Driverless cars are sort of a good idea.' Reasons given (malfunction, illegality in most states, drivers on their phones) are stated but not tied to textual evidence.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay's position wavers and contradicts itself without resolution, paragraphing lacks clear transitions or a conclusion, and reasoning stays surface-level and unsupported by specific evidence, compounded by frequent spelling errors."
+  }
+]

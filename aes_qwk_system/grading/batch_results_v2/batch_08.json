@@ -1,0 +1,102 @@
+[
+  {
+    "essay_id": "019b862",
+    "evidence_notes": "Claims Venus survival is possible, citing text quotes on hovering above harsh ground, ~170°F temperature, and near-sea-level pressure as the 'dangers'; agreement with the author is asserted but the reasoning trails off into an unrelated historical litany (Hitler, mass murders, Trump's wall) that has no logical connection to the claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay cites relevant textual evidence but the argument collapses into an incoherent, off-topic non-sequitur conclusion, and frequent spelling/grammar errors and weak paragraphing keep organization, development, and conventions low."
+  },
+  {
+    "essay_id": "019e2c4",
+    "evidence_notes": "Main claim: people should limit driving; supports it with China's pollution problem, a businessman's quote, Paris's smog-driven partial driving ban (60% congestion drop, fines), and EPA infrastructure spending, each reasonably tied back to the claim.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "Clear thesis with topic-sentence paragraphs and multiple concrete, source-based examples give the argument real specificity, though scattered grammar slips (fragments, typos) keep conventions from being stronger."
+  },
+  {
+    "essay_id": "019e8c3",
+    "evidence_notes": "Main claim: driverless cars should not be developed; reasons are human inattention (quoted 'must remain alert...'), computer/sensor malfunction, and unresolved liability (quoted 'who is at fault'), each explicitly tied to the claim.",
+    "organization": 2,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 3,
+    "rationale": "The three-reason argument is well-supported with direct textual quotations and plausible consequences, but the essay is written almost entirely as disconnected one-sentence 'paragraphs' with no real transitions, which caps the organization score and pulls the holistic score to a 3 despite decent argumentation."
+  },
+  {
+    "essay_id": "01a0d33",
+    "evidence_notes": "Main claim: driverless cars are a positive development; supports it with quoted statistics (half a million crash-free miles), sensor technology, and braking/steering automation, briefly acknowledging but quickly dismissing the counterargument.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "The essay is cleanly organized with clear paragraphing and conventions are solid, but the reasoning largely restates quoted evidence ('this shows...', 'this proves...') without deeper original analysis, so development and argumentation stay mid-range."
+  },
+  {
+    "essay_id": "01a39ed",
+    "evidence_notes": "Main claim: driverless cars make roads more dangerous; supports it with quotes on driver complacency, distraction during 'safety feature' displays, and unresolved liability, elaborating each with a concrete consequence (e.g., a child running into the road).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "A clear thesis is developed through three well-cited, paragraph-referenced reasons with concrete elaboration of consequences, and conventions are solid enough not to interfere with the otherwise well-organized argument."
+  },
+  {
+    "essay_id": "01a53e1",
+    "evidence_notes": "Main claim: the author is right that Venus is worth studying as a potential backup planet; cites similarity in density/size to Earth and lists survival hazards (pressure, heat, volcanoes, earthquakes) as a counterpoint, but the 'reason 2' paragraph mistakenly re-quotes the earlier paragraph-2 text instead of new evidence.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay gestures at a structure (claim, two reasons, counterpoint, conclusion) but the duplicated/misattributed quotation in the second reason shows confused use of evidence, and frequent spelling errors compound the shallow, repetitive reasoning to keep the holistic score low."
+  },
+  {
+    "essay_id": "01ad79e",
+    "evidence_notes": "Claim is never firmly resolved: the writer vacillates between school computers detecting student emotions being useful (preventing suicide) and being an invasion of privacy, ending on 'I don't know' rather than a defended position.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 1,
+    "argumentation": 1,
+    "holistic_score": 2,
+    "rationale": "The essay never commits to or defends a clear claim and is riddled with run-on sentences and spelling errors that impede readability, so per the rubric's argumentation=1 rule the holistic score is capped and lands at 2 given the overall weak development and conventions."
+  },
+  {
+    "essay_id": "01ae85f",
+    "evidence_notes": "Main claim: the Electoral College should be replaced by popular vote; three reasons given (60% of voters prefer direct election, electors rather than voters technically choose the president, and winner-take-all is structurally unfair), each with a topic sentence and closing restatement.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3,
+    "holistic_score": 4,
+    "rationale": "The letter is clearly organized with a consistent three-reason structure and solid conventions, but the highly formulaic repetition of each reason's wording in place of deeper elaboration limits development and originality of argumentation."
+  },
+  {
+    "essay_id": "01b55c8",
+    "evidence_notes": "Main claim: limiting car usage has strong advantages; supports it with Vauban, Germany car-ownership statistics, Paris's smog-driven driving ban, and general health/financial benefits, though much of the essay is informal, meandering commentary rather than tightly connected reasoning.",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 3,
+    "rationale": "Concrete evidence (Vauban statistics, Paris ban) is present and relevant, but it is buried in long, loosely connected, informal tangents and frequent spelling/run-on errors, so organization, conventions, and argumentation stay modest even though development has some real substance."
+  },
+  {
+    "essay_id": "01b9b63",
+    "evidence_notes": "Main claim: the Facial Action Coding System should not be used on students; reasons given are that simply asking students works as well, the technology is too costly for schools, and it invades student privacy, each briefly restated in the conclusion.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay states a clear position and lists plausible reasons, but each reason receives only a sentence or two of thin elaboration with no outside evidence, and frequent spelling errors further limit the score despite the basic intro-body-conclusion shape."
+  }
+]

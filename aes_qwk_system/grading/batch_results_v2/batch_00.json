@@ -1,0 +1,102 @@
+[
+  {
+    "essay_id": "000d118",
+    "evidence_notes": "Main claim: the car-free Vauban, Germany model is a good idea worth emulating. Support: statistics from the source (70% of Vauban families own no car, $40,000 garage-space cost) and a quoted line from David Goldberg about development being centered on cars. The evidence is drawn directly from the source but connected to the claim only loosely, via rambling personal commentary rather than structured reasoning.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay takes a discernible pro-car-free stance and pulls in specific source facts and a quotation, but it is delivered as one long unbroken paragraph with rambling, repetitive reasoning and frequent spelling/mechanics errors, so organization, development, and conventions all pull the holistic score down together."
+  },
+  {
+    "essay_id": "000fe60",
+    "evidence_notes": "Main claim: the 'face' on Mars is a natural landform, not a Martian construction. Support: absence of known Martian life, comparison to Earth landforms that resemble familiar shapes, and an appeal to the author's claimed NASA authority. Reasons connect to the claim directly but are asserted rather than deeply analyzed.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "Clear multi-paragraph structure (each paragraph tackles one sub-reason) and a consistent, well-connected stance support a mid-band score, but the reasoning stays fairly repetitive and surface-level and grammar/spelling errors are frequent enough to cap conventions and the overall score."
+  },
+  {
+    "essay_id": "001ab80",
+    "evidence_notes": "Main claim: driverless car technology is not worth the risk/investment. Support: cars still require driver attention so the 'driverless' label is misleading, existing alternatives (bus, subway) already solve the problem, and unresolved liability/lawsuit exposure could bankrupt manufacturers. Each reason is elaborated with a concrete mechanism connecting it to the claim.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "A clear, well-organized four-paragraph argument develops several distinct, reasonably specific lines of reasoning (functionality, cost, liability) with generally strong sentence-level control, placing it solidly in the 'clear, reasonably organized' band."
+  },
+  {
+    "essay_id": "001bdc0",
+    "evidence_notes": "Main claim: the author of the source uses evidence and concession to show studying Venus is a worthy pursuit despite its dangers. Support: direct quotations about Venus's hostile conditions and NASA's high-altitude blimp proposal, each followed by analysis of the rhetorical move (concession, appeal to reason, credibility-building) rather than mere restatement.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 5,
+    "holistic_score": 4,
+    "rationale": "The essay goes beyond basic synthesis by naming and explaining the source's rhetorical strategies with well-integrated textual evidence, giving it strong organization, development, and argumentation, but recurring subject-verb agreement and phrasing errors (e.g., 'he tell us', 'he support') keep conventions -- and therefore the holistic score -- out of the top band."
+  },
+  {
+    "essay_id": "002ba53",
+    "evidence_notes": "Main claim: the Electoral College should be kept. Support: three stated reasons (its longstanding status and the 'anachronism' objection, which the essay then rebuts by noting electors are trusted not to betray their pledge; lower likelihood of disputed outcomes than a popular vote; preservation of balance for large states). The essay engages a counterargument directly in paragraph two.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3,
+    "holistic_score": 3,
+    "rationale": "The letter mirrors its three stated reasons in three body paragraphs and meaningfully rebuts a counterargument about electors' trustworthiness, but the reasoning is fairly repetitive and thin in the other two paragraphs and frequent spelling errors (canaditdate, virue, attintion) limit conventions, landing it at the modal recognizable-argument band."
+  },
+  {
+    "essay_id": "0030e86",
+    "evidence_notes": "Main claim: the Electoral College should be abolished in favor of a direct popular vote. Support: a specific historical example (1960 Louisiana electors nearly opposing Kennedy) cited with a source reference to show corruption risk, plus a proactively addressed counterargument (vote-tampering) answered with a proposed solution (video camera security).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4,
+    "holistic_score": 4,
+    "rationale": "The essay builds a clear thesis, supports it with a specific cited historical example, and goes beyond the source by proposing its own solution to a counterargument, showing real synthesis; conventions are solid but not error-free, keeping it just below the top band."
+  },
+  {
+    "essay_id": "0033037",
+    "evidence_notes": "Main claim: face-recognizing classroom computers would be helpful for students. Support: a single quotation from the source ('A classroom computer could recognize when a student is confused or bored') linked to the idea that struggling students need more individualized instruction. Only one point of support is developed.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "The essay has a minimal intro-body-conclusion shape and one relevant quoted piece of evidence, but it develops only a single point without elaboration, and frequent spelling and mechanics errors (posibilty, reconizing, satifying) keep it in the thin/unsupported band."
+  },
+  {
+    "essay_id": "0033bf4",
+    "evidence_notes": "Main claim: readers should join the Seagoing Cowboys program. Support: three reasons (helping countries recover post-WWII, seeing the world, having fun) each backed by a short quotation from the source, but each point is asserted and then merely restated with a rhetorical question rather than analyzed.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "Individual sentences are mechanically clean, but the essay is built almost entirely of disconnected one-line 'paragraphs' and rhetorical questions that never cohere into developed reasoning, so organization and development stay thin despite three named supporting reasons."
+  },
+  {
+    "essay_id": "0036253",
+    "evidence_notes": "Main claim: studying Venus is a worthy pursuit despite its dangers (paraphrasing the source's thesis). Support: three quotations from the source about Venus's temperature, NASA's blimp proposal, and its hazards, but the explanatory sentences following each quote ('This quotes revals that venus is worthy because people use for a lot things such as going to missions') do not logically connect the evidence to the claim.",
+    "organization": 2,
+    "development": 1,
+    "conventions": 1,
+    "argumentation": 1,
+    "holistic_score": 2,
+    "rationale": "The essay follows a repeated quote-then-explain pattern but the explanations are frequently incoherent and fail to actually connect evidence to the claim, and pervasive spelling/grammar errors impede understanding in places; per the rubric an argumentation score of 1 caps the holistic score at 3, and the essay's broader weakness places it at 2 within that cap."
+  },
+  {
+    "essay_id": "0040e27",
+    "evidence_notes": "Main claim: readers should join the Seagoing Cowboys program. Support: three reasons (helping the country post-WWII, world travel, fun) illustrated with a specific referenced example ('Luke' in 1945, a two-week Atlantic crossing), though the same 'You'd be...' sentence pattern is repeated heavily rather than developed further.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2,
+    "holistic_score": 2,
+    "rationale": "A basic three-reason structure with one concrete referenced example gives it more shape than a pure list, but the reasoning stays shallow and repetitive and several sentences break down grammatically ('You'd been in countries you'd didn't think you'd be in'), keeping development, conventions, and argumentation low."
+  }
+]

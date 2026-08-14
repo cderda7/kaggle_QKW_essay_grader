@@ -1,0 +1,78 @@
+{
+  "version": "v2",
+  "n_essays": 100,
+  "labels": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "qwk": 0.6400130904330752,
+  "confusion_matrix": {
+    "labels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "matrix": [
+      [
+        0,
+        8,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        20,
+        4,
+        1,
+        0
+      ],
+      [
+        0,
+        10,
+        17,
+        9,
+        0
+      ],
+      [
+        0,
+        2,
+        7,
+        14,
+        5
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0
+      ]
+    ],
+    "note": "rows=human_score, cols=system_score"
+  },
+  "exact_agreement_rate": 0.51,
+  "adjacent_agreement_rate_within_1": 0.96,
+  "mean_absolute_error": 0.54,
+  "mean_signed_error_system_minus_human": 0.08,
+  "verbosity_bias_diagnostics": {
+    "corr_word_count_human_score": 0.6883305509978268,
+    "corr_word_count_system_score": 0.5379694629332554,
+    "corr_word_count_residual": -0.21294992122837267,
+    "human_baseline_note": "0.688 measured independently on this same 100-row file during data recon before any grading"
+  },
+  "randomness_baseline": {
+    "method": "system_holistic_score randomly re-paired with human_score, 2000 shuffles, seed=42",
+    "mean_qwk": -0.0003054434384204136,
+    "sd_qwk": 0.10143724653031261,
+    "min_qwk": -0.36358677866259415,
+    "max_qwk": 0.30184356932475187,
+    "always_predict_mode_qwk": 0.0,
+    "actual_qwk_stds_above_random_mean": 6.312459730264351
+  }
+}
