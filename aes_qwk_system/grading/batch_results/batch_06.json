@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "01290ec",
+    "evidence_notes": "Main claim: readers should join the UNRRA seagoing cowboys program. Support: narrative details about Luke Bomberger (335 horses shipped, trips to China/Venice, a near-accident at sea) meant to model the appeal of the program, but the connection between the anecdote and a direct call-to-action is repetitive rather than argumentatively tight.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The essay has a recognizable intro/body/conclusion persuasive structure with concrete narrative evidence, but frequent word-choice and mechanics errors and repetitive filler ('anything is possible for anyone') keep it at a typical mid-range level."
+  },
+  {
+    "essay_id": "012c9be",
+    "evidence_notes": "Main claim: we should explore Venus for more information. Support offered is vague ('it would help us understand what happened to venus') with one concrete idea (researching heat/pressure-resistant alloys), but reasoning is underdeveloped and largely restates the claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 1,
+    "holistic_score": 2,
+    "rationale": "Organization is minimal (three loosely connected paragraphs), development is thin and vague, and conventions are weak (missing capitalization/apostrophes, frequent misspellings), so despite a stated claim the argument is not well supported."
+  },
+  {
+    "essay_id": "012f8f0",
+    "evidence_notes": "Main claim: studying Venus is worth the danger. Support: direct quotes from the source about Venus's Earth-like features and 'human curiosity' as the driving reason, connected via a First/Secondly/Lastly structure, though the analysis mostly restates quotes rather than extending them.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "Clear sequential organization and direct textual evidence support a recognizable argument, but development leans on quoting more than analyzing and conventions errors (capitalization, spelling) are frequent, placing it at the typical band despite good structural cues."
+  },
+  {
+    "essay_id": "013ac83",
+    "evidence_notes": "Main claim: limiting car usage is beneficial. Support: three distinct reasons (reduced stress, citing Heidrun Walter; reduced pollution, citing the Paris/Bogota examples; improved health from walking) each drawn from named sources and tied back to the claim.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "Organization is solid with clearly topic-focused paragraphs and multi-source evidence directly connected to the claim, but pervasive spelling and mechanics errors ('pullotion', 'hostiptal', run-on sentences) limit the conventions score and pull the holistic judgment to the typical band."
+  },
+  {
+    "essay_id": "014eba6",
+    "evidence_notes": "Main claim: the 'Face on Mars' evidence suggests aliens may exist and warrants investigation. Support is largely rhetorical questions and impressionistic comparisons ('the mouth is weird shping') rather than developed reasoning connected to a clear claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 1,
+    "holistic_score": 2,
+    "rationale": "The argument is thin and its logic hard to follow, paragraphing does little organizing work, and conventions errors frequently impede readability, together placing this below the typical band."
+  },
+  {
+    "essay_id": "014f1b3",
+    "evidence_notes": "Main claim: presidential elections should switch to a direct popular vote. Support: brief, partly contradictory reasons ('we wont make the wrong choice', objection to the elector 'slate' system) that are asserted rather than explained or connected with evidence.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "Written as a single undifferentiated block with reasoning that is asserted rather than developed and includes an internally confusing claim about eliminating 'election process at all', so despite a clear overall position the argument is thin and disorganized."
+  },
+  {
+    "essay_id": "0151c0f",
+    "evidence_notes": "Main claim: the 'Face on Mars' is a landform, not evidence of aliens. Support: three distinct reasons (aliens are fictional, humans would already know if aliens existed, landforms coincidentally resemble familiar shapes) each elaborated with examples, including a personal anecdote and a direct NASA quote that is then analyzed rather than just cited.",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "holistic_score": 4,
+    "rationale": "A clearly signposted three-reason structure with a matching conclusion, evidence that is actually analyzed (not just quoted) including a personal analogy, and comparatively controlled conventions together make this a clear, reasonably well-developed argument above the typical band."
+  },
+  {
+    "essay_id": "0155be4",
+    "evidence_notes": "Main claim: driverless cars should not be developed. Support: three named reasons (drivers must stay alert, drivers dislike waiting for control, traffic laws assume human control) each given a short dedicated paragraph, though the elaboration within each stays fairly general.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "holistic_score": 3,
+    "rationale": "The essay is clearly organized around three explicitly stated reasons that connect back to the thesis, but each reason is only lightly elaborated and conventions errors are present throughout, keeping it in the typical band."
+  },
+  {
+    "essay_id": "0156ea6",
+    "evidence_notes": "Main claim: exploring Venus will be difficult but is needed as humanity may eventually need another planet. Support: scattered facts (90x atmospheric pressure, past oceans/valleys, unmanned missions) that are listed rather than connected into sustained reasoning toward the claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "Facts are presented as a loose list rather than organized reasoning, the connection between the evidence and the concluding claim about needing another planet is asserted rather than developed, and conventions errors are frequent, placing this below the typical band."
+  },
+  {
+    "essay_id": "015ac93",
+    "evidence_notes": "Main claim: Venus exploration should be pursued using a high-altitude blimp vehicle. Support: specific figures from the source (30 miles high, pressure/heat reduction from 800 to 170 degrees, mechanical computers as a workaround for camera limitations) that are connected logically to explain how the proposed solution addresses Venus's hazards.",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 3,
+    "rationale": "The reasoning is specific and logically connects evidence to the claim (a clear strength in development), but the entire essay is written as one undifferentiated paragraph with no structural breaks, which limits the organization score and keeps the holistic judgment in the typical-to-clear band."
+  }
+]

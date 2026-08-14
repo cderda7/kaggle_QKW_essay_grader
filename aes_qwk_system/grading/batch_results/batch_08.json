@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "019b862",
+    "evidence_notes": "Claims Venus dangers (gravity/hovering, ~170°F heat, near-sea-level pressure) are cited with quotes from paragraph 5, but the essay then pivots to an unrelated, incoherent list of historical/political events (Adam and Eve, Hitler, mass murders, Trump's wall) as its sole support for 'humans can survive on Venus.'",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "Organization is a single undifferentiated block ending in a non-sequitur conclusion, development relies on cited facts but the closing reasoning does not logically connect to the claim, and frequent spelling/mechanics errors (though not fully comprehension-blocking) further weaken the essay."
+  },
+  {
+    "essay_id": "019e2c4",
+    "evidence_notes": "Main claim (limit driving to reduce pollution/smog) is supported with a named quote (Carlos Arturo), the Paris driving-ban/fine statistics, and an EPA appropriations figure, each tied back to the thesis.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "Clear thesis-to-conclusion structure with topic paragraphs and specific, relevant evidence (development) earns a solid mid-high score, tempered by recurring comma-splice and spelling errors that don't block comprehension (conventions)."
+  },
+  {
+    "essay_id": "019e8c3",
+    "evidence_notes": "Claim that driverless cars should not be developed is backed by three distinct reasons (driver inattention, sensor/software failure, liability confusion), each supported with a direct quote from the source text.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "holistic_score": 4,
+    "rationale": "Despite an unusual sentence-per-line layout, the argument builds logically through three well-quoted, well-reasoned points and conventions are largely controlled, yielding a clear, reasonably developed essay per the rubric's band-4 description."
+  },
+  {
+    "essay_id": "01a0d33",
+    "evidence_notes": "Pro-driverless-car stance is supported with several direct quotes (crash-free mileage claim, sensor description, steer/accelerate/brake capability), plus a brief counterargument acknowledgment.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "holistic_score": 3,
+    "rationale": "The essay is organized with intro, evidence paragraphs, and a counterargument nod, but reasoning after each quote is repetitive and surface-level ('this shows/this proves') rather than deeply elaborated, keeping development and the holistic score at the recognizable-argument level."
+  },
+  {
+    "essay_id": "01a39ed",
+    "evidence_notes": "Anti-driverless-car argument cites three paragraph-referenced quotes (driver alertness requirement, in-car display safety feature, liability question) and elaborates each with a concrete hypothetical (e.g., a child running into the road).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "holistic_score": 4,
+    "rationale": "Well-sequenced paragraphs each built around a cited quote plus specific elaborated reasoning (organization/development) with only minor, non-impeding convention errors produce a clear, reasonably well-developed argument."
+  },
+  {
+    "essay_id": "01a53e1",
+    "evidence_notes": "Presents both a pro reason (Venus as Earth's 'twin,' a population backup) and a con (harsh volcanic/seismic conditions), but one 'quote' in paragraph 5 is actually a restatement of the student's own earlier sentence rather than new textual evidence.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The essay has a recognizable pro/con structure and conclusion (organization), but the misattributed quote and generically-stated reasoning limit development, and frequent spelling/word-choice errors (conventions) keep it at the typical band-3 level."
+  },
+  {
+    "essay_id": "01ad79e",
+    "evidence_notes": "Discusses whether school computers should detect student emotions, citing a potential benefit (catching suicidal sadness) and a personal privacy concern, but never commits to a clear position ('I dont know').",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "The essay attempts an argument but never resolves into a clear claim, offers only thin, unelaborated reasoning (development), and has frequent run-ons and mechanical errors (conventions), placing it at the thin/disorganized band."
+  },
+  {
+    "essay_id": "01ae85f",
+    "evidence_notes": "Letter to a state senator gives three explicit numbered reasons for abolishing the Electoral College (majority preference for popular vote, the elector-slate mechanism, inherent unfairness), each restated in its own paragraph.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "holistic_score": 3,
+    "rationale": "The formulaic but clear three-reason structure with topic sentences and closing restatement (organization) is not matched by equally deep elaboration, since each reason is largely restated rather than expanded with new specifics (development), and moderate spelling/word errors also limit conventions."
+  },
+  {
+    "essay_id": "01b55c8",
+    "evidence_notes": "Argument for limiting car usage cites specific data (Vauban, Germany: $40,000 parking spaces, ~70% car-free families, 57% who sold a car) and the Paris smog/driving-ban example.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "Real, specific supporting evidence is present (development), but ideas are loosely sequenced and interspersed with repetitive rhetorical filler rather than a tight logical progression (organization), and frequent spelling/mechanics errors (conventions) place this at the typical band-3 level regardless of its length."
+  },
+  {
+    "essay_id": "01b9b63",
+    "evidence_notes": "Opposes using the Facial Action Coding System in schools, giving three distinct reasons (redundant with just asking students, cost, privacy invasion) and noting the system could misread non-school-related emotions.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "Despite its brevity, the essay states a clear position with multiple distinct, reasonably specific supporting reasons (organization/development per the anti-length-bias standard), while spelling and mechanics errors (conventions) keep it from reaching a higher band."
+  }
+]

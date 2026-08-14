@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "01bb061",
+    "evidence_notes": "Claim: limiting car usage has advantages. Support: cites four sources by name (German suburb, Paris ban, Bogota car-free day, end of car culture) with a few specific facts (e.g., a garage parking space costs $40,000, van/bike-sharing reduces vehicle use), but mostly restates source titles rather than synthesizing an original argument connecting them to the claim.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "Organization is repetitive and formulaic (source titles simply listed at open and close rather than built into a developing argument), development stays largely at the level of source summary with only occasional specific detail, and frequent spacing/punctuation and spelling errors (e.g., 'advanges') place this in the low-to-mid band."
+  },
+  {
+    "essay_id": "01bb07c",
+    "evidence_notes": "Claim (as a letter to a State Senator): the electoral college is flawed. Support: voters vote for electors rather than the president directly, electors need not hold public office, and 17 states went unvisited by candidates in 2000; each point is stated but developed mainly through rhetorical questions and assertion rather than deeper analysis.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The letter has a clear, logically ordered structure (three distinct reasons plus an appeal to the founding fathers) and reasonably specific supporting facts, but development leans on rhetorical questions/assertions rather than sustained reasoning, and frequent spelling and spacing errors (countrie, oppinion, canidate, citezens) keep conventions in the lower-middle band."
+  },
+  {
+    "essay_id": "01bb2f3",
+    "evidence_notes": "Claim: driverless cars are not truly developed yet. Support: three body points (not completely driverless, challenging/hard to drive, not advanced) each use a direct quote from the source text, but all three reasons essentially restate the same underlying point (the human still has to drive) rather than adding distinct reasoning.",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "The essay follows a recognizable three-reason structure with topic sentences and quoted evidence, but the three 'reasons' are redundant restatements of one idea rather than distinct, well-developed points, and errors (Frist, bthe, form for from, inconsistent capitalization) place conventions in the weaker band."
+  },
+  {
+    "essay_id": "01bd69c",
+    "evidence_notes": "Claim: the writer supports the Facial Action Coding System technology used to add/read emotion in images. Support: a comparison to old-style unsmiling portraits, a quote about universal facial expressions, and a personal reaction to the Mona Lisa's new smiling depiction, but the connections between evidence and the central claim stay fairly surface-level.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The essay has a clear intro-body-conclusion shape and ties textual quotes to a personal stance, giving it moderate organization and development, but the conclusion is thin ('So im all for it') and conventions errors (mistainain, conlcusion, Symstem, capitalization slips) are frequent enough to hold conventions down."
+  },
+  {
+    "essay_id": "01c1169",
+    "evidence_notes": "Claim: schools should try the new emotion-reading software. Support: a single well-elaborated reason (identifying when students are confused/bored, extending to mental-health/school-shooting prevention) anchored by a direct quote from paragraph 6, but the essay does not develop additional distinct supporting reasons.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "holistic_score": 3,
+    "rationale": "The single main reason is elaborated with real specificity (quote plus extended real-world consequence reasoning), giving solid development for what's there, but the essay offers only one developed point rather than a fuller multi-point argument, while conventions are comparatively clean and under control."
+  },
+  {
+    "essay_id": "01c3e09",
+    "evidence_notes": "Claim: Venus is a worthwhile but very challenging planet to study. Support: mentions extreme surface temperature, corrosive sulfuric-acid clouds, potential useful metals/gases, and NASA's silicon-based electronics research, but nearly all of this is compressed into a single sprawling run-on sentence with no paragraph breaks.",
+    "organization": 1,
+    "development": 2,
+    "conventions": 1,
+    "holistic_score": 2,
+    "rationale": "The essay contains several relevant, specific facts about Venus (development), but they are packed into essentially one unbroken run-on sentence with no paragraphing or clear intro/body/conclusion (organization), and pervasive grammar/spelling errors (completly, houndred, misterys) make conventions the weakest trait."
+  },
+  {
+    "essay_id": "01c46fa",
+    "evidence_notes": "Claim: technology to read students' facial/emotional expressions is valuable. Support: three body paragraphs each anchored by a direct quote (percent-emotion breakdown quote, universality-of-expression quote, six-basic-emotions quote), with an added original example connecting a facial muscle to anger.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "Clear paragraph-by-paragraph structure with textual evidence integrated into each point, plus an original elaboration (the orbicularis oris example) that goes beyond simple quoting, gives solid organization and development, while conventions errors (arguement, paragragh, oftem) are present but don't impede comprehension."
+  },
+  {
+    "essay_id": "01c5073",
+    "evidence_notes": "Claim: the writer opposes using technology to read students' emotions on privacy grounds. Support: three reasons (privacy, technology being redundant when humans can already read each other, people can mask their true emotions), each developed with a personal example (texting a friend) or a source quote (the percent-emotion breakdown, tied to questioning the Mona Lisa's real feelings).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The essay develops three distinct, clearly organized reasons with personal examples and source evidence woven in, showing solid development and structure, but frequent spelling/apostrophe errors (agaisnt, almsot, techhnology, isnt) and some run-on sentences keep conventions low enough to temper the holistic score."
+  },
+  {
+    "essay_id": "01c5750",
+    "evidence_notes": "Claim: curiosity makes studying Venus worth the danger. Support: an analogy to climbing Mount Everest and a large block quote about mechanical computers/Venus's possible past oceans, but the essay repeats the word 'curiosity' many times and drifts into a tangential aside (guessing candies in a jar) rather than building a tight chain of reasoning.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 1,
+    "holistic_score": 2,
+    "rationale": "The argument circles around the same 'curiosity is worth the risk' idea with a loosely connected Everest analogy and an off-topic digression rather than building logically to a conclusion (organization), leans heavily on a large quoted block rather than original reasoning (development), and has pervasive spelling errors (curosity, studing, heardest, inflentual, somputers) that place conventions in the lowest band."
+  },
+  {
+    "essay_id": "01c5e87",
+    "evidence_notes": "Claim: the writer does not approve of driverless cars. Support: three distinct reasons (unclear fault/liability in a crash, cars are not actually 100% driverless, human skill is still required), each backed by a direct quote from the source text and explained with additional reasoning about real-world implications.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "Three clearly separated, logically sequenced reasons each supported by specific textual quotes and follow-up reasoning (e.g., the liability discussion) give this essay strong organization and development, while conventions errors (litterally, sucessfully, peice, concideration) are noticeable but do not block comprehension."
+  }
+]

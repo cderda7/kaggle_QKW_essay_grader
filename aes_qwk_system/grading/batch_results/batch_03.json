@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "00a6693",
+    "evidence_notes": "Claim: all citizens should join the Seagoing Cowboy/UNRRA program. Support: repaying WWII-era soldiers by delivering aid, seeing historic sites (Acropolis, China, Italian gondola rides), and a counterargument/rebuttal paragraph addressing danger and lost time with recreational activities offered on the trips.",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "Clear intro-body-counterargument-conclusion structure with specific supporting details gives a well-organized, reasonably developed argument, but frequent spelling errors (youself, opprotunities, becuase, benificial) keep conventions and the overall score from going higher."
+  },
+  {
+    "essay_id": "00a6e71",
+    "evidence_notes": "Claim: limiting car use is beneficial. Support: a 50% greenhouse-gas statistic, a list of car ownership costs (permit, payments, gas, repairs), and a safety point that car accidents are a leading cause of death. The text cuts off mid-sentence ('I just') with no conclusion.",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "Each paragraph elaborates its reason with concrete specifics (a statistic, a cost list, accident types), earning it a recognizable-argument score, but the essay lacks a conclusion and conventions errors are frequent (ownly, redouse, expensis, witch) which caps the holistic score at a 3."
+  },
+  {
+    "essay_id": "00aa6de",
+    "evidence_notes": "Claim: an emotion-recognition system would be beneficial in classrooms. Support: general assertion that student emotion affects performance, and that schools could use the data to improve engagement/grades. No quotes or specific figures are used; essay is only two short paragraphs.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "holistic_score": 2,
+    "rationale": "The argument is present but stays at a general, unsupported level with no specific evidence or examples, and the essay lacks real body/conclusion structure, so development and organization pull the holistic score down despite conventions being only moderately flawed."
+  },
+  {
+    "essay_id": "00b2fe2",
+    "evidence_notes": "Claim: driverless cars are a good idea. Support: fewer accidents from drunk/distracted driving, a cited statistic from Sergey Brin about using half the fuel of taxis, and faster/more efficient routing via real-time knowledge of road conditions.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "The essay is organized by reason with a clear intro and conclusion and brings in one specific cited detail (the Brin fuel-savings claim), giving it clear, reasonably supported reasoning, though a casual, run-on sentence style keeps conventions in the mid range."
+  },
+  {
+    "essay_id": "00b3311",
+    "evidence_notes": "Claim (stated awkwardly in the conclusion): studying Venus is worthwhile despite the dangers. Support: a long, list-like recitation of facts pulled from a source about Venus's atmosphere/surface conditions and about WWII-era mechanical computers, but presented largely as an undifferentiated fact dump rather than an argument.",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The essay contains substantial specific factual content, giving it some development credit, but it is essentially one massive undifferentiated paragraph with a garbled, hard-to-parse conclusion and frequent spelling errors, so organization and conventions weigh the holistic score down."
+  },
+  {
+    "essay_id": "00bee4c",
+    "evidence_notes": "Claim: the excitement over driverless cars ignores real risks. Support: drivers becoming reckless/inattentive (texting, sleeping) while trusting the technology, and the possibility of technology failure (miscalculated turns, brake failure) with no clear line of responsibility.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "The essay builds a clear counter-argument with an intro, two developed body paragraphs of concrete risk scenarios, and a reflective conclusion, but comma splices and minor errors (wreckless, decission, teh) keep conventions and the holistic score in the 'clear but not polished' range."
+  },
+  {
+    "essay_id": "00c3589",
+    "evidence_notes": "Claim: the author of 'The Challenge of Exploring Venus' supports his ideas well. Support: direct quotes about a blimp-like vehicle and its limitations, a quote comparing Venus's density/size to Earth's, and the article's closing line about 'edges of imagination and innovation,' each tied to a distinct body paragraph.",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "Direct quotations are integrated into a clearly structured, topic-sentence-driven analysis that logically builds to a summarizing conclusion, but frequent missing spaces and spelling slips (stuying, closests, informend) keep conventions from matching the strong organization."
+  },
+  {
+    "essay_id": "00cb5dc",
+    "evidence_notes": "Claim: the author's suggestion to study Venus should be accepted. Support: a single quoted passage about researchers needing to get close to Venus to sample rock and gas, restated rather than expanded upon; the essay is only two short paragraphs.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "holistic_score": 2,
+    "rationale": "The essay relies on one piece of evidence that is largely repeated rather than analyzed, and lacks meaningful paragraph structure beyond a single claim-and-quote unit, so thin development and organization outweigh its otherwise readable conventions."
+  },
+  {
+    "essay_id": "00ccc2d",
+    "evidence_notes": "Claim: the author is correct that studying Venus is a worthy pursuit despite its dangers. Support: quoted statistics on Venus's hostile conditions (97% CO2 atmosphere, 800-degree surface, 90x atmospheric pressure), quoted evidence that Venus may once have resembled Earth and supported life, and the article's closing rationale about curiosity driving future endeavors, each explained in its own paragraph.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "holistic_score": 5,
+    "rationale": "Multiple well-chosen, directly quoted pieces of evidence are each explained and tied back to the central claim across a logically sequenced set of paragraphs, and conventions are solid apart from occasional spelling slips (Astromoners, tempurature), producing a well-organized, well-developed argument."
+  },
+  {
+    "essay_id": "00d027f",
+    "evidence_notes": "Claim: emotion-recognizing classroom technology will improve education. Support: quotes from the source article (an ad-response analogy, a Dr. Huang quote about detecting boredom/confusion and modifying lessons 'like an effective human instructor'), extended to homeschool and online learning contexts.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "holistic_score": 3,
+    "rationale": "The essay is organized with an intro, quote-supported body paragraphs, and a conclusion, but the use of evidence stays close to paraphrase/summary rather than deeper original analysis, and moderate spelling errors (advancment, insturctor, coclussion) keep conventions and the holistic score in the middle range."
+  }
+]

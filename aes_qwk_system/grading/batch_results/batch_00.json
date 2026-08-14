@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "000d118",
+    "evidence_notes": "Main claim: Vauban's car-free model is a good idea worth emulating. Support: specific statistics (70% of families own no car, 57% sold a car to move there, $40,000 garage spaces, 5,500 residents/sq mi) and a direct quote from David Goldberg tied to the claim that car-centered development should change.",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The argument is recognizable and backed by specific cited evidence (Development), but the entire essay is a single undifferentiated block with no paragraph breaks (Organization), and frequent spelling/run-on errors (Conventions) place it in the modal 3 band despite the errors not blocking comprehension."
+  },
+  {
+    "essay_id": "000fe60",
+    "evidence_notes": "Main claim: the Mars 'face' is a landform, not a martian creation. Support: absence of known life on Mars, comparison to earthly landforms resembling recognizable shapes, and an appeal to the writer's NASA authority.",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "holistic_score": 3,
+    "rationale": "Clear paragraph structure with explicit transitions (First off, Next, Finally) supports a decent Organization score, but the reasoning leans on rhetorical questions and repetition rather than deeper elaboration, and scattered mechanical errors keep Development and Conventions in the mid-range, yielding a modal holistic score."
+  },
+  {
+    "essay_id": "001ab80",
+    "evidence_notes": "Main claim: driverless car technology is not worth pursuing. Support: current tech still requires driver alertness (undermining the 'driverless' premise), existing transportation alternatives, and unresolved liability/lawsuit risk for manufacturers.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "holistic_score": 4,
+    "rationale": "A clear thesis is developed through two well-organized body paragraphs, each elaborating a distinct line of reasoning (technological readiness and legal liability) with reasonable specificity, and sentence control is mostly solid, together supporting a clear, reasonably well-argued essay in the 4 band."
+  },
+  {
+    "essay_id": "001bdc0",
+    "evidence_notes": "Main claim: studying Venus is a worthy pursuit despite its hostile conditions. Support: two directly quoted and cited passages (Venus's extreme atmosphere/geology; NASA's blimp-based exploration concept), each explicitly tied back to the rhetorical strategies (concession, appeal to reason) the author uses.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "The essay integrates specific, well-cited textual evidence and explicitly analyzes the author's rhetorical moves, showing strong Organization and Development, but recurring grammatical and phrasing errors (missing articles, awkward constructions) hold Conventions back and temper the overall holistic score to 4."
+  },
+  {
+    "essay_id": "002ba53",
+    "evidence_notes": "Main claim: the Electoral College should be kept. Support: three enumerated reasons (it is a widely accepted if non-democratic mechanism trusted by parties; popular-vote disputes are more likely than Electoral College disputes; it rebalances influence for large states given Senate apportionment).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The letter previews and addresses three distinct reasons in a clear structure (Organization), with adequate if somewhat repetitive reasoning for each (Development), but frequent spelling errors and awkward bracketed insertions weigh down Conventions, landing the essay at the modal 3 holistic score."
+  },
+  {
+    "essay_id": "0030e86",
+    "evidence_notes": "Main claim: the Electoral College should be abolished. Support: a cited 1960 Louisiana example of near-sabotage of elector votes, and a direct rebuttal to the counterargument about large vs. small state balance, plus a proposed security-camera solution to a security counterargument.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "The essay cites specific sourced evidence and proactively addresses counterarguments (about state-size balance and vote security), giving solid Organization and Development, while minor recurring misspellings keep Conventions slightly lower, producing an overall clear, reasonably well-argued 4."
+  },
+  {
+    "essay_id": "0033037",
+    "evidence_notes": "Main claim: face-recognizing classroom computers would help students. Support: one quoted line from the source text about recognizing confused/bored students, with a brief restatement that struggling students need more instruction.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "The essay is very thinly developed, largely restating a single quoted idea without elaboration (Development), the three short paragraphs offer minimal structural progression (Organization), and frequent spelling/syntax errors make several sentences hard to parse (Conventions), together placing it at the low end of the scale."
+  },
+  {
+    "essay_id": "0033bf4",
+    "evidence_notes": "Main claim: readers should join the Seagoing Cowboys program. Support: three stated reasons (helping other countries, seeing the world, having fun), with two directly quoted lines from the source article tied to the first two reasons.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "holistic_score": 3,
+    "rationale": "The essay follows a recognizable three-reason structure and supports two of its points with cited textual evidence, giving basic Organization and Development, while the choppy one-sentence-per-line style (though mechanically correct) keeps it from rising above the modal 3 band."
+  },
+  {
+    "essay_id": "0036253",
+    "evidence_notes": "Main claim: studying Venus is a worthy pursuit despite danger. Support: quoted passages about Venus's extreme temperature and NASA's blimp concept, though the closing analysis of the danger-related quote contradicts the evidence just cited (claiming Venus 'barely causes danger' after quoting volcanoes/earthquakes/lightning).",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "While the essay attempts a source-based structure with quotes for each point, the reasoning connecting evidence to claims breaks down and is internally contradictory (Development), and pervasive spelling and grammar errors frequently impede clarity (Conventions), together limiting Organization coherence and the overall score to 2."
+  },
+  {
+    "essay_id": "0040e27",
+    "evidence_notes": "Main claim: readers should join the Seagoing Cowboys program. Support: specific details drawn from Luke's account (1945, WWII recovery efforts, UNRRA hiring, two-week Atlantic crossing, destinations including China, Europe, and Greece).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "holistic_score": 3,
+    "rationale": "The essay previews and develops three reasons with some specific, source-grounded details (Development) in a clear paragraph-per-reason structure (Organization), though repetitive 'You'd be...' phrasing and minor mechanical slips keep Conventions and the overall holistic judgment at the modal 3."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "0079f2a",
+    "evidence_notes": "Main claim (implied) is that Venus exploration is informative but dangerous; supporting points are a duplicated/garbled fact about Mars, Venus's CO2 and sulfuric-acid atmosphere, and a vague claim that Venus once had oceans/wildlife, but the facts are listed rather than tied together into a developed argument.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "Organization is weak (facts are strung together with no clear thesis or paragraph logic, including a repeated/garbled sentence), development stays at the level of restated facts without elaboration, and frequent spelling/usage errors (dioixde, Venu's, too see) place this essay in the low band."
+  },
+  {
+    "essay_id": "007db64",
+    "evidence_notes": "Claim is that facial-recognition technology is good because it makes people happier; evidence is the cited happiness/emotion percentages and a direct quote about researchers improving human-computer communication, but the connection to the claim is thin and the conclusion drifts into an unsupported utopian prediction (no violence, no arguments).",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "The essay uses a relevant quote and statistic (Development ~3) but organization is loose (two run-on paragraphs with no clear structure) and conventions errors are frequent and sometimes meaning-affecting (gald, workd, xepress, pefrom), pulling the holistic score down to 2."
+  },
+  {
+    "essay_id": "0081f18",
+    "evidence_notes": "Claim is that self-driving cars would reduce accidents; supporting reasons include a drunk-driving scenario, cost of new roads as a rejected alternative, and a raised counterpoint about liability in a crash, showing an attempt at balanced reasoning.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The essay has a recognizable structure with distinct reasons and a counterargument (Organization/Development ~3), but pervasive conventions issues (no capitalization, run-on sentences, wreacks/stae/beheld) keep the overall holistic score at a typical/modal 3."
+  },
+  {
+    "essay_id": "008341a",
+    "evidence_notes": "Claim is a persuasive recruitment pitch to join the Seagoing Cowboys program; support includes concrete, specific experiences (seeing the Acropolis, a Venice gondola ride, an excavated castle in Crete, the Panama Canal) directly tied to the appeal of joining.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "This is a clearly structured persuasive letter (intro appeal, specific body evidence, closing call to action) with precise, concrete supporting details rather than padding, so Organization and Development both score 4 despite several spelling errors (devestated, expirience, appriciative) that keep Conventions at 3."
+  },
+  {
+    "essay_id": "0084f6c",
+    "evidence_notes": "Claim is that the Facial Action Coding System benefits students; support includes two direct quotes from the article (on describing facial traits and on adapting lessons to a confused/bored student) connected to a discussion of struggling students not asking for help.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "holistic_score": 3,
+    "rationale": "The essay integrates textual quotes and follows a logical intro-body-conclusion shape (Organization/Development ~3), but paragraph-to-paragraph connections are sometimes loose and conventions errors (indivuals, insturctor, diffucult) are frequent enough to keep it at a modal 3 overall."
+  },
+  {
+    "essay_id": "0087059",
+    "evidence_notes": "Claim is that exploring Venus is a valuable but difficult investigation; the essay lists Venus's heat/pressure, the limits of photography from orbit, and NASA's silicon-based electronics projects, but the connections between these facts are frequently garbled or incomplete.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 1,
+    "holistic_score": 2,
+    "rationale": "Although the essay uses First/Secondly/Lastly signposting, the sentences within each section are often incoherent or contradictory (e.g., the NASA paragraph), and conventions errors are severe and pervasive enough to impede understanding in places, so Conventions scores 1 and the holistic score is pulled down to 2 despite the attempted structure."
+  },
+  {
+    "essay_id": "0098ef4",
+    "evidence_notes": "Claim is that limiting car usage benefits society; support draws on multiple direct quotes from 'Car-Free Cities' (Vauban's low-car design, Bogota's bike paths, reduced greenhouse gas percentages) each explained in relation to the thesis.",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "holistic_score": 4,
+    "rationale": "Clear topic sentences, transitions, and a synthesizing conclusion make Organization strong (5), and the essay integrates several specific, relevant quotes (Development 4) with generally clean conventions (4), though some explanatory sentences ('This meaning...') are repetitive rather than precise, keeping the holistic score at 4 rather than 5."
+  },
+  {
+    "essay_id": "00a3575",
+    "evidence_notes": "Claim states exploring Venus is 'not a great idea' yet the essay pivots between danger facts (heat, pressure) and a seemingly unconnected quote about favorable balloon-altitude conditions, without clearly reconciling the two threads.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "The argument is internally inconsistent and the quotes are not clearly connected to the stated claim (Organization/Development ~2), and frequent errors (challege, an incomplete clause 'is a worthy because', atandard) further limit the score to 2."
+  },
+  {
+    "essay_id": "00a4469",
+    "evidence_notes": "Claim previews three specific benefits of the Facial Action Coding System (tailored lessons, preventing stress/anger, making students feel valued); each body paragraph addresses one of the three points in order with reasoning tied back to the article's premise.",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "holistic_score": 4,
+    "rationale": "The essay's tightly matched three-point preview and paragraph structure show strong organizational control (5), reasoning is specific and consistently tied to the claim (Development 4), and conventions are clean (4), yielding an overall holistic score of 4."
+  },
+  {
+    "essay_id": "00a541a",
+    "evidence_notes": "Claim is that studying Venus is worthwhile despite its dangers; support includes direct quotes on Venus's Earth-like features and on NASA's silicon carbide electronics tests lasting three weeks under simulated Venus conditions, each explained in relation to the thesis.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "The essay moves logically from danger to counterargument to specific supporting evidence and a synthesizing conclusion (Organization/Development 4), with conventions (3) solid but marked by some spelling slips (Althrough, fetures), yielding an overall holistic score of 4."
+  }
+]

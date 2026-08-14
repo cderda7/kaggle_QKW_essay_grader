@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "00d4911",
+    "evidence_notes": "Main claim: the electoral college should be abolished. Supporting evidence: the 2000 election (Gore won popular vote, Bush won via electors), a Gallup poll showing 60% preferring direct vote, and the existence of 'faithless electors' in 1960s Hawaii/Louisiana. Evidence connects fairly directly to the claim, including an acknowledged counterargument (certainty of outcome) that is then rebutted.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "The letter has a clear claim, logically sequenced evidence, and even engages a counterargument before returning to the thesis, though frequent capitalization and spelling errors (supposebly, preffered, occured, inconsistent proper-noun capitalization) hold conventions back."
+  },
+  {
+    "essay_id": "00d576b",
+    "evidence_notes": "Claim is inconsistent: the essay opens favoring keeping the electoral college for efficiency of vote-counting, then pivots mid-essay to oppose it as 'unfair, outdated, and irrational,' citing a quoted source about winner-take-all effects and unequal campaign attention to states.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "The essay's stance contradicts itself between paragraphs, quotes are dropped in with little analysis connecting them to a single coherent claim, and frequent grammar, spelling, and run-on sentence errors (etc., governer, voten, arn't, elction) further weaken it."
+  },
+  {
+    "essay_id": "00da297",
+    "evidence_notes": "Claim: the author is right that studying Venus is worth the risk. Evidence cited: NASA's silicon-carbide electronics tested for 3 weeks under Venus-like conditions, and Venus's earth-like surface features (valleys, mountains, craters). Reasoning connecting evidence to claim is thin and includes a factual confusion (calling Venus 'a star we see at night').",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "Basic paragraph structure with a claim and two quoted pieces of evidence is present, but the reasoning linking evidence to argument is shallow and at times illogical, and conventions (capitalization, spelling, run-ons) are weak throughout."
+  },
+  {
+    "essay_id": "00daaa2",
+    "evidence_notes": "Claim: citizens should limit car usage. Evidence: diesel fuel statistics and Paris's partial driving ban (with specific fine amounts) reducing smog, and Bogota's car-free day reducing stress and pollution. Evidence is specific and clearly tied to the claim throughout.",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "holistic_score": 4,
+    "rationale": "Well-organized with topic-driven paragraphs, each supported by specific attributed quotes and statistics that clearly connect to the thesis, with only minor convention slips (Futhermore, partical) keeping it from a higher conventions score."
+  },
+  {
+    "essay_id": "00dd003",
+    "evidence_notes": "Claim: the Facial Action Coding System (FACS) should not be used in schools because it is a distraction, a waste of money, and could enable bullying of students whose emotions are exposed. One source quote on empathy and one on detecting hidden emotions are cited but not deeply unpacked.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "holistic_score": 3,
+    "rationale": "The essay has a recognizable claim and basic paragraph organization with a few distinct reasons, but the reasoning connecting quotes to the argument stays surface-level, and moderate convention errors (mandantory, somone, missing words) are present without blocking comprehension."
+  },
+  {
+    "essay_id": "00e047b",
+    "evidence_notes": "Claim: limiting car usage has positive effects (environment, stress, changing habits). Evidence: Paris's driving ban and smog reduction, Bogota's car-free day, Vauban Germany's car-free urban planning with specific percentages (57% sold cars, 70% own none), and a national decline in licensing among young people, each cited to a numbered source.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "holistic_score": 5,
+    "rationale": "The essay is well-organized around multiple attributed sources, develops each piece of evidence with specific figures and quotations that clearly support the thesis, and conventions are mostly under control aside from a handful of spelling slips (nessecity, enviroment, liscence)."
+  },
+  {
+    "essay_id": "00e3edb",
+    "evidence_notes": "Claim: studying Venus is worth the risk, reasoned loosely from a hypothetical need for a backup planet in case of war or Earth's destruction, and a claim that Venus 'looks the safest' of the planets due to size/shape similarity to Earth.",
+    "organization": 2,
+    "development": 1,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "The reasoning is speculative, disconnected from the source's actual claims, and never anchored in specific textual evidence, while frequent capitalization, spelling, and run-on errors further weaken an already underdeveloped argument."
+  },
+  {
+    "essay_id": "00e5687",
+    "evidence_notes": "Claim: researching Venus is beneficial because it is Earth's closest analog and could help locate needed resources. Evidence: quoted passages on Venus's density/size similarity to Earth and on researchers building heat/pressure-resistant machines, each followed by a brief interpretive sentence.",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "holistic_score": 3,
+    "rationale": "The essay has a recognizable structure of claim, quoted evidence, and restated conclusion, but the analysis after each quote is thin and somewhat circular, and conventions are weak with numerous spelling errors (authour, discoberd, resorces, knowlege)."
+  },
+  {
+    "essay_id": "00eabc5",
+    "evidence_notes": "Claim: FACS technology has no merit in classrooms because it is unreliable and easily manipulated. Evidence: quoted claims that 'facial expressions for each emotion are universal' are rebutted with specific counterexamples (students with autism or physical disabilities), and the Facial Feedback Theory quote is used to argue students could fake emotions to defeat the system.",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "holistic_score": 5,
+    "rationale": "The essay builds a sophisticated, multi-pronged argument with a clear thesis, direct engagement with source quotes, specific counterexamples, and a synthesizing conclusion, with conventions strong apart from a few minor typos (enviroment, credability)."
+  },
+  {
+    "essay_id": "00ef89f",
+    "evidence_notes": "Claim: technology that alters or reads students' emotional expressions is a bad idea because it changes who someone is and could worsen emotional problems instead of addressing them through human connection. The essay relies on general opinion-based reasoning rather than citing specific source evidence.",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "holistic_score": 2,
+    "rationale": "The argument has a discernible claim and a list-like set of reasons, but they are repetitive and never grounded in specific textual evidence, and the essay is marked by frequent grammar and spelling errors (ophion, indivaully, dosnt, alot) that reflect weak conventions control."
+  }
+]
