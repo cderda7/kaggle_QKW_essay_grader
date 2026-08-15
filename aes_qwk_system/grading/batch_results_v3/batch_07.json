@@ -1,5 +1,7 @@
 [
   {
+    "SCORES": "5 vs. 3",
+
     "essay_id": "016010c",
     "evidence_notes": "Main claim: driverless cars are safe and beneficial. Support is drawn heavily from a source article (paraphrased/quoted with paragraph citations) on sensors, fuel savings, and driver-alert features; a counterargument paragraph is raised but rebutted only with a confusing double negative ('no one should have nothing to worry about').",
     "organization": 4,
@@ -12,6 +14,8 @@
     "rationale": "Conventions is the sole severe weakness (score 2, no trait at 1), so the essay is gated into the 1-3 band; since organization and development are comparatively strong and only one trait is weak, it is placed at the upper end of that range (3) rather than lower."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "0163804",
     "evidence_notes": "Main claim: life without cars is better for people and the environment. Directly quotes and interprets three named sources (Heidrun Walter/David Goldberg on Vauban, Robert Duffer on Paris, Carlos Arturo on Bogota) connecting each to reduced stress/pollution.",
     "organization": 4,
@@ -24,6 +28,8 @@
     "rationale": "No severe weakness places the essay in the 4-6 band, but only 2 of 4 traits (organization, development) reach 4, short of the 3-trait requirement, so per the tie-break rule it defaults to the floor of the band, 4."
   },
   {
+    "SCORES": "3 vs. 2",
+
     "essay_id": "01665d5",
     "evidence_notes": "Main claim: the FACS system would help read student emotions via three reasons (identifying emotions, mixed emotions, helping produce emotions/smiles). Quotes from the source are dropped in but explained only with circular restatements (e.g., 'the computer can detect the emotions that person is having').",
     "organization": 3,
@@ -36,6 +42,8 @@
     "rationale": "With three traits at 2 and none at 1, the applicable range is 2-3, and the accumulation of multiple simultaneous weaknesses (not just one) pushes it to the lower end of that range, 2."
   },
   {
+    "SCORES": "4 vs. 3",
+
     "essay_id": "016ed64",
     "evidence_notes": "Main claim: Venus is worth exploring despite its harsh atmosphere, citing the source article's claims that Venus was once Earth-like and may have had oceans, each supported with a direct quote and a brief interpretive sentence.",
     "organization": 4,
@@ -48,6 +56,8 @@
     "rationale": "Conventions is the only severe weakness (score 2, none at 1), gating the essay into the 1-3 band; the relatively solid organization and reasoning keep it at the upper end of the range, 3."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "01711c3",
     "evidence_notes": "Main claim: driverless cars are a positive enhancement, organized around three explicit reasons (fuel/money savings, driving experience/safety record, onboard technology), each supported with a directly quoted, paragraph-cited passage from the source, plus an acknowledgment that full autonomy isn't yet achieved.",
     "organization": 4,
@@ -60,6 +70,8 @@
     "rationale": "No severe weakness places the essay in the 4-6 band, but only organization reaches 4, so the 3-trait requirement for a clean 4 isn't met and it defaults to the floor of the band, 4."
   },
   {
+    "SCORES": "2 vs. 1",
+
     "essay_id": "01846d8",
     "evidence_notes": "Main claim: cutting car use in small suburban cities is good. No source citations or specific evidence are used at all (unlike comparable car-topic essays in this set that quote named sources); reasoning is a short, unsupported list of assumed benefits (less traffic, less pollution, more social interaction, fitness).",
     "organization": 2,
@@ -72,6 +84,8 @@
     "rationale": "A trait scored 1 (development) places the essay in the 1-2 range, and since three additional traits are also at 2 (not a single isolated weakness), it is weighted to the lower end, 1."
   },
   {
+    "SCORES": "4 vs. 5",
+
     "essay_id": "0187e96",
     "evidence_notes": "Main claim: reducing car use benefits people and the environment. Integrates specific data and quotes from four distinct sources (Vauban's Heidrun Walter, Paris's driving ban statistics, Bogota's Carlos Arturo Plaza, national driving-decline data), including a brief acknowledgment of a counterargument about jobs/deliveries.",
     "organization": 5,
@@ -84,6 +98,8 @@
     "rationale": "No severe weakness; organization, development, and conventions all reach 5 while argumentation at 4 is not below 4, satisfying the 'at least 3 traits >=5, none below 4' rule for a 5, but argumentation falls short of the 6 requirement that all four traits be >=5."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "018985d",
     "evidence_notes": "Main claim: the FACS technology is a valuable, extraordinary tool. Cites named researchers (Dr. Huang, Dr. Eckman) and a historical example (Stanislavsky's acting technique), and constructs an original hypothetical classroom scenario to illustrate the application, going a bit beyond bare source paraphrase.",
     "organization": 4,
@@ -96,6 +112,8 @@
     "rationale": "No severe weakness places the essay in the 4-6 band, but only 2 of 4 traits (organization, development) reach 4, short of the 3-trait requirement, so it defaults to the floor of the band, 4."
   },
   {
+    "SCORES": "2 vs. 1",
+
     "essay_id": "018fbeb",
     "evidence_notes": "Main claim: driverless cars are a bad idea. Reasoning relies on a string of loosely related analogies (marriage control, NASCAR/economy, cassette-to-mp3 shift, Model-T replacing horses) rather than any evidence from the source text, and the analogies are not clearly tied back to why driverless cars are unsafe.",
     "organization": 2,
@@ -108,6 +126,8 @@
     "rationale": "A trait scored 1 (development) places the essay in the 1-2 range, and because all four traits are simultaneously weak rather than just one, it is weighted to the lower end, 1."
   },
   {
+    "SCORES": "4 vs. 3",
+
     "essay_id": "018ff85",
     "evidence_notes": "Main claim: driverless cars are becoming the future despite current limitations. Leans heavily on long block quotations from the source text with only thin connective analysis between them, and includes an actual broken sentence split awkwardly across a paragraph boundary ('As soon' / 'has the laws have been made...').",
     "organization": 3,

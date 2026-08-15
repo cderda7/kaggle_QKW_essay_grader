@@ -21,6 +21,20 @@ essay_id, and nothing else — no prose before or after the array. Grade each es
 do not let other essays in this batch influence any score.
 ```
 
+## The `SCORES` field is never part of this prompt
+
+From v3 on, each object in `batch_results_v3/*.json` leads with a `"SCORES": "<human> vs. <system>"`
+field. **Do not add it to the output format this prompt asks for, and do not mention it here.** It
+is injected after grading by `grade_essays.py --annotate-scores`, which reads the gold scores from
+`personal_training_set.csv`. Asking the grader to emit it would require handing the grader the
+human score — the exact thing the "IGNORE the `score` column" instruction above exists to prevent —
+and the resulting QWK would measure only the model's willingness to copy a number it was given.
+
+`grade_essays.py` enforces this: an annotation manifest records every `SCORES` field the script
+wrote, and any `SCORES` field it can't account for aborts assembly as suspected leakage. If you ever
+need to show prior batch results to a model (say, a v4 run comparing itself against v3), generate a
+blind copy first with `--strip-scores --out-dir <dir>` and pass that instead.
+
 ## Why essays are read from disk rather than pasted into the prompt
 
 Keeps the orchestrator simple (no need to escape/embed essay text into prompt strings) and lets

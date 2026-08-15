@@ -1,5 +1,7 @@
 [
   {
+    "SCORES": "2 vs. 4",
+
     "essay_id": "004229b",
     "evidence_notes": "Main claim: driverless cars are unsafe. Reasons given: cars can't reliably detect stop lights/pedestrians and could malfunction, plus one line paraphrased from the source ('these cars need to be proven more safe'); reasoning stays hypothetical throughout with no deeper engagement with source specifics.",
     "organization": 3,
@@ -12,6 +14,8 @@
     "rationale": "With no trait ≤2 the essay clears the severe-weakness gate into the 4-6 band, but with all four traits sitting at 3 none of the step-7 thresholds for 4/5/6 are cleanly met, so it defaults to the floor of that band (4), reflecting a consistent but shallow, minimally-sourced argument."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "0047cb3",
     "evidence_notes": "Main claim: reducing car use lowers stress and pollution. Evidence: two directly quoted source passages (Heidrun Walter on stress relief in Vauban; the Paris smog driving ban), each followed by a single one-line inference tying it to the thesis, with almost no original elaboration or synthesis beyond the quotes.",
     "organization": 2,
@@ -24,6 +28,8 @@
     "rationale": "Three of four traits are severely weak, so the essay is gated into the 1-3 band, and with multiple traits at 2 and none at 1 it is weighted to the lower end of that sub-range for a holistic 2."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "005a72e",
     "evidence_notes": "Main claim: driverless cars are broadly beneficial. Evidence: several direct source quotes with paragraph citations (BMW 'Traffic Jam Assistant,' vibrating driver's seat, roof-mounted sensor), but development drifts into unsupported speculation (medical-assistant robots, a lost camper being guided to safety) not grounded in the source.",
     "organization": 4,
@@ -36,6 +42,8 @@
     "rationale": "The essay clears the gate into the 4-6 band, but only organization reaches 4 while development, conventions, and argumentation sit at 3, so the 3-of-4-traits-≥4 threshold for a clean 4 isn't met and the score defaults to the floor of the compensatory band."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "00613e3",
     "evidence_notes": "Main claim: the president should be elected by popular vote, not the electoral college. Evidence: specific figures (538 electors, 270 needed to win, a cited '60 percent' preference-for-direct-election statistic), plus an explicit concession paragraph acknowledging the pro-electoral-college view before rebutting it.",
     "organization": 4,
@@ -48,6 +56,8 @@
     "rationale": "The essay clears the gate into the 4-6 band; organization and argumentation reach 4 (clear structure, genuine concession-and-rebuttal move) but development and conventions sit at 3, one trait short of the 3-of-4-≥4 threshold, so it defaults to the floor of the compensatory band."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "0065bd6",
     "evidence_notes": "Main claim: driverless cars should not exist. Evidence: three direct quotes from the source with paragraph citations (fault/liability question in paragraph 9, 'none of the cars developed so far are completely driverless' in paragraph 7, laws assuming human control in paragraph 9), each explained in relation to the claim; ends abruptly without a real concluding paragraph.",
     "organization": 3,
@@ -60,6 +70,8 @@
     "rationale": "Development, conventions, and argumentation all reach 4 and organization (the essay's weak point, due to its abrupt non-ending) stays at 3, meeting the step-7 threshold of at least 3 traits ≥4 with none below 3, for a clean holistic 4."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "0066c7c",
     "evidence_notes": "Main claim: driverless cars are bad because they can't be trusted. Evidence: three listed reasons (system malfunction/crashes, too many driverless cars causing traffic and 'junkyard overflow,' pollution from switching fuel systems), but the second and third reasons rely on non-sequitur logic (junkyards overflowing reducing farmland) rather than the source text.",
     "organization": 3,
@@ -72,6 +84,8 @@
     "rationale": "Two traits scored ≤2, gating the essay into the 1-3 band; with the lowest traits at 2 (nothing at 1) and two traits affected, it is weighted to the lower end of that sub-range for a holistic 2."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "006c931",
     "evidence_notes": "Main claim: facial-emotion-reading technology is unfair because people have a right to keep feelings private. Evidence: two direct quotes from Dr. Huang about facial expressions, plus the essay itself notices an apparent internal tension in the source (universal expressions vs. varying degrees of expression) and builds an original example (the Mona Lisa's '9 percent disgusted') to argue emotion data is meaningless without context.",
     "organization": 4,
@@ -84,6 +98,8 @@
     "rationale": "Organization, development, and argumentation all reach 4 (clear arc, well-integrated source quotes, a genuinely original critical observation) while conventions sits at 3 due to frequent minor misspellings, meeting the step-7 threshold of 3 traits ≥4 with none below 3 for a holistic 4."
   },
   {
+    "SCORES": "4 vs. 5",
+
     "essay_id": "006d0e1",
     "evidence_notes": "Main claim: readers should become a 'Seagoing Cowboy.' Evidence: concrete examples (places visited: Greece, Italy, China, Panama Canal; the program's WWII origin), organized into three reasons each built as an explicit concession-then-rebuttal ('Some may say... but...'), a more sophisticated argumentative move than most essays in this set.",
     "organization": 5,
@@ -96,6 +112,8 @@
     "rationale": "Organization, conventions, and argumentation all reach 5 (strong coherence, near-error-free varied prose, repeated substantive concession-rebuttal reasoning) while development sits at 4, meeting the step-7 threshold for a 5 (at least 3 traits ≥5, none below 4), but development falls short of 5 so it doesn't clear the bar for a 6."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "0072128",
     "evidence_notes": "Main claim: limiting car usage benefits the environment and communities. Evidence: properly cited statistics and quotes from three distinct named sources (Rosenthal on emissions, Duffer on Paris congestion drop, Selsky on Bogota's car-free day), each tied to a clear topic sentence.",
     "organization": 5,
@@ -108,6 +126,8 @@
     "rationale": "All four traits are ≥4 (organization and development at 5, conventions and argumentation at 4 due to frequent minor spelling errors and argumentation being mostly strong synthesis rather than original insight), clearly meeting the threshold for 4, but only 2 of 4 traits reach 5 so the essay doesn't clear the 3-of-4-≥5 threshold required for a holistic 5."
   },
   {
+    "SCORES": "3 vs. 2",
+
     "essay_id": "0079938",
     "evidence_notes": "Main claim: unclear/self-contradictory — opens against driverless cars, then endorses them for blind riders and short trips, calls them 'sort of a good idea,' and ends on an unresolved list of pros without ever settling a position. Evidence: vague, hedged hypotheticals ('malfunction and blow up or something') with no reference to the source text at all.",
     "organization": 2,

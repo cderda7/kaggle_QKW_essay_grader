@@ -1,5 +1,7 @@
 [
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "0079f2a",
     "evidence_notes": "Claim is unclear (mixes wanting to put people on Venus with facts about its danger); cites the source's 97% carbon dioxide and sulfuric-acid-cloud facts but connects them loosely; contains a duplicated/garbled sentence ('Also whats possibly on Also whats possibly on Mars') that breaks coherence.",
     "organization": 2,
@@ -12,6 +14,8 @@
     "rationale": "Multiple traits (organization, development, argumentation) sit at the severe-weakness threshold of 2 with none at 1, so per the gate the essay is weighted to the low end of the 2-3 band."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "007db64",
     "evidence_notes": "Claim is that facial-recognition technology's smile-detection is good because it correlates with happiness, supported by cited percentages (83% happy, etc.) and one direct quote from D'Alto's article; reasoning leaps unsupported to a claim that the technology will eliminate 'violence' and 'argument' worldwide.",
     "organization": 2,
@@ -24,6 +28,8 @@
     "rationale": "With all four traits at the severe-weakness level of 2 and none at 1, the gate places the essay in the low end of the 2-3 band given the breadth of weakness across every dimension."
   },
   {
+    "SCORES": "3 vs. 3",
+
     "essay_id": "0081f18",
     "evidence_notes": "Claim: self-driving cars reduce wrecks and increase safety; supports with a drunk-driving hypothetical and references the source's liability question ('should the driver be blamed or the companies... beheld responcibale'), showing some awareness of a counterargument.",
     "organization": 3,
@@ -36,6 +42,8 @@
     "rationale": "Only one trait (conventions) is at the severe-weakness threshold while organization, development, and argumentation are all a solid 3, so the essay lands at the upper end of the gated 2-3 band."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "008341a",
     "evidence_notes": "Claim: readers should join the UNRRA Seagoing Cowboys program; supports with specific, source-drawn concrete details (Acropolis, Venice gondola, excavated Crete castle, Panama Canal) and direct emotional appeals/rhetorical questions to the reader.",
     "organization": 5,
@@ -48,6 +56,8 @@
     "rationale": "Three of four traits (organization, development, argumentation) are at or above 4 with none below 3, meeting the step-7 threshold for a 4 despite recurring spelling errors ('devestated,' 'expirience') keeping conventions at 3."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "0084f6c",
     "evidence_notes": "Claim: facial-recognition technology helps identify hidden student emotions and should be used in classrooms; supports with two direct, properly attributed quotes from 'Making Mona Lisa Smile' tied to concrete classroom applications (recognizing confusion/boredom, adjusting lessons).",
     "organization": 4,
@@ -60,6 +70,8 @@
     "rationale": "Organization, development, and argumentation all reach 4 with conventions at 3 (not below 3), satisfying the step-7 rule for a 4 despite recurring spelling errors and one garbled sentence ('By being said the students...')."
   },
   {
+    "SCORES": "1 vs. 1",
+
     "essay_id": "0087059",
     "evidence_notes": "The essay never takes a real position (closing only that scientists find Venus 'interesting'); it cites source facts (CO2 percentage, 800°F temperature, NASA silicon-carbide electronics) but paragraphs 3-4 are so garbled ('the light cannot penetrate th eatmosphere and it's from photography an dvideography ineffective') that the intended reasoning is largely unrecoverable.",
     "organization": 2,
@@ -72,6 +84,8 @@
     "rationale": "A trait score of 1 (argumentation) combined with three additional traits at the severe-weakness level of 2 places the essay at the bottom of the gated 1-2 range under the two-or-more-severe-weaknesses rule."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "0098ef4",
     "evidence_notes": "Claim: limiting car usage reduces pollution and increases activity; extensively supports with multiple direct quotes and statistics from 'Car-Free Cities' (12%/50% emissions figures, 118 miles of bike paths, the Vauban suburb example) tied back to the thesis in each paragraph.",
     "organization": 5,
@@ -84,6 +98,8 @@
     "rationale": "Only two traits (organization, development) reach the ≥5 threshold required for a 5 (step 7 requires at least 3), so despite strong overall quality the essay is capped at 4, where all four traits are ≥4 and none is below 3."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "00a3575",
     "evidence_notes": "Thesis is self-contradictory, opening 'The challenge of exploring Venus is not a great idea' immediately followed by 'Studying Venus is a worthy [pursuit]'; cites source facts (90x atmospheric pressure, hottest surface temperature) but also drops in a quote about survivable float conditions (170°F, sea-level pressure) without reconciling it with the stated position.",
     "organization": 2,
@@ -96,6 +112,8 @@
     "rationale": "Three traits at the severe-weakness level of 2 (none at 1) place the essay at the low end of the gated 2-3 band, driven mainly by the essay's contradictory, unreconciled central claim."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "00a4469",
     "evidence_notes": "Clear three-part thesis (helps students learn, prevents stress/anger, makes students feel valued) with each body paragraph addressing one prong in order and a conclusion that mirrors the introduction; support paraphrases the article's ideas (lesson tailoring, confusion recognition) but includes no direct quotations.",
     "organization": 5,
@@ -108,6 +126,8 @@
     "rationale": "Only organization reaches ≥5 (the 5-threshold needs 3 traits at ≥5), so the essay is placed at 4 under step 7, where all four traits are ≥4 and none is below 3."
   },
   {
+    "SCORES": "2 vs. 3",
+
     "essay_id": "00a541a",
     "evidence_notes": "Essay accurately summarizes the source's argument via well-integrated direct quotes (e.g., 'Astronomers are fascinated by Venus because it may well once have been the most Earth-like planet...') but consistently frames the position as 'the author states' / 'the author supported his idea' rather than developing the student's own stance.",
     "organization": 4,

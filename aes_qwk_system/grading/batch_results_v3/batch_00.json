@@ -1,5 +1,7 @@
 [
   {
+    "SCORES": "3 vs. 2",
+
     "essay_id": "000d118",
     "evidence_notes": "Claims car-free Vauban, Germany is a good model, citing 70%/57% car-ownership statistics and a David Goldberg quote from the source; reasoning stays surface-level ('i think that was very true') without deeper analysis of why the model works.",
     "organization": 2,
@@ -12,6 +14,8 @@
     "rationale": "Two traits (organization, conventions) are at the severe-weakness threshold, which pushes the essay to the low end of the 1-3 band despite adequate use of source statistics in development and a clear position in argumentation."
   },
   {
+    "SCORES": "3 vs. 3",
+
     "essay_id": "000fe60",
     "evidence_notes": "Argues the 'Face on Mars' is a natural landform, citing the absence of plant life and comparisons to earthly landforms, but leans heavily on self-proclaimed NASA authority rather than substantive evidence.",
     "organization": 4,
@@ -24,6 +28,8 @@
     "rationale": "Only one trait (development) is severely weak while organization is clearly signposted ('First off'/'Next'/'Finally') and conventions/argumentation are mid-range, placing the essay at the higher end of the 2-3 disjunctive range."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "001ab80",
     "evidence_notes": "Argues driverless-car technology is unnecessary and risky, developing two reasons in depth: it doesn't solve a real problem given existing transit options, and it raises unresolved liability/lawsuit issues for manufacturers.",
     "organization": 5,
@@ -36,6 +42,8 @@
     "rationale": "No trait scored below 3, and organization, development, and argumentation are all at least 4, meeting the level-4 compensatory rule; only one trait reaches 5, short of the majority-at-5 needed for a level-5 score."
   },
   {
+    "SCORES": "4 vs. 5",
+
     "essay_id": "001bdc0",
     "evidence_notes": "Analyzes how the source author uses concession and appeals to reason, citing paragraph-numbered quotes about Venus's hostile atmosphere and a blimp-based exploration proposal, to argue studying Venus is a worthy pursuit.",
     "organization": 5,
@@ -48,6 +56,8 @@
     "rationale": "Three of four traits (organization, development, argumentation) are at least 5 and none is below 4, meeting the level-5 compensatory threshold; occasional grammar lapses keep conventions at 4 and hold the essay back from a 6."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "002ba53",
     "evidence_notes": "A persuasive letter to a state senator supporting the Electoral College, giving three source-derived reasons (its 'anachronism' framing, lower dispute risk than the popular vote, and protection for large states) and briefly conceding then rebutting the 'undemocratic' counterargument.",
     "organization": 4,
@@ -60,6 +70,8 @@
     "rationale": "Three of four traits (organization, development, argumentation) are at least 4 and conventions is not below 3, satisfying the level-4 compensatory rule despite frequent spelling errors."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "0030e86",
     "evidence_notes": "Proposes abolishing the Electoral College, citing the 1960 Louisiana elector-sabotage example with explicit source attribution, then proactively proposes and defends an alternative direct-vote system against a sabotage counterargument.",
     "organization": 4,
@@ -72,6 +84,8 @@
     "rationale": "All four traits are at least 4 with none below 3, clearing the level-4 threshold, but only argumentation reaches 5, short of the three-traits-at-5 needed for a level-5 score."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "0033037",
     "evidence_notes": "A very brief essay claiming face-recognizing classroom computers would help confused or bored students, supported by a single source quote with minimal elaboration and no counterargument.",
     "organization": 3,
@@ -84,6 +98,8 @@
     "rationale": "Two traits at the severe-weakness threshold push the essay toward the lower end of the 2-3 range despite a basic three-part structure."
   },
   {
+    "SCORES": "3 vs. 3",
+
     "essay_id": "0033bf4",
     "evidence_notes": "Advocates joining the Seagoing Cowboys program, citing two direct source quotes about awareness of other countries and seeing Europe/China, but the content is broken into a list of single-sentence 'paragraphs' rather than developed prose.",
     "organization": 2,
@@ -96,6 +112,8 @@
     "rationale": "Only organization is severely weak while development, conventions, and argumentation are all mid-range, placing the essay at the higher end of the 2-3 disjunctive range."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "0036253",
     "evidence_notes": "Attempts a close-reading structure on a Venus-exploration source, quoting it three times, but the explanations of each quote are frequently incoherent (e.g. 'halping people wiht the electronic such as vehicule') and riddled with language errors.",
     "organization": 3,
@@ -108,6 +126,8 @@
     "rationale": "With three of four traits at the severe-weakness threshold, the essay is weighted to the low end of the 1-3 band despite having a recognizable three-part structure."
   },
   {
+    "SCORES": "3 vs. 3",
+
     "essay_id": "0040e27",
     "evidence_notes": "Argues for joining the Seagoing Cowboys program using concrete details (Luke, 1945, UNRRA, a two-week Atlantic crossing) organized into distinct reason-based paragraphs, but relies almost entirely on a repetitive 'You'd be...' sentence pattern.",
     "organization": 4,

@@ -1,5 +1,7 @@
 [
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "00d4911",
     "evidence_notes": "Claim: electoral college should be abolished. Cites the 2000 election (Gore won popular vote, Bush won electorally) and a source-2 Gallup poll (60% prefer direct vote); concedes a pro-EC point (source 3) before rebutting it with the faithless-elector example (1960s Hawaii/Louisiana, Nixon).",
     "organization": 4,
@@ -12,6 +14,8 @@
     "rationale": "Three traits (organization, development, argumentation) reach 4 with none below 3, meeting the step-7 threshold for a 4; conventions lags at 3 due to an accumulation of capitalization/spelling errors, which is exactly why it doesn't clear the 5 threshold."
   },
   {
+    "SCORES": "1 vs. 2",
+
     "essay_id": "00d576b",
     "evidence_notes": "Claim is self-contradictory: opens defending the electoral college on unclear procedural grounds, then quotes the source calling it 'unfair, outdated, and irrational' and states a preference to end it; scattered facts (538 electors, winner-take-all, media-market ad exposure) are never resolved into one coherent position.",
     "organization": 2,
@@ -24,6 +28,8 @@
     "rationale": "With all four traits at the severe-weakness threshold of 2 and none at 1, the gate places the essay in the 2-3 range, and four simultaneous weaknesses push it to the low end at 2."
   },
   {
+    "SCORES": "3 vs. 3",
+
     "essay_id": "00da297",
     "evidence_notes": "Claim: agrees studying Venus is worth the danger. Quotes the source on NASA's silicon-carbide electronics surviving 3 weeks in simulated Venus conditions and on Venus's earthlike surface features, but repeatedly asserts the factually confused idea that Venus is also 'a star we see at night.'",
     "organization": 3,
@@ -36,6 +42,8 @@
     "rationale": "No trait reaches 4, so none of the step-7 thresholds for 4/5/6 are met (uniformly middling at 3 across organization, development, conventions, and argumentation), so the score defaults down to 3 rather than rounding up."
   },
   {
+    "SCORES": "3 vs. 3",
+
     "essay_id": "00daaa2",
     "evidence_notes": "Claim: citizens should limit car usage. Uses direct source quotes on France's diesel-driven pollution and driving ban (with specific fine/percentage figures) and on Bogota's car-free day, tying both to the argument for reduced car use.",
     "organization": 4,
@@ -48,6 +56,8 @@
     "rationale": "Only two of four traits (organization, development) reach 4, short of the three-trait majority step 7 requires for a 4, so with conventions and argumentation at 3 the score defaults down to 3."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "00dd003",
     "evidence_notes": "Claim: FACS technology doesn't belong in schools because it's a distraction, a waste of money, and a bullying risk. Uses two loosely-integrated source quotes (on empathy and on detecting hidden emotions) without clearly explaining how they connect to the reasons given.",
     "organization": 3,
@@ -60,6 +70,8 @@
     "rationale": "With two traits at the severe-weakness threshold of 2 and none at 1, the gate places the essay in the 2-3 range, and having two simultaneous weaknesses (development, conventions) weights it to the low end at 2."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "00e047b",
     "evidence_notes": "Claim: limiting car usage benefits environment and reduces stress. Draws on four distinct sources with specific detail: Paris's partial driving ban, Bogota's Day Without Cars, Vauban Germany's car-free planning (with a resident quote), and 2013 US licensing/mileage statistics.",
     "organization": 5,
@@ -72,6 +84,8 @@
     "rationale": "Three traits (organization, development, argumentation) reach 5, but conventions sits at 3 due to frequent misspellings, which fails the step-7 5-threshold's 'none below 4' requirement, so the essay lands at the 4-threshold it does satisfy instead."
   },
   {
+    "SCORES": "1 vs. 2",
+
     "essay_id": "00e3edb",
     "evidence_notes": "Claim: agrees studying Venus is worthwhile, reasoning it would help humanity survive if 'the usa' were destroyed in a war; asserts without source support that Venus 'gets the same oxygen' as Earth and is safe, then contradicts this by saying its closeness to the sun makes safety uncertain.",
     "organization": 2,
@@ -84,6 +98,8 @@
     "rationale": "With all four traits at the severe-weakness threshold of 2 and none at 1, the gate places the essay in the 2-3 range, and four simultaneous weaknesses push it to the low end at 2."
   },
   {
+    "SCORES": "3 vs. 3",
+
     "essay_id": "00e5687",
     "evidence_notes": "Claim: the author is right that researching Venus is beneficial. Integrates several direct source quotes (Venus as Earth's 'twin', once possibly ocean-covered, NASA's engineering approaches) but mostly restates them with minimal independent analysis beyond general agreement.",
     "organization": 4,
@@ -96,6 +112,8 @@
     "rationale": "Only two of four traits (organization, development) reach 4, short of the three-trait majority step 7 requires for a 4, so with conventions and argumentation at 3 the score defaults down to 3."
   },
   {
+    "SCORES": "4 vs. 5",
+
     "essay_id": "00eabc5",
     "evidence_notes": "Claim: FACS technology has no merit in classrooms because the underlying tech is too weak. Rebuts Dr. Huang's own quoted claims point-by-point with specific counterexamples (students with autism/physical disabilities, the Facial Feedback Theory quote used to argue students could 'beat the system').",
     "organization": 5,
@@ -108,6 +126,8 @@
     "rationale": "Three traits (organization, development, argumentation) reach 5 and conventions is 4, meeting step 7's 5-threshold (at least 3 traits >=5, none below 4), while falling short of 6 since not all four traits are >=5."
   },
   {
+    "SCORES": "1 vs. 1",
+
     "essay_id": "00ef89f",
     "evidence_notes": "Claim (conflated): technology that reads or edits emotional expressions is a bad idea; makes three repetitive, list-style assertions (don't change who you are, don't edit photos, talk to upset people instead) with no source quotes or concrete evidence cited anywhere.",
     "organization": 2,

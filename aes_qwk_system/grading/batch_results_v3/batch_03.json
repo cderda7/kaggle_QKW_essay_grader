@@ -1,5 +1,7 @@
 [
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "00a6693",
     "evidence_notes": "Main claim: all citizens should join the Seagoing Cowboys/UNRRA program; supports with personal experience (nine trips), sights seen (Acropolis, Italy gondola), and a counterargument acknowledging risk/time sacrifice, offset by recreational activities available on the trips.",
     "organization": 4,
@@ -12,6 +14,8 @@
     "rationale": "No trait scored ≤2; organization, development, and argumentation all reach 4 with conventions at 3 (not below 3), meeting the 'at least 3 of 4 ≥4, none below 3' threshold for a 4."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "00a6e71",
     "evidence_notes": "Claim: limiting (not eliminating) car use is beneficial; supports with a 50% greenhouse-gas statistic, cost-of-ownership reasoning, and safety/accident-rate reasoning, but the essay is cut off mid-sentence in what should be the conclusion.",
     "organization": 2,
@@ -24,6 +28,8 @@
     "rationale": "Two traits (organization, conventions) triggered the severe-weakness gate, capping the essay in the 1-3 band; with the lowest trait at 2 (not 1) but two traits at that level, the score is weighted to the low end of the range at 2."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "00aa6de",
     "evidence_notes": "Claim: an emotion-recognition system would benefit classrooms; support is limited to a general assertion that student mood affects grades and a vague hope that schools could use the data to improve engagement, with no specific evidence, source citation, or example.",
     "organization": 3,
@@ -36,6 +42,8 @@
     "rationale": "Two traits at 2 trigger the gate, placing the essay in the 1-3 band; since the lowest score is 2 (not 1) but two traits are ≤2, the placement is weighted toward the low end at 2."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "00b2fe2",
     "evidence_notes": "Claim: driverless cars are a good idea; supports with reduced accidents/drunk-driving deaths, a source-cited fuel-savings figure (Sergey Brin's 'half the fuel' claim), and time-efficiency reasoning about avoiding traffic/construction delays.",
     "organization": 4,
@@ -48,6 +56,8 @@
     "rationale": "No trait scored ≤2 and all four traits reach 4 with none below 3, meeting the compensatory threshold for a 4; no trait reaches 5, so it does not climb higher."
   },
   {
+    "SCORES": "4 vs. 2",
+
     "essay_id": "00b3311",
     "evidence_notes": "Claim: studying Venus (and reviving mechanical-computer technology) is worthwhile; cites specific source facts (silicon carbide electronics, 97% CO2 atmosphere, 800-degree surface temp, WWII mechanical computers) but the two topics are never clearly connected and the concluding paragraph becomes nearly unreadable ('...abd beyind should not be limited by daners abd doubts because uou shoild be expanded...').",
     "organization": 2,
@@ -60,6 +70,8 @@
     "rationale": "Three traits scored ≤2, strongly triggering the gate; with the lowest score at 2 (not 1) but multiple traits at that level, the score is weighted to the low end of the 2-3 range at 2."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "00bee4c",
     "evidence_notes": "Claim: driverless cars are risky and could make drivers reckless/complacent; supports with hypothetical scenarios (texting, sleeping, brake failure, inconclusive command response) rather than direct source citations, and closes with an open rhetorical question rather than a firm resolution.",
     "organization": 4,
@@ -72,6 +84,8 @@
     "rationale": "No trait scored ≤2; organization, development, and conventions all reach 4 with argumentation at 3 (not below 3), meeting the compensatory threshold for a 4."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "00c3589",
     "evidence_notes": "Task is to evaluate how well the source author supports his claim that studying Venus is worthwhile; the essay cites and explains three techniques (a 'blimp' vehicle detail framed as pathos/statistics, density/size facts, and the closing appeal to curiosity), though it mislabels a factual design claim as 'pathos/statistics.'",
     "organization": 5,
@@ -84,6 +98,8 @@
     "rationale": "No trait scored ≤2; all four traits reach 4 or higher, meeting the '4' threshold, but only one trait (organization) reaches 5, so it does not meet the '3 of 4 ≥5' bar required for a 5."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "00cb5dc",
     "evidence_notes": "Claim: the author's suggestion to study Venus should be accepted; the essay relies on a single piece of cited evidence (that researchers must get close to collect rock/gas samples) and then largely restates the same point as its conclusion rather than developing it further.",
     "organization": 2,
@@ -96,6 +112,8 @@
     "rationale": "Three traits scored ≤2, triggering the gate; with the lowest score at 2 (not 1) but multiple traits at that level, the score is weighted to the low end of the 2-3 range at 2."
   },
   {
+    "SCORES": "4 vs. 5",
+
     "essay_id": "00ccc2d",
     "evidence_notes": "Claim: studying Venus is a worthy pursuit; develops three distinct, source-cited lines of support (Venus's extreme atmospheric/surface conditions, its Earth-like history and potential for past life, and the argument that overcoming the challenge would spur further advancement), each tied back to the thesis.",
     "organization": 5,
@@ -108,6 +126,8 @@
     "rationale": "No trait scored ≤2; organization, development, and argumentation all reach 5 while conventions (4) is not below 4, meeting the 'at least 3 of 4 ≥5, none below 4' threshold for a 5."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "00d027f",
     "evidence_notes": "Claim: emotion-recognizing classroom software would improve learning; supports with two direct source quotes (Nick D'Alto on ad-reaction technology; Dr. Huang on modifying lessons like 'an effective human instructor') and brief explanations of each, but does not address any drawbacks or complications.",
     "organization": 4,

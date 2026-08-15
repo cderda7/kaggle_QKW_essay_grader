@@ -66,12 +66,17 @@ aes_qwk_system/
     batches.json                      — the 10 batches of 10 essay_ids, shared by every version
     batch_results/batch_00..09.json   — raw v1 grading output (one array of 10 objects each)
     batch_results_v2/batch_00..09.json — raw v2 grading output
-    batch_results_v3/batch_00..09.json — raw v3 grading output (includes gate_applied/gate_rationale)
+    batch_results_v3/batch_00..09.json — raw v3 grading output (includes gate_applied/gate_rationale);
+                                         each object now leads with a post-hoc
+                                         "SCORES": "<human> vs. <system>" line — see below
+    batch_results_v3/_scores_annotation.json — generated manifest backing that field's leakage
+                                         guard; do not hand-edit
     grade_essays.py                   — version-aware orchestration: assembles + validates batch
                                          results into predictions_<version>.csv; docstring documents
                                          the two ways to make this fully headless (real API call vs.
                                          this run's in-session subagent grading); validate_v3_gate()
-                                         is the v3-specific disjunctive/compensatory rule checker
+                                         is the v3-specific disjunctive/compensatory rule checker;
+                                         annotate_scores()/strip_scores() manage the SCORES field
     predictions_v1.csv                — v1 per-essay results
     predictions_v2.csv                — v2 per-essay results (adds system_argumentation column)
     predictions_v3.csv                — v3 per-essay results (adds system_gate_applied column)
@@ -96,6 +101,51 @@ aes_qwk_system/
 `personal_training_set.csv` itself is **not duplicated** here — everything reads it from its
 existing location in the project folder, so there's a single source of truth.
 
+## The `SCORES` field, and why the grader never writes it
+
+From v3 on, every object in `batch_results_v3/*.json` leads with a one-line score comparison, so
+reading a batch file tells you where the system agreed with the teacher before you read a single
+rationale:
+
+```json
+{
+  "SCORES": "3 vs. 2",
+
+  "essay_id": "000d118",
+  "evidence_notes": "...",
+  ...
+}
+```
+
+Left number is the human gold score, right is the system's `holistic_score`. **The grader does not
+produce this field.** It's injected afterwards by `grade_essays.py --annotate-scores`, which reads
+the gold scores from `personal_training_set.csv` — the same file the assembler already reads.
+
+That ordering is the whole point, not an implementation detail. Asking the grader to emit
+`"3 vs. 2"` would mean handing it the 3 first, which contradicts the "IGNORE the `score` column"
+instruction the run's blindness depends on and would make QWK a measure of the model's willingness
+to copy a number it was given. The failure wouldn't look like a failure, either — agreement would
+*improve*. So three guards enforce the ordering mechanically rather than by convention:
+
+- **Leakage detection.** `_scores_annotation.json` records every essay this script annotated. A
+  `SCORES` field it can't account for aborts `--assemble` with an explanation, on the assumption
+  that a grader produced it.
+- **`--strip-scores`.** The inverse operation. Run it before showing prior batch results to any
+  model — e.g. a v4 that compares itself against v3 — so gold scores never enter a grader's
+  context. `--out-dir <dir>` writes blind copies and leaves the originals annotated.
+- **CSV cross-check.** `SCORES` comes from the batch JSONs while every reported metric comes from
+  `predictions_<version>.csv`; annotation warns if the two disagree, so the comparison you read is
+  never quietly describing a different run than the headline QWK does.
+
+Enabled for v3 and later only — v1/v2 batch results stay frozen. Future versions opt in with
+`"annotate_scores": True` in `VERSION_CONFIG`. Full reasoning in `decisions_log.md` #41.
+
+> **Open discrepancy (decisions_log.md #42):** the cross-check above fired the first time it ran.
+> `batch_results_v3/` and the checked-in `predictions_v3.csv` currently describe two different v3
+> generations — re-assembling from the batch files changes 69 of 100 rows and moves the metrics from
+> QWK 0.6447 / 54% exact (what `results_v3.json` holds) to QWK 0.6382 / 43% (what this README's
+> headline and decision #40 report). Nothing has been regenerated to resolve it; see #42.
+
 ## Re-running / extending
 
 - To re-assemble predictions from existing batch results:
@@ -103,6 +153,12 @@ existing location in the project folder, so there's a single source of truth.
   needs `PERSONAL_TRAINING_SET_CSV=<path to personal_training_set.csv>` set in the environment if
   it isn't sitting two directories up from `grading/` (see the script's `--source-csv`/env-var
   handling).
+  For v3 this also refreshes the `SCORES` fields in the batch results; add `--no-annotate` to leave
+  those files byte-identical.
+- To refresh `SCORES` without rebuilding the CSV:
+  `cd grading && python3 grade_essays.py --annotate-scores --version v3`
+- To produce blind (SCORES-free) copies before showing batch results to a model:
+  `cd grading && python3 grade_essays.py --strip-scores --version v3 --out-dir /tmp/blind_v3`
 - To recompute metrics: `cd evaluation && python3 compute_qwk.py --version v1` (or `v2`, `v3`)
 - For a v4 (or any future rubric change): add `rubric_v4.md`, grade into a new `batch_results_v4/`,
   add a `"v4"` entry to `VERSION_CONFIG` in `grade_essays.py`, then run both scripts with

@@ -1,5 +1,7 @@
 [
   {
+    "SCORES": "3 vs. 3",
+
     "essay_id": "01290ec",
     "evidence_notes": "Main claim: readers should join the UNRRA seagoing-cowboys program. Support: narrative details from the source bio of Luke Bomberger (335 horses shipped, near-drowning on deck, visits to China/Venice), but the connection to why the reader specifically should join relies on vague feel-good appeals ('you feel alive,' 'anything is possible') rather than direct argument.",
     "organization": 3,
@@ -12,6 +14,8 @@
     "rationale": "Only conventions fell to a severe-weakness level while organization, development, and argumentation each landed at 3, so within the 2-3 disjunctive range the essay is placed at the higher end."
   },
   {
+    "SCORES": "2 vs. 1",
+
     "essay_id": "012c9be",
     "evidence_notes": "Main claim: agrees Venus should be studied further. Support: a brief list of hazards (air pressure, sulfuric acid rain, extreme heat) and a vague, self-generated proposal to engineer resistant metal alloys; the conclusion asserts Venus study could reveal an Earth-like past and a possible future 'hospital planet,' but this is asserted rather than developed.",
     "organization": 2,
@@ -24,6 +28,8 @@
     "rationale": "A trait scoring 1 combined with all four traits at or below 2 places the essay at the low end of the 1-2 range required by the severe-weakness gate."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "012f8f0",
     "evidence_notes": "Main claim: studying Venus is worthwhile despite its dangers. Support: three direct quotes from the source text (once Earth-like/had oceans, familiar surface features, human curiosity), each introduced with a transition word (First, Secondly, Lastly); the final paragraph adds a brief evaluative critique of how well the source made its case.",
     "organization": 4,
@@ -36,6 +42,8 @@
     "rationale": "The essay clears the 4-6 band with no severe weakness, but only two of four traits reach 4 or above, so it defaults to the floor of the compensatory band rather than climbing to 5."
   },
   {
+    "SCORES": "4 vs. 3",
+
     "essay_id": "013ac83",
     "evidence_notes": "Main claim: limiting car usage is beneficial. Support: named-source evidence including Heidrun Walter's testimony on stress reduction, Paris's smog-driven driving ban rivaling Beijing's pollution levels, and Bogota's car-free day quote from Carlos Arturo Plaza, each tied to a distinct reason (stress relief, pollution, health).",
     "organization": 4,
@@ -48,6 +56,8 @@
     "rationale": "With only conventions at the severe-weakness level and the other three traits solidly at 3-4, the essay is placed at the higher end of the 2-3 disjunctive range."
   },
   {
+    "SCORES": "1 vs. 2",
+
     "essay_id": "014eba6",
     "evidence_notes": "Main claim shifts from questioning whether the Mars 'face' suggests aliens to concluding it is a natural mesa. Support: one quote attributed to 'Garvin' and a factual comparison to a Middle Butte landform in Idaho's Snake River Plain; the evidentiary chain linking the opening question to the resolution is thin.",
     "organization": 3,
@@ -60,6 +70,8 @@
     "rationale": "Three of four traits at or below 2 pushes the essay toward the lower end of the 2-3 range under the multiple-weakness weighting rule."
   },
   {
+    "SCORES": "2 vs. 2",
+
     "essay_id": "014f1b3",
     "evidence_notes": "Main claim: presidents should be elected by popular vote rather than through electors. Support: circular assertions ('that's what people want,' 'we know what's best') and a garbled, unelaborated reference to a 'slate of 34 democratic pledged to that person'; written as a single unbroken paragraph.",
     "organization": 2,
@@ -72,6 +84,8 @@
     "rationale": "With every trait at the severe-weakness threshold and none reaching 1, the multiple-weakness rule places the essay at the low end of the 2-3 range."
   },
   {
+    "SCORES": "4 vs. 4",
+
     "essay_id": "0151c0f",
     "evidence_notes": "Main claim: the 'face on Mars' is not evidence of aliens. Support: three reasons (aliens are fictional, we'd have encountered them by now, landforms can coincidentally resemble things), including a personal analogy and a direct source quote that is rebutted point-by-point (scale comparison, camera-angle explanation).",
     "organization": 5,
@@ -84,6 +98,8 @@
     "rationale": "All four traits clear 4, satisfying the compensatory threshold for a 4, but only organization reaches 5, falling short of the '3 traits at or above 5' requirement for a 5."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "0155be4",
     "evidence_notes": "Main claim: driverless cars should not be developed. Support: three reasons (drivers must stay alert during handoffs, drivers will resent waiting their turn, traffic laws assume human control) with some source-based detail on legality, but reasoning like 'nobody wants to wait their turn' is largely unsupported assertion.",
     "organization": 4,
@@ -96,6 +112,8 @@
     "rationale": "The essay reaches the 4-6 band with no severe weakness, but only organization clears 4, so it defaults to the floor score of 4 rather than the middling average of its traits."
   },
   {
+    "SCORES": "1 vs. 2",
+
     "essay_id": "0156ea6",
     "evidence_notes": "Main claim shifts and is unclear: opens noting Venus once had life-supporting features, catalogs exploration difficulties (90x atmospheric pressure, no spacecraft surviving landing more than hours), then concludes with a largely unrelated claim about needing another planet once Earth's materials run out.",
     "organization": 2,
@@ -108,6 +126,8 @@
     "rationale": "With every trait at the severe-weakness threshold, the multiple-weakness rule places the essay at the low end of the 2-3 range."
   },
   {
+    "SCORES": "3 vs. 4",
+
     "essay_id": "015ac93",
     "evidence_notes": "Main claim: Venus exploration is achievable and worth pursuing. Support: specific source-based detail (a blimp vehicle at 30 miles altitude reducing pressure and heat from 800 to 170 degrees, camera limitations from the dense atmosphere, mechanical computers as a workaround) directly tied to the thesis, closing with a source quote.",
     "organization": 4,

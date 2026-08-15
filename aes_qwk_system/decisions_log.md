@@ -309,3 +309,45 @@ sub-score with a cap rule)
     `results_v3.md`. I'm not calling this an unambiguous win or an unambiguous regression — which
     one it is depends on whether under-identifying weak essays or precision in the middle of the
     scale matters more for your use case; flagging that as your call, not mine, to make.
+
+41. **Added a `SCORES` field to the v3 batch results, and made it a strictly post-hoc annotation
+    rather than something the grader emits.** You asked for each object in
+    `batch_results_v3/batch_NN.json` to lead with `"SCORES": "<teacher score> vs. <system score>"`
+    so a reviewer reading a batch file sees the agreement or disagreement before reading the
+    rationale, instead of cross-referencing `predictions_v3.csv`. The obvious implementation —
+    ask the grader for that field in its output format — would have quietly destroyed the project's
+    core premise: the grader is blind to the `score` column (decision #3, and the "IGNORE the score
+    column" instruction in `grading_prompt_template.md`), and a grader that has to print
+    "3 vs. 2" must first be handed the 3. QWK would then be measuring the model's willingness to
+    copy a number it was given, and would be uninterpretable — worse, it would likely look *better*,
+    which is the failure mode that doesn't announce itself. So the field is injected by
+    `grade_essays.py --annotate-scores` after grading, from the same `personal_training_set.csv`
+    the assembler already reads. The grader's prompt and output schema are unchanged.
+
+    Because "we'll just remember not to ask for it" is not a real guarantee across future rubric
+    versions, three mechanical guards back it up: (a) `_scores_annotation.json`, a manifest next to
+    the batch files recording every essay_id the script annotated — a `SCORES` field it can't
+    account for aborts `--assemble` as suspected leakage rather than being silently folded in;
+    (b) `--strip-scores`, the inverse operation, for producing blind copies before showing prior
+    batch output to any model (a v4 that compares itself against v3 is the realistic case);
+    (c) `cross_check_predictions()`, which warns when the batch JSONs' holistic scores disagree with
+    `predictions_<version>.csv`, since `SCORES` is computed from the former while every reported
+    metric comes from the latter.
+
+    Enabled for v3 only, per your call — v1/v2 batch results stay frozen as historical artifacts.
+    Future versions opt in with `"annotate_scores": True` in `VERSION_CONFIG`.
+
+42. **Found while verifying #41: `batch_results_v3/` and `predictions_v3.csv` have drifted apart,
+    and the drift is not caused by anything in #41.** Guard (c) above fired on its first run.
+    Re-assembling `predictions_v3.csv` from the current batch results changes 69 of 100 rows,
+    including 38 holistic scores, and moves the metrics from QWK 0.6447 / 54% exact agreement (what
+    the on-disk `predictions_v3.csv` and `results_v3.json` contain) to QWK 0.6382 / 43% (what the
+    README headline and decision #40 report). In other words the two artifacts describe two
+    different v3 generations, and the narrative written up in #38–40 matches the *batch files*,
+    while `results_v3.json` matches the CSV. Relatedly, #39 describes reclassifying the non-severe
+    threshold checks in `validate_v3_gate()` from hard violations to SOFT advisories, but the
+    function in the working tree still emits them as hard violations (10 fire on the current batch
+    data). Left both alone rather than picking a side: regenerating the CSV would overwrite reported
+    results, and re-editing the validator would overwrite code, and which artifact is authoritative
+    is a question about what actually happened in that run, not something to infer. Flagged for
+    Carson to resolve; `--assemble` reproduces the batch-derived numbers whenever he wants them.
