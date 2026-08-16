@@ -23,7 +23,7 @@ do not let other essays in this batch influence any score.
 
 ## The `SCORES` field is never part of this prompt
 
-From v3 on, each object in `batch_results_v3/*.json` leads with a `"SCORES": "<human> vs. <system>"`
+From v3 on, each object in `batch_results_v3_iter3/*.json` leads with a `"SCORES": "<human> vs. <system>"`
 field. **Do not add it to the output format this prompt asks for, and do not mention it here.** It
 is injected after grading by `grade_essays.py --annotate-scores`, which reads the gold scores from
 `personal_training_set.csv`. Asking the grader to emit it would require handing the grader the

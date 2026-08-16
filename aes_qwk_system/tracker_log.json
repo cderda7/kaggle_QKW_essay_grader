@@ -51,5 +51,21 @@
     "delta": "4-6 compensatory band now 3-6 compensatory band \u2013 a student with no individual score less than 3 is guaranteed at least a 3, not at least a 4 as previously , 2 traits = 1 \u2192 holistic = 1",
     "rationale": "",
     "concerns": ""
+  },
+  {
+    "commit_sha": "",
+    "iteration_index": 5,
+    "label": "fourth iteration",
+    "qwk": 0.6583751467919292,
+    "qwk_source": "aes_qwk_system/evaluation/results_v4.json",
+    "qwk_notes": [
+      "exact agreement from 54% \u2192 54% (unchanged)",
+      "adjacent agreement from 93% \u2192 94%",
+      "MAE from 0.530 \u2192 0.520",
+      "\u03940.0137 is 0.14 random-baseline SDs \u2014 inside noise, not a meaningful QWK move"
+    ],
+    "delta": "trait weights made explicit and unequal (argumentation 0.35, organization 0.25, development 0.25, conventions 0.15); compensatory bands test weight mass >= 0.75 instead of counting 3 of 4 traits; gate's four-trait average becomes weighted",
+    "rationale": "argumentation should drive the score more than conventions. Weight mass is a strict generalisation of v3's count rule (3 of 4 equal-weighted = 0.75), so nothing moves except what the weights say should. Derived from v3's trait scores rather than re-graded \u2014 an equal-weight recompute reproduces all 100 graded holistic scores and gate_applied values exactly, so the entire diff is attributable to the weights.",
+    "concerns": "Only 1 of 100 essays changed (0105e2e, 4\u21923, human=2). Footprint is structural: 49/100 essays are decided by the unweighted severe-weakness gate before any weight applies, and the mass rule differs from the count rule for exactly one trait subset. v4 was not graded, so it does not measure whether telling a grader about the weights would also shift trait scores."
   }
 ]

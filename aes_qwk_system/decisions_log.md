@@ -351,3 +351,119 @@ sub-score with a cap rule)
     results, and re-editing the validator would overwrite code, and which artifact is authoritative
     is a question about what actually happened in that run, not something to infer. Flagged for
     Carson to resolve; `--assemble` reproduces the batch-derived numbers whenever he wants them.
+
+## Resolving #42, and the v4 trait weighting
+
+43. **#42 is resolved in favour of `predictions_v3.csv`, which is the opposite of what #42's own
+    framing implies.** #42 left open which of the two v3 generations was authoritative, noting only
+    that the README/#38–40 narrative matches the batch files while `results_v3.json` matches the
+    CSV. `tracker_log.json` settles it, and it wasn't consulted when #42 was written. Entry 4
+    ("third iteration") records **QWK 0.6446754 — the CSV's exact number** — together with a real
+    rubric delta: *"4-6 compensatory band now 3-6 compensatory band – a student with no individual
+    score less than 3 is guaranteed at least a 3, not at least a 4 as previously, 2 traits = 1 →
+    holistic = 1."* Both of those rules are present in `rubric_v3.md` and in `validate_v3_gate()`
+    as they sit on disk. Entry 3 ("second iteration") records QWK 0.6381990 — the batch files'
+    number. Corroborating: only **33 of 100 trait vectors and 4 of 100 rationales** match across
+    the two artifacts, so the CSV is a *separate, later grading run*, not a recompute of the batch
+    files under changed rules.
+
+    So the ordering is: iteration 3 graded → `batch_results_v3/` saved → CSV built; then
+    `rubric_v3.md` was edited and **iteration 4 re-graded, overwriting the CSV and
+    `results_v3.json` but never saving its batch JSONs**. `batch_results_v3/` is the stale artifact
+    and the CSV is current — the reverse of #42's reading. Re-assembling from the batch files, as
+    #42 offered to do, would have silently rolled v3 back one iteration.
+
+    Actions taken, none of them destructive: renamed `grading/batch_results_v3/` →
+    `grading/batch_results_v3_iter3/` so the directory states which generation it holds (contents
+    and its `_scores_annotation.json` untouched); repointed `VERSION_CONFIG["v3"]` at the new name
+    with a comment that `--assemble --version v3` therefore regenerates *iteration-3* numbers, not
+    the checked-in CSV; and added headers to `README.md` and `results_v3.md` marking which run each
+    narrative describes. Nothing was regenerated and no graded output was overwritten.
+
+44. **Consequence for #38–39, which are now historical rather than open.** The "all-3s dead zone"
+    (#38) — trait profiles with no trait ≥4 being neither gated nor able to clear the old band-4
+    threshold, leaving graders to resolve 14 essays two different ways — was a finding about
+    *iteration 3*. Iteration 4's 3–6 compensatory band closed it by construction: clearing the gate
+    now guarantees at least a 3, so there is no gap to fall into. Evidence that it is genuinely
+    closed rather than merely restated: the fidelity check in #46 reproduces all 100 of iteration
+    4's holistic scores mechanically, meaning zero essays were resolved by grader discretion.
+    #39's unapplied SOFT reclassification of `validate_v3_gate()` is moot for the same reason —
+    it was a patch for grader drift that iteration 4 does not exhibit. Both left in place as the
+    record of what happened, with pointers added rather than edits to the original text.
+
+45. **Weights enter as *weight mass*, not as a weighted average — the single most consequential
+    choice in v4.** You asked for argumentation 0.35 / organization 0.25 / development 0.25 /
+    conventions 0.15, keeping the established scoring rules. Those rules almost never average: they
+    *count* ("at least 3 of the 4 traits at/above X"). Two translations were possible:
+
+    - **Weight mass (chosen).** "≥3 of 4 traits" becomes "traits carrying ≥0.75 of total weight."
+      Since 3 of 4 equally-weighted traits carry exactly 0.75, this is byte-for-byte v3's rule
+      under the old weights — a strict generalisation, so the weights are provably the only thing
+      that can move a score. Under the new weights exactly one subset behaves differently:
+      {organization, development, conventions} carries 0.65 and no longer clears the bar, so the
+      essays that move are those where argumentation is the sole trait below the threshold.
+    - **Weighted mean as the placement engine inside each band (rejected).** Simulated: moves ~22
+      essays and scores *worse* (QWK 0.630 vs v3's 0.645). It also reintroduces precisely the
+      averaging behaviour #33 added the counting rule to block — a single strong trait carrying
+      three middling ones. Rejecting a bigger visible effect in favour of a smaller correct one is
+      the call here; flagging it as a call rather than an obvious choice.
+
+    The gate's one genuine averaging step ("exactly one trait ==1 → average the four traits") does
+    become a weighted mean, since it was already an aggregation.
+
+46. **v4 was derived from v3's trait scores, not re-graded — and the derivation is gated on a
+    fidelity check rather than on the assumption that it's safe.** Every prior version re-graded
+    all 100 essays. A weight change doesn't touch what a grader does (read the essay, assign four
+    trait scores), only how those four numbers combine, so `grade_essays.py --derive --version v4`
+    recomputes holistic scores from `predictions_v3.csv` and carries the trait scores through
+    untouched.
+
+    The justification is empirical, not asserted: `check_v4_fidelity()` runs the v4 scoring
+    function over all 100 v3 trait vectors with **equal** weights and compares against what the
+    graders actually wrote. It reproduces **100/100 holistic scores and 100/100 `gate_applied`
+    values**. So (a) the aggregation is fully mechanical, (b) iteration 4's grading was completely
+    rule-compliant, and (c) the entire v3→v4 diff is attributable to the weights. The check raises
+    rather than warns, and runs by default before every derivation, so a future edit that breaks
+    the correspondence fails loudly instead of quietly producing a number.
+
+    Cost, stated rather than glossed: v4 has no `batch_results_v4/` and no grader rationales of its
+    own — `predictions_v4.csv` carries generated text describing which rule fired. And
+    `rubric_v4.md` documents a rule no grader was ever run against. Whether *telling* a grader that
+    argumentation is weighted 0.35 also shifts how it assigns trait scores is a real and separate
+    question that this version does not answer; it needs a genuine re-grade and its own version.
+
+47. **The one non-deterministic v3 rule had to be pinned down, and the pinning was verified not to
+    change anything.** v3's "exactly one trait ==2 → holistic is 2 or 3, at grader discretion"
+    cannot survive as-is in a derivation, which has no grader. v4 resolves it with the weighted
+    mean, rounded half up, clamped to [2,3]. This reproduces what the graders did on **all 17** such
+    essays in `predictions_v3.csv` under both the old and new weights — it is a formalisation of
+    observed behaviour, not a new standard. (It is also inert by construction: the lowest possible
+    weighted mean for a profile with one trait at 2 and nothing below 3 is 2.65, which rounds to 3
+    either way.) Recording it because a reader comparing the rubrics will notice the discretion
+    clause disappeared and should know it cost nothing.
+
+48. **The gate stays unweighted, deliberately.** Any trait at ≤2 still gates the essay into the
+    1–3 band, including conventions at its 0.15 weight, and the "2+ traits at 1 → 1" / "2+ traits
+    ≤2 → 2" rules still count severe failures rather than weighing them. Weights govern how traits
+    *aggregate*; they do not govern whether a severe weakness counts as severe. The official
+    rubric's 1/2/3 language is disjunctive — "flawed by ONE OR MORE of the following weaknesses" —
+    and draws no distinction between which dimension the weakness falls in (#27). The "no trait
+    below 3 / below 4" floors on bands 4 and 5, and band 6's "all four ≥5," are unweighted for the
+    same reason: they are membership tests, not aggregations.
+
+    Checked rather than assumed, since this is the main thing blunting the weighting's effect: 49
+    of 100 essays are decided by the gate before any weight is consulted. Making the gate
+    weight-aware changes **zero** essays anyway, because band 4's "no trait below 3" floor catches
+    the same essays and holds them at 3. Dropping the floors as well moves 2 more. Both are changes
+    of standard rather than generalisations, and both need the disjunctive-language argument
+    answered head-on — so neither belongs folded into a weighting change.
+
+49. **Result, reported without inflation: one essay of 100 changes.** `0105e2e` (organization 4,
+    development 4, conventions 4, argumentation 3) drops 4 → 3, because its three strong traits
+    carry 0.65, below the 0.75 bar. Its human score is 2, so it moves toward the rater. QWK goes
+    0.6447 → 0.6584, exact agreement stays at 54%, adjacent rises 93% → 94%, MAE falls 0.530 →
+    0.520. **The QWK delta of +0.0137 is 0.14 random-baseline standard deviations — inside noise**,
+    and should not be reported as a win; the case for v4 is that the rule now encodes the intended
+    weighting, not that the metric moved. The small footprint is structural and was predictable
+    (see #45 and #48): half the corpus is gated before weights apply, and the mass rule differs
+    from the count rule for exactly one trait subset. Full breakdown in `evaluation/results_v4.md`.

@@ -1,5 +1,14 @@
 # v3 results — disjunctive/compensatory gate, grounded in the official PERSUADE rubric
 
+> **⚠️ This file narrates the ITERATION-3 run, which was superseded and is no longer what "v3"
+> means.** `rubric_v3.md` was subsequently edited (4–6 compensatory band widened to 3–6; two traits
+> at 1 forces holistic 1) and all 100 essays re-graded. `tracker_log.json` entry 4 records that
+> iteration at **QWK 0.6447 / 54% exact**, and that is what `predictions_v3.csv` and
+> `results_v3.json` hold today. The numbers below (0.6382 / 43%) come from
+> `grading/batch_results_v3_iter3/`, the earlier generation. Kept unedited as the record of that
+> run and of the "all-3s dead zone" finding, which iteration 4 closed by construction. See
+> `decisions_log.md` #43–44, and `results_v4.md` for the current comparison table.
+
 **QWK = 0.6382** (substantial agreement, Landis & Koch). Essentially tied with v2 (0.6400) — a
 difference of 0.0018, far smaller than the random-shuffle baseline's own standard deviation
 (~0.099), i.e. not a meaningful change in QWK. But the aggregate number hides two real, opposite

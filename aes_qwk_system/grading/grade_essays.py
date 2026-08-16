@@ -27,7 +27,7 @@ WHAT IT DELIBERATELY DOES NOT DO (documented judgment call, see decisions_log.md
         and this script's job is just to assemble and validate them into predictions_<version>.csv.
 
 THE `SCORES` ANNOTATION FIELD (v3+, see decisions_log.md #41):
-  Each object in batch_results_v3/*.json leads with a human-readable comparison field:
+  Each object in batch_results_v3_iter3/*.json leads with a human-readable comparison field:
 
       "SCORES": "5 vs. 4",     # <teacher/human gold score> vs. <system holistic_score>
 
@@ -69,16 +69,26 @@ VERSIONING:
                (written through to predictions_v3.csv as system_gate_applied) so the gate's actual
                effect is auditable per-essay, not just in aggregate. See decisions_log.md #27-37.
                Also the first version to carry the SCORES annotation field (decisions_log.md #41).
-               -> grading/batch_results_v3/*.json         -> predictions_v3.csv
+               -> grading/batch_results_v3_iter3/*.json   -> predictions_v3.csv
+               NOTE the directory name: it holds the *iteration-3* grading run, which is NOT the
+               generation predictions_v3.csv describes. See decisions_log.md #43 (resolving #42).
+  v4         -> NOT A GRADING RUN. Same rules as v3, but the four traits are weighted
+               (argumentation .35 / organization .25 / development .25 / conventions .15) and the
+               compensatory "3 of 4 traits at/above threshold" test becomes "traits carrying >=0.75
+               of total weight at/above threshold". Derived deterministically from v3's trait
+               scores by derive_v4() -- no batch results, no grader. See decisions_log.md #45-49.
+               -> grading/predictions_v3.csv              -> predictions_v4.csv
   Same batches.json (essay_id split) is reused across versions so runs are directly comparable.
 
 USAGE:
     python3 grade_essays.py --assemble --version v1
     python3 grade_essays.py --assemble --version v2
-    python3 grade_essays.py --assemble --version v3   # also refreshes SCORES in batch_results_v3/
+    python3 grade_essays.py --assemble --version v3   # regenerates ITERATION-3 numbers, see #43
     python3 grade_essays.py --annotate-scores --version v3   # annotate only, no CSV rebuild
     python3 grade_essays.py --assemble --version v3 --no-annotate
     python3 grade_essays.py --strip-scores --version v3 --out-dir /tmp/blind_v3
+    python3 grade_essays.py --derive --version v4    # recompute v4 from predictions_v3.csv
+    python3 grade_essays.py --derive --version v4 --check-fidelity   # + equal-weight self-check
 """
 
 import argparse
@@ -95,6 +105,27 @@ BATCHES_FILE = os.path.join(HERE, "batches.json")
 # Post-hoc reviewer annotation. Injected by this script only -- never emitted by a grader.
 SCORES_FIELD = "SCORES"
 ANNOTATION_MANIFEST = "_scores_annotation.json"
+
+# --- v4 trait weighting (decisions_log.md #45) -------------------------------------------------
+# v1-v3 weight the four traits equally without ever saying so: the gate fires on *any* trait <=2,
+# and the compensatory bands ask "are >=3 of the 4 traits at/above X" -- both treat the traits as
+# interchangeable, i.e. 0.25 each. v4 makes the weighting explicit and unequal.
+V4_WEIGHTS = {
+    "organization": 0.25,
+    "development": 0.25,
+    "conventions": 0.15,
+    "argumentation": 0.35,
+}
+EQUAL_WEIGHTS = {k: 0.25 for k in V4_WEIGHTS}
+
+# The compensatory bands become a weight-mass test rather than a head count. The threshold is 0.75
+# precisely because 3 of 4 equally-weighted traits carry 0.75 -- so under EQUAL_WEIGHTS this rule is
+# byte-for-byte v3's "3 of 4" rule, and the new weights are the only thing that can move a score.
+# That equivalence is what makes v4 a strict generalization instead of a second, confounded change.
+# It also means only one trait subset behaves differently under V4_WEIGHTS: {organization,
+# development, conventions} carries 0.65, below the bar -- so the essays that move are exactly those
+# where argumentation is the sole trait below the threshold. See decisions_log.md #45.
+MASS_THRESHOLD = 0.75
 
 VERSION_CONFIG = {
     "v1": {
@@ -113,7 +144,12 @@ VERSION_CONFIG = {
         "extra_fields": [],
     },
     "v3": {
-        "batch_results_dir": os.path.join(HERE, "batch_results_v3"),
+        # Holds the ITERATION-3 grading run. predictions_v3.csv is the *later* iteration-4 run,
+        # whose batch JSONs were never saved -- so `--assemble --version v3` does not rebuild the
+        # checked-in CSV, it regenerates the superseded iteration-3 numbers (QWK 0.638 / 43% exact
+        # instead of 0.645 / 54%). Renamed from batch_results_v3/ to say so in the filename.
+        # decisions_log.md #43 has the evidence and closes #42.
+        "batch_results_dir": os.path.join(HERE, "batch_results_v3_iter3"),
         "predictions_file": os.path.join(HERE, "predictions_v3.csv"),
         "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
         "cap_rule": None,  # superseded by validate_v3_gate() below
@@ -126,6 +162,23 @@ VERSION_CONFIG = {
         # results are already reported, and rewriting them would dirty the diff for no analytical
         # gain (decisions_log.md #41). Future versions opt in by setting this flag.
         "annotate_scores": True,
+    },
+    "v4": {
+        # No batch_results_dir and no grading run: v4 is DERIVED from v3's trait scores by
+        # derive_v4(). A weight change only touches how trait scores aggregate, and an
+        # equal-weight recompute reproduces all 100 of v3's holistic scores and gate_applied
+        # values exactly (--check-fidelity), so re-grading would only add grader noise on top of a
+        # rule change that is fully mechanical. decisions_log.md #46.
+        "derived_from": "v3",
+        "predictions_file": os.path.join(HERE, "predictions_v4.csv"),
+        "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
+        "cap_rule": None,
+        "gate_rule": "v4_weighted",
+        "weights": V4_WEIGHTS,
+        "extra_fields": [("gate_applied", "system_gate_applied")],
+        # No SCORES annotation: no grader is involved in a derived version, so there is nothing to
+        # keep blind, and human_score already sits beside system_holistic_score in the CSV.
+        "annotate_scores": False,
     },
 }
 
@@ -207,6 +260,215 @@ def validate_v3_gate(item, sub_score_fields):
             violations.append(f"holistic_score=6 requires all traits >=5 and >=2 traits ==6, got {traits}")
 
     return violations
+
+
+def weighted_mean(traits, weights):
+    """Weighted mean of the four trait scores. Weights sum to 1.0, so no normalisation needed."""
+    return sum(weights[k] * v for k, v in traits.items())
+
+
+def weight_mass(traits, weights, threshold_score):
+    """Total weight carried by traits scoring at/above threshold_score.
+
+    Under EQUAL_WEIGHTS this is just (count / 4), which is why comparing it against MASS_THRESHOLD
+    (0.75) reproduces v3's "at least 3 of the 4 traits" test exactly.
+    """
+    return sum(w for k, w in weights.items() if traits[k] >= threshold_score)
+
+
+def v4_holistic(traits, weights=V4_WEIGHTS):
+    """v3's scoring rules with the trait weighting made explicit. Pure function, no I/O.
+
+    Returns (holistic_score, gate_applied, gate_rationale, audit) -- the first three are the same
+    values a v3 grader emitted by hand, now computed. `audit` carries the two numbers the rules
+    actually turn on, so the CSV can record which one decided each essay:
+        weighted_mean  -- always defined; the quantity the disjunctive band uses
+        decisive_mass  -- the weight mass at the threshold the compensatory decision turned on,
+                          or None for gated essays and for band 6 (both decided by counting rules,
+                          where no mass was consulted and printing one would invent a rationale)
+
+    Every v3 rule is preserved; exactly two things are weighted:
+
+      1. The compensatory bands (step 7) test weight mass >= 0.75 instead of counting 3 of 4
+         traits. Identical under equal weights (see MASS_THRESHOLD).
+      2. The gate's "exactly one trait ==1 -> average the four traits" (step 6) uses the weighted
+         mean instead of the arithmetic one.
+
+    Deliberately NOT weighted, because these are membership tests rather than aggregations and
+    weighting them would be a second change riding along with this one (decisions_log.md #48):
+      - the gate trigger itself (ANY trait <=2 gates, including conventions at 0.15);
+      - "2+ traits at 1 -> 1" and "2+ traits <=2 -> 2", which count severe failures;
+      - the "no trait below X" floors on bands 4 and 5, and band 6's "all four >=5, at least two
+        at 6" -- all four traits must clear those regardless of weight.
+
+    One v3 rule was not deterministic and had to be pinned down for a code path: "exactly one trait
+    ==2 -> holistic is 2 or 3, at grader discretion". This uses the weighted mean, rounded half up,
+    clamped to [2,3]. That reproduces the grader on all 17 such essays in predictions_v3.csv under
+    both weightings, so it is a formalisation of what the graders actually did, not a rule change.
+    See decisions_log.md #47.
+    """
+    lowest = min(traits.values())
+    n_ones = sum(1 for v in traits.values() if v == 1)
+    n_severe = sum(1 for v in traits.values() if v <= 2)
+    wmean = weighted_mean(traits, weights)
+    audit = {"weighted_mean": wmean, "decisive_mass": None}
+
+    if lowest <= 2:
+        if n_ones >= 2:
+            return 1, "disjunctive", (
+                f"{n_ones} traits scored 1; multiple severe failures force holistic 1"
+            ), audit
+        if n_ones == 1:
+            if wmean < 2:
+                return 1, "disjunctive", (
+                    f"one trait scored 1 and the weighted mean is {wmean:.2f} (<2), so holistic 1"
+                ), audit
+            score = min(3, math.floor(wmean + 0.5))
+            return score, "disjunctive", (
+                f"one trait scored 1; weighted mean {wmean:.2f} rounds to {score} within the "
+                f"1-3 band"
+            ), audit
+        if n_severe >= 2:
+            return 2, "disjunctive", (
+                f"{n_severe} traits scored <=2 (none at 1), which fixes holistic at 2"
+            ), audit
+        sole = next(k for k, v in traits.items() if v == 2)
+        score = max(2, min(3, math.floor(wmean + 0.5)))
+        return score, "disjunctive", (
+            f"{sole} alone scored 2; weighted mean {wmean:.2f} places the essay at {score} "
+            f"within the 2-3 range"
+        ), audit
+
+    n_at_least = lambda t: sum(1 for v in traits.values() if v >= t)
+    if n_at_least(5) == 4 and n_at_least(6) >= 2:
+        return 6, "compensatory", "all four traits >=5 with at least two at 6", audit
+    for band, floor in ((5, 4), (4, 3)):
+        mass = weight_mass(traits, weights, band)
+        if mass >= MASS_THRESHOLD - 1e-9 and lowest >= floor:
+            return band, "compensatory", (
+                f"traits at/above {band} carry weight {mass:.2f} (>= {MASS_THRESHOLD}) and no "
+                f"trait is below {floor}"
+            ), {**audit, "decisive_mass": mass}
+    # Fell through both bands: the essay sits at the compensatory floor. The decision that put it
+    # there is the failed band-4 test, so that is the mass worth recording.
+    mass4 = weight_mass(traits, weights, 4)
+    return 3, "compensatory", (
+        f"no severe weakness, but traits at/above 4 carry only weight {mass4:.2f} "
+        f"(< {MASS_THRESHOLD}), so the essay stays at the compensatory floor of 3"
+    ), {**audit, "decisive_mass": mass4}
+
+
+def check_v4_fidelity(source_predictions, weights=EQUAL_WEIGHTS):
+    """Prove v4_holistic() models the rules v3's graders actually applied, before trusting v4.
+
+    Runs the function over every v3 trait vector with EQUAL weights -- i.e. v3's own rules -- and
+    compares against what the graders wrote. Any disagreement means the derivation is not a
+    faithful re-implementation and v4's numbers would be measuring a coding error rather than the
+    weight change, so this raises instead of warning. decisions_log.md #46.
+    """
+    mismatches = []
+    for row in read_predictions(source_predictions):
+        holistic, gate, _, _ = v4_holistic(row["traits"], weights)
+        if holistic != row["holistic"] or gate != row["gate_applied"]:
+            mismatches.append(
+                f"{row['essay_id']}: graded ({row['holistic']}, {row['gate_applied']}) vs "
+                f"recomputed ({holistic}, {gate}) from {row['traits']}"
+            )
+    if mismatches:
+        raise RuntimeError(
+            f"Fidelity check FAILED on {len(mismatches)} of the source essays -- v4_holistic() "
+            f"does not reproduce the graded scores under equal weights, so it is not a faithful "
+            f"model of the rules v4 claims to be generalising. Fix it before trusting any v4 "
+            f"number.\n  " + "\n  ".join(mismatches[:10])
+            + (f"\n  ... and {len(mismatches) - 10} more" if len(mismatches) > 10 else "")
+        )
+    return True
+
+
+def read_predictions(path):
+    """Read a predictions_<version>.csv into dicts, pulling the four trait scores out as ints."""
+    fields = ["organization", "development", "conventions", "argumentation"]
+    rows = []
+    with open(path, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            rows.append({
+                "essay_id": r["essay_id"],
+                "human_score": int(r["human_score"]),
+                "holistic": int(r["system_holistic_score"]),
+                "traits": {k: int(r[f"system_{k}"]) for k in fields},
+                "gate_applied": r.get("system_gate_applied"),
+                "word_count": int(r["word_count"]),
+                "rationale": r["rationale"],
+            })
+    return rows
+
+
+def derive_v4(version="v4", check_fidelity=True):
+    """Recompute a version's holistic scores from an earlier version's trait scores.
+
+    v4 is not a grading run (see VERSION_CONFIG["v4"]). The four trait scores are carried through
+    untouched -- only the aggregation changes -- so any diff between predictions_v3.csv and
+    predictions_v4.csv is attributable to the weighting and nothing else. The output CSV adds two
+    audit columns -- system_weighted_mean and system_decisive_mass -- recording the quantity each
+    essay's band decision actually turned on, so the weighting's effect is checkable per-essay
+    rather than only in aggregate (the v4 analog of the gate_applied reasoning in
+    decisions_log.md #35). system_decisive_mass is blank where no mass was consulted: gated essays
+    and band-6 essays are decided by counting rules.
+    """
+    cfg = VERSION_CONFIG[version]
+    source_version = cfg["derived_from"]
+    source_file = VERSION_CONFIG[source_version]["predictions_file"]
+    weights = cfg["weights"]
+
+    if not os.path.exists(source_file):
+        raise FileNotFoundError(
+            f"{version} derives from {source_version}, but {source_file} does not exist"
+        )
+
+    if check_fidelity:
+        check_v4_fidelity(source_file)
+        print(f"Fidelity check passed: recomputing {source_version} under equal weights reproduces "
+              f"every graded holistic_score and gate_applied exactly")
+
+    rows = read_predictions(source_file)
+    changed = []
+    out = []
+    for row in rows:
+        holistic, gate, rationale, audit = v4_holistic(row["traits"], weights)
+        if holistic != row["holistic"]:
+            changed.append((row["essay_id"], row["traits"], row["holistic"], holistic))
+        out.append({**row, "new_holistic": holistic, "new_gate": gate, "new_rationale": rationale,
+                    "audit": audit})
+
+    sub_score_fields = cfg["sub_score_fields"]
+    with open(cfg["predictions_file"], "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "essay_id", "human_score", "system_holistic_score",
+            *[f"system_{field}" for field in sub_score_fields],
+            "system_gate_applied", "system_weighted_mean", "system_decisive_mass",
+            "word_count", "rationale",
+        ])
+        for r in out:
+            mass = r["audit"]["decisive_mass"]
+            writer.writerow([
+                r["essay_id"], r["human_score"], r["new_holistic"],
+                *[r["traits"][field] for field in sub_score_fields],
+                r["new_gate"], f"{r['audit']['weighted_mean']:.2f}",
+                "" if mass is None else f"{mass:.2f}",
+                r["word_count"], r["new_rationale"],
+            ])
+
+    print(f"Derived {len(out)} rows from {os.path.basename(source_file)} -> "
+          f"{os.path.basename(cfg['predictions_file'])}")
+    print(f"Weights: " + ", ".join(f"{k}={v}" for k, v in weights.items()))
+    if changed:
+        print(f"{len(changed)} holistic score(s) changed vs {source_version}:")
+        for eid, traits, old, new in changed:
+            print(f"  {eid}  {traits}  {old} -> {new}")
+    else:
+        print(f"No holistic scores changed vs {source_version}")
+    return {"n": len(out), "changed": changed}
 
 
 def score_essay_batch(essay_ids, csv_path, rubric_text):
@@ -441,6 +703,12 @@ def strip_scores(version, out_dir=None):
 
 def assemble(source_csv_path, version, annotate=True):
     cfg = VERSION_CONFIG[version]
+    if cfg.get("derived_from"):
+        raise ValueError(
+            f"{version} has no batch results to assemble -- it is derived from "
+            f"{cfg['derived_from']}'s trait scores rather than graded. Use:\n"
+            f"    python3 grade_essays.py --derive --version {version}"
+        )
     sub_score_fields = cfg["sub_score_fields"]
     extra_fields = cfg.get("extra_fields", [])
     gate_rule = cfg.get("gate_rule")
@@ -558,6 +826,17 @@ if __name__ == "__main__":
                          help="Remove the SCORES field from the version's batch results. Use this "
                               "before showing prior batch output to any model, so gold scores "
                               "never reach a grader's context.")
+    parser.add_argument("--derive", action="store_true",
+                         help="Recompute predictions_<version>.csv from the trait scores of the "
+                              "version it declares in `derived_from`, applying that version's trait "
+                              "weights. For versions that are a pure aggregation change (v4) and so "
+                              "need no re-grading. Trait scores are carried through unmodified.")
+    parser.add_argument("--check-fidelity", action="store_true", default=None,
+                         help="With --derive, verify first that the recompute reproduces the source "
+                              "version's graded scores exactly under equal weights (on by default; "
+                              "disable with --no-check-fidelity)")
+    parser.add_argument("--no-check-fidelity", action="store_true",
+                         help="Skip the fidelity check before deriving. Not recommended.")
     parser.add_argument("--out-dir", default=None,
                          help="With --strip-scores, write blind copies here instead of stripping "
                               "the originals in place")
@@ -572,7 +851,9 @@ if __name__ == "__main__":
     source_csv = args.source_csv or os.path.join(HERE, "..", "..", "personal_training_set.csv")
     source_csv = os.environ.get("PERSONAL_TRAINING_SET_CSV", source_csv)
 
-    if args.assemble:
+    if args.derive:
+        derive_v4(args.version, check_fidelity=not args.no_check_fidelity)
+    elif args.assemble:
         assemble(source_csv, args.version, annotate=not args.no_annotate)
     elif args.annotate_scores:
         annotate_scores(source_csv, args.version)
