@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "019b862",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "had to re-read the opening to find the position and to reconnect the 'close to sea level' quote to air pressure being a danger — the quote-to-claim link is one I supplied"
+  },
+  {
+    "essay_id": "019e2c4",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the Paris partial ban with the 22-euro fine and the 60 percent congestion drop, chosen and used to show a limit on driving actually clears smog"
+  },
+  {
+    "essay_id": "019e8c3",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: 'People would believe they are invincible with the new cars' — builds its own chain from driver complacency to slow reaction to the liability dispute"
+  },
+  {
+    "essay_id": "01a0d33",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "quotes are followed by restatement — 'This proves that the driverless cars can do many things' — and the counterargument is dismissed by assertion rather than answered"
+  },
+  {
+    "essay_id": "01a39ed",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the child or animal running out in front of a driverless car, chosen to show why a distracted driver's reaction time is the real hazard"
+  },
+  {
+    "essay_id": "01a53e1",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "the paragraph-5 'quote' is the writer's own earlier sentence pasted back in, so I had to go back to recover what the futuristic-tools reason was and connect the twin-planet point to the backup-plan claim myself"
+  },
+  {
+    "essay_id": "01ad79e",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "position reverses within the first paragraph (should detect emotions / not the school's business) and I had to reconstruct the stance from the closing consent-form suggestion"
+  },
+  {
+    "essay_id": "01ae85f",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "each body paragraph announces a borrowed source sentence and closes by restating that it was a reason; only the House-of-Representatives inference is the writer's, and it is never developed"
+  },
+  {
+    "essay_id": "01b55c8",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the drunk-driving argument — fewer cars means a drunk person is forced to call a cab or walk, so fewer crashes — an example the writer picked, not the source's"
+  },
+  {
+    "essay_id": "01b9b63",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: 'the student could be sad, angery, or happy about something totally differant from school work, and that means it could throw the machine off' — the writer's own accuracy objection, plus the cheaper alternative of just asking the student"
+  }
+]

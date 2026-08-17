@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "01bb061",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (limiting car usage has advantages) and reasons (clears smog, prevents car jams) statable on one read, with the Paris and Bogota cases used as illustration rather than bare assertion"
+  },
+  {
+    "essay_id": "01bb07c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the elector-based voting system is unfair and should end) and reason (an elector can vote against the voters who trusted him, corrupting the outcome) recovered without rereading; the faithless-elector reason is explained, not just restated"
+  },
+  {
+    "essay_id": "01bb2f3",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars are not developed enough to be worth having) and reason (the driver must still hold the wheel and stay alert, so there is no point to the car) statable on one read and drawn as a consequence by the essay"
+  },
+  {
+    "essay_id": "01bd69c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (in favor of the Facial Action Coding System) and reason (it gives a viewer more understanding of what the person in the picture is feeling) stated by the essay, then illustrated by the writer's own reading of the Mona Lisa"
+  },
+  {
+    "essay_id": "01c1169",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (schools should use the emotion-reading software) and reason (it flags boredom or confusion so administrators can adjust lessons) stated plainly and applied to the claim, with a second reason about detecting unhappiness carried through to an outcome"
+  },
+  {
+    "essay_id": "01c3e09",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "the whole essay is one run-on chain in which the 'worthy' claim is buried in a subordinate clause among density, orbit, acid and temperature facts, so recovering the position and the materials reason meant going back over the passage and reading the closing clause to fix the thread"
+  },
+  {
+    "essay_id": "01c46fa",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (reading emotional expressions with this technology is valuable) and reason (it tells you what another person is feeling, and so what to do next, without asking them) available on one read and carried by the angry-friend example"
+  },
+  {
+    "essay_id": "01c5073",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (against classroom use of the emotion-reading technology) with reasons (it invades privacy, it is redundant when people already read each other, and it only reads the outside since people mask emotions) each explained and applied"
+  },
+  {
+    "essay_id": "01c5750",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (studying Venus is worth the danger) and reason (better to have tried, since risk has not stopped worthwhile human feats) stated early and developed through the Mount Everest comparison"
+  },
+  {
+    "essay_id": "01c5e87",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (against driverless cars until proven fully safe) and reason (liability in a crash is unresolvable, and the driver must stay attentive anyway so the car offers nothing) reasoned through rather than asserted"
+  }
+]

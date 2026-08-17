@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "01bb061",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "picks real details (the 40,000 garage space, the diesel tax, van- and bike-sharing) but never says what any of them shows; I supplied every link from source fact to 'advantage', and the conclusion just re-lists the source titles"
+  },
+  {
+    "essay_id": "01bb07c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: reasons out the elector risk himself - 'when one of us votes for an elector trusting him with the fate of the nation. He could mislead us and vote for any canidate' - the essay makes that chain, not me"
+  },
+  {
+    "essay_id": "01bb2f3",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: 'If the car isn't completely driverless there is no point on getting a car like this' and the closing challenge about a car that only tells you what you could see by looking at the road - thin and repetitive, but the evaluation is his and applied to the claim"
+  },
+  {
+    "essay_id": "01bd69c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: draws her own distinction - the value is 'not because it creates emotion in the picture, it gives the person looking more understanding of how maybe the person in the picture is feeling' - plus her own response to the Mona Lisa"
+  },
+  {
+    "essay_id": "01c1169",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: extends the source on his own - 'if a computer can detect a student's unhappiness, the school could stop the problem before it even happens' - and works the boredom quote through to administrators adjusting lessons"
+  },
+  {
+    "essay_id": "01c3e09",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "one unbroken run-on of comma-spliced source facts; I had to go back over it to recover the position, and the argument that the danger is worth it sits in my head, not on the page - only the closing 'materials that we can use to new technology' is his own"
+  },
+  {
+    "essay_id": "01c46fa",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: her own worked example - 'when your friends mad and doesnt want you near her or shes just confused, now you'll know your next step' - and the orbicularis oris illustration she chose"
+  },
+  {
+    "essay_id": "01c5073",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the mask argument and the challenge to the source's own evidence - 'how do we know thats how she actually feels? He doing a portait' - plus the texting example, all developed by the essay"
+  },
+  {
+    "essay_id": "01c5750",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: chooses the Everest analogy and states what it shows - climbers face death and it still turned out amazing, so 'no matter the consequences or danger it's better to try then not haved tried' - disorganized and quote-padded, but that connection is hers"
+  },
+  {
+    "essay_id": "01c5e87",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: reasons through fault herself - 'if something were to happen with one or more sensors malfunctioning, than how can you blame the driver' - and the 'you might as well be in an ordinary vehicle' point"
+  }
+]

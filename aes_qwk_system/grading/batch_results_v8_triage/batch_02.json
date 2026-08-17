@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "0079f2a",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "had to reread the duplicated, half-copied second paragraph to recover the thread, and the link from the listed Venus facts to the opening claim about the author's use of facts is one I supplied"
+  },
+  {
+    "essay_id": "007db64",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "opens on an antecedentless 'This is right' so I had to reconstruct the position, and the percentage figures are never tied to the claim; the one supplied reason (humans read faces daily) stops there while the second paragraph restates 'the world will be happier' four times"
+  },
+  {
+    "essay_id": "0081f18",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: chose the drunk-driver case and applied it - 'you just sit in the car and it will drive for you since you cant do it yourself' - and weighed the better-roads alternative as costing 'more then a fortune'"
+  },
+  {
+    "essay_id": "008341a",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: picks the Acropolis, the Venice gondola ride, the Crete castle and the Panama Canal as the payoff of joining, and turns the relief argument on the reader with 'Think of how sad you would be if you were devestated by the war'"
+  },
+  {
+    "essay_id": "0084f6c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: own reason that students who struggle 'either skip it or copy down answer without getting the full structure of the material,' developed into why a teacher cannot catch every student"
+  },
+  {
+    "essay_id": "0087059",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "paragraphs three and four are garbled copy that I had to reread and still could not attach to any stated position; every First/Secondly/Lastly point stops at the borrowed fact, and the conclusion only says scientists find Venus interesting"
+  },
+  {
+    "essay_id": "0098ef4",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: own gloss beyond the quotes - walkable suburbs 'saves so much money, if you were to drive you would have to waste gas,' and 'in big cities, it just might be faster to get to your destination by riding a bike'"
+  },
+  {
+    "essay_id": "00a3575",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "the opening contradicts itself (exploring Venus 'is not a great idea' then 'studying Venus is a worthy'), so recovering the position took real work, and the final paragraph is an unclosed block quote whose bearing on the claim I had to supply"
+  },
+  {
+    "essay_id": "00a4469",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: own reason that students 'hide their negative emotions in a classroom, for fear of looking bad amongst their peers,' with a stated mechanism - the system notifies someone or prompts a break"
+  },
+  {
+    "essay_id": "00a541a",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "each quote is followed only by a paraphrase of that same quote, never by why the evidence supports the pursuit, and the conclusion restates the prompt claim - the author supported it 'by giving reasons'"
+  }
+]

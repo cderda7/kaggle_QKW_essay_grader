@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "000d118",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "had to re-parse the single run-on block to pull the writer's own position out of the copied Vauban facts and rejoin it to the lazy-drivers/bikes reason"
+  },
+  {
+    "essay_id": "000fe60",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: 'if there are landforms on earth dont you think landforms are on mars to?' - the writer's own Earth-landform analogy, plus 'if there was martians... dont you think we would have saw one by now?'"
+  },
+  {
+    "essay_id": "001ab80",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the liability argument the writer builds - who is at fault, lawsuits from undiscovered bugs, manufacturers 'in a bunch of debt' killing the driverless idea"
+  },
+  {
+    "essay_id": "001bdc0",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: names the author's concession and says what it buys him - 'he support the fact that studying Venus is a worthy pursuit but he also recognize that there's a danger present continuously'"
+  },
+  {
+    "essay_id": "002ba53",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "the three reasons are lifted source clauses dropped into an 'I am in favor because' frame; I supplied the link myself (the anachronism point as written argues against the writer's own claim) and every reason stops at its own restatement"
+  },
+  {
+    "essay_id": "0030e86",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: picks the 1960 Louisiana elector case and says what it shows - 'if they succeeded in becoming his electors his votes would have gone to another opposing candidate'"
+  },
+  {
+    "essay_id": "0033037",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: 'all children can't be taught the same way' - the writer's own explanation of why a bored student signal matters, carried through to more instructions on the assignment"
+  },
+  {
+    "essay_id": "0033bf4",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: supplies its own content on how the help works - 'giving them animals for food and work' - and the baseball played in the empty ship holds on the way there"
+  },
+  {
+    "essay_id": "0036253",
+    "triage_label": "very_bad",
+    "deciding_rung": "A",
+    "triage_note": "looked for one reason or observation the writer supplied; found only the prompt's own words chopped into headers ('how venus is worthy', 'how Venus is despite in danger'), block quotes, and reason-shaped filler after each ('venus is pursuit because is halping people wiht the electronic')"
+  },
+  {
+    "essay_id": "0040e27",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the seasick qualification the writer drew - 'the only way you'd be good at this job is if you wouldn't get sea sick' - plus the UNRRA feeding horses, cows and mules detail"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "000d118",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (car-free development like Vauban is a good idea) and reason (denser, walkable cities and lower emissions) statable on one read, and the reason is applied to the claim via walking/bicycles replacing car trips"
+  },
+  {
+    "essay_id": "000fe60",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the Mars 'face' is a natural landform, not a martian sculpture) with reasons the essay itself connects: no life on Mars to build it, and Earth's own landforms routinely resemble familiar shapes"
+  },
+  {
+    "essay_id": "001ab80",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars are not worth developing) and reasons (they still require an alert driver, and unsettled liability invites lawsuits) are reasoned out, not merely asserted"
+  },
+  {
+    "essay_id": "001bdc0",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the author successfully argues Venus is worth studying) and reason (he concedes the hostile conditions, then answers them with NASA's above-the-surface blimp) recovered on one read"
+  },
+  {
+    "essay_id": "002ba53",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (keep the Electoral College) with a reason the essay delivers intact and explains: disputed outcomes are less likely because the winner's electoral share exceeds his popular share"
+  },
+  {
+    "essay_id": "0030e86",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (abolish the Electoral College for a direct popular vote) and reason (electors can be swapped to sabotage a result, as nearly happened in Louisiana in 1960) with the example worked through"
+  },
+  {
+    "essay_id": "0033037",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (face-recognition computers would be valuable in classrooms) and reason (they detect confusion or boredom and can re-instruct, since students do not all learn the same way) stated by the essay itself"
+  },
+  {
+    "essay_id": "0033bf4",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (join the Seagoing Cowboys) and reasons (helping recovering countries, free travel, fun) each carried past assertion by a quoted detail or illustration such as games in the empty ship holds"
+  },
+  {
+    "essay_id": "0036253",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "position is only the prompt echoed back, and every 'this quote means' sentence is unusable ('Venus is despite in danger because it barley causes dager'), so the link from each quoted passage to the claim was one I supplied and nothing is explained"
+  },
+  {
+    "essay_id": "0040e27",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (join the Seagoing Cowboys program) and reason (you help postwar recovery by tending the horses, cows and mules UNRRA shipped to Europe) stated and illustrated by the essay"
+  }
+]

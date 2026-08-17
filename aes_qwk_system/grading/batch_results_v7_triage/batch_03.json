@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "00a6693",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (all citizens should join the Seagoing Cowboy/UNRRA program) and reasons (repaying wartime service, seeing places like the Acropolis and Italy) statable on one read, with the travel reason illustrated rather than only asserted"
+  },
+  {
+    "essay_id": "00a6e71",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (car use should be limited, not eliminated) with reasons on one read: greenhouse gases, cost, and safety, and the cost reason is worked out through actual expenses rather than restated"
+  },
+  {
+    "essay_id": "00aa6de",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the emotion-reading system would benefit classrooms) and reason (how a student feels about a class changes how they perform, so schools could act on it) statable on one read, with the feeling-to-grade link explained through the hating-versus-loving-class cases"
+  },
+  {
+    "essay_id": "00b2fe2",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars are a good idea) and three reasons (fewer accidents, half the fuel, faster routes) statable on one read, each applied to the claim, e.g. rerouting around a construction zone"
+  },
+  {
+    "essay_id": "00b3311",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "the position only surfaces in a borrowed closing line, so I had to go back through the single undifferentiated block of Venus facts and mechanical-computer summary to recover the thread, and the link from those details to the claim was one I supplied"
+  },
+  {
+    "essay_id": "00bee4c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars carry real risk and invite over-reliance) and reasons (drivers become inattentive, technology can fail with no way to take back control) statable on one read, both carried through concrete scenarios"
+  },
+  {
+    "essay_id": "00c3589",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the author supports his claim about Venus well) and reasons (uses evidence, states facts about Venus, addresses a counterclaim) statable on one read, each tied to a quotation the essay itself explains"
+  },
+  {
+    "essay_id": "00cb5dc",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the author's case for studying Venus should be accepted) and reason (samples of rock and gas cannot be taken from a distance, so a close mission is required) statable on one read, and the essay itself spells out why that evidence supports the claim"
+  },
+  {
+    "essay_id": "00ccc2d",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (studying Venus is worth the danger) and reasons (overcoming the conditions advances us technologically, Venus may once have supported life, the challenge prepares us for later ones) statable on one read and each explained past the quotation"
+  },
+  {
+    "essay_id": "00d027f",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (emotion-recognition software would improve education) and reason (it detects boredom or confusion and can modify the lesson like a human instructor) statable on one read, with the reason extended to online and homeschooled students"
+  }
+]

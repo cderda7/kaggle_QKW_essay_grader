@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "00f3984",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: picks the Garvin comparison — the Face is 'a lava dome that takes the form of an isolated mesa' like Middle Butte in Idaho — as its proof, and the shadow/mesa explanation is illustration, not restatement"
+  },
+  {
+    "essay_id": "00f6383",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: own gloss on the electors quote — 'you are basically saying that you believe that this slate of electors have a better idea of who would be a better President' — student-supplied interpretation, not the prompt returned"
+  },
+  {
+    "essay_id": "00f6ac7",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: draws its own distinction that the author 'gives us very little as to what we will be able to do with this information,' naming the ocean/life and nearest-planet mentions as the undeveloped spots"
+  },
+  {
+    "essay_id": "00fca9b",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "had to reparse the broken opening body sentence and supply the acid-clouds-to-curiosity link myself; every gloss restates its own quote ('shows the challenge in studying venus,' 'show the simalaritis are still there')"
+  },
+  {
+    "essay_id": "00fd564",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "supplied every connection myself — texting/laziness, standardized tests, and the dropped PTSD paragraph are never tied to the classroom claim; the FACS reasons are asserted ('will help students all grade levels succeed') and one paragraph simply repeats the one before it"
+  },
+  {
+    "essay_id": "00feec3",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "position and its reason are stated plainly, but the CO2, 800-degree, pressure and silicon-carbide facts are listed and never applied to why it is 'worth the try'"
+  },
+  {
+    "essay_id": "0105e2e",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: explains the illusion by the 'unusual shadows' and reconstructs the rebuttal itself — skeptics said the April '98 shot was 'a cloudy time of the year,' so a cloudless summer photo was taken to disprove it"
+  },
+  {
+    "essay_id": "0123792",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: names the author's method — 'The author contradicts this later in the article by explaining the technological advacements that NASA has accomplished' — an analytic distinction the student drew, then supported with the silicon carbide passage"
+  },
+  {
+    "essay_id": "01247bc",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: chooses the Acropolis and the Venice water-streets as what the job opened up, and supplies its own analogy 'It helps for life like school does' to justify the recommendation"
+  },
+  {
+    "essay_id": "01267d1",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "each quote is tagged with a gloss that only repeats it ('This proves that they found out the Face was not an alien monument'), nothing explains why it looked like a face or what the mesa comparison shows, and the last paragraph re-lists the same three facts"
+  }
+]

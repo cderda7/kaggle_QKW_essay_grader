@@ -1,0 +1,29 @@
+{
+  "features": [
+    "weighted_trait_mean",
+    "log10_word_count"
+  ],
+  "beta": [
+    -6.782584958393722,
+    0.6827116764114304,
+    2.883420539857224
+  ],
+  "cuts": [
+    1.7351793707145688,
+    2.5159640395136327,
+    3.3482205192392716,
+    4.192509040792514,
+    4.581705769605978
+  ],
+  "n": 100,
+  "performance_estimate": {
+    "nested_loo_qwk": 0.739225,
+    "loo_qwk_fixed_features": 0.739225,
+    "fold_selections": {
+      "wmean+len": 96,
+      "traits+len+severity": 4
+    },
+    "note": "LOO on the 100 evaluation essays. No in-sample score is recorded here on purpose -- these coefficients are fitted on all 100 and would flatter themselves."
+  },
+  "source": "predictions_v6_runB.csv"
+}

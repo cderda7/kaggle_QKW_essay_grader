@@ -63,3 +63,53 @@ explicit "ignore the score column" instruction, and validated post-hoc by the bi
 checks in `evaluation/compute_qwk.py` (a grader that was secretly reading the answer key would
 produce suspiciously perfect agreement, which would itself be a flag to re-examine, not a result
 to trust at face value).
+
+## v7 adds a second prompt shape: the triage pass
+
+v7 runs **two** passes over the same essays, and this file now describes both.
+
+**The trait pass is unchanged.** Same template as above, `{RUBRIC}` = `rubric_v6.md`. v7 did not
+re-run it at all — the trait scores are carried through from `predictions_v6_runB.csv` by
+`--derive --version v7`.
+
+**The triage pass has its own prompt**, and its `{RUBRIC}` is `rubric_v7_triage.md` — the whole of
+it, and nothing else. The triage reader never sees a trait scale, a trait score, or a holistic rule,
+because a first impression contaminated by the trait ladders is no longer a first impression.
+
+```
+You are performing a first-impression TRIAGE READ of student essays.
+
+Read {TRIAGE_INSTRUMENT} in full first. It is your complete instructions for how to judge.
+Follow it exactly — especially the two-rung ladder, the "when you hesitate, answer other" rule,
+the length prohibition, and the output format.
+
+The essays are in {BLIND_CSV_PATH}, which has exactly two columns: essay_id and full_text.
+Read the essay text for these essay_ids and no others: {ESSAY_IDS}
+
+Read each essay yourself, in full, one at a time. Judge each essay independently — do not let the
+other essays in this batch calibrate it, and do not aim for any particular number of very_bad or
+bad labels.
+
+Write your results as a JSON array of objects — one per essay_id, in the order listed above — to
+{OUT_PATH}. Each object has exactly the four fields the instrument's Output format section
+specifies: essay_id, triage_label, deciding_rung, triage_note. Do not add any other field.
+```
+
+Three differences from the trait prompt, each deliberate:
+
+- **`{BLIND_CSV_PATH}`, not the source CSV.** The triage pass reads a projection containing only
+  `essay_id` and `full_text`, produced by `grade_essays.py --make-blind-csv`. Every earlier run kept
+  the grader off the gold score by instruction while the column sat in the file it opened; this one
+  removes the column. `decisions_log.md` #62 — and it is why the "IGNORE the `score` column"
+  sentence is absent from the prompt above rather than merely repeated.
+- **"do not aim for any particular number."** The corpus's base rates (9 human 1s, 25 human 2s) are
+  known to `rubric_v7.md` and were deliberately kept out of the instrument and out of this prompt.
+  Handing a grader the answer key's distribution is a softer version of handing it the answer key.
+- **The reader writes the file.** Ten batches in parallel, each writing
+  `batch_results_v7_triage/batch_NN.json` directly, rather than returning JSON through the
+  orchestrator to be re-serialised.
+
+`load_triage()` validates the result: labels in range, `deciding_rung` present and *consistent with
+the label*, no forbidden field (trait scores, holistic score, gold score, `SCORES`), and exact
+coverage of `batches.json`. All hard errors — a triage pass is one label per essay, so there is no
+partially-usable one.

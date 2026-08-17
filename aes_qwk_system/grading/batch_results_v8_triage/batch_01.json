@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "004229b",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: picks the jaywalking case himself - \"if the car doesn't know a person is j walking it could run over the person\" - and the brake-failure case, each carried to a consequence for the safety claim"
+  },
+  {
+    "essay_id": "0047cb3",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "had to go back over the opening and the Paris passage to reattach orphaned attributions (\"stated in\" / article title on its own line) before the thread was recoverable, and the Paris quote's link to the claim is tautological rather than made"
+  },
+  {
+    "essay_id": "005a72e",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: his own extension of the technology to medicine - \"we could have assisstant doctors getting us tools that we need, when we need them\" - plus the lost-camper example he chose himself"
+  },
+  {
+    "essay_id": "00613e3",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the electors' incentive argument he supplied - they vote the party line \"so they can get a big fat paycheck, instead of actually sitting down and trying to decide who is the most qualified\""
+  },
+  {
+    "essay_id": "0065bd6",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the liability distinction and his own gap in the notification system - \"what if a person falls asleep and didn't hear the notification sign then what?\""
+  },
+  {
+    "essay_id": "0066c7c",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "had to re-read the second reason twice to recover how too many driverless cars leads to junkyards, crops and housing, and the link back to the claim is one I assembled rather than one the paragraph made"
+  },
+  {
+    "essay_id": "006c931",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the distinction she draws between knowing a feeling and knowing its cause - \"Did we really need to know the Mona Lisa was 9 percent disgusted?\" - and her pushback on Huang's universality claim"
+  },
+  {
+    "essay_id": "006d0e1",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: answers the military objection on her own terms - \"would you rather be taking lives, or saving them?\" - and ties the program back to the war it was created to clean up"
+  },
+  {
+    "essay_id": "0072128",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: reads the 60-percent congestion figure into a claim of her own - \"there would be no more rush hour after work, and the roads would be safer\""
+  },
+  {
+    "essay_id": "0079938",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "position reverses between paragraphs (\"I don't like the idea\" then \"sort of a good idea\" then a pro-only close), so I went back over paragraph 1 to work out what was being argued and supplied the against-with-exceptions stance myself"
+  }
+]

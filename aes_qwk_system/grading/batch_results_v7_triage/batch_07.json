@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "016010c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars are safe and worth adopting) and reason (sensors detect skids and apply individual brakes better than a human can) statable on one read, with the sensor evidence applied to the safety claim rather than restated"
+  },
+  {
+    "essay_id": "0163804",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (people should cut back on daily car use) and reason (cars are a major source of city pollution, shown through the Paris driving ban) recovered without effort; the essay draws the inference from each quote itself"
+  },
+  {
+    "essay_id": "01665d5",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "position and three reasons are statable, but each body paragraph is topic sentence plus a dropped quote plus a 'that means' that restates the topic sentence; the da Vinci quote and the facial-feedback quote are never connected to the mixed-emotions or smile claims they are offered for"
+  },
+  {
+    "essay_id": "016ed64",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (Venus is worth exploring despite the danger) and reason (it may once have had oceans and so could have supported life) statable immediately; each quote is followed by the essay's own inference, not a restatement"
+  },
+  {
+    "essay_id": "01711c3",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars would benefit society) and reason (a driverless taxi fleet uses half the fuel and saves riders bus-pass money and time) statable on one read; thin but the essay makes each evidence-to-claim link itself, including the alertness caveat"
+  },
+  {
+    "essay_id": "01846d8",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "position (cutting car use is good) is stated, but the reasons arrive as a heaped list of asserted benefits - less traffic, less pollution, more socializing, less stress, more fitness - none of which is explained, illustrated, or tied back to the claim beyond naming it"
+  },
+  {
+    "essay_id": "0187e96",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (we should use cars less, and towns should try car-free days) and reason (Paris's ban cut congestion 60 percent and cleared the smog) statable at reading speed, with the objection about jobs and deliveries raised and answered"
+  },
+  {
+    "essay_id": "018985d",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (FACS will be valuable, especially in classrooms) and reason (a computer that reads confusion or boredom could adjust the lesson to the student) statable without my supplying the link; the classroom scenario is worked out rather than asserted"
+  },
+  {
+    "essay_id": "018fbeb",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "position (driverless cars are a bad idea) and a reason (people want to be in control) are stated, but reaching them cost real repair - the marriage analogy, the CD-to-iPod economy argument and the closing Model-T and horse-carriage passage all needed rereading, and the link from each to the claim was mine to supply"
+  },
+  {
+    "essay_id": "018ff85",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars are nearly here and should be embraced) and reason (the enabling technology, notably LIDAR, already exists and the remaining barrier is law, not capability) statable on one read; quote-heavy, but the essay draws the inference after each quote"
+  }
+]

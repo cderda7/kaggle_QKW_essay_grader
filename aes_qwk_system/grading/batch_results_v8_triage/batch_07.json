@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "016010c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the student's own objection paragraph -- 'Even though you are alert, what can you do if something goes wrong? Nothing' -- is their reasoning, not the source's"
+  },
+  {
+    "essay_id": "0163804",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: supplies own reasons around the chosen quotes -- 'not consistently worring about gas, the car breaking, or getting into an accident'"
+  },
+  {
+    "essay_id": "01665d5",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "reasons are circular restatements of the claim ('good at reading emotions because it could figure out people's emotions'), and I supplied the link from the facial-feedback quote to 'put a smile on people faces'"
+  },
+  {
+    "essay_id": "016ed64",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: draws its own inference -- 'not even a space craft made out of metal could withstand the enormous pressure', and 'where there is water, there must be life'"
+  },
+  {
+    "essay_id": "01711c3",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: applies each quote itself -- 'would save people's money for a bus pass, or even someone's time' -- and concedes drivers must stay focused"
+  },
+  {
+    "essay_id": "01846d8",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "possesses real reasons of its own (a mile or two is walkable, people only interact over the internet) but every one is named and dropped; the benefits pile up unexplained and unapplied"
+  },
+  {
+    "essay_id": "0187e96",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: raises and answers its own objection -- 'issue for jobs, delivery companies, or getting children to and from places. There's always a bus'"
+  },
+  {
+    "essay_id": "018985d",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: builds out its own classroom scenario for the technology -- 'learning something boring, and all of a sudden the topic becomes fun'"
+  },
+  {
+    "essay_id": "018fbeb",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "real examples of its own (marriage, Nascar, cds dropping in production, Model-T) but I had to reassemble the argument each time and supply the link myself; the horse/Ford passage never resolved"
+  },
+  {
+    "essay_id": "018ff85",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "the student's own sentences are unsupported optimism layered on block quotes ('everyone will be much happier', 'saftey will no longer be a concern'), and I had to supply the link from evidence about limits to the claim of imminent perfection"
+  }
+]

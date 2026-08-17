@@ -539,3 +539,236 @@ sub-score with a cap rule)
     a sweep of 1,688 aggregation-rule variants picked on one half of the data scored **negative** on
     the other half, and the best possible monotone relabel of v4's scores tops out at 0.665 against
     v4's 0.658.
+
+---
+
+## v7 — the triage cap
+
+> **Numbering note.** Entries 55–61 are referenced by `rubric_v6.md`'s provenance section (the
+> per-trait decomposition) but were never written into this file. The gap is left rather than
+> closed by renumbering, so those references keep pointing at the space reserved for them. v7
+> starts at 62.
+
+62. **The v7 triage pass is blind by construction, not by instruction.** Every grading run through
+    v6 kept the grader away from the gold score by telling it to — "IGNORE the `score` column" — while
+    the column sat in the file the grader opened. `grading_prompt_template.md` was always candid that
+    this was the weak point of reading essays from disk, and the defence was post-hoc: a grader
+    secretly reading the answer key would show suspiciously high agreement, which would be a flag to
+    re-examine rather than a result to trust. For v7's triage pass the column is simply absent:
+    `--make-blind-csv` writes a projection containing only `essay_id` and `full_text`, and that is
+    what the pass reads. A reader cannot ignore what it was never given.
+
+    Deliberately **not** retrofitted to v1–v6. Those runs are graded, reported and frozen; re-running
+    them against a different input file would change the artifact rather than the method, and their
+    numbers would no longer be the numbers `results_v*.md` describes. Applied from v7 forward.
+
+63. **v7 derives its trait scores from `v6_runB`, not `v6`.** Run B is the stronger of the two v6
+    gradings (QWK 0.5954 vs 0.5566; Spearman 0.694 vs 0.658). Choosing the stronger baseline looks
+    backwards until you note which comparison matters: v7's pre-registered test is against **v4**
+    (0.6584), not against v6. Deriving from run B therefore makes the triage cap's measured effect
+    *smaller* than deriving from run A would have — the conservative direction. Recorded here because
+    "we used the better run" is the kind of choice that reads as cherry-picking unless the direction
+    of its effect is stated.
+
+64. **The cap is `min(cap(label), category_holistic)`, not an assignment.** The change as originally
+    specified was "very bad → automatic 1, bad → automatic 2." It is implemented as a cap instead,
+    for one reason: a hard assignment can *raise* a score. An essay the trait path sends to 1 (two
+    traits at 1, which `v4_holistic()` still forces) would be lifted to 2 by a `bad` flag — a coarse
+    whole-essay impression overruling a fine-grained trait judgment in the one direction where the
+    fine-grained one is more likely to be right. `min()` also makes the "an unflagged essay can still
+    score 2" requirement fall out of the arithmetic instead of needing a rule of its own, since
+    `other` maps to a cap of 6 and constrains nothing.
+
+    The pre-cap score is written to `predictions_v7.csv` as `system_category_holistic`, which makes
+    the no-triage counterfactual a column rather than a re-run — and, because the fidelity check
+    passes, that column is provably `v6_runB` unchanged.
+
+65. **Why a whole-essay judgment was allowed back in after v5 and v6 spent two versions removing
+    them.** v5 took the aggregation rules out of the grader (#50); v6 replaced whole-essay anchors
+    with per-trait scales (#53). A first-impression read runs against that direction. The argument for
+    it: what the decomposition was adopted to fix was run-to-run trait variance (#54), and it did fix
+    that (33/100 → 56/100 identical trait vectors). What it *cost* was calibration at the bottom —
+    `results_v6.md` §3 — and the specific failure, never assigning a 1 across 100 essays, is one a
+    whole-essay read can catch and a per-ladder analysis structurally cannot, since each individual
+    ladder's floor can be cleared by an essay that fails as a whole. The judgment is bounded to two
+    labels, can only lower a score, cannot reach above 2, and runs in a separate context that never
+    touches the trait pass. It is a triage in the medical sense: a cheap sort deciding who is seen
+    first, never the diagnosis.
+
+66. **The result, and the one number that decides v8.** v7 scored **0.6180** — above v6 run B
+    (+0.023, 95% CI [−0.015, +0.064]) and below v4 (−0.041, CI [−0.115, +0.032]). `rubric_v7.md` §4.1
+    had committed in advance to beating v4, so **v7 fails its own pre-registered test** and is
+    recorded as such rather than re-described around the v6 comparison it does win.
+
+    §4.3's validity check failed harder and is the more useful failure: **capping the 21 shortest
+    essays at 2, with no reading at all, scores 0.682** against the triage read's 0.618, and the
+    triage's fire rate runs 48% / 16% / 12% / 8% across word-count quartiles. The length rule is not
+    a proposal — its k is tuned in-sample on the same 100 essays, and it is a pure verbosity-bias
+    machine of the kind this project has refused by explicit instruction since v1 — but as a
+    diagnostic it says the semantic read did not extract enough beyond length to beat length.
+
+    Mechanism, diagnosed rather than guessed: **eight of the nine human 1s cleared rung A.** Rung A
+    defines `very_bad` as *unintelligible*, and this corpus's 1s are intelligible and empty. That is
+    `results_v6.md` §3's "bottom rungs too easy to clear" reproduced inside an instrument written
+    specifically to avoid it — consequence phrasing turns out to be necessary and not sufficient, and
+    the consequence has to be the one the human 1/2 boundary is actually made of. v8's first move is
+    a rewrite of that one table row, evaluated on the **binding** subset: flag-set precision was 71%
+    while precision on the ten essays where the cap actually moved a score was 50%, and only the
+    second number is about anything.
+
+    Nothing was tuned after seeing these numbers — not the cap values, not the gate threshold, not
+    the aggregation. `results_v7.md` has the full reporting.
+
+---
+
+## v8 — the length floor, and rung A re-cut
+
+67. **The anti-verbosity prohibition is now scoped rather than absolute.** Every rubric v1–v7 carries
+    it as an unconditional rule: *"do not use essay length as a scoring signal, in either
+    direction."* v8 permits exactly one use of length, and the boundaries are drawn deliberately
+    narrow:
+
+    - **Permitted:** a code-side cap at the triage layer, one-directional, with thresholds derived
+      out-of-sample. `LENGTH_FLOOR` in `grade_essays.py`.
+    - **Still prohibited, unchanged:** the trait pass in every respect. The trait grader does not
+      receive a word count, `rubric_v6.md`'s prohibition stands as written, and no trait score is a
+      function of length. Also still prohibited: every *reading* rung of the triage instrument, whose
+      reader is told not to estimate length.
+
+    The argument for the exception. What the prohibition targets is length as a **reward** — the
+    empirically documented rater tendency to read longer as better, which contaminates content-trait
+    ratings at r ≈ .6. A one-directional cap does not reward anything: it cannot raise a score, and it
+    does not distinguish a 300-word essay from a 600-word one. What it encodes is a different claim —
+    that across 17,207 held-out essays, **not one under 225 words was scored above 3 by a human**, and
+    only 1.9% under 175 words were scored above 2. That is a fact about the joint distribution, not a
+    preference for verbosity.
+
+    Thresholds were derived on the essays of `train.csv` that are **not** in
+    `personal_training_set.csv`, selected by held-out violation rate alone:
+
+    | Rule | held-out essays touched | violations |
+    |---|---|---|
+    | cap 2 below 175 words | 729 | 14 (1.92%) |
+    | cap 3 below 225 words | 2,928 | 0 (0.00%) |
+
+    **Recorded as a change of standard, not an addition**, because it retires the validity check
+    `rubric_v7.md` §4.3 ran: "is this cap just a length detector?" is no longer answerable once one
+    component is a length detector by construction. What replaces it is the §1 ablation — floor-only
+    vs read-only vs both — which is a better question anyway, and is the reason `system_cap_source`
+    exists as a column.
+
+    Context for the concern that the prohibition had become an overcorrection: corr(word_count,
+    human_score) = 0.688, while the system's own corr(word_count, system_score) has run 0.474–0.513
+    across v4–v8. The system has consistently used length **less** than the human raters do, including
+    under the strict prohibition.
+
+68. **Rung A0 is applied in code, not read by the triage model — deliberately, against the shape of
+    the instruction that prompted it.** The natural reading of "rung A should say the essay is just
+    too short" puts the word count in the instrument. It is documented there and executed here
+    instead, because nothing should depend on an LLM counting words reliably, and because a
+    mechanical rule keeps the instrument's own length prohibition coherent for the rungs the model
+    *does* answer. The instrument states the floor in full so it remains a complete description of
+    the pass.
+
+    Length maps to `bad` (cap 2), never to `very_bad` (cap 1), and this is empirical rather than
+    cautious: below 175 words, 98% of held-out essays are ≤2 but **only 24% are 1s**. "Short" carries
+    essentially no information about the 1-vs-2 distinction, so the floor does not pretend to.
+
+69. **The rung A rewrite worked on recall and not on the label.** v7's rung A defined *very bad* as
+    unintelligible; `results_v7.md` §3 showed eight of nine human 1s cleared it, because this corpus's
+    1s are intelligible and empty. v8 re-cut it as a possession test — *is there anything here you
+    could quote back to this student as their own thinking?* — with the archetype named explicitly
+    (states a position, gives something reason-shaped, stops).
+
+    Result: **all nine human 1s are now flagged, up from six** — and every one of them at rung B, as
+    `bad`. Rung A itself still fired exactly once, on a human 2. The system assigns exactly one
+    holistic 1, the same as v7.
+
+    **Two instruments, written a full diagnosis apart, both declined to fire their bottom rung.** That
+    is now a pattern, and #70 is what follows from it.
+
+70. **The read is not earning its place, and this is the second run to say so.** Binding-subset
+    precision was 50% in v7 and 48% in v8 — the instrument was rewritten between them and the number
+    did not move. The v8 ablation is blunter still: floor-only scores 0.6341, floor+read 0.6387, and
+    the paired bootstrap on that difference is **+0.0030, CI [−0.081, +0.082], 54.4% favouring the
+    read**. A component that survives on a coin flip against a one-line rule has not been shown to
+    work.
+
+    Two conclusions, recorded now so v9 does not relitigate them: (a) if a triage read continues, it
+    should be asked to **extract** rather than **judge** — "quote the one thing that is this student's
+    own thinking" — with the label derived mechanically from whether the extraction is empty, which
+    is also the form most likely to survive the move to the sub-120B models the project targets; and
+    (b) `results_v6.md`'s priority 1 — tightening rungs 2–3 of the trait ladders themselves — remains
+    untouched after two versions that both went *around* the trait scales rather than into them, and
+    it is where the residual +0.14 bias lives.
+
+    Nothing was tuned after seeing v8's numbers: not the floor thresholds, not the cap values, not the
+    gate. `results_v8.md` has the full reporting.
+
+---
+
+## v9 — the fitted aggregator
+
+71. **The hand-written combination rules were replaced, not repaired, and the evidence for that is a
+    single number.** v6 run B scores 0.5954, but the best QWK obtainable by *any* monotone
+    thresholding of its own weighted trait mean is **0.6609**. Same trait scores, different mapping,
+    +0.07 — created entirely by where the gate and bands put their boundaries. v7 and v8 both added
+    machinery around those rules (a triage cap, a length floor) and both finished below v4. The rules
+    were a fitting problem being solved by hand.
+
+    v9 keeps `v4_holistic()`, `LENGTH_FLOOR` and `load_triage()` in the file so v3–v8 reproduce
+    byte-identically — verified after the change — and simply stops calling them.
+
+72. **Everything in the aggregator is fitted except the trait weights, which are not.** Fitting the
+    four weights by regression is *worse*: 5-fold CV gives 0.6922 with fitted weights against 0.7233
+    with the hand-chosen V4 values (.35/.25/.25/.15). At n=100 four extra parameters cost more than
+    they buy, so `V4_WEIGHTS` survives v9 unchanged — the one piece of hand-written aggregation the
+    evidence supports keeping.
+
+    Also rejected on evidence: `min(trait)` and `count(traits ≤2)` as features — the severe-weakness
+    gate's ideas, offered to the fit rather than imposed. They improve the four-raw-traits model
+    (0.6922 → 0.7055) but lose to the weighted mean plus length (0.7233). **The gate's core intuition
+    does not survive being asked to earn its place.**
+
+    And the cut points are **not** fitted against QWK. They come from distribution matching —
+    `c_i = Quantile(s, P(y ≤ i))` — so the discretization does not become a second fitted model on
+    top of the first. Three coefficients and five derived cuts, against #54's 1,688-variant sweep.
+
+73. **Leave-one-out, not a 50/50 holdout, and the reason is measurement.** The project constraint is
+    that only the 100 essays of `personal_training_set.csv` may be used for fitting, so fit and eval
+    are the same essays and the only question is how each prediction stays honest.
+
+    A 50/50 split was the natural proposal and was tested before being rejected: across **200 random
+    50/50 splits the same method returns mean 0.7231 with SD 0.052**, 10th–90th percentile
+    [0.656, 0.793]. The headline would have been mostly a draw from that distribution. LOO fits on 99
+    rather than 50, evaluates on all 100 (so it stays comparable to every prior version on the same
+    essays), and is deterministic — no seed, one number — which is the same preference that took
+    stochastic rule-following out of the grader in v5.
+
+    **The feature set is re-selected inside every fold**, because the candidate ladder was originally
+    chosen by looking at CV on these same 100. Nested and un-nested both return **0.7392**; selection
+    cost **0.0000**; `wmean+len` chosen on 96 of 100 folds. The choice was not fitted to the eval set.
+
+    `aggregator_v9.json` carries coefficients fitted on all 100 — the right estimate for scoring a new
+    essay — and records the LOO figure in `performance_estimate` instead of an in-sample score, which
+    would flatter the model every time the file was read.
+
+74. **The anti-verbosity standard is now fully reversed at the aggregation layer, and v9 overshoots
+    it.** v1–v7 prohibited length as a signal in either direction. v8 permitted a one-directional,
+    out-of-sample-derived cap (#67). v9 puts `log10(word_count)` in the model with a **positive**
+    coefficient. That is the largest standard change in the project and it is not a free one.
+
+    What it bought: QWK 0.5954 → 0.7392, exact agreement 48% → 62%, bias +0.41 → +0.03, Spearman
+    0.694 → 0.774 — the first *ranking* improvement in the project, where every prior version was
+    rearranging the discretization of a fixed ranking whose ceiling was ~0.66.
+
+    What it cost, recorded as prominently: **corr(word_count, system_score) = 0.820 against the human
+    raters' 0.688.** Every version through v8 used length *less* than the humans; v9 uses it more, and
+    its residual correlates with length at +0.242 — it over-scores long essays. The prohibition was
+    protecting against something real and v9 has overshot rather than landed on the human rate.
+
+    The scope is unchanged and still exact: **the trait pass never sees a word count.** Length enters
+    this system at one line, `aggregator_features()`. `results_v9.md` §5 makes constraining β2 back
+    toward the human coupling rate v10's first job — with the note that the rubric-only LOO number
+    (0.6358 vs v6's hand-ruled 0.5954 on identical trait scores) says roughly +0.04 of v9's gain came
+    from replacing the rules alone, with no length at all.

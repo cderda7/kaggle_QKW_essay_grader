@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "00d4911",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (abolish the electoral college) and reason (the 2000 election let the popular-vote loser win, and faithless electors can override voters) statable on one read, with the reasons worked through rather than only asserted"
+  },
+  {
+    "essay_id": "00d576b",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "had to go back over the essay to recover which side it lands on — it opens defending the electoral college for faster vote counting and later says it should not keep going, and I supplied the thread between the two"
+  },
+  {
+    "essay_id": "00da297",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (studying Venus is worth the danger) and reason (Venus resembles Earth, so learning what happened to it warns us about ourselves) statable on one read, with each quotation followed by the essay's own application of it"
+  },
+  {
+    "essay_id": "00daaa2",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (citizens should limit car usage) and reason (Paris's plate-based driving ban visibly cleared the smog, and car-free days cut both traffic and stress) statable on one read without repair"
+  },
+  {
+    "essay_id": "00dd003",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (schools should not adopt the Facial Action Coding System) and reason (exposing how students feel gives bullies a target and deepens an already unhappy kid's isolation) statable on one read, with the reason carried past its own statement"
+  },
+  {
+    "essay_id": "00e047b",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (limiting car use brings real advantages) and reason (bans in Paris and Bogota cut emissions while residents of car-light Vauban report less stress) statable on one read, each example tied back to the claim by the essay"
+  },
+  {
+    "essay_id": "00e3edb",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (studying Venus is worth the risk) and reason (if Earth becomes uninhabitable we need to already know whether somewhere else can support us) statable on one read, with the essay itself making the link from survival to the need to study first"
+  },
+  {
+    "essay_id": "00e5687",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the author's case for researching Venus holds up) and reason (its likeness to Earth in size and density makes it the best candidate for finding resources and understanding our own planet) statable on one read, the twin-planet point applied rather than only quoted"
+  },
+  {
+    "essay_id": "00eabc5",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (FACS has no place in classrooms) and reason (students with disabilities read as false outliers, and anyone can fake an expression and defeat the diagnostic) statable on one read, each reason illustrated"
+  },
+  {
+    "essay_id": "00ef89f",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "the three numbered reasons are one assertion restated — do not change how someone appears, just be yourself — with nothing explained, illustrated, or tied to why the technology itself fails"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "004229b",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars are unsafe and should not be adopted) and reasons (unclear response to traffic signals, failure to detect a jaywalking pedestrian, mechanical malfunction) statable on one read, and each reason is carried through to the harm it would cause rather than left standing"
+  },
+  {
+    "essay_id": "0047cb3",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (using alternatives to cars lowers stress and air pollution) statable on one read, with the stress reason illustrated by the Vauban resident who reports being happier without a car and glossed back onto the claim"
+  },
+  {
+    "essay_id": "005a72e",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars should be developed and made available to the public) and reasons (safety features such as the danger-vibrating seat and roof sensors, independence for elderly drivers, navigation for the lost) statable on one read, each tied to a described consequence"
+  },
+  {
+    "essay_id": "00613e3",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the president should be chosen by popular vote, not the electoral college) and reasons (electors vote from self-interest rather than qualification, a majority of voters prefer direct election, voting is a right of citizens) statable on one read"
+  },
+  {
+    "essay_id": "0065bd6",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars should not exist) and reasons (sensor failure causing accidents, unresolved liability between driver and manufacturer, cars that are only partly autonomous still depend on a driver who may miss the alert) statable on one read and worked out with scenarios"
+  },
+  {
+    "essay_id": "0066c7c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (against driverless cars, on grounds of distrust) and the first reason (system malfunction sending the car off course into pedestrians and other vehicles) statable on one read and followed through to who gets hurt, despite the later reasons being muddled"
+  },
+  {
+    "essay_id": "006c931",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (emotion-reading facial software is unfair and useless because people have a right to keep feelings private) and reason (an emotion detected without its cause tells you nothing, illustrated by the Mona Lisa being read as 9 percent disgusted) statable on one read"
+  },
+  {
+    "essay_id": "006d0e1",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the reader should become a Seagoing Cowboy) and reasons (the satisfaction and lessons of hard work, once-in-a-lifetime travel, service that saves lives rather than takes them) statable on one read, each raised against a stated objection"
+  },
+  {
+    "essay_id": "0072128",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the United States should limit car usage) and reasons (cutting the large share of emissions from passenger cars, the 60 percent congestion drop in Paris, healthier alternative transport as in Bogota) statable on one read, each with cited evidence explained back onto the claim"
+  },
+  {
+    "essay_id": "0079938",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "the essay states three conflicting stances (opens against driverless cars, then calls them sort of a good idea, then closes on pros with no return to the claim), so recovering which position it actually holds was work I did by deciding the cons paragraph outweighed the rest, not work the essay did"
+  }
+]

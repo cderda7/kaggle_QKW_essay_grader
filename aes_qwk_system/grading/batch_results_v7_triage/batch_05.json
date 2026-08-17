@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "00f3984",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the Face on Mars is a natural landform, not alien) and reason (sharper Global Surveyor images showed a mesa like buttes in the American West) statable on one read, with the evidence tied to the claim by the essay"
+  },
+  {
+    "essay_id": "00f6383",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (popular vote should replace the electoral college) and reason (winner-take-all lets candidates ignore non-swing states and cancels out individual votes) recovered without effort; each quotation is followed by the writer's own explanation of what it means for the claim"
+  },
+  {
+    "essay_id": "00f6ac7",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the author gives too little insight into why Venus is worth studying) and reason (he raises the possibility of past oceans and life but never says what we would do with that information) statable straight through"
+  },
+  {
+    "essay_id": "00fca9b",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "had to go back over the second paragraph, where a broken sentence pairs 'human curiosity leads to dangerous endeavors' with sulfuric acid clouds and leaves the connection for me to supply; each remaining reason ends in restatement ('shows the challenge', 'show the similarities are still there') with nothing explained"
+  },
+  {
+    "essay_id": "00fd564",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "the link from standardized-test failure rates to Professor Huang's system producing better results is one I supplied, and the thread wanders through texting and laziness before returning; every reason is a single asserted sentence ('every child deserves a good education', 'will help students succeed in the real world') with no explanation or application"
+  },
+  {
+    "essay_id": "00feec3",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "had to reread the opening run-on to pull the position ('worth the try') out from the danger claims around it, and the second paragraph's heat and pressure facts are never reconciled with the claim; the reason (to see if there is oxygen) stops where it starts"
+  },
+  {
+    "essay_id": "0105e2e",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the Face is a shadow effect on a mesa, not alien) and reason (the cloudless summer 2001 photo answered the objection that the earlier image was taken in cloudy April) statable on one read; the essay itself raises and answers the counterclaim"
+  },
+  {
+    "essay_id": "0123792",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the author supports the worth of studying Venus well) and reason (he raises each danger, then counters it with Venus's Earth-like past and with silicon carbide electronics) statable immediately, with each quotation explained in the writer's own terms"
+  },
+  {
+    "essay_id": "01247bc",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (more people should try being a Seagoing Cowboy) and reason (it opened the world to Luke and left him permanently aware of people in other countries who need help) statable from the essay's own words, with the Acropolis and Venice details illustrating rather than merely asserting"
+  },
+  {
+    "essay_id": "01267d1",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the Face is a natural landform, not an alien monument) and reason (the maximum-resolution 2001 photo showed a butte or mesa) statable on one chronological read, with each quotation followed by the essay's own statement of what it proves"
+  }
+]

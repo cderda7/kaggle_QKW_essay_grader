@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "01290ec",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (readers should sign up as Seagoing Cowboys with UNRRA) and reasons (you care for animals, help people abroad, and see countries you never would otherwise) statable on one read, with Luke's trips used as illustration rather than bare assertion"
+  },
+  {
+    "essay_id": "012c9be",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (we should keep pursuing Venus) and reason (learning what turned an Earth-like Venus hostile tells us how to avoid the same on Earth) statable on one read; the acid/pressure obstacle is met with a proposed heat-resistant alloy rather than restated"
+  },
+  {
+    "essay_id": "012f8f0",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "each quoted detail (oceans, valleys and craters, human curiosity) is followed only by 'this makes us want to go to Venus', which restates the claim instead of explaining why the detail supports it"
+  },
+  {
+    "essay_id": "013ac83",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (limiting car usage is a benefit, not a loss) and reasons (less financial stress, less smog, more everyday exercise) statable on one read, each carried by an applied case such as Walter, the Paris ban, or walking to the store instead of driving to fast food"
+  },
+  {
+    "essay_id": "014eba6",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "opening argues aliens plausibly exist and the face is not natural while the close states it is a mesa, so recovering which position the writer holds meant going back over the first two paragraphs"
+  },
+  {
+    "essay_id": "014f1b3",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "reasons ('that's what people want', 'we won't make the wrong choice', 'more people think he'll be a better president') are restatements of majority-rule itself, and nothing is explained or applied beyond naming the slate of electors"
+  },
+  {
+    "essay_id": "0151c0f",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the Face is a landform, not alien evidence) and reasons (no scientific evidence of aliens, we would already know, landforms coincidentally resemble things) statable on one read, with the uncle's groundhog-shaped rock and the two-mile scale point applied to the claim"
+  },
+  {
+    "essay_id": "0155be4",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars should not be developed) and reason (the driver must stay alert anyway to take over in driveways, traffic and roadwork) statable on one read, with the legal-testing point supplied by the essay rather than by me"
+  },
+  {
+    "essay_id": "0156ea6",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "body is a reshuffled list of article facts with the pressure figure repeated, and the claim that we will need another planet arrives only in the last sentence, so the link from those facts to that claim was one I supplied"
+  },
+  {
+    "essay_id": "015ac93",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (Venus should be studied) and reason (a blimp 30 miles up drops the heat from 800 to about 170 degrees and the pressure to survivable levels) statable on one read, with the camera problem answered by gear-and-lever mechanical computers"
+  }
+]

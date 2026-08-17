@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "0079f2a",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (Venus is not survivable for humans) and its reason (97% carbon dioxide, corrosive sulfuric acid, extreme heat) statable on one read, and the essay itself makes the connection ('someone could die from the atmosphere')"
+  },
+  {
+    "essay_id": "007db64",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "opens 'This is right because' with no antecedent, so I had to reconstruct what claim was being endorsed and supply the link between the 83-percent-happy figures and the technology's value; second half escalates into 'no violence, dreams come true' without explaining anything"
+  },
+  {
+    "essay_id": "0081f18",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (self-driving cars are a good idea) with reasons the essay applies itself: fewer wrecks from bad drivers, illustrated by the drunk driver who can be carried home safely"
+  },
+  {
+    "essay_id": "008341a",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (join the Seagoing Cowboys) with two reasons carried by specifics the essay supplies: helping war-devastated families, and seeing the Acropolis, Venice, Crete and the Panama Canal"
+  },
+  {
+    "essay_id": "0084f6c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the facial action coding system would benefit students) with reason developed rather than asserted: students hide confusion and don't ask for help, so a system that detects it and modifies the lesson reaches them"
+  },
+  {
+    "essay_id": "0087059",
+    "triage_label": "very_bad",
+    "deciding_rung": "A",
+    "triage_note": "could not state any position the writer takes — the essay is a garbled recital of lifted fragments whose own framing is 'the text is informative' and 'the scientists look Venus interesting', and no fact is offered as a reason for a claim"
+  },
+  {
+    "essay_id": "0098ef4",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (limiting car usage has real advantages) with reasons the essay interprets after quoting: less pollution, more walking and biking, money saved on gas"
+  },
+  {
+    "essay_id": "00a3575",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "the first two sentences take opposite sides ('not a great idea' then 'studying Venus is worthy'), so recovering which position is held cost real back-tracking, and a stray pro-exploration fact about plentiful solar power sits unlinked inside the anti-exploration paragraph"
+  },
+  {
+    "essay_id": "00a4469",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (reading students' emotional expressions is valuable) with three reasons each given a mechanism, e.g. FACS recognizes the confusion of students who won't ask for help and changes the lesson"
+  },
+  {
+    "essay_id": "00a541a",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the author does support studying Venus as worthwhile despite the dangers) with reasons statable on one read: the concession of 800-degree heat and 90x pressure set against Venus's once-Earth-like conditions and NASA's silicon carbide electronics surviving three weeks"
+  }
+]

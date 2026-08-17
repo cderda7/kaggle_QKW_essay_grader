@@ -89,6 +89,25 @@ VERSIONING:
                seven-step conditional -- which is what makes it portable to the sub-120B models the
                project's goal requires. See decisions_log.md #50.
                -> grading/batch_results_v5/*.json         -> predictions_v5.csv
+  v6 rubric  -> Same architecture as v5, different rubric text: four per-trait 1-6 scales instead of
+               whole-essay score-band anchors. Config byte-identical to v5 apart from paths.
+               -> grading/batch_results_v6/*.json         -> predictions_v6.csv
+               (v6_runB is an independent second grading of the same essays under the same rubric,
+               used to measure run-to-run trait agreement. Not a rubric version.)
+  v7         -> NOT A NEW TRAIT GRADING RUN. v7 is v6's trait scores (carried through from
+               v6_runB untouched) plus a SECOND, INDEPENDENT pass: a blind first-impression triage
+               that returns one label per essay -- very_bad / bad / other -- against
+               rubric_v7_triage.md, which is the entire prompt that pass sees. The label caps the
+               holistic score the trait path computed:
+                   holistic = min(TRIAGE_CAPS[label], category_holistic)
+               so it can only lower a score, never raise one, and never reaches above 2. The
+               pre-cap score is written to predictions_v7.csv as system_category_holistic, which
+               makes the no-triage counterfactual a column rather than a re-run.
+               Motivation: results_v6.md section 3 -- v6 ranks essays as well as v4 but never
+               assigns a 1, against 9 human 1s in the corpus. See rubric_v7.md and
+               decisions_log.md #62-65.
+               -> grading/predictions_v6_runB.csv + grading/batch_results_v7_triage/*.json
+                  -> predictions_v7.csv
   Same batches.json (essay_id split) is reused across versions so runs are directly comparable.
 
 USAGE:
@@ -101,6 +120,8 @@ USAGE:
     python3 grade_essays.py --derive --version v4    # recompute v4 from predictions_v3.csv
     python3 grade_essays.py --derive --version v4 --check-fidelity   # + equal-weight self-check
     python3 grade_essays.py --assemble --version v5  # traits from the grader, holistic computed here
+    python3 grade_essays.py --make-blind-csv --out-dir /tmp/blind   # essay_id + full_text only
+    python3 grade_essays.py --derive --version v7    # v6_runB traits + triage labels -> capped
 """
 
 import argparse
@@ -138,6 +159,75 @@ EQUAL_WEIGHTS = {k: 0.25 for k in V4_WEIGHTS}
 # development, conventions} carries 0.65, below the bar -- so the essays that move are exactly those
 # where argumentation is the sole trait below the threshold. See decisions_log.md #45.
 MASS_THRESHOLD = 0.75
+
+# --- v7 triage cap (rubric_v7.md section 2) ----------------------------------------------------
+# A separate, blind first-impression pass returns one label per essay. The label caps the holistic
+# score the trait path computed; it never raises it, and it cannot reach above 2. `other` maps to 6,
+# which is the same as no constraint -- written as a cap rather than special-cased so the whole rule
+# is a single min() with no branch to get wrong.
+TRIAGE_CAPS = {"very_bad": 1, "bad": 2, "other": 6}
+TRIAGE_RUNGS = ("A", "B1", "B2", "B1+B2", "B_cleared")
+
+# --- v8 rung A0: the word-count floor (rubric_v8_triage.md) ------------------------------------
+# Mechanical, applied here rather than read by the triage model -- nothing should depend on an LLM
+# counting words reliably, and the instrument's length prohibition still binds every rung the model
+# DOES answer. One-directional like every other cap: it can only lower a score.
+#
+# Thresholds derived on the 17,207 essays of train.csv that are NOT in personal_training_set.csv,
+# selected by held-out violation rate alone and never fitted to the evaluation set:
+#     cap 2 below 175 words -- touches 729 held-out essays, wrong on 14 of them (1.92%)
+#     cap 3 below 225 words -- touches 2,928 held-out essays, wrong on 0 of them (0.00%)
+# Ordered longest-threshold-last; first match wins, so the tighter cap takes precedence.
+#
+# This reverses, in a scoped way, the absolute anti-verbosity-bias prohibition every rubric v1-v7
+# carries. The prohibition still binds the trait pass entirely (the trait grader never sees a word
+# count) and every reading rung of the triage instrument. decisions_log.md #67.
+LENGTH_FLOOR = ((175, 2), (225, 3))
+
+# --- v9: the fitted aggregator (rubric_v9.md) --------------------------------------------------
+# v3-v8 turn four trait scores into a holistic score with hand-written rules: a gate at any trait
+# <=2, a disjunctive 1-3 band, a compensatory 3-6 band, a weight-mass test at 0.75. Those rules are
+# where the loss is. v6 run B scores 0.5954, but the best QWK ANY monotone thresholding of its own
+# weighted trait mean could reach is 0.6609 -- the discretization throws away ~0.07 by itself.
+#
+# v9 replaces all of it with a fitted map over two features, and nothing else:
+#     s     = b0 + b1*f1 + b2*f2      (OLS against the human score)
+#     score = 1 + #{i : s >= c_i}     (five cuts)
+# where f1 is the V4-weighted trait mean (weights FIXED -- fitting them is worse at n=100, 0.6922
+# vs 0.7233 in 5-fold CV) and f2 is log10(word_count). The cuts come from distribution matching,
+# NOT from maximising QWK: c_i is the quantile of s at the fitting data's P(y <= i).
+#
+# Three coefficients and five derived cuts is a far smaller hypothesis class than the 1,688-variant
+# rule sweep decisions_log.md #54 found scored negative out of sample. decisions_log.md #71-74.
+AGGREGATOR_FEATURES = ("weighted_trait_mean", "log10_word_count")
+
+# The candidate ladder, re-selected inside every LOO fold so the reported number includes the cost
+# of choosing. Names are stable so the fold-selection tally is readable.
+FEATURE_SETS = {
+    "wmean":              ("weighted_trait_mean",),
+    "wmean+len":          ("weighted_trait_mean", "log10_word_count"),
+    "traits+len":         ("organization", "development", "conventions", "argumentation",
+                           "log10_word_count"),
+    "traits+len+severity": ("organization", "development", "conventions", "argumentation",
+                            "log10_word_count", "min_trait", "n_traits_le2"),
+}
+
+
+def length_floor_cap(word_count, floor=LENGTH_FLOOR):
+    """Cap implied by rung A0 for an essay of this length. 6 (i.e. no constraint) if it clears."""
+    for threshold, cap in floor:
+        if word_count < threshold:
+            return cap
+    return 6
+
+# Fields a triage reader must NOT emit. It is handed rubric_v7_triage.md and nothing else -- it has
+# never seen a trait scale or a gate rule -- so any of these means the batch came from the wrong
+# prompt, or from a model that kept going past its instructions. Same style of guard as
+# MODEL_SIDE_ONLY_FIELDS, and it fails loudly for the same reason.
+TRIAGE_FORBIDDEN_FIELDS = (
+    "holistic_score", "gate_applied", "gate_rationale", "score", SCORES_FIELD,
+    "organization", "development", "conventions", "argumentation",
+)
 
 VERSION_CONFIG = {
     "v1": {
@@ -256,6 +346,77 @@ VERSION_CONFIG = {
         "weights": V4_WEIGHTS,
         "extra_fields": [],
         "annotate_scores": True,
+    },
+    "v7": {
+        # v6's trait scores + a blind triage pass, combined by min(). See rubric_v7.md.
+        #
+        # derived_from is v6_runB rather than v6: run B is the later of the two v6 gradings and the
+        # one results_v6.md reports the ranking diagnosis against (Spearman 0.694, best monotone
+        # relabel 0.6615 vs v4's ceiling of 0.6651). Picking the better of two runs as a baseline
+        # would be cherry-picking if v7 were being compared against v6 -- it is not: v7's headline
+        # comparison is against v4 (0.6584), and using run B makes the triage cap's measured effect
+        # SMALLER than it would look against run A. The conservative choice, recorded here so the
+        # choice is visible rather than incidental. decisions_log.md #63.
+        #
+        # NOT a trait grading run: the four trait scores are carried through byte-identical, which
+        # is what makes "v7 without the triage" exactly equal to v6_runB and lets the ablation be a
+        # column in the CSV (system_category_holistic) instead of a separate run.
+        "derived_from": "v6_runB",
+        "predictions_file": os.path.join(HERE, "predictions_v7.csv"),
+        "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
+        "cap_rule": None,
+        "gate_rule": None,
+        "weights": V4_WEIGHTS,      # unchanged since v4, so the cap is the only new variable
+        "triage_results_dir": os.path.join(HERE, "batch_results_v7_triage"),
+        "triage_caps": TRIAGE_CAPS,
+        "extra_fields": [("gate_applied", "system_gate_applied")],
+        # No SCORES annotation anywhere in v7. Same reasoning as v4 for the derived CSV (no trait
+        # grader ran, and human_score already sits beside system_holistic_score there). For the
+        # triage batch files it is a stronger point: a "<human> vs. <system>" line written into
+        # them would put a gold score in the same directory a triage reader is pointed at, and
+        # load_triage() rejects a SCORES field outright rather than trying to account for it.
+        "annotate_scores": False,
+    },
+    "v8": {
+        # Same architecture as v7 -- same trait scores, same min() composition, same blind pass --
+        # with two changes, both in rubric_v8_triage.md:
+        #   1. rung A re-cut from "unintelligible" to "empty" (v7 sent 8 of 9 human 1s past it);
+        #   2. rung A0 added: the mechanical LENGTH_FLOOR above.
+        # Deriving from the same v6_runB trait scores as v7 is what makes v7 and v8 a clean pair:
+        # the trait side is identical in both, so a v7-vs-v8 diff is the instrument and nothing
+        # else. decisions_log.md #67-69.
+        "derived_from": "v6_runB",
+        "predictions_file": os.path.join(HERE, "predictions_v8.csv"),
+        "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
+        "cap_rule": None,
+        "gate_rule": None,
+        "weights": V4_WEIGHTS,
+        "triage_results_dir": os.path.join(HERE, "batch_results_v8_triage"),
+        "triage_caps": TRIAGE_CAPS,
+        "length_floor": LENGTH_FLOOR,
+        "extra_fields": [("gate_applied", "system_gate_applied")],
+        "annotate_scores": False,
+    },
+    "v9": {
+        # Derived, not graded -- the same pattern as v4. The four trait scores come through from
+        # v6_runB untouched and rubric_v6.md is unchanged, so a v6-vs-v9 diff isolates the
+        # aggregation and nothing else. No triage pass, no length floor, no gate, no bands: the
+        # whole scoring rule is fit_aggregator() + apply_aggregator(). See rubric_v9.md.
+        #
+        # Why v6_runB and not v8: v8's predictions already have the triage cap and length floor
+        # applied, and v9 replaces both. What v9 needs is the raw trait scores, which is exactly
+        # what v6_runB holds -- and it is the same source v7 and v8 derive from, so all three sit
+        # on identical trait data and differ only in what happens after.
+        "derived_from": "v6_runB",
+        "predictions_file": os.path.join(HERE, "predictions_v9.csv"),
+        "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
+        "cap_rule": None,
+        "gate_rule": None,
+        "weights": V4_WEIGHTS,          # used only to build feature f1, not to place a band
+        "aggregator_file": os.path.join(os.path.dirname(HERE), "aggregator_v9.json"),
+        "features": AGGREGATOR_FEATURES,
+        "extra_fields": [],
+        "annotate_scores": False,
     },
 }
 
@@ -562,6 +723,509 @@ def derive_v4(version="v4", check_fidelity=True):
     else:
         print(f"No holistic scores changed vs {source_version}")
     return {"n": len(out), "changed": changed}
+
+
+def make_blind_csv(source_csv_path, out_path):
+    """Write a projection of the source CSV containing only essay_id and full_text.
+
+    Every grading run so far kept the grader blind to the gold score by *instruction* -- the prompt
+    says "IGNORE the `score` column" and the column is right there in the file the grader opens
+    (grading_prompt_template.md is candid about this being the weak point of reading essays from
+    disk). For v7's triage pass the column is simply not in the file. Structural rather than
+    instructional: a reader cannot ignore what it was never given, and the guarantee no longer
+    depends on a model's compliance.
+
+    Not retrofitted to the trait passes: v1-v6 are graded, reported and frozen, and re-running them
+    against a different input file would change the artifact rather than the method. Applied from
+    v7 forward. decisions_log.md #62.
+    """
+    with open(source_csv_path, newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
+    with open(out_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["essay_id", "full_text"])
+        for r in rows:
+            writer.writerow([r["essay_id"], r["full_text"]])
+    print(f"Wrote {len(rows)} blind rows (essay_id, full_text only) to {out_path}")
+    return out_path
+
+
+def load_triage(cfg, expected_ids):
+    """Read and validate a version's triage batch results into {essay_id: item}.
+
+    Validates four things, all of them hard errors -- a triage pass is one label per essay, so
+    there is no such thing as a partially-usable one:
+      1. every label is one of TRIAGE_CAPS;
+      2. deciding_rung is one of TRIAGE_RUNGS and AGREES with the label (a `bad` decided by rung
+         `A` means the reader mislabelled or misreported, and either way the row is not evidence of
+         what it claims);
+      3. no forbidden field (trait scores, holistic score, gold score) is present;
+      4. coverage is exact -- every expected essay_id present, nothing extra.
+    """
+    triage_dir = cfg["triage_results_dir"]
+    if not os.path.isdir(triage_dir):
+        raise FileNotFoundError(
+            f"{triage_dir} does not exist. v7 needs a triage pass: grade the essays against "
+            f"rubric_v7_triage.md into that directory as batch_00.json .. batch_09.json first."
+        )
+
+    rung_implies = {
+        "A": "very_bad",
+        "B1": "bad", "B2": "bad", "B1+B2": "bad",
+        "B_cleared": "other",
+    }
+
+    triage = {}
+    problems = []
+    for fname in batch_filenames(triage_dir):
+        with open(os.path.join(triage_dir, fname)) as f:
+            items = json.load(f)
+        for item in items:
+            eid = item.get("essay_id")
+            label = item.get("triage_label")
+            rung = item.get("deciding_rung")
+            present = [k for k in TRIAGE_FORBIDDEN_FIELDS if k in item]
+            if present:
+                problems.append(f"{fname}:{eid} carries fields the triage reader was never asked "
+                                f"for: {present}")
+            if label not in TRIAGE_CAPS:
+                problems.append(f"{fname}:{eid} triage_label={label!r} not one of "
+                                f"{sorted(TRIAGE_CAPS)}")
+            elif rung not in TRIAGE_RUNGS:
+                problems.append(f"{fname}:{eid} deciding_rung={rung!r} not one of {TRIAGE_RUNGS}")
+            elif rung_implies[rung] != label:
+                problems.append(f"{fname}:{eid} deciding_rung={rung!r} implies "
+                                f"{rung_implies[rung]!r} but triage_label={label!r}")
+            if eid in triage:
+                problems.append(f"{fname}:{eid} graded twice")
+            triage[eid] = item
+
+    missing = sorted(set(expected_ids) - set(triage))
+    extra = sorted(set(triage) - set(expected_ids))
+    if missing:
+        problems.append(f"no triage label for {len(missing)} essay(s): {missing}")
+    if extra:
+        problems.append(f"triage labels for essays not in the source set: {extra}")
+
+    if problems:
+        raise ValueError(
+            f"Triage pass in {os.path.basename(triage_dir)} is not usable "
+            f"({len(problems)} problem(s)):\n  " + "\n  ".join(problems[:12])
+            + (f"\n  ... and {len(problems) - 12} more" if len(problems) > 12 else "")
+        )
+    return triage
+
+
+def apply_triage_cap(category_holistic, label, caps=TRIAGE_CAPS, floor_cap=6):
+    """The rule, whole: holistic = min(cap(label), floor_cap, category_holistic). Pure function.
+
+    v7 had no floor and passes floor_cap=6, which is why this reproduces v7 exactly.
+
+    Returns (holistic, source) where `source` attributes the move to `triage`, `floor`, `both` or
+    `none`. Attribution is computed here, once, and written to the CSV, because every claim about
+    either mechanism's contribution is made of it -- and because v7's central finding was that the
+    flags which *bind* behave nothing like the flags overall. Keeping the two mechanisms separable
+    per-essay is what lets floor-only / read-only / both be read off one file instead of three runs.
+    """
+    label_cap = caps[label]
+    capped = min(label_cap, floor_cap, category_holistic)
+    if capped == category_holistic:
+        return capped, "none"
+    by_label = label_cap < category_holistic
+    by_floor = floor_cap < category_holistic
+    return capped, "both" if (by_label and by_floor) else ("triage" if by_label else "floor")
+
+
+def derive_v7(version="v7", check_fidelity=True):
+    """Combine a trait version's scores with a triage pass, per rubric_v7.md.
+
+    Structurally derive_v4()'s sibling: no grading run for the traits, which are carried through
+    from `derived_from` untouched. The difference is that a second, independently-produced input
+    (the triage labels) joins them at the last step.
+
+    The fidelity check is the same idea as check_v4_fidelity() and just as load-bearing: recompute
+    the source version's holistic scores from its own trait scores under its own weights, with no
+    cap applied, and require all 100 to match the source CSV exactly. If that fails, the trait path
+    is not being carried through faithfully and any measured effect of the triage cap would be
+    partly a bug -- so it raises rather than warns. Passing it is also what licenses the claim in
+    rubric_v7.md section 2 that system_category_holistic IS v6_runB, column for column.
+    """
+    cfg = VERSION_CONFIG[version]
+    source_version = cfg["derived_from"]
+    source_file = VERSION_CONFIG[source_version]["predictions_file"]
+    weights = cfg["weights"]
+    caps = cfg["triage_caps"]
+
+    if not os.path.exists(source_file):
+        raise FileNotFoundError(
+            f"{version} derives its trait scores from {source_version}, but {source_file} does "
+            f"not exist"
+        )
+
+    if check_fidelity:
+        check_v4_fidelity(source_file, weights=weights)
+        print(f"Fidelity check passed: recomputing {source_version} from its own trait scores "
+              f"reproduces every holistic score and gate exactly, so system_category_holistic "
+              f"below is {source_version} unchanged")
+
+    rows = read_predictions(source_file)
+    triage = load_triage(cfg, [r["essay_id"] for r in rows])
+
+    length_floor = cfg.get("length_floor")
+    out = []
+    for row in rows:
+        category, gate, rationale, audit = v4_holistic(row["traits"], weights)
+        item = triage[row["essay_id"]]
+        floor_cap = length_floor_cap(row["word_count"], length_floor) if length_floor else 6
+        holistic, source = apply_triage_cap(category, item["triage_label"], caps, floor_cap)
+        out.append({**row, "category": category, "holistic": holistic, "gate": gate,
+                    "rationale": rationale, "audit": audit, "source": source,
+                    "floor_cap": floor_cap,
+                    "label": item["triage_label"], "rung": item["deciding_rung"],
+                    "note": item.get("triage_note", "")})
+
+    sub_score_fields = cfg["sub_score_fields"]
+    with open(cfg["predictions_file"], "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "essay_id", "human_score", "system_holistic_score",
+            *[f"system_{field}" for field in sub_score_fields],
+            "system_gate_applied", "system_weighted_mean", "system_decisive_mass",
+            # v7 additions. system_category_holistic is the pre-cap score -- i.e. exactly what
+            # this pipeline would have produced without the triage pass -- so the ablation is a
+            # column comparison, not a second run.
+            "system_category_holistic", "system_triage_label", "system_triage_rung",
+            "system_floor_cap", "system_cap_source",
+            "word_count", "rationale", "triage_note",
+        ])
+        for r in out:
+            mass = r["audit"]["decisive_mass"]
+            writer.writerow([
+                r["essay_id"], r["human_score"], r["holistic"],
+                *[r["traits"][field] for field in sub_score_fields],
+                r["gate"], f"{r['audit']['weighted_mean']:.2f}",
+                "" if mass is None else f"{mass:.2f}",
+                r["category"], r["label"], r["rung"],
+                r["floor_cap"], r["source"],
+                r["word_count"], r["rationale"], r["note"],
+            ])
+
+    counts = {label: sum(1 for r in out if r["label"] == label) for label in caps}
+    moved = [r for r in out if r["source"] != "none"]
+    by_source = {s: sum(1 for r in moved if r["source"] == s)
+                 for s in ("triage", "floor", "both")}
+    print(f"Derived {len(out)} rows from {os.path.basename(source_file)} + "
+          f"{os.path.basename(cfg['triage_results_dir'])} -> "
+          f"{os.path.basename(cfg['predictions_file'])}")
+    print("Triage labels: " + ", ".join(f"{k}={counts[k]}" for k in caps))
+    if length_floor:
+        print("Length floor (rung A0): " + ", ".join(f"wc<{t} -> cap {c}" for t, c in length_floor))
+    print(f"Cap binding on {len(moved)} of {len(out)} essays "
+          + ", ".join(f"{v} by {k}" for k, v in by_source.items() if v) + ":")
+    for r in moved:
+        print(f"  {r['essay_id']}  {r['label']:<8} wc={r['word_count']:<4} "
+              f"{r['category']} -> {r['holistic']}  by {r['source']:<7} (human {r['human_score']})")
+    return {"n": len(out), "counts": counts, "moved": moved, "by_source": by_source}
+
+
+# --- v9 aggregator internals ------------------------------------------------------------------
+# Deliberately stdlib-only, matching the rest of this module. compute_qwk.py owns the reporting and
+# may use sklearn; the fitting path here stays dependency-free and fully deterministic, which is
+# what lets the LOO number be reproduced exactly by anyone with Python and the CSV.
+
+def _qwk(a, b, n_labels=6):
+    """Quadratic weighted kappa over labels 1..n_labels. Matches sklearn's cohen_kappa_score."""
+    n = len(a)
+    O = [[0] * n_labels for _ in range(n_labels)]
+    for x, y in zip(a, b):
+        O[x - 1][y - 1] += 1
+    ha = [0] * n_labels
+    hb = [0] * n_labels
+    for x in a:
+        ha[x - 1] += 1
+    for y in b:
+        hb[y - 1] += 1
+    num = den = 0.0
+    for i in range(n_labels):
+        for j in range(n_labels):
+            w = ((i - j) ** 2) / ((n_labels - 1) ** 2)
+            num += w * O[i][j]
+            den += w * ha[i] * hb[j] / n
+    return 1.0 - num / den if den else 0.0
+
+
+def _solve(A, b):
+    """Gaussian elimination with partial pivoting. Small, exact enough, no numpy."""
+    n = len(A)
+    M = [row[:] + [b[i]] for i, row in enumerate(A)]
+    for col in range(n):
+        p = max(range(col, n), key=lambda r: abs(M[r][col]))
+        if abs(M[p][col]) < 1e-12:
+            raise ValueError("singular design matrix -- a feature is constant or collinear")
+        M[col], M[p] = M[p], M[col]
+        for r in range(n):
+            if r == col:
+                continue
+            f = M[r][col] / M[col][col]
+            for c in range(col, n + 1):
+                M[r][c] -= f * M[col][c]
+    return [M[i][n] / M[i][i] for i in range(n)]
+
+
+def _ols(X, y):
+    """Least squares with an intercept. Returns [b0, b1, ...] via the normal equations."""
+    D = [[1.0] + list(row) for row in X]
+    k = len(D[0])
+    A = [[sum(D[r][i] * D[r][j] for r in range(len(D))) for j in range(k)] for i in range(k)]
+    v = [sum(D[r][i] * y[r] for r in range(len(D))) for i in range(k)]
+    return _solve(A, v)
+
+
+def _quantile(values, p):
+    """Linear-interpolation quantile, same convention as numpy's default."""
+    s = sorted(values)
+    if not s:
+        raise ValueError("empty")
+    if p <= 0:
+        return s[0]
+    if p >= 1:
+        return s[-1]
+    pos = p * (len(s) - 1)
+    lo = int(math.floor(pos))
+    hi = min(lo + 1, len(s) - 1)
+    return s[lo] + (s[hi] - s[lo]) * (pos - lo)
+
+
+def aggregator_features(traits, word_count, names=AGGREGATOR_FEATURES, weights=V4_WEIGHTS):
+    """Feature vector for one essay. Pure; the single place a feature name becomes a number.
+
+    Note what is NOT here: nothing the trait grader sees. The grader produces four integers under
+    rubric_v6.md and never learns a word count -- length enters the system for the first and only
+    time at this line, in the aggregation layer. decisions_log.md #74.
+    """
+    out = []
+    for name in names:
+        if name == "weighted_trait_mean":
+            out.append(weighted_mean(traits, weights))
+        elif name == "log10_word_count":
+            out.append(math.log10(max(word_count, 1)))
+        elif name == "min_trait":
+            out.append(float(min(traits.values())))
+        elif name == "n_traits_le2":
+            out.append(float(sum(1 for v in traits.values() if v <= 2)))
+        elif name in traits:
+            out.append(float(traits[name]))
+        else:
+            raise KeyError(f"unknown aggregator feature {name!r}")
+    return out
+
+
+def fit_aggregator(rows, names=AGGREGATOR_FEATURES):
+    """Fit coefficients and cut points on `rows`. Pure -- no I/O, no globals, no randomness.
+
+    Two halves, and only the first is fitted against the target:
+      * OLS coefficients for s = b0 + sum(b_i * f_i), regressing the human score on the features;
+      * five cut points by DISTRIBUTION MATCHING -- c_i is the quantile of s at the fitting data's
+        P(y <= i). No cut is chosen to maximise QWK, which is what keeps the discretization from
+        becoming a second fitted model on top of the first.
+    """
+    X = [aggregator_features(r["traits"], r["word_count"], names) for r in rows]
+    y = [float(r["human_score"]) for r in rows]
+    beta = _ols(X, y)
+    s = [beta[0] + sum(b * f for b, f in zip(beta[1:], x)) for x in X]
+    cuts = [_quantile(s, sum(1 for v in y if v <= k) / len(y)) for k in range(1, 6)]
+    for i in range(1, len(cuts)):                     # ties are possible on small fitting sets
+        cuts[i] = max(cuts[i], cuts[i - 1])
+    return {"features": list(names), "beta": beta, "cuts": cuts, "n": len(rows)}
+
+
+def apply_aggregator(params, traits, word_count):
+    """Score one essay. Returns (holistic, s, band_label) -- the band label is for auditing."""
+    f = aggregator_features(traits, word_count, params["features"])
+    beta = params["beta"]
+    s = beta[0] + sum(b * v for b, v in zip(beta[1:], f))
+    score = 1 + sum(1 for c in params["cuts"] if s >= c)
+    lo = params["cuts"][score - 2] if score >= 2 else None
+    hi = params["cuts"][score - 1] if score - 1 < len(params["cuts"]) else None
+    band = f"[{'-inf' if lo is None else f'{lo:.3f}'}, {'inf' if hi is None else f'{hi:.3f}'})"
+    return score, s, band
+
+
+def loo_predict(rows, names=AGGREGATOR_FEATURES):
+    """Leave-one-out predictions: essay i is scored by a model fitted on the other 99.
+
+    This is the honest estimate the project reports, and it is deterministic -- no seed, no shuffle,
+    one number that reproduces forever. Chosen over a 50/50 holdout on measurement grounds: across
+    200 random 50/50 splits the same method returns mean 0.7231 with SD 0.052, so a single split
+    would report mostly which split was drawn. decisions_log.md #73.
+    """
+    preds = []
+    for i in range(len(rows)):
+        fit_rows = rows[:i] + rows[i + 1:]
+        assert len(fit_rows) == len(rows) - 1 and rows[i] not in fit_rows
+        params = fit_aggregator(fit_rows, names)
+        preds.append(apply_aggregator(params, rows[i]["traits"], rows[i]["word_count"])[0])
+    return preds
+
+
+def _inner_select(rows, k=5):
+    """Pick a feature set by k-fold CV *within* the given rows. Deterministic: contiguous folds."""
+    best = (-2.0, None)
+    for name, names in FEATURE_SETS.items():
+        preds = [0] * len(rows)
+        for f in range(k):
+            te = [i for i in range(len(rows)) if i % k == f]
+            tr = [rows[i] for i in range(len(rows)) if i % k != f]
+            try:
+                params = fit_aggregator(tr, names)
+            except ValueError:
+                preds = None
+                break
+            for i in te:
+                preds[i] = apply_aggregator(params, rows[i]["traits"], rows[i]["word_count"])[0]
+        if preds is None:
+            continue
+        score = _qwk([r["human_score"] for r in rows], preds)
+        if score > best[0]:
+            best = (score, name)
+    return best[1]
+
+
+def loo_nested(rows):
+    """LOO where the feature set is re-selected inside each fold.
+
+    The un-nested number uses a feature set that was chosen by looking at CV on these same 100
+    essays, which is contaminated. Re-selecting on each fold's 99 makes the reported number pay for
+    the choice. The gap between nested and un-nested IS the contamination, and results_v9.md reports
+    it rather than only the flattering half.
+    """
+    preds, chosen = [], {}
+    for i in range(len(rows)):
+        fit_rows = rows[:i] + rows[i + 1:]
+        name = _inner_select(fit_rows)
+        chosen[name] = chosen.get(name, 0) + 1
+        params = fit_aggregator(fit_rows, FEATURE_SETS[name])
+        preds.append(apply_aggregator(params, rows[i]["traits"], rows[i]["word_count"])[0])
+    return preds, chosen
+
+
+def fit_v9(version="v9", check_fidelity=True):
+    """Fit the v9 aggregator and write aggregator_<version>.json.
+
+    Reports the nested-LOO estimate FIRST and stores it in the artifact as `performance_estimate`,
+    deliberately instead of an in-sample score: the shipped coefficients are fitted on all 100
+    because that is the best estimate of them, but they have then seen every essay they would be
+    scored on, so an in-sample number in this file would flatter the model every time anyone read
+    it.
+    """
+    cfg = VERSION_CONFIG[version]
+    source_file = VERSION_CONFIG[cfg["derived_from"]]["predictions_file"]
+    if check_fidelity:
+        check_v4_fidelity(source_file, weights=cfg["weights"])
+        print(f"Fidelity check passed: {cfg['derived_from']}'s trait scores reproduce its own "
+              f"holistic scores exactly, so the trait side is carried through untouched")
+
+    rows = read_predictions(source_file)
+    human = [r["human_score"] for r in rows]
+
+    nested, chosen = loo_nested(rows)
+    q_nested = _qwk(human, nested)
+    plain = loo_predict(rows, cfg["features"])
+    q_plain = _qwk(human, plain)
+
+    print(f"\nNested LOO (feature set re-selected on each fold's {len(rows) - 1}): "
+          f"QWK {q_nested:.4f}")
+    print("  fold selections: " + ", ".join(f"{k}={v}" for k, v in sorted(chosen.items())))
+    print(f"Un-nested LOO (features fixed to {'+'.join(cfg['features'])}): QWK {q_plain:.4f}")
+    print(f"  selection cost: {q_plain - q_nested:+.4f}")
+
+    params = fit_aggregator(rows, cfg["features"])
+    params["performance_estimate"] = {
+        "nested_loo_qwk": round(q_nested, 6),
+        "loo_qwk_fixed_features": round(q_plain, 6),
+        "fold_selections": chosen,
+        "note": "LOO on the 100 evaluation essays. No in-sample score is recorded here on purpose "
+                "-- these coefficients are fitted on all 100 and would flatter themselves.",
+    }
+    params["source"] = os.path.basename(source_file)
+    with open(cfg["aggregator_file"], "w", encoding="utf-8") as f:
+        json.dump(params, f, indent=2)
+        f.write("\n")
+    print(f"\nWrote {os.path.basename(cfg['aggregator_file'])}")
+    print("  s = " + " + ".join(
+        [f"{params['beta'][0]:.4f}"]
+        + [f"{b:.4f}*{n}" for b, n in zip(params["beta"][1:], params["features"])]))
+    print("  cuts = [" + ", ".join(f"{c:.4f}" for c in params["cuts"]) + "]")
+    return params
+
+
+def derive_v9(version="v9", check_fidelity=True):
+    """Write predictions_<version>.csv from LOO predictions.
+
+    Every row's score comes from a model fitted on the other 99 essays -- the CSV is the honest
+    artifact, not an in-sample one. The all-100 coefficients live in aggregator_v9.json for anyone
+    who wants to score a NEW essay; they are not what this file reports.
+    """
+    cfg = VERSION_CONFIG[version]
+    agg_file = cfg["aggregator_file"]
+    if not os.path.exists(agg_file):
+        raise FileNotFoundError(
+            f"{os.path.basename(agg_file)} does not exist. Fit it first:\n"
+            f"    python3 grade_essays.py --fit --version {version}"
+        )
+    with open(agg_file) as f:
+        params = json.load(f)
+    if tuple(params["features"]) != tuple(cfg["features"]):
+        raise ValueError(
+            f"{os.path.basename(agg_file)} was fitted on features {params['features']} but "
+            f"VERSION_CONFIG[{version!r}] declares {list(cfg['features'])}. Refusing to apply a "
+            f"stale aggregator -- re-run --fit."
+        )
+
+    source_file = VERSION_CONFIG[cfg["derived_from"]]["predictions_file"]
+    if check_fidelity:
+        check_v4_fidelity(source_file, weights=cfg["weights"])
+    rows = read_predictions(source_file)
+    if params["n"] != len(rows):
+        raise ValueError(f"aggregator fitted on n={params['n']} but source has {len(rows)} rows")
+
+    preds = loo_predict(rows, cfg["features"])
+    sub = cfg["sub_score_fields"]
+    with open(cfg["predictions_file"], "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow([
+            "essay_id", "human_score", "system_holistic_score",
+            *[f"system_{x}" for x in sub],
+            # v9 audit columns: the continuous score each essay's band decision turned on, the
+            # interval it landed in, and the two features -- the analog of v4's system_weighted_mean
+            # / system_decisive_mass, so a band decision is still checkable per essay.
+            "system_continuous_score", "system_band", "system_weighted_mean", "system_log10_wc",
+            "word_count", "rationale",
+        ])
+        for row, pred in zip(rows, preds):
+            _, s, band = apply_aggregator(params, row["traits"], row["word_count"])
+            f1, f2 = aggregator_features(row["traits"], row["word_count"],
+                                         ("weighted_trait_mean", "log10_word_count"))
+            w.writerow([
+                row["essay_id"], row["human_score"], pred,
+                *[row["traits"][x] for x in sub],
+                f"{s:.4f}", band, f"{f1:.2f}", f"{f2:.3f}",
+                row["word_count"],
+                f"fitted aggregator, leave-one-out: s={s:.3f} falls in {band}",
+            ])
+
+    dist = {}
+    for p in preds:
+        dist[p] = dist.get(p, 0) + 1
+    hd = {}
+    for r in rows:
+        hd[r["human_score"]] = hd.get(r["human_score"], 0) + 1
+    print(f"Wrote {len(rows)} leave-one-out rows to {os.path.basename(cfg['predictions_file'])}")
+    print(f"  QWK {_qwk([r['human_score'] for r in rows], preds):.4f}")
+    print(f"  system distribution {dict(sorted(dist.items()))}")
+    print(f"  human  distribution {dict(sorted(hd.items()))}")
+    return {"n": len(rows), "preds": preds}
 
 
 def score_essay_batch(essay_ids, csv_path, rubric_text):
@@ -981,9 +1645,17 @@ if __name__ == "__main__":
                               "disable with --no-check-fidelity)")
     parser.add_argument("--no-check-fidelity", action="store_true",
                          help="Skip the fidelity check before deriving. Not recommended.")
+    parser.add_argument("--fit", action="store_true",
+                         help="Fit the version's aggregator and write aggregator_<version>.json. "
+                              "Reports nested leave-one-out first, then the fixed-feature LOO, and "
+                              "records both in the artifact. v9+.")
+    parser.add_argument("--make-blind-csv", action="store_true",
+                         help="Write a projection of the source CSV containing only essay_id and "
+                              "full_text, for passes that must not see the gold score at all "
+                              "(v7's triage pass). Goes to --out-dir, default /tmp/blind_source.")
     parser.add_argument("--out-dir", default=None,
                          help="With --strip-scores, write blind copies here instead of stripping "
-                              "the originals in place")
+                              "the originals in place. With --make-blind-csv, where to write it.")
     parser.add_argument("--version", default="v1", choices=sorted(VERSION_CONFIG.keys()),
                          help="Which rubric version's batch results to assemble")
     parser.add_argument("--source-csv", default=None,
@@ -995,8 +1667,25 @@ if __name__ == "__main__":
     source_csv = args.source_csv or os.path.join(HERE, "..", "..", "personal_training_set.csv")
     source_csv = os.environ.get("PERSONAL_TRAINING_SET_CSV", source_csv)
 
-    if args.derive:
-        derive_v4(args.version, check_fidelity=not args.no_check_fidelity)
+    if args.make_blind_csv:
+        out_dir = args.out_dir or "/tmp/blind_source"
+        make_blind_csv(source_csv, os.path.join(out_dir, "essays_blind.csv"))
+    elif args.fit:
+        if not VERSION_CONFIG[args.version].get("aggregator_file"):
+            raise SystemExit(f"--fit is for versions with a fitted aggregator; {args.version} has "
+                             f"none. v3-v8 use hand-written rules and need no fitting step.")
+        fit_v9(args.version, check_fidelity=not args.no_check_fidelity)
+    elif args.derive:
+        # Three derivation shapes so far: a pure aggregation change (v4, from one source CSV), a
+        # trait-carry-through plus a second independent pass (v7/v8), and a fitted aggregator (v9).
+        # Dispatch on the config rather than the version string so a later version gets the right
+        # one by declaring what it has.
+        if VERSION_CONFIG[args.version].get("aggregator_file"):
+            derive_v9(args.version, check_fidelity=not args.no_check_fidelity)
+        elif VERSION_CONFIG[args.version].get("triage_results_dir"):
+            derive_v7(args.version, check_fidelity=not args.no_check_fidelity)
+        else:
+            derive_v4(args.version, check_fidelity=not args.no_check_fidelity)
     elif args.assemble:
         assemble(source_csv, args.version, annotate=not args.no_annotate)
     elif args.annotate_scores:

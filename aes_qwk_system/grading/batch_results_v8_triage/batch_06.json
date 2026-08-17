@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "01290ec",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: picks the 335-horses first trip and the metal-scrap rescue on the rainy deck and offers them as its own reasons a reader should sign up"
+  },
+  {
+    "essay_id": "012c9be",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: proposes 'we look at metals that are restiant to stuff like that and see if we could try combining the atoms to make an alloy' as the writer's own answer to the pressure/acid problem"
+  },
+  {
+    "essay_id": "012f8f0",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "each section quotes the article then restates the quote as 'this makes us want to pursuit the study on Venus'; I had to supply why valleys, craters or curiosity justify the danger"
+  },
+  {
+    "essay_id": "013ac83",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the writer's own lazy-person illustration, driving to fast food versus walking to the grocery store, chosen to carry the health reason"
+  },
+  {
+    "essay_id": "014eba6",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "had to re-read to recover the thread, which starts by arguing aliens 'could possibly exist' from the shape of the mouth and then lands on the mesa without the essay connecting the two"
+  },
+  {
+    "essay_id": "014f1b3",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "the stated reasons ('that's what people want', 'we wont make the wrong choice') stop where they start, and I had to work back through the comma-spliced run to find the one real point, the slate of 34 pledged electors"
+  },
+  {
+    "essay_id": "0151c0f",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the rock in the uncle's back yard that looks like a ground hog, chosen by the writer to make the point that landforms resemble things they are not"
+  },
+  {
+    "essay_id": "0155be4",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the writer's own objection that drivers would 'get bored waiting for their turn to drive', plus the take-over-at-roadwork detail chosen to back the alertness reason"
+  },
+  {
+    "essay_id": "0156ea6",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "recycled article facts sit unconnected and I had to go back to find the position at all; only the closing line about needing a planet once we run out of material is the writer's, and it is asserted and dropped"
+  },
+  {
+    "essay_id": "015ac93",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the writer works out that a 30-mile-high blimp drops heat from 800 to about 170 degrees, and explains why gear-and-lever mechanical computers survive where modern ones would not"
+  }
+]

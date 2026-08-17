@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "019b862",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "had to go back over the opening danger-list to work out that the writer actually agrees Venus is survivable; the turn from hazards to agreement is a thread I had to recover rather than one the essay carried"
+  },
+  {
+    "essay_id": "019e2c4",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (people should limit driving) with reasons (air pollution, smog) recoverable on one read, and the Paris ban is worked through to a consequence rather than just named"
+  },
+  {
+    "essay_id": "019e8c3",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars should not be developed) and reason (drivers will assume they need not attend, so cannot retake control in time) stated by the essay and traced to accidents"
+  },
+  {
+    "essay_id": "01a0d33",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (driverless cars are a positive development) and reason (half a million crash-free miles versus daily human-driver crashes) statable straight through; the safety reason is compared to the alternative, not merely restated"
+  },
+  {
+    "essay_id": "01a39ed",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (legalizing driverless cars makes driving more dangerous) and reason (relaxed, distracted drivers cannot react in an emergency) stated and illustrated with the child or animal in the road"
+  },
+  {
+    "essay_id": "01a53e1",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (Venus is worth continuing to study) and reason (as Earth's near-twin in density and size it could be a fallback as population grows) recovered on the first read without repair"
+  },
+  {
+    "essay_id": "01ad79e",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "the opening reverses itself twice and the writer states outright that the answer is 'i dont know'; I had to reread to assemble the eventual stance (only with a signed parent or student consent form)"
+  },
+  {
+    "essay_id": "01ae85f",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (abolish the Electoral College for popular vote) and reason (winner-takes-all lets candidates ignore states they cannot win, which is unfair to those voters) statable without going back"
+  },
+  {
+    "essay_id": "01b55c8",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (limit car usage) and reason (fewer drivers means fewer drunk drivers, so fewer crashes and deaths) stated and carried through by the essay itself"
+  },
+  {
+    "essay_id": "01b9b63",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "position (the Facial Action Coding System should not be used on students) and reason (a teacher simply asking gets the same result, and outside stress would throw the machine off) statable on one read"
+  }
+]

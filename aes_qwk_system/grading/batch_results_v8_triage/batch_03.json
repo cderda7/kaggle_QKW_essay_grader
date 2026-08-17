@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "00a6693",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: picks its own payoffs for joining -- the Acropolis and the gondola ride, and the fencing/boxing/whittling list used to answer the 'too much time away from home' objection"
+  },
+  {
+    "essay_id": "00a6e71",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the writer's own itemized cost of car ownership (permit/license, the car itself, payments, gas, tires, checkups, repairs) plus the drunk-driving point, and the concession that cars are sometimes a necessity"
+  },
+  {
+    "essay_id": "00aa6de",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: draws its own contrast between the student who dreads the class and the one who loves it, and applies it -- schools could use the emotion data to change what makes kids dread school"
+  },
+  {
+    "essay_id": "00b2fe2",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the construction-zone example -- the car reroutes around a slowdown it can see ahead -- plus the writer's own texting/drunk-driving reasoning and the taxi-fuel accumulation point"
+  },
+  {
+    "essay_id": "00b3311",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "repair: one undivided fact-dump paragraph with broken sentences and decaying spelling in the close; I had to reread to recover the thread, and the link from the assembled Venus facts to 'worth studying' is one I supplied, not one the essay makes"
+  },
+  {
+    "essay_id": "00bee4c",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the complacency argument the writer builds -- drivers will trust the car and stop paying attention -- and the blame question, 'the vehicle for shorting out or the driver for becoming too un-alert'"
+  },
+  {
+    "essay_id": "00c3589",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: after each quotation the writer says what it does -- the numerous-spacecraft line 'gives the idea that the study of Venus has already been attempted before and has failed every single time' -- and identifies the counterclaim move"
+  },
+  {
+    "essay_id": "00cb5dc",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "repair and assertion: the opening claim sentence is garbled enough that I went back over it to recover the thread, and the single quoted reason is then only restated -- 'this piece of evidence proves' repeats the quote, and the conclusion repeats it again"
+  },
+  {
+    "essay_id": "00ccc2d",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the writer's own inversion -- the very difficulty of Venus is the reason to go, since fighting past those conditions would advance us as a species and prepare us for harder tasks"
+  },
+  {
+    "essay_id": "00d027f",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: extends the technology to homeschooled and online students, an application the writer chose, and reads the quotes as software that modifies itself so students 'take charge in how they learn a concept'"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "essay_id": "00d4911",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: picks the 2000 Gore/Bush split as the case against the college and then raises faithless electors with the Hawaii/Louisiana instance as a second, separate reason"
+  },
+  {
+    "essay_id": "00d576b",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "had to re-read to find where the writer actually stands: opens 'in my favor I would have the Electoral College' and later says 'I would like to not want the electoral collge to keep going,' and the source quotes are dropped in with the link to the claim left for me to supply"
+  },
+  {
+    "essay_id": "00da297",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: 'if Venus is like earth we could look at what happened to it and make sure that doesn't happened to us' - a use for the sister-planet fact the writer supplied, plus reading the 3-week silicon-carbide test as 'we could be on there for a 2 weeks and leave'"
+  },
+  {
+    "essay_id": "00daaa2",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: 'less traffic which means less accidents, less fuel used which means less pollution' - a consequence chain the writer draws rather than quotes, on top of the own point that a car-free day shows 'its not about cars or bikes'"
+  },
+  {
+    "essay_id": "00dd003",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the bullying objection - a kid whose sadness is now readable 'can be bullied and make the kid even more depressed' - which is the writer's own consequence, as is 'why are we not focused on teaching our kids great education and personal finance'"
+  },
+  {
+    "essay_id": "00e047b",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the writer sets up three distinct advantages - emissions, stress, declining interest in driving - and sorts Paris, Bogota, Vauban and the licence-rate data under them, so the grouping is the writer's own distinction"
+  },
+  {
+    "essay_id": "00e3edb",
+    "triage_label": "bad",
+    "deciding_rung": "B1",
+    "triage_note": "the thread had to be reconstructed - unpunctuated run-ons like 'Like all the needs to stay alive keep breathing and is it even possible' - and the essay slides from 'is studying Venus worth it' to whether we could move there, a link between reason and claim I supplied"
+  },
+  {
+    "essay_id": "00e5687",
+    "triage_label": "bad",
+    "deciding_rung": "B2",
+    "triage_note": "passes rung A on one owned idea - that Venus might hold 'resorces that we may need in the Future because on Earth we are running out' - but that reason is only ever restated, and the rest is 'the author states' followed by a quote with no commentary at all"
+  },
+  {
+    "essay_id": "00eabc5",
+    "triage_label": "other",
+    "deciding_rung": "B_cleared",
+    "triage_note": "quotable: the outlier objection the writer chose - autistic and physically disabled students whose faces FACS could not read - and the poker-face point that students could 'beat the system' by faking, both worked out against the text's own claims"
+  },
+  {
+    "essay_id": "00ef89f",
+    "triage_label": "bad",
+    "deciding_rung": "B1+B2",
+    "triage_note": "the reasons are aimed at editing photos to make people look happy, so the connection to emotion-reading technology is one I supplied, and 'first/second/third' turn out to be one idea - don't change people - restated, with only the closing 'talk to the person that is upset' going past assertion"
+  }
+]
