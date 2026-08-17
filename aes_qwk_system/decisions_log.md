@@ -467,3 +467,75 @@ sub-score with a cap rule)
     weighting, not that the metric moved. The small footprint is structural and was predictable
     (see #45 and #48): half the corpus is gated before weights apply, and the mass rule differs
     from the count rule for exactly one trait subset. Full breakdown in `evaluation/results_v4.md`.
+
+## v5 — the grader stops at the trait scores
+
+50. **Moved the entire holistic-scoring rule out of the grader's prompt and into code.**
+    `rubric_v5.md` is `rubric_v4.md` with steps 6–7 deleted: the severe-weakness gate, the band
+    placement, the weighted mean and the threshold tests are no longer things a model executes.
+    The grader's output schema shrinks from nine fields to six — `essay_id`, `evidence_notes`, and
+    the four trait scores. `holistic_score`, `gate_applied` and `gate_rationale` are now produced by
+    `v4_holistic()` during `--assemble --version v5`. **The scoring rules themselves are unchanged**,
+    including the v4 weights, so a v4-vs-v5 comparison isolates the prompt change and nothing else.
+
+    Two reasons, and the second matters more than the first.
+
+    **(a) Portability to the models the goal actually requires.** v3/v4 asked the grader to run a
+    seven-step conditional: count traits ≤2, branch on how many are exactly 1, compute a weighted
+    mean, round half up, clamp to a band, then test three threshold rules. Claude ran it perfectly —
+    #46's fidelity check found 100/100 compliance on both `holistic_score` and `gate_applied`. But
+    that is a frontier-model result, and this project's goal restricts it to sub-120B models, which
+    will not follow a seven-step branch reliably. Every QWK number in this repo so far was produced
+    by a model that cannot be shown to satisfy that constraint, so the constraint is currently
+    unmeasured, not met. Moving the rule into code removes the hardest part of the task from the
+    model and leaves it doing what smaller models are competent at: applying trait descriptions to
+    text and emitting four integers.
+
+    **(b) It deletes a class of bug rather than validating around it.** `validate_v3_gate()` exists
+    to catch a grader failing to follow the gate. Its whole history is that failure mode: #38's 14
+    dead-zone essays (graders resolving a rubric ambiguity two different ways), #39's reclassification
+    of those from hard violations to soft advisories, and #42's drift between two generations. A rule
+    the grader never executes cannot be executed wrongly, so v5 needs no gate validator at all.
+    Concrete illustration: re-running `--assemble --version v3` against the iteration-3 batch data
+    still prints 10 gate-rule violations. The v5 pipeline cannot produce that output, because there
+    is nothing for the grader to get wrong.
+
+51. **The one guard v5 does add: reject batch objects carrying fields the grader wasn't asked for.**
+    `assemble --version v5` hard-errors if any item contains `holistic_score`, `gate_applied` or
+    `gate_rationale`. Their presence means the batch was graded against an older prompt, or a model
+    kept going past its instructions — either way the run is not what `predictions_v5.csv` would
+    describe. Deliberately an error rather than a warning, and deliberately not "just ignore the
+    extra fields": silently dropping them would assemble a v5-labelled CSV out of v4-shaped grading,
+    which is exactly the artifact-provenance confusion #42 cost two days to untangle. Same design as
+    the `SCORES` leakage guard (#41): mechanical, cheap, fails loudly.
+
+52. **Kept the `SCORES` annotation for v5, with the system half of the comparison derived.**
+    v4 turned it off because a derived version has no grader to keep blind (#46). v5 is a real
+    grading run, so batch files are worth reading again and the reviewer still wants
+    `"<human> vs. <system>"` at the top of each object. Since the grader no longer writes a holistic
+    score, `annotate_scores()` computes it through `derived_item_fields()` — the same function
+    `assemble()` uses, deliberately routed through one place so a batch file can never be annotated
+    with one holistic score and assembled with another.
+
+53. **What v5 does NOT change, flagged because a reader will expect it to.** The score-band anchors
+    are still the six *holistic* descriptors from the official rubric, now doing an awkward job:
+    the grader is asked for trait scores but given whole-essay anchors, so it has to decompose them
+    mentally on every judgment. This is a live suspect for the run-to-run trait noise measured in
+    #54 — agreement is worst on exactly the two traits whose anchors are hardest to isolate
+    (conventions 61%, argumentation 62%, against organization 80% and development 74%). Rewriting
+    them as four per-trait scales of six levels each, extracted from the same official text, is the
+    next planned change and is called out in `rubric_v5.md` as a known limitation rather than left
+    for someone to rediscover. Scope was kept to the mechanical restructuring here so that v5's
+    result is readable as one change.
+
+54. **Measurement context that motivated all of the above** (computed during review, no code
+    change): bootstrap 95% CI on v4's QWK is [0.542, 0.749] — SE ≈ 0.053, so the whole v1→v4 gain of
+    +0.064 is 1.2 SE and every individual iteration delta is inside noise. Comparing two rubric
+    versions by re-grading (as v3→v3.1 did) gives a ΔQWK CI four times wider than comparing them on
+    shared trait scores (0.182 vs 0.045), because re-grading stops the grader noise being shared.
+    Run-to-run trait agreement between the iteration-3 and iteration-4 gradings — whose rubrics
+    differed *only* in aggregation, so the trait scores should have been identical — was 33/100
+    identical vectors. That variance, not the aggregation rule, is where the remaining headroom is:
+    a sweep of 1,688 aggregation-rule variants picked on one half of the data scored **negative** on
+    the other half, and the best possible monotone relabel of v4's scores tops out at 0.665 against
+    v4's 0.658.

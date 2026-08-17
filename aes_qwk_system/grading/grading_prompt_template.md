@@ -21,6 +21,25 @@ essay_id, and nothing else — no prose before or after the array. Grade each es
 do not let other essays in this batch influence any score.
 ```
 
+## What the grader is asked for changed in v5
+
+Through v4 the grader produced a `holistic_score` (plus `gate_applied` / `gate_rationale`) by
+executing the rubric's steps 6–7 itself. **From v5 the grader's job stops at the four trait
+scores.** `rubric_v5.md` has no steps 6–7, and its output schema is exactly six fields: `essay_id`,
+`evidence_notes`, and the four traits. `grade_essays.py` computes the holistic score, the gate and
+the gate rationale from those traits via `v4_holistic()`.
+
+The prompt shape above needs no change — it already says only "follow the rubric's required process
+and produce one JSON object in the exact output format the rubric specifies," and the rubric now
+specifies a shorter one. This template never names the fields, which is why it survived the schema
+change untouched.
+
+`assemble --version v5` hard-errors if a batch object contains `holistic_score`, `gate_applied` or
+`gate_rationale`, on the grounds that the v5 grader was never asked for them — their presence means
+the batch was graded against an older prompt, or the model kept going past its instructions. Same
+style of guard as the `SCORES` check below: mechanical, and it fails loudly rather than quietly
+assembling a run that isn't what the CSV would claim.
+
 ## The `SCORES` field is never part of this prompt
 
 From v3 on, each object in `batch_results_v3_iter3/*.json` leads with a `"SCORES": "<human> vs. <system>"`

@@ -31,6 +31,10 @@ superseded before v4, and `decisions_log.md` #43 explains which artifact is whic
    of that and weights the four traits unequally, so the compensatory test becomes weight mass
    rather than a head count) → a holistic 1–6 score, with an explicit instruction not to use essay
    length as a scoring signal in either direction.
+   **From v5 the split changes:** the rubric still defines all of the above, but the grader is only
+   asked for the four trait scores — every rule that combines them runs in `grade_essays.py`. That
+   makes the pipeline portable to models that can't reliably follow a seven-step conditional, and
+   removes the grader-didn't-follow-the-gate failure mode entirely (decisions_log.md #50).
 2. `personal_training_set.csv`'s 100 essays were split into 10 batches of 10
    (`grading/batches.json`, reused across versions so runs are essay-for-essay comparable) and
    graded in parallel by 10 independent Claude subagents per version, each reading the rubric and
@@ -77,6 +81,12 @@ aes_qwk_system/
                                          counting 3 of 4 traits; the gate's four-trait average
                                          becomes weighted. NOT handed to a grader — v4 was derived
                                          from v3's trait scores, see decisions_log.md #45-49
+  rubric_v5.md                        — v4 with steps 6-7 REMOVED: the grader's job stops at the
+                                         four trait scores, and the gate/band/weight logic runs in
+                                         code instead. Same scoring rules, same weights — only who
+                                         executes them changed. Output schema is six fields
+                                         (essay_id, evidence_notes, 4 traits). See decisions_log.md
+                                         #50-53
   rubric_official_persuade.md         — verbatim official PERSUADE 2.0 rubric (Independent +
                                          Source-based variants), sourced from the corpus repo;
                                          supersedes the "reconstructed proxy" caveat from decision #2
@@ -198,6 +208,12 @@ Enabled for v3 and later only — v1/v2 batch results stay frozen. Future versio
   `cd grading && python3 grade_essays.py --annotate-scores --version v3`
 - To produce blind (SCORES-free) copies before showing batch results to a model:
   `cd grading && python3 grade_essays.py --strip-scores --version v3 --out-dir /tmp/blind_v3`
+- To assemble v5 once a grading run exists: grade against `rubric_v5.md` into
+  `grading/batch_results_v5/`, then `cd grading && python3 grade_essays.py --assemble --version v5`.
+  The grader supplies only `essay_id`, `evidence_notes` and the four trait scores; the holistic
+  score, gate and gate rationale are computed during assembly. Assembly refuses a batch containing
+  `holistic_score` / `gate_applied` / `gate_rationale`, since the v5 grader was never asked for them
+  (decisions_log.md #51).
 - To rebuild v4 from v3's trait scores (no grading run needed — v4 is a pure aggregation change):
   `cd grading && python3 grade_essays.py --derive --version v4`. This runs the equal-weight
   fidelity check first and aborts if the recompute no longer reproduces v3's graded scores exactly.

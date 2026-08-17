@@ -78,6 +78,17 @@ VERSIONING:
                of total weight at/above threshold". Derived deterministically from v3's trait
                scores by derive_v4() -- no batch results, no grader. See decisions_log.md #45-49.
                -> grading/predictions_v3.csv              -> predictions_v4.csv
+  v5 rubric  -> A REAL grading run again, but the grader's job now STOPS at the four trait scores.
+               rubric_v5.md drops steps 6-7: the gate, the band placement and the weighted mean are
+               no longer executed by a model, they are computed here by v4_holistic(). The output
+               schema shrinks to essay_id + evidence_notes + the four traits; holistic_score,
+               gate_applied and gate_rationale become outputs of this script. Aggregation is
+               byte-identical to v4, so a v4-vs-v5 diff isolates the prompt change.
+               Consequences: no gate validator is needed (a rule the grader never runs cannot be
+               run wrongly), and the pipeline stops depending on the grader being able to follow a
+               seven-step conditional -- which is what makes it portable to the sub-120B models the
+               project's goal requires. See decisions_log.md #50.
+               -> grading/batch_results_v5/*.json         -> predictions_v5.csv
   Same batches.json (essay_id split) is reused across versions so runs are directly comparable.
 
 USAGE:
@@ -89,6 +100,7 @@ USAGE:
     python3 grade_essays.py --strip-scores --version v3 --out-dir /tmp/blind_v3
     python3 grade_essays.py --derive --version v4    # recompute v4 from predictions_v3.csv
     python3 grade_essays.py --derive --version v4 --check-fidelity   # + equal-weight self-check
+    python3 grade_essays.py --assemble --version v5  # traits from the grader, holistic computed here
 """
 
 import argparse
@@ -180,7 +192,56 @@ VERSION_CONFIG = {
         # keep blind, and human_score already sits beside system_holistic_score in the CSV.
         "annotate_scores": False,
     },
+    "v5": {
+        # A REAL grading run (unlike v4), but the grader's job stops at the four trait scores.
+        # rubric_v5.md drops steps 6-7 entirely: the severe-weakness gate, the band placement, the
+        # weighted mean and the threshold tests are no longer things a model executes -- they are
+        # computed here by v4_holistic(). decisions_log.md #50.
+        #
+        # Why: v3/v4 asked the grader to run a seven-step conditional (count traits <=2, branch on
+        # how many are exactly 1, weight-average, round half up, clamp to a band, then test three
+        # thresholds). Claude followed it perfectly -- the v4 fidelity check found 100/100
+        # compliance -- but that is a frontier-model result, and the project's goal constrains it to
+        # sub-120B models that will not follow it reliably. Moving the rule into code removes the
+        # hardest part of the task from the model and leaves it doing what small models are actually
+        # good at: applying trait descriptions to text and emitting four integers.
+        #
+        # It also deletes a whole class of bug rather than validating around it. validate_v3_gate()
+        # exists to catch a grader failing to follow the gate; decisions #38-39 (the dead-zone
+        # essays resolved two ways) and #42 (the drift) were both grader-executing-rules problems.
+        # A rule the grader never executes cannot be executed wrongly, so v5 needs no gate
+        # validator -- only the check below that the grader did not emit the fields it was not asked
+        # for, which would mean it is running an older prompt.
+        "batch_results_dir": os.path.join(HERE, "batch_results_v5"),
+        "predictions_file": os.path.join(HERE, "predictions_v5.csv"),
+        "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
+        "cap_rule": None,
+        "gate_rule": None,          # nothing for a grader to violate
+        "holistic_source": "derived",
+        "weights": V4_WEIGHTS,      # same aggregation as v4, so v4->v5 isolates the prompt change
+        "extra_fields": [],
+        # SCORES annotation is back on: v5 IS graded, so batch files are worth reading, and the
+        # reviewer still wants the human-vs-system comparison at the top of each object. The
+        # holistic half of that comparison is derived here rather than read from the grader.
+        "annotate_scores": True,
+    },
 }
+
+
+# Fields v5+ graders must NOT emit: the model is not asked for them, so their presence means the
+# batch was produced by an older prompt (or a model improvising past its instructions) and the
+# run is not what predictions_v5.csv would claim it is.
+MODEL_SIDE_ONLY_FIELDS = ("holistic_score", "gate_applied", "gate_rationale")
+
+
+def derived_item_fields(item, cfg):
+    """Compute the holistic score, gate and rationale for a graded item whose grader didn't.
+
+    Single source of truth for the v5+ path: assemble() and annotate_scores() both go through here
+    so a batch file can never be annotated with one holistic score and assembled with another.
+    """
+    traits = {f: item[f] for f in cfg["sub_score_fields"]}
+    return v4_holistic(traits, cfg.get("weights", V4_WEIGHTS))
 
 
 def validate_v3_gate(item, sub_score_fields):
@@ -642,8 +703,14 @@ def annotate_scores(source_csv_path, version, quiet=False):
             eid = item["essay_id"]
             if eid not in human_scores:
                 raise ValueError(f"{fname}: essay_id {eid} has no human score in {source_csv_path}")
-            value = f"{human_scores[eid]} vs. {item['holistic_score']}"
-            batch_holistics[eid] = item["holistic_score"]
+            # v5+: the grader never wrote a holistic_score, so compute the system half of the
+            # comparison from the trait scores using the same function assemble() uses.
+            if cfg.get("holistic_source") == "derived":
+                system_holistic = derived_item_fields(item, cfg)[0]
+            else:
+                system_holistic = item["holistic_score"]
+            value = f"{human_scores[eid]} vs. {system_holistic}"
+            batch_holistics[eid] = system_holistic
             if item.get(SCORES_FIELD) != value:
                 changed += 1
             # Rebuild so SCORES leads the object; every other key keeps its original order.
@@ -712,9 +779,15 @@ def assemble(source_csv_path, version, annotate=True):
     sub_score_fields = cfg["sub_score_fields"]
     extra_fields = cfg.get("extra_fields", [])
     gate_rule = cfg.get("gate_rule")
-    required_fields = ["essay_id", "evidence_notes", *sub_score_fields, "holistic_score", "rationale"]
-    if gate_rule == "v3_severe_weakness":
-        required_fields += ["gate_applied", "gate_rationale"]
+    derived_holistic = cfg.get("holistic_source") == "derived"
+    if derived_holistic:
+        # v5+: the grader supplies evidence notes and four trait scores, nothing else.
+        required_fields = ["essay_id", "evidence_notes", *sub_score_fields]
+    else:
+        required_fields = ["essay_id", "evidence_notes", *sub_score_fields,
+                           "holistic_score", "rationale"]
+        if gate_rule == "v3_severe_weakness":
+            required_fields += ["gate_applied", "gate_rationale"]
 
     human_scores, word_counts = load_source_scores(source_csv_path)
 
@@ -736,6 +809,7 @@ def assemble(source_csv_path, version, annotate=True):
     cap_violations = []
     gate_violations = []
     soft_gate_notes = []
+    unexpected_fields = []
     for fname in batch_filenames(batch_results_dir):
         with open(os.path.join(batch_results_dir, fname)) as f:
             batch_results = json.load(f)
@@ -743,7 +817,12 @@ def assemble(source_csv_path, version, annotate=True):
             missing = [k for k in required_fields if k not in item]
             if missing:
                 raise ValueError(f"{fname}: item {item.get('essay_id')} missing fields {missing}")
-            for score_field in (*sub_score_fields, "holistic_score"):
+            if derived_holistic:
+                present = [k for k in MODEL_SIDE_ONLY_FIELDS if k in item]
+                if present:
+                    unexpected_fields.append((fname, item["essay_id"], present))
+            checked = sub_score_fields if derived_holistic else (*sub_score_fields, "holistic_score")
+            for score_field in checked:
                 v = item[score_field]
                 if not isinstance(v, int) or not (1 <= v <= 6):
                     raise ValueError(
@@ -762,6 +841,17 @@ def assemble(source_csv_path, version, annotate=True):
                     soft_gate_notes.append((item["essay_id"], soft))
             results[item["essay_id"]] = item
 
+    if unexpected_fields:
+        preview = ", ".join(f"{f}:{e} {p}" for f, e, p in unexpected_fields[:8])
+        raise ValueError(
+            f"{len(unexpected_fields)} essay(s) carry fields the {version} grader was never asked "
+            f"for: {preview}{', ...' if len(unexpected_fields) > 8 else ''}\n"
+            f"rubric_{version}.md stops at the four trait scores -- the holistic score, gate and "
+            f"gate rationale are computed here, not graded. Their presence means this batch came "
+            f"from an older prompt (or a model that kept going past its instructions), so it is not "
+            f"the run predictions_{version}.csv would describe. Re-grade against rubric_{version}.md, "
+            f"or assemble it as the version it actually is."
+        )
     if cap_violations:
         print(f"WARNING: {len(cap_violations)} cap-rule violations (grader didn't apply the rule "
               f"correctly): {cap_violations}", file=sys.stderr)
@@ -783,20 +873,42 @@ def assemble(source_csv_path, version, annotate=True):
     predictions_file = cfg["predictions_file"]
     with open(predictions_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow([
-            "essay_id", "human_score", "system_holistic_score",
-            *[f"system_{field}" for field in sub_score_fields],
-            *[header for (_, header) in extra_fields],
-            "word_count", "rationale",
-        ])
-        for eid in expected_ids:
-            r = results[eid]
+        if derived_holistic:
+            # Same column set derive_v4() writes, so predictions_v4.csv and predictions_v5.csv are
+            # directly diffable -- with identical trait scores they must produce identical rows,
+            # which is what isolates v5's prompt change from the aggregation.
             writer.writerow([
-                eid, human_scores[eid], r["holistic_score"],
-                *[r[field] for field in sub_score_fields],
-                *[r[json_field] for (json_field, _) in extra_fields],
-                word_counts[eid], r["rationale"],
+                "essay_id", "human_score", "system_holistic_score",
+                *[f"system_{field}" for field in sub_score_fields],
+                "system_gate_applied", "system_weighted_mean", "system_decisive_mass",
+                "word_count", "rationale",
             ])
+            for eid in expected_ids:
+                r = results[eid]
+                holistic, gate, rationale, audit = derived_item_fields(r, cfg)
+                mass = audit["decisive_mass"]
+                writer.writerow([
+                    eid, human_scores[eid], holistic,
+                    *[r[field] for field in sub_score_fields],
+                    gate, f"{audit['weighted_mean']:.2f}",
+                    "" if mass is None else f"{mass:.2f}",
+                    word_counts[eid], rationale,
+                ])
+        else:
+            writer.writerow([
+                "essay_id", "human_score", "system_holistic_score",
+                *[f"system_{field}" for field in sub_score_fields],
+                *[header for (_, header) in extra_fields],
+                "word_count", "rationale",
+            ])
+            for eid in expected_ids:
+                r = results[eid]
+                writer.writerow([
+                    eid, human_scores[eid], r["holistic_score"],
+                    *[r[field] for field in sub_score_fields],
+                    *[r[json_field] for (json_field, _) in extra_fields],
+                    word_counts[eid], r["rationale"],
+                ])
 
     print(f"Wrote {len(expected_ids)} rows to {predictions_file}")
 
