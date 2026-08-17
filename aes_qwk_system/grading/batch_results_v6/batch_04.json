@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "00d4911",
+    "evidence_notes": "Letter to a senator claiming the electoral college should be abolished; support is the 2000 Gore/Bush split plus a source-2 Gallup figure (60% prefer direct vote), then a granted-pros paragraph rebutted by faithless electors (1960s Hawaii/Louisiana, Nixon). org 5 (case then concession-rebuttal build on each other, closing adds the Nixon/Carter/Dole consensus rather than restating; sequence not a nameable move so not 6); dev 5 (specific throughout, most support carries an explanation that adds something - 'leaving an unfavored president', 'it can happen again' - but the Gallup figure is left bare); conv 3 (spelling, capitalization and agreement errors accumulate; the 'Granted, that...' sentence needs repair on re-reading); arg 5 (pros acknowledged and answered by showing electors can defect, reaching past the prompt's either/or framing; does not dismantle the strongest pro, so not 6)",
+    "organization": 5,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "00d576b",
+    "evidence_notes": "Opens pro-electoral-college ('in my favor I would have the Electoral College' because counting is faster) but paragraph 3 reverses to 'I would like to not want the electoral collge to keep going'; support is largely source facts and quotations (538 electors, 25 media markets, Texas Democrats/California Republicans, 2012 turnout). org 2 (position contradicted elsewhere, no functioning frame - begins mid-argument, ends on a turnout statistic that closes nothing, parts follow without recoverable relation); dev 3 (specific figures present but listed not explained, and the last paragraph is unmarked verbatim source phrasing - patchwriting caps at 3); conv 2 (several places where I must guess: '270 s that you can vote for the president', 'each or any electors in your state has his or her own group of electors'); arg 2 (position stated then reversed, so commitment fails at rung 3)",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "00da297",
+    "evidence_notes": "Agrees the author is right that studying Venus is worth the danger; two quoted source passages (silicon carbide electronics lasting 3 weeks; Venus's rocky sediment, valleys, mountains, craters) each followed by a 'See...' inference, plus an undeveloped 'Venus is a star we see at night' unit. org 3 (idea stated early and held, but the star paragraph repeats the intro without adding and trails off mid-job; frame perfunctory); dev 4 (connection stated for the two quoted supports - 'we could look at what happened to it and make sure that doesn't happened to us' - but the third support is neither specific nor explained, and quotes sit alongside rather than inside the writer's sentences); conv 2 (fragments and missing verbs throughout - 'it a star', 'aswhille' - and the opening sentence forces a guess at where one clause ends); arg 4 (one reason genuinely reasoned: study Venus to learn what happened there and prevent it here; dangers noted but never answered)",
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "00daaa2",
+    "evidence_notes": "Agrees citizens should limit car usage; support is Paris diesel/smog data (67% diesel vs 53.3% western Europe, even-odd plates, 22-euro fine) and the Bogota car-free day, both drawn from sources. org 4 (thesis early and held, opening orients and closing closes, but the two body parts - driving ban and car-free day - swap freely); dev 3 (specific figures, but the Bogota sidewalk/rush-hour sentences are unmarked verbatim source phrasing stitched in, and the diesel statistics are listed with no stated bearing - patchwriting caps at 3); conv 3 (fragments, capitalization and agreement errors accumulate; 'the smog cleared enough for the ruling french party' forces a re-read); arg 4 (the 'less fuel used which means less pollution' chain is reasoned; the 'people need the things that pollutes the air' concession is raised but never answered)",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "00dd003",
+    "evidence_notes": "Argues the Facial Action Coding System does not belong in schools because it distracts, wastes money, and exposes students to bullying; two source quotations are dropped in without comment and no named case or figure appears anywhere. org 4 (position in the first sentence and held, opening previews and closing restates, both body parts relate, but distraction and bullying swap freely); dev 2 (support general throughout - crowded schools, wasted money, a generic bullied kid - no named case, particular or figure); conv 3 (fused sentences and wrong words - 'too some kids', 'teaching out kids' - accumulate and force re-reading, but meaning is never obscured); arg 4 (the bullying chain reasons why the system harms - revealed emotions to mistreatment to deeper depression - while 'every positive always has a negative' mentions the other side without engaging it)",
+    "organization": 4,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "00e047b",
+    "evidence_notes": "Argues limiting car use has advantages; support is the Paris even/odd ban lifted early, Bogota's Day Without Cars spreading to Cali and Valledupar, Vauban's parking limits with the Heidrun Walter quote, and the 2013 9% drop plus 57%/70% car-ownership figures, each cited to a source. org 4 (thesis and preview held, closing turns the opening's concession, but the environment and stress paragraphs swap without loss and Vauban recurs across two parts); dev 5 (specific throughout and most support interpreted - the ban's early lifting shows efficacy, Vauban generalized into 'smart planning' - with the 57%/70% figures left to speak for themselves); conv 3 (misspellings accumulate heavily and 'This may because the Internet allow people' and 'many center cities renewal have made' need repair); arg 4 ('emissions are detrimental, so limiting cuts them' is reasoned; the 'a car is considered by many a nessecity' concession is mentioned and returned to but never answered)",
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "00e3edb",
+    "evidence_notes": "Endorses studying Venus on survival grounds - if Earth is destroyed by war we will need somewhere to go, so we must learn what other planets offer - then claims Venus is 'sefest' before conceding we cannot know if it is safe and doubt we would get there in time; no source material is used. org 3 (idea stated by the end of the first unit but the closing undercuts rather than closes, and the second unit contradicts itself within the same part); dev 2 (support general throughout - hypothetical war, same atmosphere, enough room - with no named case, figure or realized example); conv 2 (must guess repeatedly: 'the dangers if presnts', 'Like all the needs to stay alive keep breathing', 'if the un rotates away'); arg 4 (the survival chain states why studying other planets follows, not merely that it does; drift at the end does not block rung 4)",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "00e5687",
+    "evidence_notes": "Evaluates the Venus article as well supported, quoting the 'Earth's twin' density/size passage, the ancient-oceans passage and the machine-innovation passage with paragraph citation, and adding a resource-scarcity reason of its own. org 3 (controlling idea stated and held, but two quoted units end mid-thought with no comment and a stray one-line paragraph after the conclusion repeats the resource point without adding); dev 4 (connection stated for the twin quote - Earth-likeness means discoveries and resources - but the other quotes are dropped bare and the framing restates them; quotes sit alongside the writer's sentences); conv 2 (systematic fragments and vocabulary errors that change the sense - 'fine' for find, 'How it was it could have been the most similar planet' - force guessing); arg 4 (one reason reasoned: Earth is running out of resources, so an Earth-like planet is worth researching; the essay otherwise circles its opening)",
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 5",
+
+    "essay_id": "00eabc5",
+    "evidence_notes": "Argues FACS has no merit in classrooms because the technology is weak; each body part takes one of the source's own supporting claims - Huang on universal expressions, 'most human communications are nonverbal', the Facial Feedback Theory in paragraph 9 - and turns it against classroom use, closing with students gaming the system. org 5 (parts build from outlier failure to epistemic failure to deliberate defeat and cannot swap; the conclusion's 'baseless ethics' ground was never argued, so it falls short of 6); dev 5 (specific and explained throughout - autism and physical-disability cases, the writer's own school norm, the poker-face inference to 'it can't perform its main task' - but the physical-disability case is asserted, not explained); conv 4 (varied, controlled sentences and apt wording, errors visible - enviroment, infront, it's/its - and one clause, 'If it happened to, though', needs repair); arg 6 (governing principle explicit, 'the only true place you can know how somebody really feels is in their mind', applied to a testing case, plus an explicit boundary marking where the position holds)",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 6
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "00ef89f",
+    "evidence_notes": "Calls emotion-reading technology 'the dumbest thing ever', giving three first/second/third reasons that all restate one point - you should not change someone from what they are - and recommending talking to an upset person instead; no source material or example is used. org 3 (opening is a bare thesis with no orientation, the closing collapses mid-sentence, and the second and third reasons repeat the first without adding); dev 2 (support general throughout and partly circular - 'you should not change a photo because thats changing you' - with no case, particular or figure); conv 2 (fused multi-clause run-ons and a closing I must guess at: 'because deep down they know they are, but do you just because someone makes and upset face dosnt always mean they are'); arg 3 (position committed but reasoning asserted, not shown - the look-happy/be-happy distinction is left for the reader to connect, and the essay circles its opening)",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 3
+  }
+]

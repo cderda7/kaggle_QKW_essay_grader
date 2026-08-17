@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "01290ec",
+    "evidence_notes": "Claim: readers should sign up for the Seagoing Cowboys/UNRRA program; support is Luke Bomberger's story from the source (first trip to New Orleans, 335 horses, Aug 14 war's end, nine trips, China and Venice, the deck fall saved by a piece of metal), attached to reader appeals ('it should make you feel alive if you think you are going to join'). org 4 (idea stated early and held, frame present, but the 'feel alive' paragraphs repeat and could swap freely); dev 4 (specific source details throughout, connection stated for some but by restatement - the 335 horses and injury are narrated, not put to work); conv 3 (errors accumulate - 'a who had started', 'grocery story', 'proccess', 'anoimals'; the 'Luke couldnt imagine his life without the trips he wouldn't have gone on' sentence needs re-reading to repair); arg 4 (one reason reasoned - the work is animal care, so animal lovers would want it - but the rest is exhortation and the essay circles back to 'join', no opposing view).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "012c9be",
+    "evidence_notes": "Claim: agrees with the author that Venus should be studied further; support is the source's hazards (air pressure, sulfuric acid rain, surface temperatures, survival of only weeks) plus the writer's own alloy proposal; the reasoning chain is study Venus -> learn what happened to it -> avoid the same fate on Earth. org 4 (controlling idea stated early and held, opening and closing both present, single body part relates; body parts not testable as a build); dev 3 (named source conditions are the one specific cluster, listed not explained; the 'help us understand' reason has no evidence behind it); conv 2 (run-on sentences throughout - each paragraph is one unbroken sentence - plus incorrect word choice 'hospital planet' where the reader must guess 'habitable'); arg 4 (one reason genuinely reasoned - learning Venus's fate so Earth can avoid it - but no opposing view answered and the conclusion is what the prompt already implies).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "012f8f0",
+    "evidence_notes": "Claim: the author suggests studying Venus is worth pursuing despite dangers; support is three marked quotations from the source ('most Earth-like planet', 'valleys, mountains, and craters', 'human curiosity'), each followed by a statement of what it does for the reader; the closing reverses to say the author 'could have done a better job'. org 3 (position moves - body says the author 'did a good job', final paragraph says he could have done better - and the closing stops rather than closes); dev 4 (quotations are specific and marked, connection stated for each - 'This makes us want to pursuit the study' - but by restatement, and quotes sit alongside the writer's sentences); conv 3 (accumulated errors - 'belife', 'curios', 'moutains', 'tell's', 'paragraps'; 'it's also that NASA and others are just curios' needs re-reading to repair); arg 3 (position held inconsistently and reversed at the end; reasoning is asserted - the essay says the quote makes us want to go, never why it should).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "013ac83",
+    "evidence_notes": "Claim: limiting car usage brings advantages (money/stress, environment, health), naming the three source articles; support is Heidrun Walter's testimony (no insurance, payments, repairs or gas, less tense), the Paris partial ban with smog rivaling Beijing after five days, Bogota's car-free day with the Carlos Arturo Plaza quote, and a realized fast-food/walking example. org 4 (thesis stated early and held, full frame, but stress/pollution/health are interchangeable supports that could swap freely); dev 4 (support is specific and source-attributed, connection stated for most - 'that will leave her with a lot of stress free moments' - but the explanations mostly restate the support, and the health paragraph rests on a hypothetical); conv 3 (errors accumulate heavily - no sentence capitalization, 'pullotion', 'envirment', 'helthier', 'clonclusion'; 'furthermore not only does it help the envirment for limting car usage and gives relief to peopl' must be re-read and repaired); arg 4 (reasons genuinely reasoned - no car means no insurance/repairs therefore less stress; walking takes more work than pressing pedals therefore healthier - and a governing wants-vs-needs principle is stated, but the conclusion is exactly what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "014eba6",
+    "evidence_notes": "Opens leaning toward aliens existing ('could possibly exist... Not so Postive about it'), argues the face doesn't add up, cites Garvin that 'we don't pass over a human face very often', then ends with the 2001 finding that it is a mesa like Middle Butte in the Snake River Plain of Idaho. org 3 (a controlling idea is stated only at the very end and the opening contradicts it - the position has moved by the close); dev 3 (Middle Butte/Snake River Plain is the one specific piece and it is dropped without explanation; the rest is general impression - 'from images and researches', 'pictures of how aliens look'); conv 2 (frequent fragments and garbled sentences - 'Also that by seeing pictures of hwo aliens look there similar too us in a way, but the mouth is weird shping' forces the reader to guess the intent); arg 2 (position is vague and hedged rather than clear and committed, and the closing hands back the source's own conclusion).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "014f1b3",
+    "evidence_notes": "Letter to a state senator claiming election by popular vote is best; three offered reasons ('more people think he'll be a better president', 'that's what people want', 'we wont make the wrong choice') restate the claim, and the one substantive piece is the source detail that voters choose 'a slate of 34 democratic pledged to that person', drawn out as 'so basicaly were not really voting so and so for president... the govenment is fooling us'. org 3 (perfunctory frame - the opening is the thesis with no orientation, the closing stops rather than closes - and the three reasons repeat one another without adding); dev 3 (one specific source detail; the other three reasons are circular and unsupported, so most claims go without support); conv 3 (errors accumulate - 'imformed', 'govenment', 'basicaly', lowercase i, doubled comma - and 'a slate of 34 democratic pledged' and the final clause both need re-reading to repair); arg 4 (one reason genuinely reasoned - the vote is indirect, so it is not really our vote, therefore vote directly - though the opposing view is only brushed aside, not answered).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "0151c0f",
+    "evidence_notes": "Claim: the 'Face' on Mars is just a landform, with three previewed reasons (aliens don't exist; we would know by now; landforms often resemble things they aren't); support includes the uncle's backyard rock that looks like a groundhog, and a quoted NASA passage answered on two fronts - sci-fi aliens are not two miles long, and a shape viewed from above will appear to stare back. org 4 (thesis stated early with a full frame, but the three reasons are interchangeable and the stray 'See?' unit sits oddly before the quote paragraph); dev 4 (the rock example and the NASA quote are specific and genuinely explained, but reason one offers no specific support at all - 'no actual scientific evidence' is a general gesture - so specificity is not throughout); conv 4 (visible errors - 'nonsence', 'sence', 'bizare', 'heead', 'known by know' - but real sentence variety and the reader essentially never has to repair anything); arg 5 (reasons are reasoned rather than asserted, the pareidolia principle is made explicit and applied to a test case, and the opposing reading of the 1976 photo is answered by showing the 'staring' impression rests on a false assumption about perspective).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "0155be4",
+    "evidence_notes": "Claim: driverless cars should not be developed, with three previewed reasons (drivers must stay alert, nobody wants to wait their turn to drive, laws assume safety requires full human control); support is source facts - the car alerts the driver for driveways, traffic, roadwork and accidents; most states bar even testing; some countries permit limited semi-autonomous use and manufacturers expect more states to follow. org 4 (thesis stated early and held with a matching frame, but the three reasons are plainly interchangeable and could swap); dev 3 (source facts are listed under topic-sentence headings with the reader left to supply why they argue against development, and the borrowed phrasing about laws and semi-autonomous testing is lightly stitched rather than transformed); conv 3 (errors accumulate - 'dangours', 'taffic', 'Driveless', 'countrys', 'semi-autonmous' - and 'the only safe about a car if a human has control' must be re-read and repaired from the thesis); arg 4 (one reason reasoned through - the car only yields control in hard moments, so drivers get bored and most people won't want it - plus a stated principle that they shouldn't develop cars only some people will use; the other side is mentioned in the opening but never answered).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "0156ea6",
+    "evidence_notes": "Largely a fact dump from the Venus source (same density and size, mountains/valleys/craters, former oceans, atmospheric pressure 90 times Earth's, all missions unmanned with no craft surviving more than a few hours, a hovering vehicle needed, mechanical devices crushed); the only stance appears in the final clause - exploration will be difficult but 'we will soon need a planet'. org 3 (a controlling idea is stated but weakly located, arriving only in the last sentence, with no orienting opening and paragraph two repeating paragraph one); dev 3 (specific figures are present but purely listed, the reader supplies every connection, and the pressure sentence is near-verbatim source phrasing - patchwriting); conv 2 (paragraph one is a single long run-on, sentences begin uncapitalized, and 'once we run out of material we wont be able to go anywhere' leaves the reader guessing what was intended); arg 2 (position is vague and tacked on at the end; the body reports what the source says instead of arguing anything).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "015ac93",
+    "evidence_notes": "Claim: the author gives good reasons Venus should be explored; support is specific and source-drawn - Venus as the most similar planet to Earth, NASA's blimp-like vehicle at 30 miles up, heat dropping from 800 to about 170 degrees, solar power plentiful and radiation not exceeding Earth levels, then the residual problem that cameras cannot document findings, answered by mechanical computers running on gears and levers. org 5 (the order is motivated - the documentation problem only arises once the blimp solution is in place, so later material depends on earlier and no pair of body parts could swap; short of 6 because the closing reframe is quoted from the article and one unit contradicts itself); dev 4 (support is specific throughout and connections are stated - 'that means... they could avoid all of the harsh conditions', 'they would at least be survivable' - but several explanations restate source content and the lead reason about Earth-similarity is never connected to the claim); conv 3 (errors accumulate - 'venuse', 'simalar', 'structer', 'unbarable', 'substantionaly', 'requier' - and 'the most the light cannot penetrate' and 'computers do not requier any technology' both force a re-read to repair); arg 4 (one reason genuinely reasoned - high-altitude operation makes conditions survivable - and dangers are acknowledged and answered twice, but the conclusion is exactly what the prompt's framing already implies).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

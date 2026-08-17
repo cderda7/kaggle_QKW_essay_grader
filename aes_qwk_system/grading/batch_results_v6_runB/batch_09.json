@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "1 vs. 3",
+
+    "essay_id": "01bb061",
+    "evidence_notes": "Claim: 'There are many advantages of limiting car usage,' supported by source-reported particulars (40,000 garage space in the German suburb, Paris diesel ban, Bogota car-free day, bike sharing). org 4 (thesis first sentence, frame present, all parts on topic, but the two source-pair paragraphs swap freely and the conclusion re-lists the intro's source titles); dev 3 (specific particulars present but listed as source report, source phrasing lightly stitched, reader supplies the advantage); conv 3 (spacing before punctuation, 'dont/advanges', closing fragment, 'cars have come to an end with culture' forces re-reading; meaning recoverable); arg 3 (position committed but reasons are reported source content, never why limiting cars helps; conclusion circles back to the opening list).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "01bb07c",
+    "evidence_notes": "Claim to a state senator: the electoral system is corrupt and should end; three flaws previewed and taken in order (voters elect electors, electors can be anyone, 17 states unvisited in 2000). org 4 (thesis early with preview, opening and closing both work, but the three flaw paragraphs are interchangeable); dev 4 ('17 states in 2000' and the elector eligibility fact are specific, and the elector paragraph states the connection — he could mislead us and vote for any candidate — while paragraph 1 is circular and paragraph 3 is unexplained rhetorical questions); conv 3 (dense misspellings, spaces before periods, fragments beginning with 'which'; 'invaluable' used for worthless forces repair, but meaning stays recoverable); arg 4 (elector flaw genuinely reasoned; no opposing view answered and the abolish conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "01bb2f3",
+    "evidence_notes": "Claim: driverless cars are not developed — not completely driverless, challenging, not advanced; support is quoted text plus the 25mph limit. org 3 (thesis early and framed, but the 'challenging' paragraph repeats paragraph 1 without adding and starts one job — difficulty — and finishes another); dev 4 (quotes and the 25mph figure are specific, and the essay states connections: 'there is no point on getting a car like this,' 'the driver is doing all the work'); conv 3 ('Frist', 'bthe', 'advance' for advanced, missing spaces, single repeated sentence pattern; errors accumulate and force re-reading); arg 3 (all three reasons restate the thesis, 'it's challenging. It means it's hard to drive' is circular, conclusion restates the opening — reasoning asserted, never shown).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "01bd69c",
+    "evidence_notes": "Claim: 'I am for this new use of technology' (Facial Action Coding System), supported by the 3D muscle model, the universality quote, and Da Vinci's anatomical precision. org 3 (thesis in paragraph 2, but the closing merely stops — 'So im all for it' — and paragraph 2 starts on why old portraits lack smiles and finishes on 3D scale models); dev 3 (quotes dropped in with 'I find it very cool' as the only comment; reader supplies the connection to the claim); conv 3 ('alot', 'maintiain', 'enoough', 'Symstem', opening sentence has no main clause, 'not because it creates emotion... it gives' needs repair; errors accumulate); arg 4 (one reason reasoned — the technology is good because it gives the viewer more understanding of what the subject felt — but no opposing view and the conclusion is what the prompt implies).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "01c1169",
+    "evidence_notes": "Claim: schools should try the emotion-detecting software; support is the paragraph 6 quote about recognizing confusion or boredom, plus the school-shooting case. org 5 (thesis early and held; the body escalates from classroom boredom to mental health via 'can even go beyond classroom problems,' so the two units cannot swap, but the generic opening and two-unit body stop short of a nameable whole-essay move); dev 4 (the boredom quote is specific and explained — administrators could adjust learning programs — but the shooting support is general, no named case, so specificity is not throughout); conv 4 ('effect' for affect, 'there classes/there learning programs', subject-verb slip; errors visible but nothing needs repair); arg 4 (detection-to-intervention reasoning is genuinely stated, but no opposing view, no qualification, and the conclusion is what the prompt implies).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "01c3e09",
+    "evidence_notes": "Claim: Venus is hard to examine closely 'but also can be worthy'; support is source facts — density and size similarity, sulfuric acid clouds, eight hundred degrees, silicon electronics. org 3 (controlling idea is embedded mid-sentence and a closing exists, but idea-units do not hold — one run-on carries density, orbits, mission failure, acid, heat, resources and NASA; frame is perfunctory); dev 3 (specific particulars present but listed with no explanation, and paraphrase is loose enough to distort the source); conv 2 ('is simple to see safety in a point of the earth', 'good for our in different ways', 'the curiosity of the of how can take that resources' — I had to guess intent more than once; comma-spliced run-ons throughout); arg 2 (position is the prompt's own challenge-but-worthy framing handed back, hedged with 'can be' and 'maybe'; the essay reports facts rather than arguing).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "01c46fa",
+    "evidence_notes": "Three quoted passages (the 83-percent-happy figures, the universality quote, Ekman's six emotions) support a claim about the value of reading student emotions. org 3 (the intro only announces the question — 'whether or not... is valuable' — and the position appears only in the conclusion, weakly located, while the self-expression paragraph sits outside it); dev 4 (quotes are specific and cited, and the friend example states the connection — 'now you'll know your next step' — but explanations mostly restate and the quotes sit alongside rather than inside the writer's sentences); conv 3 ('there technology', 'will began', 'Litilarcery', 'paragragh', 'roll' for role, dangling orbicularis oris sentence; errors accumulate and force re-reading); arg 4 (one reason reasoned — the technology tells us what another person is feeling rather than having to ask — but the other side is absent and the conclusion is what the prompt implies).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "01c5073",
+    "evidence_notes": "Claim: against using the technology 'in certain cases' — privacy, redundancy (we read faces ourselves), and masking; the writer turns the source's own 83-percent Mona Lisa figures against it by asking how we know that is how she actually felt. org 4 (position first sentence and held, closing qualifies rather than repeats, but the privacy, redundancy and masking parts could swap); dev 4 (the texting example and the Mona Lisa reading are specific and genuinely explained, but the privacy claim carries no support at all); conv 3 ('agaisnt', 'almsot', 'hypothosis', 'there' for their, chained comma splices; 'which in another example in the first sentence saying' forces repair, meaning recoverable); arg 5 (position qualified where the issue warrants — not a bad idea, just unnecessary and a privacy matter — and that conclusion is not what the prompt's yes/no framing implies; the false-assumption point is raised as a rhetorical question rather than worked out, so not 6).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "01c5750",
+    "evidence_notes": "Claim: curiosity makes trying worth the danger, so studying Venus is worth it; support is Mount Everest climbers plus two long block quotes (mechanical computers, Venus once Earth-like). org 3 (thesis early and framed, but the mechanical-computers quote does not bear on the claim beyond 'So that's a step to trying,' and the danger paragraph starts on the objection and ends on discrimination and influence); dev 4 (Everest is specific and its connection is stated — those dangerous attempts turned out amazing, so trying beats not trying — while the block quotes are dumped with a one-line non-explanation); conv 2 ('The danger that comes along with worth studing venus seems better not to try...' and 'Someone or some, but a lot are curious' made me guess; 'know matter', 'are minds', fragments and splices throughout); arg 4 (the opposing consideration is voiced and answered by counterexample, but the conclusion — worth trying despite danger — is exactly what the prompt's framing already implies, so rung 5's second clause fails).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "5 vs. 4",
+
+    "essay_id": "01c5e87",
+    "evidence_notes": "Claim: does not approve of driverless cars; three reasons — unclear fault in a crash, cars are not 100% driverless, cars still require human skills — each anchored to a quoted passage. org 4 (position and stakes in the opening, closing adds a condition rather than repeating, but the 'not fully driverless' and 'still needs human skills' parts overlap and could swap); dev 4 (all three quotes are specific and each gets a stated connection, but only the fault paragraph interprets — sensor malfunction means the driver cannot be blamed — while the others restate, and the phone-distraction claim is unsupported; quotes sit alongside the writer's sentences); conv 4 ('sucessfully', 'accure', 'piece of mind', 'concideration', 'deffinition', lowercase i; errors visible but nothing had to be repaired); arg 5 (fault reasoning is genuinely reasoned and the position is qualified with a boundary — no approval until proved 100% safe and until attention is not required — which the prompt's for-or-against framing does not imply).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  }
+]

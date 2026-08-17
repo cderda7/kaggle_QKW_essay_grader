@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "019b862",
+    "evidence_notes": "Claim: agrees with the author that humans could survive on Venus; support is three dropped quotes from paragraph 5 (hovering vehicle, \"around 170 degrees fahrenheit\", \"close to sea level\") plus movies and a closing list of human history. org 3 (controlling idea stated but the closing digression on Adam and Eve/Hitler/Trump does not relate, unity breaks); dev 3 (quotes stitched with little transformation and mostly listed, reader supplies the connection, patchwriting caps at 3); conv 3 (errors accumulate — \"includethings\", \"Bascaily\", \"scoiling\" — meaning recoverable but reader re-reads to repair); arg 3 (position committed but reasoning asserted, never why — movies exist and humans have a history, therefore we can survive).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "019e2c4",
+    "evidence_notes": "Claim: we should limit driving because it reduces pollution, smog and environmental damage; support is Paris's partial driving ban with a 22-euro fine and congestion down 60 percent, a quoted businessman, and EPA appropriations figures. org 4 (thesis early with roadmap, all three body parts on topic but freely swappable; some orphan sentences); dev 4 (specific figures, connection stated but by restatement — \"this identifies that people actually care\" — and the EPA part is left unexplained); conv 3 (errors accumulate — \"Paris who had were near a record day setting\", \"propmote\", \"approprations\" — reader re-reads to repair); arg 4 (one reason reasoned — pollution harms breathing and can kill, so limiting cars helps — but conclusion circles back inside the prompt's framing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "019e8c3",
+    "evidence_notes": "Claim: driverless cars should not be developed because of lack of human attention, computer errors and liability; support is three marked article quotes plus concrete failure scenarios (brakes stop working, car steers off the road) and the two-way blame between driver and manufacturer. org 4 (thesis early with three named reasons, all parts relate, but the attention and computer-error parts could swap); dev 4 (quotes marked and glossed, some real explanation, but much rests on general assertion — \"technology is know to fail\" — with no case); conv 3 (errors accumulate and some need repair — \"In order to drive. the human can not\", \"the person is the car\", \"liabiltiy\" — plus one flat sentence pattern throughout); arg 4 (attention chain genuinely reasoned; the closing concession is answered only by restating its own reasons, and the conclusion is what the prompt already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "01a0d33",
+    "evidence_notes": "Claim: driverless cars will have a positive effect; support is four marked quotes (half a million miles without a crash, driver alerts, sensors, steer/accelerate/brake) each followed by a one-line gloss, plus a counterargument paragraph on cost and incompleteness. org 4 (thesis early and held, conventional frame, but the three quote paragraphs are freely interchangeable); dev 4 (specific figure present, connection stated but almost purely by restatement — \"This proves that the driverless cars can do many things\"); conv 4 (visible spelling errors — \"regualr\", \"completley\", \"constantley\" — but nothing needs repair; sentences too uniform in shape for rung 5); arg 4 (safety reason reasoned via the crash-rate comparison; objections named but answered by assertion, and the conclusion stays inside the prompt's framing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "01a39ed",
+    "evidence_notes": "Claim: legalizing driverless cars makes driving more dangerous; support is three cited paragraph quotes, each extended — the alertness requirement becomes drivers drifting off because the car does the work, and the fault question becomes driver and manufacturer blaming each other — plus a realized emergency scenario of a child running in front of the car. org 4 (thesis at end of intro and held, causal chain from distraction to liability, but the first two body parts overlap and could swap); dev 5 (support specific and most of it explained in ways that add what the quote alone did not say; one general claim about accident odds left to stand); conv 4 (visible errors — \"get use to\", \"infront\", \"to late\", \"manufacture\" — but nothing needs repair; runs of same-shape short sentences block rung 5); arg 4 (alertness reason genuinely reasoned; the pro-driverless quote is not engaged as an opposing view and the conclusion is what the prompt implies).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 3",
+
+    "essay_id": "01a53e1",
+    "evidence_notes": "Claim: the author is right that Venus is worth studying; support is a quote on Venus as Earth's \"twin\" in density and size, a second \"quote\" that actually reproduces the writer's own prior sentences, and a quote on volcanoes, earthquakes and lightning used as a con. org 3 (each body part announces a reason its evidence does not match, the concession is left unresolved, and the closing is split and garbled); dev 3 (some claims wholly unsupported, quotes listed with the reader supplying the connection, one fabricated attribution); conv 2 (meaning somewhat obscured — \"the author suggustion... has many thoughts in our heads\", \"The article over had good reasons\", \"is headins a good way bu wanting\" — reader has to guess); arg 3 (position clear only at the end, reasoning asserted not shown, and the conclusion circles the opening).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "2 vs. 2",
+
+    "essay_id": "01ad79e",
+    "evidence_notes": "Claim: ambivalent about classroom emotion-detecting computers, ending on a parental-consent condition; support is a generic hypothetical about a sad student being flagged to a teacher, plus assertions that it is not the school's business and that people differ. org 2 (controlling idea has to be assembled — \"school computers should detect sadness, boredum, and or anger\" contradicts the privacy stance, and para 3 says \"go with i dont know\"); dev 2 (support general throughout, no named case or concrete particular, and the main reason restates the position); conv 2 (frequent structural problems and run-ons — \"So I think id give my honest opinion and go with i dont know evryone isin't the same\" — reader must guess); arg 2 (position stated but vague and self-contradictory, never committed, reasons are restatements).",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "01ae85f",
+    "evidence_notes": "Letter claiming the Electoral College should be replaced by popular vote, with three enumerated reasons: a 60% preference figure, voters electing a slate of electors, and basic unfairness via winner-takes-all. org 4 (thesis and roadmap early, three on-topic parts, conventional letter frame, but the reasons are explicitly enumerated and fully interchangeable); dev 3 (every substantive claim is unmarked source phrasing lightly stitched into a template — patchwriting caps at 3 — and the figures are listed, not explained); conv 4 (visible errors — \"Ellectoral\", \"butr\", \"nto\", \"arrguments\", \"asserstions\" — but nothing needs repair; the writer's own sentences are one repeated template, blocking rung 5); arg 3 (position committed but reasoning asserted, and each paragraph restates the opening in the same words — the essay circles).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 3",
+
+    "essay_id": "01b55c8",
+    "evidence_notes": "Address to \"Fellow Citizens\" claiming limiting car usage brings health, financial, safety, environmental and family benefits; the only specific support is lifted Vauban material ($40,000 parking space, 70 percent without cars, 57 percent sold one) and a one-line Paris driving ban, plus a self-generated drunk-driving chain. org 3 (thin one-line opening, several parts repeat the money and health points without adding, and units carry several jobs at once — the Vauban part jumps from statistics to tension to store placement); dev 3 (all specific evidence is unmarked source phrasing stitched in — patchwriting caps at 3 — and the statistics are listed with no interpretation); conv 2 (an opening \"if\" clause that never resolves, \"can can from\", \"invination\"-level word slips, \"the fines every single person breathing in the world has received\" — reader must guess); arg 4 (drunk-driving reason genuinely reasoned; the closing concession is answered by assertion and the conclusion is exactly what the prompt implies).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 2",
+
+    "essay_id": "01b9b63",
+    "evidence_notes": "Claim: the Facial Action Coding System is wrong to use on students; reasons are that simply asking a student gets the same result, the machine is costly and unaffordable, it invades privacy, and out-of-school moods could throw it off. org 4 (thesis in the first sentence and held to the close, all parts on topic, but the reasons are freely interchangeable and the middle part recycles two of them); dev 2 (support general throughout — \"very costy\", \"some students\", \"most students\" — no named case, figure or concrete particular anywhere); conv 2 (meaning somewhat obscured — \"the machine is and invination of privites\", \"a machine is read their students emotions\", \"the could easly be read by anyone\" — reader must guess); arg 4 (one reason genuinely reasoned — asking gets the same result, and off-topic moods would mislead the machine — but no opposing view and the conclusion stays inside the prompt's framing).",
+    "organization": 4,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  }
+]

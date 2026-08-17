@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "004229b",
+    "evidence_notes": "Claim: driverless cars are unsafe; three reasons (stoplight recognition, detecting a jaywalking pedestrian, brake/system malfunction) plus one article reference that the cars 'need to be proven more safe'. org 4 (thesis early, opening and closing present, all parts on danger, but the three reasons swap freely); dev 3 (support is hypothetical danger-scenarios, only the jaywalking case approaches a particular; connections are restatements of 'this is dangerous', reader supplies the argument); conv 3 (lowercase i, missing punctuation, 'computers like programs', 'a little way to risky' — errors accumulate, reader re-reads to repair); arg 4 (the detection reason is genuinely reasoned — car fails to see pedestrian, therefore kills; no opposing view, conclusion is what the prompt implies).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "0047cb3",
+    "evidence_notes": "Claim: using transportation other than cars reduces stress and air pollution; three quoted sources (Bogota car-free day, Heidrun Walter in Vauban, Paris driving ban) each followed by a one-line gloss. org 3 (opens mid-argument on a floating quote with a dangling attribution — frame incomplete, though a closing is present); dev 4 (support specific — named person, named city, named ban — marked and glossed toward the claim, but quotes sit alongside the writer's sentences and the glosses restate rather than interpret); conv 3 ('stated in' + title as broken sentence, 'versus driving a car could make her more stressed and causes air pollution' — reader re-reads to repair); arg 3 (position clear but reasoning is asserted, no other side, closing restates the thesis in different words).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 3",
+
+    "essay_id": "005a72e",
+    "evidence_notes": "Claim: driverless cars should be used by the public; support from the article (BMW 'Traffic Jam Assistant' at 25 mph, vibrating driver's seat, roof laser sensor building a 3-D model) plus elderly independence and a lost-camper navigation hypothetical. org 3 (the medical-assistant-doctors passage digresses off the controlling idea, and the elderly paragraph starts one job and finishes another); dev 4 (cited specifics from the source, connection stated for some — sensors reduce incidents and deaths — but explanations restate and much support is 'possibilities are endless' general); conv 3 (neccessaties, assisstants, sugnificant, parapraph, 'there car', run-ons — errors accumulate, reader re-reads); arg 4 (elderly-independence and sensor-safety reasons are reasoned, no opposing view, conclusion is what the prompt implies).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "00613e3",
+    "evidence_notes": "Claim: the president should be elected by popular vote; support from 538 electors / 270 needed and 'over 60 percent of voters would prefer a direct election', then a full paragraph steelmanning the electoral college, answered by an appeal to the right to vote. org 5 (the concession paragraph depends on the case that precedes it and the closing lands on freedom/rights, ground the opening had not reached — no pair of parts swaps; sprawling first body unit keeps it off 6); dev 4 (figures are specific and connections stated, but 'big fat paycheck' claims are unsupported and the 270 figure is used both ways without explanation); conv 3 (colledge, elecors, wnt, run-ons, 'that is 270 votes that we dont have to do' — errors accumulate, reader re-reads); arg 5 (opposing position acknowledged and answered, and the governing principle — a founding right to choose our own president — is made explicit, landing past the prompt's for/against framing).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "0065bd6",
+    "evidence_notes": "Claim: driverless cars should not exist because they are dangerous; support is quoted from the source (para 9 on fault when technology fails, para 7 'None of the cars developed so far are completely driverless', para 9 on traffic laws assuming a human driver) plus a sensor-failure hypothetical. org 3 (no closing at all — the essay stops on its last quote-comment, frame incomplete); dev 4 (quoted specifics, marked, with the connection stated for some — you cannot act if you are not in control — but rhetorical 'then what?' leaves other connections to the reader); conv 3 (exsist, who's for whose, 'has100%', long run-on final sentence — errors accumulate, reader re-reads); arg 4 (the human-control reason is genuinely reasoned; the takeover-alert counter is raised but only by rhetorical question, and the conclusion is what the prompt implies).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 2",
+
+    "essay_id": "0066c7c",
+    "evidence_notes": "Claim: driverless cars are bad because the writer does not trust them; three reasons — system malfunction causing crashes, too many cars overflowing junkyards and crowding out houses/crops, and pollution. org 4 (thesis early, opening and closing frame, all three reasons bear on 'bad', but first/second/last swap freely); dev 2 (support is general throughout — no named case, figure or realized example anywhere, only speculative chains); conv 2 ('it would alot of traffic', the junk-yard sentence and the gas-change sentence force the reader to guess the intent — meaning somewhat obscured); arg 4 (the malfunction reason states why distrust follows — off course, crash, harms police, buses, pedestrians; no opposing view, conclusion is the prompt's own).",
+    "organization": 4,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "006c931",
+    "evidence_notes": "Claim: emotion-reading software is unfair because people have a right to keep feelings private, and useless without knowing why; support is the 3-D facial model, Dr. Huang's mixed-emotion percentages and universality quotes, and the Mona Lisa '9 percent disgusted' figure. org 3 (the position moves from unfairness/privacy in the opening to uselessness-without-why at the close — controlling idea drifts far enough that the position has changed); dev 4 (Mona Lisa figure is specific and its meaning is stated, but the privacy claim goes unsupported and the Huang quotes are reported rather than interpreted); conv 3 (techonlogy, exctly, secert, obseres, htought, Hoang, a quote-fragment that does not complete — errors accumulate, reader re-reads); arg 5 ('the technology may be cool' is conceded and answered — useless unless you ask why — and that governing principle takes it past the prompt's valuable/not-valuable framing).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "006d0e1",
+    "evidence_notes": "Claim: you should become a Seagoing Cowboy, for the hard work, the experience and the service; support is named destinations (Greece, Italy, China, Panama Canal, Acropolis, Venice) and the program's WWII origin, and each body paragraph opens by naming an objection. org 4 (clean frame, thesis previews three reasons and holds, but hard work / experience / service are self-contained and could swap); dev 4 (specifics present and connections stated — hard work buys the satisfaction of helping people in need — but most support is general enthusiasm and the place names are listed, not explained); conv 5 (genuine variety of length and shape, rhetorical questions under control, only 'unforgetable' and clunky signposts like 'the fantastic experience is what we will cover' — word choice correct rather than apt); arg 5 (the military objection is acknowledged and answered — taking lives versus saving them, and a WWII cleanup mission would be undone by a third war — reaching a value comparison the prompt's framing does not imply).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "0072128",
+    "evidence_notes": "Claim: America should limit car usage; support is cited throughout — passenger cars at 12 percent of European and up to 50 percent of some US emissions and transportation as America's second largest source (Rosenthal), congestion down 60 percent in Paris (Duffer), Bogota's car-free day (Selsky), Vauban and the Paris odd/even plate ban. org 4 (orienting opening and a closing that calls for action, thesis holds, but pollution / congestion / alternatives are announced in order and swap freely); dev 4 (support specific throughout, but the explanations mostly restate the figure — 'this means we could cut back on almost 50 percent of our polution' — with a thin consequence tacked on, and quotes sit alongside rather than inside the writer's sentences); conv 3 (enviorment, poplution, usauge, ruduce, 'banded driving', 'not only benefit... as well as benefiting' — errors accumulate, reader re-reads); arg 4 (the pollution-to-health reason is reasoned, no opposing view and no qualification, conclusion is exactly what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 2",
+
+    "essay_id": "0079938",
+    "evidence_notes": "Claim: wavers — 'I don't like the idea of driveless cars' but also 'sort of a good idea' and good for the blind on short Indianapolis trips; support is malfunction speculation, the car still needing a human to take the wheel, near-total illegality, and drivers on their phones ignoring the alert. org 2 (the stated controlling idea is contradicted elsewhere and the essay ends on a pros paragraph with no closing at all); dev 3 (one specific — the Indiana/Indianapolis trip and the takeover requirement — but most support is 'blow up or something' general and listed, with the reader supplying the connection); conv 2 ('driving are probably going to be directly on their phone' and the robots fragment force a guess at the intent; frequent fragments and run-ons); arg 4 (the takeover-alert reason is genuinely reasoned — automation makes drivers inattentive, so they miss the handover and crash preventably — but the essay answers no opposing view and reaches no conclusion at all).",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  }
+]

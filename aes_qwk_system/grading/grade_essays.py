@@ -225,6 +225,38 @@ VERSION_CONFIG = {
         # holistic half of that comparison is derived here rather than read from the grader.
         "annotate_scores": True,
     },
+    "v6": {
+        # A REAL grading run, same architecture as v5: the grader's job stops at the four trait
+        # scores and v4_holistic() computes the rest. The ONLY difference from v5 is the rubric
+        # text -- rubric_v6.md replaces v5's six holistic score-band anchors with four per-trait
+        # 1-6 scales extracted from the same official rubric, which is the change decisions_log.md
+        # #53 named as next. Config is byte-identical to v5 apart from the paths, so a v5-vs-v6
+        # diff isolates the per-trait scales and nothing else.
+        "batch_results_dir": os.path.join(HERE, "batch_results_v6"),
+        "predictions_file": os.path.join(HERE, "predictions_v6.csv"),
+        "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
+        "cap_rule": None,
+        "gate_rule": None,
+        "holistic_source": "derived",
+        "weights": V4_WEIGHTS,
+        "extra_fields": [],
+        "annotate_scores": True,
+    },
+    "v6_runB": {
+        # Independent second grading of the SAME essays under the SAME rubric_v6.md. Exists only
+        # to measure run-to-run trait agreement, which decisions_log.md #54 identifies as where the
+        # remaining headroom is and which rubric_v6_research_basis.md section 7 names as v6's
+        # primary metric. Not a rubric version; never reported as one.
+        "batch_results_dir": os.path.join(HERE, "batch_results_v6_runB"),
+        "predictions_file": os.path.join(HERE, "predictions_v6_runB.csv"),
+        "sub_score_fields": ["organization", "development", "conventions", "argumentation"],
+        "cap_rule": None,
+        "gate_rule": None,
+        "holistic_source": "derived",
+        "weights": V4_WEIGHTS,
+        "extra_fields": [],
+        "annotate_scores": True,
+    },
 }
 
 

@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "01290ec",
+    "evidence_notes": "Claim: reader should sign up for the UNRRA Seagoing Cowboys; support is Luke Bomberger's biography (New Orleans, Aug 14, 335 horses, nine trips, China/Venice, the deck fall) with exhortation ('anything is possible'). org 4 (thesis at end of para 1 and held, frame present, but the appeals swap freely and two units wander); dev 4 (specific named particulars, connection stated but only by restatement -- 'it made Luke feel alive, it should make you feel alive'); conv 3 (accumulating errors, 'is a who had started', reader re-reads to repair but meaning recoverable); arg 3 (position committed but reasons are assertions/exhortations, later parts circle the opening).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "012c9be",
+    "evidence_notes": "Claim: we should study Venus because it may explain what happened to an Earth-like planet; support is the hazard list (pressure, sulfuric acid rain, heat) plus a proposal to alloy resistant metals. org 4 (position stated early and held, opening and closing present, but closing mostly restates and nothing builds); dev 3 (hazards named but listed; the 'hospitable planet' and 'three weeks' claims unsupported, reader supplies the link to the position); conv 3 (spelling and run-on paragraphs accumulate, re-read to repair, meaning stays recoverable); arg 4 (one reason reasoned -- study Venus to learn what happened so Earth can avoid it -- but the hazard objection is hand-waved, not answered).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "012f8f0",
+    "evidence_notes": "Claim: the author makes the case that Venus is worth studying; support is three marked quotations (Earth-like/oceans, valleys-mountains-craters, human curiosity), each followed by a comment. org 3 (opening states the idea but the closing reverses it -- 'the author could have done a better job' -- so the position moves by the end and the closing stops rather than closes); dev 4 (quotations are specific and the connection is stated, but each explanation restates the quote: 'this makes us want to pursuit the study'); conv 3 (errors accumulate, 'is a worthy to explore', 'it's also that NASA', reader re-reads to repair); arg 3 (stance is the source's handed back and held inconsistently, reasoning asserted not shown).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "013ac83",
+    "evidence_notes": "Claim: limiting car usage brings advantages; support is Heidrun Walter's car-free life, the Paris ban and Beijing-rivalling smog, Bogota's car-free day, and a walk-to-the-grocery-store contrast. org 4 (thesis early and held, frame present, but stress/pollution/health are interchangeable and do not even follow the order announced); dev 4 (named, specific sources, connection stated but mostly by restatement -- 'that will leave her with a lot of stress free moments'); conv 3 (uncapitalized sentences, misspellings and comma splices accumulate; 'it took five days the smog finally rivaled beijing' needs repair); arg 4 (one reason genuinely reasoned -- walking requires more work than pressing pedals, so bodies strengthen -- no opposing view, conclusion is what the prompt implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "014eba6",
+    "evidence_notes": "Claim shifts: aliens may exist / the face is anomalous / it is a mesa; support is vague picture-gazing, a Garvin paraphrase, and the 2001 Middle Butte comparison. org 2 (no single controlling idea is stated -- the opening speculation and the closing mesa finding contradict, so the reader assembles it); dev 3 (Garvin and Middle Butte are named but most support is general gesture and the mesa fact is dropped unexplained); conv 2 ('the mouth is weird shping', 'how would I big hu,man face be', reader must guess intent at least once); arg 2 (position vague and hedged, 'Not so Postive about it', what look like reasons restate the puzzlement).",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "014f1b3",
+    "evidence_notes": "Claim: switch to election by popular vote; support is 'more people think he'll be a better president', 'that's what people want', and the slate of 34 pledged electors. org 3 (thesis first but no orienting opening, closing trails off rather than closes, and the voting point is repeated in different words mid-way); dev 3 (the slate of 34 is the only concrete particular; the other reasons restate the claim, most support listed); conv 3 (errors accumulate, flat one-pattern sentences, ',,' and 'go threw with what they say' need repair); arg 3 (position committed but reasoning asserted -- the slate point restates a source fact rather than showing why direct voting is better; later parts circle the opening).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "0151c0f",
+    "evidence_notes": "Claim: the Face on Mars is a landform, not an alien; support is the fiction analogy, the missing-persons inference from UFO abduction stories, the uncle's groundhog-shaped rock, and two answers to the quoted NASA description. org 4 (thesis plus roadmap held throughout and later parts do lean on the rock analogy, but the closing only restates the opening); dev 4 (rock and two-mile-head are specific and some explanation interprets, but the 'aliens don't exist' reason is unsupported assertion, so not specific throughout); conv 4 (visible errors -- 'by know', 'nonsence', 'I is just a landform' -- and comma splices, but sentences vary and nothing needs repair); arg 4 (reasons reasoned, and the quoted opposing evidence is answered, but the conclusion is one the prompt's framing already implies, and the objection answered is the movie-alien version).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "0155be4",
+    "evidence_notes": "Claim: driverless cars should not be developed; support is the take-over situations (driveways, roadwork, accidents), boredom while waiting to drive, and the laws assuming human control. org 4 (thesis plus three-reason roadmap held, frame present, but the three reasons swap freely and the closing repeats the thesis verbatim); dev 3 (source particulars are listed and never connected to why they argue against development; the boredom reason restates itself, and the manufacturers detail undercuts the law point unexplained); conv 3 (errors accumulate, 'the only safe about a car if a human has control', 'someone people', re-read to repair); arg 3 (position clear but reasons asserted, never shown, and the conclusion restates the opening word for word).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "1 vs. 3",
+
+    "essay_id": "0156ea6",
+    "evidence_notes": "Mostly a relay of source facts: Venus's density/size, oceans and craters, 90x atmospheric pressure, unmanned missions surviving hours, a hovering vehicle; a position surfaces only in the last line ('we will soon need a planet'). org 3 (controlling idea weakly located -- stated only at the close -- and the second paragraph repeats the first's facts without adding); dev 3 (source phrasing lightly stitched, support listed with only occasional links like 'used to have oceans which means it used to have life'); conv 3 (run-on opening sentence, 'atmodspheric', 'no spacescrafts hasnt survivded', 'will by crushed' -- errors accumulate, meaning recoverable on re-read); arg 2 (position vague and barely engaged, the source's framing handed back with no commitment added).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "015ac93",
+    "evidence_notes": "Claim: the author gives good reasons for exploring Venus; support is the Earth-similarity, the blimp-like vehicle 30 miles up, heat dropping 800 to about 170 degrees with plentiful solar power, the camera/light problem, and mechanical gear-and-lever computers. org 5 (the order is motivated -- obstacle, altitude solution, new obstacle, mechanical-computer solution -- and no pair of parts could swap, but the closing hands the reframe back to the article rather than making the sequence its own argumentative move); dev 5 (support specific throughout and most of it explained with additions -- 'that means they could avoid all of the harsh conditions', 'this is good because these computers... would be substainable on venus' -- but the Earth-similarity claim is dropped unexplained); conv 3 (frequent misspellings and a comma-spliced 'one problem thought people at NASA'; 'the most the light cannot penetrate' needs repair on re-read); arg 4 (reasons reasoned and the danger objection answered, but with the article's answers, and the conclusion is what the prompt's framing already implies).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

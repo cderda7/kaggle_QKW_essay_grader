@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "00a6693",
+    "evidence_notes": "Claim: all citizens should join the Seagoing Cowboy/UNRRA program; reasons are repaying servicemen, seeing sites (Acropolis, China, gondola in Italy), and a paragraph answering the danger and time-away objections. org 4 (thesis early, frame present, but the 'repaying veterans' and 'seeing sites' parts swap freely); dev 4 (specific particulars - nine trips, named places, named games - connection stated for some but mostly restated); conv 4 (recurring misspellings and approximate word choice are visible, nothing needs repair); arg 5 (two objections acknowledged and answered - risk outweighed by need, time passed by activities).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "00a6e71",
+    "evidence_notes": "Claim: limit car use but do not eliminate cars; support is the 50% greenhouse-gas figure, a list of ownership costs, and accident/drunk-driving danger. org 3 (thesis early but the closing breaks off mid-sentence and body part 1 starts on emissions and finishes on expenses); dev 3 (one specific figure; the expense list is listed, reader supplies the connection to limiting use); conv 2 ('anasetiy', 'inter stuff', 'they wasnt a mission' - I had to guess what was meant); arg 4 (one reason weakly reasoned via the cost list; the qualification is announced but truncated before it is made).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "00aa6de",
+    "evidence_notes": "Claim: the emotion-recognition system would benefit classrooms; support is the general fact that it reports emotions by percentage plus hypothetical students who hate or love a class. org 3 (thesis is the first sentence with no orienting opening, and the last line stops rather than closes); dev 2 (no named case, figure or realized example anywhere - support is general hypothetical throughout); conv 3 (misspellings and effect/affect accumulate, and the run-on about the student who dreads class needs re-reading); arg 4 (one reason reasoned - feelings affect grades, so schools could change what students dislike - no opposing view).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "00b2fe2",
+    "evidence_notes": "Claim: driverless cars are a good idea; three previewed reasons - fewer accidents, half the fuel (Sergey Brin, from the text), faster routes (construction-zone rerouting example). org 4 (thesis early, frame present, but the safety/gas/time supports swap freely); dev 4 (Brin's half-fuel figure and the rerouting example are specific and connected, but the accident support stays general); conv 4 (missing apostrophes throughout and one reversed idiom - 'thing of the past' - are visible but meaning holds on one pass); arg 4 (one reason reasoned - distracted humans cause deaths, the car removes the human - objections dismissed rhetorically, not engaged).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 2",
+
+    "essay_id": "00b3311",
+    "evidence_notes": "Claim (only in the final paragraph): Venus is worth studying despite the dangers; the body is a run of source facts - silicon carbide tested three weeks, 97% CO2, 800 degrees, 90x pressure, WWII mechanical computers. org 3 (controlling idea is stated only at the end; the body is undirected summary and the opening's two questions are never answered as posed); dev 3 (figures are specific but patchwritten from the source and listed, not explained); conv 2 ('they wasnt a mission safe', 'systens... mire resistabt', the whole final paragraph - I had to guess at intent); arg 2 (the position is the source's own closing sentence handed back, with no commitment or reasoning of the writer's own).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "00bee4c",
+    "evidence_notes": "Claim: driverless cars carry unrecognized costs because drivers will over-trust them; support is the distracted-driver scenario, then mechanical failure with unresponsive controls, then the blame question. org 5 (the failure paragraph depends on the distraction paragraph - 'while you are texting or turned around' - so the parts cannot swap); dev 3 (no named case, figure or source detail anywhere; the scenarios are carried through but stay hypothetical); conv 4 ('wreckless', 'decission', a fragment and missing question marks are visible, but nothing needs repair); arg 5 (the pro side is conceded in the opening and answered by unreliability, and the liability question goes past the prompt's framing).",
+    "organization": 5,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "00c3589",
+    "evidence_notes": "Claim: the author of 'The Challenge of Exploring Venus' supports his idea well; support is three marked quotations (hovering vehicle, closest planet in density and size, numerous spacecraft sent) plus the article's closing line. org 4 (thesis held, frame present, but the 'blimp vehicle' and 'facts about Venus' parts swap freely); dev 4 (quotes are specific and marked but sit alongside the writer's sentences, and half the follow-ups label rather than interpret; the first quote is mismatched to the 'statistics' claim it is attached to); conv 3 (missing spaces after periods, 'siad', 'succesfully', and 'pathos' for logos accumulate; I re-read the final quote's explanation); arg 4 (says why one fact helps the author's case, but never evaluates where the support is weak).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "00cb5dc",
+    "evidence_notes": "Claim: the author's suggestion that Venus is worth studying should be accepted; one quoted passage (researchers cannot take samples from a distance) plus a restating explanation. org 4 (controlling idea first and held, opening orients and a closing is present, though it only restates the opening); dev 4 (the quote is specific and marked and the connection is stated - 'this piece of evidence proves' - but the explanation restates the quote); conv 2 ('can not of study if that Venus is like Earth' and 'we have stand point' had to be guessed at); arg 3 (position clear and committed, but the only reasoning is the quotation's own therefore-clause repeated, and the closing circles the opening).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "00ccc2d",
+    "evidence_notes": "Claim: the author is correct that Venus is worth studying; three reasons - the hazards (97% CO2, 800 degrees, 90x pressure) whose defeat advances us, Venus's Earth-likeness and possible past life, and the value of striving itself. org 4 (three previewed reasons in preview order; the hazards and past-life parts are interchangeable supports); dev 5 (quoted support is specific throughout and most of it is explained with added inference - hazards reframed as a reason for value, Earth-likeness tied to the search for life); conv 3 ('what it truly out', two intro fragments and the subject-less 'Regardless if... would lead us' need repair, and misspellings accumulate); arg 4 (difficulty-to-advancement is genuinely reasoned, but no opposing view and the conclusion is the endorsement the prompt frames).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "00d027f",
+    "evidence_notes": "Claim: emotion-recognition software will improve learning; support is D'Alto's smile/web-ad quote and two Dr. Huang quotes about recognizing boredom and modifying lessons. org 5 (the second body part explicitly escalates from the first - 'that's not even the limit' - extending classroom use to home and online, so the parts cannot swap); dev 4 (quotes are specific and attributed inside the writer's sentences, one real synthesis from ad-targeting to student agency, but the second explanation restates the quote); conv 4 (the thesis is a fragment and 'advancment', 'implimented', 'coclussion' are visible, but meaning is never in doubt); arg 4 (one reason reasoned - personalization lets students take charge of how they learn - no opposing view and no qualification).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  }
+]

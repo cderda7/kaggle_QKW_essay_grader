@@ -1,0 +1,125 @@
+{
+  "_comment": "Written by grade_essays.py --annotate-scores. Records which essay_ids this script injected the post-hoc SCORES field into. Its purpose is leakage detection: a SCORES field on an essay NOT listed here was not written by this script, which means something that could see the human gold score wrote it -- most likely a grader, which would invalidate the blind-grading premise the QWK numbers rest on. Do not hand-edit.",
+  "annotated": {
+    "batch_00.json": [
+      "000d118",
+      "000fe60",
+      "001ab80",
+      "001bdc0",
+      "002ba53",
+      "0030e86",
+      "0033037",
+      "0033bf4",
+      "0036253",
+      "0040e27"
+    ],
+    "batch_01.json": [
+      "004229b",
+      "0047cb3",
+      "005a72e",
+      "00613e3",
+      "0065bd6",
+      "0066c7c",
+      "006c931",
+      "006d0e1",
+      "0072128",
+      "0079938"
+    ],
+    "batch_02.json": [
+      "0079f2a",
+      "007db64",
+      "0081f18",
+      "008341a",
+      "0084f6c",
+      "0087059",
+      "0098ef4",
+      "00a3575",
+      "00a4469",
+      "00a541a"
+    ],
+    "batch_03.json": [
+      "00a6693",
+      "00a6e71",
+      "00aa6de",
+      "00b2fe2",
+      "00b3311",
+      "00bee4c",
+      "00c3589",
+      "00cb5dc",
+      "00ccc2d",
+      "00d027f"
+    ],
+    "batch_04.json": [
+      "00d4911",
+      "00d576b",
+      "00da297",
+      "00daaa2",
+      "00dd003",
+      "00e047b",
+      "00e3edb",
+      "00e5687",
+      "00eabc5",
+      "00ef89f"
+    ],
+    "batch_05.json": [
+      "00f3984",
+      "00f6383",
+      "00f6ac7",
+      "00fca9b",
+      "00fd564",
+      "00feec3",
+      "0105e2e",
+      "0123792",
+      "01247bc",
+      "01267d1"
+    ],
+    "batch_06.json": [
+      "01290ec",
+      "012c9be",
+      "012f8f0",
+      "013ac83",
+      "014eba6",
+      "014f1b3",
+      "0151c0f",
+      "0155be4",
+      "0156ea6",
+      "015ac93"
+    ],
+    "batch_07.json": [
+      "016010c",
+      "0163804",
+      "01665d5",
+      "016ed64",
+      "01711c3",
+      "01846d8",
+      "0187e96",
+      "018985d",
+      "018fbeb",
+      "018ff85"
+    ],
+    "batch_08.json": [
+      "019b862",
+      "019e2c4",
+      "019e8c3",
+      "01a0d33",
+      "01a39ed",
+      "01a53e1",
+      "01ad79e",
+      "01ae85f",
+      "01b55c8",
+      "01b9b63"
+    ],
+    "batch_09.json": [
+      "01bb061",
+      "01bb07c",
+      "01bb2f3",
+      "01bd69c",
+      "01c1169",
+      "01c3e09",
+      "01c46fa",
+      "01c5073",
+      "01c5750",
+      "01c5e87"
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "00f3984",
+    "evidence_notes": "Claim: the Face on Mars is just a natural landform, announced in sentence 1 and sourced explicitly to 'Unmasking the Face on Mars'; support is a chain of source details (Viking 1 over Cydonia, the April 5 1998 Global Surveyor image, Jim Garvin's Middle Butte comparison) reported in order with no stated warrant. org 4 (thesis early and held, frame present, but the three source details are interchangeable supports); dev 3 (specific source particulars but listed not explained, and the body is source phrasing lightly stitched — patchwriting caps here); conv 3 (spelling errors accumulate — shawdowy, scientisits, peole — and the 'Finally, in the very last paragraph it said,' sentence needs a re-read to repair); arg 3 (committed position but reasoning asserted only — never says why sharper photos settle it; conclusion circles the opening).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "00f6383",
+    "evidence_notes": "Claim: the popular vote is the best way to elect a president, stated at the end of the intro and held; two quoted source passages (para 10 on voting for electors, para 13 on winner-take-all and swing states) each followed by the writer's own inference about what it costs the voter. org 4 (controlling idea early and held with a working frame, but the 'complicated' and 'unfair' body paragraphs swap freely); dev 4 (specific quoted support with connection stated, but explanation stays near restatement and intro claims about bias go unsupported); conv 3 (errors accumulate — contreversy, poeple, 'parents might have thought them' — and the intro's long sentences need repair on re-reading); arg 4 (one reason genuinely reasoned: the electoral system displaces the voter's own judgment; opposing view mentioned in the last line but answered only by restating belief).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "00f6ac7",
+    "evidence_notes": "Claim: the author of 'The Challenge of Exploring Venus' gives very little insight into why scientists keep studying it — a critical stance stated at the end of para 1 and held; support is the author's own offerings (Earth-like density/size, possible past oceans, the quoted 'nearest option for planetary visit' line) each followed by a statement of what the author fails to add. org 4 (thesis early, frame works, closing raises the cost side, but the two 'author offers X / but says no more' units are interchangeable); dev 4 (specific cited support with the connection stated, but the elaboration mostly re-asserts insufficiency rather than interpreting); conv 3 (dense misspellings — inhosbitable, Dispite, crusial, covincing — plus a broken opening clause 'one the closes planet to Earth' and a run-on conclusion that need re-reading); arg 4 (reasons why the author's payoff claim falls short, and weighs 800-degree conditions against the thin case, but the concession is not answered and the conclusion stays inside the prompt's framing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "00fca9b",
+    "evidence_notes": "Claim: the author supported his idea and 'shows his enthusiasm,' with a three-part roadmap (worthy pursuit / human curiosity / astronomers' fascination); support is three cited source bits — para 3 sulfuric acid clouds, a para 2 quote on Venus's reputation, a quote on rocky sediment and craters — tagged with 'shows the challenge' and 'show the simalaritis are still there.' org 4 (controlling idea first, frame present though the closing is a one-line stop, and each part touches the author's support, but the parts swap freely — the body already reorders the roadmap); dev 3 (curiosity paragraph's evidence doesn't bear on its claim and is discarded; the rest is quoted and tagged with restatement, leaving the reader to connect it to the actual thesis); conv 2 ('When the author's how human curiosity lead to dangerous endeavors is shown in paragraph 3' forces a guess at intent, not a repair; frequent broken frames and dense misspellings); arg 3 (position clear but the three grounds are listed, never reasoned — no why anywhere; conclusion restates the opening).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "00fd564",
+    "evidence_notes": "Claim: the Facial Action Coding System is valuable in classrooms, stated in sentence 1; the middle turns to texting habits and laziness, then to standardized-test failure, then leaps to 'the education system will be getting better tests results,' and the final unit switches to therapy and PTSD patients. org 3 (idea stated up front but the texting/laziness units don't bear on the classroom claim and there is no closing — the essay ends on a new topic); dev 2 (support general throughout — no case, figure, or realized example — and the 'reason it should be implemented' unit restates the claim it is meant to support); conv 3 (errors accumulate, with dropped words — 'the only way that communicate mainly is through texting,' 'The reason... because' — and single-sentence paragraphs that must be re-read to repair); arg 3 (position clear and held but reasoning is asserted only — that the software will help, never why — and later units restate it in new words).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "2 vs. 2",
+
+    "essay_id": "00feec3",
+    "evidence_notes": "Claim: going to Venus would be dangerous but 'its worth the try'; after that the essay abandons the position for reportage — 97% carbon dioxide, 800 degrees Fahrenheit, pressure 90 times Earth's, silicon carbide electronics lasting three weeks. org 3 (a controlling idea is stated in the essay's own words but the last two parts drop it and there is no closing at all — the text stops on electronics); dev 3 (figures are specific but lifted with little transformation and simply listed; the reader must supply how any of it bears on 'worth the try'); conv 2 (fused run-ons and missing words force guessing — 'to see if there oxygen,' 'venus density and size are occasionally bigger,' the whole silicon-carbide sentence); arg 2 (the position is the prompt's framing handed back inside a run-on, never returned to or committed to; what follows are facts, not reasons).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "2 vs. 4",
+
+    "essay_id": "0105e2e",
+    "evidence_notes": "Claim: the Face on Mars was not made by aliens and only looked like one because of shadows; support is quoted source material (para 2 on 'unusual shadows,' the winter/cloudy objection, the para 10 'cloudless summer day' rephotograph) arranged as evidence, objection, answer. org 4 (thesis first, all parts on it, closing lands it, but para 1 previews the same chronology para 2 delivers — the supports don't depend on each other); dev 4 ('because' connections are stated for the quotes but the explanation mostly restates them; the para 10 quote is dropped without interpretation); conv 3 (few misspellings but quotes run into the next sentence without terminal punctuation, forcing a re-read at the paragraph 10 quote); arg 4 (the winter-cloud objection is raised and answered by the summer photo, which is real reasoning, but the conclusion goes no further than the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "0123792",
+    "evidence_notes": "Claim: the author supported the idea that studying Venus is worthwhile 'very well,' by converting each stated danger into a positive; support is three quotes (Venus once covered with oceans; no spacecraft surviving more than a few hours; silicon carbide electronics lasting three weeks) each followed by an interpretive 'this shows/this demonstrates' that names what the evidence does for the author's case. org 4 (thesis early and held, opening orients and conclusion synthesizes, but the two 'problem then author's counter' body paragraphs are parallel and could swap); dev 5 (support specific throughout and most of it explained in a way that adds something the quote alone didn't say, though the 'strong evidence' claim itself goes unsupported); conv 4 (visible errors — contriversal, willl, 'far to extreme,' 'posses the question,' advacements — and occasionally approximate word choice, but sentences vary and nothing needs repair); arg 4 (reasons are genuinely reasoned, but the opposing view engaged is Venus's danger rather than the essay's own thesis, and the conclusion reaches only what its supporting reasons and the prompt's framing already imply).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "01247bc",
+    "evidence_notes": "Claim: more people should try being a Seagoing Cowboy — but this arrives only in the final paragraph; the first two-thirds retell Luke's experience (ball games in the emptied animal holds, table-tennis tournaments, fencing, whittling, the draft, the Acropolis, Venice's water streets, the aunt's farm). org 3 (controlling idea weakly located — stated late, after the body has already run; the opening begins mid-report with no orientation); dev 3 (details are specific and drawn from the source but listed, with source phrasing only lightly reworded, and almost none tied to the recommendation); conv 3 (errors accumulate heavily and several sentences need repair — 'he wsa his way to Greece,' 'he got draft,' 'the empty hold of the animals been housed,' 'were the streets are water' — but meaning stays recoverable); arg 3 (position committed at the end but reasons are asserted — 'It helps for life like school does' — never shown).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "1 vs. 3",
+
+    "essay_id": "01267d1",
+    "evidence_notes": "Claim: the Face is just a natural landform, not an alien monument, stated at the end of para 1; support is four cited quotations (the Viking 1 sighting, the para 7 'ten times sharper... no alien monument after all,' the para 10 maximum-resolution photo, the para 12 butte/mesa line) each capped with 'This proves' or 'So, the Face... was just a natural landform after all.' org 4 (thesis early and held, all parts on it, but the closing is a verbatim recap that adds nothing — an intro, on-topic supports and a conclusion done conventionally); dev 4 (specific quoted support with the connection stated, but every explanation restates the quote rather than interpreting it, and quotes sit alongside the writer's sentences); conv 4 (few errors — dicovered, 'On paragraph' repeated, 'The Face got looked a second time' — visible but nothing needs repair; sentence frames are repetitive, so rung 5 fails); arg 3 (position clear and held but never reasoned — the essay never says why a sharper image settles the question, and the final paragraph restates the opening).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 3
+  }
+]

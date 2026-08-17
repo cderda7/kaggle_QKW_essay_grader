@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "000d118",
+    "evidence_notes": "Hypothesized prompt: source-based, on limiting car usage (Vauban / 'car-free' article). Claim = 'I honestly think that good idea that they did that is Vauban'; support = source figures (70% of families own no cars, $40,000 parking space, 12%/50% emissions, 80/20 highway appropriations) plus the David Goldberg quote; connection to claim asserted mainly in one own-voice stretch ('we really don't need car... because we can walk or ride bycles'). org 3 (controlling idea buried mid-essay, closing stops rather than closes, source-report block on EPA/transportation bill tacked on after the opinion); dev 3 (specific figures throughout but borrowed phrasing lightly stitched — patchwriting caps at 3); conv 2 (must guess at 'some where else are suburban life from auto use' and 'if you thik about your help the earth in way'); arg 4 (one reason reasoned — we can walk or bike, so cars aren't needed — no opposing view, conclusion the prompt implies).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "000fe60",
+    "evidence_notes": "Hypothesized prompt: source-based, on whether the 'face' on Mars is a natural landform or alien artifact; writer adopts a NASA-scientist persona. Claim = 'the face is a land form'; support = no life on Mars therefore no martian builders, and Earth has landforms resembling snakes/turtles/humans; a third part is a pure appeal to the writer's NASA credentials. org 4 (opening orients, closing sums, all three parts on topic, but the 'not martian' and 'is a landform' parts swap freely); dev 3 (no source detail, no named case or figure anywhere — general gestures such as 'many landforms are weird' and 'everyone at NASA says the same thing' — though the essay does state its connections); conv 4 (visible spelling/usage errors — 'rite', 'martions', 'since' for sense, 'were talking' — never require repair); arg 4 (reasons genuinely reasoned via the no-life premise, and the alien view is engaged, but the conclusion is exactly the option the prompt's framing offers).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "001ab80",
+    "evidence_notes": "Hypothesized prompt: source-based, on whether developing driverless cars is a worthwhile development. Claim = 'the negative characteristics of these cars consume the positive idea'; support = drivers must still stay alert near accidents/complex traffic (so the purpose is defeated), states lack liability law for semi-automatic cars, and a reasoned chain from undisclosed system bugs to lawsuits to manufacturer debt killing the project. org 4 (thesis early and held, real frame, but the 'not truly driverless / alternatives exist' and 'liability' parts swap without loss); dev 4 (support specific but explanation is inconsistent and often restatement — 'this seems to totally defeat the purpose' — and much is hypothetical, no figures); conv 5 (varied, controlled sentences; only occasional minor slips — neccessary, masnufacturers, develope — nothing costs the reader anything; word choice plain rather than apt); arg 5 (pro-side 'fun' argument acknowledged and answered, position qualified — 'eventually the technology may improve, but' — governing principle stated at the close, and the lawsuits-bankrupt-the-idea conclusion goes past the prompt's framing; strongest objection, safety, never touched).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "001bdc0",
+    "evidence_notes": "Hypothesized prompt: analyze how the author builds an argument that studying Venus is a worthy pursuit despite the dangers. Claim = 'the author uses evidences appealing to reason and concession to make us realize why we should care about studying this planet'; support = a block quote of the hostile-conditions passage read as concession, and the NASA blimp passage read as an appeal to reason that 'raises his credibility'. org 5 (concession paragraph establishes the danger the solution paragraph then answers, so the two cannot swap; the sequence is motivated but the move is inherited from the thesis's enumeration rather than argued by the order itself); dev 4 (two long block quotes sit alongside the writer's sentences rather than inside them, and the commentary largely restates the quote before a small interpretive turn); conv 3 (accumulating agreement/article/preposition errors and phrases like 'put in advance by the concession' and 'find a solution at a reasonable distance' force re-reading, but meaning stays recoverable); arg 5 (warrant made explicit — conceding the danger is what makes the advocacy credible — and the close reaches past the prompt to curiosity and fear, though no objection is answered and no reframing).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "002ba53",
+    "evidence_notes": "Hypothesized prompt: source-based letter arguing to keep or abolish the Electoral College. Claim = 'in favor of keeping the Electoral College'; the three 'reasons' are lifted from the source (anachronism, dispute less likely, restores weight to large states), and the first is actually an objection to the writer's own position, half-recovered by 'but each party selects a slate of electors trusted to vote for the party's nominee'. org 3 (no closing at all — the last body part simply stops before 'From, PROPER_NAME' — and the first body part argues against the stated position); dev 3 (source phrasing stitched together with almost no transformation — 'widely regarded as an anachronism', 'mal apportionment of the Senate decreed in the Constitution', a sentence duplicated verbatim — patchwriting caps at 3); conv 3 (errors accumulate — canaditdate, populare, virue, attintion, 'is because' after 'I am in favor of... is' — and the duplicated sentence plus 'not democratic in a method sense' force re-reading); arg 4 (one reason genuinely reasoned — disputes are less likely because the winner's Electoral College share exceeds his popular share — but the essay circles, re-announcing the same three reasons, and reaches only the prompt's implied option).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "0030e86",
+    "evidence_notes": "Hypothesized prompt: source-based, keep or abolish the Electoral College. Claim = abolish it and replace it with a direct popular count; support = the quoted 1960 Louisiana case in which segregationalists nearly replaced Kennedy's electors, plus the state-weighting complaint and a proposed camera-based anti-fraud safeguard. org 4 (thesis early and held, opening orients, closing closes, all parts on topic, but the sabotage part and the state-weighting part swap without loss); dev 4 (the 1960 case is specific and genuinely interpreted — 'this could not happen with a system that directly connected everyone's votes' — but the weighting and security supports are general assertion, so not specific throughout); conv 4 (visible spelling errors — sabaotage, relpacing, conected, swaped — plus a fragment, none requiring repair; variety present but errors more than occasional); arg 5 (governing principle made explicit — 'does not view states as the voters, but every american citizen as one' — an objection to the writer's own proposal is raised and answered, and the essay reaches a designed alternative the prompt's framing does not imply; the objection chosen is a weak one, so no rung 6).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "0033037",
+    "evidence_notes": "Hypothesized prompt: source-based, on whether facial-recognition technology should be used to read students' emotions in classrooms. Claim = 'face reconizing computer would be very helpful for children'; support = one quotation, 'A class room computer could recognize when a student is confused or bored', with the mechanism supplied in the conclusion (the computer notices the child doesn't understand and gives more instructions). org 4 (position in sentence one and held to the close, opening and closing both present, the single body part on topic; conclusion adds little and the body wanders from 'reliable' to how children learn differently); dev 4 (one specific quoted capability with the connection to the claim stated, but everything else is general assertion — 'some children have trouble learning' — so not specific throughout); conv 2 (must guess at 'why showing us thing that would make going on the internet better' and 'the child doesn't understand is'; repeated misspellings and a semicolon-attached fragment); arg 4 (one reason reasoned via the detect-then-reinstruct chain, no opposing view, conclusion the prompt implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "0033bf4",
+    "evidence_notes": "Hypothesized prompt: source-based persuasive essay on whether readers should join the Seagoing Cowboys program. Claim = 'People should join the Seagoing Cowboys progam because you get to help other countries, you get to see many parts of the world, and you have fun'; support = three short quotations ('It made me more aware other countries and their needs', 'Besides helping people, I had the benefit of seeing Europe and China') and the ship-hold baseball detail, each followed by a tag-on sentence. org 3 (the essay closes, then keeps going with four more lines that repeat the opening background without adding; the three named reasons also drift between the thesis and the conclusion); dev 4 (specific quoted support with a stated connection after each — 'that would make someone feel good about themselves' — but the explanations restate rather than interpret, and one does not follow from its quote); conv 4 (very few errors and nothing needs repair, but every sentence is the same short declarative shape, so rung 5 fails on variety); arg 4 (one reason carried past assertion — helping supplies animals for food and work, which makes you feel good about yourself — no opposing view, conclusion re-lists the thesis).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 2",
+
+    "essay_id": "0036253",
+    "evidence_notes": "Hypothesized prompt: analyze how the author builds an argument that studying Venus is a worthy pursuit despite the dangers. Thesis hands the prompt's wording back verbatim and then splits it into three body parts — 'how venus is worthy', 'how venus is pursuit', 'how Venus is despite in danger' — each a quotation followed by a formulaic 'This quotes means...' that does not follow; the close asserts 'Venus don't cause volcanoes and earthquakes', contradicting the essay's own quoted evidence. org 3 (intro and conclusion present and the three parts run parallel, but the position has moved by the end and the second part is not recoverable as support for it); dev 3 (three specific quotations, but the paraphrases are so loose they reverse what the source said — 'it barley causes dager like other planet' — which caps the trait); conv 2 (must guess at 'venus is pursuit because is halping people wiht the electronic such as vehicule'; 'scholar system', 'presentadditional', 'seeking to lead on its surface'); arg 2 (the prompt's own wording handed back with no commitment added, and the three reasons are restatements of fragments of that wording).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "0040e27",
+    "evidence_notes": "Hypothesized prompt: source-based persuasive essay on whether readers should join the Seagoing Cowboys program. Claim = 'There are many reasons why you should join seagoing cowboys program' with three previewed reasons; support = named source particulars (Luke, 1945, UNRRA hiring cowboys to feed horses, cows and mules, two weeks to cross the Atlantic, China/Europe/Greece), while the third reason is pure assertion. org 4 (thesis and three previewed reasons early, opening orients, closing restates and calls to action, all parts on topic, but the three benefits swap freely); dev 4 (specific support in the first two parts with the connection stated — 'you'd be helping our country because when Luke was in the program...' — but by restatement, and the 'fun' part offers no specifics at all); conv 3 (must repair 'he had to those countries recover', 'if you are a seagoing cowboy told travel overseas a lot' and 'You'd been in countries you'd didn't think you'd be in'; nearly every sentence runs to the one 'You'd be...' pattern); arg 4 (one reason reasoned through the UNRRA-animals-recovery chain, plus a small qualification about seasickness, but no opposing view and the conclusion is the prompt's implied option).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

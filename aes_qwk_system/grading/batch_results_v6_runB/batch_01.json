@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "004229b",
+    "evidence_notes": "Claim: driverless cars are unsafe ('a lot of hazard and danger'); three hypothetical hazards (stoplight recognition, hitting a jaywalker, brake malfunction) plus one vague source gesture ('in the article it says these cars need to be proven more safe'), which is used near-circularly. org 4 (thesis early, opening and closing present, but the three hazards swap freely); dev 3 (jaywalker scenario is the only near-specific support, rest general hypotheticals, connections listed as bare danger-restatement); conv 3 (lowercase i, comma-spliced opener, 'these computers like programs' forces re-reading to repair, meaning always recoverable); arg 4 (malfunction-to-death chain says why unsafe follows, no opposing view, no principle).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "0047cb3",
+    "evidence_notes": "Claim: using transportation other than cars releases stress and lowers air pollution; support is three marked source quotations (Bogota car-free day, Heidrun Walter in the German suburb, the Paris partial driving ban) each followed by one line of writer's comment. org 4 (controlling idea early and held, quote-opening and closing present, but the German-suburb and Paris parts swap without loss); dev 4 (quotes are specific and named, connection stated for two of three, but explanations restate the quote and the Bogota opener is never explained); conv 3 (broken attribution fragment and the dash sentence 'release stress- versus driving a car... causes air pollution' force re-reading; one sentence pattern); arg 3 (reasons asserted not shown, conclusion restates the thesis verbatim - the essay circles).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 3",
+
+    "essay_id": "005a72e",
+    "evidence_notes": "Claim: driverless cars should be used by the public; source support includes BMW's 'Traffic Jam Assistant' at 25 mph, the vibrating driver's seat, and the roof laser sensor building a 3-D model, plus invented navigation scenarios (lost camper, new town). org 3 (thesis diffuse, the medical-assistant material digresses, and units carry several jobs - 'Next... Next' inside one paragraph); dev 4 (specific source details, safety connection stated, but camping/gas-station examples are unexplained speculation so not specific throughout); conv 3 (dense misspelling accumulation - assisstants, sugnificant, tremendoulsy, 'there car could lead then to safety' - re-read to repair, meaning recoverable); arg 4 (elderly-independence reason genuinely reasoned, others asserted, no opposing view).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "00613e3",
+    "evidence_notes": "Claim: the president should be elected by popular vote, not the Electoral College; support is 538 electors / 270 needed, the 60 percent of voters preferring direct election, and elector self-interest; a full paragraph gives the other side (qualified officials, constitutional pedigree) before the close appeals to the right to vote. org 5 (concession paragraph must sit between the case and the closing appeal - no pair of parts could swap); dev 4 (figures are specific and their meaning is stated, but the counter-side paragraph's support is bare assertion, so not specific throughout); conv 3 (colledge, elecors, wnt accumulate; 'that is 270 votes that we dont have to do' needs re-reading to repair); arg 5 (opposing position acknowledged at length and answered by an explicit governing principle - founding freedom / right to vote - rather than by handing the prompt back).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "0065bd6",
+    "evidence_notes": "Claim: driverless cars should not exist because they are dangerous; three source quotations (paragraph 9 on fault, paragraph 7 on none being fully driverless and the driver-notification design, paragraph 9 on traffic-law assumptions), each followed by commentary, mostly rhetorical questions. org 3 (thesis early and held but the essay stops rather than closes - no closing at all); dev 4 (quotes are specific and the connection is stated for the control/notification points, but explanations are 'then what?' questions and the sensor scenario is general); conv 3 (exsist, missing spaces, fused sentences like the opener accumulate; re-read to repair, never guess); arg 4 (loss-of-control reason genuinely reasoned, but the fault question is raised and never connected, and no opposing position is answered).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 2",
+
+    "essay_id": "0066c7c",
+    "evidence_notes": "Claim: driverless cars are bad because 'i don't trust them'; three reasons - system malfunction causing crashes, too many cars causing traffic and overflowing junkyards, and pollution making people sick. org 3 (frame present but the junkyard/crops material digresses and two units start one job and finish another); dev 2 (support general throughout - no named case, figure, or source detail anywhere, only speculative chains); conv 2 (meaning somewhat obscured: 'it would alot of traffic because there are alot of cars who need a driver to drive' and the junkyard sentence force guessing, not repair); arg 4 (the malfunction-to-crash-to-harm chain says why distrust follows, no opposing view, no qualification).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "006c931",
+    "evidence_notes": "Claim: emotion-reading facial software is unfair because people have a right to keep feelings private; support is source material (3-D facial model, muscle tracking, Dr. Huang on universal expressions, the Mona Lisa at 9 percent disgust), and the Mona Lisa detail is turned into the argument that knowing what without why is pointless. org 3 (paragraph two reports the technology without bearing on the claim, and the position drifts from 'unfair/right to privacy' to 'useless' by the close); dev 4 (source details are specific and the Mona Lisa connection is stated, if by rhetorical question, but the central privacy claim is unsupported and much source material is only reported); conv 3 (secert, exctly, delevopted, htought accumulate; the opening 'how all of the people us were' and 'or even why the are feeling' need re-reading to repair); arg 4 (the no-benefit-without-why reason is reasoned, the privacy reason is pure assertion).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "006d0e1",
+    "evidence_notes": "Claim: you should become a Seagoing Cowboy, for the hard work, the experience, and the service; each body part opens with an objection ('some may say hard work is not a reason', 'the experience isn't worth risking your life', 'you are better off in the military') and answers it, with named destinations and the WWII origin as support. org 4 (roadmap intro, three on-topic supports, call-to-action close, but hard work and experience swap without loss); dev 4 (named places and the WWII origin are specific and connections are stated, but most support is general appeal - satisfaction, path to knowledge - so not specific throughout); conv 5 (genuine variety in length and shape, control holds, errors minor - unforgetable, the parallelism slip in the last paragraph - nothing costs the reader anything, but word choice is correct rather than apt); arg 5 (three opposing considerations acknowledged and answered, e.g. military service outweighed by saving rather than taking lives).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "0072128",
+    "evidence_notes": "Claim: America should limit car usage because of environmental and community advantages; support is cited source data (12 percent of European emissions and up to 50 percent in car-intensive US areas, transportation as second largest US emissions source, congestion down 60 percent in Paris, Bogota's annual car-free day). org 4 (thesis early with a preview, opening and closing both work, but the pollution and congestion parts swap without loss); dev 5 (support specific in every body part and most explanations add something the quote did not say - safer roads, no rush hour, health gains - though the Vauban example is dropped); conv 3 (enviorment, poplution, usauge, banded accumulate, and 'not only benefit the enviorment as well as benefiting their health' forces re-reading to repair); arg 4 (safety-from-fewer-drivers reason is reasoned, but no opposing position, no qualification, and the conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "0079938",
+    "evidence_notes": "Claim: 'I don't like the idea of driveless cars', but the essay then says they are 'sort of a good idea', concedes they suit the blind and short trips in Indianapolis, lists cons (malfunction, half-automation, illegality in most states, distracted drivers ignoring the takeover warning), and ends on pros - relaxing without paying attention - which contradicts its own distraction con. org 3 (controlling idea stated but contradicted, and the essay ends without closing); dev 3 (the Indianapolis mall-to-restaurant case is the one specific piece, the rest is 'blow up or something' hand-waving, mostly listed); conv 3 (driveless, illlegal, 'driving are probably going to be directly on their phone', one repeated sentence pattern - re-read to repair, meaning recoverable); arg 3 (position held inconsistently and reasons are hedged assertions; the essay circles rather than resolving its own pros and cons).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  }
+]

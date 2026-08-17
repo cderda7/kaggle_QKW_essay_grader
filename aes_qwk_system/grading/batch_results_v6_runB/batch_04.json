@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "00d4911",
+    "evidence_notes": "Letter to a senator claiming the electoral college should be abolished; supports it with the 2000 Gore/Bush split, a Gallup poll (source 2), and a concession of the EC's pros (source 3) rebutted with faithless electors in 1960s Hawaii/Louisiana. org 5 (case paragraph then concession-and-rebuttal paragraph could not swap; order is motivated, but closing largely restates the opening, so no nameable sequence move); dev 4 (support specific throughout, but only the 2000 example and the faithless-elector point are explained; poll and Nixon/Carter/Dole name-drop are listed, and source citations sit alongside rather than inside the writer's sentences); conv 3 (spelling, capitalization and case errors accumulate; the long \"Granted, that...\" comma-splice sentence forces a re-read to repair); arg 4 (2000 election reason genuinely reasoned; opposing pros conceded and answered, but the conclusion lands exactly where the prompt's binary framing already puts it).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "00d576b",
+    "evidence_notes": "Opens pro-electoral-college (\"my reason for the electoral college to stay is\" faster vote processing), then in paragraph 3 reverses to \"I would like to not want the electoral collge to keep going,\" with the final paragraph reproducing source phrasing about Texas Democrats and California Republicans. org 2 (controlling idea is stated but contradicted elsewhere so the reader must assemble it; no closing - the essay stops on a 2012 turnout statistic; the third unit carries several unrelated jobs); dev 3 (specific figures present - 538, 270, 2012 turnout, Rhode Island - but the last paragraph is near-verbatim borrowed phrasing and quotes are stitched in with little transformation, which caps at patchwriting); conv 2 (\"each or any electors in your state has his or her own group of electors,\" \"270 s,\" \"you can count from the system or it does it for you\" - meaning somewhat obscured, I have to guess at intent more than once); arg 2 (a position is stated but the essay states pro and anti positions that contradict each other, so it is not clear or committed).",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "00da297",
+    "evidence_notes": "Agrees with the author that studying Venus is a worthy pursuit despite the danger; quotes the silicon-carbide electronics lasting three weeks and the passage on Venus's valleys, mountains and craters, each followed by a \"See...\" sentence drawing the inference. org 4 (controlling idea stated early and held, intro and conclusion present, all body parts on topic, but the three supports - NASA tech, sister-planet likeness, star-you-see-at-night - swap freely); dev 4 (two specific quoted particulars with the connection stated - \"we could look at what happened to it and make sure that doesn't happened to us\" - but the star paragraph offers nothing specific, so support is not specific throughout); conv 2 (\"aswhille,\" \"it use to be like earth,\" the fused opening sentence and \"See we could be on there for a 2 weeks and leave\" force outright guessing at intent, not just repair); arg 4 (the learn-from-Venus's-fate reason is genuinely reasoned; the danger is mentioned but never answered, and the conclusion is exactly what the prompt implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "00daaa2",
+    "evidence_notes": "Agrees citizens should limit car usage; supports with the Paris diesel/partial driving ban (67% diesel vs 53.3% in western Europe, 22-euro fine) and Bogota's car-free day, quoting Robert Duffer and Andrew Selsky. org 4 (position stated early and held with a full frame, but the Paris paragraph and the car-free-day paragraph are interchangeable supports); dev 4 (support is specific and figure-rich and most borrowing is marked, but the Paris paragraph is a string of reported facts with no interpretation - the connection is stated only for the car-free day and mostly by restatement); conv 3 (fragments \"Compared to a 53.3 percent average engines...\" and \"By giving some of the dangerous stuff that we use daily a break.\", misused connectives, and \"the smog cleared enough for the ruling french party\" - errors accumulate and I re-read to repair); arg 4 (the closing chain less fuel means less pollution is reasoned; the opening concedes people need cars but never answers it).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "00dd003",
+    "evidence_notes": "Argues the Facial Action Coding System has no place in schools because it wastes money and distracts, and because knowing students' emotions exposes them to bullying; two source quotes are dropped in without being connected, one of them (the empathy definition) irrelevant to the claim it sits under. org 4 (position stated early and held, opening and conclusion present, both body parts on topic, but the distraction paragraph and the bullying paragraph swap freely); dev 2 (after discarding the dangling empathy quote, support is general throughout - phones-as-distraction, wasted money, a generic bullied kid - no named case, figure or realized example anywhere); conv 3 (\"too some kids,\" \"teaching out kids,\" run-ons like \"This can bring hatred upon someone a kid who is always sad...\" and the ungrammatical \"Why is determining what your facial expression says about you instead of learning?\" - errors accumulate and I re-read to repair, but meaning stays recoverable); arg 4 (the bullying mechanism - exposed emotions lead to mistreatment leads to deeper depression - is a reason actually reasoned; \"Every 'positive' always has a negative\" gestures at the other side without engaging it).",
+    "organization": 4,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "00e047b",
+    "evidence_notes": "Argues limiting car usage has environmental, stress and lifestyle advantages; draws on Paris's plate-based ban, Bogota's Day Without Cars spreading to Cali and Valledupar, Vauban's two parking spaces with Heidrun Walter's quote, and the 9% drop in average miles driven plus 57%/70% Vauban car-ownership figures. org 4 (thesis and three-part preview held throughout with a real frame, but the environment, stress and declining-usage paragraphs are independent supports that could swap); dev 5 (support specific throughout and transformed into the writer's own phrasing with quotes inside his sentences; most pieces are explained in a way that adds something - \"The ban was so successful... that the ban was lifted,\" \"as a result dont own cars and are happier,\" the speculation about internet connectedness - but the Bogota and Plaza items are left to speak for themselves); conv 4 (many misspellings - nessecity, enviroment, liscence, substancial - are visible but cost nothing; genuine sentence variety with occasionally slipping control, e.g. \"This may because the Internet allow people\" and \"many center cities renewal have made\"); arg 4 (emissions-to-greenhouse-gas reason genuinely reasoned; the \"considered by many a nessecity\" counter is conceded and re-raised in the closing but never answered, and the conclusion is what the prompt already implies).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "00e3edb",
+    "evidence_notes": "Agrees Venus is worth studying, reasoning that if Earth becomes uninhabitable (a war destroying America) humanity will need somewhere to go, then asserts Venus is the \"sefest\" planet because of shape, size and shared atmosphere. org 3 (controlling idea stated in the opening but the essay drifts from whether to study Venus to whether we could live there, and it stops rather than closes - \"i dont think everybody will make it before us is destroyed\" undercuts the position); dev 2 (no source material, no named case, no figure - support is general and speculative throughout, and the oxygen/atmosphere claims are bare assertions); conv 2 (\"aswhille\"-level breakdowns throughout: \"Like all the needs to stay alive keep breathing and is it even possible,\" \"if the un rotates away from it,\" \"before us is destroyed\" - I have to guess at intent, not merely repair); arg 4 (the survival chain - Earth may be destroyed, so we need somewhere to go, so we must study other planets - genuinely states why it follows; the safety doubt is raised but not really answered and the conclusion stays inside the prompt's framing).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "00e5687",
+    "evidence_notes": "Reports that the author gives good details for researching Venus despite the risk, quoting the Earth's-twin density/size passage and the innovations-for-machines passage; adds an unsourced claim that we could get resources from Venus. org 3 (controlling idea stated early but the frame is damaged - a stray one-line paragraph repeats the resources point after the conclusion without adding, and the un-previewed resources thread drifts from the opening's preview); dev 4 (quotes are specific, marked and cited by paragraph number, and the connection is stated once - \"makes a good point because if Venus is the closest planet to been earth like than researching it would help us discover new thing\" - but the oceans quote and both machine quotes are dropped unexplained, so support is not explained throughout); conv 2 (\"How it was it could have been the most similar planet,\" unclosed quotations, and dense misspelling - discoberd, autghar, temperatuers, rescorses - force guessing at intent at least once); arg 3 (position is committed but reasoning is asserted rather than shown - an entire body paragraph is \"the author states X, the author claim also Y\" with no evaluation, and the closing circles back to restate the opening twice).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 5",
+
+    "essay_id": "00eabc5",
+    "evidence_notes": "Argues FACS in classrooms has no merit because the technology is weak, attacking Huang's own premise that \"facial expressions for each emotion are universal\" with students on the autism spectrum and students with physical disabilities, then turning the source's \"most human communications are nonverbal\" and the Facial Feedback Theory against the proposal - anyone could \"beat the system\" with a poker face. org 5 (opening common-sense claim, \"Others don't think so, though,\" thesis, then three objections that escalate from involuntary limitation to deliberate defeat - no pair of body parts could swap, but the closing introduces an \"ethics\" term never argued, so the sequence stops short of a nameable move); dev 5 (support specific throughout, borrowed material quoted deliberately inside the writer's sentences with his argument governing it, and most pieces carry interpretive explanation - \"Until the FACS can tell when a group of teenagers are faking their emotions, it can't perform its main task\" - but the physical-disability example is asserted in one line and the ethics claim is unsupported); conv 5 (real variety in length and shape, apt word choice - diagnostic, outliers, obsolete in its purpose - with only occasional minor slips: enviroment, onlt, infront, credability, it's for its); arg 5 (opposing position acknowledged and answered by attacking its universality premise, and the position is qualified - \"unless you had a room of children who all express their emotions like an open book,\" \"this may not be how it is in other public school settings\" - reaching a why-conclusion the prompt's framing does not itself supply, but not reframing the question).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "SCORES": "1 vs. 2",
+
+    "essay_id": "00ef89f",
+    "evidence_notes": "Opens that emotion-reading technology \"is the dumbest thing ever,\" then gives three First/Second/Third points that all reduce to \"don't change people,\" drifting into photo editing, and closes on making someone's picture look happy. org 3 (controlling idea is stated early with a frame, but the second point about not editing photos does not bear on emotion-reading technology and the closing has moved the position onto a different topic); dev 2 (no named case, figure or realized example anywhere - \"can set off alot of things,\" \"could hurt them even worse\" are general gestures, and some of it restates the claim it is meant to support); conv 2 (one enormous run-on paragraph and the final clause \"but do you just because someone makes and upset face dosnt always mean they are\" leave me guessing at intended meaning; ophion, indivaully, soemthing, wose); arg 3 (position is clear and committed but reasoning is asserted, never shown - the three reasons are restatements of one another and the conclusion circles back to the opening in different words).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 3
+  }
+]

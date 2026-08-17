@@ -1,0 +1,102 @@
+[
+  {
+    "SCORES": "5 vs. 3",
+
+    "essay_id": "016010c",
+    "evidence_notes": "Claim: driverless cars are safe and beneficial, though the intro hedges ('many great things but some bad things'); support is source-drawn (vibrating seats, 25 mph limit, half the fuel, alert-the-driver design) with paragraph citations; a counterargument paragraph is raised but ends endorsing the objection in the essay's own voice, and the conclusion answers it only by reassertion. org 3 (para 4 repeats the intro's fuel/flexibility material near-verbatim without adding, and the vibrating-seat example recurs from para 2); dev 3 (specifics present but long stretches are lifted source phrasing lightly stitched with a paragraph tag - patchwriting caps at 3); conv 4 (misspellings, fragments and a double negative are visible but nothing needed repair); arg 4 (alert-driver reasoning states a why; counter conceded then merely reasserted away, conclusion is what the prompt implies).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "0163804",
+    "evidence_notes": "Claim: life without daily car use would be simpler, cheaper and better for the environment; support is three source-based place cases (Vauban with 70%/57% figures, the Paris driving ban, Bogota's car-free day) each introduced by a named quotation and followed by a 'By saying this he is showing...' gloss. org 4 (opening thesis holds and every part relates, but the three place-examples are parallel supports that could swap freely); dev 4 (support specific throughout and a connection is stated for each quote, but the gloss mostly re-says the quote rather than interpreting it, and quotes sit alongside the writer's sentences); conv 3 (enviroment x3, dont, your not, there cars, oppurtunity, worring, into affect, 'he portraying' - errors accumulate and 'less pollution to worry about hurting all the city's' had to be re-read); arg 4 ('less stressful because you're not worrying about gas, the car breaking, or an accident' is reasoned; the other side is brushed past in the intro, not answered, and the conclusion is the prompt's own).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "01665d5",
+    "evidence_notes": "Claim: the facial action coding system would be good for reading students' emotions, for three announced reasons; each body paragraph drops one garbled quote and appends a 'That means that...' assertion. org 3 (bare one-sentence opening with no orientation, and the third reason mutates from 'help people with questions' to 'put a smile on faces' to 'help people solve problems', so the position moves; para 2's da Vinci quote finishes a different job than it starts); dev 3 (the da Vinci quote does not bear on the mixed-emotions claim it is attached to, the third quote gets no gloss at all, and the borrowed phrasing is stitched in and mangled - patchwriting caps at 3); conv 3 ('the new new', deatil, troube, acn, emotoins, oberves thata, hepl, detain, clain, unclosed quotations, and 'One way that... because' - errors accumulate and several sentences needed re-reading to repair); arg 3 (position committed but reasons are asserted through the quotes with no why on the page, and the conclusion circles back on the opening in changed words).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "016ed64",
+    "evidence_notes": "Claim: Venus is worth exploring despite the dangers, for three reasons announced up front (harsh atmosphere, once the most Earth-like planet, probably covered in oceans); each body paragraph quotes the article and follows with 'this quote shows that...'. org 4 (danger-first placement is motivated and every part relates, but the Earth-like and oceans paragraphs are specifics of the same claim and could swap); dev 4 (quotes are specific - 97 percent carbon dioxide, no spacecraft surviving more than a few hours - and a connection is stated for each, but the glosses largely re-say the quote and the quotes sit alongside the writer's sentences); conv 3 (sudying, athomosphere, facinated, exlaimed, posesess, probablycovered, covere, unveal, pervasive lowercase sentence openings and comma-fragments - errors accumulate and the opening thesis and 'even though Venus posesess a really challenging atmosphere, is worth exploring' both needed repair); arg 4 ('where there is water, there must be life' puts a warrant on the page, but the danger is conceded without being answered and the essay reproduces the article's own thesis and reasons).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 4",
+
+    "essay_id": "01711c3",
+    "evidence_notes": "Claim: driverless cars are a great enhancement to future society (money/time, road experience, technology); each body paragraph is one long cited block quote plus a single sentence of the writer's own commentary, with a fourth paragraph conceding that drivers must stay focused. org 4 (thesis stated early and held, all parts relate, but the three First/Second/Third reasons are interchangeable); dev 4 (specific support - half a million miles, since 2009, the LIDAR sensor list - and a connection is stated after every quote, but each gloss restates the quote rather than interpreting it); conv 3 (Driveless throughout, forsees, flexibilty, 'Their has been very little accidents... than', acheive, spectulates, a assumption, and 'traffic laws writes that with a assumption' - errors accumulate and several sentences needed re-reading to repair); arg 4 ('cars don't have complete control at all times, so drivers must still be focused' is a stated inference, but the limitation is conceded rather than answered and the conclusion drops it entirely for what the prompt implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 2",
+
+    "essay_id": "01846d8",
+    "evidence_notes": "Claim: not having cars is good for small suburban cities because they are only a mile or two across; benefits are then listed - stress relief, fewer traffic jams, less pollution, more social interaction, fewer emissions, ozone repair, fitness, fewer crashes - all asserted with nothing behind them. org 3 (opening is a bare claim with no orientation, the position softens mid-essay to 'cut down on car use or at least car pull in vans', and para 2 starts on stress and the earth and finishes on people not interacting except over the internet); dev 2 (support is general throughout - no named case, no source, no realized example, no figure for any benefit; 'From what i've heard in this passage and from the sources' names nothing); conv 2 (every paragraph is a single unpunctuated run-on, and 'it is to help out the earth there will be less traffic jams' and 'car pull in vans' had to be guessed rather than repaired); arg 4 (one reason is genuinely reasoned - the distance is a mile or two, so it really is not that far - and less car use to fewer emissions to ozone repair is a stated chain, but no opposing view and the conclusion is what the prompt implies).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "0187e96",
+    "evidence_notes": "Claim: we should use our cars less and it is more feasible than readers think; support is dense and source-based - Vauban's $40,000 parking space and 12/50 percent emissions figures, the Walter quote, Paris's 60 percent congestion drop, Bogota's annual car-free day and 118 miles of bike paths, the 23 percent and 9 percent driving-decline figures - and an objection about jobs, deliveries and children is raised and answered with buses and carpooling. org 4 (position holds and one unit wanders and returns, but the temporary-ban and declining-driving paragraphs could swap); dev 4 (specific throughout, but several pieces - the parking rules, the Walter quote, the Paris figures - are left to speak for themselves and the stated connections mostly re-say the support); conv 5 (resposible, excersize, Columbia, at it's height, 'they rescind' - occasional and minor, sentences vary in length and shape and stay under control, nothing costs the reader anything; word choice is correct rather than apt, so not 6); arg 4 (the objection is acknowledged and answered, but the conclusion gets no further than the sum of its own supporting reasons, which is what the prompt already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "3 vs. 3",
+
+    "essay_id": "018985d",
+    "evidence_notes": "Claim: the Facial Action Coding System has applications that will be extraordinary to modern technology, landing on classroom value; support is the six named emotions, the video-imagery-versus-neutral-face method, Dr. Huang's prediction that a classroom computer could detect confusion or boredom, and the Stanislavsky example. org 3 (para 4 starts on why facial muscles matter to the technology and finishes on actors expressing themselves and empathetic imitation, a digression that never returns to the controlling idea); dev 4 (support is specific and connections are stated - 'Therefore it can identify mixed emotions', 'useful to many students in order to help them learn better' - but the glosses are purpose-labels that restate rather than interpret, and the Stanislavsky gloss bears on the actors, not the claim); conv 3 ('how anyone in this world are feeling', 'Now software has developed', Fcial, 'the the', 'All which have six emotions', sience, and 'The boring lesson for you would modify' - errors accumulate and several sentences needed re-reading to repair); arg 4 (detection enables adaptation which improves learning is a stated chain, but no objection is entertained, no principle made explicit, and the conclusion is what the prompt implies).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "2 vs. 3",
+
+    "essay_id": "018fbeb",
+    "evidence_notes": "Claim: driverless cars are not a good idea; reasons are that people love to be in control (marriage analogy), licenses and NASCAR would be pointless, sports owners would lose money as tapes and CDs did to iPods, and the nation may be moving too fast (Model T and horses). org 3 (opening is a bare claim with no orientation, the closing is fused into the Model-T paragraph, and single units carry several jobs - licenses, a riot, owners' money and music formats in one paragraph); dev 3 (NASCAR, the Model T and the iPod are named but each is a one-clause gesture, several claims including 'not really safe' go unsupported, and the reader supplies the mapping for the marriage and Model-T analogies); conv 2 ('even with the horse they did revole many they had the invention on the light bug with the horse carriage' is unrecoverable, and 'an perfect upset for a roit' and 'bring back the driveless car' had to be guessed rather than repaired; frequent unresolved sentences); arg 4 (the CD-to-iPod chain does say why the economy could drop, but the other side is absent and the conclusion is what the prompt's negative branch implies).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "SCORES": "4 vs. 4",
+
+    "essay_id": "018ff85",
+    "evidence_notes": "Claim: driverless cars are the future and safety will no longer be a concern; the body is five long block quotes (Google's half million miles, the laws making testing illegal, none fully driverless, the Prius sensor list and LIDAR, the Tesla 2016 and 2020 timelines), each followed by a few sentences of commentary. org 4 (position stated in sentence one and held, all parts relate and the frame does work, but the autonomy-level and technology parts could swap); dev 4 (support is specific throughout and a connection is stated after every quote, but the commentary is systematically restatement plus optimistic assertion - 'All of that simply means', 'The technology is there' - and the claims about a paradise of safe transportation go unsupported); conv 3 (imbrace, relavent, saftey, thier, frution, prossiblity, 'has' for 'as' four times, 'they very very close', 'more open the idea' - errors accumulate and nearly every sentence needed re-reading, but meaning stayed recoverable and nothing had to be guessed); arg 4 (the safety-to-laws-to-state-acceptance chain says why the legal obstacle resolves, and objections are raised and answered, but the conclusion gets no further than the prompt's own positive framing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]
