@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "030b9ea",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform, not an alien creation; support is quoted from the source (shadow 'illusion of eyes, nose, and mouth', the Egyptian-Pharaoh shadows, 'no alien monument after all', the butte/mesa comparison), each quote followed by a short assertion that it proves the landform reading; the essay also raises the skeptics' haze objection and answers it with the higher-resolution MOC image. org 3 (rung 4 fails: controlling idea is stated early but there is no closing - the last part stops rather than closes, and the middle part's aside about aliens being real breaks unity); dev 4 (rung 4 yes - the connection is stated after each quote, but only as restatement, 'that's a evidence that showed'; rung 5 fails, no explanation adds anything the quote did not say); conv 2 (rung 3 fails: 'Even thought alien are real' and the repeated 'it's a human face' for a landform force the reader to guess the intent, meaning somewhat obscured); arg 4 (rung 4 yes - says why the alien claim fails, 'they can't prove it' with 'just some litlte bits of details'; rung 5 fails on (d), the conclusion is one of the two options the prompt's framing already supplies).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "030cf8b",
+    "evidence_notes": "Claim: limiting car use would unify the Florida Keys community, cut pollution, and lower stress; support is drawn from the sources and cited - Bogota's 7-million-person car-free day plus Cali and Valledupar (Selsky), the telecommuting line and the 12%-Europe / 50%-US emissions figures (Rosenthal), the Paris partial driving ban (Duffer), the Plaza stress quote. org 4 (rung 5 fails: thesis stated early with a full frame and all three body parts on-topic, but unify/pollution/stress are interchangeable supports that could swap without loss); dev 4 (rung 4 yes - connection stated after each cluster, e.g. 'this just goes to show...'; rung 5 fails because the explanations restate the claim rather than add to it, and the stress paragraph rests on 'other sientist have proven'); conv 3 (rung 4 fails: spelling errors accumulate throughout - unit/polution/ammount/Wensdays/schedual - and the sentence about exercise and 'a hormone is relised' and the final 'limitin car use' need re-reading to repair, though meaning stays recoverable); arg 4 (rung 4 yes - the emissions chain says why limiting cars reduces pollution; rung 5 fails on (d), the conclusion is exactly what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0318358",
+    "evidence_notes": "Claim: driverless cars are not safe enough and should not be developed; three reasons - drivers will stop paying attention, the system or GPS could glitch, and the alert that hands control back could fail - the third realized as a concrete scenario (broken alert, distracted driver, striking a construction worker, fine plus repairs). org 4 (rung 5 fails: clear thesis with preview, frame present, all parts on-topic, but the inattention and glitch parts could swap without loss); dev 4 (rung 4 yes - the chain 'nothing to do, so taken advantage of, so not focusing' plus 'drivers need to stay focused so everyone can safely arrive' states the connection; rung 5 fails, support is not specific throughout - most is general assertion with only the imagined crash realized); conv 4 (rung 5 fails: errors are visible but never require repair - 'takenadvantage', 'you're to busy', the subjectless 'Never know when' - yet the closing sentence's shifting person costs a slight stumble and control is inconsistent); arg 4 (rung 4 yes - one reason genuinely reasoned; rung 5 fails, 'would be cool, but' mentions the other side without answering it and the conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03194a0",
+    "evidence_notes": "Claim: the Face is a mesa, not an alien artifact; support is the three photographs (1976, 1998, 2001), the 43-meters-per-pixel figure explained as making the first image unreadable, and the winter cloud cover explaining the foggy 1998 shot; a fourth part speculates that filmmakers edited the images for money. org 3 (rung 4 fails: the opening withholds the position - 'What do you think?' - so the controlling idea is weakly located mid-essay, and the movies/special-effects part is a digression that does not bear on it); dev 4 (rung 4 yes - the resolution figure is explained in a way that does work, 'almost no way in telling what the first picture was'; rung 5 fails because the movie paragraph and 'NASA would have detected it years ago' are asserted without support); conv 3 (rung 4 fails: errors accumulate - poeple, pictuere, trhe, resembalance, infacr - and 'you clean clearly see' and 'Science it to greatly advanced now' force re-reading to repair, though meaning stays recoverable); arg 4 (rung 4 yes - says why the alien reading fails, poor 1976 resolution versus later clear imaging; rung 5 fails on (d), the conclusion is the prompt's own binary).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "031ab01",
+    "evidence_notes": "Claim: mostly agrees that a facial action coding system belongs in classrooms because it would raise engagement and pass rates; support is the quoted passage (the web-ad analogy and Dr. Huang's 'a classroom computer could recognize when a student is becoming confused or bored... then it could modify the lesson'), plus a realized hypothetical of a student arriving upset whose mood the machine would misread. org 4 (rung 5 fails: position stated early and held, frame present, all parts relate, but the benefit and drawback parts could swap without loss and the closing largely re-lists the opening); dev 4 (rung 4 yes - the ad analogy is mapped onto lesson adaptation and the misread-mood case is worked through; rung 5 fails because the graduation-to-college part offers no specific support at all); conv 4 (rung 5 fails: their/there, to/too, 'Sence', 'softwared' and stray mid-sentence capitals are visible but never need repair, while sentence openers run heavily to 'I think' so variety and control are inconsistent); arg 4 (rung 4 yes - the engagement reason is genuinely reasoned via the ad analogy; rung 5 fails on (d) - the qualification about shy or upset students is real, but the conclusion stays inside the prompt's is-it-valuable framing, and the graduation chain is asserted).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "031bbb0",
+    "evidence_notes": "Claim: the Face was made by a natural landform, not aliens; support is NASA's own 'huge rock formation' caption and the 'illusion of eyes, nose, and mouth' phrasing, the 'no alien monument after all' line, the three-times-larger zoom showing no shacks or aircraft, and Marvin's comparison to Earth landforms - each followed by a stated inference ('which basicly means even NASA doen't think it was aliens'). org 3 (rung 4 fails: position stated early and a frame exists, but the middle part starts on NASA's caption, detours into government secrecy and NASA wanting 'their one minute fame' - which does not bear on the landform claim and cuts against its own prior sentence - then jumps to the haze objection; unity breaks); dev 4 (rung 4 yes - each quote is followed by a stated connection; rung 5 fails, the fame and government-secrecy claims need support and have none); conv 4 (rung 5 fails: doen't, basicly, aticle and 'an aliens or aliens' are visible and cost a small stumble, and the conversational fragments keep control uneven, but nothing needs repair); arg 4 (rung 4 yes - reasons the caption and the release decision back to NASA's own view, and answers the haze objection with the clear shot and zoom; rung 5 fails on (d), the conclusion is the prompt's binary).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "031e4d6",
+    "evidence_notes": "Claim: the seagoing cowboy program is a once-in-a-lifetime opportunity worth taking - you explore, you learn, and you serve your country; support is Luke from passage five (China and Europe, roaming excavated castles) and his quoted paragraph-four line that the draft board counted the cattle-boat trip as his service. org 4 (rung 5 fails: the opening orients, the closing two sentences close, and all parts relate, but explore and learn overlap so heavily they could swap without loss); dev 4 (rung 4 yes - the draft-board quote is connected to the serving-your-country claim, 'not only are you helping your country but your also helping citizens of other countries'; rung 5 fails, most support is bare listing - exotic foods, government, economy, lifestyle - left unexplained); conv 3 (rung 4 fails: oppurtuninty, lean, anywere, expeirience, rome, goverment, relize accumulate, and the split 'If you take a step back and look at what a chance this is. You will relize...' plus 'all the good you would be for your country' need repair on re-reading); arg 4 (rung 4 yes - the service reason is reasoned, the draft board accepted the trip in place of battle; rung 5 fails, the only nod to the other side is a dismissal of 'those people who sit at home' and the conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03205e9",
+    "evidence_notes": "Reports what 'The Challenge of Exploring Venus' says rather than arguing a case: the heat (over 800 degrees F, conditions that 'would crush even a submarine' and 'liquefy many metals', hottest surface in the solar system) and the difficulty of close study ('researchers cannot take samples of rock, gas, or anything else, from a distance'), closing on the author's own 'Venus is a worthy pursuit despite the dangers it presents'. org 4 (rung 5 fails: a controlling idea - the dangers of exploring Venus - is stated early and held with a frame, but the heat and brightness parts are additive and could swap without loss); dev 4 (rung 4 yes - each quote is followed by an explicit connection, 'the author is trying to explain that...', but always as restatement; rung 5 fails, and the brightness claims - light 'brighter than our eyes could ever see', no photos possible - have no support); conv 4 (rung 5 fails: 'researches' for researchers throughout, 'In In', 'less then', 'auther' are visible, and the opening 'Besides explains what Venus... looks like' costs one repair, while sentences run to a single short declarative shape so variety is absent); arg 2 (rung 3 fails: no position is the writer's own - the worthy-pursuit claim is quoted twice and never taken up, so the prompt's framing is handed back with no commitment added).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "032153a",
+    "evidence_notes": "Claim: we should limit how much we drive in order to preserve the Earth; support is heavily specific and drawn from the sources - Vauban's car-free streets and $40,000 garage space, cars causing up to 50% of greenhouse emissions in US car-intensive areas, the Paris partial ban with a $31 fine, 4,000 drivers fined and 27 cars impounded, Bogota's No Car Day with a $25 fine plus the Plaza and Riera quotes, and miles driven peaking in 2005 and falling 9% below peak by April 2013. org 4 (rung 5 fails: thesis stated early, closing turns to the reader, all parts on-topic, but the Vauban and Paris/Bogota parts could swap without loss); dev 4 (rung 4 yes - the connection is stated for some support, e.g. the miles-driven data 'just shows that we as a group are starting to relize what effect we have'; rung 5 fails, the Vauban and Paris/Bogota material is reported in a dense list without the writer saying what it shows); conv 3 (rung 4 fails: countrys, grage, peopl, casue, whic, transpot vechials, enviroment accumulate, and 'whic millions of Colombians found other ways', 'impounded for over reacting to the fine' and the two-places-to-park sentence each need re-reading to repair); arg 4 (rung 4 yes - the emissions figure supplies why less driving follows, and the stated warrant is preserving the Earth's beauty; rung 5 fails on (d), the conclusion is exactly what the prompt's framing implies and no counter-position is engaged).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03237a6",
+    "evidence_notes": "Claim: limiting car use is a great opportunity and more people should do it; support is source-based and specific - Bogota's Car-free day since the 1990s with millions hiking, biking, skating or busing, Mockus's 'the rain hasn't stopped people from participating', 118 miles of bike paths, and the mother's quote about her 19- and 21-year-old children organizing jobs and social life around walking, transit and carpooling. org 4 (rung 5 fails: controlling idea stated early, closing makes a call to the reader, both parts relate, but the Bogota and America parts are additive and could swap without loss); dev 4 (rung 4 yes - the quotes are interpreted, e.g. the teenagers 'are saving their money not having to worry about gas prices and car payments', which adds something the quote did not say; rung 5 fails, the bike-path figure is listed unexplained and the opening exercise claim goes unsupported); conv 3 (rung 4 fails: Resent, Civilions, Columbia, there bikes, alittle, alot, diffrence, statment, definatly, licence, conclucion accumulate, and 'events that lead to Car-free day and many more', 'But after, for the first time more colombian cities joined in' and 'Instead they are not wasting their money by walking' each need re-reading to repair); arg 4 (rung 4 yes - says why going without a car follows, money saved on gas and payments, and concedes 'it might take some time walking but you still get there'; rung 5 fails on (d), the closing concession that cars are fast is answered only by shrinking the ask, and the conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

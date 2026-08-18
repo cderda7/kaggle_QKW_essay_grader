@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "024a3bb",
+    "evidence_notes": "Claim: emotion-recognition software is a good idea; reasons: it can spot depression so adults can help, and can detect a confused/bored student so the lesson is modified; connection to claim is stated but the uses stay hypothetical. org 4 (controlling idea early and held, frame present, all parts relate, but depression and classroom paragraphs swap freely); dev 3 (support is general use-claims, listed with only gestural specificity - 'video games or video surgery' bare); conv 3 (errors accumulate - depresse/confuse/there-their - and 'help kids ... not fall into it how?' forces a re-read to repair); arg 4 (the depression reason is actually reasoned: detection leads to adult help, so no opposing view or qualification).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "025d46f",
+    "evidence_notes": "Claim: using the technology on students is a good idea; support is almost entirely quoted source material (82 percent happy figure, video imagery tracking, modifying the lesson) stitched with thin connective sentences; one sentence ('Humans can perform the same way as the new technology') cuts against the claim. org 3 (controlling idea stated and repeated, but Mona Lisa, video games and the 'whoever thought' aside do not relate, and units start one job and finish another); dev 3 (patchwritten - long quotes lightly stitched, source reported rather than argued from - caps here); conv 2 (must guess at 'Some students want there emtions to them selfs and want to know there emitons' and at the 'estimate the percentigs' sentence); arg 3 (position clear but reasoning is reported not shown, and the close restates the opening verbatim - circling).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0262618",
+    "evidence_notes": "Claim: the Face on Mars is just a rock, not an alien artifact; support is a quoted NASA caption about shadows, a made-up 50/50 split of scientists, and 'rocks dont die'; the writer then undercuts himself ('am not that convience'). org 3 (controlling idea stated but buried mid-paragraph, closing stops rather than closes, final paragraph on all rocks being unique digresses); dev 3 (the quoted caption is specific but support is listed with the reader supplying the connection; the rocks-never-die material is near-irrelevant); conv 2 (must guess at 'they are all unique & some strange ones they are a lot of type of rocks in the life' and 'Were different'); arg 3 (position clear but reasons asserted - the rhetorical 'tell me how did it got their' is a challenge, not a why).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "026355a",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys program; three previewed reasons - sights, games, work with the animals - each with concrete source particulars (baseball and volleyball in the empty holds, table tennis, fencing, boxing; feeding and watering 2 or 3 times a day, bales of hay and bags of oats). org 4 (conventional shape executed cleanly; the three body parts could swap without loss); dev 4 (support specific throughout and the connection stated for some - boredom leads to games, unfamiliar landscapes mean a view to enjoy - but the activity lists are catalogued, not explained); conv 4 (spelling and homophone errors are visible - your/you're, veiw, borning, might of - but nothing needs repair; variety is limited so rung 5 fails); arg 4 (boredom-to-games and unfamiliar-to-enjoyable are reasoned; the closing 'you may get hurt, but thats okay' mentions the other side without answering it).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0264158",
+    "evidence_notes": "Claim: driverless cars are absurd; two supports - cost of the cars plus the smart-roads system (cited), and cited driver-assistance features (keeping hold of the wheel, vibrating seat, 'should be prepared to take over') proving the cars are not driverless. org 5 (order is motivated: cost first, then 'if the money issue is not a concern' escalates to the deeper flaw, so the parts cannot swap; no nameable argumentative move beyond that, so rung 6 fails); dev 4 (cited quotes are specific and 'which means in no way is this car driverless' explains, but the cost claims are general - 'a fortune', 'too much money' - so not specific throughout); conv 4 (abdunant, themsevles, missing words in 'there would have to at least 11', but meaning never needs repair); arg 5 (anticipates and answers the cost objection, and reaches the conclusion that the cars are not driverless at all, which the prompt's framing does not already imply; does not take on the strongest safety objection, so rung 6 fails).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0269b85",
+    "evidence_notes": "Claim (stated only at the end): the Face was not made by aliens - the 1976 camera and shadows explain it; support is the 1976/1998/2001 image sequence, the Middle Butte that looks like a snake, and the man in the moon. org 3 (controlling idea weakly located - the opening starts mid-argument with a question and the position is not stated until the conclusion); dev 3 (source material on pixel resolution is patchwritten and garbled - '43 meters away', 'taken 2.5 km-wide stripes away' - no longer saying what the source said, which caps here); conv 2 (must guess at 'The picture was taken like there were objects in this picture' and 'You saying aliens made that too the way the water moved made it like that'); arg 4 (the improving-resolution chain and the moon analogy reason out why appearances mislead, but the conclusion is what the prompt's framing already implies).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0273b7b",
+    "evidence_notes": "Mostly summary of the Venus article; the essay's own evaluation appears only in the last paragraph and contradicts itself ('The details presented were convincing' versus 'the conditions that Venus holds are not convincing'). Support: oceans long ago, valleys/mountains/craters, spacecraft lasting only hours, floating above the fray, silicon carbide electronics lasting three weeks. org 3 (opening is context not a controlling idea; the essay's position surfaces late and has moved by the final sentence); dev 4 (support is specific and 'this idea is more thought out than the spacecrafts that would have to land' adds interpretation, but the Mars-proximity material is irrelevant and much is unexplained summary); conv 4 (few errors - conditons, possiblity, 'which two planets is closest' - never requiring repair, but paragraph 1 is monotone and one long sentence loses its grip, so rung 5 fails); arg 3 (evaluative claims are asserted with no why, and the position on the author's persuasiveness drifts and contradicts itself).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0279487",
+    "evidence_notes": "One position sentence buried mid-essay ('it's a good idea to put more control on the car and less for the driver'), then abandoned; the rest is musing about old cars in museums, being late for work, walking to the gas station, and bus fare. org 2 (parts follow with no recoverable relation, no closing, and the final unit carries several unrelated jobs); dev 2 (support is general throughout and circular - 'that's why we have cars to rely on and not our feet' restates the claim it supports; nothing supports the car-control position); conv 2 (must guess at 'don't have the same menufactors that are placed in the old cars that are like 1800s and 1900s' and at the carage/horse-as-wheels sentence); arg 2 (the position barely engages the issue - stated once, never returned to - and what look like reasons are restatements).",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "027a1f9",
+    "evidence_notes": "Claim stated in the first sentence: the Face was a natural landform, a butte or mesa, not an alien artifact; support is a long block quote about pixel resolution whose bearing is never stated, plus the rock-formation-and-shadows explanation - nearly all of it near-verbatim source phrasing. org 4 (position stated early and held, opening and closing present, both body parts relate, but the alien-belief and rock-formation parts could swap without loss); dev 3 (patchwriting cap - the Cydonia, bona fide evidence, shadows and Martian mesa material is source phrasing lightly stitched, and the quote's connection is left to the reader); conv 3 (meaning always recoverable, but 'People may have thought the Face was bona fide evidence of life on Mars evidence the NASA would rather hide' and 'made by butte or mesa ... around around' force a re-read to repair); arg 3 (position clear but the essay circles it - paragraph 3 and the conclusion restate the opening - and the one causal clause is reproduced rather than connected to the alien question).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0281195",
+    "evidence_notes": "Claim: you should not go Seagoing, with three previewed reasons (you can get killed, it is not for everyone, no money); the body drops all three for questions ('When would you get home?'), and the position wavers ('I'm not saying I would turn down that opportunity'). org 3 (controlling idea stated early but the body parts digress from it and the position has moved by the end; the closing stops rather than closes); dev 3 (Luke and the 16 Atlantic crossings and two Pacific crossings are specific, but support is listed - the crossings are used to express puzzlement, not to support the position - and most claims go unsupported); conv 2 (must guess at 'The places you can go such as Europe now thats kind of odd' and 'What im trying im trying to say here is why he crossed the Atlantic Ocean 16 times'); arg 3 (reasons are asserted, never reasoned, and one is circular - 'not fit for everyone such as not everyone would like to do this task').",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  }
+]

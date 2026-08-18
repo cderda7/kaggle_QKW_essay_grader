@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "0347bb4",
+    "evidence_notes": "Claim: using facial-coding tech to read students' emotions in class is valuable; support is two dropped-in source quotes (the friend's face; expert muscle clues on smiling politicians) plus an extension to police use on criminals. org 3 (rung 4 fails: controlling idea is classroom value, but the criminal-detection unit is a digression and the closing merely restates); dev 3 (rung 4 fails: quotes are marked but listed, the first quote sits oddly against the sentence before it and the reader supplies the connection; classroom claim itself only asserted); conv 3 (rung 4 fails: accumulating misspellings - smle, wether, techonolgy, their/they're - and the 'Although, ... it can help them' sentence forces a re-read, though meaning is always recoverable); arg 4 (rung 4 yes: mechanism stated - the tech shows the teacher what students struggle with - plus a use-dependent distinction; rung 5 fails on (d), conclusion is exactly the prompt's implied yes).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "034dbcf",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform of piled rock, not alien-made; support is the improving camera resolution over the years making the face 'disappear' into rocks, a geometry objection to alien construction, the winter/cloud conditions of the original photo, and the JPL site's own statement. org 3 (rung 4 fails: mid-essay repetition of the opening claim without addition and the 'kind of weird to see other things on other planets' unit digresses); dev 3 (rung 4 fails: source detail is paraphrased so loosely - the winter/cloud material no longer says what the source said - and connections are largely left to the reader); conv 3 (rung 4 fails: chained run-ons - 'They don't know if they actually seen a face they said it was winter' - plus tooken/asthe force repair re-reads, but never a guess); arg 4 (rung 4 yes: sharper cameras therefore the face resolves into rock is a stated why; rung 5 fails on (d), conclusion is the prompt's own binary and the concession is not answered).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "035a4d2",
+    "evidence_notes": "No claim about the Electoral College is ever made; the text is one unpunctuated 380-word 'and' chain of half-remembered figures (538 electors, 270, 61.5%, 41,971 in deadlock, 33 in texas) with no stance attached to any of them. org 1 (rung 2 fails: the text never divides into parts doing different jobs; order is arbitrary and no controlling idea is recoverable); dev 1 (pre-climb discard: no position exists for support to bear on, so all of it is set aside; rung 2 fails); conv 1 (rung 2 fails: no sentence boundaries or capitalization anywhere, and many assertions - 'we half to make a congress if your presidant 35,000,000 go to just pick a presidant 41,971 are in deadlock' - cannot be decoded, so errors persistently interfere with meaning); arg 1 (rung 2 fails: no position on the issue is stated at any point).",
+    "organization": 1,
+    "development": 1,
+    "conventions": 1,
+    "argumentation": 1
+  },
+  {
+    "essay_id": "035e3c7",
+    "evidence_notes": "Letter to a senator claiming the President should be chosen by direct popular vote; support is the government's record of lying, the risk that an elector 'lies, miscounts, or purposely puts his own imput' in, an FCAT-style vote-counting machine, and the disappearance of swing states. org 4 (rung 5 fails: the efficiency paragraph and the swing-states paragraph could swap without loss, and the closing recycles the lying point); dev 3 (rung 4 reached on stated connections but band 4(b) fails: only the FCAT analogy is concrete, the rest is general assertion about 'a government of liars' and the central lying claim goes unsupported); conv 4 (rung 5 fails: real sentence variety and rhetorical control, but centuary/critized/anf recur and 'because then would every individual vote mattered' needs repair); arg 4 (rung 4 yes: intermediaries can lie or miscount therefore remove them is genuinely reasoned, and the Founding Fathers concession is answered by 'this is the 21st centuary'; rung 5 fails on (d), the conclusion is exactly what the prompt's abolish-or-keep framing implies).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "035e589",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform; support is the 1997 arrival of Mars Global Surveyor, the April 1998 image ten times sharper than Viking, the critics' 41-degrees-north cloud objection, the April 2001 roll of 25 degrees, and 1.56 m vs 43 m per pixel with Garvin's three-times-pixel-size discernment rule. org 5 (rung 6 fails: the order is motivated and cumulative - the 2001 photo exists in the text because the critics attacked the 1998 one, so no two parts swap - but the sequence follows the source's chronology rather than making a nameable move of the writer's own, and the closing largely restates); dev 5 (rung 6 fails: support is specific throughout and most paragraphs end in real interpretive work - the pixel span means airplanes, pyramids or shacks would have been captured - but the taxpayer/Garvin material and the 25-degree quote are left unexplained or explained by non-sequitur); conv 4 (rung 5 fails: genuine sentence variety and apt diction like 'discern' and 'Nevertheless', but roughly ten misspellings - gtten, Beacause, exsited, payed, veiw, arguement - are more than occasional, and 'has three different pictures' needs a small repair); arg 5 (rung 5 yes: the cloud objection is acknowledged and answered by the cloudless 2001 pass, and the essay reaches the further conclusion that maximal resolution showing nothing artificial is itself dispositive; rung 6 fails: it does not reframe the question or bound its position).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "035fd2d",
+    "evidence_notes": "Claim: the Face is a landform resembling Middle Butte in the Snake River Plain of Idaho; support is the April 1998 flyover ten times sharper than Viking, the 2001 image at 1.56 m per pixel against 43 m, the butte/mesa comparison, and a third clear-day photo. org 3 (rung 4 fails: the opening sentence is repeated verbatim three times, the fifth paragraph re-covers the photos while contradicting paragraph three's 'cloudless summer day', and the conclusion slips to 'just a moon'); dev 3 (patchwriting cap: 'What the picture actually shows is the Martian equivalent of a butte or mesa' and 'They remind us most of the Middle Burre' carry the source's own phrasing and deixis with almost no transformation); conv 3 (rung 4 fails: belive/origanal/pectures/Viving/caompared accumulate across the piece, sentences run to one short pattern, and 'Do you really belive that a face would be on Mars, it is really hard to belive?' needs repair); arg 4 (rung 4 yes: with this image any objects there would be seen states why the photo settles it, and the cloudy-day concession is answered by the third picture; rung 5 fails on (d), the essay circles and ends on its opening sentence unchanged).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03630c7",
+    "evidence_notes": "Claim: people should join the Seagoing Cowboys program; support is the 1945 New Orleans horses (335 of them, hay and oats hauled from the lower holds, stalls cleaned), the sights - Crete's castle, the Panama Canal, China, Venice - and a general appeal to helping the poor. org 4 (rung 5 fails: the intro announces animals, sights and people as a list and the three body parts are interchangeable items of it); dev 3 (patchwriting cap: 'bales of hay and bags of oats had to be pulled up from the lower parts of the ship' and 'explore the castel in Crete and marvel at the Panama Canal' are the source's phrasing and first-person experience lightly stitched in; the third body part is general throughout); conv 3 (rung 4 fails: alot/where-were/castel/alantic/helpfullest accumulate, sentences run to one declarative pattern with First-Secondly-Lastly scaffolding, and the we/I/you person shifts plus 'such as animals, and problems that where hard to solve' force re-reads); arg 3 (rung 4 fails: every benefit is asserted - 'its nice to help people', 'I think it is a good thing to do' - and the essay never says why any of them follows).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0364075",
+    "evidence_notes": "Letter claiming the Electoral College should be kept; support is swing states such as Florida deciding elections, larger states receiving more electors, the 538/270 arithmetic, and the avoidance of run-off elections. org 4 (rung 5 fails: the swing-states part and the run-off/538 part are interchangeable, and the intro's promised 'transregional appeal' and 'landslide victory' threads are never picked up); dev 3 (rung 4 fails: the figures are specific but listed as description - the reader must supply why 538/270 or Florida's weight makes the College good - and 'less complicated' is repeated rather than explained); conv 3 (rung 4 fails: tthere/canidates/Colloege/avioded accumulate, sentences are one short pattern, and 'Though whether the Electoral College is democratic, it is not true in a modern sense' has to be repaired to be read); arg 4 (rung 4 yes: the concession that it is not democratic in a modern sense is answered by outweighing - voters still vote toward their candidate and the system stays practical - which shows reasoning; rung 5 fails on (d), keeping the College is the prompt's own binary).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "036e19b",
+    "evidence_notes": "Opens by naming Luke's workload and the 'horrible consequences' of getting commands wrong, then abandons that for a chronological retelling: hiring, nine trips, New Orleans and Greece, the night-watchman fall down the ladder and cracked ribs, baseball in the empty holds, recruiting others, awards. org 3 (rung 4 fails: the stated idea is contradicted by a body that celebrates the job, and paragraphs 3-5 re-cover working, traveling and caring for animals without adding); dev 3 (rung 4 fails: particulars are plentiful but narrated, never connected to a claim - the reader supplies any bearing - and the watchman fall reproduces the article's own wording about the strip of metal and the dark Atlantic); conv 3 (rung 4 fails: soppost/metel/insedant/dangerouse/aswell accumulate, sentences hold one simple pattern, and 'All the taking care of made Luke very busy, beside with the traveling' and 'As soon as he was done with all the traveling he made nine trips' need repair); arg 2 (rung 3 fails: the opening stance is vague, barely engages an issue and is dropped, and what follows is retelling with no position of the writer's own).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "036f820",
+    "evidence_notes": "Opens claiming limits on car usage have advantages (smog), cites source 2 paragraph 5 that 'congestion was down 60 percent in the capitol of France' and the even/odd driving ban with fines, then reverses to call banning cars 'a silly decision', proposes hybrid gas-slot electric cars, and closes that car use should be a personal choice. org 3 (rung 4 fails: the controlling idea does not hold - the opening endorses limiting cars and the closing says enforced no-car days are 'not needed in anybodys lives'); dev 4 (rung 5 fails: the France material is specific, cited and given a stated - if restating - connection, 'thats a big percent and with that we are making the earth green', but the entire second half offers only a hypothetical commute and a speculative battery-plus-gas design); conv 3 (rung 4 fails: enviornment/difficlut/indrustries/disadvanteages accumulate, the battery-slot sentence runs on, and 'ban cars even and odd' and 'Cars can clean up the air but also make us gasp for it' have to be guessed at); arg 4 (rung 4 yes: banning is answered by the concrete cost of leaving three hours early, and 'why dont we ban gas cars?' reasons about the real target; rung 5 fails: the position is not held and the closing declines to decide, ending on an open question).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

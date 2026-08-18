@@ -1228,6 +1228,92 @@ def derive_v9(version="v9", check_fidelity=True):
     return {"n": len(rows), "preds": preds}
 
 
+def validate_aggregator(version, eval_csv, batch_dir, batches_file, out_csv):
+    """Apply a FITTED aggregator, frozen, to a set of essays it was not fitted on.
+
+    This is a validation, not a fit, and the distinction is the whole point: `aggregator_v9.json`
+    was fitted on the 100 essays of personal_training_set.csv and is applied here without being
+    re-estimated, re-cut, or re-selected. The project constraint that only those 100 may be used
+    for *fitting* does not forbid *checking* the result elsewhere -- results_v9.md section 5 names
+    this as the most informative thing left to do, because beta2 (the length coefficient) was fitted
+    on one prompt mix and nothing so far shows it transfers.
+
+    Writes the same columns as predictions_v9.csv plus `system_v4_rules_holistic`: what the v3-v8
+    hand-written gate/band rules would have said about the SAME trait scores. That column is what
+    makes this an apples-to-apples out-of-sample comparison between the fitted map and the rules it
+    replaced -- neither has seen these essays, and both read identical inputs.
+    """
+    cfg = VERSION_CONFIG[version]
+    with open(cfg["aggregator_file"]) as f:
+        params = json.load(f)
+    if tuple(params["features"]) != tuple(cfg["features"]):
+        raise ValueError("aggregator feature list disagrees with the config; refusing to apply")
+
+    human, word_counts = load_source_scores(eval_csv)
+    with open(batches_file) as f:
+        expected = [e for b in json.load(f) for e in b]
+
+    sub = cfg["sub_score_fields"]
+    graded = {}
+    problems = []
+    for fname in batch_filenames(batch_dir):
+        with open(os.path.join(batch_dir, fname)) as f:
+            items = json.load(f)
+        for item in items:
+            eid = item.get("essay_id")
+            present = [k for k in MODEL_SIDE_ONLY_FIELDS if k in item]
+            if present:
+                problems.append(f"{fname}:{eid} carries {present}, which the v6 grader is not asked for")
+            if SCORES_FIELD in item or "score" in item:
+                problems.append(f"{fname}:{eid} carries a gold score -- the run was not blind")
+            for t in sub:
+                v = item.get(t)
+                if not isinstance(v, int) or not (1 <= v <= 6):
+                    problems.append(f"{fname}:{eid} {t}={v!r} out of [1,6]")
+            if eid in graded:
+                problems.append(f"{fname}:{eid} graded twice")
+            graded[eid] = item
+
+    missing = sorted(set(expected) - set(graded))
+    extra = sorted(set(graded) - set(expected))
+    if missing:
+        problems.append(f"no grade for {len(missing)} essay(s), first few: {missing[:8]}")
+    if extra:
+        problems.append(f"grades for essays not in the batch list: {extra[:8]}")
+    if problems:
+        raise ValueError(f"{len(problems)} problem(s) in {os.path.basename(batch_dir)}:\n  "
+                         + "\n  ".join(problems[:12]))
+
+    rows = []
+    for eid in expected:
+        traits = {t: graded[eid][t] for t in sub}
+        wc = word_counts[eid]
+        score, s, band = apply_aggregator(params, traits, wc)
+        v4_score, _, _, _ = v4_holistic(traits, cfg["weights"])
+        f1, f2 = aggregator_features(traits, wc, ("weighted_trait_mean", "log10_word_count"))
+        rows.append((eid, human[eid], score, traits, s, band, f1, f2, wc, v4_score))
+
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["essay_id", "human_score", "system_holistic_score",
+                    *[f"system_{t}" for t in sub],
+                    "system_continuous_score", "system_band", "system_weighted_mean",
+                    "system_log10_wc", "system_v4_rules_holistic", "word_count", "rationale"])
+        for eid, h, score, traits, s, band, f1, f2, wc, v4s in rows:
+            w.writerow([eid, h, score, *[traits[t] for t in sub], f"{s:.4f}", band,
+                        f"{f1:.2f}", f"{f2:.3f}", v4s, wc,
+                        f"frozen v9 aggregator: s={s:.3f} in {band}"])
+
+    preds = [r[2] for r in rows]
+    hs = [r[1] for r in rows]
+    v4s = [r[9] for r in rows]
+    print(f"Wrote {len(rows)} rows to {os.path.basename(out_csv)} "
+          f"(aggregator frozen, fitted on n={params['n']})")
+    print(f"  v9 frozen aggregator : QWK {_qwk(hs, preds):.4f}")
+    print(f"  v3-v8 hand rules     : QWK {_qwk(hs, v4s):.4f}   (same trait scores)")
+    return {"n": len(rows), "qwk": _qwk(hs, preds), "qwk_v4_rules": _qwk(hs, v4s)}
+
+
 def score_essay_batch(essay_ids, csv_path, rubric_text):
     """Stub — see module docstring. Not used by any version's assembly path so far.
 

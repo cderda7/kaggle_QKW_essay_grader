@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "02ab5d2",
+    "evidence_notes": "Claim: driverless cars should never become a big thing; reasons are malfunction risk, the car still needing driver assistance, and the car as a mere 'mimic' of a human, backed by three short source quotes (fault if technology fails, mimic the skill of a human, illegal to test in most states). Rungs: org 4 (thesis early, frame present, but the three supports are interchangeable and could swap freely); dev 4 (specific quoted particulars and the connection is stated, e.g. 'This shows that im not the only one who belives they are not safe', but stated by restatement and much support is rhetorical hypothetical, so not specific throughout); conv 3 (errors accumulate - develope, assestence, offcorse, your/you was - and sentences like 'The weather and the technology cant keep up and hold its together' force a re-read to repair, though nothing has to be guessed); arg 4 (one reason genuinely reasoned - if you must keep eyes on the road anyway you may as well drive - but no opposing view answered and the conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "02b6da9",
+    "evidence_notes": "Claim: the emotion-reading technology is valuable because expressions reveal feelings; support is a pair of source particulars (eyebrows up = surprised, lips tighten = angry) plus two paragraphs that simply report what the article says. Rungs: org 3 (controlling idea stated in the writer's own words but no orienting opening and the last part summarizes the article instead of closing, and the second and third parts repeat each other); dev 3 (the eyebrow/lip particulars are specific, but support is listed and the remaining paragraphs report the source rather than explaining what it shows - 'thats really cool' is affect, not connection); conv 3 (each paragraph is one long run-on with pervasive apostrophe/homophone errors, meaning stays recoverable but repair re-reading is constant); arg 3 (position clear and committed - 'thats why i agree' - but the reason is asserted, never shown, and the later parts circle back to the opening).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "02c0440",
+    "evidence_notes": "Claim: the author supports both visiting and fearing Venus, and the writer adds 'trying to learn about differient plants is not right becuses us as people doint even know adout are oun plant'; support is a run of marked block quotes (800 degrees Fahrenheit, 97 percent carbon dioxide, no craft surviving more than a few hours), and the closing reverses the stance ('I would love to go'). Rungs: org 3 (controlling idea present but weakly located and the position has moved by the end); dev 3 (quoted figures are specific, but the quotes are listed with the reader supplying the connection, the elaborations restate the quote - 'Thats how the scientist think that venus is just like earth' - and the writer's own thesis is unsupported); conv 2 (spelling and word substitutions such as 'plants' for planets, 'youse', 'salf', 'was' for ways force outright guessing at intent in places); arg 3 (position stated as the writer's own but held inconsistently and contradicted by the ending; the reasons are asserted, and the danger evidence never connects to the 'not right' claim).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "02c1ebd",
+    "evidence_notes": "Claim: FACS in the classroom is valuable because it shows teachers who understands, who is confused and who is bored; support extends to counselors spotting a student having a bad day, resource-room teachers, and easing homework loads or pushing back tests. Rungs: org 4 (thesis early and held, opening and closing both present, every part on topic, but the third part returns inside the classroom so the widening move is broken and parts could swap); dev 4 (the applications are realized enough to count as specific and the connection is stated - 'This can rebuild the relationship between students and teachers by allowing teachers to better know their students needs and limits' - but support is modal hypothesis rather than specific throughout and no source evidence is used); conv 4 (visible errors - auctually, board for bored, counclers, materal - but nothing needs repair; sentence shapes repeat the same 'This can X by Ying' pattern so rung 5 fails); arg 4 (one reason genuinely reasoned via the mechanism of showing who is confused, no opposing view, conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "02cbcbc",
+    "evidence_notes": "Claim arrives late - 'My opinion on Diverless cars is good for the most part' - after two neutral pros-and-cons parts; support includes the half-million miles driven, GM's vibrating seat, the Google car's takeover announcement and a quoted Tesla/Mercedes/Audi/Nissan timeline. Rungs: org 3 (the controlling idea is weakly located, appearing in the fourth part, and the closing drifts back to neutral 'positive things could also be negative'); dev 4 (figures and named manufacturers are specific and the connection is stated - 'Half a million miles is quite a lot... it goes to show they can be reliable' - but the middle part is unspecified speculation and the quoted timeline is dropped unexplained); conv 3 (mountfunction, thses, gadgits, projectd plus the fragment 'While driving thses cars, lets say on the highway, and something was to go out' and 'half a million miles without a car' force repair re-reading); arg 3 (the stance is hedged, appears late and is undercut by a conclusion that restates the opening's both-sides framing; reasoning is mostly rhetorical what-if questions).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "02cd88d",
+    "evidence_notes": "The text is a summary of 'Making Mona Lisa Smile' with a single evaluative aside ('that's a really smart idea right?'); content is source-reported detail - Prof. Thomas Huang at the Beckman Institute, the Mona Lisa as first subject, forty-four action units, the six emotions classified with Dr. Ekman. Rungs: org 3 (a topic-level controlling idea is stated early, but the closing part repeats the mechanism part without adding, and the 'Your maybe thinking' aside breaks unity); dev 3 (named specifics are plentiful but they are listed as report, not attached to or explained against any claim - the reader supplies every connection); conv 3 (errors accumulate - fro, ir, acton, worjkers, emotins, workd, witch is every smart - and the run-on 'it must have human muscles in the picture ir 3-D model the human muscles is called acton unit' needs repair, though meaning stays recoverable); arg 2 (a position exists only as a throwaway aside that is never held or engaged - the essay hands back the article rather than committing to a stance).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "02cfa15",
+    "evidence_notes": "Claim: the facial emotion scanner is valuable learning for students; support is source-reported - Prof. Huang's software, forty-four muscles, the quoted 'facial expressions for each emotion are universal', and the Mona Lisa percentages (83 percent happy, 9 disgusted, 6 fearful, 2 angry). Rungs: org 3 (the controlling idea sits mainly in the conclusion rather than early, and the stray 'genuinely working on your smiles' unit relates to nothing); dev 3 (the Mona Lisa figures are specific but every piece is listed - 'It's interesting for people to know such little detail' evaluates rather than states what the support shows about student value); conv 2 (fortity four, experssions, repeated 'based of', and fragments like 'This reaches out for students for are open up in the science world' and the smiles sentence obscure meaning enough that intent must be guessed); arg 3 (a committed stance that students would benefit, but the reasons are asserted with no why, and the conclusion restates the opening question's answer).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "02d0224",
+    "evidence_notes": "Claim: 'You should join the Seagoing cowboys program'; support is a chronological account of duties - cleaning stalls, hauling hay from the lower holds, two weeks to a few months at sea, unloading - then the recreation list (baseball, volleyball, table-tennis, fencing, boxing, whittling). Rungs: org 3 (the controlling idea opens and holds, but the closing stops rather than closes - it never returns to the recommendation - and the 'you get to have fun' unit repeats itself without adding); dev 3 (the duties and games are concrete particulars, but they are listed with no statement of how any of it makes joining worthwhile - the reader supplies the appeal); conv 3 (I'f, 'take care animals', 'there stalls' and the long run-on about the animals' home being clean and providing food force repair re-reading, and sentence shapes are uniform); arg 3 (a clear, committed directive stance, but no reason is ever reasoned - the essay describes the program and circles back to 'you get to have fun').",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "02d1c60",
+    "evidence_notes": "Opening states a mixed, self-contradicting stance ('It can be a hard for transportation and assistance, it can be easier for the driver but hard on the road'); the First/Second/Third parts are largely verbatim source sentences - half the fuel of today's cars, 'None of the cars are completely driverless... navigation through work zones and around accidents', 'mimic the kill of a human at the wheel', 'While the driver watches the road, the car watches the driver', the traffic-law assumption. Rungs: org 3 (a vague controlling idea is stated but weakly, and the frame is incomplete - the essay ends on a lifted source sentence with no closing); dev 3 (the borrowed facts are specific but patchwritten - lifted phrasing lightly stitched under headings - and listed with no connection stated, which caps the trait here); conv 2 (in the writer's own sentences: comma splices, 'It can be a hard for transportation', 'They believes', 'can be steer', 'keep in controll in the steering wheel' and the fragment 'First , using a self-driving car' obscure meaning enough to require guessing); arg 2 (the position is vague and internally mixed, never developed - the body reports the source instead of arguing).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "02d481d",
+    "evidence_notes": "Claim: the electoral college is outdated and should be replaced by election by popular vote; support is three Plumer quotes (voters cannot always control electors, the 1960 Louisiana segregationists' near-replacement of Democratic electors, faithless electors casting deciding votes), a Posner quote calling it an anachronism, and a realized hypothetical of electors switching from Obama to Clinton. Rungs: org 4 (thesis early with a two-reason preview, opening orients and the closing lands on the 'unfair, outdated, and irrational' quote with a call to act, but the three elector-betrayal parts could swap without loss); dev 4 (quotes are specific and the connection is stated for each, but the explanations are mostly 'What the author is explaining is that...' restatement and the outdatedness and even-number-of-votes claims go unsupported); conv 4 (spelling errors accumulate - duing, cofused, legislaure, whoo, elecoral, recieves, veiws, acurrate - and 'Time has changed, an so has the political veiws' slips, but sentences vary and nothing has to be repaired to get the meaning); arg 4 (reasons are genuinely reasoned and the other side is raised, but the 'answer' is assertion by counting reasons, and the conclusion is exactly what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  }
+]
