@@ -1,0 +1,98 @@
+[
+  {
+    "essay_id": "0079938",
+    "overview": "You commit to a position in your first line and you give real reasons for it, and the strongest moment in the response is where you push past listing a problem into saying what should happen instead. What holds the response back is that the position keeps moving: having opened against driverless cars, you concede that they are partly a good idea and then close on their advantages, so a reader is left unsure what you actually want to argue. Decide what you think, say it once at the start, and make every paragraph after it do work for that claim rather than adding another item to a list.",
+    "criteria": {
+      "argumentation": {
+        "comment": "You take a clear position immediately and you reason properly in at least one place, working from a problem through to what should be built instead. The difficulty is that you undercut yourself: the concession arrives without being handled, and the final paragraph argues the other side without you ever coming back. Concede a point in order to answer it, not instead of answering it.",
+        "spans": [
+          {
+            "quote": "I feel like if they want to have driving cars they should just bulid a car that can drive people instead of a car that half does it.",
+            "occurrence": 1,
+            "polarity": "strength"
+          },
+          {
+            "quote": "But i feel like people will just ignore it and get into accidents they could have prevented.",
+            "occurrence": 1,
+            "polarity": "strength"
+          },
+          {
+            "quote": "Driveless cars are sort of a good idea.",
+            "occurrence": 1,
+            "polarity": "weakness"
+          },
+          {
+            "quote": "Pros are that you can half drive.",
+            "occurrence": 1,
+            "polarity": "weakness"
+          }
+        ]
+      },
+      "organization": {
+        "comment": "Your signposting inside the middle paragraph is genuinely useful — a reader can follow you from one objection to the next. The response is weaker at its edges: the opening paragraph drifts away from the position it just stated, and the last paragraph stops rather than closing. Give the ending the job of saying what your reasons add up to.",
+        "spans": [
+          {
+            "quote": "Another con is that they can't really drive by itself",
+            "occurrence": 1,
+            "polarity": "strength"
+          },
+          {
+            "quote": "I do think they are a good idea for the blind and people not going to far.",
+            "occurrence": 1,
+            "polarity": "weakness"
+          },
+          {
+            "quote": "You wouldn't have to really pay attention to anything around you and you could just relax while driving.",
+            "occurrence": 1,
+            "polarity": "weakness"
+          }
+        ]
+      },
+      "development": {
+        "comment": "Where you reach for something concrete, it works — the local example gives the reader a specific situation to picture. Most of your other reasons stay at the level of assertion, and the phrase \"or something\" is doing the work that an explanation should be doing. Take one objection and spend three sentences on it instead of naming four.",
+        "spans": [
+          {
+            "quote": "Like since i live in Indiana, they would be a good idea for people in Indianapolis to get from the mall to like a resturant or something.",
+            "occurrence": 1,
+            "polarity": "strength"
+          },
+          {
+            "quote": "I feel like they are dangerous because they could malfuncting and blow up or something.",
+            "occurrence": 1,
+            "polarity": "weakness"
+          },
+          {
+            "quote": "Or they will drive right into a buliding at full speed or something.",
+            "occurrence": 1,
+            "polarity": "weakness"
+          }
+        ]
+      },
+      "conventions": {
+        "comment": "You can build a sentence that holds two ideas against each other, which is worth keeping. Against that, the response has not been re-read: there are misspellings throughout and at least one sentence where a missing word makes the meaning guesswork. Read your work aloud once before handing it in — most of these you would hear.",
+        "spans": [
+          {
+            "quote": "No car is really safe in general, but letting a robot like thing drive your car is kinda a crazy idea.",
+            "occurrence": 1,
+            "polarity": "strength"
+          },
+          {
+            "quote": "they're are many pros and cons about the whole thing.",
+            "occurrence": 1,
+            "polarity": "weakness"
+          },
+          {
+            "quote": "I also think they are a bad idea because driving are probably going to be directly on their phone",
+            "occurrence": 1,
+            "polarity": "weakness"
+          },
+          {
+            "quote": "take control when around accident ot people working on roads",
+            "occurrence": 1,
+            "polarity": "weakness"
+          }
+        ]
+      }
+    }
+  }
+]

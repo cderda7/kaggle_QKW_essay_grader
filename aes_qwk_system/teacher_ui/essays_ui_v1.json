@@ -1,0 +1,22 @@
+{
+  "ladder_version": "ui_v1",
+  "seed": 20260903,
+  "draw": "uniform random, without replacement, from sorted essay_ids of personal_training_set.csv",
+  "source_csv": "personal_training_set.csv",
+  "trait_run": "v6_runB",
+  "predictions_file": "grading/predictions_v9.csv",
+  "n": 10,
+  "note": "Frozen on 2026-09-03. Re-runs READ this list; they never re-draw. A uniform draw of 10 from this corpus is expected to contain no score-1 and no score-6 essays -- see spec_ui_v1.md, 'Essay sample'.",
+  "essay_ids": [
+    "0079938",
+    "00a541a",
+    "00a6e71",
+    "00b3311",
+    "00da297",
+    "00dd003",
+    "0105e2e",
+    "01267d1",
+    "012c9be",
+    "019e8c3"
+  ]
+}
