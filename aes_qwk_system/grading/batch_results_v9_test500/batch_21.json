@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "054e4c8",
+    "evidence_notes": "Claim: the Face on Mars is a natural mesa, not an alien artifact; support is the Viking vs. Mars Global Surveyor imaging sequence (the Apr 8 2001 photo) plus an original motive inference answering the cover-up charge (a discovery like that would benefit NASA). org 5 (controlling idea opens and holds; body units chain photo-then-objection-then-answer so no pair could swap, but the closing only restates with a Middle Butte analogy, so not 6). dev 4 (support is specific -- named craft, dates, landform -- and the connection is stated, but the explanations mostly restate that the photo 'proved' the point rather than interpret it). conv 5 (real variety in sentence length and shape; errors occasional and minor -- 'Conspiract', lowercase 'mars', 'caused for' -- and nothing costs a re-read; word choice is correct but not apt enough for 6). arg 5 (conspiracy objection acknowledged and answered by showing it rests on a false assumption about NASA's incentives, a step the prompt's framing does not imply; not 6 -- the strongest objection, image quality, is only reported).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "05508b4",
+    "evidence_notes": "Claim: the author is convincing about studying Venus because he presents both good and bad; support is a summary of the source's own points (heat/pressure defeat robots, NASA's blimp-like vehicle 30 miles up at 170 degrees, mechanical computers from the 1800s that run on gears and levers). org 4 (controlling idea about the author being convincing is stated at the opening and returned to at the close, and each reported part relates to it, but the parts are a summary set rather than a sequence). dev 3 (specific figures are present but they are the source's, patchwritten -- 'blump-like vehicle 30 or so miles above the rollong venusian', 'envisiond in the 1800s' -- and the essay reports what the source says instead of arguing from it; borrowed phrasing caps the trait at 3). conv 2 (meaning is somewhat obscured: 'NASA is compelling an idea', 'the rollong venusian' and 'Thought the presuure' force guessing rather than repair, on top of pervasive misspelling). arg 3 (position is stated with commitment but never shown -- the balance reason and 'he proved there is more then one way' are asserted, never reasoned, so rung 4 fails).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0550fb1",
+    "evidence_notes": "Claim: we should switch to a popular vote; support is the 60 percent preference figure, the Texas slate of 34 Kerry electors, and then two pro-Electoral-College points (trans-regional appeal, offsetting Senate mal-apportionment) reported without being answered. org 3 (controlling idea is weakly located -- buried at the end of paragraph 2 after a definition opening -- and at least two body parts argue for the system the essay opposes, so rung 4 fails on 'every body part relates to it'). dev 3 (figures and a named case are present, but the argumentative material is lifted source phrasing lightly stitched -- 'trans-regional appeal', 'the mal-apportionment of the Senate decreed in the Constitution' -- which is patchwriting and caps at 3). conv 2 (subjectless wreckage forces guessing: 'Thanks to the quirks of the electoral college-won the popular vote but lost the presidency' and 'Just as Romney was a solid regional in the South, has no incentive to campaign heavily'). arg 3 (position is clear and repeated but held inconsistently, and no reason is reasoned -- '50 percent agree, I think that should be enough proof' asserts without saying why majority preference settles it).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "05580e1",
+    "evidence_notes": "Claim: the Face is a natural rock formation produced by shadows; support is the quoted butte/mesa line, an analogy that anyone can make misleading shadows, and the writer's own suggestion that the sun's angle at the time of the first photo created the shape. org 3 (position arrives in paragraph 2 rather than the opening, the third paragraph digresses into the Face becoming a pop icon, that same unit carries several jobs, and the essay stops rather than closes -- no closing move). dev 4 (one quoted specific plus mostly general support -- 'photos at different pixel sizes' -- but the connection is stated, weakly: shadows can create false appearances, therefore the face appearance is false). conv 3 (errors accumulate and sentences like 'Scientists still held onto their beliefs and avoided correction by a few simple facts' and 'Much goes into a discovery that shouldn't go without apreciation' need re-reading to repair, though meaning stays recoverable). arg 4 (one reason genuinely reasoned -- no evidence of life elsewhere, so why infer aliens from a mesa -- but the conspiracy theorists are mentioned without being answered and the evidentiary principle is only gestured at in the last line).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05592d5",
+    "evidence_notes": "Claim: driverless cars are too dangerous to support until proven safe; support is a realized sensor-malfunction scenario at an intersection, the Transformers portrayal misleading viewers, the quoted liability question from paragraph 9, and a saw-blade analogy about technology failing. org 4 (position lands at the end of paragraph 2 and holds, frame present, all parts relate, but the movie paragraph and the danger/liability paragraph are independent supports that could swap without loss). dev 4 (support is concrete and some of it explained, but the elaboration on the quoted liability line is pure restatement -- 'it said if the technology fails, that means there is a chance of the technology failing' -- and several danger claims rest on general assertion). conv 3 (errors accumulate and the long unpunctuated run-on about the malfunctioning sensor and the stop sign forces a re-read, though meaning is never in doubt). arg 5 (the pro-side sensor-safety argument is acknowledged and answered by pointing to residual risk the sensors do not control, and the position is qualified with a boundary condition -- opposed for now, until 100 percent safety is shown -- which the prompt's framing does not imply).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "056394c",
+    "evidence_notes": "Claim: conditional support for smart cars, neutral on full driverlessness until liability law and sensing improve; support is the buyer's-liability problem, the handover limitation when accidents or detours occur, and the tired-driver-after-hours-of-movies scenario. org 4 (position and preview open the essay and hold to the close, every part relates, but the liability paragraph and the sensing-technology paragraph are interchangeable additive supports). dev 4 (the handover limitation and the movie-watching driver are realized particulars and the connection is explicitly stated -- 'I think this because who would want to buy a car you dont have to drive but be responsible for' -- yet most of the rest is general talk of 'improvements' and 'support'). conv 3 (errors accumulate densely -- resbonsible, accur, weather for whether, their for there, i'v coverd -- and the tangled 'neutral ground though on weather they should be completely driverless unless' sentence needs a re-read). arg 5 (reasons are genuinely reasoned and the position is deliberately qualified where the issue warrants it, marking support for smart cars but not yet full autonomy, and it reaches the public-support-to-funding-to-development conclusion the prompt does not imply).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "056a4a4",
+    "evidence_notes": "Claim: not owning a car makes people happier, healthier and cleaner off; support is the Vauban/Heidrun Walter quote, the Paris ban with congestion down 60 percent, the Bogota car-free day with 25 dollar fines, Sivak on falling ownership rates, and the Source 3 sidewalk quote. org 4 (thesis opens and holds, frame present, every part relates, but the three benefit paragraphs are interchangeable and the opening's preview -- accidents, deaths, money -- does not match the body's pollution, fitness and business). dev 4 (support is specific and attributed and some connections are stated -- 'congestion is car traffic so therefore there was less smog' -- but elaboration is restatement or non sequitur, e.g. Sivak's ownership figures glossed as making families closer). conv 3 (errors accumulate -- benifit, definately, then for than, would'nt, broken article-title formatting, 'Anyone who drove cars were then fined' -- and 'can prevent from polluting the earth' needs repair on a re-read). arg 4 (position clear and one reason reasoned via the congestion-to-smog inference, and the taxi-cost objection is briefly answered, but the essay gets no further than the conclusion the prompt's framing already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "056f9ed",
+    "evidence_notes": "Claim: electors are unreliable so we should elect the president by direct popular vote; support is Plumer on voters being unable to control electors, the Louisiana legislature's near-replacement of Kennedy electors, and Posner's point that large states get more candidate attention. org 4 (position opens the essay and holds, both supports relate and the final lines close, but 'another thing i would like to address' marks two additive parts that could swap). dev 4 (quoted, attributed and specific, and the connection is stated -- 'this is what I mean by unreliable' after the Louisiana case -- but the bribery claim goes unsupported and the quotes sit alongside rather than inside the writer's sentences). conv 3 (misspellings and comma splices accumulate, and 'we should be able to vote directly! who we want as our president' forces a re-read to repair). arg 4 (one reason genuinely reasoned from the Louisiana case to unreliability, but the pro-Electoral-College source is absorbed with 'Exactly' rather than answered, and the conclusion is the one the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0571af0",
+    "evidence_notes": "Claim: limiting car usage is an advantage for both the environment and people; support is Rosenthal's 12 percent and 50 percent greenhouse-gas figures, Duffer's Paris congestion-down-60-percent quote comparing the smog to Beijing, and the Walter and Plaza quotes on stress. org 4 (thesis stated in the opening and held, closing does close, both halves relate, but the environment part and the people part are independent and could swap without loss -- they are even previewed in the reverse order). dev 4 (support is specific and attributed and every piece gets an explanation attempt, but 'to exemplify' and 'in other words' deliver restatement rather than interpretation, and the pollution gloss drifts off the congestion figure it follows). conv 3 (errors accumulate -- enviroment throughout, 'The advantages goes', 'The continue to the advantages', 'Another example would from the article' -- and sentences such as 'without the ability to do anything about it but just sit there or walk' need a re-read to repair, though meaning is recoverable). arg 4 (the chain from cars to greenhouse gases to bad environmental change is reasoned, but 'it might sound horrible' only concedes a counter-intuition without answering an opposing argument, and no qualification or governing principle is made explicit).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05806ed",
+    "evidence_notes": "Claim: the Face on Mars was a natural landform, not an alien artifact; support is NASA's own caption about shadows creating an illusion, the Apr 5 1998 Malin image ten times sharper, the skeptics' haze objection, and the cloudless Apr 8 2001 image three times sharper still. org 4 (controlling idea closes the opening and holds, the 1998-objection-2001 chain is genuinely dependent, but the caption paragraph and the short-lived-monitor paragraph both cover the initial sighting and could swap). dev 4 (highly specific dates, names and resolutions, and some are explained with real work -- three times bigger 'so you could easily see if there were shacks or small airplanes' -- but long stretches are the article retold without interpretive work). conv 3 (heavy misspelling accumulates -- sppoted, showdow, facewas, illution, acloundless, cauincedince -- and the tangled 'The fact that when the face appeared on the Jet Propultion Lab monitors was short lived' sentence and the latitude run-on both need a re-read). arg 5 (the haze objection is acknowledged and answered by the second, sharper photo, and the essay adds its own inference the prompt does not imply -- that NASA's brief attention shows it was never taken as alien; not 6 because the answer is the source's narrative rather than the writer's reframing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  }
+]

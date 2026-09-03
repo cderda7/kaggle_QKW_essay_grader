@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "0286af8",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys program, for sightseeing, helping people/animals, and meeting new animals; support is one borrowed particular (Luke marveling at the Panama Canal) plus general gestures (Europe/China, 'many people... need help due to disasters'). org 4 (stated early and held with a preview-and-recap frame, all three supports on topic, but the three body parts swap freely - rung 5 NO). dev 3 (rung 3 YES on the Panama Canal particular; rung 4 NO - most support is general and the connection is left to the reader). conv 3 (accumulating spelling/word errors - 'site seeing', 'interacte', 'incounter', 'gloab', one garbled 'theemor' - reader re-reads to repair but meaning stays recoverable; rung 4 NO). arg 4 (rung 4 YES - 'you could see many of them that not a lot of people see in their life time' and 'because they are important creatures to this world' give a why; rung 5 NO - no opposing view, no qualification, conclusion is what the prompt implies).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "028d00e",
+    "evidence_notes": "Claim: yes to driverless cars 'because it can be used for a good reason'; support is personal wants plus feature-naming (built-in Google, GPS for old people who get lost, hands-free 'mimic') and one lifted source sentence about smart road systems requiring massive upgrades. org 3 (controlling idea stated but the cost/'everbody not rich' paragraph drifts against it and is never tied back; frame perfunctory; unity breaks - rung 4 NO). dev 3 (rung 3 YES on named features; rung 4 NO - claims mostly unsupported wants, and the borrowed smart-roads sentence sits untransformed, patchwriting cap). conv 2 (rung 3 NO - 'they was to accully made that car', 'Know with the mimic', missing words and run-ons force guessing, not just repair). arg 3 (rung 3 YES, position committed though wobbling; rung 4 NO - reasons are restated preferences and the close circles back to 'i like they car have real good uses to it').",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0293f31",
+    "evidence_notes": "Claim emerges mid-essay: 'I don't think that we are really in need of something like this'; support is a specific own-school case (no online lessons, unlike nearby E-learning schools), a cost objection posed only as questions, and a realized ad-distraction scenario. org 3 (opening frames pros/cons questions rather than a position, and the close retreats to 'it is mainly up to the schools' - position has moved, rung 4 NO). dev 4 (rung 4 YES - the E-learning case and the ad scenario each state how they bear on the claim; rung 5 NO - the cost paragraph is unsupported rhetorical questions, so support is not specific throughout). conv 3 (rung 4 NO - dense spelling drift 'systam/determan/acsess/intrested' plus 'the way the lesson it tought' force re-reading to repair). arg 4 (rung 4 YES - targeted ads are more clickable, therefore more distracting, is genuinely reasoned; rung 5 NO - the pro side is answered but the essay never holds one position throughout, opening and closing neutral).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0296469",
+    "evidence_notes": "Claim: driverless cars are not a good idea, for three previewed reasons - unclear liability, inability to navigate work zones/accidents, driver boredom; each body part quotes the source article directly and tags it with 'This proving/showing/evoctaing that...'. org 4 (stated early, held, framed and recapped, all parts on topic, but the three reasons are interchangeable - rung 5 NO). dev 4 (rung 4 YES - the connection is stated after every quote; rung 5 NO - the liability tag restates the quote and the boredom tag is muddled, so explanation adds something for only one of three). conv 3 (rung 4 NO - pervasive misspelling 'fualt/accour/hwo/evoctaing' and two sentences that need repair, including the final garbled 'when driving so such so much more fun'; meaning recoverable). arg 4 (rung 4 YES - a car that still needs a human for work zones is not really driverless, therefore of limited use; rung 5 NO - the article's positive side is named in line 1 and never engaged).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "02a059f",
+    "evidence_notes": "Claim: the author succeeded at laying out claim and evidence about exploring Venus; the body is a sequence of long block quotes (800 degrees F, 90x pressure, blimp 30 miles up, silicon carbide lasting three weeks) introduced by 'The text states' with almost no commentary. org 4 (controlling idea stated early and reaffirmed at the close, frame present, parts track the article's own development so each relates - but the closing adds nothing and the evaluative idea drops out of the middle, rung 5 NO). dev 3 (rung 3 YES - quoted figures are specific; rung 4 NO - only one empty connective tag, 'this body paragraph is another eason why I believe', so the reader supplies every connection; quotation occupies more of the page than the writer's own sentences). conv 3 (rung 4 NO - 'the star in our sloar planet', 'I can say the that', 'the author then continues to NASA's ideas' each need repair; the writer's own sentences run to one flat 'The author states X' pattern). arg 3 (rung 3 YES, position clear and committed; rung 4 NO - the essay never says why the evidence is effective, only that more of it exists).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "02a1298",
+    "evidence_notes": "Claim: the emotion-reading technology is a positive and 'would help todays society'; support is a quoted line about 44 major muscles, the named researchers Ekman and Huang, and a Mona Lisa reading ('she isnt just happy because she is smiling'). org 3 (controlling idea stated in line 1 but the middle is pure exposition of the mechanism, para 4 starts on facial feedback and ends on an unrelated opinion, and the close restates the opening list without adding - rung 4 NO). dev 3 (rung 3 YES on the 44-muscle quote and the Mona Lisa case; rung 4 NO - the evaluative claim goes unsupported and the source material is closely paraphrased and listed rather than tied to the position, patchwriting cap). conv 3 (rung 4 NO - 'this is saying is that', erratic capitalization, an unclosed quotation and steady misspelling 'artical/paragrapgh/docotrs/anither' send the reader back over sentences; meaning always recoverable). arg 3 (rung 3 YES; rung 4 NO - 'it would help society becuase it would help with seeing what other friends and family feel' restates rather than reasons, and the final paragraph circles the opening).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "02a1c3a",
+    "evidence_notes": "Claim: driverless cars are an excellent idea, for three previewed reasons - easier long-distance travel, easier driving with small children, far fewer accidents; support is self-generated but concrete (vibrating seats, a loud announcement, flashing lights, thick snow/sleet/foggy windshields, cars that always obey steering/acceleration/braking laws). org 4 (stated early, held, framed and recapped; para 3 does depend on para 2's alert mechanism, but paras 2 and 4 swap freely - rung 5 NO). dev 5 (rung 5 YES - support is specific throughout and most is carried a step further, e.g. no rest stops therefore shorter total trip time, a car cannot be drunk therefore fewer impaired-driving crashes; rung 6 NO - 'will always obey traffic laws' is left to speak for itself). conv 5 (rung 5 YES - real variety in length and shape, all under control, errors limited to 'accleration' and a stray parenthetical; rung 6 NO - diction is correct but generic, 'great/incredible/uncomplicate', not apt). arg 4 (rung 4 YES, several reasons genuinely reasoned, and the sleeping-driver objection is raised and answered; rung 5 NO - the conclusion goes no further than the pro side the prompt's framing already implies).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "02a7530",
+    "evidence_notes": "Claim: 'I think you should try it' (Seagoing Cowboys); the body is mostly marked block quotes - UNRRA's founding, Luke's nine trips, the Acropolis and Venice gondola, the shipboard baseball and table-tennis - attached with 'As stated in paragraph 2'. org 3 (controlling idea stated early, but the UNRRA-background part serves the topic rather than the recommendation, para 3 carries several unrelated jobs at once, and the frame repeats the same Luke quote at both ends - rung 4 NO). dev 3 (rung 3 YES - abundant specific particulars; rung 4 NO - quotes are listed with no statement of how they bear on 'you should try it', and paragraph 5 is a bare quote with no lead-in or follow-up; the one connection made, seasickness, argues against the claim). conv 3 (rung 4 NO - the opening quotation is punctuated so that the reader must re-read to see where Luke's words start and stop; 'toured am excavated castle', plus 'thier/gratful/oportunity'). arg 3 (rung 3 YES, position clear and committed; rung 4 NO - reasons are asserted as enjoyment, 'it would be fun', 'I would be pretty amazed and entertained', with the only why quoted from Luke and never reasoned from, and the close restates the opening).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "02a7cff",
+    "evidence_notes": "Thesis is the source's factual claim restated - 'Facial Action Coding System can be able to identify human emotions' - and each body paragraph opens by restating it, then stacks three quotes ('In the text it states... The text also states... The text finally states') before a long block of commentary. org 3 (both body parts make the same claim, so the second largely repeats the first without adding; para 2 begins on anatomical coding and ends on an unresolved identity-danger digression - rung 4 NO). dev 4 (rung 4 YES - the forced-versus-genuine smile discussion states what that quote shows, that the muscles move differently so the computer can tell; rung 5 NO - the three-quote stacks get one blanket comment, and the borrowed material sits alongside the writer's sentences rather than inside them). conv 2 (rung 3 NO - 'the coding that this new computers have his so amazing because demostrates how technology had been make and evolution' and the 100-word closing sentence force guessing at intent, not just repair). arg 2 (rung 3 NO - the position is the source's claim handed back, barely engaging the should-it-be-used issue, and what look like reasons are circular restatements: it can identify emotions because the face reveals how humans feel).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "02a9d14",
+    "evidence_notes": "Claim, voiced in first person as Luke Bomberger: the experience was great and 'I really recomend it to you'; support is specific and transformed from the source into narrative - the Acropolis honoring the Greek gods on a hill above the city, the Venice gondola, the broken ribs on the slippery ladder, the named shipboard sports. org 4 (stated early with a three-part preview, held, opening orients and closing closes, all parts on topic - but places, animals and sports swap freely, rung 5 NO). dev 4 (rung 4 YES - 'like a mini cruise in the city streets', 'scared me, but it was totally worth it', 'which made it even better' each state the connection; rung 5 NO - those are evaluative tags that restate rather than add). conv 5 (rung 5 YES - genuine variety of length and shape, fragments used deliberately for voice, all under control, errors limited to 'recomend/gongola/greatful' and one pronoun slip; rung 6 NO - diction is generic, 'great/wonderful/worth it', fitting but not apt). arg 3 (rung 3 YES, committed recommendation; rung 4 NO - reasons are asserted enjoyment rather than shown, and the final paragraph restates the opening).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 3
+  }
+]

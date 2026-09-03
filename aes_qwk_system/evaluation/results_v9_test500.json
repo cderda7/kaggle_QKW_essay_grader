@@ -1,0 +1,15 @@
+{
+  "n": 500,
+  "qwk_v9": 0.7500596565428828,
+  "qwk_hand_rules": 0.4889263383666709,
+  "qwk_rubric_only": 0.5926051836140447,
+  "qwk_wordcount_only": 0.6231402122670415,
+  "exact": 0.614,
+  "adjacent": 0.97,
+  "mae": 0.418,
+  "bias": 0.078,
+  "spearman_v9": 0.7524701349941019,
+  "corr_wc_human": 0.6504403978028487,
+  "corr_wc_v9": 0.7716165744041404,
+  "aggregator": "frozen, fitted on personal_training_set.csv n=100"
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "095f993",
+    "evidence_notes": "Claim: against the Google driverless car; reasons: the driver should stay in control, malfunctions can injure or kill, you won't own the car forever. Support is hypothetical and general (broken bones, brain damage, selling the car); the one specific detail (laser beams building a 3-D model) sits in the intro describing what he opposes rather than supporting it. org 4 (thesis stated early with three matching body parts and a closing, but the three supports are freely interchangeable, so rung 5 fails); dev 3 (rung 3 met only marginally by hypothetical particulars; rung 4 fails because the 'explanations' restate the claim circularly - 'having malfunctions are bad, but dying is horrible'); conv 2 (rung 3 fails - 'who needs a literally has laser beams' and 'continuing how to learn how' force the reader to guess intent); arg 3 (rung 3 met, position clear and committed; rung 4 fails - reasons asserted and circular, the third reason about not owning the car forever never connects to driverless technology).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0962f2b",
+    "evidence_notes": "Announces a topic rather than a claim ('I will talk about the challenging of exploring venus'); body gives descriptive facts (second planet from the sun, brightness, 'closest planet to earth in terms of density and size' quoted from the article) followed by empty meta-commentary; the piece breaks off with no closing. org 3 (rung 3 met - a controlling idea about Venus's challenge is stated; rung 4 fails, no closing and the frame is incomplete); dev 2 (after discarding descriptive material that bears on no claim, nothing specific remains; the quote is reported and then restated - 'this further explains more on venus' - so borrowed material stands in for the argument); conv 2 (rung 3 fails - 'This star is called a venus is one of the brightest points of light in the light sky', 'kust', 'htis', 'nighy' force guessing); arg 2 (rung 3 fails - no committed stance, the prompt's topic handed back with a promise that a point of view will appear later).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "0966167",
+    "evidence_notes": "Claim: emotion-detecting classroom technology is a waste and a bad idea; support: students having a bad day want to be left alone, a quoted da Vinci/Dr. Huang passage, and a worked scenario in which the computer detects boredom, serves a video-game ad, and the student fails the assignment. org 3 (rung 4 fails - no closing, the piece stops on a new argument, and the da Vinci quote is a digression that does not bear on the claim); dev 4 (rung 4 met - the bored-student scenario is specific and its connection to 'bad idea' is stated as a causal chain; rung 5 fails, other support is general and the quote is dropped and merely restated); conv 3 (rung 3 met, meaning always recoverable, but errors accumulate and 'in my trance of thought', 'characterlise there facial muscles by the expression movements' force re-reading); arg 4 (rung 4 met - the distraction chain says why the technology is harmful; rung 5 fails, no opposing view answered, no qualification, no explicit principle).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0967e3f",
+    "evidence_notes": "Claim: others should join the Seagoing Cowboys program because you can explore; support is a run of source citations (crossed the Atlantic 16+ times, toured and excavated castles, checked animals every hour, was grateful, night watchman, cracked ribs). org 4 (rung 4 met - thesis early, both body parts relate, conventional closing; rung 5 fails, the two body parts are the same kind of list and could swap); dev 4 (rung 4 met - connections stated weakly, 'it seems like a fun activity because... Luke was grateful', 'you had to do a little work to because... he had to check the animals every hour'; rung 5 fails, most citations are listed with no interpretation and the ribs detail is irrelevant); conv 3 (errors accumulate and 'they knew he was a cattle-boat trip but they told him just to keep doing it for his service' needs repair on re-reading); arg 3 (rung 4 fails - the essay never says why travel or Luke's gratitude means others should participate; reasons are asserted and the close restates the opening).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "096aa1c",
+    "evidence_notes": "Claim: for driverless cars, they are safer and more fun; support is borrowed source detail - sensors that 'detect and respond to the danger of out-of-control skids or roll-overs', 'half a million miles without being crashed', 'half of the fuel of today's taxis'. org 3 (rung 4 fails - the last paragraph repeats the intro's sentences almost verbatim without adding, and there is no closing that closes); dev 3 (rung 4 fails - source phrasing is stitched in with little transformation and left to speak for itself; 'even though driveless cars uses half of the fuel... it's making driving fun' attaches no working connection); conv 3 (errors accumulate - 'senors', 'regualr', 'Regular cars does have' - and the mismatched 'even though' clause forces re-reading, though meaning stays recoverable); arg 3 (rung 4 fails - safety is asserted and re-asserted, and 'it could be making driving more fun' recurs three times as its own justification; the opening concession is never answered).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "096b178",
+    "evidence_notes": "Claim: cars are used too much and people should cut down; three supports - town design (Vauban, 70 percent car-free, Goldberg quote), pollution (Paris even/odd plate ban, smog killing crops, New York grey skies), happiness (Bogota car-free day). org 4 (rung 4 met - thesis and three-part preview held, closing recaps; rung 5 fails, the three supports are interchangeable); dev 4 (rung 4 met - 'when cars cause pollution it makes smog and smog can kill crops and animals', 'if buildings were made closer gasoline would be less of a problem'; rung 5 fails, the Bogota paragraph is three stacked quotes with no explanation at all); conv 3 (errors accumulate - 'used used', 'calles', 'boarders' - and the town-design sentence must be repaired on re-reading); arg 4 (rung 4 met - the cars-to-pollution-to-smog-to-health chain says why; rung 5 fails, no opposing position answered, no explicit governing principle, conclusion only restates the three reasons).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "096eae9",
+    "evidence_notes": "Claim: driverless cars should be used; three supports - driver mimicry, 'driven more than half a million miles without a crash', 'half the fuel of today's taxis' with a New York to Florida illustration. org 4 (rung 4 met - position and three-item preview held, closing mirrors it; rung 5 fails, the three supports could swap freely); dev 4 (rung 4 met - each quote is followed by a stated inference, 'these cars could be really safe for drivers'; rung 5 fails, the inferences largely restate the quote and one, taxis going out of business, does not bear on the position); conv 4 (rung 4 met - missing apostrophes, comma splices and stray spacing are visible but nothing needs repair; rung 5 fails, errors are more than occasional and sentence shapes are narrow); arg 4 (rung 4 met - the mimicry reason states why an experienced driver's skill transfers; rung 5 fails, no counterposition answered, no qualification, conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0973664",
+    "evidence_notes": "Claim: the Electoral College should be abolished because it is unfair; support: the popular-vote-loses mechanism, the Plumer quote on voting for a slate of electors, and Posner's figure of 61.7 percent electoral versus 51.3 percent popular vote. org 4 (rung 4 met - thesis first sentence, held to the close, both body parts bear on it; rung 5 fails, the mechanism paragraph could precede the unfairness paragraph without loss, and the tie point from the intro is dropped); dev 4 (rung 4 met - the unfairness mechanism is spelled out and the Posner quote is followed by a stated consequence; rung 5 fails, the Plumer quote is dropped unexplained and the 61.7/51.3 figure is never interpreted); conv 3 (errors accumulate - 'recieve', 'verey', 'fovored', 'ther ewas', 'citezens' - and the long opening sentence about voting for a chance must be re-read); arg 4 (rung 4 met - says why the system is unfair, a majority winner can still lose; rung 5 fails, Posner's defense is quoted but answered only by assertion, and no governing principle of fairness is made explicit).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0975e3f",
+    "evidence_notes": "Claim: driverless cars will benefit the world but show too many red flags to be reasonable now; support: GM and Berkeley cable/magnet smart roads proving unreasonably expensive, at least nine sensors per car, cars that cannot pull in or out of driveways or handle roadwork, a 25 mph ceiling, and in-car entertainment that shuts off to restore alertness. org 5 (rung 5 met - the cost paragraph feeds the sensor-capability paragraph, the pros paragraph only works after the cons are established, and the closing weighs them; rung 6 fails, the sequence is a defensible cons-then-pros order rather than a named argumentative move); dev 5 (rung 5 met - support specific throughout and most explanations add something the source detail did not say, '25 miles per hour... would definitly not be safe on a highway or interstate'; rung 6 fails, the GM/Berkeley sentence is listed without being taken anywhere); conv 4 (rung 4 met - sentences vary and stay controlled and nothing needs repair; rung 5 fails, spelling slips accumulate - 'independantly', 'typs', 'arn't', 'ment', 'definitly', 'percautions', 'to many'); arg 5 (rung 5 met - the position is genuinely qualified, conceding the crash-free record and the safety features while bounding the verdict to 'at this time'; rung 6 fails, the weighing of pros against cons is asserted in the final sentence rather than argued).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "09763fb",
+    "evidence_notes": "Reports four sources on limiting car usage - Bogota's car-free day, Paris's diesel share of 67 percent and even/odd plate ban, Vauban's 70 percent car-free families and two parking garages, and 12 percent of European greenhouse emissions plus 'Americans are buying fewer cars' - and only states a position in the conclusion. org 3 (rung 4 fails - the controlling idea, that limiting car usage has many advantages, arrives only in the closing; the opening orients to Bogota, not to a claim); dev 4 (rung 4 met - some connections are stated, 'if Americans are buying less vehicles than that's a way to a good start for lowering greenhouse gases', and parking scarcity is offered as the reason for Vauban's habits; rung 5 fails, the Paris and Bogota paragraphs are quoted fragments reported with no bearing supplied); conv 3 (errors accumulate - 'rome', 'gasoine', 'evn', 'lisence', 'gaols', 'caar' - and 'odd numbered lisence plate owners were followed to keep their car at home' and the 'lost revenue' sentence need repair on re-reading); arg 3 (rung 4 fails - the body reports what countries do rather than arguing, and the closing causal sentence restates the premise that cars cause smog instead of showing why limiting follows).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  }
+]

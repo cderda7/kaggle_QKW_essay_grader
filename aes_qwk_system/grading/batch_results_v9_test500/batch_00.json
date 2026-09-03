@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "01c8f7a",
+    "evidence_notes": "Claim (arrives only at the end): \"they should keep using the machine to study are feelings\"; the opening actually leans the other way (\"you can't just look at people's emotions without them knowing what your doing\"); support is a general assertion that humans already read faces, plus a personal paragraph on depression and a girl who gives him hope that never bears on FACS. org 3 (controlling idea stated but weakly located - opening contradicts it, and the depression paragraph is a digression); dev 2 (support offered but nothing specific anywhere - no named case, particular or realized example; the one concrete passage is discarded as irrelevant); conv 3 (whole paragraphs fuse into unpunctuated run-ons and I re-read to find sentence boundaries and repair \"how the feel\" / \"so might be angry\", but meaning stays recoverable); arg 3 (a committed position by the conclusion, but every reason is asserted - \"it may be helpful in the future\" - never reasoned)."
+  ,
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "01cbe3d",
+    "evidence_notes": "Claim: exploring Venus carries risks \"but in the long run it could help out\"; reasons are that a habitable Venus would relieve overpopulation, supported by a developed Japan example (visible morning pollution, masks) and by a long block quotation from the source about Venus once having oceans; the Japan case is explicitly linked back (\"we can decrease this issue by sending some of those people to Venus\"). org 3 (controlling idea early, but the GMO and USA-refugee material are digressions and the closing paragraph fuses evidence with conclusion rather than closing); dev 4 (specific, connected support in the Japan case and the quotation is marked and used, but the GMO and refugee claims are general gestures, so not specific throughout); conv 2 (the opening \"despite the dangers it presents by, while yes...\" and the closing \"i do think that figuring out if the planet Venus can be inhabited,\" lose their predicates - I have to guess the intent, not repair it); arg 4 (habitable planet leads to more places to go leads to less overpopulation is genuinely reasoned; risks are mentioned in the first line but never answered, and no qualification or explicit principle)."
+  ,
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "01d0836",
+    "evidence_notes": "Controlling idea is \"Venus can be a challenging\"; the body is a walk through source facts (97 percent carbon dioxide, 800 degrees, 90 times the pressure, silicon carbide lasting three weeks, mechanical computers from the 1800s); the last paragraph asserts travels \"should not be limited because by the dangers\" and then reverses to \"It's really dangerous to be in Venu's.\" org 3 (idea stated, but paragraphs 2 and 3 repeat each other without adding, and the opening unit carries several unrelated facts); dev 3 (specific figures throughout but they are patchwritten source phrasing lightly stitched and unmarked, which caps the trait at 3); conv 2 (\"Between Venus and Mars is the sun because there sun goes in different speed\" and \"However Venus can be ship obriting or hovering safly far above the planet can provide only limited insight\" force outright guessing at intent); arg 2 (the source's wording handed back with no commitment added - the two closing sentences take opposite sides, so no reason is the writer's own)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "01d2df1",
+    "evidence_notes": "Claim: \"I support the idea of the self driving car,\" qualified as good \"but it will come with soem complications\"; support is a series of marked source quotations (mimicking a human driver, illegality of testing in most states, liability if technology fails, driver must stay alert), each followed by commentary; the testing quote is genuinely interpreted (\"how can you make a better car if you cant test it in real situations\"). org 5 (case-for then objections then resolution: the two body parts cannot swap, and the closing adds a forward claim the opening did not make, but the sequence makes no move I would call more than that); dev 4 (support specific and marked, but quotes sit alongside the writer's sentences and roughly half the commentary restates the quote rather than interpreting it); conv 3 (typos accumulate - becasue, casues, saftey, becaus ethe - and \"it should be able to switch could be developed later on\" needs repair on a re-read); arg 4 (the testing reason is reasoned and the position is qualified, but the answer to the objections is bare assertion that \"problems will become less,\" and the conclusion goes no further than the prompt's framing implies)."
+  ,
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "01d6e7e",
+    "evidence_notes": "Claim: the 'Face' on Mars \"is just a hoax\" and is a natural mesa; support is the 1976 Viking 1 sighting, the location in Cydonia (a region \"well-know ... to house mesas\"), and the analogy to mesas and buttes in Western America; the shadow explanation states what the evidence shows. org 4 (position early and held, frame present, both body parts on-topic, but the discovery paragraph and the Earth-analogy paragraph could swap with little loss); dev 4 (named, dated, located support with the connection stated for the shadow explanation, but the Earth analogy is left for the reader to apply and \"not a single astronout have researched\" is unsupported); conv 3 (misspellings accumulate - astronout, moutain, buttles, mnaybe - and \"it still wouldn't tally up right?\" needs repair on a re-read); arg 4 (in-a-mesa-region-therefore-a-mesa and shadows-explain-the-likeness are actually reasoned, but the alien hypothesis is gestured at and never answered, and the essay reaches only what its own reasons imply)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "01dabde",
+    "evidence_notes": "Claim: a world with fewer cars benefits us, argued on cost, environment/health, and cultural shift; support includes an EPA figure (80 percent of taxes to highways), a ranking of emission sources, and a quoted passage on connected pedestrian/bicycle/transit networks; the reader's likely objection is raised and answered (\"before you begin your argument that you really need that blue mercedes ... how much that cost compared to your last paycheck\"). org 4 (strong frame - the opening sets stakes and the closing lands a call to action the opening did not - but the cost and environment paragraphs are parallel supports that could swap); dev 4 (specific figures and a used quotation with connections stated, but obesity, \"dozens of people die every day,\" and \"the more polluted citys\" are general gestures, so not specific throughout); conv 3 (real sentence variety and control, but roughly twenty misspellings accumulate and \"linger more many a milenia\" and \"choosing to carpool take public transport\" need repair on a re-read); arg 5 (an objection is raised and answered, and the governing principle is made explicit - \"Its not the the planets health we're talking about here its the health of everything living on it including us\" - landing past what the prompt implies; stops short of 6 because the strongest objection, that people need cars, is never touched and the position is never bounded)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "01e0bb8",
+    "evidence_notes": "Claim: the Facial Action Coding System \"serves great purpose and value to us as consumers\" because it unlocks history and advances technology; support is the Mona Lisa/da Vinci case with a quotation on anatomy study, plus quotations on animated faces and on ad targeting; the da Vinci material is genuinely worked through (studied anatomy, so painted precise emotions, so we can now read her feeling). org 4 (thesis early and held, frame present, both body parts on-topic, but they map to the two thesis clauses interchangeably and the second wanders across sports, medicine and ads); dev 4 (specific, marked quotations with connections stated, but the whole second half - sports, \"amazing medical advances\" - is general speculation, so support is not specific throughout); conv 5 (real variety in sentence length and shape, including a deliberate fragment and a rhetorical question, all under control; errors are occasional and minor - \"positive affect,\" \"alot,\" \"our histories past\" - and nothing costs a re-read; not 6 because the wording is generic and repetitive rather than apt); arg 4 (the da Vinci reason is reasoned and an objection is glancingly answered, but the conclusion restates the thesis verbatim and gets no further than the prompt's own framing)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "01e64c4",
+    "evidence_notes": "Reports that \"the author supports going to venus for further study\" because he wants to know whether there was once life; support is that rovers break in 30 minutes or less under pressure and heat, a blimp-like vehicle 30 miles up defeated by light not penetrating the clouds, and a mechanical computer run on gears and levers that could withstand the conditions. org 4 (idea stated first and held, obstacle then attempted solutions, all parts on-topic, but the closing largely restates the opening and the third paragraph carries several jobs at once); dev 4 (particulars are specific and the connection is stated - \"the elctronics would melt and imploud because of the emensece preassure\" - but the opening claim about past life is never supported, so not specific and explained throughout); conv 2 (\"they might you something called a mechinacal computer\" and \"a blimp like vehicle that would stay 30 miles in the air that would study\" leave me guessing rather than repairing); arg 2 (the writer never takes a position - the article's stance is handed back with no commitment added, so rung 3 fails)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "01e78c7",
+    "evidence_notes": "Claim: \"Studying Venus isnt worthy puting peoples life in danger\"; two reasons are announced (too dangerous; are they ready to risk it) but only the first is pursued, via two quotations from paragraph three about the hottest surface temperature and about volcanoes, earthquakes and lightning strikes. org 3 (position stated first but the very next sentence says studying Venus \"is such a good idea,\" the announced second reason is dropped, and the body is a single unit that ends on a quotation); dev 3 (the quoted material is specific but it is dropped in and the paragraph ends there - the reader supplies the step from hot-and-violent to not-worth-doing); conv 2 (\"are they ready do be risking a lot of things,\" \"isnt worthy puting peoples life in danger and taking dangers,\" and the reversed \"such a good idea\" all force guessing at what was meant); arg 3 (a committed anti position, but the danger is only asserted to outweigh the value - the essay never says why, so no reason is reasoned)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "01ec06b",
+    "evidence_notes": "Claim: \"The electoral college is not a good idea\" and should be replaced by the popular vote; support is winner-take-all leaving 17 states unvisited in 2000 (Rhode Island, South Carolina, 25 largest media markets), the mechanics of 538 and 270 electors, and the 1960 Louisiana and Hawaii elector disputes; the pro-electoral-college passage in paragraph one is quoted in and never answered. org 3 (position early, but paragraph three is neutral procedural information that does not bear on it, and the closing only restates the opening); dev 3 (specific figures, but they are patchwritten source phrasing - \"restores most of the weight on the political balance ... mal-apportionment of the Senate,\" \"certificate of ascertinment\" - lightly stitched, which caps at 3, and the 1960 anecdotes are listed with no stated bearing); conv 2 (\"replacing the democratice electors with new who would oppose\" and \"Nixon was presiding over the senate validated his only opponet's electors\" leave me guessing at the intended sentence); arg 4 (winner-take-all explains why candidates skip states, which is why voters there are ignored - one reason actually reasoned - but the quoted defense of the college is never answered and the position is never qualified)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  }
+]

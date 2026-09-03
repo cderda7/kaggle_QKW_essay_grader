@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "088c6ac",
+    "evidence_notes": "Claim: cars/vehicles are to blame for pollution and \"we dont even need cars, we WANT cars\"; support is source-drawn (70% of Vauban's families own no car, 57% sold one, Heidrun Walter quote, \"50% of all cars in Europe\") plus a garbled greenhouse-money claim (greenhouse gases misread as building greenhouses) that does not bear on the claim once set aside. org 3 (controlling idea stated but the \"ups and downs / time management\" part is a digression and the final part repeats the pollution part without adding); dev 3 (the Vauban figures and the quote are listed, reader supplies the connection; the only \"explained\" support is the incoherent greenhouse chain); conv 3 (pervasive misspellings and \"the down information is that the government waste a lot of money on gas... even on fast food resturants\" force re-reading, but meaning stays recoverable); arg 4 (one reason is actually reasoned - drivers know gas use creates pollution and drive anyway, therefore humans share blame - with no opposing position answered and no conclusion past the prompt's framing).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "088fd5c",
+    "evidence_notes": "Claim: give up the car - less stress, less pollution, more exercise; support is quoted from the sources (Vauban 70%/57% plus the \"When I had a car I was always tense\" quote, diesel fuel blamed for Paris smog, Colombians hiking/biking on car-free day, \"America's love affair with its vehicles seems to be cooling\"). org 4 (controlling idea early and held, real frame, but the stress / pollution / exercise / trend parts are interchangeable supports that could swap without loss); dev 4 (support specific throughout and the connection is stated, but the explanations mostly restate - the pollution and trend paragraphs answer their quotes with exhortation, \"We need to put a stop to this,\" rather than interpretation); conv 5 (genuine variety of length and shape, deliberate fragments under control, errors - anxst, liscence, excerise, emmissions - occasional and minor, costing the reader nothing, but word choice is serviceable rather than apt); arg 4 (the stress reason is genuinely reasoned via gas, payments, fixes; no opposing position is answered, position is not qualified, and the conclusion is what the prompt's framing already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0890d0b",
+    "evidence_notes": "Claim: \"the negative aspects outweigh the positive aspects when it comes to driverless cars\"; support is one source figure (they use half the fuel of today's taxis) and otherwise hypothetical - bored/distracted drivers missing handover alerts, pricey electrical repairs, unspecified malfunctions. org 4 (thesis early and held, frame present, but the distraction, cost and malfunction parts could swap places without loss); dev 3 (only one concrete particular; the rest is general speculation - \"it could be very pricey,\" \"what if these cars have a malfunction\" - and several claims go unsupported); conv 3 (errors accumulate - possibaly, destracted, accedents, \"to to,\" \"carscan\" - and sentences like \"since these cars are besically ran off of these computers that means of a part if messed up th car will not function properly\" have to be re-read and repaired, though meaning is recoverable); arg 4 (the handover-to-distraction-to-accident chain says why it follows; pros are conceded but answered only by raising further hypotheticals, and the conclusion is exactly what the prompt's framing implies).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0890e40",
+    "evidence_notes": "No position on the issue: the essay reports \"The Challenge of Exploring Venus\" (Venus once may have been the most Earth-like planet, ~800 F, atmospheric pressure 90 times Earth's, NASA's blimp-like vehicle 30-plus miles up at ~170 F) and its only stance is that the story is \"great\" and \"very informational.\" org 3 (the framing idea drifts - it opens as a book review, the body summarizes, and the closing moves off the subject to how easy the essay was to write); dev 3 (figures are specific, but the material is patchwritten - source phrasing such as \"familiar features such as valleys, mountains, and craters\" and \"close to that of sea level on Earth\" lightly stitched with \"so it say's,\" \"furthermore let's talk about\" - which caps the trait); conv 3 (weak vocabulary and long unresolved run-ons - \"it once long ago may have been the most Earth-like planet in our solar system then also Venus still today has a surface of rocky sediment besides that includes...\" - force repeated re-reading, but nothing has to be guessed); arg 2 (a stance exists but it is a verdict on the story, so limited it barely engages the issue, and its \"reasons\" are restatements of the summary).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "0892cb5",
+    "evidence_notes": "Claim: cities going car-free are getting better results and we must act on \"our pollution disaster we caused\"; support is the Carlos Arturo Plaza quote about lowering stress and air pollution, the \"smart planning\" reference, and the fine/tow enforcement detail. org 3 (a controlling idea is recoverable and stated, but the single body block jumps from the Bogota quote to future generations to smart planning to fines to selfishness, so unity breaks and one part does not bear on the last); dev 3 (one named case and quote, everything else general - \"our air pollulation has drop\" - and support is listed with the reader left to supply the connection); conv 2 (scariface, Cizitiens, nesscery, pollulation, humanuity, plus \"doing what is nesscery is have to come upon to us\" and \"Know the next generations\" require guessing at intent, so meaning is somewhat obscured); arg 3 (position is clear and committed, opposition is mentioned but only dismissed via fines, and the reasons are asserted - the essay circles back to the same call to act without saying why).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "089a7f7",
+    "evidence_notes": "Claim: \"clearly the face is natural landform,\" promising three reasons; support is the April 5 1998 Mars Global Surveyor pass over Cydonia and the April 8 2001 second look (25-degree roll, 1.56 m per pixel against 43 m in the 1976 Viking photo, objects three times the pixel size visible). org 3 (thesis early, but only two of the three promised reasons arrive and the essay stops mid-body with no closing at all, so the frame is incomplete); dev 3 (the specifics are lifted close to source wording - the pixel comparison and the \"spaceships... egyptian style pyramids or even small shacks\" inference are both the source's - patchwriting stitched with the writer's connectives, which caps the trait); conv 3 (run-together words and misspellings accumulate - Surveyorflew, spacecraft25, Cydionia, Michale, pixek - and the opening sentence \"thinks something true but really not\" needs repair, but meaning is recoverable); arg 4 (the resolution argument - if artificial objects were there we would see them - is a genuine why; skeptics are noted and met with the second photo, but the conclusion is exactly the one the prompt's framing implies).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "089aae3",
+    "evidence_notes": "Claim: \"You should join Seagoing Cowboys program\" because you care for the animals, travel, and help people recover; support is Luke Bomberger's story (Don Reist's invitation, 44 nations forming UNRRA in 1945, orders to New Orleans, nine trips, the Acropolis, a gondola in Venice, Crete, the Panama Canal, night watchman checking animals hourly). org 3 (thesis stated up front, but the middle chronology - orders in August 1945, turning 18, drafted, discharged in 1947 - is retelling that does not bear on why the reader should join); dev 4 (support is specific and named, and the connection is stated for some of it - \"Maybe if you Join... you can experience all these wonderful places like Luke did\" - but the explanations restate rather than interpret); conv 3 (errors accumulate - where/were, \"there our resource,\" \"a character from that book name Luke,\" \"he loves his job he does,\" comma splices - and \"Then Luke was on a cattle-boat trip, they told Luke to just keep doing that for Luke's service\" has to be re-read); arg 3 (position clear and committed but never justified - the benefits are asserted and the essay circles back to \"this is why you should join,\" with no reason actually reasoned).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "089b9f0",
+    "evidence_notes": "Claim, in Luke Bomberger's voice: join the Seagoing Cowboys program and help people who are not as lucky as you; support is three dropped-in quotations (44 nations forming UNRRA in 1945, the Crete castle and Panama Canal, the SS Charles W. Wooser with 335 horses). org 4 (thesis first line and held, Why / Where / What sections each doing one job with a real closing, but those three sections could swap places without loss); dev 3 (the quotes are labelled \"to support my statement\" and \"to support my claim\" yet never explained - the 335-horses quote in particular is left to speak for itself - so the reader supplies the connection, and the borrowed material sits outside the writer's sentences); conv 3 (semicolon-heavy but controlled sentences undercut by an accumulation of errors - \"marvelous choose,\" togeether, magnifcent, imperitve - and omissions needing repair: \"I went to Greece... to the people and rebuild their land,\" \"countries that have destroyed the horrible conflict\"); arg 4 (the war-ruins-to-need-to-join chain gives a why and the closing makes the governing principle explicit - \"It is not imperitve where you are or how you are helping, but It is imperitive that you are helping\" - but the conclusion is the one the prompt's framing already asks for).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "089e8f5",
+    "evidence_notes": "Claim: \"driverless cars are not reliable, at least not yet\"; support is quoted from the source - cars \"still alert the driver to take over when pulling in and out of driveways or dealing with complicated traffic issues,\" \"If the technology fails and someone is injured, who is at fault,\" and the paragraph-9 note that traffic laws assume a human driver in control. org 5 (thesis early, and the legal paragraph explicitly builds on the reliability paragraph - \"It is not just the car itself that there needs to be work done on\" - so the body parts cannot swap; the sequence does not make a nameable argumentative move); dev 4 (source quotes are specific and genuinely explained - the liability dilemma is worked out past what the quote says - but support is not specific throughout: \"sometimes machines just shut down for no apparent reason\" is a general assertion doing load-bearing work); conv 4 (sentences vary and stay under control, and errors are visible but never need repair - there will me, on there own, faultthe, personaly, safty, thar - too dense to call merely occasional); arg 5 (reasons are reasoned, the position is genuinely qualified - \"at least not yet,\" \"unless there are a lot of improvements\" - and it reaches a conclusion the framing does not imply, that the unresolved question is liability and law rather than the technology; it surfaces the fault dilemma without resolving or reframing it, so not 6).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "08a4217",
+    "evidence_notes": "Claim, in Luke Bomberger's voice: \"You should ride a cattle-boat too\"; support is his aunt Katie's farm as preparation, two borrowed quotes (\"I am grateful for the opportunity,\" \"It made me more aware of people of other countries and their needs\"), and speculation about the jobs on board and a packing list. org 3 (thesis stated early but the second unit carries several unrelated jobs at once - happiness, the captain's order, friends recruiting, learning cultures - and the essay drifts by the end into packing advice for someone already aboard); dev 3 (one concrete particular in the aunt's farm, everything else general or hypothetical - \"maybe you could even end up being the captain\" - and support is listed with the connection left to the reader); conv 4 (errors are few and minor - suprise, \"you know know,\" \"an ask you\" - and never need repair, but sentence shape is flat and repetitive, so no meaningful variety); arg 3 (position clear and committed, objections raised only to be waved off - \"You may think this is a joke but it's actually not\" - and the reasons are asserted, the essay circling back to \"an opportunity of a lifetime\").",
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3
+  }
+]

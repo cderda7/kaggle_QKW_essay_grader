@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "04030c7",
+    "evidence_notes": "Claim: the Electoral College is unfair/outdated and should be abolished in favor of the popular vote; supports are the elector-substitution problem plus tie-to-House, a quoted winner-take-all line (Source 2, Para 13) with the 3-vote-margin case, and swing-state campaigning. org 4 (thesis early and held, frame present, but the elector, winner-take-all and swing-state parts could swap freely - a set of supports, not a sequence; rung 5 NO). dev 4 (specific support incl. quoted source and the popular/electoral mismatch, and connection stated for some - 'therefore it is possible to win the Popular vote and lose the Electoral Vote' - but the swing-state section is asserted and the quote sits alongside rather than inside his sentences; rung 5 NO). conv 3 (errors accumulate - 'confused about the electors an end of voting', 'an unreliable way for to run', 'amount of point' - meaning stays recoverable but the reader re-reads to repair; rung 4 NO). arg 4 (winner-take-all reason genuinely reasoned; opening nod to tradition is not an opposing position answered, no qualification or explicit principle, and the conclusion is what the prompt's framing implies; rung 5 NO).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "040ba87",
+    "evidence_notes": "Claim: switch to the popular vote so ordinary voters' voices are heard; supports are the quoted para-10 slate-of-electors passage with the Texas/Kerry 34-elector case, and the quoted para-12 tie material (5,559 Ohio voters; Wyoming's 1 rep for 500,000 vs California's 55). org 4 (position and two-reason preview stated up front and held, frame present, but the votes-not-heard and tie-risk parts are independent and could swap; rung 5 NO). dev 4 (source material specific, marked by paragraph, and glossed - 'if the electoral college has a tie then theres even a bigger chance of the people voice not being heard' - but quotes sit alongside his sentences and several glosses restate the quote; rung 5 NO). conv 2 (unresolved run-ons and 'theres a high unlikely chance that there would be more popular votes... that all 34 electors would go to congress' force the reader to guess the intended meaning; rung 3 NO). arg 4 ('They say we control who the electors vote for but not always' plus the tie-to-House reasoning clears rung 4, but the counter is answered only glancingly and the conclusion is exactly what the prompt's framing implies; rung 5 NO).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "040bb8a",
+    "evidence_notes": "Claim: driverless cars should not happen, at least not now, because they are a want rather than a need and the technology is unproven; supports are the passage's cost point, hypothetical danger cases, and the quoted line that current cars still require an alert driver plus the 2020 release date. org 4 (position stated in the opening and held, frame present and the closing extends to resource priorities, but the need/cost, danger and not-yet-driverless parts could swap; rung 5 NO). dev 4 (specific support - the quoted hands-on passage, 2020, the 1950s cost idea - and the connection is stated for some of it, but the danger paragraph rests on unanswered what-ifs so support is not specific throughout; rung 5 NO). conv 4 (repeated misspellings - 'contoversial', 'deserately', 'unneccesary', 'throigh' - are visible but nothing needs repair; sentence shapes vary but 'I feel as though' recurs and errors are more than occasional, so rung 5 NO). arg 5 (governing principle made explicit - 'a fine line between needing something and desperately wanting it' - position qualified to 'not now', and the closing reaches an opportunity-cost conclusion the prompt's framing does not imply; rung 6 NO, the strongest objection, safety gains, is never faced).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "04128c7",
+    "evidence_notes": "Claim: you should buy a driverless car, though the intro also promises bad reasons that never arrive; supports are the texting-and-driving risk, a 2000 test-track model, a 1-million-mile crash-free road test, and convenience features (naps, roadblock alerts, 25 mph slowdown). org 4 (position stated early and held to the 'do it!!' close, frame present, both body parts bear on the pro case, but the safety and convenience parts could swap and the second unit carries several jobs; rung 5 NO). dev 3 (a figure and a test case are specific, but support is listed rather than explained - the nap example is attached to a gas-economy claim it does not bear on and the reader supplies the connections; rung 4 NO). conv 2 ('why you should and should buy this car', 'the rate of texting a driving has went up a massive of numbers' and 'gas is very conservant' force the reader to guess what was meant; rung 3 NO). arg 3 (position clear and committed by the close, but reasons are asserted - 'its a proven fact', 'it proved that its safe' - with no why on the page; rung 4 NO).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "041804e",
+    "evidence_notes": "Claim: the emotion-reading software would be valuable in a classroom; supports are the mismatch between one teacher's methods and varied learners, a walked-through math-confusion scenario, and the frustrated student who gives up. org 4 (controlling idea stated by the end of the first body unit and held, frame present with a closing that concedes drawbacks, but the math and frustration parts could swap; rung 5 NO). dev 4 (the math scenario is a realized example and the connection is stated - 'the computer may read that... and may make the work easier' - but the opening body unit is general throughout and no detail from the source is used, so support is not specific throughout; rung 5 NO). conv 4 (spelling and apostrophe errors accumulate - 'professers', 'techers'', 'valubale', 'enviornment' - and one clause is clunky, but sentences vary and nothing needs repair; errors are more than occasional so rung 5 NO). arg 4 (the different-learners reason is genuinely reasoned; problems are mentioned in the closing but never engaged, and the classroom application is what the prompt's framing implies; rung 5 NO).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "042167f",
+    "evidence_notes": "Claim (stated only in the final sentence): laws restricting driving save lives and yield a cleaner, safer future; supports are Vauban and the Paris smog drop, accident/DUI/fine costs, bike affordability with the Yosemite wolves, and free weekend transit plus carpool rules. org 3 (controlling idea is weakly located - it arrives in the last sentence, the opening reports rather than orients and there is no closing unit of its own; rung 4 NO). dev 3 (Vauban, Paris and Yosemite are specific, but support is listed rather than explained - the fourth part is a run of source facts leading to an unearned conclusion, and 'we might save a species or slow the desintegration of the ozone layer' is left to speak for itself; rung 4 NO). conv 5 (sentences vary in length and shape and stay under control, with only occasional minor errors - 'dramaticaly', 'desintegration'; rung 6 NO, word choice is merely correct and 'restricting... very restricting' is not apt). arg 4 (the no-cars/no-fatal-accidents step is genuinely reasoned; the closing 'although' concedes and answers an objection only in the last clause, and the conclusion is exactly what the prompt's framing implies; rung 5 NO).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0425a6e",
+    "evidence_notes": "Claim: mostly reports the author's view that Venus is worth studying despite danger, with 'there will be dangers in this challenge but it's worth it' at the very end; supports are all source facts - 97 percent carbon dioxide, no landing in three decades, 170 degrees for a floating craft, mechanical computers. org 3 (an opening and closing exist but the closing stops rather than closes and is then repeated by a second closing that adds nothing; the long middle unit drifts across density, oceans, terrain, NASA and computers, breaking unity; rung 4 NO). dev 3 (facts are specific but patchwritten - 'float above the fray', 'equally intimidating endeavors', 'In tis article it it mentioned' - source phrasing stitched with little transformation, and support is listed for the reader to connect; rung 4 NO, and patchwriting caps here). conv 2 ('Returning to Venus is indisputable', 'But how the author suggested despite the dangers', 'Is Venus so inhospitable, why do scientist want' leave the reader guessing at intent; rung 3 NO). arg 2 (the stance is the source's returned with almost no commitment added, and the final two units restate the position in other words rather than reasoning for it; rung 3 NO).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "0429d4a",
+    "evidence_notes": "Claim: against driverless cars because they are not actually driverless and cannot be trusted; supports are the driveway/traffic intervention point, a stoplight hypothetical, and a liability answer blaming the manufacturer. org 3 (position opens the essay but with no orientation and the closing merely restates; the third part repeats the first part's not-100%-on-its-own point without adding to it; rung 4 NO). dev 2 (support is general throughout - no named case, figure or realized example anywhere - and much of it is circular: 'the only safe car is a car that has a person in it', 'a self driving car couldn't work and would cause way more wrecks'; rung 3 NO). conv 3 (run-ons that do not resolve - 'your car wouldn't stop you would have to stop it before it caused a wreck' - plus 'turn them into and out of a driveway' and 'much more safe' send the reader back to repair, though meaning is always recoverable; rung 4 NO). arg 4 (one reason genuinely reasoned: because a human must still steer at turns and stoplights, the car is not autonomous, therefore not trustworthy; the opposing case is never answered and the conclusion is what the prompt implies; rung 5 NO).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "042b0cd",
+    "evidence_notes": "Claim: a letter urging the senator to keep the Electoral College because its benefits outweigh its problems; supports are the source-3 regional-appeal quote, the Nixon 1968 / Clinton 1992 43 percent plurality with 301 and 370 electoral votes, Maine and Nebraska's proportional exception, and the slight-plurality/landslide quote. org 4 (position stated in the first line and held, frame present, but the two benefit clusters could swap without loss; rung 5 NO). dev 5 (support is specific and attributed throughout and most quotes are glossed with something added - regional appeal explained by no region holding enough electoral votes, the plurality figures explained as avoiding a complicated run-off, the slight-plurality quote explained as making a tie unlikely - though the electors concern is answered without saying how; rung 6 NO). conv 3 (errors accumulate and several sentences need repair: 'Dealing with votes it is a problem to have a run-off election', 'thanks to the Electoral College reduces the complication', 'higher the population the more problems, concerns ,or interests is needed to be attend to'; rung 4 NO). arg 5 (governing principle explicit - 'we need a president that would regard all of our interests and concerns' - the elector objection is raised and answered, and the essay concedes the method is despised yet reaches a net-benefit conclusion the prompt's either/or framing does not imply; rung 6 NO, the objection answered is not the strongest one).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "042dc86",
+    "evidence_notes": "Claim: the article's arguments for driverless cars outweigh the cons because the features prevent accidents; supports are the 2013 BMW with 25 mph handling and hands-off touch sensors, two driving scenarios (evading a speeder, looking for a friend's house), and the windshield notification light. org 4 (thesis and a three-point preview open the essay and are held to the close, both body parts bear on the claim, but they could swap and the second unit carries several jobs; rung 5 NO). dev 4 (BMW/2013/25 mph is specific and the scenarios state their connection - the car brakes on its own so fender benders drop - but the notifications part is one thin assertion left unexplained, so support is not specific and explained throughout; rung 5 NO). conv 2 ('Threes three main points', 'take your hands off the when', 'that alone can help a may reduces finder benders' leave meaning obscured and force guessing; rung 3 NO). arg 4 (at least one reason reasoned - hands on the wheel while the car drives lets the driver take control in time; the cons are named in the first line but never engaged, and the conclusion is what the prompt's framing implies; rung 5 NO).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  }
+]

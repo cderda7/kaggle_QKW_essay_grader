@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "0916c73",
+    "evidence_notes": "Source-based (Venus article): claim = the author shows studying Venus is a worthy pursuit despite its dangers; support = quoted article details (rocky sediment/valleys/mountains/craters, silicon-carbide electronics surviving 3 weeks in a Venus chamber, WWII-era mechanical computing, para.3 heat/lightning), each tagged to a paragraph. org 4 (thesis early and held, opening previews and closing returns to it, all parts on topic, but features/technology/value/danger blocks could swap freely - rung 5 fails). dev 4 (quotes are specific and connections are stated - 'meaning this technology resists heat... no one is in risks' - but explanation is mostly restatement of the quote, so rung 5 fails). conv 3 (dense accumulation of spelling and word-choice errors - intreguied, huamn, sysytems, 'in advance to the challenges', 'brights up' - meaning stays recoverable but the reader re-reads to repair; rung 4 fails). arg 4 (position clear and held; at least one reason genuinely reasoned - heat-resistant parts therefore scientists can study safely; danger paragraph is the source's own concession, never answered by the writer, and the conclusion stays inside the article's framing, so rung 5 fails)."
+    ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0916f2c",
+    "evidence_notes": "Claim = the Facial Action Coding System would be a valuable addition to school life; support = one quoted authority (Dr. Huang via D'Alto: a classroom computer could recognize confusion or boredom and modify the lesson) plus a predicted chain from classroom attention to grades to college to career. org 5 (controlling idea early and held; the parts are ordered developmentally - classroom mechanism, then involvement/grades feeding 'the next step, which is college', then college/career - so no pair swaps without loss; rung 6 fails because the closing recaps rather than landing anywhere the opening had not). dev 4 (rung 4 met: the quote is specific and its connection to the claim is stated - 'this can improve the interaction in class and improve grades'; rung 5 fails because support is not specific throughout - the college and career paragraphs are unsupported prediction). conv 4 (visible errors - knowledegable, theirself, apostrophe slips - but nothing needs repair; rung 5 fails on inconsistent control in the longer conditional sentences, e.g. 'they will have an easier life and being more helpful'). arg 4 (clear position held; at least one reason reasoned - students take in information rather than hunting answers, therefore they learn more; no opposing view, no qualification, no explicit principle, so rung 5 fails)."
+    ,
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "091a770",
+    "evidence_notes": "Source-based (Venus): claim = the author successfully demonstrates that studying Venus should continue despite the risks; support = Venus's Earth-like features (valleys, mountains, craters, possible oceans), the author's danger-then-solution pattern, and the para.5 example of hovering 30 miles above the surface. org 4 (thesis in the first sentence and held, opening and closing both present, all parts on it; the features block and the danger-solution block are interchangeable and 'Venus may have been the most Earth-like planet' recurs late, so rung 5 fails - single-paragraph format not penalized). dev 4 (specific support with real interpretation of the features point - studying Venus teaches us about Earth's possible future - but the opening probe evidence is vague, 'probes and such', so support is not specific throughout and rung 5 fails). conv 3 (moutains, physcial, atomosphere, convered accumulate, and 'The author supports the idea of by conducting more studies and missions, it would further our knowledge' has to be repaired on a re-read; rung 4 fails). arg 4 (clear committed evaluative position; at least one reason reasoned - naming why the Earth-similarity point convinces the reader; the danger is the source's concession described as technique rather than an objection to the writer's own thesis, and the conclusion stays inside the prompt's framing, so rung 5 fails)."
+    ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "091a8ca",
+    "evidence_notes": "Claim = driverless cars are a good idea; three reasons - safety, better for the earth, better gas mileage; the only external support is the quoted Sergey Brin line about using half the fuel of today's taxis. org 4 (thesis previews three reasons, three matching body parts, conclusion closes; the three supports are freely interchangeable and the environment/mileage parts overlap, so rung 5 fails). dev 3 (rung 3 met via the Brin quote and the 'sensors everywhere, interior and exterior' detail, but rung 4 fails: the quote is dropped at the end of its paragraph with no comment and the other two paragraphs are assertion - 'accidents would go down by a whole bunch' - so the reader supplies the connection). conv 5 (genuine variety - short imperatives, exclamations, compound sentences, an integrated quotation - all under control, errors negligible; rung 6 fails because the diction is loose and approximate rather than apt: 'by a whole bunch', 'get more gas mileage', 'literally help'). arg 4 (clear committed position held; at least one reason reasoned - accidents come from drivers not paying attention, and less gas burned means less pollution; no counterargument, no qualification, conclusion restates the opening, so rung 5 fails)."
+    ,
+    "organization": 4,
+    "development": 3,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "091e483",
+    "evidence_notes": "Claim = emotion-reading computer technology would be good, chiefly because most kids will not talk about their feelings; support = three marked quotations from the article (Dr. Huang's team as communication experts; the 3-D model of all 44 major facial muscles; 'most human communication is nonverbal... so the computers need to understand that, too'). org 4 (position stated early and held, intro and 'in conclution' frame present, all three body parts bear on it; the three body parts are interchangeable and the games/internet opener is only loosely tied, so rung 5 fails). dev 4 (the 44-muscle detail is specific and each quote gets a stated connection - 'This shows that the software will be very accurate' - but the explanations restate the quote rather than add, so rung 5 fails). conv 3 (colleage, programed, thier, cumputers, nonverbaly, conclution accumulate, and the fragment 'so if we could have a computer that would read our emotions.' has to be repaired; rung 4 fails). arg 4 (clear position held; one reason genuinely reasoned - communication is mostly nonverbal and kids will not verbalize sadness, therefore a machine that reads expressions reaches them; the 'a little odd/weird' concession is mentioned and brushed aside rather than answered and the conclusion stays inside the prompt, so rung 5 fails)."
+    ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "091eaf0",
+    "evidence_notes": "Electoral College. Most of the text is neutral exposition (selection of electors, meeting, counting; 538 electors; 270 to win; voters vote for state electors); the position - the system silences voters - appears only in the last three sentences and largely in borrowed wording ('unfair, outdated, and irrational', 'the best arguments in favor of it are mostly assertions whithout much basis in reality'). org 3 (rung 3 met - a controlling idea is stated - but rung 4 fails: it is stated only at the end, the opening is a single rambling question that orients nothing, and the essay stops on an ellipsis rather than closing). dev 3 (patchwriting cap: source phrasing is stitched in unmarked and lightly transformed, and the process facts largely explain rather than support the position; one relevant specific - voters elect electors, not the president - keeps it above 2). conv 3 (alot, thye, dont, veiw, decied, whithout, 'vocies hear', plus a 60-word opening run-on; meaning stays recoverable but the reader re-reads to repair, so rung 4 fails). arg 3 (position present and committed at the end, so rung 3 holds; rung 4 fails - the critique is asserted, the dismissal of pro-EC arguments is handed over from the source with no why, and 'you can't have that when someone else is speaking for you' restates the position rather than showing it)."
+    ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0926d5e",
+    "evidence_notes": "Claim = the Electoral College is a good system that made the nation what it is, opened by flipping the source's 'unfair, outdated, and irrational' with 'But is it really?'; support = 2012 vote percentages (61.7 electoral / 51.3 popular), the transregional-appeal point, a para.22 quotation about restoring weight to large states, and the Kerry slate-of-34-electors example. org 4 (thesis early and held, opening and conclusion both present, all parts on the Electoral College; the dispute paragraph and the transregional paragraph swap freely, so rung 5 fails). dev 3 (rung 3 met - real figures and the Kerry case - but rung 4 fails: the 2012 numbers are followed by 'just imagine how differently our country would be', an appeal rather than a stated connection, and the para.22 and slate quotations are dropped with no link back to the claim). conv 3 (sentence-initial lowercase throughout, 'why are nation is', 'their is', 'then their would be', recieved, balence, paragragh - errors accumulate and sentences need re-reading to repair, so rung 4 fails). arg 3 (position clear and held, but reasons are asserted: the great-presidents claim and the less-dispute claim get no why, the 'which means' gloss on transregional appeal is inverted and never tied to why that is good, the concession raised with 'Even though' is dropped unanswered, and the conclusion restates the opening)."
+    ,
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "092a3b6",
+    "evidence_notes": "Claim = the Facial Action Coding System is not valuable, specifically not in schools, though it would be valuable in counseling settings; support = a cost objection, a worked hypothetical (scan a client's face before a meeting and again after to see whether the meeting changed how they felt), and a consent/privacy argument closing on the writer's own case. org 3 (rung 3 met - position in the first sentence - but rung 4 fails: there is no closing, the text trails off in a run-on elaboration, and the money point turns mid-unit into a sales scenario; unparagraphed format not penalized). dev 3 (one realized hypothetical keeps rung 3, but rung 4 fails - the cost claim has no figures or reasoning behind it and most 'support' restates the claim, e.g. 'it's not valuable because there is really no need to check how people feel'). conv 3 (comma splices throughout, lowercase i, to/too, aslyum, begining, 'there face', and a 75-word closing run-on; meaning is always recoverable but constant repair is needed, so rung 4 fails). arg 5 (rung 4 met - the trust/consent reason is genuinely reasoned: people disclose feelings only to those they trust, so scanning strangers' faces bypasses consent; rung 5 met via the qualification route - the position is explicitly scoped, valuable for depressed people and clinical settings but not in schools, and the consent conclusion goes past the prompt's yes/no framing; rung 6 fails because the article's actual classroom case is never engaged and the essay circles its 'no need' claim)."
+    ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "092ff4e",
+    "evidence_notes": "Source-based: claim = limiting car usage is advantageous; three numbered advantages each carrying tagged quotations - the Beijing smog comparison (Source 2), the Carlos Arturo Plaza stress/pollution quote and the parks-and-sidewalks quote (Source 3), and the rush-hour-restrictions and car-free-day quotes (Source 3). org 4 (thesis and preview early and held, three matching body parts, 'in conculsion' closes; the three advantages are explicitly numbered and interchangeable, so rung 5 fails). dev 4 (support specific and marked, and connections are stated for some of it - smog causes health harm; but the explanations restate the quote in other words and the parks/sidewalks quote is dropped with no comment, so rung 5 fails; quotes sit alongside the writer's sentences rather than inside them). conv 3 (enviroment, popullation, popllution, sidewwalks, busues, wok, Limitimg, conculsion, plus your/you're and their/they're and 'so many people uses cars' - errors accumulate and sentences such as 'The advantages of limiting car is great' need repair on a re-read, so rung 4 fails). arg 4 ('Some would disagree but I belive it's good' is a bare mention that is never answered; one reason is genuinely reasoned - exhaust causes smog which harms health, therefore fewer cars is better - but no qualification and no explicit principle, and the conclusion restates the three advantages, so rung 5 fails)."
+    ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0931a6e",
+    "evidence_notes": "Source-based persuasive piece in the voice of a former Seagoing Cowboy: claim = join the UNRRA Seagoing Cowboys; support = baseball and volleyball in the emptied animal space, fencing, boxing and table-tennis tournaments; the gondola ride in Venice, a castle in Crete, the Acropolis, the Panama Canal; and hosting international students at home. org 4 (hook, named program, and preview early; the closing call to action returns to 'like it changed mine'; but the fun and travel appeals are interchangeable and the body order does not track the preview, so rung 5 fails). dev 4 (support is specific throughout and transformed into the writer's own first-person sentences, but rung 5 fails on consistency of elaboration: only the helping-people part interprets - the program made him selfless and that awareness persists into hosting exchange visitors - while the games part ends on 'It was a lot of fun!' and the travel list on a bare causal attribution). conv 5 (real variety of length and shape - one-line paragraph for emphasis, short punchy sentences, parallel imperatives in the close - all under control, with only occasional minor errors: oppurtunity, expereince, recieve, 'to to', a you/I person shift; rung 6 fails because those misspellings recur rather than read as rare lapses and stretches of the fun paragraph are slack). arg 4 (clear position held; at least one reason reasoned - service produced a lasting change in the writer, and the experiences would not have been available otherwise; no objection raised or answered, no qualification, no explicit principle, and the conclusion is exactly what the prompt's persuasive framing implies, so rung 5 fails)."
+    ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 4
+  }
+]

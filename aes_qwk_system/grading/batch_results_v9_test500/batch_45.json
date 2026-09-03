@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "08f22e9",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform, not alien-made. Support: no proof aliens exist; a mesa shaped by natural causes/a sandstorm; improved photos show mesa features; source point that shadows make it look like an Egyptian Pharaoh. org 4 (thesis early and held, opening and closing present, all three parts relate, but the 'no proof of aliens' and 'mesa/sandstorm' parts swap freely); dev 3 (one specific borrowed particular - the shadows/Pharaoh explanation - but most support is general gesture and listed, reader supplies the connection); conv 3 (accumulating misspellings 'resons/thhat/revalent/landorm' plus a fragment and 'in the pictures show, the face has more features as a normal mesa' force re-reading, meaning always recoverable); arg 4 (one reason genuinely reasoned - the face looks like a face because of shadows, so no alien maker is needed - opposing side named but never answered, conclusion is what the prompt implies).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08f5a36",
+    "evidence_notes": "Claim: driverless car development should continue because the cars are sought after, the technology exists, and they are getting safer. Support drawn from the source: Brin's driverless taxi fleet (par 1), Google's independent driving since 2009 (par 2), Tesla's 90 percent autopilot car (par 10), the in-car system as a safety feature (par 8). org 4 (controlling idea early and held, working frame, but the three supports - demand, availability, safety - could swap places without loss); dev 4 (support specific throughout via quoted particulars and the connection is stated every time, but most explanations restate the quote rather than interpret it, and 'millions more people believe' is asserted); conv 3 (pervasive misspellings 'fesable/saftey/drempt/readaly' accumulate, and 'is over the top of many peoples head' and the 'minute detail in the ever evolving spectrum' sentence require re-reading); arg 5 (danger acknowledged and answered - dangers are a learning curve - with the governing principle stated outright, 'to progress you must first take steps back', reaching a conclusion the prompt's framing does not already imply; does not answer the strongest safety objection or change the terms).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "08fa0b3",
+    "evidence_notes": "Claim: in favor of technology reading students' emotional expressions because teachers need to know what bores or excites students. Support: source detail on the 3-D model with 44 major muscles and the six identifiable emotions (par 3); the claim that teachers can change how a lesson is taught without changing the lesson (par 6). org 4 (thesis at the end of the opening and held, frame present, both body parts relate, but the mechanism and the boredom parts are attached supports rather than a build); dev 4 (source particulars are specific and the connection is stated - 'with that type of skill, teachers can know what students like' - but the boredom paragraph is general assertion, so support is not specific throughout); conv 3 (errors accumulate lightly and 'We use usually identify those pretty well' and 'Knowing what we didn't know is creating more ideas to the future' need repair on re-reading); arg 4 (one reason genuinely reasoned - students disengage, the system detects it, so teachers can adapt delivery - no opposing view, no qualification, conclusion the prompt implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08fb0fb",
+    "evidence_notes": "First-person retelling as Luke Bomberger closing on a recommendation: every teenager who gets the chance should sign up as a Seagoing Cowboy. Support: 335 horses, feeding and watering two or three times daily, hay and oats hauled from the lower holds, the slip down the ladder and cracked ribs, the shipboard games. org 3 (controlling idea weakly located - the recommendation only arrives in the final paragraph, the body being chronological narrative that does not sit under it until then); dev 4 (support is specific and concrete, and the closing states the connection - saw things I had never seen, stayed busy then had fun, became aware of other countries' needs - but the connection is restatement and much of the narrative is left to speak for itself; borrowed phrasing is recast into the writer's own first-person sentences rather than stitched); conv 3 (errors accumulate - 'Euroope/resit/oppertunities/tournoments/jod' - and 'I halso had found some times' and 'this is what I did it was an enjoyable jod' need repair); arg 3 (position clear and committed but only at the close, and the reasons are asserted benefits - the principle linking 'I enjoyed it' to 'you should sign up' is never on the page, and the cracked ribs are never answered).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "08fbb47",
+    "evidence_notes": "Claim: the author of the Venus article supports the worthy-pursuit position thoroughly, via past life on the planet, present inhumane conditions, and the insight to be gained. Support from the source: oceans and water-eroded valleys/mountains/craters (par 4), 800 degrees, 97 percent carbon dioxide, sulfuric acid, 90 times the pressure, volcanoes and lightning (par 3), quoted line about travel not being limited by dangers and doubts (par 8). org 5 (order is motivated - once earth-like, now hostile, still worth it - and no pair of body parts could swap, but the closing wanders into unrelated musing about balancing opinion and fact, so the sequence stops short of a nameable move with nothing outside it); dev 5 (support specific throughout and most of it explained with added interpretive work - 'we think this because... can only be formed from water erosion', 'which I interpret as' - the conditions list being the one stretch left to speak for itself; the quotation is marked and sits inside the writer's own sentences); conv 3 (sentence variety is real and rhetorical questions do work, but misspellings accumulate - 'crtiical/eriodication/Paragprah/eight-hindred/volacnos' - and 'ninety times deeper, or stronger, than the bottom of sea level' and 'Minus all these problems we would have to find a way around' force re-reading); arg 4 (position clear and held, and one reason reasoned - the author concedes the hostile conditions and still argues worth, which is why the support works - but no opposing view answered, no qualification, no explicit governing principle, and the conclusion stays inside the prompt's framing).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0906ee2",
+    "evidence_notes": "Claim: emotional-expression reading technology should be in classrooms because it helps teachers understand children, eases their workload, and advances technology. Support: Dr. Huang on recognizing a confused or bored student and modifying the lesson, the Facial Action Coding System's video imagery and weighted units, the six basic emotions, the Mona Lisa at 83 percent happy and 9 percent disgusted. org 4 (thesis previewed early and each of the three body sections maps to one previewed item with a frame present, but the sections are interchangeable supports and the first two overlap heavily); dev 4 (specific quoted and numerical support with the connection stated, but explanations lean on restatement and whole stretches - the fast-food simile, the chalkboard history - are general assertion, so support is not specific throughout); conv 3 (frequent misspellings including 'board' for bored throughout, plus fragments and muddled sentences like 'Not having this machine will not do damage in hurting the students' and 'teaching views, they all understood and agreed with' that force repeated re-reading, though meaning stays recoverable); arg 5 (reason genuinely reasoned - forty students make individual reading infeasible for one teacher, so automated detection helps - and resistance to the technology is acknowledged and answered with the chalkboard-to-computer precedent, reaching past the prompt to a claim about societal change; the strongest objections, privacy and accuracy, are never touched).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0909271",
+    "evidence_notes": "Claim: join the Seagoing Cowboys program and you will have the time of your life, as Luke did. Support: source details on 335 horses with hay and oats, nine trips by 1947, the Acropolis, the Venice gondola, the Crete castle, the Panama Canal, and the shipboard games - nearly all reproduced in the source's own phrasing. org 3 (controlling idea stated but the middle is one undifferentiated heap - Greece, discharge date, China, stable duties, games - whose unity breaks repeatedly, and the closing only repeats the opening without adding to it); dev 3 (patchwriting caps the trait: 'By the time he was discharged in 1947, Luke had made nine trips', 'a city with streets of water', 'Table-tennis tournaments, fencing, boxing, reading, whittling' are borrowed phrasing lightly stitched, and the details are listed for the reader to connect; not predominantly copied, since the frame is the writer's own); conv 3 (sentences run to one pattern - almost every one opens 'So' or 'Luke' - with run-ons and omissions like 'So if join this program than you will' needing repair, but nothing has to be guessed); arg 3 (position clear and committed but the reasons are asserted by transfer from Luke's experience, never reasoned, and the closing simply circles the opening in different words).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "090c52d",
+    "evidence_notes": "Claim: keep the Electoral College. Support: the writer's own argument that direct vote totals are easier to cheat than a slate of electors, plus borrowed source material - the Texas/Kerry slate of 34 electors, the anachronism passage, and the five listed reasons (certainty of outcome, everybody's president, swing states, big and small states, avoiding run-offs). org 3 (position stated early, but the 'who are the electors, who picks them' passage is a digression that argues nothing and the anachronism paragraph states the opposing case without answering it, so not every part relates); dev 3 (patchwriting caps the trait - the Texas/Kerry passage and the anachronism passage are near-verbatim source and the five reasons are lifted headings dropped in with no explanation, leaving the reader to supply every connection); conv 2 (word boundaries collapse - 'Anybodyvoted', 'overruledbydeclaring', 'disputeover' - and 'Anybodyvoted on who you wanted to win it go can cheat the number of votes' and 'very highly impossible, if not impossible' have to be guessed at rather than repaired, so meaning is somewhat obscured); arg 4 (one reason actually reasoned - votes go to electors, so tampering is higher-risk than altering a popular count - and the risk of miscount is conceded, but the conclusion is exactly the prompt's binary, so rung 5's second condition fails).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0912e51",
+    "evidence_notes": "Opens with an evaluative claim - the Seagoing Cowboys program helps victims and can save cities - then abandons it for retelling: how to sign up, the sightseeing in China, the Acropolis, Venice and the Panama Canal, the fall onto metal and broken ribs, the games after unloading, sixteen Atlantic crossings and nine trips. org 3 (a controlling idea is stated in the opening but drifts far enough that by the close the position has moved to 'Luke loved his job', and paragraph three starts one job and finishes another); dev 3 (specific borrowed particulars are present but listed rather than explained, the reader supplies every connection, and the claims that actually need support - the program saves cities, more than 1,000 victims per war - go unsupported); conv 3 (spacing and comma errors throughout, run-ons and loose reference in 'he did the same things on his Aunts farm, but did not help him at sea' and 'All i know is that he will , Survive !', but the sentences can be repaired on a re-read rather than guessed at); arg 2 (the position is vague and barely engages the issue - stated once in the opening, never returned to, and nothing offered as a reason for it, since the narrative material bears on Luke's experience rather than on the claim about helping victims).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "0913268",
+    "evidence_notes": "Labelled sections (SOCIAL MEDIA, ALIENS, MARS, CONCLUSION) around the idea that the Face on Mars is a landform, alongside assertions that aliens are real, are held at Area 51, crashed in New Mexico and built the pyramids to help Hitler. org 2 (the sections do different jobs but the controlling idea has to be assembled and is contradicted by the alien section, there is no functioning frame, and no recoverable relation carries one part to the next); dev 2 (the Area 51, Roswell and pyramid material is discarded as not bearing on the landform claim; what remains - Mars has big volcanoes, robots collect rocks there - is general throughout with no concrete particular and no explanation of how it bears on the position); conv 1 (errors are pervasive and sentences frequently cannot be parsed at all - 'Thiy face in internet,movies,magazine,and books I want to ask to people a sure is create by aliens' - so reading is a decoding exercise); arg 2 (a position is stated, that the formation is a landform, but it is vague and undercut by the parallel insistence that aliens are real, and what stands in for reasons is restatement - 'yes is landforming is more landforming mars').",
+    "organization": 2,
+    "development": 2,
+    "conventions": 1,
+    "argumentation": 2
+  }
+]

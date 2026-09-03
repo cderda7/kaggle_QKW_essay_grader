@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "0493c5f",
+    "evidence_notes": "Hypothesis prompt: is the Facial Action Coding System valuable for use in schools? Claim stated twice in the writer's own words (\"The FAC i'll Say its not valuabe\", \"So I would say that it really isnt valuable\"); support is generational assertion (\"I know our generation and if we have it in our school no one would care\", \"I wouldn't here one person say 'hey lets check out the FAC'\") plus a bare gesture at the source (\"some interstesting facts about how could detect everything from the body (Alto, page 1)\"); a mid-essay stretch contradicts the claim (\"The object looks like something kids need in there life to learn someting new\") and a meta-digression abandons the task (\"imma fail anyways\"). org 3 (controlling idea stated but the contradicting stretch and the meta-digression mean not every part relates, so rung 4 fails); dev 2 (support offered, but nothing specific anywhere - no named case, particular or figure - rung 3 fails); conv 3 (meaning always recoverable, never guessed, but errors accumulate and \"The story had some interstesting facts about how could detect everything\" and \"this story wouldn't really valuable why because\" force repair re-reads, so rung 4 fails); arg 3 (position committed, but the reason is asserted and near-circular - not valuable because no one would care - no why is given, so rung 4 fails).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0499982",
+    "evidence_notes": "Prompt: position on the development of driverless cars. Claim: \"I am a against the development of these cars\", with three previewed reasons (car needs human takeover, drivers won't be attentive, no license required). Best-realized support is the sleeping-on-the-highway scenario, whose causal chain to a crash is spelled out; reasons 2 and 3 are general assertion with the connection stated but restated rather than interpreted (\"This will cause alot of increase of accidents if diviers don't payattintion\"). org 4 (thesis early and held, frame present, every body part relates, but reason 3 could swap with reason 1 without loss, so rung 5 fails); dev 4 (connection stated for some support, but support is not specific throughout - reasons 2 and 3 are general - so rung 5 fails); conv 3 (dense misspelling - attiontion, lissions, acciedents, possable, cartural - never forces a guess, but the reader repairs sentences repeatedly, so rung 4 fails); arg 4 (reason 1 genuinely reasoned: the car requires takeover, a sleeping driver cannot take over, therefore a crash; no opposing view answered, no qualification, no explicit principle, so rung 5 fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "04a4399",
+    "evidence_notes": "Prompt: should the Facial Action Coding System be used in schools? Claim in the opening: \"The Facial Action Coding System should not be used in schools\". Two body parts quote the source and work on it - the classroom-computer quote (Alto 6) is turned into an argument about surveillance anxiety displacing attention from the material, and the six-emotions quote (Alto 3) into a misclassification scenario that wastes lesson time; the third body part (teachers would be left with nothing to do) offers no support at all. org 4 (thesis early and held, frame present, all parts relate, but the first two supports could swap without loss, so rung 5 fails); dev 4 (connection stated and interpretive for the two source-based parts, but the third part's claim is unsupported so support is not specific throughout, rung 5 fails); conv 4 (errors visible - metions, reconize, comfused, focusuing, analize, ingaged - but nothing needs repair; too frequent to call occasional, so rung 5 fails); arg 4 (the anxiety-to-distraction and misrecognition-to-wrong-lesson chains are genuinely reasoned; the concession \"there are benefits\" and \"This might seem like a good thing at first\" is outweighed by assertion rather than answered, and the conclusion is what the prompt's framing implies, so rung 5 fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "04a4c98",
+    "evidence_notes": "Hypothesis prompt: persuade a reader that being a sea cowboy was worth it. Claim: \"Being a sea cowboy is an amazing exspereance... it is worth it\", with three previewed reasons (no war, sightseeing, shipboard sport). Support is concrete - turning 18 and being kept aboard instead of drafted, the Acropolis, the Panama Canal, table-tennis tournaments, fencing and boxing in the empty holds - but the explanations mostly restate rather than interpret. org 4 (thesis early and held, opening and closing both present, all three parts relate, but draft/sights/games could swap freely, so rung 5 fails); dev 4 (specific support with the connection stated - \"Sence I was a sea cowboy I was told to continue me work on board\", \"Seeing places like the Panama Canal is one plasure of being a sea cowboy\" - but the games paragraph is listed rather than explained, so rung 5 fails); conv 3 (errors never force a guess, but \"When I was on the boat was saeled to Greece\", \"By the I turned 18\", monumaets/struckchers force repeated repair, so rung 4 fails); arg 4 (the draft reason is actually reasoned - he was of draft age but service aboard kept him out - while the closing merely circles; no opposing consideration answered and the conclusion is what the prompt implies, so rung 5 fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "04a99cb",
+    "evidence_notes": "Prompt: letter to a senator arguing for or against the Electoral College. Claim: abolish it in favour of popular vote, stated in the opening. Support is four block quotes from the provided sources (the \"unfair, outdated, and irrational\" line, the 2000 \"disaster factor\" passage, the founding-fathers passage, the winner-take-all passage), each followed by a single \"This quote explains...\" sentence that mostly restates the quotation. The third body part concedes the pro-Electoral-College case and then endorses it (\"our founding fathers established so they were just trying to get everything in order\") without ever answering it. org 3 (controlling idea stated early, but the founding-fathers part argues against it and is left standing, and that unit starts as concession and finishes as endorsement, so rung 4 fails); dev 4 (quotes are specific and the connection is stated - \"if we don't get rid of it we could have another one of these crisis\" - but the explanations restate the quotes rather than add to them and the quotes sit alongside the writer's sentences, so rung 5 fails); conv 4 (errors - noy, supposively, canditate, \"must be abolish\", \"there is many evidence\" - are visible but cost no re-reading, while the four-times-repeated It states/This quote explains frame means sentence shape barely varies, so rung 5 fails); arg 4 (one reason is reasoned - a past election crisis shows the system permits worse, therefore abolish it - but the opposing position is acknowledged without being answered, so rung 5 fails).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "04af4e1",
+    "evidence_notes": "Hypothesis prompt: argue for limiting car usage. The opening paragraph is off-task (the test is pointless, the government and rich kids) and never bears on what follows; the controlling idea arrives in the second paragraph - \"we are the biggest pradusers of polution... us the human rase is killing the plant\" - and the car paragraph carries it (everyone owning and driving a new car makes the air unbreathable, \"we have better get to bying gas masks\"). A third paragraph wanders through human selfishness, wild animals and future generations, and concedes \"i realy dont know what to thinnk\". org 3 (controlling idea stated but buried mid-essay, the opening does not orient, and the first part does not relate to it, so rung 4 fails); dev 2 (support offered but general throughout - no named case, figure or realized instance anywhere; the dealership passage is a generic image, so rung 3 fails); conv 2 (run-ons and comma splices throughout with no capitalization, and \"see the arre of our ways\", \"as a seseas\", \"speaseas\" force outright guessing rather than repair, so rung 3 fails); arg 4 (one reason is actually reasoned - the agency argument that not animals or cars but we who drive and burn fossil fuels are the cause, extended into more cars meaning unbreathable air; per the decision rule holding-consistency stops mattering above band 3, but the acknowledged split of opinion is left unanswered and no governing principle is applied, so rung 5 fails).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "04af97d",
+    "evidence_notes": "Prompt: position on driverless cars. Claim in the opening: \"Driverless should not be used under any condition\", with three named grounds (careless, imperfected, unreliable). Support is quoted from the passage - the notify-the-driver design, the Mercedes-Benz/Audi/Nissan 2020 plans, the who-is-at-fault question - and the first is taken furthest, into a child running into the street with no time for the human to take over. org 4 (thesis early and held, frame present, all parts relate, but the not-advanced-enough and not-reliable parts could swap without loss, so rung 5 fails); dev 4 (connection stated for the quotes, but the 2020 quote is met only with restatement and the states-with-testing-bans claim is unsupported, so support is not specific and explained throughout, rung 5 fails); conv 4 (misspellings - carless, allert, accerlate, safty, pasage, pepole, maulfunction - plus a comma splice and a dropped noun in \"To begin, Driverless are carless\", all visible but never needing repair; too frequent to be occasional, so rung 5 fails); arg 4 (the takeover-lag argument genuinely reasons why the notify-the-driver design fails; the closing concession that driverless cars \"would be helpful\" is outweighed by assertion rather than answered, and the conclusion is what the prompt implies, so rung 5 fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "04b354e",
+    "evidence_notes": "Prompt: argue for keeping or abolishing the Electoral College. Claim: \"The president should be elected by popular vote from now on\". Support is cited throughout and put to work: the faithless-elector point uses Posner, the pro-Electoral-College source, against himself (he concedes it is possible, calls it rare, but it happened in 1960 and he cannot control an elector); the tie point argues that a nationwide split is far less likely than a split among 538; the tie-breaker point uses Wyoming's single representative against California's 55. org 4 (thesis early and held, and the booth-to-booth frame does real work, but the represent-the-people and not-fair parts could swap without loss, so rung 5 fails); dev 5 (support specific throughout and most of it explained in a way that adds to it, but the 2000 Bush/Gore piece is asserted and summarized rather than interpreted, so rung 6 fails); conv 5 (varied and controlled sentences - participial openers, embedded citations, a semicolon - with only occasional minor errors: decietfully, represnt, loosing, undervauled, and one doubled Although/However; word choice is appropriate but not consistently apt, so rung 6 fails); arg 5 (an opposing authority is acknowledged and answered rather than merely mentioned, \"all men are created equal\" is made explicit as the governing principle, and the closing shifts the reader from who they vote for to how; the objection answered is a convenient one rather than the strongest case for the Electoral College, and the prompt's terms are not changed, so rung 6 fails).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "04b4ad6",
+    "evidence_notes": "Prompt: evaluate the author's claim that studying Venus is worthy despite the dangers. The essay mostly reports the article (\"In the article the author states...\" twice) and states its own position only mid-essay: \"I think we should study different planets only if we are not faced with any danger in our way\". Named particulars - NASA sending humans, radiation, air pressure making us ill - are listed as dangers but never tied to the position, and the closing drops the danger condition entirely. org 3 (a controlling idea is stated, but it is buried mid-essay, the opening reports rather than orients, and the position drifts by the close, so rung 4 fails); dev 3 (a few specific particulars from the source, but most support is general - \"beyond our imagination and innovation\" - and the dangers are listed with the reader left to connect them to the position, so rung 4 fails); conv 3 (never forces a guess, but \"it could be tough desicion and with unease conditions\", the comma-spliced position sentence and the sentence broken across a paragraph gap all force repair re-reads, so rung 4 fails); arg 3 (the position is stated with commitment and is the writer's own qualification of the author's view, but no reason is reasoned - \"this way we know if most of the planets are survivable\" does not say why the condition follows - and later parts circle it, so rung 4 fails).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "04b6e9b",
+    "evidence_notes": "Prompt: is the Facial Action Coding System valuable for reading students' emotions? The first third is neutral exposition of the technology with the Mona Lisa figures (83 percent happy, 9 disgusted, 6 fearful, 2 angry) attached to no claim; the position arrives only afterwards - relying on the method \"instead of asking them\" means \"you are shutting yourself off from society\" - and the sharpest support is the fake-smile flaw, explained through to its consequence (the computer reports happy when the person is upset). org 3 (a controlling idea is stated but weakly located, the expository opening does not bear on it, the final unit starts on talk-to-people and finishes on the technology being fooled, and the closing is a tacked-on line, so rung 4 fails); dev 4 (the fake-smile support is specific and its connection to the claim is stated, but the social-isolation claim is unsupported and \"how many people turn towards technology\" is a general gesture, so support is not specific throughout, rung 5 fails); conv 3 (errors accumulate - mucsles, turnning, now for know, Fianally, than for then, missing possessives - and the opening comma splice, the long instead-of-asking sentence and the they/you pronoun shift force repair re-reads, so rung 4 fails); arg 4 (the fake-smile point is genuinely reasoned - the system can be deceived, so it fails at the very thing it is for - but no opposing position is answered, the position is not qualified, and the governing principle stays implicit, so rung 5 fails).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

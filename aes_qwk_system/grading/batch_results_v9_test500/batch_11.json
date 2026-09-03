@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "03afc1e",
+    "evidence_notes": "Claim: the Facial Action Coding System would be good in classrooms (and for games/surgery). Support: the system could recognize a confused student and alter the course, tied to students who 'stay confused and move on'; a quoted authority (Dr. Huang on nonverbal communication) dropped in with no follow-up. org 4 (thesis stated early and held, opening and closing present, all body material relates; rung 5 fails - the closing restates the opening and there is no build between parts). dev 3 (rung 3 yes on the named/quoted authority; rung 4 fails - the Huang quote ends the paragraph unexplained and the reader supplies the connection). conv 4 (rung 4 yes - misspellings and two fragments are visible but nothing needs repair; rung 5 fails on flat, largely uniform sentence shape). arg 4 (rung 4 yes - one reason is reasoned: students silently stay confused, so a system that detects confusion helps; rung 5 fails, no opposing view, no qualification, no explicit principle).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03c0382",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys. Support: Luke Bomberger's travel to China and Venice and shipboard tournaments (specific, source-drawn); the livestock chores of cleaning pens, feeding and watering, answered with 'it still pays off'; a third reason about giving nations hope that stays general. org 4 (rung 4 yes - thesis early, conventional frame, three on-topic supports; rung 5 fails, travel/hardship/hope are interchangeable). dev 4 (rung 4 yes - connection stated for the travel and hardship supports, e.g. 'even though this all seems like too much work, it still pays off'; rung 5 fails - the hope paragraph carries no specifics). conv 4 (rung 4 yes - spelling slips and approximate wording like 'citizens' lives who were affected' are visible but never force repair; rung 5 fails on wrong-footing word choice). arg 4 (rung 4 yes - the hardship objection is raised and answered; rung 5 fails on the 'and' clause, the conclusion is exactly what the persuade-to-join framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03c7046",
+    "evidence_notes": "Claim: limiting car usage could solve widespread problems. Support: heavily source-drawn particulars - 80/20 highway appropriations, Paris diesel at 67% and the 22-euro fine, Bogota's $25 fine and Day Without Cars, car-free Vauban, Bill Ford's proposal. org 4 (rung 4 yes - thesis stated early after the Goldberg quote, frame present, all material bears on car limitation; rung 5 fails - Paris and Bogota material could swap, and the Vauban point is repeated without addition). dev 4 (rung 4 yes - connections stated for some support, e.g. Day Without Cars framed as promoting alternative transport and the closing chain from emissions to atmosphere; rung 5 fails - most facts are catalogued for the reader to connect). conv 4 (rung 4 yes overall - 'were' for 'where' and the '22- euros' clause cause a stumble but meaning is immediate; rung 5 fails on those slips and accumulating spelling). arg 4 (rung 4 yes - 'lower the emissions... which in turn would save the atmosphere, thus saving life on earth' states a why; rung 5 fails, the conclusion is what the prompt already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03c75d3",
+    "evidence_notes": "Claim: the Facial Action Coding System will benefit classrooms - keeping students interested, keeping them awake, and helping teachers. Support: a specific personal case (computers and iPads in middle school raised the writer's own engagement), plus source-based hypotheticals about the system modifying a lesson. org 4 (rung 4 yes - three-part thesis previewed and matched, closing extends to preschools and colleges; rung 5 fails, the wakefulness and teacher paragraphs could swap without loss). dev 4 (rung 4 yes - connections consistently stated, 'thus spiking his or her interest', 'which could lead to dozing off'; rung 5 fails - the teacher paragraph is pure speculation with no specific support). conv 5 (rung 5 yes - real variety in length and shape, rhetorical questions used purposefully, errors limited to occasional misspellings; rung 6 fails, repeated misspellings and padded closing wording keep it short of apt). arg 4 (rung 4 yes - 'humans lose interest and become tired when bored' supplies a why-chain; rung 5 fails, no opposing view, no qualification, and the conclusion is the prompt's implied option).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03ca725",
+    "evidence_notes": "Claim: join the Seagoing Cowboys program. Support: the named livestock (horses, young cows, mules, pigs) and the chores of feeding, watering and keeping pens clean; a garbled UNRRA aside about 44 nations; travel to 'many fun and exciting countries' with no country named. org 3 (rung 4 fails - the opening starts as an invitation and finishes as a confused UNRRA explanation, the closing mixes animals and travel, and the UNRRA aside does not bear on joining). dev 3 (rung 3 yes on the animal list; rung 4 fails - the travel claim has no support at all and the animal material is listed rather than explained). conv 2 (rung 3 fails - 'that nations was make to help countries recover ther food supplie', 'spend to the another animals' and 'dieing from hungrier' force the reader to guess intent). arg 3 (rung 4 fails - reasons for joining are asserted, 'great time', 'amazing adventure', 'if you like animals well you need to come', never justified).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "03ce0a7",
+    "evidence_notes": "Claim: against driverless cars. Support: the spinning sensor failing without warning and cars no longer alerting the driver (source detail, explained as 'one of the most important parts of the whole system'); the money trail from General Motors in the 1950s to Google in 2009 set against national debt; a quoted line about no one needing cars, tied to teenagers losing the license rite of passage. org 4 (rung 4 yes - the opening 'imagine' sequence previews and the three body parts match it, explicit position lands in the closing; rung 5 fails, safety/money/teenagers are interchangeable). dev 4 (rung 4 yes - connections stated, the sensor's importance and 'that time and money should have been invested into something this world needs'; rung 5 fails, the teenager paragraph rests on one quote and assertion). conv 3 (rung 3 yes - never have to guess; rung 4 fails, misspellings accumulate heavily and 'no linger', 'tis world' force re-reading to repair). arg 4 (rung 4 yes - the manufacturers' safety promise is raised and answered via broken promises and sensor failure; rung 5 fails, the conclusion is one of the two options the prompt already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03d074f",
+    "evidence_notes": "Claim: the Electoral College should be abolished in favour of popular vote. Support: two quotations from an anti-EC source (voters vote for electors; electors can be anyone not holding public office) and two from a pro-EC source turned against it (not democratic in a modern sense; the electoral winner may not win the popular vote), closing on the Preamble's 'We the people'. org 4 (rung 4 yes - position stated early in a letter frame, both body parts on topic, closing lands the Preamble point; rung 5 fails - stripped of the 'along with' transition the two unfairness paragraphs could swap). dev 4 (rung 4 yes - every quote is followed by commentary, but the dominant mode is restatement, 'that statement basically says'; rung 5 fails, only one or two glosses add a consequence the quote did not state). conv 5 (rung 5 yes - quotations integrated cleanly, sentences vary including rhetorical question and short closer, only 'canidates', 'proccess' and 'this day in age' slip; rung 6 fails, diction is otherwise plain). arg 4 (rung 4 yes - reasons genuinely reasoned, voters cannot control their electors, therefore the system is unfair; rung 5 fails on (d), the conclusion is exactly the option the prompt's framing offers).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03d8fe8",
+    "evidence_notes": "Claim: the Facial Action Coding System helps classrooms understand, help and communicate better, opening on a student too afraid to admit confusion. Support: three block quotations from the article (reading a friend's face, the web-ad example, Dr. Huang on modifying a lesson), each followed by 'these quotes show that' commentary. org 4 (rung 4 yes - three-part thesis previewed and matched, frame present; rung 5 fails - understanding/helpful/communicating are near-synonymous and freely swappable). dev 4 (rung 4 yes - connection stated for each quote, 'if you frown, the teacher will be notified'; rung 5 fails, the glosses restate the quote and topic sentence, the third is close to circular). conv 3 (rung 3 yes - meaning stays recoverable; rung 4 fails, misspellings pile up and 'help teachers to more calculated of what their class needs' and 'Although FACS watches your face is wierd' need repair on re-reading). arg 4 (rung 4 yes - a reasoned chain, fear of ridicule keeps students silent so a system that detects confusion helps; rung 5 fails, the 'pretty weird' concern is dismissed rather than answered).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03da458",
+    "evidence_notes": "Claim: driverless cars are a great idea and should not be outlawed. Support: BMW's 'Traffic Jam Assistant' handling driving up to 25 mph with touch sensors keeping hands on the wheel, GM's vibrating driver seats, cameras checking driver focus, and Audi/Mercedes/Nissan targeting 2020. org 4 (rung 4 yes - position stated in the opening and held, frame present, all parts bear on it; rung 5 fails, the features and future-timeline paragraphs swap freely and the opening claim is repeated verbatim). dev 4 (rung 4 yes by the listed/explained rule - the connection new features therefore safer is stated, weakly, before the feature list; rung 5 fails, the features are named then abandoned and several claims like 'better for mankind' go unsupported). conv 2 (rung 3 fails - 'all the technology going into this car and off like the specially designed roads' and 'some states will go down on that law' require guessing, and run-ons and fragments are frequent). arg 4 (rung 4 yes - the safety objection is acknowledged and answered by the new safety features; rung 5 fails, the essay circles its position and lands on the option the prompt implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03dc26a",
+    "evidence_notes": "Claim: the Facial Action Coding System is not worth putting in schools. Support: mostly hypothetical - kids who keep to themselves distrusting it, a student misread as happy or sad, cost weighed against school budgets; the one named case is Mona Lisa, used to argue the reading cannot be verified because she cannot tell us. org 3 (rung 4 fails - the opening only raises doubts and the position first appears at the head of the second paragraph, and the Mona Lisa unit wanders without returning). dev 3 (rung 3 yes on the Mona Lisa case; rung 4 fails on band 4's held-constant specificity - support is general and hypothetical throughout and the cost claim goes unsupported). conv 3 (rung 3 yes - meaning stays recoverable; rung 4 fails, spelling errors accumulate, questions lack question marks, and run-ons like 'we lose out on so much money this just doesn't seem like a good investemnt' force re-reading). arg 4 (rung 4 yes - a why is stated, the system can misread emotions so the cost is not worth it; rung 5 fails, the 'maybe later if perfected' hedge is stated but never applied, and the conclusion stays inside the prompt's framing).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

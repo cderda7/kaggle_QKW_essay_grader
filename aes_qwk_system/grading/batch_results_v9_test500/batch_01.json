@@ -1,0 +1,82 @@
+[
+ {
+  "essay_id": "01ec1a3",
+  "evidence_notes": "Claim: \"The landform on Mars in natural, even if it looks like a face.\" Source-drawn support: the Middle Butte/Snake River Plain quote (Earth analogue), the \"pop icon\" quote, and the 2001 resolution figures (1.56 m vs 43 m per pixel, the 3x rule of thumb), each followed by the writer's own inference; the 1998-fog vs 2001 paragraph answers the skeptics' objection directly. org 4 (thesis early and held, frame present, all parts relate, but the mesa and pop-icon parts swap freely - rung 5 fails); dev 5 (support specific throughout and most of it explained in a way that adds something - \"This means that if there were tools, construction equipment... they would be visible\" - but the Middle Butte explanation is muddled and does no clean interpretive work, so rung 6 fails); conv 3 (spelling errors accumulate throughout and I re-read to repair \"A digital image in taken in 2001\" and \"only had the markings the rest of the planet\", but never guess); arg 4 (the resolution reason is genuinely reasoned; the fog objection is answered, but the conclusion is a verbatim restatement of the opening and lands exactly where the prompt's framing already points, so rung 5's advance condition fails).",
+  "organization": 4,
+  "development": 5,
+  "conventions": 3,
+  "argumentation": 4
+ },
+ {
+  "essay_id": "01f5682",
+  "evidence_notes": "Claim: \"We should change the voting to popular vote for the president,\" with the stated mechanism that the electoral college suppresses turnout. Source support: the source-one definition of the elector process, the Gallup 60%/Al Gore figure, the para-13 winner-take-all quote, and the para-23 Texas Democrats / California Republicans case. org 5 (parts build - mechanism, then public rejection, then the concrete turnout harm that depends on the winner-take-all quote just introduced; no pair swaps without loss - but the para-13 block quote is left dangling and unfinished, so rung 6 fails); dev 4 (support specific and connections stated, but rung 5 fails: the para-13 quote gets no explanation at all, the Gallup explanation drifts to a different claim about electors, and \"Basically what this paragraph was saying is\" is restatement); conv 3 (errors accumulate and I re-read to repair \"might not think about what what the remaining others would want\" and \"There are people that vote for our state\"); arg 4 (the safe-state chain - vote has no effect, so people stop voting - is genuinely reasoned; but the other side is only reported as \"wrong,\" never answered, and the conclusion is the source's own, which the prompt's framing already implies).",
+  "organization": 5,
+  "development": 4,
+  "conventions": 3,
+  "argumentation": 4
+ },
+ {
+  "essay_id": "0200fbc",
+  "evidence_notes": "Claim is a three-part summary of the source - Venus is dangerous, unsafe for humans, so send technology - endorsed by the writer (\"Venus is something were people should not go,\" \"So I belive that...\"). Support: quoted hottest-surface-temperature line, the pressure/volcano/earthquake/lightning quote, and the mechanical-computers 1800s/1940s passage. org 4 (thesis early, held, frame present, all three body parts map onto the three clauses of the thesis - but parts 1 and 2 both do the job \"Venus is dangerous\" and swap freely); dev 4 (support specific and the connection stated for some - the 1940s-computers inference and the life-saving reason - but rung 5 fails: half the elaborations are pure restatement, \"you can tell Venus is no joke it is very dangerous\"); conv 3 (heavy spelling errors accumulate and run-ons like \"That is not good imagine a (NASA) researcher going to venus\" force re-reading and repair, but nothing has to be guessed); arg 4 (one reason actually reasoned - if mechanical computers did the job in the 1940s they can now because technology is better, plus the stated why for saving lives - but no other side, and the conclusion restates the opening verbatim).",
+  "organization": 4,
+  "development": 4,
+  "conventions": 3,
+  "argumentation": 4
+ },
+ {
+  "essay_id": "0210900",
+  "evidence_notes": "Claim: \"That technology would not help in schools.\" Support is a rapid list of speculative objections - ads, hacking/government watching, a guessed million-dollar cost, poor school internet, students breaking computers, existing computers barely working, addiction and weight gain - none tied to a named case or actual instance. org 3 (thesis is stated first and held and the parts are all recognizable objections, but rung 4 fails on the frame: the opening does not orient - it fuses thesis and first support - and the essay ends mid-objection on weight gain with no closing; the addiction/obesity unit is a digression); dev 2 (rung 3 fails - nothing specific anywhere; \"Maybe around a million dollars\" is a hedged guess, not a particular, and the rest is general throughout, with the strongest \"support\" circular: buying a computer is pointless because it won't work); conv 2 (I have to guess, not repair, at \"not happy with how computer ads put up\" and \"Why take away a ad and putting a new ad is going to make a student happy?\" - meaning somewhat obscured); arg 3 (position clear and committed throughout, but reasoning is asserted, not shown - the one \"so\" chain assumes the conclusion, and the only genuine why-chain belongs to the drifting addiction claim).",
+  "organization": 3,
+  "development": 2,
+  "conventions": 2,
+  "argumentation": 3
+ },
+ {
+  "essay_id": "0211cb6",
+  "evidence_notes": "Claim: \"Electoral College is not a good idea for us citizens,\" with the writer's own reason that workers and immigrants should vote for their President. The evidence is almost entirely borrowed phrasing reproduced with minimal transformation - the Certificate of Ascertainment / Tuesday-after-first-Monday passage, \"the single best argument against the electoral college is what they might call the disaster factor,\" the seventeen-states and 25-media-markets figures, \"unfair, outdated, and irrational... Bob Dole was right,\" and a closing block that is the pro-retention source's framing (\"There are five reasons for retaining the Electoral College\") copied without noticing it contradicts the thesis. org 3 (thesis stated early but the position has moved by the end, the mechanics paragraph is a digression that does not bear on the claim, so rung 4 fails); dev 3 (rung 4's stated connection is present - \"What that means? 60% of the people didn't agree\" - but patchwriting caps the trait at 3: source phrasing stitched together with little transformation, including a compression that no longer says what the source said); conv 2 (judging the writer's own sentences: I must guess at \"I hope everybody health is great and family problems,\" \"The presidential election most have a winner-take-all system,\" and \"The electoral college won the popular vote but lost the presidency over 60% of voters\"); arg 3 (position clear and committed with an original reason, but no reason is reasoned in the writer's own voice and the copied closing undercuts the position - rung 4 fails).",
+  "organization": 3,
+  "development": 3,
+  "conventions": 2,
+  "argumentation": 3
+ },
+ {
+  "essay_id": "021271e",
+  "evidence_notes": "Claim surfaces only as a hedge at the end of para 1 (\"maybe we should consider exploring Venus more\") and is committed in the conclusion (\"NASA should consider exploring Venus\"). Support: the quoted oceans/supported-life line, the rocky-sediment/valleys-mountains-craters quote, and the thirty-plus-miles / 170 degrees / sea-level-pressure hovering-vehicle quote; the writer's own backup-planet and population reasoning is unsupported. org 3 (rung 4 fails - the essay opens cold on a source quote with no orientation and the controlling idea is weakly located, arriving at the end of the first part; para 1 also slides from Venus's ancient past to \"You couldve probably lived there\"); dev 4 (specific support with connections stated - \"This shows that,\" \"This is showing that\" - but rung 5 fails: the first two explanations only restate the quote, and only the habitability inference adds anything); conv 3 (errors accumulate - \"wasonce,\" \"its would,\" spaces before periods - and I re-read to repair \"live different as surive in a different planet,\" but never guess); arg 4 (the backup-planet reason states its why - if something bad happened to earth people could live elsewhere - reaching rung 4; but \"Its not eady conditions to live in but they can\" is a hedge inside the essay's own claim rather than an opposing position answered, so rung 5 fails).",
+  "organization": 3,
+  "development": 4,
+  "conventions": 3,
+  "argumentation": 4
+ },
+ {
+  "essay_id": "0220c9f",
+  "evidence_notes": "Claim: the Facial Action Coding System \"could be valuable,\" narrowing to schools and committed by the conclusion (\"it would be valuable for schools to invest in this product\"). Support: the para-1 Mona Lisa example and the para-5 Da Vinci anatomy detail, the para-6 claim about making a boring lesson more interesting, plus the writer's own speculation that teachers could see whether a student is struggling with math homework or a family problem. org 4 (thesis first sentence and held, both frame ends do work, all parts bear on \"valuable\" - but the benefits are interchangeable: teachers seeing struggles, lessons made interesting and students having fun swap freely); dev 4 (rung 4 passes - \"Every student has different like so this would be very valuable to schools\" states the connection - but rung 5 fails: support is not specific throughout, most of it is hypothetical benefit, and the Da Vinci material is praised rather than connected); conv 3 (errors accumulate and I re-read to repair \"students who are struggling and what help,\" \"a more welcoming and fun to place to come to,\" and the tangled doubled \"allowing\" clause); arg 4 (one reason genuinely reasoned - peers make students hide their feelings, so teachers cannot tell who is struggling, so the system reveals it - but \"Though it may not be exactly needed\" is a throwaway hedge never returned to, and the conclusion gets no further than its own reasons).",
+  "organization": 4,
+  "development": 4,
+  "conventions": 3,
+  "argumentation": 4
+ },
+ {
+  "essay_id": "0224c63",
+  "evidence_notes": "Claim: \"Signing up for the Seagoing Cowboys is a great opportunity for you,\" pitched first-person as a former participant. Support: seeing Europe and China, spare time after unloading the animals, the named recreation list (volleyball, baseball, table-tennis tournaments, fencing, boxing, reading, whittling), and the eye-opening awareness of people in other countries and their needs - all transformed into the writer's own persuasive voice rather than reported. org 4 (the endorsement is announced in the opening and held, both frame ends do work and every part relates, but travel, spare time, games and helping are freely interchangeable so rung 5 fails); dev 4 (support specific and the connection stated for some of it - \"just think of how good you'll feel after knowing you've helped people\" - but rung 5 fails: the activities list and the travel are bare, unexplained items and \"helped a lot of people\" is general); conv 5 (essentially error-free apart from one misplaced comma, control complete, and shape genuinely varies - existential, gerund-subject, conditional-plus-series, imperative - but word choice is plain and generic rather than apt, so rung 6 fails); arg 4 (the growth reason is reasoned and \"It might be a little hard at first, and rough, but you'll get the hang of it\" concedes and answers the obvious objection - but the conclusion is its own reasons summed and lands exactly where the prompt's framing points).",
+  "organization": 4,
+  "development": 4,
+  "conventions": 5,
+  "argumentation": 4
+ },
+ {
+  "essay_id": "0226250",
+  "evidence_notes": "Claim: \"In this article Driverless Cars are coming i agree with them,\" with three previewed reasons - drunk drivers, tired or night-blind drivers, and cost. Support: hypothetical scenarios for the first two, then the para-1 quote (\"would use half the fuel of todays taxis and offer far more flexibllity than a bus\") worked into a savings chain that annualizes to \"thousands a year\"; the para-4 sensor quote is repurposed into an alcohol-sensor proposal. org 4 (thesis first, previewed and held, frame present with a closing that adds little - permitted at this band - but the drunk-driver and tired-driver parts are parallel and swap freely); dev 4 (rung 4 passes on the stated fuel-cost-to-savings connection, but rung 5 fails: support is not specific throughout - the first two body parts are general scenarios with no figure or named case); conv 2 (I must guess rather than repair at \"cant really much for yourself,\" \"maybe then can put a sensor like that put in the car,\" and \"they end up up a car crash\"; there/their confusion changes what is said); arg 4 (the cost chain is genuinely reasoned and the alcohol-sensor passage answers an objection to its own proposal, but the conclusion is a bare restatement that reaches only what the prompt's framing already implies).",
+  "organization": 4,
+  "development": 4,
+  "conventions": 2,
+  "argumentation": 4
+ },
+ {
+  "essay_id": "0226c11",
+  "evidence_notes": "Claim: \"The face on Mars is a natrual landform created on the planet,\" with the alien view named in the opening. Support: the \"no alien monument after all\" line, the butte/mesa-common-around-the-American-West quote, the 1976-1998 image-quality point answered by the 2001 photo, the pixel rule-of-thumb quote, and the writer's own observations that the face appears only with shadows and that the form is \"not perfectly shapped and it has a few cracks almost like a rock.\" org 4 (thesis first sentence and held, frame present though the closing only restates, every part relates, and the third-reason sentence wanders and returns - but the first two quote-supports swap freely); dev 4 (connections are stated for all support, but by formula - \"This explains my answer by\" followed by restatement, and the pixel quote's explanation misses what the figure shows - so rung 5's \"adds something the support alone did not say\" fails); conv 3 (errors accumulate, quotation marks are missing, and long fused sentences like the third-reason sentence force re-reading to repair, though nothing has to be guessed); arg 4 (the irregularity-and-cracks reason states its why, and the opposing view is acknowledged and answered by diagnosing it as an artifact of the poor 1976-1998 images - but the essay circles, closing on a restatement of its first sentence, so rung 5's advance condition fails).",
+  "organization": 4,
+  "development": 4,
+  "conventions": 3,
+  "argumentation": 4
+ }
+]

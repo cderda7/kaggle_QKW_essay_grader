@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "097b864",
+    "evidence_notes": "Letter to a state senator claiming the Electoral College is unfair and outdated and should be abolished; support is the list of endorsers (Nixon, Carter, Dole, U.S. Chamber of Commerce), the 60%-prefer-direct-election figure, and the winner-take-all/'disaster factor' complaint, all drawn from the source articles. org 4 (thesis early and held, frame present, all parts on the claim, but the endorsers paragraph and the disaster-factor paragraph swap freely, so rung 5 fails); dev 3 (rung 3 yes - 60% figure and named endorsers are specific - but rung 4 fails: the supports are listed and the 'disaster factor' is never explained beyond 'worse and worse things every year', so the reader supplies the connection); conv 3 (rung 3 yes, meaning always recoverable, but 'have all agreeded that to abolish', 'Popular votes was', 'the the disaster factor', 'From this, the system keeps allowing worse and worse things' force repair re-reads, so rung 4 fails); arg 4 (rung 4 yes - winner-take-all means candidates skip states they cannot win, and a popular vote means an individual vote counts, a stated why; rung 5 fails, no opposing position is answered and the conclusion is what its own reasons imply).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0980c17",
+    "evidence_notes": "Claims the Electoral College should be kept despite being unfair; the two reasons (certainty of outcome, restoring weight lost to Senate mal-apportionment plus avoiding no-majority run-offs) are reproduced near-verbatim from the source, including its distinctive phrasing ('mal-apportionment of the Senate decreed in the Constitution', 'invariably exceeds their share of the popular vote') and one dropped-words garble ('even a state creates a landslide electoral-vote victory'). org 4 (controlling idea in the first line and held, opening and closing both work, but the two reason paragraphs are interchangeable, so rung 5 fails); dev 2 (rung 3 fails on band 2(d): borrowed material stands in for the argument - the essay reports the source's reasons rather than arguing from them, with the writer's own contribution limited to frame sentences); conv 4 (judging the writer's own sentences, word choice fits and errors are near-absent, but the one garbled transcribed sentence needs repair and the borrowed phrasing is not the writer's, so rung 5 fails); arg 4 (rung 4 yes, the certainty-of-outcome reason states why disputes are less likely; rung 5 fails - the unfairness objection is conceded and waved away as 'a little unfair' rather than answered, and the conclusion is what its reasons imply).",
+    "organization": 4,
+    "development": 2,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "098c450",
+    "evidence_notes": "Claims others should join the Seagoing Cowboys program and agrees with Luke's view; reasons are that the program is caring (UNRRA, 44 nations, post-1945 relief), that participants travel and sightsee, and that it is 'the right thing', with two article details cited (paragraph 5 - a boy saw Europe and China; paragraph 8 - baseball, volleyball, table-tennis on the return trip). org 4 (position stated early and held, opening and closing present, both body parts relate; rung 5 fails - the three reasons and the two details are freely interchangeable); dev 3 (rung 3 yes on the paragraph-8 game list and the Europe/China detail, but rung 4 fails: the reasons are general gestures and the stated links are circular - 'they are caring, so join because they are caring'); conv 3 (meaning recoverable without guessing, but chained run-ons like the UNRRA sentence and the sprawling paragraph-5 sentence force re-reading, so rung 4 fails); arg 3 (rung 3 yes, the position is clear and committed, but rung 4 fails - the reasons are labels asserted, not reasoned, and the closing simply restates the opening).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "098d10a",
+    "evidence_notes": "Argues the author of 'The Challenge of Exploring Venus' successfully shows Venus is a worthy pursuit, via value (shared densities, sizes, rocky sediment, craters, mountains, possible past oceans), dangers (CO2 atmosphere, crushing pressure, 800-plus degrees, volcanoes, lightning), and solutions (hovering vehicle, mechanical computers without electronics). org 5 (rung 5 yes - the solutions part depends on the dangers part and the dangers-as-reason move depends on value already established, so no pair swaps; rung 6 fails, the closing only restates the opening's three-item preview); dev 5 (rung 5 yes - support is specific throughout and most is explained with added work: 'we could find the key to unlock the knowledge of how our home planet works', 'more likely to withstand the extreme conditions... unlike modern computers'; rung 6 fails, the dangers paragraph's wrap-up merely restates that the dangers prove the point); conv 5 (rung 5 yes - varied sentence lengths and shapes under control, only occasional minor slips like 'it's dangers', 'beleive', 'eartquakes'; rung 6 fails, wording is correct rather than apt and 'does a good job' recurs); arg 4 (rung 4 yes, it says why Venus knowledge would bear on Earth; rung 5 fails on (d) - the conclusion that the author does a good job is exactly what the prompt's framing implies).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "098d6c6",
+    "evidence_notes": "Claims the emotion-reading technology is a great idea; support is two dropped quotations (a classroom computer recognizing a confused, bored student and modifying the lesson; the same technology making animated faces expressive for video games or 'video surgery') plus assertions that it would be fun and bring opportunities, and a mention that some people think teachers already do this. org 3 (rung 4 fails - the opening is a bare thesis with no orientation, the closing stops rather than closes, and the animated-faces/video-games line is a digression from the students claim); dev 3 (rung 3 yes, the classroom-computer quote is a realized example, but rung 4 fails - the quotes are dropped with no framing and the reader supplies every connection; 'it could change our lives for the better' is assertion); conv 3 (rung 3 yes, meaning is recoverable throughout, but the long 'i see why some people might not feel the need' run-on, the missing subject in 'as if is a good idea', and 'how me feel' all force repair re-reads); arg 3 (rung 3 yes, the position is clear and committed; rung 4 fails - nothing is reasoned, and the acknowledged objection is answered only by restating the position).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "09915db",
+    "evidence_notes": "Claims the author supports space travel to Venus very well and that overcoming Venus's challenges will benefit people on Earth; support is relayed from the article - unmanned landers surviving only a few hours in the extreme atmosphere, materials that withstand a sulfuric acid atmosphere, stronger submarines for deep ocean diving, NASA's flying-over-Venus idea, 170 degrees and low radiation. org 4 (thesis in the first line and held, frame present, all parts on topic; rung 5 fails - the benefits paragraph and the NASA paragraph follow the article's order and swap freely); dev 4 (rung 4 yes - the connection is stated for some support: stronger submarines 'so we would be able to dive deeper into the deepest parts of the oceans on earth', low radiation 'so it is survivable'; rung 5 fails, most support is listed and paraphrased loosely); conv 2 (rung 3 fails - 'one way we could overcome the hard surface conditions that venus' and 'I can that striving to meet challenges' leave the reader guessing at intent rather than repairing, on top of pervasive misspelling); arg 4 (rung 4 yes, the spinoff-benefit chain says why solving Venus problems pays off on Earth; rung 5 fails, no opposing consideration is answered and the conclusion restates the article's own).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0999761",
+    "evidence_notes": "Claims driverless cars are brilliant and will change the world and that Google is making them safe; support is dense and specific - half the fuel of today's taxis, independent driving since 2009, over half a million miles without crashing, the full sensor inventory on the modified Prius, the laser roof sensor building a 3-D model, skid and rollover detection, BMW's 2013 Traffic Jam Assistant at 25 mph, GM's vibrating seat and windshield lights. org 4 (opinion stated early and held, frame present, all parts on topic; rung 5 fails - the sensor, sensor-history and BMW/GM paragraphs are interchangeable and the conclusion repeats the opening verbatim); dev 4 (rung 4 yes, connections are stated for some support - half the fuel 'great way to save money on gas', the sensors 'necessary for the driverless car to mimic a human at the wheel'; rung 5 fails, most of the detail is relayed without explanation, especially the whole BMW/GM paragraph); conv 3 (rung 3 yes, nothing has to be guessed, but 'far more that was a human can do', 'get information too cause the car to apply braked', 'mimic a human and the wheel' need repair and errors accumulate); arg 4 (rung 4 yes, the fuel-to-savings link states a why; rung 5 fails - the human-takeover material is never treated as an objection, and the closing hands back the opening).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "099fc28",
+    "evidence_notes": "Dramatized scene rather than an argument: a first-person Luke Bomberger urges a town hall to join the Seagoing Cowboys program, is challenged by an invented rival, Jack Linington, and wins him over; the only material bearing on the claim is the borrowed credential line (16 Atlantic crossings, twice the Pacific, helped people affected by WWII) plus circular assertions. org 3 (rung 4 fails - the position is stated in the opening speech but then abandoned for the feud, and by the close the subject has drifted to friendship rather than the program's merits); dev 2 (after discarding the narrative, which does not bear on the claim, rung 3 fails - what remains is a copied credential and circular support: 'you should listen because what I have to say is important'); conv 3 (rung 3 yes, meaning is recoverable, but the comma-spliced opening speech and the misattributed 'Finally, he broke down and--' exchange force re-reading, and errors accumulate); arg 3 (rung 3 yes, the position is clear and committed; rung 4 fails - no reason is reasoned, the rebuttal is a rhetorical question and the rival is won over by insistence rather than argument).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "09a04e4",
+    "evidence_notes": "Argues the author of 'The Challenge of Exploring Venus' supports the pursuit despite the dangers, previewing reasons to go, bad outcomes, and workarounds; support is quoted and cited by paragraph - 'features that are analogous to those on Earth', temperatures over 800 degrees and pressure 90 times Earth's, floating above the fray like jet airplanes, sampling ground and rocks. org 5 (rung 5 yes - the workaround part depends on the dangers part, the dangers part turns on the worth already established, and the closing lands somewhere new, that the dangers will push scientists to new technology; rung 6 fails, the sequence is the announced three-item checklist and paragraph 2's Mars material wanders); dev 4 (rung 4 yes, connections stated - 'the only way to study Venus well is by being on the planet because looking at venus far away can only provide limited insight'; rung 5 fails, the quotations are marked and set alongside the writer's sentences and most wrap-ups restate rather than interpret); conv 4 (rung 4 yes - 'beleives', 'temperaturess', 'Fahrenhit', 'There is many evidence' are visible but cost nothing; rung 5 fails, control lapses in sentences like 'It is also giving them challenges that they can work on the equipment'); arg 4 (rung 4 yes, the Mars analogy and the limited-insight reason are reasoned; rung 5 fails on (d) - the conclusion is the one the prompt's framing already implies).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "09a62eb",
+    "evidence_notes": "Argues driverless cars help no one, will cost too much and will cause more accidents; support is mostly general assertion (all technology malfunctions, the car would be overly priced, it will not be affordable) with one cited particular from paragraph 9 about who is responsible when the car errs, a what-if scenario about forgetting how to drive, an internet-unreliability analogy, and a flat-tire example. org 3 (rung 4 fails - the thesis sits at the end of an opening whose first sentences pull the other way, 'an advance in technology' and 'its still going to happen', and paragraph 3 starts on liability then jumps to price, awareness and forgetting how to drive); dev 3 (rung 3 yes on the paragraph-9 reference and the flat-tire scenario, but rung 4 fails - support is general throughout and the price and accident claims go unsupported); conv 3 (rung 3 yes, nothing has to be guessed, but the 'Technology doesn't always work out... would you trust your care taking you' run-on, the paragraph-9 sentence and repeated fragments force re-reading); arg 4 (rung 4 yes - more accidents follows because all technology malfunctions, and losing driving habit follows from never driving; rung 5 fails, the 'technology is good when it is helping people' line is a passing assertion rather than a principle applied, and the conclusion is what its reasons imply).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "03e687e",
+    "evidence_notes": "Claim: society has the wrong idea about cars; car-dependence harms environment/health. Source support: Vauban (70% carless, 57% sold a car), Heidrun Walter quote, Bogota car-free day + Plaza quote, Paris diesel 67%, Sivak's sons. Quoted material is attributed and sits in the writer's own sentences. org 4 (controlling idea early and held, frame present, but the Vauban/Bogota block and the Paris/Sivak block could swap without loss - rung 5 NO); dev 4 (figures and quotes are specific and connection stated - 'proven to help save their environment' - but explanations mostly restate and several supports are left to speak for themselves, rung 5 NO); conv 3 (dense spelling/usage errors and garbled stretches - 'public transport free of charge Friday threw Monday clogging up our o-zone', 'the smog ... traveled to Beijing' - force re-reading to repair, rung 4 NO); arg 4 (one reason genuinely reasoned - overpopulated suburbs leave no room for cars, so density argues against them - but no opposing view answered, no qualification, no explicit principle, rung 5 NO).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03e804e",
+    "evidence_notes": "No claim of the writer's own: the essay reports the three sources in sequence (Vauban carless district, Paris even/odd plate ban and fines, Bogota car-free day) with borrowed phrasing lightly stitched. 'In conclusion' appears at the top of the second paragraph. org 2 (parts are topically distinct source summaries but no controlling idea is stated anywhere in the writer's own words, and there is no frame - rung 3 NO); dev 3 (support is specific - 70%, 57%, $31 fine, 147 per cubic meter - but no connection to any claim is ever stated and the material is patchwritten from the sources, rung 4 NO); conv 2 (reader must guess, not merely repair, at several points: 'it was down by 605 in the capital of France', 'A growing trend going around they say they want to seperate them from auto use', 'the efforts that they put in that some people build their own houses'; rung 3 NO); arg 1 (no position on the issue is stated at all - the essay never says whether car reduction is good or bad, rung 2 NO).",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 1
+  },
+  {
+    "essay_id": "03ec474",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys. Reasons: adventure, sightseeing (Panama Canal, temples of China), helping children recover, animals/ocean; UNRRA framing supplied up front. org 4 (thesis 'Here's why you should join' stated early and held, opening orients and conclusion closes, but the reasons sit in one interchangeable list - rung 5 NO); dev 4 (Panama Canal and temples of China are specific and the connections are stated - free time so you can sightsee, seeing the children you help - but most support is a general gesture rather than specific throughout, rung 5 NO); conv 5 (varied sentence lengths and shapes, rhetorical questions under control, word choice fits; slips like 'wouldn't you want be a hero' and 'only so much people which need saving' keep word choice from apt/purposeful, rung 6 NO); arg 4 (reasoning shown for at least the sightseeing reason - free time is provided, therefore the trip affords it - but no opposing consideration, no qualification, no explicit governing principle, rung 5 NO).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03ee9ea",
+    "evidence_notes": "Claim: emotion-reading classroom computers would not be very successful. Reasons: facial deformities/piercings and expression-feeling mismatch defeat the reading; cost; students learn differently so auto-modifying a clear lesson could hurt. org 4 (position stated in the opening and held, closing lands it, but the three objections could swap freely - rung 5 NO); dev 4 (piercings/deformities and the already-clear-lesson case are concrete and the essay states how each bears on the claim, but the cost objection is a general gesture with no figures, so support is not specific throughout - rung 5 NO); conv 3 (errors accumulate - 'sensor' for sense, definetly, diformaties, afftect, imagaine - and the 60-word opening run-on plus comma splices force re-reading, rung 4 NO); arg 4 (reasons are genuinely reasoned - not everyone is the same, so a uniform reader cannot benefit everyone - but the qualification is not carried far enough and the conclusion is what the prompt's framing already implies, rung 5 NO).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03f2d76",
+    "evidence_notes": "Claim: technology reading students' emotional expressions is valuable. Support quoted from 'Making Mona Lisa Smile': Huang on a classroom computer recognizing confusion and modifying the lesson; the 3-D model / 44 muscles / Ekman FACS six emotions block quote. org 4 (thesis stated at the end of the opening and held, conclusion present, but the two benefit paragraphs could swap - rung 5 NO); dev 4 (quotations are specific and marked, and the first is explained - if the computer detects the problem and fixes it, teaching improves - but the long FACS quote is followed only by 'has a lot of information studets can learn', so most support is not explained in a way that adds anything, rung 5 NO); conv 4 (spelling errors accumulate - technolagy, expresions, praticle, studets - but they are transparent and nothing needs repair; errors are too frequent to call occasional, rung 5 NO); arg 4 (one reason reasoned via the confusion-detection conditional; the 'eventhough it may not seem praticle' objection is mentioned and overridden by assertion rather than answered, and the conclusion is what the prompt implies, rung 5 NO).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03f8d0e",
+    "evidence_notes": "Claim: limiting car usage benefits us - cleaner air and safer streets. Support: denser, more compact towns make walking/biking and public transport easier, which reduces car use; fewer cars means safer streets; one quoted line about a 'long-term cultural shift' attached to a safety claim it does not bear on. org 4 (thesis and its two announced advantages stated early and held, conclusion closes, but the air paragraph and the safety paragraph could swap - rung 5 NO); dev 2 (after discarding the misapplied quote, no named case, figure or concrete particular remains anywhere - support is general throughout, rung 3 NO); conv 2 (pervasive misspelling plus sentences that must be guessed rather than repaired: 'which would leave more space for better walk was', 'Tat if we take care of will keep us safe by living here', rung 3 NO); arg 4 (one reason actually reasoned - density leads to walkability and transit access, which reduces car use and cleans the air - but no counter, qualification or explicit principle, rung 5 NO).",
+    "organization": 4,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03f958f",
+    "evidence_notes": "Claim: driverless cars should be developed and supported. Support: Google driving independently since 2009 and half a million miles without a crash; the first automobile analogy; obstacles the car cannot yet handle (construction, accidents); driver liability. org 4 (position stated early and held, frame present, but the crash/obstacle paragraph and the liability paragraph are both objection-then-persist and could swap - rung 5 NO); dev 4 (the mileage figure is specific and the connection is stated - vehicles driving identically could reduce accident risk - but the analogy and the 'automakers have plans' claims are general, so not specific throughout, rung 5 NO); conv 4 (recurring misspellings - vechicle, saftey, reseach, succsessful - are visible but never require repair; too frequent to count as occasional, rung 5 NO); arg 5 (the safety objection is acknowledged and answered - no vehicle can promise 100% safety, so the standard being demanded is one no car meets - and liability is placed with the alert driver, reaching a conclusion the prompt's framing does not already imply; rung 6 NO because that answer is asserted in two passing sentences and the prompt's terms are never reframed).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "03fb253",
+    "evidence_notes": "Claim: you should sign up as a seagoing cowboy like Luke. Support: Luke's Europe trip with supplies/food/animals, time with the animals, sightseeing (ruins, structures), free deck space for games after unloading, the quoted 'cattle boat trps were an unbelievable opportunity for a small-town boy', and a storm-danger passage. org 3 (controlling idea stated up front but the frame is perfunctory - the closing explicitly declines to conclude, 'Im not going to say the same stuff I already said earlier' - and the reason-units repeat and restate themselves, rung 4 NO); dev 4 (the quote and the storm particulars are specific and connections are stated, if by restatement - 'meaning he enjoyed being a seagoing cowboy', 'What I mean is after the animals are gone you can use the extra room' - but most support is general enthusiasm, rung 5 NO); conv 3 (meaning stays recoverable but the text is one long run-on pattern with missing spaces - 'supplies,food,and animals', 'somepretty', 'sightslike' - and the reader re-reads to repair clauses, rung 4 NO); arg 4 (reasons carry a stated because - hard work is still enjoyable because there is so much to see - and the danger objection is raised but answered only by repeating that it can still be enjoyable, rung 5 NO).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03ff4c1",
+    "evidence_notes": "Claim (arriving in the conclusion): NASA works from research and proven facts while conspiracy theories have nothing behind them. Support quoted from the article: the Mars Global Surveyor mesa finding, the 1997 Cydonia priority, and the 2001 image at 1.56 m/pixel against 43 m/pixel in 1976. org 3 (a controlling idea is stated but weakly located - the essay opens mid-argument with 'First of all', the position drifts through 'they can't be entirely incorrect' and a paragraph of conspiracy questions - is the world really round, could aliens be demons - that does not relate to it, rung 4 NO); dev 4 (quotations are specific, marked and connected at least once - the pixel comparison is read as showing the camera was well equipped - but the conspiracy paragraph supports nothing and explanations elsewhere restate, rung 5 NO); conv 3 (word-choice and structure problems accumulate - 'Anything is possible for one so they can't be entirely incorrect because even a few scientists got to thinking about the Face of Mars could be an alien too', 'Man do not have all the answers' - and repair by re-reading is needed, rung 4 NO); arg 4 (one reason genuinely reasoned via the resolution comparison; the opposing view is entertained at length but never answered, and the position is only asserted at the end, rung 5 NO).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "03ffbb2",
+    "evidence_notes": "Claim: Bradenton should adopt the Vauban model. Support: Vauban described concretely (streets empty of cars, shops a walk down main street, residents happier walking); asserted benefits - people save money, the town earns more from public transport, less pollution and greenhouse gas. org 4 (thesis stated at the top of the second paragraph and held, opening orients and closing lands on Bradenton, but the gas/money paragraph and the greenhouse paragraph could swap - rung 5 NO); dev 4 (Vauban is a specific named case and the connection is stated for the money claim - no cars means gas only for buses, so wallets benefit - but the transit-revenue and health claims are bare assertions, so support is not specific throughout, rung 5 NO); conv 4 (misspellings and slips - spmething, benifet, enviornmet, 'cars being took out' - are visible but nothing needs repair; sentences run to one short declarative shape, so rung 5 NO); arg 4 (the money reason is reasoned through to its conclusion and the ozone claim is sensibly limited - we cannot undo the damage but can avoid worsening it - yet the conclusion is exactly what the prompt's framing implies, rung 5 NO).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  }
+]

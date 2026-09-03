@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "0802a6e",
+    "evidence_notes": "Claim: no machine should read emotions; privacy/emotion is sacred. Support: a dropped quote about varying degrees of expression, then a long stretch listing BENEFITS (facial recognition, reconstructive surgery, Mona Lisa, animals, historical figures) that cuts against the claim; closes with emotions as cover for resistance (slave masters, Britain in the Revolution). org 3 (rung 4 fails: controlling idea stated but the whole middle is a benefits digression that does not relate; closing stops rather than closes); dev 3 (rung 4 fails: the surviving support is asserted and listed, allusions like the slave-master case left for the reader to complete); conv 2 (rung 3 fails: several places I must guess intent, e.g. the dress/opinion sentence and the unpunctuated chains); arg 3 (rung 4 fails: position committed but the why is asserted, not shown, and the essay argues both sides without acknowledging it).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0804daa",
+    "evidence_notes": "Claim: technology cannot read emotional expressions; humans sometimes can. Support: computers make mistakes; people hide their problems; a stray closing fact that the computer reports percentages of happy/sad/angry/fearful. org 3 (rung 4 fails: controlling idea buried in paragraph 2, no closing - the essay ends on an unattached fact); dev 2 (rung 3 fails: no named case, figure or realized example anywhere; support general throughout); conv 3 (rung 4 fails: errors accumulate and I re-read to repair sentences like 'the only they you can do is ask them is they are alright', but meaning is always recoverable); arg 3 (rung 4 fails: reasons asserted - 'because its an computer' - never shown; the second half circles the opening).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0811694",
+    "evidence_notes": "Claim: driverless cars are not a good idea - drivers must stay alert, they may be unsafe, they will be expensive. Support: 25 mph limit and steering-wheel sensors, the fault question quoted from the text, and the full Google sensor list (roof sensor, radar, GPS, LIDAR) used to argue cost. org 4 (rung 5 fails: three on-topic supports, alertness/safety/cost, could swap without loss - a set of supports, not a sequence); dev 4 (rung 5 fails: connection stated for the cost and the pointlessness claims, but the safety paragraph rests on unnamed 'many states' and an assertion about trustworthiness, so support is not specific throughout); conv 4 (rung 5 fails: never re-read, but a steady scatter of spelling slips, a fragment and an unclosed quotation are more than occasional); arg 4 (rung 5 fails: the concessions are mentioned but not answered, and the conclusion is exactly what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08133fe",
+    "evidence_notes": "Claim: emotion-reading technology is not valuable. Support: the funeral scenario (looking composed while heartbroken, so a photo would read 'happy' wrongly), tone of voice as a better cue, and a self-test at the end ('it would say im sad but im just worry'). org 3 (rung 4 fails: the 'do computers even have emotions / what true happiness is' section is a digression off the controlling idea, and unity breaks in the closing); dev 4 (rung 4 yes: the funeral and voice examples each have their connection stated - 'the computer would say you are happy but you really not'; rung 5 fails since most of the rest is general assertion); conv 2 (rung 3 fails: I must guess at 'got a additon (come back)' and 'to pass his test so yea'); arg 4 (rung 4 yes: face does not equal inner feeling and the computer reads only the face - a real why; rung 5 fails, the 'don't get me wrong it's a good tool' concession is brushed aside rather than answered).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08139fb",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys program. Support: adventure/travel, new foods, caring for horses, young cows and mules, must not fear ships, must be responsible, plus a closing list of destinations. org 4 (rung 5 fails: controlling idea early, opening questions and a closing call to action, but the attractions are a freely reorderable list); dev 3 (rung 4 fails: the persuasive appeals - 'a lot of fun', 'new foods', 'new places and more' - are listed with the reader supplying why they matter; the two because-clauses attach to requirements, not to the case for joining); conv 4 (rung 5 fails: never re-read and errors are few, but the closing runs on and the body sentences hold one shape); arg 3 (rung 4 fails: the case for joining is asserted; the because-clauses are definitional restatements, and the closing circles the opening).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0819c99",
+    "evidence_notes": "Claim: not allowing people to drive is beneficial - less pollution, alternative transport. Support: EPA 'car reduced' promotion and the six-year federal transportation bill, the Paris partial ban and 22-euro ($31) fine, Bogota's third annual car-free day with $25 fines. org 3 (rung 4 fails: the opening conditional is inverted and does not orient, and the closing moves the position to 'driving may help you, but its also hurting you'); dev 3 (specific figures present, but band 3(d) patchwriting cap applies - the bill and fine sentences are source phrasing dropped in with little transformation and no marking, and the writer's own connective sentences are thin); conv 3 (rung 4 fails: errors accumulate and I re-read to repair 'Most of these countries them not driving is helping' and 'why vehical use should be to limit', though meaning is recoverable); arg 3 (rung 4 fails: measures are reported and labelled good; the one 'this is good because' restates the benefit rather than showing why it follows).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "081b620",
+    "evidence_notes": "Claim: using the Facial Action Coding System on students is valuable. Support: Dr. Huang's prediction that the classroom computer will modify a lesson when it detects confusion or boredom; a counterargument (it isn't fair to read students' emotions) answered by confidentiality plus the point that some students are afraid to ask for help. org 5 (rung 6 fails: order is motivated - the rebuttal presupposes the benefit case and cannot swap with it - but the closing mostly gathers up what came before); dev 4 (rung 5 fails: Huang is the only genuinely specific support, the explanations restate it in three forms, and the graduation/dropout claim is left unsupported); conv 4 (rung 5 fails: never re-read, but spelling slips, a dropped verb in 'That to understandable' and missing possessives are more than occasional); arg 5 (rung 5 yes: an opposing position is acknowledged AND answered, and turning the fairness objection into a benefit for students who cannot self-advocate is a conclusion the prompt does not imply; rung 6 fails - it does not touch the strongest consent objection or reframe).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "081db56",
+    "evidence_notes": "Claim: FACS is valuable. Support: it recognizes emotions even on a blank face; bored or confused students learn less, so the computer can change the lesson; then a long chain of asserted benefits (friendships, grades, focus, sports, goals, dreams). org 3 (rung 4 fails: idea stated first but no closing - the essay trails off on 'other things like that' - and many parts repeat earlier ones without adding); dev 3 (rung 4 fails: benefits are listed, not explained; the boredom passage is three restatements of itself and the reader supplies every connection); conv 4 (rung 4 yes: the near-universal 'And...' fragments are visible errors but nothing ever needs repair; rung 5 fails because every sentence is the same shape); arg 3 (rung 4 fails: the one apparent reason is a tautology - bored students learn less than non-bored students - and the essay circles its position for its whole length).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "08207e4",
+    "evidence_notes": "Claim: driverless cars should not be made or allowed. Support: teens plus phones plus a self-driving car means they will text and not watch the road; the liability chain (a crash with the car driving means the maker is blamed, and 'even tho you told them' drivers will not comply); the market chain (deaths, no buyers, wasted money, layoffs starting with the people who proposed it). org 4 (rung 5 fails: the two financial parts overlap and could swap, and the opening's broken-sensor reason is never taken up); dev 4 (rung 4 yes: each scenario states its connection step by step; rung 5 fails since support is hypothetical rather than specific throughout - only 'Indiana' is named); conv 3 (rung 4 fails: sustained run-ons force re-reading, though meaning stays recoverable and the nonstandard forms cost nothing); arg 5 (rung 5 yes: the maker's 'we warned the driver' defense is raised and answered by showing drivers will not comply, and the self-interest conclusion addressed to the manufacturer is not implied by the prompt's framing; rung 6 fails - the strongest safety objection is never touched).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0821b94",
+    "evidence_notes": "Claim: self-driving cars are unreliable and unrealistic. Support: the Toyota Prius sensors alert but do not correct; a first-hand icy-road experience where the car beeped and flashed but did not fix the skid; Dr. Werner Huber's endorsement of in-car entertainment turned against itself to raise the distraction and fault problem. org 5 (rung 6 fails: paragraph 3 depends on paragraph 2 - the 'warnings' it invokes were established there - so nothing swaps, but the closing largely restates the opening); dev 5 (rung 6 fails: the three supports are specific and each explanation does interpretive work, but the closing's 'no large, positive effect on society' is asserted without support); conv 5 (rung 6 fails: real variety under control, errors minor and occasional, but word choice is sometimes approximate - 'unachievable' for cars that already exist); arg 5 (rung 5 yes: the sensor concession and Huber's pro-position are both answered, and 'driverless is a misnomer' reaches past the prompt's framing; rung 6 fails - the strongest objection, net accident reduction, is never engaged and no boundary condition is set).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5
+  }
+]

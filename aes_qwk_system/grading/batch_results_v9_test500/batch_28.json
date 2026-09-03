@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "06766be",
+    "evidence_notes": "Claim: \"I am for driverless cars\", qualified as \"they shouldn't be released until they are truly driverless\"; support is a chain of hypothetical scenarios (blame falls on the manufacturer \"because the driver isn't doing anything\"; a uniform speed law means \"I don't see how you could get in a car accident\"; a driverless/old-car collision where blame sits with the old-car driver); no named case, figure or source material anywhere. ORG 3 (rung 4 fails: the single sprawling body block carries several jobs at once and drifts into licensing rules and a cruise-control option that do not bear on the pro position; unity breaks). DEV 3 (rung 3 yes on the worked-out collision scenario; rung 4 not reached in substance — support is general/speculative rather than specific, connections mostly asserted). CONV 3 (errors accumulate — \"in a argument\", \"they are completely do not need a driver\", \"the blame should be in the driver\", an omitted negative in \"Texting and driving would be as big of an issue\"; meaning recoverable but the reader re-reads; sentences run to one \"I think\" pattern). ARG 4 (rung 4 yes — the liability reason is actually reasoned; rung 5 fails: the technical-failure risk is met with a wish that \"the car should know\", not an answer, and the conclusion stays inside the prompt's for/against framing).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0678715",
+    "evidence_notes": "Claim: \"I don't think we should have driverless cars\" — stated only in the closing; earlier stance is that a self-driving car is \"of lazy\". Support: an assertion that a smart car won't pay attention to other people, a liability argument (\"The cops will go with you, because you are an human being that can get arrested and pay insurance, not the car\"), and one unintegrated source question dropped in quotation marks. ORG 3 (rung 3 yes; rung 4 fails — the controlling idea is weakly located, arriving at the end, and the close drifts: \"yes, this will be our future, but we can also prevent it from happening\"). DEV 2 (rung 3 fails — nothing specific anywhere: no named case, particular or figure; the lone quotation stands in for argument rather than supporting it). CONV 3 (\"is of lazy\", \"smar car\", \"an human being\", \"who is to blame you, or the car?\" — errors accumulate and force re-reading, sentences all one shape, but meaning stays recoverable). ARG 3 (rung 4 fails — the one because-clause explains why police blame a person, never why driverless cars should not exist; \"I believe there would be more accidents\" is asserted).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0679f5a",
+    "evidence_notes": "Claim: \"The author does a very good job at explaining and giving details of the passage\" — held and restated at the close. Support is drawn from the source and is concrete (800 degrees, hovering 30 miles up, still 170 degrees there, pressure 90 times greater, 97 percent carbon dioxide), but it is delivered as summary labelled \"very good information\" rather than analysed. ORG 4 (rung 4 yes — idea stated early and held, opening and closing present, every paragraph bears on it; rung 5 fails: the fact-blocks are freely interchangeable, and the last one wanders from volcanoes into the conclusion and returns). DEV 3 (rung 3 yes on the source figures; rung 4 fails — support is listed and praised, not connected: the reader supplies why any given fact shows the author argued well). CONV 3 (a heavy accumulation of spelling and spacing errors — diffrent, Farenheight, peopel, atmospherer, greatewr, diocide, extream, comotion, definetly — plus garbled clauses such as \"go one more dangerouse trips\"; the reader re-reads to repair but meaning holds). ARG 3 (rung 4 fails — reasons are asserted, never shown: the essay says the author covered good and bad facts but never why that makes the case effective, and later parts circle the opening).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "067a23d",
+    "evidence_notes": "Claim: \"The author supported his ideas very well\". Support consists of three quoted fragments stitched into the writer's sentences (\"venus is a worthy pursuit despite the dangers it presents\", earth's \"twin\", NASA's \"one compelling idea\") plus generic praise (\"He sounded like he knew exactly what he was talking about\"). ORG 3 (rung 4 fails — the middle unit starts on the author's balance and finishes as advice on how \"everyone should put together their essays\", a unity break plus digression; the close stops rather than closes). DEV 2 (rung 3 fails as support — the quotations are reported, never explained, and the essay's actual reasons are general praise; borrowed material stands in for the argument). CONV 2 (rung 3 fails — \"The ending was the best part on how he restated the question that he had at the begining by just puting together a couple paragraphs he learnd a thing or two about venus\" forces the reader to guess the intent; frequent run-ons and limited vocabulary). ARG 3 (rung 4 fails — the one non-restated reason, that he covered both good and bad, is asserted; the closing paragraph restates the opening).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "067d842",
+    "evidence_notes": "Claim: \"Electoral College is the easist way to handle the way of voting\" and \"should stay\". Support: a source-2 reference to elections being thrown to the House of Representatives, with the connection stated (\"This way the delegation people can pick who's good for president\"), followed by a block of near-verbatim source phrasing on the \"anachronism\", the \"mal-apportionment of the senate\" and majority-less elections. ORG 3 (rung 4 fails — the second body block opens with an anti-EC characterisation left unmarked and unanswered, and the preceding unit ends by reporting that many want to abolish the College; a part does not sit under the controlling idea). DEV 3 (patchwriting cap: the third paragraph is lifted phrasing lightly stitched, so the trait stops at 3 even though the House-of-Representatives point is specific and weakly connected). CONV 3 (errors accumulate — arent, easist, belive, regared, recives, missing punctuation — and the writer's own sentences need re-reading; meaning recoverable). ARG 3 (rung 4 fails on holding — the position is inconsistent: the counterpoint is raised twice and never answered, and one body block asserts the anti-EC framing before pivoting back).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0681136",
+    "evidence_notes": "Claim, stated at the end of the opening: the Face \"is just a natural rock formation on the red planet\". Support: the absence of NASA evidence for aliens, an incentive argument (\"If scientists knew Cydonia was created by aliens, they would definetly want to investigate this further\"), and a quoted resolution fact (\"you can discern things in a digital image 3 times bigger thatn the pixel size\") followed by the writer's inference that sharper pictures further prove a natural creation. ORG 4 (rung 4 yes — idea early, held, framed; rung 5 fails: the closing restates the opening and the single body block does not build on a preceding part). DEV 4 (rung 4 yes — the connection is stated for some support, but the quotation is dropped in unintroduced and mostly restated rather than interpreted, so rung 5 fails). CONV 4 (visible errors — \"Aliens not been proven\", definetly, thatn, \"it's shadows\" — but nothing needs repair; rung 5 fails on the omitted verb and the wrong-footing \"Though some people might believe this is untrue\"). ARG 4 (rung 4 yes on the incentive reasoning; rung 5 fails — believers are mentioned and waved off rather than answered, and the conclusion is what the prompt's framing already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0683ac3",
+    "evidence_notes": "Claim: the facial-coding technology \"would be valubale in a classroom\" for three named reasons. Support: three source quotations, each applied — the Facial Feedback quote is extended into a classroom action (a teacher tells an upset student to make a happy face); the \"smiling politician\" quote is extended both ways (spotting a hidden upset and a faked one); the lesson-modification quote is only restated. ORG 4 (rung 4 yes; rung 5 fails — the three supports are freely interchangeable, the preview and conclusion list them in the same order without any building). DEV 5 (rung 5 yes — support is specific throughout and most explanations add something the quotation did not say; rung 6 fails because the third explanation merely restates it). CONV 3 (rung 4 fails — \"if student his trying a student is trying to hide\" needs repair, and omitted verbs accumulate: \"how the students really feeling\", \"There many things\", \"it help tell\"; sentence shapes run to one formula). ARG 4 (rung 4 yes — the feedback-theory reason is reasoned; rung 5 fails: no opposing view, no qualification, no explicit governing principle, and the conclusion is what the prompt implies).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0687af4",
+    "evidence_notes": "Claim: \"Automated cars will be helpful in the future due to the safety brought by the introduction of promising technology, and the steady progress in the fields of robotics and cars.\" Support: Google's cars driving \"more than half a million miles without a crash\", the source's note that none are completely driverless and all \"notify the driver when the road ahead repuires human skills\" (turned into \"not all control is relinquished to the car... a driver assistance system\"), the radar-cost quotation contrasted with today's sensors, and dated industry plans (Tesla 2016; Mercedes-Benz, Audi, Nissan by 2020). ORG 4 (rung 4 yes; rung 5 fails — the two body parts are the two thesis prongs and could swap without loss). DEV 5 (rung 5 yes — specific throughout and most support interpreted, not just restated; rung 6 fails: the company timelines are listed and closed with a generic \"Progress is already happening\"). CONV 5 (rung 5 yes — real variety in length and shape under control, errors occasional and minor: maky, repuires, \"rather that drive\", \"a automated car\"; rung 6 fails on approximate wording such as \"better... than that of the human mind\"). ARG 4 (rung 4 yes; rung 5 fails — opposition is named only in the closing and answered by gesture at unnamed \"results\", and the conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0689c67",
+    "evidence_notes": "Claim: \"there are no alien origins to this landform\". Support: the 1998 reshoot ten times sharper showing nothing; the cold, cloudy weather objection met by the 2001 reshoot on a cloudless day with a better spacecraft; Jim Garvin, NASA's chief scientist, calling it a butte or mesa and a lava dome of the same height; and an incentive argument — NASA would gain history, funding and popularity from finding life, so \"It would be useless for NASA to not release information that could be beneficial to themselves\". ORG 4 (rung 4 yes; rung 5 fails — the third body part re-walks the 1976/1998/2001 photo chronology already given, adding little, so it and the first could swap). DEV 5 (rung 5 yes — support specific throughout and most of it interpreted; rung 6 fails on the repetitive third block and the unsupported \"old tales, myth, and folklore\"). CONV 4 (landfrom, livelyhood, absolutley, arguemnts, \"Mars,NASA\", and the tangled \"While many continue to believe given the reality\" cost a re-read, so rung 5 fails; sentence variety is genuine). ARG 5 (rung 5 yes — the cover-up objection is acknowledged and answered by showing it rests on a false assumption about NASA's motives, and the incentive conclusion is not implied by the prompt's framing; rung 6 fails — the objection answered is the convenient conspiracy version rather than the strongest case for the face, and the question is never reframed).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "068ad55",
+    "evidence_notes": "Claim: \"Changing to election by popular vote for the president is a wonderful idea.\" Support: an asserted chain that a more crucial vote forces \"solid research\" and stops people \"voting just because they like how someone looks, or because how they dress\", plus the claim that turnout rises \"Because each vote will be ten times more essential then it was before\". No named case, figure, example or source material. ORG 4 (rung 4 yes — position early and held, opening and closing present, both body parts bear on it; rung 5 fails: the research and turnout parts are interchangeable and the close restates the opening). DEV 2 (rung 3 fails — support is general throughout, and much of it is circular: the turnout claim is supported by restating that votes matter more). CONV 3 (errors accumulate — then/than three times, benifit, definately, \"an wonderful way\", \"Therefor i agree\", and \"The people are forced to decisions\" needs repair — but nothing has to be guessed). ARG 3 (rung 4 fails — the \"Reason being\" link only restates the position's premise that a vote is more crucial; later parts circle the opening in new words).",
+    "organization": 4,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  }
+]

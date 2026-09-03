@@ -772,3 +772,57 @@ sub-score with a cap rule)
     toward the human coupling rate v10's first job — with the note that the rubric-only LOO number
     (0.6358 vs v6's hand-ruled 0.5954 on identical trait scores) says roughly +0.04 of v9's gain came
     from replacing the rules alone, with no length at all.
+
+---
+
+## v9 validated out of sample
+
+75. **The frozen aggregator was validated on 500 essays it had never seen, and this is the first
+    number in the project that needs no sample-size caveat.** `personal_testing_set_1.csv` — 500
+    essays, zero overlap with the training 100, all present in `train.csv` so the gold scores exist.
+    Graded blind against the unchanged `rubric_v6.md`, 50 batches of 10, then scored by
+    `aggregator_v9.json` applied **frozen**: same three coefficients, same five cuts, no
+    re-estimation. The project constraint that only the 100 may be used for *fitting* is untouched —
+    checking a fitted model elsewhere is a validation, not a fit.
+
+    | | QWK | Exact | MAE | Bias |
+    |---|---|---|---|---|
+    | v9 frozen | **0.7501** | 61% | 0.418 | +0.08 |
+    | v3–v8 hand rules, identical trait scores | 0.4889 | 41% | 0.678 | +0.42 |
+    | rubric only (β2 = 0) | 0.5926 | 47% | 0.638 | +0.15 |
+    | word count only (β1 = 0) | 0.6231 | 51% | 0.562 | +0.13 |
+
+    v9 vs hand rules: **+0.2615, CI [+0.207, +0.315], 100% of 3,000 bootstrap reps.** Both features
+    load-bearing out of sample, both at 100%.
+
+76. **The transfer asymmetry is the real result, and it is a verdict on six versions of hand-tuning.**
+
+    | | training 100 | held-out 500 |
+    |---|---|---|
+    | v9 | 0.7392 (LOO) | **0.7501** |
+    | hand rules | 0.5954 | 0.4889 |
+    | v9 Spearman | 0.774 | 0.752 |
+    | hand-rules Spearman | 0.694 | 0.575 |
+
+    The three-parameter fitted map lost 0.02 of Spearman on unseen essays. The gate/band/weight-mass
+    rules lost 0.12 and a tenth of a QWK point. **Those rules were fitted parameters** — the severe-
+    weakness threshold at ≤2, the compensatory floor moved from 4–6 to 3–6 in iteration 4, the mass
+    threshold at 0.75, the band floors — every one chosen by hand against these same 100 essays and
+    adjusted when it disagreed with them. Calling them rules rather than parameters did not exempt
+    them from overfitting; it only hid it, because there was never a held-out set to expose it.
+
+    This does not impugn the reasoning behind them, which is documented across #27–49 and is sound as
+    reasoning. It says that reasoning applied to 100 examples produces numbers that fit those 100
+    examples. The methodological lesson for the project is narrow and firm: **a threshold placed by
+    hand is a fitted parameter and must be validated like one.**
+
+77. **What is still open, stated so it is not quietly forgotten.** corr(word_count, system_score) is
+    0.772 against the human raters' 0.650 — better than the 0.820 measured on the 100, which suggests
+    part of that overshoot was slice-specific, but still an overshoot. v10's first job is unchanged:
+    constrain β2 until the coupling lands near the human rate and report the QWK cost.
+
+    And the validation has a boundary worth naming. Both the 100 and the 500 come from the same
+    PERSUADE pool — same prompts, same genre, same rater pool. What has been shown is that β2 = 2.88
+    transfers across *samples*; what has not been shown is that it transfers across *corpora*. Until a
+    genuinely different source is tested, the length coefficient should be read as calibrated to this
+    corpus rather than to essay quality as such.

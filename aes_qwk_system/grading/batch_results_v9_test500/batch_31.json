@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "06cbce6",
+    "evidence_notes": "Recruitment pitch in Luke Bomberger's voice; claim 'join the Seagoing Cowboys' supported by named destinations (Greece, China, Panama), the onboard games list, and the writer's own before/after (two part-time jobs -> overseas voyages). org 4 (idea stated early, frame present, all parts relate, but the fun-and-helping body parts are interchangeable supports, so rung 5 fails); dev 4 (specific support - places, games, personal history - and connections stated, but the statements are 'as you can see' restatement and 'we can even save lives' goes unsupported, so rung 5 fails); conv 3 (accumulation of misspellings and missing apostrophes plus one long fused sentence about the horses/games force a re-read, so rung 4 fails); arg 4 (position committed and one reason genuinely reasoned - the job-to-adventure transformation explains why joining pays off - but the 'it's not all boring work' counter is only brushed aside and the conclusion is exactly what the prompt implies, so rung 5 fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06cf397",
+    "evidence_notes": "Claim: limiting car usage has three advantages. Source-drawn support: the five-day even/odd plate ban clearing sixty percent of smog, cars at 12% of European greenhouse emissions, car-free Vauban with two garages at $40,000; plus own arithmetic on gas ($3-4/gal, 30 gal = $90). org 4 (thesis previews three advantages and each body part delivers one; the three could swap freely, so rung 5 fails); dev 4 (specific source figures with stated connections - 'imagine if every city did this once a month' - but the exercise section offers no specific support at all, so specificity is not throughout and rung 5 fails); conv 3 (heavy accumulation - effecting, fro, emisssions, garadges, is'nt, would'mt, you're for your - and the Vauban sentence needs re-reading to repair, so rung 4 fails); arg 4 (reasons reasoned - gas costs avoided, bike parts cheaper than car parts - and two objections conceded and answered, but the conclusion is the list of advantages the prompt already asks for, so rung 5's advance clause fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06d32ab",
+    "evidence_notes": "Claim: join the Seagoing Cowboys, for three reasons (see new places/foods, help people in need, have fun). Support is mostly general gesture ('cities are different from other ones'), with one specific run from the source: the onboard table-tennis tournaments, fencing, boxing, whittling. org 4 (idea stated early and held, frame present, all parts on topic, but the reason-paragraphs are freely interchangeable, so rung 5 fails); dev 3 (one specific cluster - the games and the animals-for-meat/wool/money chain - but most support is general and listed, with the reader supplying the link to 'you should join', so rung 4 fails); conv 3 (dense misspellings - diiferent, langue, cultires, perduse, dieing - repetitive single-pattern sentences and fused clauses require re-reading, but nothing has to be guessed, so rung 4 fails); arg 4 (position committed and one reason reasoned - people are starving and homeless, so they need animals they can sell for money, therefore they need your help - but the anticipated 'that seems boring' objection is only deflected and the conclusion restates the opening, so rung 5 fails).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06d6248",
+    "evidence_notes": "Claim: studying Venus is a worthy pursuit. Support is two long block quotations from the source (97% CO2 atmosphere, 800 degrees F, 90x pressure; Venus once ocean-covered and Earth-like) plus the 30-miles-up / 160-degree mitigation. org 4 (hook, stated thesis, closing that ties the danger material back to 'travels shouldn't be limited by dangers'; but the two quoted units are parallel evidence that could swap, so rung 5 fails); dev 4 (support is specific and each quote gets a stated 'this quote shows...' connection, but every explanation restates the quote rather than interpreting it - and one misreads the quote as being about geography - so rung 5 fails); conv 3 (writer's own sentences carry weak or invented word choice - 'magnificant of a planet', 'endeavourous wonders' - and the closing sentence and 'that harsh conditions that cover it' need re-reading to repair, so rung 4 fails); arg 4 (position clear and held with one reason reasoned - worth studying because no other planet is so like our own - but the danger/value framing is the prompt's own and nothing gets past it, so rung 5 fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06d752e",
+    "evidence_notes": "Letter to a state senator claiming the electoral college should be replaced by popular vote. Support is source fragments: 17 states including South Carolina saw no candidates, about 60 percent prefer direct election, voters choose a slate of electors, Hawaii. Pro-electoral-college points from the same source ('avoids elections where no candidate gets a majority', 'the most thoughtful people should decide') are inserted approvingly and never answered. org 3 (position stated first but drifts, and the essay stops rather than closes - no closing at all - so rung 4 fails); dev 3 (specific figures present but listed as bare fragments with the reader supplying every link, and the borrowed phrasing - 'lack of democratic pedigree', 'winner-take-all method of awarding the electoral votes induces the candidates', 'other things being equal, a large state gets more attention' - is patchwritten, which caps at 3, so rung 4 fails); conv 2 (several sentences leave the reader guessing rather than repairing - 'retained because of its lack of democratic pedigree' reverses the source's sense, 'Winner-take-all... induces the candidates' never resolves, and the final voters sentence is unrecoverable - so rung 3 fails); arg 3 (position stated with commitment but not held throughout, since pro-electoral-college claims are asserted mid-essay as if the writer's own, so rung 4's 'clear position held throughout' fails and the reasoning stays asserted).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "06e25aa",
+    "evidence_notes": "Recruitment pitch built almost entirely from a retelling of the source's Luke Bomberger biography: UNRRA formed by 44 nations, nine trips, two weeks to cross the Atlantic and a month to China, hay bales and stalls, Crete and the Panama Canal, later hosting exchange visitors. org 4 (purpose stated in the opening sentence and returned to in the closing, and the biography relates to it, but the controlling idea drops out of the whole body and the closing only restates the opening, so rung 5 fails); dev 3 (support is specific but patchwritten - 'Bales of hay and bags of oats had to be pulled up from the lower holds' and the exchange-visitor sentence are near-verbatim source - and the material reports what the source says instead of arguing from it, which caps at 3, so rung 4 fails); conv 2 (frequent sentence breakdowns - 'the most of any Seagoing Cowboy was ever been through', 'sports they played', 'when he claimed his life with experience' - force outright guessing at intent, so rung 3 fails); arg 3 (position stated at the opening and closing and the middle is narration, with the only argumentative move being 'Luke enjoyed it, so join'; the essay circles rather than reasons, so rung 4 fails).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "06e2db4",
+    "evidence_notes": "Claim: the Facial Action Coding System is valuable in classrooms, reframed as an equity issue - shy students get the same access as vocal ones. Three cited quotations from D'Alto (action units and Eckman's six emotions; the ad/classroom-computer prediction; the facial feedback theory) each followed by the writer's own interpretation, plus 53-minutes-a-day and the orbicularis oris detail. org 4 (thesis previews three reasons and the body delivers them in order with a conceding conclusion, but the modify-the-lesson and positive-environment sections could swap without loss, so rung 5 fails); dev 5 (support specific and most of it explained in ways that add something - the quote about ad targeting is turned into a claim about absent and silent students - but the unsourced '90% body language' assertion and the hypothetical class of eighteen girls and fifteen boys are not, so rung 6 fails); conv 4 (varied, controlled sentences and generally apt word choice; misspellings are visible - environement, succsess, postivity, particpation - and two dropped words occur, but nothing has to be repaired to get the meaning, so rung 5 fails); arg 5 (reasons genuinely reasoned via stated causal chains, the accuracy objection conceded and answered in the conclusion, and the equity conclusion goes past what the prompt's 'is it valuable' framing implies; but the objection answered is a convenient one rather than the strongest, so rung 6 fails).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "06ed983",
+    "evidence_notes": "Claim: the Facial Action Coding System is valuable. Support is source summary - the Mona Lisa reading of 83 percent happy, 9 disgusted, 6 fearful, 2 angry; Eckman's 3-D model and action units; the frontalis pars lateralis example - with the value claim asserted around it. org 3 (the controlling idea is buried at the start of the second paragraph, paragraph one is pure summary with no position, and the third paragraph repeats earlier material while sliding from video tracking to games to surgery to nonverbal communication, so rung 4 fails); dev 3 (specific figures present, but the material is patchwritten - 'Using video imagery, the new emotion-recognition software tracks these facial movements' and 'a classroom computer could recognize when a student is becoming confused or bored' are lifted - and the link to 'valuable' is left to the reader, so rung 4 fails); conv 3 (errors accumulate steadily - aricle, indentify, paiting, eyuebros, regonition, there for they're - sentences run to one 'It can... I think...' pattern, and the Eckman sentence and 'communicate in nonverbal' need re-reading, so rung 4 fails); arg 3 (position clear and held but never justified: value is asserted repeatedly and the last paragraph restates the second in new words, so rung 4 fails).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "06ef6d4",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform, not alien-made. Support is thin - the illusion of eyes and a mouth, the shadow explained as a mesa, 'NASA found positive and reasonable points', and the absence of evidence for life - and the essay explicitly concedes the cover-up counterargument before rebutting it and shifting the burden to skeptics. org 5 (the rebuttal paragraph depends on the no-evidence point established before it and the closing lands on burden of proof, which the opening did not; no pair of body parts swaps freely, but idea-units do not each finish one job - 'everything is going just going how it was made to be' - so rung 6 fails); dev 3 (only the mesa/illusion detail is specific; the NASA claim and the everyday-landforms generalization are bare assertions with the connection left to the reader, so rung 4 fails); conv 3 (misspellings accumulate - lanform twice, haf, possiblilities, dont - and the counterargument sentences need re-reading to repair, though nothing has to be guessed, so rung 4 fails); arg 5 (position committed, the inference from no evidence of life to no aliens is reasoned, the cover-up objection is stated and answered, and the closing burden-of-proof move goes past the prompt's either/or; but the objection answered is the convenient conspiracy one rather than the appearance of the face itself, and the answer is asserted, so rung 6 fails).",
+    "organization": 5,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "06fa3b6",
+    "evidence_notes": "Claim: driverless cars are desirable and coming. Support: the Grand Canyon and Times Square scenarios (an hour to move one block) worked into an argument about enjoying the trip, then the safety case built on human error, distraction and drunk driving, answered by sensors. org 5 (the safety section hinges on the picture built in the enjoyment section - 'now you might be thinking this is very dangerous' - so the two cannot swap, and the closing adds cost and inevitability; but the final paragraph fragments into a list of assertions rather than each unit finishing one job, so rung 6 fails); dev 4 (the Grand Canyon/Times Square example is specific and its connection is stated, but the safety case rests on 'plenty of fatal accidents' with no named case or figure, so support is not specific throughout and rung 5 fails); conv 3 (varied sentence shapes but errors accumulate - compinies, tract, possinbility, sereny, casued, attetion, weather for whether twice - and the opening 'drive with the windows for about a year' has to be repaired before it reads, so rung 4 fails); arg 5 (the danger objection is conceded with a temporal qualification and answered by making the principle explicit - most driving is defensive driving against other people's errors - which inverts the prompt's danger framing; but the rebuttal is asserted rather than demonstrated and no boundary on the position is set, so rung 6 fails).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  }
+]
