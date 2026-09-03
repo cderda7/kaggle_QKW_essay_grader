@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "05dcee6",
+    "evidence_notes": "Claim: FACS 'can be helpfull and aslo can be not helpfull' in class; support = teachers could see student reactions and assign preferred work; counter = a student can fake the face, and the purchase could waste school money. All support is hypothetical and general, no named case or particular. org 3 (rung 4 fails: the controlling idea is the both-sides verdict, stated only in the final sentence, not early; opening is the prompt question restated); dev 2 (rung 3 fails: no named case, figure or realized example anywhere - 'a waste of money', 'shows what they are good at' are general gestures); conv 3 (rung 4 fails: missing spaces after periods and the 'Witch will help the students' fragment force repair re-reads; errors accumulate but meaning always recoverable); arg 4 (rung 5 fails: rung 4 met by the faking chain - student fakes the face, so the teacher misreads him, so the system misleads - but neither side is answered and the both-sides ending adds nothing past the prompt's framing).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05e1eae",
+    "evidence_notes": "Claim: Venus is not safe and the author's idea is to show 'how bad it could be'; support = 97 percent carbon dioxide, 800 degree surface, corrosive acid clouds, volcanoes/earthquakes/lightning, all from the article; connection stated once as 'In this peace of evidence in the artical it's shows whats it like in the Venus and how danger its can be'. org 3 (rung 4 fails: idea stated early but para 3's 170-degree figure contradicts the 800-degree claim and the closing drifts to Earth/Venus likeness, which does not bear on the danger idea; unity breaks); dev 4 (rung 5 fails: figures are specific and one connection is stated, but the statement only restates the support and the temperature evidence is garbled rather than explained); conv 2 (rung 3 fails: 'In this artical the scientists and the researchers how to figer out how to get close' and 'its cam be far above the planet not to close to the planets' force outright guessing, not repair); arg 3 (rung 4 fails: danger is asserted through listed article facts, the why is never stated; the essay circles the position and the final paragraph restates it).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "05e6736",
+    "evidence_notes": "Claim: driverless cars are 'unnessesary' and 'ridiculous'; support = California/Nevada/Florida/DC allow limited semi-autonomous use (listed, then partly conceded away), job loss, and an unresolved liability question answered with 'Probably the driver because he or she didn't took over'. org 3 (rung 4 fails: para 2 starts on state legality, concedes 'Yeah, it's okay to have driverless cars around', then jumps to jobs without returning - a part that does not bear on the controlling idea, and the position moves inside it); dev 3 (rung 4 fails: the one specific piece, the state list, is listed and never connected to the claim; everything else is rhetorical question and assertion, so the reader supplies the connection); conv 3 (rung 4 fails: 'they are going to be more accidents', 'didn't took over' and the 'Cars that humans can actually drive' fragment each need a repair re-read; errors accumulate); arg 4 (rung 5 fails: rung 4 met by the liability reasoning, and the counter that laws will adapt is met only with the assertion 'we are still not garunteed that we will be safe'; the conclusion gets no further than its own reasons).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05efbec",
+    "evidence_notes": "Claim: FACS is not valuable to students because it is expensive, is really for famous portraits, and is really for video games; three cited quotes (3-D model with 44 muscles; 'The Mona Lisa demonstration is really intended to bring a smile to your face'; 'make computer-animated faces more expressive... for video games or video surgery'), each followed by an inference the quote itself does not state (budget damage; curiosity-solving not learning; value lies with games). org 4 (rung 5 fails: the three reason paragraphs are parallel and marked 'Also'/'Lastly'; expense, portraits and games could swap places without loss); dev 5 (rung 6 fails: support is specific throughout and all three quotes are explained with added interpretive work, but the cost claim and 'does not mean the students will learn better' are asserted without support, so not every piece is specific and explained); conv 3 (rung 4 fails: 'Having a 3-D model computer in classes not less than a hundred is money consuming' needs repair to parse, plus 'useful mainly at expensive images', 'tehnologies', 'gemes', 'classroms' - errors accumulate and word choice is sometimes wrong for the context); arg 4 (rung 5 fails: rung 4 met by 'Having such prestige technology in class does not mean the students will learn better' and 'It only helps solve people's curiosity rather than help students', but the pro side is never engaged, nothing is qualified, and no governing principle is stated).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05f81ce",
+    "evidence_notes": "Claim: driverless cars are coming and are a good thing - fuel efficiency, safety, relaxation; support = quoted text on fleets using 'half the fuel of today's taxis', the Google car handover/driver-monitoring passage, and 'We have to interpert the driving fun in a new way'; concession paragraph names malfunction and failure to sense an accident, then answers with the principle that 'man kind can never experances the true joys of life without trial and error'. org 4 (rung 5 fails: fuel, safety and enjoyment paragraphs are parallel supports that could swap without loss, even though the concession sits deliberately after them); dev 4 (rung 5 fails: the fun quote is thin and its explanation only restates it, the relaxation claims and the concession paragraph carry no specifics, so support is not specific throughout nor most of it explained with added work); conv 4 (rung 5 fails: sentence variety is limited and misspellings are dense - 'effecent', 'saffer', 'pasangers', 'emviroment' - but they are phonetic and cost the reader nothing, so no sentence needs repair); arg 5 (rung 6 fails: rung 5 met by acknowledging the malfunction objection and answering it with an explicit governing principle plus the qualified conclusion that it will take time to perfect, but the objection chosen is a convenient one, the answer is a platitude, and the prompt's terms are not changed).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "05fa0f0",
+    "evidence_notes": "Opening hands back the prompt's own wording ('the author... suggests of studying venus is a worthy pursuite the dangers it presents') and never evaluates it; the rest is source facts - 97 percent carbon dioxide, over 800 degrees, 90 times the pressure, volcanoes and lightning, the 1800s gear-and-lever computer - reproduced in stitched source phrasing ('cloud-draped world', 'present additional impediments', 'enormously powerful, flexible and quick'). org 3 (rung 4 fails: a controlling idea appears in the one-sentence opening but there is no closing - the text stops mid-thought - and the mechanical-computer stretch is never related to it); dev 3 (rung 4 fails: no connection between any fact and the claim is ever stated, the facts are dumped; borrowed phrasing is patchwritten, which also caps here); conv 2 (rung 3 fails: 'Did you also know that farenneit and the atmosheric pressure is also 90 times greater' and 'to where it should be expanded to meet the very edges of imagination and invaion' require guessing intent, not repair); arg 2 (rung 3 fails: the position is the prompt's wording returned with no commitment added, and the essay never says whether the author succeeded).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "05fa43a",
+    "evidence_notes": "Claim: the emotion-reading technology is 'very valuable' in a classroom; support = Dr. Huang's quote that 'the facial expressions for each emotion are universal', the 44 facial muscles, and the Mona Lisa case, each followed by a restating gloss ('He is trying to say...', 'These new technology can actually calculate every emotion'). org 3 (rung 4 fails: the classroom idea is stated first but paras 2-4 are about public reaction, accuracy and Mona Lisa rather than the classroom, and para 2 starts on people's objections and finishes on how the software counts muscles); dev 4 (rung 5 fails: rung 4 met because each quote gets a stated 'what it shows', but the explanations restate rather than add, and the final paragraph's classroom claims carry no support at all); conv 3 (rung 4 fails: 'He is trying to say that even when people try to change the way their face acts.' is a fragment needing repair, 'These new technology' recurs, plus 'imotions', 'mucles', 'Scientst'; errors accumulate); arg 3 (rung 4 fails: no reason is reasoned toward the classroom claim - the essay asserts value and circles, closing by restating the opening; the objection that people dislike 'getting checked by a computer' is mentioned and dropped).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "05ff7b3",
+    "evidence_notes": "Claim: the emotion-reading software 'might actually be good for people' - therapy, school, producing emotions; support = the mixed-emotions/neutral-face quote applied to a realized therapy scenario, Dr. Huang's 'A classroom computer could recognize when a student is becoming confused or bored' applied to attentiveness and higher scores, and the Facial Feedback Theory quote applied to outgoingness and job prospects. org 4 (rung 5 fails: the opening previews three points and the three body parts deliver them in that order, but therapy, school and emotion-production are parallel and could swap without loss); dev 5 (rung 6 fails: all three quotes are specific and each is explained with a downstream consequence the quote does not itself state, but the closing claims about happiness and opportunities are asserted, so not every piece is specific and explained); conv 3 (rung 4 fails: the unpunctuated therapy run-on and the comma splices force repair re-reads, sentence starts are uncapitalised and 'nut now' must be repaired; errors accumulate but meaning is always recoverable); arg 4 (rung 5 fails: rung 4 met by the therapy chain - people misreport their feelings, the software detects the mismatch, so the therapist learns what to work on - but no opposing view is answered, nothing is qualified, and the governing premise stays an observation).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06041d8",
+    "evidence_notes": "Claim: the author did not give enough reason why exploring Venus is of great value; support = an inventory of the article by section - atmosphere and environment as the challenges, the blimp-like transport and mechanical-computer plans as the solutions, and only the last paragraph's 'insight' and 'hunger human curiosity' as value - with the proportion argument stated throughout ('For most the articel...', 'Mostly the other part...', 'briefly gave he reason'). org 5 (rung 6 fails: parts cannot swap - the solutions paragraph depends on the challenges paragraph and the value paragraph depends on both to land the 'only at the end, briefly' point - but the closing restates the opening rather than landing the argument somewhere new); dev 4 (rung 5 fails: the article's content is named specifically and the proportion connection is stated, but each item is listed rather than explained, and the essay never says why insight and curiosity are insufficient); conv 3 (rung 4 fails: 'the author was giving was reasons why there unmanned missons' and 'to use mechanical computers some modern technology wouldn't burn up and melt' need repair, plus 'humid' for hot and 'did not make enough evidence'; errors accumulate); arg 5 (rung 6 fails: rung 5 met by conceding that the author does give the value reason at the end and answering that it is too brief to count, reaching the non-obvious structural conclusion that the piece is about challenges and solutions - but the strongest objection is not engaged and the prompt's terms are unchanged).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "06047ac",
+    "evidence_notes": "Claim: a computer cannot tell what you feel, so using one to read emotion is unreliable; support = people 'put on a mask' (general), and a reductio against the article's facial-feedback claim - if smiling made you happy, 'why are there so many sad and depressing people out there' - plus a proposed test, using it on criminals to check truthfulness and remorse. No named case, figure or realized example anywhere. org 4 (rung 5 fails: opening claim, article summary, refutation and challenge do stand in order, but the closing only restates the opening and the summary unit wanders through 'you can move the muslces in your face' before returning); dev 2 (rung 3 fails: no specific support at all - masks, sad people and the criminals idea are general gestures, and the article is referenced without a single particular); conv 3 (rung 4 fails: the whole essay is unpunctuated run-ons and 'your' for 'you're' throughout, forcing repair re-reads, but meaning is recoverable and never guessed at); arg 5 (rung 6 fails: rung 5 met by stating the article's claim and refuting it with a consequence argument, reaching a conclusion about the technology's validity that the prompt's classroom framing does not imply - but the strongest objection, that muscle measurement is independent of self-report, is never answered and the criminals test is left as a rhetorical question).",
+    "organization": 4,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 5
+  }
+]

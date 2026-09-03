@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "04f1fc3",
+    "evidence_notes": "Hypothesized prompt: as a NASA scientist, argue the Face on Mars is a natural landform to someone who thinks aliens made it. Claim: aliens are not real, so aliens could not have made the Face. Support: bare assertion that aliens cannot create such things, plus a final 'fact' that the Face has a nose, mouth and eyes so no alien could have made it, which is circular and does not connect to the claim; no source detail used. org 3 (rung 3 last YES: controlling idea stated, but rung 4 fails - second part repeats the first without adding, frame perfunctory); dev 2 (rung 2 last YES: support offered but nothing specific anywhere - no named case, figure or realized example, and the 'facts' restate the claim); conv 3 (rung 3 last YES: meaning always recoverable, never guessed, but opening fragment and 'aliens was real'/'could of'/'their is' accumulate and force re-reading, so rung 4 fails); arg 3 (rung 3 last YES: position clear and committed in the writer's own words, but rung 4 fails - reasons are restatements of 'aliens are not real', never a why).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "04f47a5",
+    "evidence_notes": "Source-based: evaluates how the author of 'The Challenge of Exploring Venus' supports the idea that studying Venus is worth the danger. Claim: the author states the dangers bluntly and then answers 'why', which makes the pursuit persuasive. Support: two quotations from the source - the conditions that 'would crush even a submarine... and would liquefy many metals', and 'Astronomers are fascinated by Venus because it may well once have been the most Earth-like planet' - each followed by an interpretation of the author's purpose. org 5 (rung 5 last YES: dangers-then-'why' order is motivated and the second part depends on the first; rung 6 fails - closing restates the opening's 'look past the boundaries' rather than landing somewhere new); dev 5 (rung 5 last YES: both pieces of support are specific quotations and both are explained in ways that add interpretive work; rung 6 fails - several claims, e.g. 'certainly going to excite many astronauts', are asserted without support); conv 5 (rung 5 last YES: sentences vary in length and shape, rhetorical questions used purposefully, errors occasional and minor - 'astronaunts', 'blunty', 'to eager'; rung 6 fails - final paragraph is clumsy and the misspellings keep the word choice from reading as apt throughout); arg 4 (rung 4 last YES: at least one reason reasoned - the author states the danger 'not to frighten anyone but to bluntly state what the NASA scientists are up against'; rung 5 fails - no opposing view answered, no explicit governing principle, and the conclusion 'the author supports it well' is what the prompt's framing already implies).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "04f8928",
+    "evidence_notes": "Independent prompt: should driverless cars be developed. Claim: driverless cars should not be a thing. Support: electronics malfunction and a car could swerve into oncoming traffic, risking lives; driverless cars are for lazy people and would make licenses pointless; heavy testing should precede release. All reasoning is hypothetical and general; no named case or figure. org 3 (rung 3 last YES: controlling idea stated in the opening; rung 4 fails - no closing, the essay stops, and the final part's 'run a lot of tests first' drifts from 'shouldn't be a thing'); dev 2 (rung 2 last YES: support offered but rung 3 fails - nothing specific anywhere, only generic hypotheticals: 'what if the car malfunctions', 'electronics tend to malfunction alot'); conv 3 (rung 3 last YES: meaning recoverable, 'round alot of tests' repairable as 'run'; rung 4 fails - comma-spliced run-on about permits and licenses, spaced punctuation and 'Why? ,because' force re-reading); arg 4 (rung 4 last YES: one reason genuinely reasoned - electronics malfunction, therefore driverless cars put lives at risk; rung 5 fails - no opposing position answered, no explicit principle, conclusion stays inside the prompt's framing).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "04fcfb0",
+    "evidence_notes": "Source-based: argue against the claim that the Face on Mars was created by aliens. Claim: the formation cannot be an alien creation because there is no scientific evidence of aliens. Support: media and spin-off series promoted the alien story to keep audiences and make income; NASA reflew with a camera ten times sharper and the new pictures showed a landform; the formation is the Martian equivalent of a butte, common in the American West; Earth has natural objects that look like faces. org 5 (rung 5 last YES: belief-then-investigation-then-verdict, each part depending on the one before - 'As a result of the majority of people believing... NASA decided to fly over'; rung 6 fails - one unit splits mid-thought and the concession about Martian markings sits loose); dev 4 (rung 4 last YES: connections stated for some support, but the butte explanation restates rather than interprets and the Earth-faces claim is a general gesture with no example, so rung 5's 'specific throughout' fails); conv 3 (rung 3 last YES: meaning stays recoverable, but 'If you believe that the nearly two mile formation was staring back at the cameras was a face' and 'the way the face is portrayed to have been created and used for' must be re-read; errors accumulate - 'recieved', 'incom', 'makrings', 'buttle', 'natual'); arg 5 (rung 5 last YES: the believer's position is stated and answered with the reflight evidence, and the closing reaches a principle about assumption-making the prompt's framing does not imply; rung 6 fails - the pareidolia answer to the strongest objection is one undeveloped sentence with no case behind it).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0502b23",
+    "evidence_notes": "Source-based: should the value of emotion-recognition technology in classrooms be explored. Claim: I am for this technology; its benefits outweigh its drawbacks. Support: a realized hypothetical of a student who lost a loved one and does not want faculty to know, whose sadness the software would detect; answered by the greater good of detecting depressed or suicidal students; a qualification about inaccuracy from false emotions. org 3 (rung 3 last YES: controlling idea stated in the writer's own words, but rung 4 fails - it is buried at the end of the second paragraph, not stated early); dev 4 (rung 4 last YES: the connection between the lost-loved-one scenario and the position is stated via the greater-good weighing; rung 5 fails - the closing benefits, 'detect if students are actually learning', 'a threat to themselves or others', are general and listed, so support is not specific throughout); conv 3 (rung 3 last YES: meaning recoverable, but the comma-spliced 'But students may not want a machine reading their emotions at all times in a classroom, say that a student has lost a loved one...' and the subjectless 'But for the greater good... may out weigh the bad' require re-reading; 'neccesary', 'diffrent', 'benifits', 'truely', 'probaly' accumulate); arg 5 (rung 5 last YES: the privacy objection is raised and answered by a stated weighing principle, the position is qualified on accuracy, and the conclusion reaches self-harm and threat detection, which the prompt's framing does not imply; rung 6 fails - the objection is outweighed by assertion, no boundary condition, and the conceded inaccuracy is left unresolved).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0509d92",
+    "evidence_notes": "Source-based: whether the Face on Mars was created by aliens. Claim: people should not assume aliens made it without proof. Support: nobody has been to Mars, so nobody can have proof; the Face 'appeared in books, magazines, radio talk shows, and even haunted grocery stores as stated in paragraph 5', which is why people made assumptions. org 3 (rung 3 last YES: a controlling idea is stated in the second paragraph, but rung 4 fails - the opening is a roadmap of three questions with no position, so it is not stated early); dev 3 (rung 3 last YES: one specific piece, the borrowed and cited list of media appearances; rung 4 fails - its 'explanation' merely repeats the support - it appeared in so many places, so people made assumptions - and the other two sections are pure assertion); conv 2 (rung 2 last YES: sentences generally parse, but rung 3 fails - 'In addition to, the story people think that the Face was created by aliens' and 'people should not make any assumtions before they don't know the full story' force the reader to guess the intent; 'csn', 'theirselves', 'How does people', chained '?...' punctuation); arg 3 (rung 3 last YES: position clear and committed - 'I don't think they had proof'; rung 4 fails - the core reason is circular, you cannot assume without proof, and the essay circles by restating each self-posed question).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "051429c",
+    "evidence_notes": "Source-based: evaluate the author's claim that studying Venus is a worthy pursuit despite the danger. The opening hands the prompt's own sentence back, then quotes '97 percent carbon dioxide' and the 'challenging for humans to study' line; the conclusion says 'I think the author is right' while concluding 'NASA should not study it', the opposite of what the author argues. org 3 (rung 3 last YES: a controlling idea - Venus is dangerous, so do not study it - is stated, but only in the last line, and rung 4 fails on 'stated early': the opening is a bare title and quote with no orientation); dev 3 (rung 3 last YES: specific figures - 97 percent carbon dioxide, over 800 degrees Fahrenheit; rung 4 fails - the essay is quotation blocks lightly stitched, and where it comments it garbles rather than connects, 'which means the clouds of highly corrosive sulfuric acid'; patchwriting caps here); conv 3 (rung 3 last YES: meaning stays recoverable on re-reading; rung 4 fails - the predicate-less carbon dioxide sentence and the tangled 'I think the author means by that is humans can not really study Venus's because its in space' need repair; 'challengle', 'secong', 'its' for 'it's' accumulate); arg 2 (rung 2 last YES: a position is stated, but rung 3 fails - the opening is the prompt's wording handed back and the only committed stance appears in one final clause that contradicts the essay's own report of the author).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "0514ba2",
+    "evidence_notes": "Source-based: is the Electoral College fair and should it be kept. Claim opens as 'this system of elector votes is very useful for picking the country's leaders' and closes as 'the Electoral College is right but not fair'. Support: the 2000 election, where Gore had more popular votes but fewer electoral votes; the winner-take-all method; the argument that electors who vote against their voters are not wrong in themselves but betray citizens counting on them. org 3 (rung 3 last YES: controlling idea stated at the end of the intro, but rung 4 fails - the one-line 'popular vote is kind of fair' paragraph does not sit under it and the conclusion drifts into patriotic uplift outside the idea); dev 4 (rung 4 last YES: the 2000 election is a specific named case and the essay states what it shows - the electoral vote, not the popular vote, decides; rung 5 fails - the trust and efficiency claims are general assertions with no support); conv 3 (rung 3 last YES: meaning stays recoverable, but comma splices throughout and the broken 'One very important thing to consider is ... the reason why Bush won, there is a huge diffrence' force re-reading; 'systen', 'candinate', 'eletoral', 'righthous', 'benifets' accumulate); arg 4 (rung 4 last YES: reasoned that popular vote is the fairer route but less efficient than electoral votes, and that faithless electors are defensible yet betray their voters; rung 5 fails - the fairness-versus-efficiency conclusion is what a keep-or-abolish prompt already implies).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0516f28",
+    "evidence_notes": "Source-based: advantages of limiting car usage. Claim: 'Limiting car usage is a discrase' - cars are needed, and prices should be cut instead. Only one piece of source material is put to work (paragraph 12: almost 4,000 drivers fined, 27 cars impounded, with the writer's reaction that taking cars away is 'just crazy'); the remaining five paragraphs reproduce source text almost verbatim - Paris congestion down 60%, diesel at 67% versus 53.3%, 147 micrograms of PM, the Bogota car-free day and $25 fines - with no comment, and that material argues the opposite of the position. org 2 (rung 2 last YES: an opening part states a position and does a different job from the rest, but rung 3's controlling idea does not govern - there is no closing and the body parts stand in no recoverable relation to the position or to each other); dev 2 (borrowed material stands in for the argument: the essay reports what the source says instead of arguing from it, roughly three quarters of the text being reproduced source with the copied figures never attached to any claim; the single reacted-to example keeps it off band 1); conv 3 (rung 3 last YES: in the writer's own sentences meaning is recoverable - 'were fine' repairs to 'fined'; rung 4 fails - 'with out a car we cant go no where', 'discrase', 'multi millioner' and the comma-spliced reaction sentence require re-reading); arg 3 (rung 3 last YES: the position is clear and committed in the opening; rung 4 fails - 'why stop making cars when thats what we need the most' restates the position rather than showing why, and after the first paragraph the essay stops arguing altogether).",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "05182bf",
+    "evidence_notes": "Source-based: as a NASA scientist, argue the Face on Mars is a natural landform. Claim: the Face is a simple natural landform and aliens do not exist. Support: astronauts circling the planet 'found it to be a simple landform'; the image first appeared on a JPL web site; a definition of a lava dome as 'isolated from a mesa'; Neil Armstrong's footprints on the moon; 'some studies show that aliens were not exsisting at that time'. The essay repeatedly speculates a human visitor carved the Face with a pocket knife, contradicting the natural-landform claim. org 3 (rung 3 last YES: controlling idea stated early - 'the Face is just a simple landform which I believe it is'; rung 4 fails - the Armstrong footprint and pocket-knife material does not relate to it, and units start on illusion and end on carving); dev 3 (rung 3 last YES: the lava dome and JPL details are specific, but rung 4 fails - the lava dome is defined and never connected to the position, the astronaut support is circular, and the Armstrong example was discarded as not bearing on its claim; borrowed mesa/lava-dome phrasing is patchwritten and garbled); conv 3 (rung 3 last YES: meaning stays recoverable, 'crave' repairs to 'carve'; rung 4 fails - the opening two fragments carry no main clause and the pocket-knife run-on needs repair; 'exsist', 'someting', 'cetain', 'a alien' accumulate); arg 3 (rung 3 last YES: the position is stated with commitment and, per band 3(a), inconsistent holding is admitted here; rung 4 fails - the one candidate reason, that human-looking things can be illusions, is derailed by its own next clause proposing the Face was carved, so reasoning is asserted, never shown).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  }
+]

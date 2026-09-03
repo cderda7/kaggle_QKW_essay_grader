@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "0581013",
+    "evidence_notes": "Claim: the Face on Mars is not a face/life. Support: source quote on the 'enormous head nearly two miles' and Garvin's Middle Butte/Snake River lava-dome comparison, both tied back to the claim. Org 4 (thesis first, frame present, all parts relate, but the two reasons swap freely). Dev 4 (specific quoted support, connection stated but by restatement - 'the life would not be enormous I can tell you that'). Conv 3 (errors accumulate: 'definitally', 'artical', 'Another reason why the face isn't life on mars it that' - reader re-reads to repair, never guesses). Arg 4 (one reason genuinely reasoned - similar landforms exist on Earth, so why would Mars life produce them - no opposing view, no move past prompt's framing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "058ecd3",
+    "evidence_notes": "Claim: limiting car usage is good, via environment / money / community. Support: Rosenthal EPA 'car reduced' quote, Duffer's 4,000 fines and 67 percent diesel figure, Bogota parks/sidewalks quote. Org 4 (intro-three supports-conclusion executed cleanly; the three body parts are interchangeable). Dev 4 (support specific and quoted, connection stated but the 'which shows' tags restate the quote, and the Bogota quote is bent to fit). Conv 3 (accumulated errors - 'enviroment' throughout, 'th esmog', 'would would' - meaning recoverable but re-reading needed). Arg 4 (the community reason is reasoned: less driving means walking/biking means neighbor contact; no counterargument answered, conclusion is what the prompt implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0595f5d",
+    "evidence_notes": "Reports the Mona Lisa/FACS article rather than arguing; nearest thing to a position is 'Is not magic, is just technology'. Support: 83/9/6/2 percent figures, Huang and Sebe, the 3-D model process, Ekman's six emotions - all reproduced from the source. Org 5 (controlling idea early, parts genuinely dependent - system introduced, then its process, then the human analogy referring back to 'this same calculation' - closing answers the opening question; no nameable argumentative move, so not 6). Dev 3 (specific but patchwritten - source phrasing lightly stitched, e.g. 'experts at developing better ways for humans and computers to communicate' - caps at 3). Conv 2 (reader must guess: 'this actually is not like math homework when we can calculate', 'really extented', 'What will can do next?'). Arg 2 (position is a bare topic statement; what follows is source report, not reasons).",
+    "organization": 5,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "059af98",
+    "evidence_notes": "Claim: studying Venus is a worthy pursuit despite dangers, because of human curiosity and innovation. Support: 97 percent carbon dioxide, sulfuric acid quote, 800 degrees / 90x pressure / crushes a submarine, 'covered largely with oceans' quote, gears-and-levers quote from paragraph 7. Org 4 (thesis early and held, full frame, but the atmosphere and temperature paragraphs swap freely). Dev 4 (specific throughout; the danger facts are listed, and where connection is stated - 'These experiences can innovate many other technology' - it restates rather than interprets; the light-penetration sentence sits in the curiosity paragraph and was discarded). Conv 3 (errors accumulate - 'a thick blankets', 'despite of the many danger is upholds', 'inhospital' - repair by re-reading, no guessing). Arg 4 (innovation reason is reasoned; dangers are conceded structurally but never answered, and the conclusion is what the prompt already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "059f496",
+    "evidence_notes": "Claim: facial-emotion-recognition technology would be valuable because it could solve real life problems. Support: D'Alto's muscle-calculation explanation and the quoted Huang line about a classroom computer detecting confusion and modifying the lesson. Org 4 (hook, claim early, one developed support, closing; only one body part, so no built sequence to affirm). Dev 4 (the classroom support is specific and its connection stated - 'helpful because it could help people with things such as school' - but stated by restatement, and the mental-illness/suicide claim is left wholly unsupported). Conv 4 (misspellings 'Faciak', 'techonlogy', 'valubale', 'societcy' are visible, plus a truncated quotation, but nothing needs repair; sentence shapes vary only modestly, so not 5). Arg 4 (one reasoned chain: detect emotion, computer notices confusion, lesson adapts; no counterargument, no qualification, conclusion is the prompt's).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05aacdb",
+    "evidence_notes": "Claim: a world with limited car use makes people happier. Support: Vauban 70/57 percent and the Heidrun Walter quote, Duffer's 22-euro fine, 4,000 motorists and 60 percent congestion drop, EPA 'car reduced' communities. Org 3 (sprawling opening that carries several jobs before the thesis; no closing at all - the last body paragraph simply stops - and the Paris paragraph wanders into speculation about a population dying). Dev 4 (specific and cited throughout; explanations mostly recast the quote - 'According to Elizabeth Rosenthal's statistic Vauban's citizens are happy' - though the traffic/pickup inference adds a little). Conv 2 (frequent run-ons and words used wrongly enough to obscure: 'to acounter the partial ban', 'mattering on its out come', 'restrictment' - the reader guesses, not just repairs). Arg 4 (reasons reasoned - the ban removes gas and repair stress - and the 'people think driving is the only way, but there are many ways' move answers an objection, yet the conclusion never gets past what the prompt implies, so rung 5's second condition fails).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05adbff",
+    "evidence_notes": "Electoral College essay that ends undecided: 'its kinda in between on wanting to have it or not'. Support: candidates ignore some states, voters feel their votes don't count, upstate voters are attentive - all general assertions with no named case, figure or realized example. Org 3 (opens mid-argument on an unnamed 'process' with no orientation; the second paragraph starts by attacking the Electoral College and finishes crediting it). Dev 2 (support is general throughout - rung 3 fails, nothing specific anywhere - and no connection is drawn). Conv 2 (long unpunctuated runs like the paragraph-2 sentence force the reader to guess what was meant). Arg 2 (position is vague and barely engages the issue; what look like reasons restate the same non-committal stance).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "05ae003",
+    "evidence_notes": "Pro-car-reduction essay built almost entirely from quoted material: Walter quote, EPA 'car reduced', 22-euro fine and 67 percent diesel, Bogota's third straight car-free day in a city of 7 million, the Plaza quote, the Sivak quote. Org 3 (controlling idea stated, but the essay ends with no closing - it trails off into the Volt - and unity breaks where the writer doubts his own claim, 'which I highly doubt'). Dev 3 (specific but the Sivak paragraph reproduces source phrasing unquoted - 'beneficial implicants for carbon emissions... second lagest source of America's emissions' - patchwriting caps at 3). Conv 2 (guessing required at 'the more we use alternative transportation is more money the goverment and the people that doing they're jobs' and 'does not any gas run'; lowercase starts and run-ons throughout). Arg 3 (position is clear but reasoning is asserted or handed to the quotes, with evaluative asides like 'was a great idea' standing in for a stated why; critical thinking is inconsistent - the trend claim is contradicted by 'almost everybody has a car these days').",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "05b01a4",
+    "evidence_notes": "Claim: studying Venus is a worthy pursuit because of the discoveries it could yield, including preventing Venus's fate on Earth. Support: 800 degrees and 90x pressure, proximity relative to space-travel timeframes, a hovering vehicle, silicon carbide electronics tested in Venus-like conditions lasting three weeks, mechanical gear-and-lever computers. Org 5 (body is a dependency chain - getting there, then surviving above the surface, then the limits of hovering forcing surface-capable technology - so no pair swaps without loss; the closing restates the opening rather than landing somewhere new, so 6 fails). Dev 5 (specific throughout and most support explained in a way that adds something - the hovering vehicle 'would still be able to get data... without burdening itself'; the prevention claim in the thesis is never supported, so not every piece, so not 6). Conv 5 (varied sentence shapes under control - concessive openers, example sentences - errors only occasional and minor: 'persuit', 'Fahrenheight', 'the the'; word choice is correct rather than apt, so not 6). Arg 5 (objections raised and answered - heat answered by hovering, limited insight answered by new technology - and it reaches the Earth-catastrophe stake the prompt does not imply; it does not reframe the question, so not 6).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "05b0858",
+    "evidence_notes": "Thesis is the prompt's own wording plus 'because of the challanges and resources that may occur'. Support: the NASA 'float above the fray' quote, 'value of returning to Venus seems indisputable', the mechanical-parts resistance quote, the rocky sediment/valleys/mountains/craters quote. Org 4 (thesis early and held, a paragraph for each of the two named reasons, a closing; the challenges and resources paragraphs are interchangeable). Dev 3 (quotes are specific, but the paraphrases distort the source - 'nobody has the problem of going to venus for a study' from the 'indisputable value' quote - loose paraphrase that no longer says what the source said, capping at 3). Conv 2 (meaning is obscured repeatedly and the reader must guess: 'second plannet closest planet closest to the sun', 'because of their preventions', 'the problem of coming back survived and healthy', 'could solve the solution of the pressure'). Arg 2 (prompt's framing handed back with no commitment added, and the reasons are restatements of the position - 'Studying Venus is a worthy pursuit by seeing what people are capable of managing to do').",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "05b31a1",
+    "evidence_notes": "Claim: Venus is dangerous but not uninhabitable, and exploration is worth it 'only if we have the correct equipment'. Support drawn from the source article: the para-3 danger list (sulfuric acid clouds, metal-melting heat, 90x pressure), Venus's past Earth-likeness, and NASA's three approaches (hovering, Venus-tailored simple electronics lasting 3 weeks, 1940s mechanical computers), each tied back to the feasibility claim. org 5 (thesis early and held; the solution parts are dependency-ordered - hovering rejected, then tailored electronics, then 'if those do not work' the mechanical fallback - so no pair swaps freely; stops short of 6 because the closing only restates support for the author); dev 5 (support specific throughout and most of it explained with interpretive work - clouds too thick 'thus rendering the idea useless', mechanical is slower 'but MUCH more durable' - not every piece explained, the 'oceans and rock formations, even theoretical life' item is listed); conv 3 (errors accumulate - sulfiric, wouldnt, foreward, 'did an outstanding job supports this idea', and chained comma splices in the final sentence; meaning always recoverable but I re-read to repair 'The only issue, as provided by the author, wouldnt work'); arg 5 (objection 'Why go through the trouble if the conditions are so horrible?' is raised and answered, and the position is qualified on having the right equipment; reaches past the prompt by redefining uninhabitable as 'impossible'; not 6 because the reframe is asserted once and never applied)",
+    "organization": 5,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "05b37db",
+    "evidence_notes": "Claim: against using technology to read students' emotions. Reasons: technology is for work not emotions, 'we aren't lab rats', you should already know your own feelings, facial expressions already communicate (upset/smiling-but-faking), the device is a waste of time, and 'all it did was just show a painting's emotions'. org 4 (position stated in the first lines and held, opening previews and a 'Therefore' closing is present, and every body unit bears on the anti-position; fails rung 5 because the middle is an undifferentiated blob whose reasons could be reordered at will); dev 3 (rung 3 met by the painting particular and the upset/smiling illustration, but rung 4 fails - the supports are listed and the reader supplies the link from 'expressions should tell them how you feel' to 'the device is unnecessary', and 'we aren't lab rats' is never supported); conv 3 (errors accumulate - 'yo uuse', 'technology ran device', 'reasons on way I am against it' - and I re-read to repair several, but nothing forced an outright guess); arg 3 (position clear and committed, but reasoning is asserted rather than shown - 'you use technology for working not reading emotions', 'it makes no sense to me' - and the closing circles the opening)",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "05bcd1b",
+    "evidence_notes": "Opens as a report on what the author supplies (closeness, dangers, conditions, terrain), then states its own position mid-essay: 'venus is not habitable at all'. Support: thick carbon dioxide atmosphere 'wich makes it hard for humans to actully get through', no spacecraft surviving more than a couple of hours, pressure 90x Earth's, and hovering as the only safe study method. org 3 (rung 3 met - controlling idea is stated in the writer's own words - but rung 4 fails: it is weakly located in the second paragraph behind an unoriented source-summary opening, and the essay stops rather than closes on 'arent even able to get samples'); dev 4 (support is specific - the 90x figure, the couple-of-hours survival - and the connection is stated, weakly and by restatement: 'wich makes it hard for humans to actully get through', 'just to keep scientists safe'; fails rung 5 because the opening paragraph is wholly general and most facts are listed); conv 3 (heavy accumulation - 'th author', 'goives', 'eaving star', 'miss leading', 'srtonger', uncapitalized sentences, 'Venus's is so much of a dangerous planet' - forcing repeated re-reading, but each spot is repairable rather than a guess); arg 3 (position is committed once it arrives but sits oddly against the opening frame, and the reasoning is a list of hazards asserted to entail uninhabitability rather than a stated why)",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "05c2752",
+    "evidence_notes": "Opens undecided - 'One part if me thinks that we should have driverless cars but another part of me thinks that we shouldn't' - runs a chain of what-if questions about liability, repairs and computer failure, offers navigation and fewer accidents as benefits, and lands late on 'Before they realise the car I think that they should have better technology first'. org 3 (rung 3 met - a controlling idea is stated in the writer's own words - but rung 4 fails: it arrives only in the last paragraph, the opening is an ambivalence rather than an orientation, and the closing 'That is my opinion' stops rather than closes); dev 2 (rung 3 fails - after the what-if questions there is no named case, figure or realized particular anywhere; the source is never drawn on, and 'Google cars' appears as a prediction rather than as support); conv 2 (rung 3 fails - 'I also idea because what if you have to call someone' forced me to guess the intent, as did 'Before they realise the car'; chained run-on questions and 'doesn;t', 'foir', 'definaltyu'); arg 3 (the position drifts pro-then-con and only settles at the end, and its own reasons are asserted - 'I don't think a computer can be smart enough just yet' - while the counter-considerations are raised as unanswered questions)",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "05c4acd",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform, not an alien artifact. Support taken from the source: the April 5 1998 photo 'ten times sharper than the original Viking photos' and the JPL site revealing a natural landform (para 7), and the para-12 butte/mesa comparison with a quoted lava-dome line. org 4 (thesis in the first sentence and held, conventional frame with a real conclusion, all parts on topic; rung 5 fails because the para-7 and para-12 evidence paragraphs are interchangeable and the convince-the-skeptic paragraph sits between them without depending on either); dev 4 (support is specific - date, resolution, named source paragraphs, direct quotation - and the connection is stated for some of it, but by restatement: 'NASA has proof the it is a natural monument. I would show them the photos and have proof that it was'; the para-12 quote is dropped with no explanation, so rung 5 fails); conv 3 (accumulating errors - papragraph, Alo, ailen, lanfrom, Therefroe, 'a alien' - plus the broken 'If the person who still thinks it was created by aliens is stupid because...' and a sentence fragment around the para-12 quote; repairable but I re-read); arg 4 (one reason reasoned - the sharper photo revealed a landform, therefore the alien reading is wrong - and the other side is named but only dismissed as 'stupid'; the conclusion is exactly what the prompt's framing implies, so rung 5 fails, and 'It had to be God' is an unexamined wobble)",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05c8b2d",
+    "evidence_notes": "Written in NASA's voice; claim: the Face is a rock formation, no aliens made it. Support from the source: Viking 1 orbiting Mars in 1976 and photographing the mesa, the shadow explanation for why it reads as a face, and the Middle Butte in Idaho's Snake River Plain as a terrestrial analog. org 4 (position and 'Here is why' in the opening, held, conclusion present, all units on topic; rung 5 fails because the Idaho analog and the NASA-cover-up unit could swap freely, and the conclusion largely re-runs the intro); dev 4 (specific support - 1976, Viking 1, the named Idaho butte - and the connection is stated for the central piece: 'it was just a mesa that when the shadows hit it it made it look like a face'; rung 5 fails because the Idaho analog and the cover-up denial are left unexplained); conv 2 (rung 3 fails - 'And that nasa's budget wish there was an ancient civleization on mars' and 'When we noticed it eas just a mesa in the face' forced me to guess rather than repair; pervasive misspelling - satilite, herad, thoght, civleization, excicst - and choppy fragments); arg 4 (one reason genuinely reasoned - shadows on a mesa produce the face, so no maker is needed - and the alien believers are acknowledged; rung 5 fails because the conclusion is the one the prompt's framing already implies and the cover-up claim is denied by assertion)",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05c94e5",
+    "evidence_notes": "Claim: Venus is worthy of study, on three previewed grounds - proximity saves travel time, Earth-like surface features, and weather/danger discoveries. All three are anchored in quoted source material with paragraph citations: 'our nearest option for a planetary visit' (Par. 4), 'rocky sediment... valleys, mountains, and craters' (Par. 4), and 800 degrees Fahrenheit with 90x atmospheric pressure (Par. 3). org 4 (thesis stated early with a three-part preview and held, full frame; rung 5 fails - the three supports are signposted 'Secondly'/'Lastly' and could be reordered at will, and the conclusion repeats the thesis nearly word for word); dev 4 (support is specific throughout via quotation, and connections are stated - 'Because Venus is a closer planet to Earth time could be saved' - but they restate the quoted material rather than interpret it, and the temperature quote is followed only by 'Taking time to discover Venus could be a great thing', so rung 5 fails); conv 4 (errors visible - worhty twice, similarties, familiiar, appeasr, missing spaces - but they do not accumulate into a reading cost; longer sentences occasionally lose their grip, as in 'reasoning for the temperatures and dangers of Venus could possibly be prevented', which is band 4's inconsistent control rather than band 3's accumulation); arg 4 (one reason reasoned - proximity means less travel time lost - but the danger objection is conceded and answered only with the circular speculation that studying Venus might remove the dangers, and the conclusion is the one the prompt's framing implies)",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05cafcf",
+    "evidence_notes": "Claim: using the Facial Action Coding System in schools would be valuable, on three previewed grounds - it shows teachers whether students understand, it helps students read each other, and it could run on school devices. Support is largely personal and hypothetical: the writer pretending to follow a lesson rather than ask questions, a 'resting face that makes me look angry at the world', the school's laptops, guidance counselors, and the system's ability to identify mixed emotions. org 4 (thesis stated early with a three-part preview and held, full frame; rung 5 fails badly - the one-sentence units are freely reorderable and the thesis is repeated verbatim near the end); dev 4 (rung 3 met by the resting-face particular, and connections are stated - 'If the device shows students are confused or bored, the teacher could modify the lesson' - but most support is hypothetical rather than specific and the explanations mostly restate the benefit, so rung 5 fails); conv 5 (only occasional minor slips - eachothers, exremely, emtions, percieving - nothing costs the reader anything, and sentences do vary in length and shape from short declaratives to long conditional-compound constructions; rung 6 fails, the word choice is merely correct and the language does no positive work); arg 4 (one reason reasoned - the device surfaces information about students who will not speak up, which teachers can then act on - but no opposing consideration is raised, the advocacy is unqualified, no governing principle is stated, and the conclusion is what the prompt's framing implies)",
+    "organization": 4,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "05cb18a",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys program because you get a cruise, fun and animals. Support comes from the Luke article: checking on the animals, falling down the stairs and breaking a rib, wanting to finish work so as not to get fired, and possibly showing visitors around. org 3 (rung 3 met - the controlling idea is stated outright at the start and the end - but rung 4 fails: the long undifferentiated middle contains parts that do not bear on 'you should participate', notably the broken rib and the not-getting-fired material, and units repeat without adding); dev 3 (rung 3 met by the specific rib incident and the animal-checking duty, but rung 4 fails - nothing states how any of it shows the program is worth joining; the reader supplies every connection, and the rib injury is left to cut against the claim); conv 2 (rung 3 fails - 'if you see them and you trouble like trying to get there animals to eat' and the 60-word chain about talking to friends and giving visits forced me to guess; pervasive run-ons plus 'I'am going to convincing you', 'participate and the program', 'he don't wont'); arg 3 (a committed position, but the reasons are asserted and circular - participate because it is fun because you get to be on a cruise - and the closing restates the opening)",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "05d73d1",
+    "evidence_notes": "Claim: driverless cars would be efficient and beneficial. Support from the source: Sergey Brin's claim that the cars would use half the fuel of today's taxis, tied to fuel scarcity, and sensors that 'apply brakes and reduce power from the engine, allowing far better response than a human driver could manage'. A concession paragraph grants the cars are not yet fully driverless. org 4 (thesis in the opening and held, full frame, everything on topic; rung 5 fails - within the first body paragraph the fuel, multitasking and safety supports could be reordered without any loss); dev 4 (support is specific and attributed - a named authority, a figure, a marked paraphrase from the text - and the fuel point is explained in a way that adds something: 'Since we're already started to run out on this fuel'; rung 5 fails because the sensor evidence is followed only by 'More improvememnts could make driving much more safer' and the third paragraph is general assertion throughout); conv 4 (errors are visible - effeiciant, drivng, completly, improvememnts, 'much more safer' - but nothing needed repair on a single reading; rung 5 fails because the sentences run to one shape, a near-constant 'X would be very Y' modal frame); arg 4 (one reason reasoned - halving fuel matters because supplies are running out - and a limitation is acknowledged and answered with funding, but the conclusion that the technology will improve and benefit people is exactly what the prompt's framing implies)",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  }
+]

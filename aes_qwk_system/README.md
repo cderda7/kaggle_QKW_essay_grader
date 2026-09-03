@@ -6,8 +6,18 @@ using Quadratic Weighted Kappa (QWK), the competition's own metric. Built as ver
 runs — v1 is the original implementation, v2–v4 are rubric revisions — so each change's effect
 on QWK is directly comparable rather than overwriting prior results.
 
-**Latest result: v9 QWK = 0.7392, leave-one-out** — the first version past 0.70 and the first to beat
-v4 (0.6584). Exact agreement 48% → **62%**, MAE 0.57 → **0.43**, bias +0.41 → **+0.03**, and Spearman
+**Latest result: v9 QWK = 0.7501 on 500 held-out essays** (`personal_testing_set_1.csv`), with the
+aggregator applied **frozen** — fitted on the 100, never refit. The hand-written rules it replaces
+score **0.4889** on the same trait scores. ΔQWK **+0.2615, 95% CI [+0.207, +0.315], 100% of bootstrap
+reps.** At n=500 the SE ≈ 0.053 problem that made every comparison from v1 to v8 unresolvable is gone.
+
+**The map transferred; the rules did not.** v9 went 0.7392 (LOO on the 100) → 0.7501 on unseen essays,
+losing 0.02 of Spearman. The hand rules went 0.5954 → 0.4889, losing 0.12 of Spearman. Six versions of
+hand-placed thresholds turn out to have been fitted parameters, tuned to those 100 essays, whether or
+not they were called that. Full reporting in `evaluation/results_v9_test500.md`.
+
+**On the training 100: v9 QWK = 0.7392, leave-one-out** — the first version past 0.70 and the first to
+beat v4 (0.6584). Exact agreement 48% → **62%**, MAE 0.57 → **0.43**, bias +0.41 → **+0.03**, and Spearman
 0.694 → **0.774**, which is the project's first *ranking* gain rather than another rearrangement of a
 fixed ranking.
 
@@ -237,6 +247,13 @@ aes_qwk_system/
                                          system_cap_source (triage / floor / both / none), which is
                                          what makes the floor-only vs read-only vs both ablation
                                          column arithmetic on one file instead of three runs
+    batches_test500.json              — the 50 batches of 10 for personal_testing_set_1.csv
+    batch_results_v9_test500/batch_00..49.json — trait gradings for the 500 held-out essays, same
+                                         rubric_v6.md instrument, graded blind
+    predictions_v9_test500.csv        — the 500 scored by the FROZEN aggregator, with
+                                         system_v4_rules_holistic alongside: what the v3-v8 hand
+                                         rules would have said about identical trait scores. That
+                                         column is the out-of-sample comparison
     predictions_v9.csv                — v9 per-essay results, every row a leave-one-out prediction.
                                          Adds system_continuous_score, system_band and the two
                                          feature values, so each band decision stays checkable per

@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "085f158",
+    "evidence_notes": "Letter to a senator arguing to keep the Electoral College; support is quoted/patchwritten source material (538 electors/270 needed, the 2000 Gore 'fiasco', Obama 61.7% electoral vs 51.3% popular, Nixon 1968 and Clinton 1992 at 43%), plus relayed Posner points on swing states, big states and run-offs, most of which sit next to the claim rather than under it. org 3 (controlling idea stated up front but the 2000/Gore and 'unfair outdated and irrational' material is a part that does not relate and is never answered; unity breaks inside units); dev 3 (specific figures present, but source phrasing is stitched in with little transformation - patchwriting caps here - and pieces are listed for the reader to connect); conv 2 (at least once I must guess, not repair: 'they can't recieved gain of votes where ever there from or very well favored'); arg 4 (one reason actually reasoned - no candidate wins a majority, so run-offs follow and complicate the election - drift does not block this rung, but the anti-EC material it raises is never answered).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08629e7",
+    "evidence_notes": "Claims the Facial Action Coding System is not valuable in a classroom; concedes it suits the Mona Lisa, then argues students will attend less, the system misreads a merely serious face, and it will make people lazier and reduce communication. org 4 (thesis first sentence, frame present, all body parts on the claim, but the distraction / can-fail / laziness parts could swap freely and para 3 opens by restating the thesis); dev 4 (Mona Lisa named and the serious-face student is a realized example, and the connection is stated - the system reads the face not the feeling - but the explanations mostly restate and support is not specific throughout); conv 3 (errors accumulate and I re-read the opening Mona Lisa sentence and 'If you have the FACS have them identify their emotions they will pay even less more attention' to repair them); arg 4 (one reason genuinely reasoned - appearance is not feeling, so the reading fails - but the Mona Lisa qualification is dropped after the opening and the conclusion is exactly what the prompt implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0863447",
+    "evidence_notes": "Source-based response claiming the author supports Venus study well; two quotations (hottest surface temperature of any planet; 'Evening star', brightest point of light) each followed by a 'so this means' gloss, surrounded by general praise ('he added facts', 'good look passages'). org 3 (opening is a personal aside that barely orients, and the conclusion both introduces new evidence and slides from 'the author supports well' to 'studying Venus is worthy' - the position moves and the closing unit does two jobs); dev 4 (the temperature quote is specific and the connection is stated - it shows Venus is too hot to step foot on - though the explanation only restates the quote, and the evening-star gloss does not bear on the claim); conv 3 (errors accumulate - 'he have good look passages', 'thr', 'I have went' - and I re-read to repair, but meaning stays recoverable); arg 3 (position clear but reasons are asserted, never shown - 'supports the idea very well because he added facts' - and the close circles back to the opening claim).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "08669b6",
+    "evidence_notes": "Urges the reader to join the Seagoing Cowboys program; support is a list of assertions (fun, cool things, opportunities, dirty and rough work, severe injuries) with one concrete borrowing from the article - animals fed or watered two or three times a day, plus cleaning and moving heavy objects. org 3 (thesis and closing exhortation are present, but the injuries paragraph starts one job and finishes another, and the 'it is fun' part is repeated in three places without adding); dev 3 (one specific chore drawn from the source, everything else general, and support is listed with the reader supplying the connection; 'it is really fun if you can see how it is fun' is circular); conv 3 (fragments and one-shape short sentences throughout, and 'I have a good time though. Beside the work, but sometimes it can be fun' sends me back to re-read, though nothing needs guessing); arg 3 (committed position, but reasons are asserted benefits and the essay circles - fun, then fun again, then fun - and the hardship it concedes is met with 'You got to be tough though' rather than an answer).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0870d64",
+    "evidence_notes": "Exuberant recruitment pitch for the Seagoing Cowboys program; names activities (table tennis, fencing, boxing, whittling, baseball, volleyball, night watchman, Katie's Farm) and drops in a quoted near-overboard accident with cracked ribs, then swerves to starving children, nursing-home singing and 'Live everyday like its your last'. org 3 (thesis stated early and a closing exhortation present, but the nursing-home/singing/carpe-diem stretch is a digression that does not relate to the claim); dev 3 (activities are specific but listed with no explanation, and the cracked-ribs quotation is dropped in without any stated bearing; the nursing-home material is discarded as irrelevant); conv 2 (I have to guess, not repair, at 'Fighting for there life back then for food., because of those nazi soldiers that will eat everything think of those little kids' and at 'You'll figure out when you get older be nice'); arg 3 (position clear and committed but reasons are asserted benefits and exclamation - the essay never says why the games or the adventure make the case).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0870f09",
+    "evidence_notes": "Argues for replacing the Electoral College with a popular vote; support is drawn from the source's mechanics - winner-take-all in each state, a tie thrown to the House of Representatives, state legislatures picking electors, electors defying or confusing their pledge. org 3 (thesis first sentence and every part relates to it, but there is no closing at all - the essay stops on its last body point about electors voting their own way); dev 4 (the tie/House mechanism and winner-take-all are particulars, and the connection is stated - legislatures pick electors, so electors can defy the will of the people, which is why the College should go - though most other support is general and no case or figure appears); conv 3 (errors accumulate and 'Although they have a meeting where they are voting for President and Vice President, doesn't the citizens of United States do the same thing' plus the trailing fragment send me back to re-read); arg 4 (one reason genuinely reasoned - voters cannot control whom electors vote for, so the vote is not theirs - but no opposing view is answered and the conclusion is exactly what the prompt's framing implies).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "087c663",
+    "evidence_notes": "Argues the Face on Mars is a natural landform: Garvin quoted comparing it to Middle Butte, a lava dome in Idaho's Snake River Plain; the cover-up theory answered by NASA's financial incentive to publicize life; the bad-photo theory answered by multiple images at different times plus high-resolution and 3D altimetry data. org 5 (order is motivated - geological explanation, then the cover-up objection with its funding follow-up that depends on it, then the photo objection - no pair of body parts could swap, but the closing restates and then reopens with a rhetorical question rather than landing the argument somewhere new); dev 5 (support is specific and most of it is explained in a way that adds something - mesas are common in the American West so one on Mars is unsurprising; many photos at many times means nothing could have been missed - but the 3D altimetry evidence is asserted without explanation, so not every piece); conv 5 (sentences vary in length and shape and stay under control, and the misspellings - 'belive', 'thatthere', 'spmething' - are minor and cost nothing, but word choice is merely correct rather than apt); arg 5 (opposing positions acknowledged and answered, the cover-up one by exposing its false assumption about NASA's incentives, reaching past what the prompt supplies, but it answers convenient objections rather than the strongest one and never reframes).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "087f29f",
+    "evidence_notes": "Letter arguing the Electoral College must be eradicated, naming three factors up front (disaster factor, winner-take-all, tie); the disaster factor is carried by a named case - 1960 Louisiana segregationist legislators choosing electors pledged to Kennedy who then voted against him, with Nixon validating his opponent's electors. The essay breaks off mid-sentence in the winner-take-all paragraph. org 3 (roadmap thesis stated early and both delivered parts follow it, but there is no closing and the third announced factor never arrives); dev 4 (the 1960 Louisiana case is specific and the connection is stated - electors did not follow their pledge to the citizens of their state, which is what makes it unfair - but the second reason is cut off before any support arrives); conv 3 (errors accumulate - 'do to', 'choosed', 'plegde', doubled 'the the' - and 'In the end vote against Kennedy' and the Nixon sentence both need a re-read to repair); arg 4 (one reason actually reasoned - legislature-chosen electors can vote their own bias and break their pledge, so the system is unfair - with no opposing view and a conclusion the prompt already implies).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0882383",
+    "evidence_notes": "Argues technology reading students' emotions is not valuable, on three announced grounds: a friend can tell, the computer can be wrong, and a resting face can be misread; examples include a bi-polar student switching states, NBA 2K18's face scan not looking like you, and the writer's own normal face reading as angry. org 4 (roadmap thesis first, each body part matches one roadmap item, closing restates - but the three parts are interchangeable and the second and third overlap); dev 4 (NBA 2K18 and the writer's own resting face are specific, and connections are stated - 'so the computer would say i'm angry when i'm really happy' - but the explanations restate rather than interpret and 'the internet isn't always right' is a general gesture); conv 2 (the concluding sentence, 'all those examples prove that my eviedence prves that using computers to express whether the use of technology reads the students emotional expressions', has to be guessed at rather than repaired); arg 4 (one reason genuinely reasoned - a computer sees the face, not tears on the inside or the person's life, so it cannot infer feeling - but no opposing view is answered and the conclusion is the prompt handed back with support).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "088bb4a",
+    "evidence_notes": "Source-based response claiming the author supports studying Venus despite its dangers, on three grounds: similarity to Earth, human curiosity, and the difficulty of the challenge; specifics drawn from the source include oceans and possible life (paragraph 4), valleys and mountains analogous to Earth's, no spacecraft landing in three decades, and all missions unmanned. org 4 (thesis and its three reasons stated first, closing returns to the author, every part relates - but 'Another reason' marks additive listing and the curiosity and challenge parts could swap without loss); dev 4 (source facts are specific and some connections are stated - three decades without a landing means it is dangerous but good for learning; distance is why more Earth-like features may be unseen - but the curiosity strand is general throughout and one clause reproduces the source's 'analogous to earth' phrasing with little transformation); conv 2 (I have to guess at 'poeple who see that it is a hard challenge and that no one has done it will be push to be the firsht one to land explore it better then from long distant exploring' and at the closing sentence); arg 3 (position clear but the reasons for it are asserted benefits repeated three times, and the final paragraph restates the opening in different words rather than saying why any reason counts).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 3
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "060694e",
+    "evidence_notes": "Claim: classroom emotion-reading tech is a good idea; three reasons (relieves boredom, fills gaps the teacher leaves, gives instructions), each illustrated with a hypothetical 'say that I...' scenario rather than a real case; conclusion repeats the intro verbatim. org 4 (controlling idea early and held, frame present, but the three reasons are interchangeable supports - rung 5 fails); dev 3 (rung 3 yes on the math/bored particular; rung 4 no - the 'for example' scenarios restate the reason, reader supplies the connection); conv 3 (rung 3 yes, meaning recoverable without guessing; rung 4 no - 'extced', 'look uo', 'help you something that boring' force repair re-reads); arg 3 (rung 3 yes, committed stance in the writer's own words; rung 4 no - each reason is asserted and then restated, never why it follows; closing circles the opening)."
+  ,
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0607ed1",
+    "evidence_notes": "Claim: the Electoral College should be abolished (letter to a senator); support is specific and largely source-drawn - winner-take-all and Gore/Bush 2000, the 538 tie scenario, faithless Louisiana electors, Gallup 60%+, Obama 61.7% electoral vs 51.3% popular, Nixon/Carter. org 4 (idea early and held, real frame, but the three body blocks - unfairness, flaws, popular support - could swap freely); dev 4 (rung 4 yes, connection stated for the unfairness and tie material; rung 5 no - the Obama/Romney percentages and the Louisiana electors are dropped with 'that is not right' and no interpretation); conv 3 (rung 3 yes; rung 4 no - 'vore ... ant that is not right', 'The is a possibility', 'the many flaws in the system or mistake' each need a repair pass); arg 4 (rung 4 yes - 'we the people have control' is a stated warrant for why electors make it unfair; rung 5 no - the counterargument is dismissed as 'assertions without much basis' rather than answered, and abolish-or-keep is what the prompt already implies)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0608495",
+    "evidence_notes": "Opens agreeing new technologies 'could furiously enhance our style of living, and ultimately, safety', then reverses across the last three paragraphs to predict technology becoming counterproductive and 'we will regret ever pushing this far'; support is speculation plus one semi-concrete case (social media/cellphones shrinking face-to-face contact). org 3 (rung 3 yes, idea stated in para 2; rung 4 no - it does not hold, the position has moved by the end); dev 3 (rung 3 yes on the cellphone/social-media particular; rung 4 no - the big claims, 'a ripple in the ocean', 'countless lives taken in the name of science', health risks and threat of war, are gestured at, not supported or connected); conv 5 (rung 5 yes - genuine variety in length and shape, control holds at every length, errors occasional and minor; rung 6 no - 'furiously enhance' and 'in the pass' show word choice near rather than apt); arg 4 (rung 4 yes - the social-media-to-lost-confrontation-to-regret chain says why it follows; rung 5 no - the shift is self-contradiction rather than principled qualification, so the position is not held throughout)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0608fab",
+    "evidence_notes": "Claim: the main advantage of car-free cities is a healthier planet and lower air pollution, plus 'the movement is working'; two block quotations (Plaza's bicycle quote; Rosenthal on falling US car ownership) each followed by 'I like this piece of evidence because...'. org 3 (rung 4 fails - the extended detour arguing the $5 fine takes away a person's rights sits outside the controlling idea of advantages and the unit never returns to it); dev 4 (rung 4 yes - the connection is stated for both quotes; rung 5 no - the explanations restate the quote, 'it states what the president is doing', 'it gives factual information by telling about fewer cars', adding nothing the quote did not say, and the quotes sit beside the writer's sentences rather than inside them); conv 3 (rung 3 yes, nothing needs guessing; rung 4 no - the first body paragraph is one long unpunctuated run-on and 'od', 'tels', 'alo', 'altnative transportatin', 'broughten' accumulate); arg 4 (rung 4 yes - drive less, so less pollution, so healthier is an actual chain, and the fine objection is reasoned; rung 5 no - the qualification is dropped and never reconciled, and the closing lands exactly where the prompt's framing already points)."
+  ,
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "060a4e7",
+    "evidence_notes": "States the author's idea that studying Venus is worthy despite the danger, then walks quote by quote through the source's paragraphs 1-3, restating each in 'in that quote it is saying' form; the only claim-connected material is the 97% carbon dioxide quote tied to needing protection; two stretches are irrelevant (using Venus's brightness to find your way if lost; that planets ought to be different sizes so people can name them). org 3 (rung 3 yes, an idea is stated up front; rung 4 no - it is not held, the digressions do not relate and there is no closing that closes); dev 3 (rung 3 yes on the 97% figure; rung 4 no - quotes are listed and paraphrased rather than explained, and the borrowed material is patchwritten, which caps at 3); conv 3 (rung 3 yes; rung 4 no - 'misleding', 'tearms', 'atomosphere', 'blankes', 'dectect' accumulate and 'someone is not really paying attention could see it' needs repair); arg 2 (rung 3 no - the position is the prompt's own wording handed back with no commitment added; the essay reports the source instead of taking a stance on worthiness)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "060d2bb",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform, not an alien artifact; evidence sequence is the 1998 Surveyor photo ten times better than Viking, then 'people were not satisfied' so the 2001 pass at maximum resolution (1.56 m/pixel vs 43 m/pixel), then the inference that at 3x pixel size airplanes, pyramids and shacks would be visible but a butte or mesa is what shows. org 5 (rung 5 yes - the parts cannot swap, the 2001 pass depends on the 1998 result and the pixel inference depends on the 2001 resolution; rung 6 no - the opening starts mid-argument with no stakes and the ending stops on evidence rather than landing beyond the opening); dev 3 (specific and genuinely explained at rung 4, but the phrasing is patchwritten close to the source - 'absolute maximum resolution', '1.56 meters compared to 43 meters per pixel', 'the Martian equivalent to a butte or mesa-landforms common around the American West' - which caps the trait at 3); conv 3 (rung 3 yes; rung 4 no - fragments, 'That means for each pixel ... spans 1.56 meters', 'phoyo acually', 'Egyption-stye' force repair); arg 4 (rung 4 yes - the pixel-size reasoning shows why the artifact reading fails, and the skeptics are answered; rung 5 no - natural-landform is the conclusion the prompt's framing already implies)."
+  ,
+    "organization": 5,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0613e60",
+    "evidence_notes": "Claim: driverless cars are a bad idea; two reasons - 25 mph is too slow against 30-35 mph limits so the required construction would be overwhelming, and drivers could not get to work on time, developed through a run-out-of-gas versus run-out-of-charge comparison (walk to a station with a container vs tow it to a charger, wait, and lose navigation). org 4 (idea early and held with a frame, but the two reasons are interchangeable - rung 5 fails); dev 4 (rung 4 yes - the gas/charging comparison is a realized example whose connection to reliability is stated; rung 5 no - the construction claim and 'the system would be going crazy' are asserted without explanation); conv 3 (rung 3 yes; rung 4 no - 'When a car we use now verses a smarter car the problems would be' needs repair, and lowercase sentence openings, 'likley', 'toatly dissagree' accumulate); arg 4 (rung 4 yes - the charging chain says why unreliability follows; rung 5 no - no opposing case engaged, no qualification, no principle stated, and the conclusion only restates the two reasons)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0616815",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys program because you get to explore the world and help people; support is the animals shipped overseas (horses, young cows, mules) and voyage lengths (two weeks, up to a month from the east coast to China). org 4 (controlling idea first sentence and held, opening orients and closing closes conventionally, both body parts relate; rung 5 no - the two parts swap freely); dev 3 (rung 3 yes on the named animals and the month-long crossing; rung 4 no - the voyage length is listed with no statement of how it supports joining, the reader supplies why a month at sea is a selling point); conv 4 (rung 4 yes - visible looseness, 'to go to places to help and stuff', a fragment and a missing-punctuation run-on, but nothing needs re-reading; rung 5 no - control lapses in the longer sentences and vague word choice); arg 3 (rung 3 yes, committed stance addressed to the reader; rung 4 no - reasons are asserted and the appeal 'if you like to help and have fun then this program is for you' never says why, and the close restates the opening)."
+  ,
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "061ba37",
+    "evidence_notes": "Opens with the question 'is it really good if u dont use a car day to day' and then reports the source material in four blocks - Vauban's minimal parking and the woman's quote, Paris fining drivers during smog, Colombia's car-free day, and falling US driving (23% decrease 2001-2009, April 2013 matching January 1995) - without ever answering the question. org 3 (rung 3 yes only on the end-of-intro line about reducing car use helping greenhouse gases; rung 4 no - the frame is half-missing, there is no closing, and nothing is held as a position); dev 3 (rung 3 yes, plenty of specific particulars and figures; rung 4 no - facts are reported with source phrasing stitched in, never connected to a claim, so the reader supplies the connection); conv 3 (rung 3 yes; rung 4 no - 'Clolombia', 'gradualy', 'plannig', 'Envoirmantal', 'woulg', 'peogram', 'people big car business are trying to help' and the quotes dropped mid-sentence force repeated repair); arg 2 (rung 3 no - the prompt's own question is handed back with no commitment added; the pro-reduction lean has to be inferred from which facts were chosen)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "06235e1",
+    "evidence_notes": "Claim: the Facial Action Coding System is valuable to the community; three domains - schools (D'Alto/Huang quote on a computer recognizing a confused or bored student, extended to ISTEP testing), law enforcement and hospitals (the genuine-vs-forced smile and zygomatic/risorius quotes, so 'there is no faking'), and interpersonal connection for people who cannot express feelings. org 4 (idea posed in the intro and answered by each topic sentence, real opening and closing; rung 5 no - the three domains are parallel and could swap); dev 4 (rung 4 yes - the school chain states its connection and adds to the quote; rung 5 no - the third body paragraph offers no specific support at all and the hospital use is asserted); conv 3 (rung 3 yes; rung 4 no - 'ingaged', 'consentrated', 'instructure', 'theirselves', affect/effect confusion accumulate, and the clumsy quote frames 'its says' plus 'how many kids were and were not ingaged in the activity that takes place on computers' force re-reading); arg 4 (rung 4 yes - detect disengagement, so schools learn what to change, so instruction improves, is genuinely reasoned; rung 5 no - no opposing consideration such as privacy or accuracy is raised, no qualification, no principle made explicit)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

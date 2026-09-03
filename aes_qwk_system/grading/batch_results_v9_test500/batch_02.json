@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "0227e67",
+    "evidence_notes": "Claim: cars have a few positives but the negatives (environmental damage, stress) outweigh them; support drawn from provided sources - Duffer's Paris smog ban with the 67% vs 53.3% diesel figure, Rosenthal's Vauban (70% carless families, 57% sold a car, $40,000 parking space), plus Walter and Carlos Arturo quotes on stress. Support connects directly to the two announced reasons. org 3 (rung 4 fails: thesis stated early and every part relates, but the essay stops after the stress paragraph with no closing - a frame with one half missing); dev 4 (rung 4: source figures are specific and connections are stated, e.g. 'Vauband helps to reduce the green house gas emissions'; rung 5 fails because the stress quotes are dropped with restatement rather than explanation); conv 3 (rung 3: pervasive misspelling, fragments and a dropped subject in 'While some cars are still used in the comuntiy walk or bycicle as thier means of transportation' force re-reading to repair, but meaning stays recoverable without guessing); arg 4 (rung 4: the environment reason is actually reasoned - the environment supplies necessities, cars pollute it, so the harm follows; rung 5 fails because the acknowledged positives of cars are never answered and the conclusion is what the prompt's framing implies).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "022a010",
+    "evidence_notes": "Claim: the Facial Action Coding System would be only slightly helpful and would disadvantage most students; support includes Dr. Huang's quoted claim about a computer detecting boredom (engaged and refuted), life skills learned in a physical classroom (knowing when to speak, manners, working with others), and an access/cost argument about poverty. Reasons bear directly on the claim. org 4 (rung 4: thesis first sentence, held, opening and 'In conclusion' closing, all parts on topic; rung 5 fails - the humor/explanation, physical-environment and poverty paragraphs are parallel reasons that could swap); dev 4 (rung 4: the Huang quote is specific and its connection to the claim is stated at length; rung 5 fails - 'It is proven that students learn better with paper' and 'poverty and homelessness are still big' are general gestures, so support is not specific throughout); conv 4 (rung 4: errors visible - 'mimick', 'why given them', the trailing 'but knowing this fact...' - but nothing needs repair; rung 5 fails because the cost/supplies sentence and the ellipsis construction do cost the reader a small stumble); arg 5 (rung 5: the source's opposing position is acknowledged and answered with a dilemma - entertainment would make the lesson unserious - the position is qualified 'slightly helpful, but other than that, not at all', and the essay reaches an equity conclusion about schools replacing paid teachers that the prompt's framing does not imply; rung 6 fails - the strongest objection is met with assertion, not a reframing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "022b620",
+    "evidence_notes": "Almost the whole text retells the Luke Bomberger article (UNRRA hiring Seagoing Cowboys, the games aboard, nine trips, arrival in China on 14 August); the only position appears in the final short paragraph - 'The reason you should join the Military is because you could save a life' - which does not govern the retelling and shifts the subject from the cowboy program to the military. org 2 (rung 3 fails: no controlling idea governs the text; the stated idea arrives last, is contradicted by the body's subject, and the reader must assemble a position - no frame, chronology jumbled); dev 2 (rung 3 fails after the relevance discard: the specific details all belong to the report, not to the 'join the military' claim, which is supported only by 'you could save a life' and 'we could always use more people' - general throughout, with borrowed material standing in for the argument); conv 3 (rung 3: 'arrivred', 'Administartion', 'Several of lives.' and the Greece/Aunt Katie's farm reference force re-reading to repair, but meaning is recoverable without guessing; rung 4 fails); arg 2 (rung 3 fails: the position is stated but so limited it barely engages, and its reasons are restatements - 'we probably need more people because we could always use more people').",
+    "organization": 2,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "022d72e",
+    "evidence_notes": "Claim: becoming a Seagoing Cowboy is worth doing, argued in first person as Luke; support includes the 1945 wartime setting and UNRRA's hiring of cowboys to tend horses, cows and mules (from the source), the chance to see countries and cultures, and the closing account of the family hosting visitors and learning 'to stay humble'. org 5 (rung 5: the three parts are motivated - wartime setup, the decision and what the work offers, then the retrospective change - and the closing lands somewhere the opening did not; rung 6 fails, the order is chronological rather than a nameable argumentative move); dev 4 (rung 4: connections are stated - hosting visitors led to 'a new light into our eyes' and awareness that not all people have what we have; rung 5 fails because the middle paragraph's benefits are general - unnamed countries, unnamed landmarks); conv 5 (rung 5: sentences vary in length and shape - rhetorical questions, short declaratives, an imperative close - stay under control, and errors are limited to 'definitly' and 'freetime'; rung 6 fails, the diction is plain and clichéd rather than apt); arg 4 (rung 4: the closing reasons why the experience is valuable - it shows that not all people have what we have; rung 5 fails, the time-and-work objection is answered only by asserting 'it pays off' and the conclusion is exactly what the prompt implies).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 5,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0232d34",
+    "evidence_notes": "Claim: limiting car use has big advantages; support is four short source quotations - Rosenthal on being 'always tense' with a car and on reducing greenhouse gases, Duffer on the Paris driving ban, Selsky on Bogota's replaced sidewalks and new shopping districts - each followed by one sentence of the writer's. org 4 (rung 4: thesis in the opening, two body paragraphs and a summarising conclusion, all on topic; rung 5 fails - the two body paragraphs open with the same sentence and could swap without any loss); dev 4 (rung 4: the quotes are specific named cases and the connection is stated, if thinly - 'without a car thats one less thing you need to stress over'; rung 5 fails because three of the four follow-ups only restate the quote and add nothing; borrowed material is quoted and attributed rather than patchwritten, so the cap does not fire); conv 3 (rung 3: sentences start lowercase throughout, 'since the effort without cars our cities can prosper' and 'In conclusion without cars will be our best advantage' need repair on re-reading, errors accumulate, one pattern throughout; rung 4 fails); arg 3 (rung 4 fails: reasoning is asserted, not shown - 'thats one way to reduce the greenhouse effects', 'a car ban will help clean our cities' - and the conclusion circles the opening by re-listing the same four advantages).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0232fa2",
+    "evidence_notes": "Stated claim: the senator should keep the electoral college - but the body reproduces the sources' case against it ('The electoral college is unfair, outdated, and irrational', 'the electoral college is unfair to voters', the winner-take-all swing-state complaint) with apparent approval, and the final paragraph reprints the opening paragraph verbatim. What is offered for the position (538 electors, a 270 majority, the Certificate of Ascertainment, DC's 3 electors) is procedural description, not a reason to keep the system. org 2 (rung 3 fails in substance: a controlling idea is stated but contradicted elsewhere so the reader must assemble the position, the 'disaster factor' passage has no recoverable relation to what precedes it, and the closing is a copy of the opening rather than a frame); dev 2 (rung 3 fails after the relevance discard: the specific material either describes procedure or argues against the claim; borrowed material stands in for the argument - the essay reports what the sources say instead of arguing from them); conv 2 (rung 3 fails: 'Its Basically whenever theres a really good argument thats what its called' and the state-conventions sentence must be guessed at, with duplicated clauses, 'Subconstantquintly' and spaced-off commas throughout - meaning is somewhat obscured); arg 2 (rung 3 fails: the position is bookended but not committed - the body argues the opposite - and its reasons, e.g. 'for one theres alot of electors like around 538', do not engage the issue).",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "0237cbd",
+    "evidence_notes": "Claim: people should join the program so they can help people and countries in need; support is a running list of places and animals (China and pandas, Japan, Mexico, Australia, Antarctic penguins, sea lions, narwhals, polar bears), the prospect of being seen on the news, and an objection-and-answer about Antarctica being too cold. org 3 (rung 4 fails: the controlling idea is stated at the top and parts loosely relate, but the opening does not orient and the essay trails off with 'And plus maybe going around in the snow... The End' - a closing that stops rather than closes); dev 3 (rung 4 fails: the support is listed, not explained - the reader supplies the link between a list of countries and animals and the claim that one should join; the penguin passage explains the animals' situation rather than the support-to-claim connection, and most support is general); conv 2 (rung 2: 'other counterinsurgency that are helping animals', 'a lot of places that were very good in need' and 'Therese really nothing we can do' force the reader to guess what was intended, with run-ons throughout - meaning is somewhat obscured); arg 4 (rung 4: the objection 'it's really cold there and there's really nothing we can do' is raised and answered with a why - the heat is killing the penguins, so there is work to do; rung 5 fails because the conclusion is exactly the appeal the prompt's framing implies).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "023ab53",
+    "evidence_notes": "Claim: the author gives well-told reasons for continuing to study Venus despite the dangers; support drawn from the source - no spacecraft has survived long on the surface, hence no further study in over three decades; over 800 degrees Fahrenheit and 90 times Earth's pressure at the surface against 170 degrees and near-sea-level pressure thirty-plus miles up; NASA's simplified electronics surviving three weeks. org 4 (rung 4: the controlling idea opens the essay, a frame is present and every part relates; rung 5 fails - the parts are announced as a list, 'Another thing of information... The last thing the author provides', and could largely swap); dev 4 (rung 4: figures are specific and the connection is stated - the survivable upper atmosphere 'make scientists want to know more... leading them to keep making new discoveries'; rung 5 fails because the spacecraft and NASA-electronics items are reported and restated rather than explained); conv 3 (rung 3: 'THe', 'expalins', 'atomspheric', 'The author states many information', and the thirty-plus-miles sentence need repair on a second pass, errors accumulate and every paragraph repeats one sentence pattern; rung 4 fails); arg 4 (rung 4: one reason is reasoned - the discovery of survivable conditions above the surface is why the dangers do not defeat the pursuit; rung 5 fails - no counter-consideration, no qualification, and the closing circles back to the opening claim that interesting information makes readers want to know more).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "023c138",
+    "evidence_notes": "Claim: limiting car usage has many advantages, the most important being reduced pollution; support is source-based and specific - passenger cars at 12 percent of European greenhouse emissions and up to 50 percent in car-intensive US areas, diesels at 67 percent of French vehicles against a 53.3 percent Western European average with particulate readings of 147 (Paris), 114 (Brussels) and 79.7 (London), and Bogota's 118 miles of bicycle paths and new districts - plus unsourced health and cost reasoning. org 4 (rung 4: thesis first, frame intact, all parts on topic; rung 5 fails - the growth, health and money paragraphs are interchangeable supports); dev 4 (rung 4: the connection is stated and at one point genuinely interpreted - 'the numbers show that there is a direct correlation between the percent of diesel used, and the amount of pollution in an area'; rung 5 fails because the health and money paragraphs carry no specific support at all, so support is not specific throughout); conv 4 (rung 4: repeated misspellings - 'enviornment', 'excercise', 'restraunts' - and an unclosed quotation are visible, but the prose is controlled and varied and meaning never needs repair; rung 5 fails because the mishandled quotation boundaries do cost the reader a moment); arg 4 (rung 4: the health chain is reasoned - polluted air is breathed and cycled through the body, and losing the car forces walking or cycling; rung 5 fails - no opposing view, no qualification, and the conclusion is the list of advantages the prompt asks for).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "024873e",
+    "evidence_notes": "Claim: the electoral college should be abolished in favour of the popular vote; support from both provided articles - the 1960 segregationists who nearly seated electors opposing Kennedy, 'faithless' electors who refuse their party's candidate, the pro-college argument that the system restores weight to large states (taken up and rejected), and the fact that voters elect a slate of electors rather than the president. org 4 (rung 4: thesis closes the opening paragraph and holds, a frame with a rhetorical closing question is present, all parts relate; rung 5 fails - the disaster-factor and slate-of-electors paragraphs make the same kind of point and could swap); dev 4 (rung 4: the 1960 case is a specific named example and connections are stated, if weakly - 'Nobody knows if that person is loyal or not'; rung 5 fails because most support is a general report of what an article 'states' and the explanations restate rather than interpret); conv 3 (rung 3: 'wat', 'canditate', 'succeds', 'popuation', 'r you', a comma splice, and the tangled 'it depends on that specific person on which candidate is gonna win, not by the state' require re-reading to repair, and errors accumulate; rung 4 fails); arg 4 (rung 4: the large-states defence is answered with a counter-principle - the outcome should turn on the individual voter, not the state; rung 5 fails because that answer is muddled and the conclusion is simply one of the two options the prompt already frames).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

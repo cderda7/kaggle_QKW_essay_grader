@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "079b107",
+    "evidence_notes": "Claim: limiting car usage has advantages (pollution, exercise, fewer young drivers, money). Support: quoted Paris driving-ban line plus 60-percent congestion drop and the 23-percent decline in young drivers (2001-2009); the exercise paragraph absorbs unmarked source phrasing about sports centres, parks, restaurants and shopping districts. Connections to the claim are mostly implied. org 4 (opening, closing and four on-topic supports, but the pollution paragraphs and the money paragraph could swap freely; rung 5 fails); dev 3 (specific quoted figures exist, but source phrasing is stitched in unmarked and attached to a claim it does not support - patchwriting caps here, connections left to the reader); conv 3 (run-on second sentence with an unclosed quotation and fragmentary closing sentences force re-reading; errors accumulate - rung 4 fails); arg 4 (pollution-to-global-warming/health reason is genuinely reasoned, and the counterpoint about people needing cars is only brushed aside, so rung 5's answered-opposition plus beyond-the-prompt conclusion fails).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "079e8bb",
+    "evidence_notes": "Claim: driverless cars should not come into existence because technology must stay subordinate to human control. Support: quoted paragraph 9 ('the only safe car has a human driver in control at all times'), a list of states, and the 2013 BMW 'Traffic Jam Assistant'; the states claim inverts what the source says (calls the testing states 'illegal'). org 4 (thesis early and held, opening and closing both work, but laziness / liability / legality / BMW paragraphs are interchangeable - rung 5 fails); dev 3 (specific borrowed items exist but the legality point is paraphrased so loosely it no longer says what the source said, and the BMW material is answered by assertion rather than explained - rung 4 not reached consistently); conv 3 (the semicolon-chained sentence about a wreck and 'the point is, is that' need repair; spelling errors accumulate - rung 4 fails); arg 4 (the human-can-take-control reason is reasoned, but the pro-technology side is mentioned and dismissed rather than answered and the conclusion is what the prompt implies - rung 5 fails).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07a14a5",
+    "evidence_notes": "Claim: the author's claim that studying Venus is a worthy pursuit is supported, for three reasons (Venus is like Earth, similar environment, scientists want more exploration). Support is three long verbatim block quotes (paragraphs 2, 3, 4-5) each followed by one formulaic sentence; the second quote actually shows Venus is nothing like Earth, contradicting the claim it is attached to. org 4 (thesis with three previewed reasons, matched body paragraphs, conclusion; the three sections could swap freely - rung 5 fails); dev 2 (quoted material stands in for the argument and the explanations restate the claim they are meant to support - circular, so rung 4 fails; roughly two thirds of the text is quotation, though it is marked, so not a 1); conv 4 (the writer's own sentences are clean and never need re-reading, but they are one repeated template with no variety - rung 5 fails); arg 3 (position stated and held, but no reason is ever reasoned - 'this supports the claim because the author believes...' circles the opening - rung 4 fails).",
+    "organization": 4,
+    "development": 2,
+    "conventions": 4,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "07a2516",
+    "evidence_notes": "Claim: you should join UNRRA, because you travel (China) and care for animals. Support taken almost entirely from the source with 'the text states' tags: fed and watered 2-3 times a day, bales of hay and bags of oats hauled from the lower holds, stalls cleaned. org 3 (opening has no orientation - 'This is one reason why' points at nothing - and the second body paragraph repeats the first without adding, so rung 4's working frame and distinct parts fail); dev 3 (specific source details exist but are lightly restitched source phrasing listed one after another with the reader supplying the connection - patchwriting caps here); conv 4 (errors are minor - 'help them to', 'Don and him' - and nothing needs repair, but every sentence is the same short pattern, so rung 5 fails); arg 3 (position clear and committed, but reasons are asserted and the closing paragraph restates the opening in different words - no why, so rung 4 fails).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "07a6b84",
+    "evidence_notes": "Claim: driverless cars would be a brilliant invention, for three reasons - fewer accidents, better economy, more jobs. Support is entirely hypothetical and general: erratic drivers off the wheel, junkyards profiting from scrapped cars, jobs selling the cars reducing poverty. No named case, figure or source material anywhere, plus an orphan sentence about people dreaming of such cars. org 3 (thesis and three previewed reasons, but the 'some people have been dreaming' sentence is a digression that relates to nothing and the closing stops rather than closes - rung 4 fails); dev 2 (support is offered but nothing is specific - no named case or figure - so rung 3 fails); conv 2 (the reader has to guess at 'the rate of accidents could go dramastically' (missing word) and 'People could not speed unless tey were in controll'; meaning is somewhat obscured - rung 3 fails); arg 4 (the erratic-drivers reason and the jobs-to-poverty chain say why they follow, but no opposing view, qualification or explicit principle - rung 5 fails).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07a7832",
+    "evidence_notes": "Claim: we need to stop relying on cars because alternatives are cheaper, cleaner and better for the community. Support: one quoted source speaker (Carlos Arturo on the two-seat bicycle, stress and air pollution), then a list of city benefits - less noise, nicer to look at, new restaurants and stores. org 3 (opening orients and states the position, but there is no closing at all - the essay stops on a list - so rung 4's frame fails); dev 3 (the quoted named speaker is specific, but it is dropped in and then restated rather than connected, and the cost-efficiency and time claims go unsupported - rung 4 fails); conv 3 (repeated your/you're, 'relaying', and the unpunctuated run-on final sentence force re-reading, and 'a little slower but your not only saving time' has to be repaired - errors accumulate); arg 3 (position clear and committed, but every reason is asserted - the essay never says why removing cars produces the benefits it lists - rung 4 fails).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "07a82b9",
+    "evidence_notes": "Claim: limiting car usage benefits wallet, environment and health; drive only when necessary. Support: gas fill-up frequency (once every one to two weeks, every three to five days for constant drivers), 20 minutes to two hours lost in highway traffic, smog causing congestion, one lightly borrowed EPA line about reduced-car communities. Paragraph 4 concedes cars are needed for work and long distances and answers the freedom objection as really being laziness. org 4 (thesis early and held, working frame, and the concession paragraph is placed deliberately, but the money/traffic and environment/health paragraphs could swap - rung 5 fails); dev 4 (support is specific and the connection is stated for some of it, but much is general assertion and the EPA line is left unexplained - rung 5's 'specific throughout and most explained' fails); conv 3 (pervasive misspellings plus run-ons like 'Not only will limiting your usage on your car will be better' and 'Cars can are good to have' force re-reading, though meaning stays recoverable); arg 5 (the freedom objection is acknowledged and answered as a false motive, the position is qualified to necessary driving only, and the essay lands on a mindset diagnosis the prompt's framing does not itself imply; rung 6 fails because 'limiting' is already the prompt's own term, so the boundary does not change its terms).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "07b6457",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform, possibly a NASA hoax. Support: the 1976-2001 photographs and improving photography, the mesa comparison attributed to a reporter, the quoted 'It even haunted grocery lines for 25 years!', then vague material about a river and the thin, hot atmosphere ('I can't exactly remember'). org 3 (position stated up front but drifts from natural occurrence to hoax to misunderstanding, and the second half digresses into whether life exists on Mars - at least one part does not bear on the controlling idea, so rung 4 fails); dev 3 (the photo dates and mesa comparison are specific, but they are listed with the reader supplying why better photography settles it, and the life-on-Mars support is too vague to assess - rung 4 fails); conv 3 (the opening sentence and 'has there been ANY proof there has been any life' need repair, 'so hin' has to be reconstructed, and errors accumulate - rung 4 fails); arg 3 (position committed but the central inference is circular - it is not a face because there is no face - and the hoax motive is asserted, never shown - rung 4 fails).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "07b6ce2",
+    "evidence_notes": "Claim: using cars less benefits the environment and health. Support: exercise prevents heart disease, compact cities reduce the need to drive, hybrids help - all general; then a personal narrative about the bus refusing to pick him up, driving his mother's SUV, sticky seats and a seat-kicking child, ending 'So driving became the most efficient way,' which argues against the claim and is discarded as irrelevant support. org 2 (the stated controlling idea is contradicted by the ending, there is no closing - the text trails off mid-narrative - and the one-sentence fragments follow each other without a recoverable relation); dev 2 (once the counter-directional narrative is discarded, nothing specific remains - support is general throughout, so rung 3 fails); conv 2 (fragments that never resolve, 'While having completely carless communities can be an inconvinice.', the broken SUV passage, and dense misspellings mean the reader has to guess at intent - rung 3 fails); arg 3 (position stated with commitment and the exercise-to-heart-disease chain is reasoned, but the essay ends endorsing driving, so the position is not held and rung 4's clear position held throughout fails).",
+    "organization": 2,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "07b76d3",
+    "evidence_notes": "Claim: we should not have driverless cars - safety comes before novelty. Support: the iPhone/upgraded-devices analogy explained to show tested technology is never perfect, the motorcycle-licence comparison for retesting drivers, and two quotes from paragraph nine (the human-driver assumption in traffic law and the fault question) each followed by a stated reading. org 4 (thesis and three previewed reasons, matched bodies, closing that restates; the three reasons are interchangeable, so rung 5 fails); dev 4 (support is specific and the connection is stated - 'This quote shows that the law believes it's safer' - but the explanations mostly restate rather than interpret, so rung 5 fails); conv 3 (errors accumulate - 'excpecially of they are', 'In paragragh nine is says', u/ur, consern, feamily - and a few need repair, so rung 4's never-re-read fails); arg 4 (the never-perfect-technology reason is genuinely reasoned, but the fun-versus-safety counterpoint is answered by slogan and the conclusion is exactly what the prompt's framing implies - rung 5 fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

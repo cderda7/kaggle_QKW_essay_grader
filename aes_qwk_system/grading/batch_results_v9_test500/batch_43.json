@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "08a4c92",
+    "evidence_notes": "First-person persuasion as Luke Bomberger urging the reader to join the Seagoing Cowboys; supports are sights (Acropolis, Venice gondola, Crete castle, Panama Canal), 335 horses plus hay and oats, shipboard games in the empty holds, and the closing life-change (bank/grocery job to hosting exchange students). org 4 (controlling idea stated early and held with a real frame, but the five reasons are a set of supports - sights, animals, games could swap freely); dev 4 (support specific and connections stated, but mostly restatement, and the WW2 reason is a general gesture with no particular - 'countries were left in ruins... trust me'); conv 4 (spelling and apostrophe slips - expeced, thier, peoples lives, countries life - visible but nothing needs repair; the repeated 'The Xth reason why you should join' frame keeps variety from reaching rung 5); arg 4 (final reason genuinely reasoned - participation produced awareness which produced the hosting - but no opposing view, no qualification, and the conclusion is exactly what the prompt implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08a5c68",
+    "evidence_notes": "Claim that limiting car use has two advantages, a healthier environment and a healthier body; support drawn from the sources - Rosenthal's 50 percent of greenhouse gases from car-intensive areas, Duffer on the Paris ban after near-record pollution, Selsky on Colombia's car-free day, Plaza on reduced stress. org 4 (thesis early and held, opening and closing present, but the environment and health paragraphs are independent and could swap without loss); dev 4 (each source is named and specific and the connection is stated - 'As you can tell, limmiting car uses will help the enviroment alot' - but the explanations restate the support rather than adding to it, and the 30-minutes-a-day claim floats unattached); conv 3 (errors accumulate heavily - enviorment/heathier/gose/limmiting plus systematic are-for-our and there-for-they're; 'The gas from are cars are not just effecting are air, there effecting are greenhouse to' forces a re-read to repair, so rung 4 fails while meaning stays recoverable); arg 4 (the exercise chain is reasoned - no car means walking means energy - but no counterargument, no qualification, and the conclusion is the prompt's own framing returned).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08ab023",
+    "evidence_notes": "NASA-address persona arguing the Cydonia face is a natural landform; support is the shadow-on-a-rock mechanism plus the photographic chronology - the 1997 shot, the Mars Global Surveyor/MOC image ten times sharper, and the April 8 2001 Malin photo showing a butte or mesa. org 3 (controlling idea stated early and every part relates, but the piece has no closing at all - it stops on 'what the picture actually show is butte or mesa' - so the frame is incomplete and rung 4 fails); dev 3 (support is specific but the phrasing is patchwritten from the source - 'flew over Cydonia for the first time', 'ten times sharper', 'Malin's team captured an extaordinary photo', 'butte or mesa' stitched together with little transformation, which caps this trait at 3); conv 2 (frequent missing words and collapsed syntax - 'here to tell that it just a natural landform', 'for all of to see', 'NASA felt as that the this important to tax payers', 'then the picture took in 1997' - and at least once I have to guess rather than repair, so rung 3 fails); arg 4 (one reason genuinely reasoned - shadow over a rock produces the illusion of eyes, nose and mouth, and sharper resolution therefore reveals no monument - but no opposing view engaged and no advance past the prompt).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08b1777",
+    "evidence_notes": "Position that driverless cars should not be sold because they are more accident-prone; support is the roof rotating sensor and what its failure forces, the quoted camera surveillance of drivers, and the quoted admission that the car 'requires human skills, such as navigating through work zones and around accidents'. org 4 (thesis in the opening and held to the conclusion, all three body concerns relate to it, but sensors, privacy and still-needing-a-driver are interchangeable); dev 4 (quotes are marked and specific and the connection is stated, but by restatement - 'this shows that the manufactureres are watching people as they drive. People in the car would have no privacy cause the manufacturers are watching them' - which is the 4-band pattern exactly); conv 3 (taveling, foucused, manufactueres, cause-for-because, to-for-too, and 'While privacy is a issue buying that can't drive itself is an issue too' drops a noun and needs repair, so errors accumulate and the reader re-reads); arg 4 (the sensor-failure chain and 'why would you pay for a driverless car that you still have to drive?' are actually reasoned, but the opening concession that they are 'a good idea' is mentioned and never answered).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08b8798",
+    "evidence_notes": "Argues the Face on Mars is a natural landform, supported by the sequence of increasingly sharp photographs and by the resolution figures - 1.56 meters per pixel against 43 meters per pixel in the best 1976 Viking photo. org 4 (thesis and preview in the opening, closing does real work, but the 'picture proof' and 'better technology' paragraphs are near-duplicates that could swap); dev 4 (the pixel comparison is specific and genuinely explained - low resolution would have made a zoom look 'more like and alien artifact' - but the first body paragraph's support is general, 'pictures were taken, very clearly and sharp', and its explanation is circular, so specificity is not maintained throughout); conv 3 (carzy, beter, tooken twice, prooving, coverd, conlusion, 'the pother picture', plus a run-on - 'so of course there was better cameras getting it in clear picture it's pretty obvious what it actually is' - errors accumulate and force re-reading); arg 5 (the haze/cloudy-day objection is quoted and answered with the summer cloudless photo, and the resolution reasoning diagnoses why the alien reading looked plausible, which gets past simply returning the prompt's conclusion; stops short of 6 because it never takes on the strongest version of the objection or reframes the question).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "08c3b51",
+    "evidence_notes": "Contrarian position that the author of 'The Challenge of Exploring Venus' fails to support the worth-the-danger claim; three quotes are each set against an explicit standard - the 'up close and personal despite the risk' line, the 'covered largely with oceans' line, and the 'safe and scientifically productive' question. org 4 (position stated in the opening and held to the conclusion, but the three body paragraphs are parallel instances of the same failure, flagged as 'This is not the only way', and could swap freely); dev 5 (all support is specific quotation and most of it is explained in a way that adds something - each quote is read for what it does not establish, which is the essay's analytic move, not restatement; short of 6 because the second quote's gloss misreads it as being about risk levels); conv 3 (danges, exicuting, neccesary, curosity, athour, saftey, possobility, boes, plus idiom errors like 'has not accomplished on supporting'; the clause 'As a question can be the upbringing or curosity and reasoning' has to be repaired, and errors accumulate, so rung 4 fails); arg 5 (governing principle made explicit and applied throughout - supporting the claim requires stating why the risk is worth taking - and the essay reaches the non-obvious verdict the prompt does not imply; not 6 because it never engages the author's strongest support, only convenient passages).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "08c6a31",
+    "evidence_notes": "Position that the Facial Action Coding System would be valuable in a classroom; support is two worked hypotheticals - the uninteresting on-screen excerpt where attention lapses and the system adapts, and the student who looks focused at a diagram being identified as a visual learner. org 4 (position stated early and held, opening and closing both present, but the two body paragraphs both concern adapting instruction and could swap); dev 4 (the hypotheticals are realized and the connection to the claim is stated, but the essay cites no source material and leaves its central premise - that the system can actually detect learning style - entirely unsupported, so specificity is not sustained); conv 4 (fluent and controlled with real sentence variety; 'keep the teaching style stays the same way' and a comma splice are visible, but errors do not accumulate and nothing else needs repair - rung 5 fails on that one clause); arg 4 (the opening chain is genuinely reasoned - students disengage, disengagement is costly because the material matters later, therefore adaptive screen feedback helps - and the teacher-differentiation analogy supplies a warrant, but no objection is raised or answered and the conclusion is what the prompt's framing implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08cd1b8",
+    "evidence_notes": "Narrative about a colleague's 1976 Mars photograph; the writer denies aliens exist, then concedes 'my friend was right, that was a picture of mars with gods face on it', then reports NASA calling it classified and thinking it an Egyptian pyramid, and closes 'I might belive in aliens'. org 3 (a controlling idea is stated in the essay's own words - 'i still dont belive thats its from aliens' - but the middle contradicts it, the opening orients to a story rather than a claim, and the piece trails off in an orphaned line, so rung 4 fails); dev 2 (discarding what does not bear on the claim leaves nothing specific - the classified and pyramid details cut against the position, the storms point is raised and abandoned, and what remains is circular, 'I didnt belve him because they are not real', so rung 3 fails); conv 2 (belve/belive, picutre, relize, 'could not of made', 'he lab', spaces before periods, unclosed quotation, and run-ons throughout; 'that can not be the same picture and face 25 years ago' has to be guessed at rather than repaired); arg 2 (a position is stated but commitment does not hold - the essay affirms the opposite mid-way and ends undecided - and its reasons restate the position, so rung 3 fails).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "08cdf6e",
+    "evidence_notes": "Three-reason case that FACS is valuable in the classroom - it can modify a lesson the student is struggling with, reveal a peer's well-being, and improve human-computer interaction; each reason carries a quoted line from the passage (Dr. Huang's lesson-modification prediction, the 'tell how a friend is feeling' passage, the 'better ways for human and computers to communicate' line). org 4 (position and three-part preview in the opening, all three parts relate, closing present, but the reasons are enumerated First/Second/Third and are wholly interchangeable); dev 4 (quotes are marked and specific but sit alongside the writer's sentences, and the follow-ups restate rather than interpret - 'Now isn't this perfect? Huang can help us better understand computers and help computers better understand us' - while the leap to increased grades, confidence and potential goes unsupported); conv 3 (technolgy, actvity, weither, Simpily, instrustor, familair, effectifly, potentional, conculsion, plus fragments - 'Being able to see and recognize more emotions for peers.', 'Having a large postitive impact.' - errors accumulate and force re-reading, though meaning stays recoverable); arg 4 (the first reason is genuinely reasoned - everyone hits comprehension obstacles, the obstacles are phrasing and vocabulary, so a system that modifies the prompt removes them - but no opposing consideration is raised anywhere and the conclusion is the prompt's own).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08cec1d",
+    "evidence_notes": "Evaluates how well the author of 'The Challenge of Exploring Venus' supports the worth-the-danger claim, judging the support convincing; three quotations are cited by paragraph - the oceans-and-life line, the 'nearest option for a planetary visit' line, and the paragraph-eight curiosity line. org 4 (position stated early and held, and the closing does more than restate by recording the writer's shift of view, but the two supports are ranked rather than dependent - neither builds on the other and swapping them costs only a label); dev 5 (all three quotes are specific and each is followed by interpretation that adds something the quote did not say - the inference about undiscovered life forms and food webs, the reading of travel time as 'practically our neighbor', the 'so we may as well begin working through some of them now' gloss; not 6 because the follow-through/volleyball passage is a general motivational aside offered as support); conv 5 (word choice fits consistently and sentences vary purposefully - the clipped 'so no worries there' against long subordinated openers; misspellings like convinving, potentislly, challege are occasional and minor and nothing costs a re-read; short of 6 because a few choices are approximate rather than apt - 'stick with their guts', 'based off'); arg 5 (the writer's own prior skepticism is named as the opposing position and then answered by conceding a change of mind, the governing principle behind the curiosity reason is made explicit - do not quit a task halfway because it is hard - and the generational-burden point reaches past what the prompt implies; not 6 because the danger itself, the strongest objection, is waved aside as 'all we have to do is find out how to brave the conditions').",
+    "organization": 4,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "08296be",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys program; reasons offered are that you move cattle for people who lost homes in war/earthquakes, that there are fun things to do on and off the ship, and things you will see. Reasons are attached to the claim only by assertion. org 3 (rung 4 fails: closing drifts off joining to helping 'nabers'/'the world' and para 2 wanders from moving cattle to tragic events, so not every part holds to the controlling idea); dev 2 (rung 3 fails: no named case, figure or realized example anywhere - 'fun things', 'things you will see', 'people who lost their homes' are all general gestures); conv 2 (rung 3 fails: 'But naberes to me means, the world' and the closing sentence require guessing intent, not just repair; dense misspelling - crue, cattel, herricains, tornatoes, athor); arg 3 (rung 4 fails: reasons are asserted not reasoned, and the final part restates the opening - circles its position).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "082e9df",
+    "evidence_notes": "Claim: reducing car usage lowers emissions and improves society. Support is drawn almost entirely from provided sources - Plaza quote, Paris partial ban with congestion down 60 percent, Doug Short's miles-driven figure nine percent below the 2005 peak, transportation as second largest emissions source - and much of it is reproduced in source phrasing with the writer adding only connective gloss sentences. org 3 (rung 4 fails: the controlling idea is weakly located, buried at the end of para 2 rather than stated early; the opening reports source content without orienting to a position); dev 3 (specific and connected, but patchwriting cap applies - source phrasing stitched with little transformation across paras 2-3); conv 4 (rung 5 fails: judging the writer's own sentences, they run to one 'By X-ing, we could Y' shape and typos recur - enviornment x2, decrase, countr, 'is is' - so errors are visible but never force a re-read); arg 4 (rung 5 fails on the AND clause: the conclusion is exactly what the prompt's framing implies, and the recession counter-consideration is the source's reasoning reported rather than the writer's).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "08407fe",
+    "evidence_notes": "Claim: knowing whether students are happy or sad matters. Reasons: it tells the teacher whether they are teaching well; a teacher's negative mood transfers to the class so students will not work; you cannot know what is wrong with the lone student in the back unless you talk to and listen to him. The emotional-contagion reason states an actual mechanism. org 3 (rung 4 fails: no closing at all - the essay stops on 'feel even more bad about their self' - and the later units drift from 'am I teaching well' to handling one struggling student); dev 2 (rung 3 fails: no named case, figure or realized example; the back-of-class student is a generic hypothetical, and no source material is used); conv 3 (rung 4 fails: the long run-on sentences require re-reading to repair, and 'happen' for 'happy' recurs, though nothing forces a guess); arg 4 (rung 4 met: the teacher-mood reason says why it follows - the class feels the same and will not want to work; rung 5 fails - no counterargument, no qualification, conclusion is what the prompt implies).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0840ed9",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys. Support is four quoted particulars from the source - helping places 'recover thier food supplies, animals, and more', caring for 'the horese, young cows, and mules', becoming 'more aware of people of other countries and thier needs', and playing volleyball, baseball and table-tennis tournaments - each introduced as 'another reason' with no explanation of why it counts. The closing answers an objection: even if you dislike the animals you can still help with supplies. org 4 (rung 5 fails: the four reasons are an explicit list - 'another reason', 'one of the best reason', 'the very last reason' - and swap freely); dev 3 (rung 4 fails: quotes are listed and labelled as reasons, never explained; the reader supplies every connection, and the borrowed phrasing is dropped in rather than transformed); conv 3 (rung 4 fails: fused sentences with no punctuation, misplaced and unclosed quotation marks and a missing word in 'people in other countries need he even says' force repair-level re-reading, but meaning is recoverable); arg 4 (rung 4 met by the closing's answer to the dislike-animals objection; rung 5 fails on the AND clause - the conclusion is exactly the prompt's own persuade-them-to-join framing).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0848273",
+    "evidence_notes": "Claim: the 'face on Mars' is not a face but a natural landform. Support: shadows created the apparent mouth, nose and eyes, and the 2001 summer photo had none unlike the 1976 photo; NASA took further photos in 1998 and 2001 specifically to disprove the alien reading; a Martian equivalent of a butte or mesa. The essay also answers the theorists directly - if NASA were hiding information, why release the photos at all. org 4 (rung 5 fails: the four supports - aliens would not bother, NASA transparency, theorists' financial motive, NASA's motives - relate to the thesis but could largely swap, and paras 2-3 overlap); dev 4 (rung 5 fails: not specific throughout - the subscriber-money claim, 'NASA has done as much as they can' and the landing prediction are unsupported generalities alongside the dated photo evidence); conv 3 (rung 4 fails: 'the conspiracy theorists will stay say they are lying' and 'searching for answers for answers' force re-reading; errors accumulate - genious, amke, poeple, compition, missing question marks); arg 5 (rung 5 met: the opposing conspiracy position is stated and answered by showing its hiding-information premise inconsistent with NASA releasing the photos, and the essay reaches the unfalsifiability point - they will still say NASA is lying - which the prompt's framing does not imply; rung 6 fails, no reframing or boundary condition and the objection answered is not the strongest evidentiary one).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "084cdc4",
+    "evidence_notes": "Claim: the FACS emotion-reading computer is valuable. Support is a list of applications - detecting confusion, detecting lying, reading paintings, surgery, checking whether a lesson landed - plus source figures: the computer classifies happy, sad, anger, fear and disgust, measures 44 facial muscles, and scored the Mona Lisa 83 percent happy, 9 percent disgusted, 6 percent fearful, 2 percent angry. org 4 (rung 5 fails: the body is a single list of uses in no motivated order and the closing simply re-lists them; frame present and thesis held from the first sentence); dev 3 (rung 4 fails: the source figures are reported with attribution but never explained - the essay never says what the 83 percent result or the 44 muscles show about the technology's value; the reader supplies the connection); conv 2 (rung 3 fails: 'why its a good reason to the FACS and evidenece' and 'to see what was her emotions were during da vinci was painting her' require guessing rather than repair; lowercase i, missing words, and misspellings - techology, paragraghs, artricle, classifi - throughout); arg 4 (rung 4 met: valuable because it can be put to these uses is a stated why; rung 5 fails - the one hedge about the result being 'just what the computer thinks' is dropped rather than developed into a qualification, and the conclusion is exactly the prompt's is-it-valuable framing).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "084e848",
+    "evidence_notes": "Claim: driverless cars are pointless and unnecessary. Support: the quoted 'psychological aspects are really a challenge' from the passage, the inference that a car still needing a human driver defeats its own purpose, and the assertion that gas consumption will be unchanged. org 4 (rung 5 fails: the two body reasons - psychological/human assistance and fuel - are independent and swap freely; frame present, position held); dev 2 (rung 3 fails: no named case, figure or realized example - the quoted phrase is itself a generality, the fuel claim is bare assertion, and 'there is no point in having a driverless car that still needs assistance' restates the claim it is meant to support); conv 3 (rung 4 fails: 'it is up to drivers themselves to make this happen' and 'and they should be' both force a re-read; errors are few but 'the idea of driverless cars are' and 'too ensure' are visible); arg 4 (rung 4 met: the essay reasons that if a human is still required the purported benefit vanishes; rung 5 fails - the safety rationale for driverless cars is gestured at but not answered, and the conclusion is what the prompt implies).",
+    "organization": 4,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "085092e",
+    "evidence_notes": "Claim: the Face was most likely formed by coincidence, and which answer you accept depends on your world view. Support: no other landforms or artifacts were found on the mission, so alien inhabitants should have left more evidence; shadows were the only factor making it resemble an Egyptian Pharaoh; Michael Malin's closer, clearer pictures still gave no straight evidence; mesas and buttes are made by erosion, not by man. Most pieces are followed by an interpretive move. org 4 (rung 5 fails: the rhetorical-question units - no other artifacts, why would they be Egyptian - are interchangeable, though the closing does real work beyond the opening); dev 4 (rung 5 fails: not specific throughout - 'scientists can only compare it to what they know, which is not much' is a general gesture, and the opening's claim that there are 'many reasons it may be from aliens' is never supported at all); conv 3 (rung 4 fails: 'you would believe in is an artifact' and 'no other other landforms' force repair re-reads; errors accumulate - artifatcts, the plant, exsisted, belived, casted - but nothing needs guessing); arg 5 (rung 5 met: the alien position is acknowledged and answered, the position is qualified as 'most likely', and the essay reaches the epistemic conclusion that without proper evidence belief is underdetermined, which the prompt's framing does not imply; rung 6 fails - the world-view reframe is undercut by the body committing to the natural explanation, so no position holds throughout).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "08519b2",
+    "evidence_notes": "Claim: there are many advantages to limiting car use. Support is specific and attributed throughout - passenger cars at twelve percent of European greenhouse emissions and up to fifty percent in parts of the US, Goldberg's 'how much you drive is as important as whether you drive a hybrid', Bogota's Day Without Cars and 118 miles of bicycle paths, seventy percent of Vauban families owning no car with Heidrun Walter's quote, Bill Ford at the 2012 Mobile World Congress, and the eighty/twenty split in the federal transportation bill. Much of it is reported rather than interpreted. org 4 (rung 5 fails: environment and happiness are interchangeable advantage paragraphs and the conclusion re-lists them as items; frame present and thesis held); dev 4 (rung 5 fails: specificity is constant but most support is narrated rather than explained - Bogota's turnout, the bike paths, Ford's plan and the EPA bill are reported with no statement of what they show; only the Vauban/Walter material and the objection-answer do interpretive work; length is not credited here); conv 3 (rung 4 fails: 'How if by giving up my car, will I be happier', 'having to do adapt this type of lifestyle' and 'than I already to get everywhere' force repair re-reads, and misspellings accumulate heavily - responsibel, bicicyle, emmisions, autombile, vechiles, ciries, feasable); arg 5 (rung 5 met: an objection is voiced in the objector's own words - I would have to wake earlier, that seems more stressful - and answered via recession-driven adaptation persisting after recovery, and the feasibility argument gets past the prompt's advantages framing; rung 6 fails - the objection answered is a convenient one and the answer is tangential to happiness, with no reframing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0854673",
+    "evidence_notes": "Claim: you should help out as a Seagoing Cowboy like Luke Bomberger. Support: shipboard recreation - volleyball in the animal pens, table tennis tournaments, fencing, boxing, reading, whittling - and named destinations - the Acropolis in Greece, a gondola ride in Venice, an excavated castle in Crete, the Panama Canal, China. The one stated connection is inside an invented dialogue: it's a lifetime chance and would make you happy. org 3 (rung 4 fails: the 'conclusion' abandons the persuasive idea for narrative about the four-and-a-half-month voyage to South Africa and repeats the games already given, so it stops rather than closes and the position has moved by the end); dev 3 (patchwriting cap: source phrasing is stitched in lightly transformed and loosely enough to garble the source - 'toured and excavated castle in Crete', 'fencing, boxing, reading, whittling, and games also helped pass the time'); conv 2 (rung 3 fails: 'many countries had left the ruins' and 'The thing that this eighteen year-old boy enjoys coming back to get more supplies because the Cowboys play volleyball' require guessing at intent, not repair; unpunctuated dialogue and constant tense shifts); arg 3 (rung 4 fails: reasons are asserted and listed, the one raised objection is dropped rather than answered - 'if you don't want to go then just don't go' - and the essay circles into story).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  }
+]

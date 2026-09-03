@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "07d6f42",
+    "evidence_notes": "Claim: emotion-recognition tech (FACS) should be put in classrooms to raise engagement and grades. Support: two quotes from the passage (software tracks facial units / weights mixed emotion; 'a classroom computer could recognize when a student is becoming confused or bored' + 'then it can modify the lesson'), each followed by the writer's gloss about the computer changing its algorithms so students stay engaged. org 4 (controlling idea stated early and held, intro/two bodies/conclusion, but both body paragraphs make the same detect-then-modify point and could swap freely; fails rung 5); dev 4 (support specific - named system, quoted lines - and the connection to the claim is stated, but the explanations largely re-say the quote rather than add to it, so fails rung 5's 'adds something'); conv 3 (errors accumulate - 'adavances', 'cruical', 'alot', 'whats' - and the broken 'This can show how... Or if they are dozing off...' construction plus the long comma-spliced closing sentence force re-reading, so fails rung 4); arg 4 (rung 4 met: the detect-to-modify-to-attention-to-comprehension chain states why the reason follows; no opposing view engaged, no qualification, and the conclusion is exactly what the prompt's framing implies, so fails rung 5).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07dd0fd",
+    "evidence_notes": "No claim of the writer's own: the piece reports Venus facts (800 degrees F, 90x atmospheric pressure, volcanoes/earthquakes/lightning, Earth-like valleys and mountains) and then NASA's plan to float scientists above the surface, closing with the source's own 'not easy conditions but should be survivable for humans.' org 2 (the text does divide into a facts part and a NASA-plan part, but no controlling idea is stated anywhere - the reader must assemble it - and there is no frame: it opens on a sentence fragment and ends without closing; fails rung 3); dev 3 (rung 3 met by specific figures, but no claim is stated so no connection between support and claim is ever made; borrowed material is patchwritten and reported rather than argued from, which caps here anyway; fails rung 4); conv 2 (fused run-on 'It can go up to 800 degress fahrenheit on a average scale has 90 times more atmospheric pressure than earth can crush a submarine...', subjectless fragments, and 'a diffuclt change to acivemen do to' force the reader to guess rather than repair; fails rung 3); arg 2 (a stance is only faintly recoverable and it is the source's, not the writer's - no commitment added; fails rung 3).",
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "07e11fc",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform, not alien-made. Support: meteors/space rocks strike planets; human pareidolia (seeing shapes in clouds, a face in tree bark); scientists' rovers and 'high quality' cameras showing no aliens; photo differences attributable to erosion or asteroids. No source particulars are used. org 4 (controlling idea stated at the head of para 2 and held, opening orients and closing closes, all four body parts bear on the claim - but the natural-cause, pareidolia and equipment paragraphs are interchangeable supports; fails rung 5); dev 3 (the pareidolia illustration is the only piece approaching specificity and it alone is explained; meteors, equipment quality and erosion are general assertions the reader must connect, and the 'humans collecting large amounts of the planet' support is discarded as irrelevant; fails rung 4 on the bulk of the support); conv 3 (errors accumulate - 'belive', 'suport', 'it's bark' - and the tree-bark fragment, the humans-walking sentence and 'they can invest on the discovery, but find it wasteful' each need repair; fails rung 4); arg 4 (rung 4 met: the pareidolia paragraph says why habitual face-seeing explains the image; the believers are addressed only by a burden-of-proof demand rather than answered, and the conclusion is exactly what the prompt's framing implies; fails rung 5).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07e4b76",
+    "evidence_notes": "Claim: the 'Face on Mars' is a natural landform. Three previewed reasons: the 1998 MGS image revealed a landform; Garvin's pixel rule of thumb (objects 3x pixel size would be visible); the shape is a butte/mesa like Middle Butte in Idaho. A counterargument paragraph answers doubters with the 2001 maximum-resolution photo (1.56 m/pixel vs 43 m/pixel). org 4 (thesis with preview stated early and held, opening and closing both present, all parts relate - but the 1998-photo, pixel-rule and mesa parts are interchangeable supports; fails rung 5); dev 3 (support is highly specific - dates, names, pixel figures - but it is patchwritten: long stretches of unquoted verbatim source phrasing stitched with 'First of all / Next / Last', and the quotes are dropped without the writer explaining what they show; reader supplies the connection; fails rung 4); conv 3 (accumulating misspellings - 'naural', 'rereal', 'surefers', 'cleary', 'aroung', 'nartural' - plus stray quotation marks and the doubled 'because we think it is just a naural landform because' in the conclusion force re-reading; fails rung 4); arg 4 (rung 4 met and a counterargument is genuinely acknowledged and answered with the 2001 resolution data, but the conclusion is precisely what the prompt's two-option framing implies, so rung 5's second conjunct fails).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07e7133",
+    "evidence_notes": "Letter to a senator claiming the Electoral College should be replaced by popular vote. Support: a worked California (55 EVs, narrow win) vs Wyoming (3 EVs, ignored) hypothetical showing that the combined losing majorities could have carried a popular vote, attributed to the Office of the Federal Register's 'What is the Electoral College?'; and the slate-of-electors confusion, tied to low turnout. org 4 (thesis stated early and held, opening and closing both present, both body parts relate - but fairness and confusion are independent supports that could swap with no loss beyond matching the preview; fails rung 5); dev 4 (the CA/WY case is specific and genuinely interpreted, but the second body paragraph runs on rhetorical questions and the unsupported 'the reason why so many americans do not vote' claim, so support is not specific throughout; fails rung 5); conv 4 (real variety - short punchy sentences, rhetorical questions, an extended hypothetical - held under control; errors are typo-level 'Regiser', 'ingnoring', 'dont', 'should be replace' and do not accumulate, so rung 4 holds, but they are more than occasional/minor and 'no voting on people who you want to vote for you' is tangled; fails rung 5); arg 5 (rung 5 met: 'I am aware that the number of electoral votes comes from the state's population, but imagine this' acknowledges the proportionality defense and answers it with the aggregation case, and the turnout/participation conclusion goes past the prompt's fairness framing; the strongest small-state objection is never faced and the terms are not reframed, so fails rung 6).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "07e96aa",
+    "evidence_notes": "Claim: the Face is a natural landform, not an alien monument. Support: the quoted fact that MGS 'had to peer through wispy clouds', turned against the believers ('Some believed alien markings were hidden by the haze, but perhaps the haze was instead covering up detail in the landform'); Garvin's pixel quote as proof NASA had the technology to settle it; and the resolved image showing a butte or mesa common in the American West. org 5 (the body units build - the haze problem, the technology that resolves it, then what the resolved image showed - so no pair could swap; the closing only restates the opening's finding, so fails rung 6); dev 5 (support specific throughout and most of it explained in a way that adds something, notably the haze reinterpretation; the technology gloss 'This shows that NASA has the technology needed' is restatement, so not every piece does interpretive work; fails rung 6); conv 5 (varied sentence length and shape held under control, only three minor typos - 'lanforms', 'releaved', lowercase 'mars' - so nothing costs the reader; word choice is correct rather than apt and there is some flab, so fails rung 6); arg 5 (rung 5 met: the opposing interpretation of the haze is acknowledged and answered by reinterpreting the believers' own evidence, a conclusion the prompt's framing does not already imply; the answer is hedged and the framing is not reframed, so fails rung 6).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "07eb783",
+    "evidence_notes": "Opens by handing back the prompt's claim that studying Venus is a worthy pursuit despite the dangers, then strings together source sentences: corrosive sulfuric acid clouds, limited insight from orbit because light cannot penetrate the atmosphere, silicon carbide electronics lasting three weeks in a simulation chamber, mechanical gear-and-lever devices, Venus's Earth-like valleys and mountains. org 4 (controlling idea stated in the first sentence and returned to in the conclusion, opening and closing present, and every part - dangers, limits of remote study, NASA's workarounds, why Venus is interesting - bears on it; but the workarounds and fascination parts could swap freely, so fails rung 5); dev 3 (specific support is present - three weeks, silicon carbide - but it is heavy patchwriting of near-verbatim source sentences, reported rather than connected to the worthiness claim, so the reader supplies every connection; fails rung 4); conv 2 (the opening sentence is missing 'despite', 'humans have sent numerous sacecraft survived the landing for more than a few hours' inverts the source's meaning, and 'The thought of devices make a calculation by using gears and levers' cannot be repaired without guessing; fails rung 3); arg 3 (the position is clear and held and the closing adds a personal endorsement, but no reason is ever reasoned - the body reports facts and the conclusion circles back to the opening claim; fails rung 4).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "07f4106",
+    "evidence_notes": "Claim: FACS should be used on students, for three previewed reasons - so teachers can talk it out with upset students, help them understand the material, and help students read others' emotions. Support: the contrast between a teacher seeing only 'a room filled with hormonal teens' and one alerted to a genuinely upset student; the six basic emotions FACS detects; the zygomatic major muscle distinguishing a forced from a genuine smile. org 4 (thesis stated early and held, opening and closing present, each body paragraph takes one previewed reason - but the three reasons are independent and could swap with no loss; fails rung 5); dev 4 (rung 4 met: the zygomatic-major and hormonal-teens supports are specific and their bearing on the claim is stated; the middle paragraph is general assertion with no specific support, so support is not specific throughout; fails rung 5); conv 3 (errors accumulate - 'being teached', 'can determined', 'scaning', 'appoarch', comma splices - and omitted words in 'Knowing how someone around another could help out a lot' and 'to know a person feels' force re-reading and repair; fails rung 4); arg 4 (rung 4 met: the essay says why the technology helps - it separates real distress from apparent moodiness, and a forced smile from a genuine one; no opposing consideration such as privacy is raised, the position is never qualified, and the conclusion stays inside the prompt's framing; fails rung 5).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07f838d",
+    "evidence_notes": "Two-sided claim: the technology 'might be helpful for students, but it could also be a bad thing.' Support: a vague gesture at paragraph 3 on facial recognition changing a lesson to suit a student (good side); and a fully realized scenario on the bad side - a friend asks what you think of their favorite song and you soften your answer to avoid hurting them, which this technology would make impossible. org 4 (controlling idea in sentence one and held, both a good part and a bad part plus a closing - but the two parts do not depend on each other and could swap, and the closing only restates the opening; fails rung 5); dev 4 (the song scenario is specific and its connection to the claim is explicitly stated - 'Now think if this technology was out there... you might not be able to hide how you really feel' - but the good side rests on an unspecified paraphrase of the passage, so support is not specific throughout; fails rung 5); conv 3 (a dozen errors in a short piece - 'becase', 'their confused', 'capible', 'exepression', 'your're', 'dont' - and the very long unbroken song sentence plus the unpunctuated question require re-reading, though meaning is never in doubt; fails rung 4); arg 4 (rung 4 met: the song example states why concealment matters and why the technology removes it; the two sides are set side by side and never weighed or answered, so this is not a qualification, and the conclusion goes no further than the two reasons; fails rung 5).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07f8601",
+    "evidence_notes": "Claim: the Face on Mars was not created by aliens but is a natural landform. Support in escalating image resolution: the 1976 Viking picture; the 1998 MGS pictures ten times sharper, which showed a landform; cloudy conditions casting shadows that made it look like it had eyes and a nose; the 2001 maximum-resolution image, glossed 'if taken of earth you could see the pirimds in Egypt. So if there was anything weird the picture would have shown it'; a cited quotation of the butte/mesa identification from paragraph 12. org 5 (the two body parts run 1976 to 1998 to 2001 in escalating sharpness and the later part explicitly depends on the earlier, so no pair could swap; the muddled opening unit and the largely restating close keep it off rung 6); dev 4 (support is specific and dated and the pyramid inference and shadow explanation do real work, but the 1976 photo and the closing butte/mesa quote are dropped with only a generic gloss, so not most of it adds something; fails rung 5); conv 2 ('there are many thing with this object that could lead you to beliveing either it was made by aliens' never resolves and must be guessed at, and 'ten times sharper than the first picture of then the first picture taken' is garbled; frequent misspellings and a comma-spliced opening; fails rung 3); arg 4 (rung 4 met: the essay says why higher resolution settles the question and why shadows produced the face; the alien view is gestured at in the incoherent opening and never actually answered, no principle is made explicit, and the conclusion is what the prompt's framing implies; fails rung 5).",
+    "organization": 5,
+    "development": 4,
+    "conventions": 2,
+    "argumentation": 4
+  }
+]

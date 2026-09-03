@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "0657f4c",
+    "evidence_notes": "Claim 'electoral college is a stupid process and definitly outdated', then reverses ('the electoral college is a good thing to most presendental elections') and ends split ('good because it helps... but its bad because it is like the U.S. riging the votes'); support = 2000 Gore/Bush with 271-266 figures, plus a garbled invented Romney/Obama 538-438 figure; opening definition is lifted source phrasing (process not a place / founding fathers / compromise). org 3 (controlling idea stated in the essay's own words, but rung 4 fails: it does not hold - the position moves to 'good' by the closing); dev 3 (one specific figure-bearing case, but source definition is patchwritten and the 2000 example is listed as a fact rather than worked, capping at 3); conv 2 (rung 3 fails: the doubled 'when you vote for president because when you vote for president' clause and the Romney/Obama sentence leave the reader guessing at intent, not just repairing); arg 2 (rung 3 fails: position is not committed - it is asserted, contradicted, then split in the conclusion)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "065c240",
+    "evidence_notes": "Claim: Venus should be explored despite hostile conditions; source support quoted with paragraph numbers (Earth/Venus 'density and size', 'valleys, mountains, and craters' (4), 'hostile conditions on the surface' (5), 'blimp-like vehicle hovering 30 miles above the Venusian landscape' (5)); connections stated ('if Venus was similar to Earth in its lifetime, then it could answer pondering questions'; 'close enough to explore without humans dying or the vehicle frying'). org 4 (controlling idea early and held, frame present, all parts on topic, but the similarity / danger / proximity paragraphs are interchangeable supports - rung 5 fails); dev 4 (rung 4 clearly met, rung 5 fails: several quotes are stacked and left to speak for themselves and explanations often restate - 'makes it an interesting mission for scientists'); conv 4 (visible errors and one dropped negative in 'This mission is impossible because humans are able to make machines', but errors do not accumulate and sentences stay controlled; rung 5 fails on wrong-footing word choice like 'a timely mission'); arg 4 (rung 4 met - the life-on-other-planets inference is reasoned - but rung 5 fails: the danger objection is answered only by the asserted moon analogy and the conclusion is the framing the prompt already implies)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06633fa",
+    "evidence_notes": "Claim: cut back on car usage; reasons = money/accident cost (insurance rise, medical bill, lost gas, out of work from injury, skipping a meal to afford gas) and environment (car gases -> greenhouse effect -> world heats -> glaciers defrost -> polar bears harmed, water rises, less land); no source material used. org 4 (idea stated early and held, frame present, both body parts relate; rung 5 fails - the money and environment blocks swap freely, and the third part wanders into exercise/friends/recipes); dev 4 (rung 4 met on the explicit listed/explained line: the essay states the causal connection itself rather than leaving it to the reader; rung 5 fails because support is general throughout - no named case or figure anywhere); conv 3 (rung 3 met, rung 4 fails: errors accumulate - 'grate', 'affect' for effect, 'u', uncapitalized sentences, and 'you are involved in a car accident you someone gets hurt' forces re-reading, though meaning stays recoverable); arg 4 (rung 4 met via the emissions-to-melting chain; rung 5 fails - the 'cars help a lot but' concession is never answered with reasoning and the conclusion is exactly what an advantages-of-limiting-cars framing implies)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06673c8",
+    "evidence_notes": "Claim: driverless cars will help the country; the essay takes up the article's two stated obstacles and answers each - testing is illegal in most states (9) answered by testing where legal then expecting laws to be lifted, and the liability question (9) answered by assigning fault to the manufacturer 'since they were the ones who made the car, and designed all the parts of it'; benefit support quoted with paragraph numbers (half the fuel (1), BMW safety (8), Tesla 90 percent autopilot 2016 (10), Mercedes/Audi/Nissan by 2020 (10)). org 4 (frame and topical unity present; rung 5 fails - the legality, liability, benefits and timeline blocks are interchangeable); dev 4 (specific quoted support with connection stated for the fuel claim, but rung 5 fails: several quotes are followed by literal restatement - 'Tesla has projected that they will release a car in 2016 that 90% of the time is on autopilot'); conv 3 (rung 4 fails: errors accumulate - benifit/benift/benifical, enviornment, alrady, Accorting, 'faultthe' - and 'he says will we even be able to make new cars' plus 'we should expect my self drivin cars' need repair on re-reading); arg 5 (rung 5 met: opposing considerations are acknowledged and answered with stated reasons, and the manufacturer-bears-liability conclusion is one the prompt's framing does not already supply; rung 6 fails - no strongest objection engaged, and 'Clearly BMW would not release the car if it was not safe' is credulous)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0667fd7",
+    "evidence_notes": "Claim: FACS would be a great addition to the classroom; support = the six calculated emotions, Dr. Huang quoted ('A classroom computer could recognize when a student is becoming confused or bored'), Dr. Paul Ekman named, and the fake-versus-real smile muscle detection; objections raised ('how can a computer tell someone how they feel?', 'very invasive') and then answered by the fake-smile capability and the point that humans read the same cues and only differ in describing them. org 5 (rung 5 met - the benefit block must precede the objection block, which must precede the rebuttal, so no pair swaps; rung 6 fails because the rebuttal unit carries several jobs and drifts at its close rather than finishing one); dev 4 (specific named support with the classroom connection stated, but rung 5 fails: the Ekman mention is a bare name-drop and the Huang quote is followed by assertion - 'this would be very wise to put in a classroom'); conv 3 (rung 4 fails: errors accumulate - emtions, auhtor, kbow, pyschologists, sytem, arguements, 'Scientist believe they have came up', 'a few pieces metal' - forcing re-reading though meaning is recoverable); arg 5 (rung 5 met: an opposing position is acknowledged and answered, not merely mentioned; rung 6 fails because the invasiveness objection, the strongest one raised, is dropped unanswered)."
+  ,
+    "organization": 5,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0668f09",
+    "evidence_notes": "Claim: banning or reducing cars lowers CO2 and lets business bloom; support drawn from sources with attribution - Paris congestion down 60% after five days of smog (Source 2), Bogota three car-free years and 118 miles of bike paths in a city of seven million (Source 3), plus quotes from Plaza, Mockus, Sivak (Source 4), Rosenthal and Walter; explicit qualification ('We as a population don't have to completely outlaw driving but more acts of car-pooling and using public transportation') and an explicit governing principle ('We can all be able to give up something for the benefit of the common good'). org 4 (idea stated at the end of the opening and held, frame present; rung 5 fails - the environment and business blocks are interchangeable despite the 'alongside' signpost); dev 4 (support is specific and the CO2 mechanism is explained, but rung 5 fails: the Sivak and Rosenthal quotes are dropped with no comment at all, the Rosenthal one left unclosed); conv 3 (rung 4 fails: spelling errors accumulate - enviornment, atmopshere, coinsided, wopping, magnificant, restauraunts - and the Beijing comparison and the Ozone-Layer sentence in the conclusion both need repair); arg 5 (rung 5 met on two routes - the position is qualified where the issue warrants it and the common-good principle is made explicit - and the collective-sacrifice conclusion goes past a bare advantages framing; rung 6 fails, no objection is engaged)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0670d67",
+    "evidence_notes": "Claim: self-driving cars process situations as well as or better than humans, still leave humans some control, and remove distracted driving; support = the spinning roof sensor building a constantly updating 3-D model, BMW 'Traffic Jam Assistant' handling up to 25 mph with touch sensors requiring hands on the wheel, and the calculator analogy, each carried further than the fact itself ('Humans can only see so much through their two eyes... these cars are maintaing a constant image of their surroundings, not just what is in front of them'). org 5 (rung 5 met: the concession block opens 'While the computers do have a complete 360 degree view' and depends on the prior part, and the distraction argument depends on the hands-on-wheel sensors, so no pair swaps; rung 6 fails - the order follows the opening's preview list rather than executing a nameable argumentative move); dev 5 (support specific and most of it explained in a way that adds something; rung 6 fails because the half-the-fuel claim is dropped unexplained and 'multiple accidents a year due to texting' is a general gesture); conv 4 (visible spelling errors - proccess, peripheal, maintaing, elliminate, safley, itme - but every sentence parses on first pass; rung 5 fails as the errors are more than occasional); arg 5 (rung 5 met: the loss-of-control concern is answered with the notification and touch-sensor design, and the essay reaches the synthesis that keeping the human in the loop is what makes the distraction problem solvable; rung 6 fails - failure modes and liability, the strongest objections, are untouched)."
+  ,
+    "organization": 5,
+    "development": 5,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "06730ad",
+    "evidence_notes": "Claim: Seagoing Cowboys is 'an opportunity of a lifetime because of all the countrys and places you get to go to'; every piece of support is a cited source report - Luke invited to Europe by Don (para 1), caring for horses, young cows and mules (para 2), 'an unbelivable opportunity for a small-town boy' (para 5), 'besides helping people I had the side benefits of seeing Europe and China' (para 5), feeding two or three times a day (para 6). org 3 (controlling idea stated first, but rung 4 fails: it does not hold - it shifts to a statement of job requirements - and the closing stops on a trailing quotation rather than closing); dev 3 (specific details are present but the essay is source sentences lightly stitched with paragraph tags and no quotation marks, which is patchwriting and caps the trait at 3; the reader supplies most connections); conv 3 (rung 4 fails: countrys, unbelivable, greatful, opportunitys, missing quotation marks, and the garbled 'and I am greatful for the opportunitys Luke says' force repair; sentences are also one flat pattern); arg 3 (rung 4 fails: no reason is actually reasoned - the essay asserts that travel makes it an opportunity of a lifetime and then circles that claim in different words across all three paragraphs)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "06743f8",
+    "evidence_notes": "Claim: 'why I don't think driverless cars are needed'; central reason is reasoned - if the car has every sensor and still notifies the driver when human skills are needed, you keep the burden without the benefit ('with all that technology why does it need assistance'; 'To save the stress of you having to take control of the wheel... than why not keep you car'); the sensor inventory and the 'navigating through work zones and around accidents' phrasing are lifted near-verbatim from the source; later claims (waste of money, drunk and high drivers) are unsupported and cut against its own 'we will always have our eyes on the roads'. org 3 (rung 4 fails: the second paragraph repeats the opening and promises a differences/similarities comparison it never delivers, and the final part carries several unrelated jobs then stops rather than closes); dev 3 (the borrowed sensor list and notification clause are patchwritten with little transformation, capping at 3; the money and drunk-driver claims have no support); conv 2 (rung 3 fails: 'a drunk driver or a persons who's high off something get in a dosen't pay attention' and 'why risk someone lives when if they are driving' leave the reader guessing rather than repairing; comfortabel, ina, steet, waist, importnat, hven't throughout); arg 4 (rung 4 met on the partial-autonomy reasoning; rung 5 fails - the concessions are mentions only, the conclusion is a pole the prompt already frames, and the position is undercut by its own later claim that drivers do get distracted)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0674a38",
+    "evidence_notes": "Claim: driverless cars are not a smart step forward because the car cannot fully function on its own; the reasoning is a stated chain - Dr. Werner of BMW says drivers get bored, so they lose focus and look at their phone, so a sudden handover makes them panic, and with an oncoming car 'it only takes a split second'; the second reason (Google markets anything on its name) is asserted and its paragraph-eight quote about upgrading roads being too expensive does not bear on the flaw-and-money claim it is attached to, so it is discarded; boundary condition stated twice - 'make one that can and then we can advance into the new era' and 'If we had cars that could fully function safely and accurately... then we could maybe experiment'. org 4 (idea first and held, frame does real work; rung 5 fails - 'Another point I would like to make' is additive and the two body parts swap freely); dev 4 (rung 4 met and the Werner support is genuinely interpreted, but rung 5 fails: after the irrelevant quote is discarded the marketing claim is left unsupported); conv 3 (rung 4 fails: 'big name companies such as Google market anything they sell simply because of who makes it' and 'a bunch or attackers' need repair, plus weel, panick, everytime, 'work ot the kinks'); arg 5 (rung 5 met: the position is explicitly qualified into a not-yet position that the prompt's for/against framing does not supply; rung 6 fails because the strongest objection - the safety gains of automation - is never engaged and the second reason collapses)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  }
+]

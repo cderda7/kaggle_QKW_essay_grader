@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "06aa705",
+    "evidence_notes": "Claim: NASA should keep exploring Venus because it has potential and was once Earth-like. Support: Venus once had oceans, valleys and mountains (source detail, dropped without explanation); exploration will let us solve the heat problem; exploring could cut poverty and create jobs (incoherent, unsupported). org 3 (rung 4 fails: no closing at all, essay stops mid-body; frame incomplete, jobs/poverty part is a digression). dev 3 (rung 4 fails: the oceans/valleys detail is listed and never connected; the poverty claim is bare assertion; reader supplies the link). conv 4 (rung 5 fails: sentences flat and mostly one shape; but errors are few, 'humane' for human/habitable is approximate not obscuring, never re-read). arg 4 (rung 4 yes: says why exploring follows -- continued exploration is what would let us solve the heat; rung 5 fails, risk-vs-reward is exactly what the prompt's framing implies)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06b51cb",
+    "evidence_notes": "Claim (mid-essay, inside a first-person NASA narrative): the Face is 'just rocks and natural land' / a mesa. Support: years of studying Martian landforms found no look-alikes; a partner proposed a natural mesa; NASA sent people and found nothing. All narrated as events rather than argued from a source. org 3 (rung 4 fails: controlling idea buried in the fourth of eight units, opening is a narrative hook that does not orient). dev 3 (rung 4 fails: the mesa and the search are listed as story beats; the one attempted 'because' is unrecoverable, so no connection is actually stated). conv 3 (rung 4 fails: 'Sence', 'we get surprised', 'look a like', 'it's most be something in there', 'some studious' -- errors accumulate and force repair, but meaning stays recoverable). arg 3 (rung 4 fails: reasoning asserted through narration; the single 'He think in that because...' never lands a why)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "06bad05",
+    "evidence_notes": "Claim: technology cannot tell us how we truly feel; 'Technology isn't as good as it seems.' Support: one cited quote, 'we humans perform this impressive calculation every day' (Par. 5), dropped and followed by an unrelated line about trying hard enough; assertion that people feel differently about similar problems; 'it could be false.' org 3 (rung 4 fails: body paragraph starts on the quote and finishes on an unrelated point about not knowing what to do -- unity break plus digression). dev 3 (rung 4 fails: the one specific piece, the cited quote, is never connected to the claim; remaining claims unsupported). conv 3 (rung 4 fails: comma-strewn syntax, 'we know who i in the bad mood', 'being turn out to be something we not' -- repairable but repeated re-reading). arg 3 (rung 4 fails: 'because it could be false' is assertion, no why on the page; later parts restate the opening)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "06be122",
+    "evidence_notes": "Claim, first sentence: the face wasn't formed by aliens. Support: three cited source quotes -- shadows creating the illusion of eyes/nose/mouth (par. 7), the 3x rule of thumb about resolving objects (par. 11), the butte/mesa landform (par. 12), each closed with 'The text says that in paragraph #X'. org 4 (rung 5 fails: the three quote units are freely interchangeable -- a set of supports, not a sequence; frame is minimal but present, thesis first and 'That is why' last). dev 3 (rung 4 fails: quotes are attributed, never explained; the one attempted connection, 'because they arn't seen by any web surfers', is a non-sequitur, so the reader supplies every link). conv 3 (rung 4 fails: 'formatio', 'naturallandform', 'the Martian of a butte', unbalanced quotation marks -- accumulation forcing repair, meaning still recoverable). arg 3 (rung 4 fails: the source does the reasoning; the essay never states why shadows or resolution rule out aliens, and circles back to its opening claim)."
+  ,
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "06c3439",
+    "evidence_notes": "Claim: people should join the Seagoing Cowboys program because it is a once-in-a-lifetime opportunity. Support: quoted 'Besides helping people, I had the side benefit of seeing Europe and China'; the gondola ride in Venice, a city with streets of water; quoted 'The cattle boat trips were an unbeliveable opportunity for a small-town boy'. org 3 (rung 4 fails: opening never orients -- 'this expierence' with no antecedent -- and the controlling idea arrives only in paragraph two; paragraphs one and two repeat the travel point). dev 4 (rung 4 yes: connections are stated after each quote -- 'This is why Luke wants to pass on the expierence', 'This is almost a life time of happy memories' -- but by restatement; rung 5 fails, no explanation adds anything the quote did not say). conv 3 (rung 4 fails: 'expierence' twice, 'unbeliveable', 'incouraged', 'he he', the fragment 'If you get to help people who need your help', 'your saving human kind' -- accumulation, re-read at the fragment). arg 3 (rung 4 fails: reasons are asserted -- travel, helping, 'saving human kind' -- with no why; conclusion restates paragraph one)."
+  ,
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "06c3953",
+    "evidence_notes": "Claim: the Face on Mars is nothing more than a natural landform. Support: quoted 'defenders of the NASA budget wish there was an ancient civilization on Mars' (Par. 5), worked into an incentive argument -- NASA would gain fame and funding from real aliens, so a cover-up is pointless; the mesa/butte quote (Par. 12) plus Middle Butte in the Snake River Plain and the 2001 MGS image; a habitability argument carried entirely by assertion. org 4 (rung 5 fails: the NASA-motive and aliens-can't-exist parts swap without loss, though the tin-foil-hat part does depend on the evidence preceding it). dev 4 (rung 5 fails: support is not specific throughout -- the whole habitability paragraph offers no case, particular or figure, and 'The evidence presented is enough to' trails off; where support exists, the NASA-motive explanation does real interpretive work). conv 4 (rung 5 fails: 'unneccecary', 'equivilent', 'a ancient', a truncated sentence, and long sentences that lose grip; but variety is genuine and nothing needs repair). arg 5 (rung 5 yes: the alien position is acknowledged and answered, and the incentive argument reaches a conclusion the prompt's natural-or-alien framing does not hand you; rung 6 fails -- the strongest objection, that the 1976 image really does look like a face, is never met, and 'theorists never stop believing' dismisses rather than refutes)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "06c7026",
+    "evidence_notes": "Claim: the Face on Mars is just a landmark, on three signposted grounds -- no evidence, NASA won't leak, so everyone is assuming. Support: quoted 'evidence that NASA would rather have' (par. 5), misread as NASA withholding; the quoted 25-years-in-film-books-radio line, connected to the story mutating as it spread; a desert reductio -- if I see a face in the desert, that doesn't make it alien. org 4 (rung 5 fails: reasons two and three are near-duplicates and the first swaps freely with either; frame present, roadmap held, closing returns to it). dev 4 (rung 4 yes: connections are stated after both quotes -- 'That shows that...', 'they change it up a little bit... and people think that is the true story'; rung 5 fails, most of the essay is unsupported assertion and much of the explanation is circular). conv 3 (rung 4 fails: 'bween', 'assumimg', 'camre', 'Nobody knows is that is true', and the run-on about real things mixed with unreal -- accumulation requiring repair). arg 4 (rung 4 yes: the desert reductio genuinely reasons why the alien inference fails; rung 5 fails -- the conclusion is exactly the option the prompt's framing offers, and the position wobbles, asserting certainty while claiming nobody can know)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06c7ba1",
+    "evidence_notes": "Claim: driverless cars are not a good idea, on three announced grounds -- humans are smarter, technology fails, cost. Support: the cost chain (sensors and devices are expensive, roads need sensors too, sensors drain energy so batteries need constant replacing); the article's own point that the cars aren't fully driverless; the smarter-humans and glitch claims are pure assertion. org 4 (rung 5 fails: Firstly/Another/lastly supports are interchangeable, and reasons one and two are near-duplicates; frame and roadmap are intact). dev 4 (rung 4 yes: the cost paragraph states its connection and builds a small causal chain; rung 5 fails -- support is not specific throughout, 'technology always fails' and 'computars can glitch' are general gestures with no case or figure). conv 3 (rung 4 fails: 'contriversy', 'Wheather', 'belive', 'becuase', 'comeputers'/'computars', 'artilce', 'senors', 'batterys', 'toom', lowercase sentence starts -- heavy accumulation, though nothing needs guessing). arg 4 (rung 4 yes: the cost chain says why, and 'It is pointless to make them if the driver will always need to be there' is genuine reasoning; rung 5 fails -- the opening nod to technology improving is never answered, and the conclusion is what the prompt's framing implies)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06c92ec",
+    "evidence_notes": "Claim, first sentence: the Face is formed by a natural landform, a mesa. Support: the article's opening high-resolution/3D-altimetry finding; the par. 2 note that unusual shadows made a common Cydonia mesa look like an Egyptian Pharaoh; the par. 8 wispy cloud, which the writer turns into an inference that the cloud caused the alien-looking markings; the Garvin taxpayer quote and the 1998 Malin flyover, both narrated. org 3 (rung 4 fails: the Garvin motivation quote and the Cydonia-targeting mission history do not bear on whether the face is natural, and the closing unit starts as mission narrative and finishes as thesis). dev 4 (rung 4 yes: every borrowing is marked with a paragraph citation and some are connected -- the cloud inference states what the detail shows; rung 5 fails, the Garvin quote and the flyover are left entirely unexplained, so 'most explained' is not met). conv 3 (rung 4 fails: 'begninng', 'altimertry', 'spacecarrt', 'Egyptain', 'Althoug', plus 'flew over Cydonia flew and took', 'after 18 years long of the Viking mission ended' and 'revealing what the truth was a natural landform' -- long sentences lose control and need repair). arg 4 (rung 4 yes: the cloud-caused-the-illusion inference is the writer's own why; rung 5 fails -- no opposing view is engaged as a position and the conclusion is the one the prompt implies)."
+  ,
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "06cb1df",
+    "evidence_notes": "Claim: the author supports the idea that studying Venus is a worthy pursuit despite the dangers -- the prompt's wording returned, and contradicted by the intro's 'it's a safe envoirment'. Support: three block quotes with figures (800 degrees, 90 times atmospheric pressure, sulfuric acid clouds, plentiful solar power), each followed by a label rather than a link. org 3 (rung 4 fails: the opening asks why Venus is called Venus and calls Venus safe, so the controlling idea is not stated early and the frame does no orienting work). dev 3 (rung 4 fails: 'this talks about how danger is a priority now' and 'This was talking about how the author explains the facts of our solar system' name a topic instead of stating how the quote supports the claim; the reader supplies every connection). conv 2 (rung 3 fails: 'This story explains how the solar system is used', 'the solar is very powerfull' and 'the whole Venus solar system' have to be guessed at, not repaired; plus 'envoirment', 'puruit', 'saids', 'conculsion'). arg 2 (rung 3 fails: the position is the prompt's own wording handed back with no commitment added and is contradicted by the intro; what follow as reasons restate it)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  }
+]

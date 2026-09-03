@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "0329d02",
+    "evidence_notes": "Claim: against driverless cars because electronics/software fail more than humans; support is opinion (people 'getting lazier', 1970s cars were simple and easy to fix) plus one concrete-ish particular (drivers distracted by 3-D laser mapping or an interior camera leading to a fatal crash); no source material used. org 3 (controlling idea in sentence 1 but rung 4 fails: the 1970s-cars/laziness stretch is a digression and the long middle unit starts on 'smart cars are dumb' and finishes on 1970s styling); dev 3 (rung 3 yes on the in-car-technology particular, rung 4 no: the central claim that components fail is asserted with nothing behind it and the reader supplies the link); conv 3 (rung 3 yes, rung 4 no: the ~100-word run-on with comma splices and 'they was distracted' has to be re-read to repair, though meaning is never guessed at); arg 3 (rung 3 yes, strongly committed and clearly the writer's own; rung 4 no: reasons are asserted, and the close circles the opening with 'people would regret it later').",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "032a3bf",
+    "evidence_notes": "Claim: the U.S. should limit everyday vehicle use; three supports - gas money that could feed/clothe families, accidents from teen and drunk drivers (a realized narrative of a party, slow reactions, a crash), and air pollution/gasoline hazards; explicit qualification that banning is not proposed. org 4 (rung 4 yes: thesis at end of the hook paragraph, frame present, all body parts bear on limiting driving; rung 5 no: money, accidents and pollution are interchangeable, and the pollution unit wanders into house fires and repair costs); dev 4 (rung 4 yes: the money support states its link - gas spending could be redirected because walking or biking replaces the trip; rung 5 no: much support is general assertion, 'accidents keep increasing', 'damage our ozone layer'); conv 3 (rung 3 yes, rung 4 no: dropped apostrophes and misspellings accumulate and sentences such as the gasoline-spark-fire chain need re-reading to repair); arg 4 (rung 4 yes: the money reason states why limiting follows; rung 5 no: the 'limit not ban' qualification is real but the conclusion stays inside what the prompt's framing already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "032db9e",
+    "evidence_notes": "Claim: limiting motor-vehicle use benefits the environment; source-based, with 12% of European greenhouse emissions from passenger cars, Paris's 22-euro/$31 fine on two days, Bogota's car-free day with $25 fine plus repaired sidewalks and higher business income, and a U.S. case where driving fell but emissions did not. org 5 (rung 5 yes: the order is motivated - general benefits, then Paris, then Bogota as 'most successful' with back-reference to sources 1 and 2, then the U.S. paragraph that explicitly depends on the Europe material; rung 6 no: the closing does not carry the vehicle-type complication, so the sequence's move is not named); dev 5 (rung 5 yes: support is specific throughout and most is explained with added interpretive work - '12% may not sound like much but it adds up' against U.S. emissions four times Europe's, and the Hummer/truck explanation of why less driving did not cut emissions; rung 6 no: the stress and sociability claims are listed unexplained across three sources); conv 5 (rung 5 yes: varied sentence shapes under control, including the deliberate 'not in Europe, not in South America, but in our own country'; errors occasional and minor - 'use of of', 'definately'; rung 6 no: 'ameliorate the horrible impact' and 'great effects' are approximate rather than apt); arg 5 (rung 5 yes: the U.S. paragraph raises the contrary datum that driving fell without an emissions drop and answers it by qualifying the position to vehicle type; rung 6 no: no strongest objection and no reframing of the question).",
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "03314fd",
+    "evidence_notes": "Claim: facial-expression-reading software is valuable and useful; source-based support - the Mona Lisa scored 83% happy, 9% disgusted, 6% fearful, 2% angry, a quoted line on tracking facial movements, and the case of a student with a neutral face who is actually upset. org 4 (rung 4 yes: thesis first sentence, frame present, all three body parts bear on hidden emotions; rung 5 no: the 'hides feelings' paragraph and the 'expressions do not always reveal feelings' paragraph could swap freely); dev 4 (rung 4 yes: the connection is stated - she looks 100% happy yet reads 9% disgusted, so the software reads emotions whatever the face shows; rung 5 no: the second quotation is dropped in with no work done on it and much of the essay is general assertion about 'improving our daily lives'); conv 3 (rung 3 yes, rung 4 no: 'Sense' for since, 'hid' for hide, 'to afriad', mangled quotation punctuation, and the long 'Sense there are some individuals who hid their feelings...' sentence has to be re-read to repair); arg 4 (rung 4 yes: one reason is reasoned - you cannot help someone whose distress you cannot detect, so detection has value; rung 5 no: no opposing view, and the conclusion restates the opening).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0331f55",
+    "evidence_notes": "Claim: driverless cars are present-day, safe for an alert driver, and the economically better path; support drawn from the article - Google testing since 2009 and 'more than half a million miles without a crash', vibrating seats, flashing lights and steering-wheel sensors, the 1950s GM concept car on a cabled test track and Berkeley's magnets, and roof-mounted LIDAR. org 4 (rung 4 yes: position stated in the opening, frame present, safety and economy paragraphs both bear on it; rung 5 no: the safety and economy blocks are independent supports that could swap without argumentative loss); dev 5 (rung 5 yes: support is specific throughout and most is explained with something added - the half-million miles set against deaths in ordinary driving, and the smart-roads history explaining why upgrading cars beat upgrading roads; rung 6 no: LIDAR and the interior-camera suggestion are left to speak for themselves); conv 3 (rung 3 yes, rung 4 no: dense misspellings and comma splices - 'thery´re', 'consept', 'shootss', 'econoimcally' - and 'Does it help or economy, lets discuss' forces a repair re-read); arg 5 (rung 5 yes: concedes the cars are not entirely driverless and cannot handle roadworks or backing out, then answers it via the alert systems and hand-sensors, and reaches the smart-roads-versus-smart-cars conclusion the prompt's framing does not imply; rung 6 no: the strongest objections go untouched).",
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0338170",
+    "evidence_notes": "Dramatized dialogue: Luke persuades his brother John to join the Seagoing Cowboys; reasons offered are that it is fun, you explore and see new places, you help people short of supplies, and it is a trip of a lifetime; John's objections (leaving home, aging parents, his job) are voiced and Mom answers the parents objection - 'you're 18... we have eachother, and we have our wonderful neighbors'. Nothing concrete about the program itself appears. org 5 (rung 5 yes: the framing line states the controlling idea, and the turns are causally locked - pitch, objection, goading, Mom's answer, agreement - so no pair could swap; rung 6 no: the closing 'miss you more' exchange sits outside the controlling idea); dev 2 (rung 3 no: every support is a general gesture - 'a lot of fun', 'places you've never seen', 'help others who don't have a lot of supplies' - with no named case, figure or concrete particular anywhere, so length does not rescue it); conv 4 (rung 4 yes: errors are visible - 'juat', 'your 18', 'eachother', inconsistent quotation marks - but nothing needs repair; rung 5 no: the speaker attribution slips from reported to direct speech and costs the reader a moment); arg 4 (rung 4 yes: Mom's rebuttal shows John's objection rests on a false assumption that his parents would be unsupported, which is reasoning; rung 5 no: the conclusion 'John should go' is exactly what the prompt's framing implies).",
+    "organization": 5,
+    "development": 2,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "033a27e",
+    "evidence_notes": "Reports that driverless cars have 'many pro's and Con's': pros are that they cost less money and would fundamentally change the world; cons are that a driver may have to take over when the car will not yield, and that the car lacks safety features 'such as an emergency brake or turning signals'. No stance is taken. org 3 (rung 3 yes: the pro/con framing governs the text; rung 4 no: the essay ends on the last con with no closing at all, so the frame is incomplete); dev 3 (rung 3 yes on the emergency-brake/turn-signal particular; rung 4 no: items are listed rather than explained, and the money pro is circular - it 'takes up less money, which means it saves yourself more money'); conv 3 (rung 3 yes, rung 4 no: 'negative conotations' is the wrong word for drawbacks, 'pro's/Con's' apostrophes, 'suppoed', 'fundementally', and the money sentence needs re-reading; sentence shapes run to a single 'One of the... Another...' pattern); arg 2 (rung 2 yes: a position of sorts is stated; rung 3 no: it is the prompt's own pro/con framing handed back with no commitment - the essay never says whether driverless cars should be developed).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "033aa4b",
+    "evidence_notes": "Source-based on Venus: opens with the hazards (97% carbon dioxide atmosphere, corrosive sulfuric acid clouds, average 800 degrees Fahrenheit), then states that studying Venus is a worthy pursuit because researchers can explore new rocks and gases and harshness makes finds rare, then quotes NASA's floating-observation solution. org 3 (rung 3 yes but rung 4 no: the controlling idea is weakly located - it arrives in paragraph 2 after a paragraph of description - and the essay stops on a quotation gloss with no closing); dev 4 (rung 4 yes: connections are stated, if by restatement - the atmosphere 'makes it a very toxic place', harshness makes finds rare and therefore impactful, the quoted NASA idea 'would allow humans to observe the planet despite the dangers'; rung 5 no: the support for worthiness is general - 'new types of rocks, gas, and etc.' - while only the danger side is specific, and quotations sit alongside the writer's sentences rather than inside them); conv 3 (rung 3 yes, rung 4 no: 'the closest plant to Earth density and size wise', 'Other dangerous conditions are such as', 'suggets', 'ablove fray' - meaning is recoverable but several sentences need repair); arg 3 (rung 3 yes, weakly - 'It is a worthy pursuit because' adds commitment to the author's position; rung 4 no: the reasons are asserted, the danger tradeoff is never argued, and the last paragraph reverts to reporting what the author presents).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "03448b6",
+    "evidence_notes": "Claim: exploring Venus is a worthy pursuit despite the dangers; two labelled reasons - data leading to information and then innovation, and the future, since surviving Venus's conditions would let us explore other planets without weather obstacles; one cited particular, the paragraph-7 silicon carbide electronics that lasted 3 weeks. org 4 (rung 4 yes: thesis first sentence, orienting opening, 'All-in-all' closing, both reasons on topic; rung 5 no: 'One reason' and 'The second reason' are freely interchangeable); dev 3 (rung 3 yes on the silicon carbide figure; rung 4 no: that one specific is appended with no statement of what it shows, and the first reason is a circular chain - explore, get information, maybe innovate - so the reader supplies the connection); conv 3 (rung 3 yes, rung 4 no: 'why it´s a good to explore', 'The second reason why it´s a good reason to explore Venus it because', 'it will worth waiting', 'benifits', 'acticle' - several sentences need repair, and the if-then pattern repeats throughout); arg 4 (rung 4 yes: the future reason is reasoned - a capability built for the harshest planet generalizes to easier ones; rung 5 no: the danger is only nodded at, the time concession is answered by assertion, and the conclusion is exactly what the prompt's framing implies).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0345980",
+    "evidence_notes": "Claim: driverless cars will be a safe and major innovation; support from the text - more than half a million miles without a crash, the accidents that did occur were caused by other drivers, warning systems that tell the driver to take control, and situations the cars cannot handle such as driveways, construction zones and jaywalking pedestrians. org 4 (rung 4 yes: thesis first line, frame present, all three body parts bear on it; rung 5 no: the safety-record and driver-override paragraphs could swap without loss even though the concession sits last); dev 4 (rung 4 yes: the connection is stated and sometimes interpreted - 'This implies that the cars can't deal with humans very well'; rung 5 no: the opening claims that they are 'very intelligent machines' making faster decisions than humans carry no support, so support is not specific throughout); conv 4 (rung 4 yes: 'truely', 'incase', 'dong' are visible but nothing needs repair; rung 5 no: three paragraphs open on the same 'The text states that' frame, so the variety is not there); arg 4 (rung 4 yes: reasons are reasoned - the crash record is defended by attributing fault to other drivers; rung 5 no: the body qualification that they are not fully safe yet is dropped in the conclusion, which returns to the unqualified position the prompt's framing already implies).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  }
+]

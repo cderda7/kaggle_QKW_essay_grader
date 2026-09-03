@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "03705ca",
+    "evidence_notes": "Claim: limiting car usage has advantages (environment, saving money, selling a car to buy a home). Support: marked source quotes - Paris partial driving ban and the Beijing smog comparison (source 2), Vauban's 70%/57% figures (source 1), plus Levittown train commuters and a generic ~$200/month saving. org 4 (controlling idea stated early and held, opening and closing present, all three body parts on-topic, but pollution/money/home-buying supports are interchangeable and paras 2 and 3 overlap - rung 5 fails). dev 4 (quotes are specific and figure-bearing and the connection is stated - 'After reading that it seems to me that the pollution... thats why we need to put a stop to it' - but the third body part is general throughout, no named case, and explanations mostly restate, so rung 5 fails; quotes are marked and sit alongside the writer's sentences). conv 3 (never have to guess, but the 'Thirdly, citizens use limited car usage... so what do they do' run-on and 'This strikes my eye in very many ways is that' force re-reading; errors accumulate - 'their are', 'dont no', 'there car their actually', 'they sell they car'). arg 4 (one reason genuinely reasoned - cars burn gas, gas makes pollution, pollution can harm or kill on consistent exposure, therefore limit cars; no opposing position engaged, no qualification, no explicit governing principle, so rung 5 fails)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0374dae",
+    "evidence_notes": "Claim: the Face on Mars is a natural landform, not an alien artifact. Support: the April 5 1998 Mars Global Surveyor pass, a photo 'ten times sharper' than Viking, the 1.56 m vs 43 m per-pixel comparison, and the point that airplanes, pyramids or small shacks would be visible at that resolution. org 4 (claim lands at the end of the opening narrative and holds; opening orients, conclusion closes; the single body part and the closing both bear on the claim, but the closing's pixel data does not depend on the body and could have sat inside it, so rung 5's motivated order fails). dev 3 (support is specific and one connection is stated, but the essay is patchwritten - 'flew over Cydonia for the first time', 'ten times sharper than the original Viking photos', 'each pixel in the 2001 spans 1.56 meters, compared to 43 meters per pixel in the 1976 Viking image' are unmarked source phrasing lightly stitched, which caps the trait at 3). conv 2 (at least twice I have to guess rather than repair - 'this picture was taken by a digital image 3 times bigger then pixel size' and 'When the picture was taken by Mars camera team showed upon a JPL web site'; sentences frequently fail to resolve, errors frequent, meaning somewhat obscured). arg 4 (one reason reasoned - the resolution is fine enough that any built object would show, therefore nothing built is there; it answers doubters but reaches exactly the conclusion the source and prompt framing already imply, so rung 5's (d) fails)."
+  ,
+    "organization": 4,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "037545d",
+    "evidence_notes": "Claim: using technology to read students' emotional expression is valuable because it detects confusion and tracks emotional recognition. Support: marked quotes from paragraph six (Huang on a classroom computer recognizing confusion and modifying the lesson), paragraph five (da Vinci anatomy, anatomical information as electronic code), the web-ad example, and a concession paragraph on false feedback and cost. org 4 (thesis at the end of the opening and held, frame present, every body part on topic, but the two supporting bodies are interchangeable - the 'In addition' bridge is announcement, not dependence - so rung 5 fails). dev 4 (quoted support is specific and the first body states its connection: students avoid asking questions out of embarrassment, so a computer that detects confusion lets them get help without asking; but the da Vinci quote is followed by a non-sequitur and the ad example is unexplained, so explanation is not consistent and rung 5 fails; quotes are marked and sit alongside rather than inside the writer's sentences). conv 4 (errors are visible and roughly ten across the essay - 'recgonize', 'aslo', 'Furtherore', 'da Vini', 'preciesly', 'the computer with be able' - but they are spelling slips that never require repair or re-reading; sentence control is steady though the quote-frame pattern recurs, so rung 5's 'occasional and minor' fails). arg 4 (one reason reasoned via the embarrassment mechanism; the 'In contrast' paragraph raises objections but never answers them and the conclusion does not return to them, so rung 5 fails on every route)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0376bcb",
+    "evidence_notes": "Claim: the Face on Cydonia is a Martian mesa whose shadows created the illusion, not an alien artifact. Support: the shadow explanation, Michael Malin's April 5 1998 Mars Orbiter Camera photo ten times sharper than Viking, and Garvin's point that small objects would be visible. org 3 (controlling idea stated in the opening and held, but the second paragraph starts on the shadow illusion and finishes on Hollywood films, books and a NASA cover-up accusation - a digression that does not bear on the claim and a unity break - and paragraph four's 'It's not easy to reach Cydonia and therefore makes it difficult to get a picture' sits against the sharper picture just described; rung 4's 'every body part relates' fails). dev 3 (support is specific and connections are stated - 'The picture revealed a natural landform; no alien monument', 'therefore no alien civilization is on Mars' - but the factual sentences are patchwritten from the source: 'the shadows gave the illusion of eyes, nose, and mouth', 'resembling an Egyptian Pharaoh', 'ten times sharper than the original Viking photos', 'a natural landform; no alien monument' are lightly transformed source phrasing, which caps the trait at 3). conv 4 (errors are few and minor - 'the shadows is what made', 'a face that look human' - sentences are short, varied enough and under control; nothing needs repair, though 'Though, NASA defenders wish there was ancient civilization on Mars' costs a beat, so rung 5's 'nothing costs the reader anything' fails). arg 4 (one reason reasoned - shadows falling across a mesa produce the illusion of eyes, nose and mouth, therefore what looks like a face is not one; believers and the cover-up theory are mentioned but never answered, and the conclusion is the one the prompt framing already implies, so rung 5 fails)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "037ac1f",
+    "evidence_notes": "Claim: we should not have driverless cars. Support: drivers lose their jobs and may riot, the cars would cost millions per state and return less than they cost, and a programming error could cause crashes and nationwide panic; closing concedes lower fuel spending and general safety. org 4 (position and three reasons previewed in the opening, each body takes one, closing reaffirms; the three reasons are interchangeable, so rung 5 fails). dev 2 (support is general throughout - 'people that live off of driving people places', 'they will probably start rioting', 'it will probably cost millions of dollars for just one state', 'so many car crashes would be happening'; there is no named case, figure or realized example anywhere, so rung 3 fails and most claims rest on speculation). conv 2 (I have to guess at 'we cant alwas y just think that since it is technology we are safe will that not alwas the case' and at 'everthing would be in a heave of trouble'; run-ons, missing sentence capitals and wrong words - 'disstortion', 'conceder', 'missed up', 'so much many on gas' - are frequent, so meaning is somewhat obscured). arg 4 (reasons are genuinely reasoned - job loss causes anger which causes unrest which causes further problems; costs exceed returns so the programme wastes money - and the closing answers the safety counter by challenging the assumption that technology equals safety, but the conclusion is simply the 'no' side the prompt already frames, so rung 5's (d) fails)."
+  ,
+    "organization": 4,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "038fd62",
+    "evidence_notes": "Claim: the new emotion-detection advancement would be a wonderful idea. Support: it would 'bring new thrills to life', it might prevent suicides by letting us know when someone needs help, one quote - 'The facial expressions for each emotion are universal' - and the speculation that a happy person could start an 'emotion train'. org 4 (thesis opens the body and holds through the closing, the 'Imagine being able to detect other peoples feelings' opening orients, the closing closes; the single body unit wanders across thrills, suicide, the quote and feeling others' emotions, and the closing only restates, so rung 5 fails). dev 2 (the one quote does not bear on the claim it is attached to - universality of expressions does not show the invention would be beneficial, and the essay's own link is circular: 'this is a good quote because it ties in with me saying that emotions could help people' - so it is discarded, leaving only general speculation with no named case, particular or figure; rung 3 fails). conv 2 (I have to guess at 'In the passage article for has a quote saying' and at 'The passage has some really good put out facts'; 'seeing somebody's when they are trying to hide them' drops its noun, and misspellings are frequent - 'Proffesor', 'Amsredam', 'advancment', 'a amazing'). arg 3 (position clear and committed and held, but the reasons are hedged restatements - knowing emotions is good because we would know emotions and could help - and the closing circles back on the opening in new words; nothing says why the benefit follows, so rung 4 fails)."
+  ,
+    "organization": 4,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "039b748",
+    "evidence_notes": "Claim: driverless cars are a brilliant idea - better environment, greater safety, money saved. Support: a car running on half the usual fuel, the impaired-driver scenario, and a $1000 construction-zone ticket on I-65 against cars that maintain the speed limit. org 4 (thesis with three prongs in the opening, three bodies in the announced order, conclusion recaps and adds a purchase frame; the three supports are interchangeable, so rung 5 fails). dev 4 (the safety and money supports are specific and explained with a mechanism the support alone did not state - impaired drivers cannot judge their own impairment, so a car that drives itself removes the judgement; driverless cars hold the limit, so the ticket never happens - but the environment body rests on general assertions, 'Our Earth is dying', 'killing Earth day by day', with a restatement explanation, so support is not specific throughout and rung 5 fails). conv 4 (sentence variety is real and rhetorically deliberate, and nothing requires re-reading, but seven misspellings plus an agreement slip - 'technolgy', 'differnece', 'enviroment', 'privlage', 'we always here about', 'therfore', 'Driverless cars is' - are more than occasional, so rung 5 fails). arg 4 (reasons are reasoned rather than asserted, but no opposing consideration appears anywhere, the position is never qualified, and the conclusion is the 'yes' the prompt already frames, so rung 5 fails)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "039e817",
+    "evidence_notes": "Claim: the Electoral College should not be used because electors, not the people, elect the president. Support: the 2000 dispute, Obama's 61.7% of the electoral vote against 51.3% of the popular vote in 2012, the winner-take-all landslide effect, and the even 538 total making a tie possible. org 3 (controlling idea stated in the first sentence, but the same paragraph closes with 'There are many reasons for retaining the Electoral College other then there lack of democratic pedigree', and the body paragraph is a run of source facts - the winner's share invariably exceeding the popular share, the tie arithmetic - that never bear on the abolition claim; rung 4's 'every body part relates' fails). dev 3 (the elector point does get a stated connection - if electors choose, the popular vote only disappoints - so one support is explained, but the body's figures are dropped without any stated significance and the material is patchwritten: 'widely regarded as an anachronism', 'lack of democratic pedigree', 'invariably exceeds his share of the popular vote', 'the total number of votes-538- is an even number' are lifted phrasing, one of them paraphrased so loosely it reverses the source, which caps the trait at 3). conv 3 (the writer's own sentences are clear, but 'Cause almost all states award electoral votes and a state creates a landslide electoral-vote victory in that state' and 'The reason is the the winning candidate's share' force re-reading to repair; errors accumulate mildly and meaning stays recoverable, so rung 4 fails). arg 3 (position is clear but destabilised by the pro-retention sentence and by unconnected pro-Electoral-College facts; the first paragraph circles the same complaint three ways and the figures are never reasoned from, so no reason says why it follows and rung 4 fails)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "039fed8",
+    "evidence_notes": "Claim, stated only in the last two lines: more technology does not always mean it needs to be in a classroom - 'just becase we can dosen't mean we should'. Support: the hypothetical that a watched student would be afraid to make any expression or attend class, a gesture at paragraph six saying FACS could be helpful, the observation that elementary schools now have laptops, the writer's siblings having weekend and Friday homework, and a closing cost question about tax dollars. org 3 (a controlling idea is stated in the writer's own words, but only at the very end - the essay opens with questions, canvasses both sides and declares 'the answer is unclear' - and the laptop/homework material shifts topic from emotion-reading to classroom technology generally, so rung 4's 'stated early and held' fails). dev 3 (the siblings' weekend and Friday homework is one concrete particular, so rung 3 holds, but the anecdote is a fragment left with no stated bearing, the paragraph-six reference is gestured at rather than used, and the cost question is raised not answered - the reader supplies every connection, so rung 4 fails). conv 2 (spelling failure is pervasive - 'mostlikly', 'socil-type', 'afraed', 'exprestion', 'acurance', 'artical', 'elementery', 'souroundings', 'assinment', 'wittnesed', 'tecnolagy', 'implamented', 'dollors', 'board' for bored - comma splices run through nearly every line, and the 'As I personly wittnesed my siblings' fragment never resolves, leaving me to guess what it asserts). arg 3 (the position is the writer's own and committed once it arrives, but the essay's mode is question-posing: the chilling-effect worry is voiced as what 'some' would feel rather than adopted and argued, the pro side is dismissed by labelling rather than answered, and the final claim is asserted, so no reason is actually reasoned and rung 4 fails)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "03ae0c4",
+    "evidence_notes": "Claim: the Electoral College was fair once but should be replaced by election by popular vote. Support: the cited winner-take-all definition (s1,p7), the 2000 Gore/Bush split between popular and electoral outcome, and source 3 paragraph 23 on turning off voters whose candidate cannot carry their state, worked out through a Florida example. org 4 (position stated in the opening after a concession and held, closing lands a principle the opening did not state; the mechanics paragraph does set up terms the second body uses, but the bodies are presented and function as independent supports - 'Another argument, according to source 3' - so the essay remains a set of supports and rung 5 fails). dev 4 (all three supports are specific and cited, and the Florida walkthrough does interpretive work the quote did not - a voter in a state their candidate cannot carry loses interest and stops voting, which popular vote would fix - but the 2000 case is explained largely by restating that Gore 'should have won', and the mechanics exposition is muddled, so explanation is not consistent enough for rung 5). conv 3 (the 'Back in the seventeenth century, when the Electoral College was created to find a balance' opening never resolves and needs repair, the long sentence beginning 'Instead of that being what our state's choice is' requires a second parse, and 'if they think either potential leader will benefit them' inverts its intended meaning; sentence variety is genuine but rung 4's 'never re-read' fails). arg 4 (reasons are reasoned, and the governing principle is made explicit at the close - 'It should be the people of America's decision, not a group of government workers' - satisfying one rung-5 route, but the conclusion is the popular-vote answer the prompt framing already implies, and the concession 'one meesly vote does not do much to turn the tables' undercuts the turnout argument without being addressed, so rung 5's (d) fails)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  }
+]

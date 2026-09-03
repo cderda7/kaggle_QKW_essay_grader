@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "07c48b4",
+    "evidence_notes": "Claim: a face-reading system (FACS) would be helpful for understanding what someone is going through; support is three quotes lifted from the source article (para 4 mixed emotions, para 5 reading a friend's face, para 9 empathy/imitation) plus a personal anecdote about not wanting to talk when upset. Org 3 (rung 4 fails: the drama-coach/'put on a happy face' part and the 'must have taken a while to build' part drift off the helpfulness claim; closing is a 10/10 endorsement of the article). Dev 4 (rung 4: connection stated for the para-4 and para-5 quotes -- 'FACS is just the answer for helping a friend in need' -- but rung 5 fails, the para-9 quote is left to speak for itself and explanations mostly restate). Conv 3 (rung 3 last YES: errors accumulate -- 'must of took', 'pargraph', 'cainf anf genorosity', 'unbelieveable' -- meaning recoverable but the reader re-reads to repair). Arg 4 (rung 4: one reason genuinely reasoned -- people hide what they feel, so a tool that reads faces lets a friend help; rung 5 fails, no opposing view, no qualification, no explicit principle).",
+    "organization": 3,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07c589a",
+    "evidence_notes": "Claim: join the Seagoing Cowboys Program; support is a list of attractions (fun, animals, riding horses, bunkbeds with friends, making breakfast, sleeping in the barn, getting messy). Org 3 (rung 4 fails: frame is perfunctory -- closing 'rap things up ... BYE!!!' stops rather than closes -- and para 3 bundles cleaning, taking a boat, relatives and new friends into one unit while repeating para 2's friends point). Dev 2 (rung 3 fails: support is a general gesture throughout, no named case or realized example, and the central reason 'you would have lots of fun' restates the claim). Conv 3 (rung 3 last YES: 'relitives', 'rap things up', 'your guys/girls could sleep', tangled closer 'this is my last thing that I am going to say this goodbye' -- recoverable, but repaired on re-read). Arg 3 (rung 4 fails: every reason is asserted -- it will be fun, you will meet friends -- and no why is ever given).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "07c7556",
+    "evidence_notes": "Claim: development of driverless cars should continue; support is the Google Prius sensor suite (LIDAR, radar, GPS), GM vibrating seats, current legal requirement of a human driver, and Tesla/Mercedes/Audi/Nissan timelines. Org 4 (rung 4 YES: position stated first line, all parts bear on it, opening and closing present; rung 5 fails -- the sensor part and the current-capability part swap freely). Dev 3 (patchwriting cap: the sensor list, 'designed to notify the driver when the road ahead requires human skills' and 'While the driver watches the road, the car watches the driver' are source phrasing reproduced unmarked and lightly stitched, with the writer's own contribution limited to connective sentences). Conv 3 (rung 3 last YES: 'agreat', 'Maufactors', 'lets the car no', plus sentences needing repair -- 'you have to manually on your own, back in and out', 'Tesla has a projected in 2016 they will release'). Arg 4 (rung 4: sensors explained as helpful because they let the driver see behind and sense approaching objects; rung 5 fails -- the liability problem is raised and then waved away on 'the assumption that the problems ahead will be solved', acknowledged but not answered).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07ca280",
+    "evidence_notes": "Claim: abolish the Electoral College; support is Source 1's winner-take-all quote, Source 2's figure that 17 states saw no candidate in 2000 and 25 media markets saw no ad, the elector-slate mechanism, and 60 percent public preference for direct election; Source 3's 'no region has enough electoral votes' is quoted and answered. Org 4 (rung 4 YES: position and two-reason preview up front, both bodies on it, conclusion recaps; rung 5 fails -- reason 1 and reason 2 are independent and could swap). Dev 4 (rung 4: reason 1's quotes are explained -- winner-take-all sends candidates only to big states so small-state voters never see a campaign -- but rung 5 fails, the elector-slate quote and the 60 percent figure are handed over with only a rhetorical question attached). Conv 3 (rung 3 last YES: 'becuase', 'canididate', 'campiagn', 'aserations' accumulate, and 'it does allow the people to vote for the president' inverts the intended meaning, forcing repair on re-read). Arg 5 (rung 5 via counterargument answered: the defense that no region can elect a president alone is conceded as true and then shown not to meet the objection, since candidates still ignore small states; rung 6 fails -- no reframing and the strongest defense is not engaged).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "07cd836",
+    "evidence_notes": "Claim: not having a car has advantages; support is the 12-percent/50-percent emissions quote, the Vauban passage on walkable design, and the End of Car Culture quote on Americans driving less. Org 4 (rung 4 YES: position in the opening, three on-topic supports, conclusion; rung 5 fails -- the health part leans on the pollution part, but the 'driving is coming to an end' part could sit anywhere and loops back to the environment point). Dev 4 (rung 4: connection stated for each quote, but rung 5 fails -- most explanations restate, e.g. the emissions quote is followed by 'the air will become cleaner ... Our air will get better if we start not having cars'). Conv 4 (rung 4 last YES: 'enviroment', 'polution', 'comming', 'benifit' are visible but nothing needs repair; rung 5 fails, misspellings are more than occasional). Arg 4 (rung 4: one reason reasoned -- without cars people must walk or bike and destinations are placed within walking distance, so people become more active; rung 5 fails, no counterposition, no qualification, no explicit principle).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07cde52",
+    "evidence_notes": "Claim: against the development of driverless cars because automated systems can fail; support is BMW's 'Traffic Jam Assistant' at up to 25 mph, GM's vibrating driver seats, and hypothetical failure scenarios (car not stopping at a stop sign, backing over a child). Org 4 (rung 4 YES: position first line, every part bears on it, closing states it again; rung 5 fails -- the fun, fix-current-cars, technology-safety and manufacturer parts reorder freely). Dev 4 (rung 4: the GM seat is a named case and the connection is stated -- drivers come to rely on the vibration, so a failure means backing into someone; rung 5 fails, most support is general assertion about 'many problems'). Conv 3 (rung 3 last YES: 'whitch', 'funtions', 'advanving', 'to much', lowercase sentence starts, and 'People have to think in the safety of theres and others' needs repair; one sentence pattern throughout). Arg 4 (rung 4: the reliance-plus-failure reason is reasoned; rung 5 fails -- 'it could be a good idea to always add safety things' is conceded but answered only by re-asserting the thesis that anything can fail).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07ce28e",
+    "evidence_notes": "Claim: the Facial Action Coding System should be used in the classroom because a computer that reads student emotion would adapt the lesson; support is the named creators, the 44 facial muscles and action units, Eckman's six emotions, the Mona Lisa reading (83 percent happy, 9 disgusted, 6 fearful, 2 angry), the web-ad example and Huang's prediction about a classroom computer. Org 4 (rung 4 YES: thesis at the end of the opening, mechanism part then application part, closing present but only restating; rung 5 fails -- the application part wanders into video games, movies and empathy, and the closing adds nothing the opening did not have). Dev 4 (rung 4: connection stated for several pieces, e.g. nonverbal communication tied to why machine emotion-reading matters, but rung 5 fails -- the Mona Lisa percentages and the six-emotion list are reported with no interpretation). Conv 4 (rung 4 last YES: transposition typos -- 'communiucate', 'Illnois', 'acheive', 'comptuter', 'repilcate' -- cost nothing, but rung 5 fails, control slips on 'A comptuter that could a similar thing as such' and errors are more than occasional). Arg 4 (rung 4: reasoned -- the computer detects confusion or boredom and modifies the lesson the way a human instructor would; rung 5 fails, no counterposition, no qualification, conclusion stays inside the prompt's framing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07d1a3b",
+    "evidence_notes": "Claim: studying Venus is a worthy pursuit because of the planet's features, the knowledge scientists will gain, and devices produced; support is two source quotes (Venus was probably covered with oceans and could have supported life; Venus has rocky sediment, valleys, mountains, craters). Org 3 (rung 4 fails: the opening's four sentences on habits, beliefs and evolution do not orient toward Venus, the single body unit starts on Earth-Venus similarity and finishes on adaptation and 'an enormous movement for the nation', and the conclusion repeats the three-part thesis verbatim). Dev 3 (rung 4 fails at band level: two of the three promised lines of support -- scientific knowledge, devices -- get no support at all, and the one intelligible explanation overreaches while the second collapses into 'life on this planet will destruct and kind of livng'). Conv 2 (rung 3 fails: coined and misapplied words -- 'knowledgement', 'producement', 'overbearing and apprehensive', 'protrays' -- and at least one sentence where intent must be guessed rather than repaired). Arg 3 (rung 4 fails: the leap from 'Venus once had oceans' to 'studying it is worthy' is never made, the other two reasons are never reasoned, and the conclusion restates the opening word for word).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "07d2045",
+    "evidence_notes": "Claim: keep the Electoral College; support is that it is easier than a popular vote, that blame for a bad president falls on the electors rather than the voters, that the founding fathers created it, and a confused hypothetical about transregional appeal and a regional favorite switching sides. Org 3 (rung 4 fails: no closing at all -- the letter breaks off mid-example on 'just go back and try to get your state back' -- and the 'Anyway the Electoral College consists of...' definition is a digression inside a single undifferentiated block). Dev 2 (rung 3 fails: nothing named, no figure, no realized case; the transregional hypothetical never resolves into an example, and the tradition appeal is bare assertion). Conv 2 (rung 3 fails: frequent run-ons and at least one clause where intent must be guessed -- 'the first reason as to why you should just keep the Electoral college is because everyone will want to be president'). Arg 3 (rung 4 fails: reasons are asserted -- easier, founders' sake -- and the one extended passage never connects back to why the College should be kept).",
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "07d41ed",
+    "evidence_notes": "Claim: the Facial Action Coding System would be valuable in the classroom; three supports drawn from the article -- a classroom computer recognizing confusion or boredom and modifying the lesson, the smile/frown web-ad behaviour transferred to learning styles, and weighted action units identifying mixed emotions plus Eckman's six basic emotions. Org 4 (rung 4 YES: thesis with three previews, each body on one of them, conclusion recaps; rung 5 fails -- the three supports are independent and could be reordered without loss). Dev 4 (rung 4: each quote is followed by a stated connection, e.g. 'This supports the claim because it shows that the software can identify not only one emotion but serveral'; rung 5 fails -- those statements restate the quote rather than adding what it shows). Conv 4 (rung 4 last YES: 'reconize', 'mofify', 'analize', 'thier' and the repeated misuse of 'inclined' are visible but nothing needs repair; rung 5 fails -- sentences run to one formulaic pattern, 'This claim is supported by the article because it says'). Arg 4 (rung 4: reasoned -- the system detects boredom and adjusts the task so the student keeps working, and tests styles until the right one is found; rung 5 fails, no counterposition, no qualification, no explicit governing principle).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "essay_id": "073d5b0",
+    "evidence_notes": "Claim: emotion-reading software should not be installed on school computers. Support: quotes the article's claim that 'the computer could modify a lesson, like a human instructor' and rebuts it (software cannot identify which step confuses a student); accuracy worry (could mix up confusion for anger, a resting face); cost of equipping hundreds of computers versus asking a teacher. org 4 (thesis early, frame present, all three supports relate, but accuracy/cost/effectiveness parts could swap freely); dev 4 (specific support and the connection is stated - teacher help is targeted where the scanner is not - but the accuracy and cost supports stay general assertions, so not specific throughout); conv 4 (recurring misspellings percieving/recieve and a stray capital are visible, but nothing needed repair; longer sentences lose grip so rung 5 fails); arg 5 (rebuts the source's own pro-claim by showing it assumes detecting an emotion equals diagnosing the confusion, and lands on an opportunity-cost conclusion the prompt's framing does not hand it; not the strongest objection, so rung 6 fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0742654",
+    "evidence_notes": "Claim: FACS in schools would benefit students and teachers. Support: paragraph 7 - FACS distinguishes a forced from a genuine smile, so a struggling kid cannot slide past with a fake smile; paragraph 6 - Dr. Huang's claim the computer detects confusion or boredom, extended to shy students who will not raise a hand. org 4 (idea stated early and held, opening and closing present, both body parts relate, but the two uses are parallel and the conclusion only restates); dev 4 (support is specific and source-cited; the shy-student explanation adds something, but the fake-smile piece is explained by restating it, so 'some, mostly by restatement'); conv 4 (errors visible - passed/past, asses, Haung - but nothing needs repair; long unpunctuated sentences lose control, so rung 5 fails); arg 4 (one reason genuinely reasoned - why silent kids benefit from automated detection - but no opposing consideration such as privacy or accuracy is raised, no qualification, no explicit principle).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0746d1a",
+    "evidence_notes": "Claim: disagrees with the development of driverless cars. Support: quotes the article's liability question ('who is at fault - the driver or the manufacture?') and works out both branches; an invented braking scenario where the sensors fail and the driver cannot take control. org 4 (position stated at the end of the opening and held, frame present, both body parts relate, but liability and sensor-failure could swap; conclusion also drifts into 'driving privileges'); dev 4 (the quoted liability question and the concrete braking scenario are specific, and the closing rhetorical question states the connection weakly - you would be blamed for a failure you could not prevent - but the scenario itself is left as an unanswered question); conv 3 (errors accumulate - weather/whether, aloud, breaks, read light - plus 'because of the sensors are not working' and a leading fragment force re-reading, though meaning is never a guess); arg 4 (one reason reasoned: the car holding control is why the driver cannot avert the crash; 'good and bad examples' is a bare mention of the other side, never engaged).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "07492fd",
+    "evidence_notes": "Claim: FACS would not be practical for classroom use. Support: paragraph 7's account of a real versus fake smile, used to argue the scanner can be fooled; the observation that most people already cover laptop and phone cameras, used for the privacy objection; 'computers only do what is coded'. org 4 (thesis in the first sentence and held, frame present, both privacy and faking relate to it, but the third paragraph re-covers the faking ground of the first and the parts are interchangeable); dev 4 (the paragraph-7 reference is specific and the camera-covering point has its connection stated - someone who covers a camera will not want constant face scanning - but the rest is general assertion about 'many people'); conv 3 (paragragh, innaccurate, websutes, 'pull of', and the 'always be happy but not look happy' sentence force re-reading to repair, though meaning stays recoverable); arg 4 ('computers only do what is coded' supplies a real why for the faking objection, but no opposing view is answered and the conclusion restates the opening).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "074b43d",
+    "evidence_notes": "Claim: keep the Electoral College. Support: a quoted description of the EC process (selection of electors, meeting, counting by Congress); the figures 538 electors and 270 to win; otherwise the three reasons - keeps the process organized, helps people vote, helps people out - are asserted and largely identical. org 4 (thesis early and held, frame present, all three body parts relate, but they are near-duplicates that swap freely and the closing repeats the opening verbatim); dev 3 (the quote and the 538/270 figures are specific, but most support is general, two of the three reasons go unsupported, and the figures are followed by a non sequitur rather than an explanation - the reader supplies the connection); conv 4 (apostrophes systematically missing - didnt, wouldnt, id - and one unclosed quotation, but nothing needs repair; sentences are one flat repetitive pattern, so rung 5 fails); arg 3 (position clear and committed, but the reasons restate the claim that the EC is good - 'it helps people out by telling them what to do' - and the conclusion circles back to the opening's three phrases unchanged).",
+    "organization": 4,
+    "development": 3,
+    "conventions": 4,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "074ba84",
+    "evidence_notes": "Claim: only recoverable at the end - being a seagoing cowboy was more than adventure and opened up the world for Luke Bomberger. Support: 335 horses to Greece, nine trips by 1947, the excavated castle in Crete, the Panama Canal, baseball and volleyball in the empty holds, the 'I'm greatful for this opportunity' quote - nearly all of it source phrasing lightly restitched rather than argued from. org 3 (text divides into narrative chunks and a closing, and a controlling idea exists, but it is weakly located at the very end and the opening begins mid-narrative with no orientation); dev 3 (specific particulars are present, but they are listed not explained and the borrowed material is patchwritten - source phrasing stitched with little transformation - which caps the trait here); conv 3 (run-on opener, comma splice 'He couldn't say no also,', missing spaces them.Luke/China.Helping, ment/discharge/whillting/greatful and broken quotation punctuation accumulate and force re-reading, though meaning is recoverable); arg 2 (a point of view is barely present and stated once at the close; the piece reports the source rather than committing to a position, and what look like reasons are narrated events).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "074fd98",
+    "evidence_notes": "Claim: a world where transportation vehicles are obsolete benefits people, the planet and future generations. Support: the German suburb article - only two parking lots and near-zero accidents, with 'if there are no cars in the road then how can there be a car accident?'; a general doctors-and-exercise appeal; fuel to ozone to global warming to higher taxes; a Paris quote about delivery companies' lost revenue that does not bear on the claim it is attached to and is discarded. org 4 (thesis lands at the end of a rambling opening and holds, all three body parts relate, but accidents/health/emissions swap freely); dev 4 (the German suburb detail is specific and its connection is stated, but the health and ozone supports are general assertion, so not specific throughout); conv 3 (emmiting, gert, motherized, parkig, inconvient, enviorment accumulate and the Paris-quote sentence and 'even our young as our vary own parents' force repair, but meaning stays recoverable across the piece); arg 5 (reasons are reasoned rather than asserted - the causal chain from fuel to warming to taxes - and the close concedes vehicles are efficient then outweighs that with time you get back with your family, reaching total obsolescence rather than the limiting the prompt frames; it never answers the strongest objection, so rung 6 fails).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0759934",
+    "evidence_notes": "Claim: eventually against driverless cars, after explicit indecision. Support: source figures - half the fuel of today's taxis, more than half a million miles without crashing - reported and then dropped; the other side's reasons (no driving kids around, no drunk driving, no falling asleep) answered with 'they should know already not to do that stuff'; a closing what-if about the cars failing when no normal cars remain. org 3 (the controlling idea is buried mid-essay after 'i'm not sure if i'm against it of not', the opening only summarizes the source, and the closing stops on a question rather than closing); dev 3 (the fuel and mileage figures are specific but are never connected to the position, and the essay's own support - laziness, the what-if - is asserted, leaving the reader to supply the connection); conv 3 (drivin, resons, bussiness, 'driverless cars when be helpful' and 'both positive and negative aspects of driverless cars by your position' accumulate and force re-reading, meaning still recoverable); arg 4 (the rebuttal of the pro-side reasons counts as one reason reasoned, and the other side is acknowledged and answered, but the conclusion gets no further than the side-choice the prompt's framing already implies, so rung 5's advance fails).",
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0760842",
+    "evidence_notes": "Claim: abolish the Electoral College and decide by popular vote. Support: the EC 'just adds more steps' because voters choose a slate of electors who then elect the president; the 2000 fiasco as the biggest election crisis of the century; the winner-take-all unfairness leaving small-state voters no reason to follow the campaign; a summarized five-reason case for keeping it (certainty of outcome, everyone's president, swing states, big states, avoiding run-offs) drawn from the source. org 4 (position stated early and held, the however-paragraph is correctly placed between the case and the close, but the two pro-abolition body parts overlap and could swap); dev 4 (support is specific and the added-steps and small-state connections are stated, but the five borrowed reasons are attributed and set alongside the writer's sentences without being put to work, and four of them are left unexplained); conv 3 (memebers, Represenatives, belive, dispurtes accumulate, and 'they just vote for someone who is not holding office, anyone' plus 'and yes is may have less disputes' need repair); arg 4 (reasons are reasoned - why extra steps and winner-take-all matter - and the other side is presented at length, but only one of five points draws an answer and the conclusion restates the prompt-implied side rather than reaching past it).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0760ba5",
+    "evidence_notes": "Claim: against the development of driverless cars, now or ever. Support: passage 7's line that the systems 'notify the driver when the road ahead requires human skills', interpreted as proof the car still cannot do everything a human can; taxi drivers left unemployed; losing the experience of learning to drive; lawsuit and cost worries. org 4 (position in the first sentence and held, frame present, every body part relates, but licensing, malfunction and cost paragraphs are interchangeable); dev 4 (the passage-7 quote is specific and the essay states what it shows rather than leaving it, and the license anecdote is connected, but the cost and 'very smart drivers' supports are general assertion); conv 4 (willl, becuase, expirience, malfuntion, goverment and missing spaces are dense but nothing needed repair or guessing; sentences run to one shape, so rung 5 fails); arg 4 (one reason genuinely reasoned via the passage-7 inference; 'technology is an amazing thing but it is taking over' concedes without answering, the position is never qualified, and the close is a rhetorical question inside the prompt's own framing).",
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  }
+]

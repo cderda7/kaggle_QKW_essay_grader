@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "09330dc",
+    "evidence_notes": "Claim: countries (Germany, France, Colombia) manage fine with limited car usage, so fewer cars means less pollution. Support is all source-reported figures (70% of Vauban families carless; Paris 22-euro fine, 4,000 drivers fined, traffic down 60%; Bogota $25 fine, three-year car-free day). org 4 (controlling idea stated early and held, opening and closing present, all three body parts on-topic, but the three country cases could swap freely); dev 3 (figures are specific but listed, not explained - the reader supplies the link from each statistic to the position, and the connection is only stated once, globally, in the final two sentences); conv 3 (errors accumulate - usuage, polution, corespond, their/there, approximatly - and 'sold a car to move Germany' and 'greatest countries that is against low car life' force re-reading to repair, though meaning stays recoverable; sentences run to one pattern); arg 3 (position clear but reasoning asserted, never shown - the essay reports what each source says about each country and never states why any of it supports limiting cars)."
+  ,
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "09344c3",
+    "evidence_notes": "Claim: 'my final choice would be that I'd drive myself' rather than use a driverless car. Reasons: AI could malfunction while the writer would know what to do in bad situations; an outdated GPS could make you late; children could set the car moving. Concession paragraph names source features (sensors, magnetized versions, car forcing the driver to do the heavy lifting in tight spots). org 4 (idea stated early after an ambivalent opening and held, frame present, both body parts relate, but the reasons-against and concessions parts could swap; the mom/lateness digression wanders and returns); dev 4 (connection stated for several supports - 'I would drive myself because I would feel safe knowing I had the wheel and not some AI that could malufunction', GPS outdated 'so you would probably be late' - but support is mostly speculative rather than specific throughout); conv 3 (misspellings accumulate - driveless/diverless, malufunction, situtations, brins - and 'som might beamagnetized' plus the self-contradicting opening sentence require repair on re-reading); arg 4 (one reason genuinely reasoned - why holding the wheel yields control in accidents and bad traffic - but the concession paragraph acknowledges the other side without answering it, and the conclusion stays inside the prompt's framing)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "093da21",
+    "evidence_notes": "Claim: the Huang/Sebe machine is 'very helpful in the classroom in many ways.' Support 1 is a quoted source particular ('A classroom computer could recognize when a student is becoming confused or bored,' para. 6) plus the 44-muscle fact; support 2 (bullying detection) is entirely hypothetical with no source detail. org 4 (controlling idea stated early and held, opening previews and conclusion closes, both body parts relate - but the lesson-plan and bullying parts could swap freely); dev 4 (rung 4: connection stated for the first support - 'This is significant because this can tell if a student fully understand what the teacher is teaching' - though the explanation largely restates the quote, and the second support is general and unexplained, so not specific throughout); conv 3 (errors are few but 'Another way the machine is significant is because if a student is getting bullied' breaks off as a fragment and 'it can help how another student is feeling' needs repair, so re-reading is required; sentence shapes are flat); arg 4 (one reason reasoned - detecting hidden distress gets a student help 'without saying anything,' preventing escalation - but no opposing view, no qualification, and the conclusion goes no further than the prompt implies)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0946813",
+    "evidence_notes": "Claim: driverless cars are 'an accident just waiting to happen' because they invite drinking, texting and sleeping at the wheel. Each body part quotes a reassuring source claim (the car alerts the driver to take over; sensors; test cars driven without a crash) and turns it against itself. org 4 (idea stated early and held, opening orients and conclusion lands, but the drinking/texting/sleeping parts are interchangeable); dev 4 (rung 4: connection stated for every quote - 'If you are drunk and the car alerts you to take control you may not even respond' - but the supporting material is hypothetical scenario rather than specific throughout, and the quotes are dropped in alongside the writer's sentences rather than inside them, one quotation misreporting the source's mileage); conv 4 (visible spelling errors - accur, attetion, Alot, extreamly, somthing - but meaning is never blocked and nothing needs repair; real variety in sentence shape via rhetorical questions and scenarios, though errors are more than occasional so rung 5 fails); arg 5 (the opposing safety claim is acknowledged and answered three times, showing the handoff feature rests on a false assumption about the driver's capacity, and the essay reaches a conclusion the framing does not imply - the danger is behavioural enablement rather than technical failure - but it never faces the strongest objection that automation removes human error)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0947cdc",
+    "evidence_notes": "Claim: limiting car usage has several advantages - fewer greenhouse gases, less driving stress, less young-driver exposure. Source figures cited: 12 percent of European emissions and up to 50 percent in car-intensive US areas (Source 1), rush-hour restrictions cutting traffic (Source 3), a 23 percent drop in young people's driving 2001-2009 (Source 4). org 4 (idea stated early, three-part preview held, closing restates all three, but the three advantage paragraphs could swap in any order); dev 4 (rung 4: connection stated for some support - 'If their's less young people driving then there will be less accidents occuring' - but explanation elsewhere restates rather than interprets, and the stress claim's source citation about traffic never connects to stress); conv 4 (errors visible but harmless - wil, passaenger, enviorment, theirs, occuring, injurying - nothing needs repair; rung 5 fails because every body paragraph runs the same template and closes with the same 'Furthermore' formula, so there is no variety in sentence shape); arg 4 (one reason reasoned via the fewer-young-drivers-fewer-accidents inference, but no opposing view, no qualification, no explicit principle, and the conclusion circles back to the opening's three advantages)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "09487c8",
+    "evidence_notes": "Claim: you should join the Seagoing Cowboys because it is 'an opportuntiy of a life time' - locations, people, experiences. Support is a preview that the body never matches, generic promises ('you could help thousands of people', 'get really cool things'), and one specific source list of onboard activities (baseball, volleyball, table-tennis tournaments, fencing, boxing). org 3 (rung 4 fails: a final metatextual paragraph citing where each fact came from - 'paragraph 8 is where i got how many things he did' - sits outside the controlling idea and follows the conclusion, and the second paragraph carries several unrelated jobs at once); dev 3 (the activities list is specific but everything is listed, never explained - the essay never says why any of it makes joining worthwhile, so the reader supplies the connection); conv 2 (rung 3 fails: 'So join the Seagoing Cowboys and then you could get in for sure' and the fused run-on ending 'what you could learn the points are endles' leave the reader guessing at intent, with frequent fragments and an unpunctuated closing clause); arg 3 (position clear and committed but every reason is asserted - fun, adventure, learning - with no why anywhere, and the conclusion restates the opening in new words)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "095042a",
+    "evidence_notes": "Claim: 'I think we should swicth it up back to the popular votes win.' Reasons: people would start voting once single votes count, and voters currently vote for electors who may not act as they want. One quoted source sentence on the elector mechanism. org 3 (rung 4 fails: the essay ends mid-argument on a run-on with no closing at all, and one body part is only a one-line header sentence, though the opening does state the question and the position and the parts do relate); dev 2 (rung 3 fails: no named case, figure or realized example anywhere - the quoted definition of the elector system is the only borrowed material and it is dropped in unexplained, while the turnout support restates the claim it is meant to prove); conv 2 (rung 3 fails: 'Are votes don't even matter when voting for presiden who knows if voting for electors and that electer dose not do as we want' obscures meaning to the point of guessing, with pervasive run-ons, a stray '3', and are/our and half/have substitutions); arg 4 (one reason genuinely reasoned - under the electoral system voters believe their votes cannot matter, so a popular vote where a single vote can decide would draw them back into voting - but no opposing view, no qualification, and no conclusion past the prompt's framing)."
+  ,
+    "organization": 3,
+    "development": 2,
+    "conventions": 2,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0952aee",
+    "evidence_notes": "Letter opposing the electoral college. Support: the 2000 Gore/Bush split quoted from source 3, the source 2 quote on voters electing a slate of electors preceded by the writer's own account of why that disadvantages voters, and a named list of past opponents (Nixon, Carter, Dole, the Chamber of Commerce, the AFL-CIO). org 4 (controlling idea stated in the opening and held, opening concedes the college's history and the closing appeals directly to the senator, but the unfairness paragraph and the prominent-opponents paragraph could swap without loss); dev 5 (support is specific throughout and most of it is explained in a way that adds something - the 2000 case is extended into a recurrence risk, and the elector quote is preceded by the writer's own reasoning about voters not knowing or controlling electors - stopping short of 6 because the names list gets only a restating gloss); conv 3 (errors accumulate - Their/to many, elctors, inconvience, doesent, soley - and 'you when the hearts of the voters' and 'an election that they should have one' force re-reading to repair, though meaning is always recoverable and sentence variety is good); arg 5 (the rarity objection is raised and answered - 'This may have not happened more than twice but this could easily happen again' - and the governing principle is made explicit, 'The choice of presidents should be soley up to the american people,' but the strongest defence of the college is never faced)."
+  ,
+    "organization": 4,
+    "development": 5,
+    "conventions": 3,
+    "argumentation": 5
+  },
+  {
+    "essay_id": "0958685",
+    "evidence_notes": "Claim: 'everyone should join the Seagoing Cowboys program for three reasons' - helping people, sightseeing, and fun onboard, written in Luke's voice. Support is specific and source-drawn: horses, cows and mules delivered overseas; the Panama Canal, the Acropolis, a gondola in Italy, a castle in Crete; stables converted to a baseball field and volleyball court, table tennis, boxing and fencing. org 4 (idea stated early and held, all three parts match the preview, and the sightseeing-to-onboard hinge is motivated, but the helping-people part could swap with either of the others); dev 4 (rung 5 fails: support is specific but mostly listed - the destinations and activities are named and left to speak for themselves - while the connection is stated only for the helping reason, 'it gives you that warm fuzzy feeling of acomplishment'); conv 3 (spelling errors accumulate - memeber, Saegoing, beutiful, tenis, acomplishment, reccomend - and the unpunctuated series 'help out the less fortunate explore go sightseeing and have fun' has to be repaired on re-reading, though meaning is never in doubt); arg 4 (one reason reasoned - delivering animals to war-affected people is what produces the sense of accomplishment, and the trips 'made me more aware of people in other countries and their needs' - but no opposing view, no qualification, and nothing past the prompt's framing)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "095d62a",
+    "evidence_notes": "Claim: emotion-reading technology is valuable to schools. Support: Dr. Huang quoted on a classroom computer recognizing confusion or boredom and modifying the lesson; paragraphs 3, 4 and 8 cited for mixed-emotion and fake-smile detection; a third, unsourced extension to students with problematic home lives. org 5 (rung 5: no pair of body parts swaps without loss - the home-life paragraph opens 'In addition to stopping fights and helping bullied students' and depends on the paragraph before it; rung 6 fails because the closing generalizes back to 'Technology is important to our society,' landing where the opening already was); dev 5 (support is specific and most of it is explained in a way that adds something the support alone did not say - fake-smile detection matters precisely because 'Teachers cannot always detect these things from students, especially if they are trying to hide them' - short of 6 because the home-life paragraph has no specific support at all); conv 5 (sentences vary in length and shape and stay under control - 'While some grow bored others become confused by the content of the lesson' - with errors only occasional and minor, vaulable and dectect and a missing close quote; rung 6 fails as 'negate problems' is approximate and the closing sentences are flat filler); arg 5 (the position is qualified where the issue warrants it - 'Although this would not always be 100% accurate' - and the essay reaches a conclusion the framing does not imply, extending the technology's value from lesson adjustment to detecting bullying and home-life distress, but the strongest objection about student privacy is never faced)."
+  ,
+    "organization": 5,
+    "development": 5,
+    "conventions": 5,
+    "argumentation": 5
+  }
+]

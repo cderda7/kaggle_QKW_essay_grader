@@ -1,0 +1,92 @@
+[
+  {
+    "essay_id": "0760f30",
+    "evidence_notes": "Claim: driverless cars will be beneficial for the modern world. Support: taxi-system use cutting gas consumption and direct routes vs waiting on buses; safety via sensors, prototypes driven millions of miles without crashes, help for teen/slow-reaction drivers. Both supports connect to the claim, but the two body parts (utility, safety) are parallel and interchangeable. org 4 (early controlling idea, frame present, but flexibility and safety paragraphs could swap without loss - rung 5 fails); dev 4 (specific support like the millions-of-miles prototype figure, and connection stated - 'since these cars are loaded with sensor technology, they can limit crashes' - but much support is general/hypothetical so not specific throughout, rung 5 fails); conv 4 (visible errors - scheduals, protypes, aide, 'stunt the commonality' - but nothing needs repair; wrong-footing word choices fail rung 5); arg 4 (reasoning shown for the safety reason - sensors and avoidable teen-driver accidents - but no opposing view answered, no explicit principle, and the conclusion is what the prompt's framing implies)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 4,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0764c35",
+    "evidence_notes": "Claim only surfaces in the conclusion: studying Venus is challenging but helpful to imagination and innovation. Support is drawn from the source article and largely quoted verbatim - 800 degrees Fahrenheit, pressure 90 times Earth's, no spacecraft surviving landing more than a few hours, oceans long ago - stitched together with little transformation and no interpretation. org 3 (controlling idea stated only at the end, opening paragraph about orbital distance does not orient, so rung 4 - stated early and held - fails); dev 3 (specific figures present so rung 3 passes, but support is listed as quotations with the connection left to the reader, and borrowed phrasing is patchwritten, capping at 3); conv 2 ('NASA forcing for sending humans to stody Venus', 'They also discussing to visits to ots surface', 'It gave us a lot of experince and gain knowledgeable' force the reader to guess intent, so rung 3 fails); arg 2 (position is vague and is the source's own claim handed back; what serve as reasons are restatements, so rung 3 - clear and committed - fails)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "076539f",
+    "evidence_notes": "A narrative of visiting Mars with a friend that drifts into reporting on the Face: quoted NASA line about 3D altimetry revealing the Face 'for what it really is', the 1976 discovery date, and the claim that some scientists believed it was an alien artcraft. No stated position of the writer's own; the material is never connected to a claim. org 2 (the text does divide into a narrative scene and a reporting stretch, but no controlling idea is stated in the writer's own words and there is no frame, so rung 3 fails); dev 3 (the NASA quotation and the 1976 date are specific, so rung 3 passes, but nothing is explained and the reader supplies every connection - rung 4 fails); conv 2 (one long unpunctuated run-on; 'just in case cause if its not our we shouldn't touch it' and 'itsbeen there every since' force guessing, so rung 3 fails); arg 2 (a position is barely stated - the face is a 3D figure - but it is not committed, the friend's alien claim is left standing, so rung 3 fails)."
+  ,
+    "organization": 2,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "0767c85",
+    "evidence_notes": "Claim: the Electoral College is not an appropriate representation of the people's opinions and should be replaced by popular vote. Support is assertion rather than case - citizens 'have stopped voting', will 'start voting', class conflict 'will end' - with one genuine piece of reasoning: most citizens are not wholly Republican or Democratic, so the in-between conditions need addressing. Final paragraph swerves into a rigging/brainwashing claim and ends self-contradictorily. org 3 (controlling idea early, but the last paragraph is a digression that moves the position and stops rather than closes, so rung 4 fails); dev 2 (no named case, figure or realized example anywhere - support is general throughout, so rung 3 fails); conv 3 (accumulating slips - respresentation, poeple's, dependant, 'belate citizens' - meaning stays recoverable but the gun-restraints analogy and 'belate' require re-reading to repair, so rung 4 fails); arg 4 (the extremes reason is genuinely reasoned and the easiest-way concession is answered, but the essay reaches only what the prompt's framing implies and the closing conspiracy claim adds no advance, so rung 5's 'and' clause fails)."
+  ,
+    "organization": 3,
+    "development": 2,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "076f000",
+    "evidence_notes": "Claim: the Face on Mars is not an alien monument but a natural landform, a butte or mesa. Support: upgraded cameras showed no monument; the April 8, 2001 image where every pixel proved a lava dome; NASA staff comparing it to the Snake River Plain of Idaho. The improved-camera-to-proof link is stated, not left to the reader. org 4 (controlling idea early and held, opening orients and the closing adds an ironic deflation, but this is the conventional shape done once - a single chronological body with no motivated relation between parts, so rung 5 fails); dev 4 (specific support - the 2001 date, the lava dome, Snake River Plain - and the connection is stated, but explanation is mostly restatement and the Idaho detail is dropped, so rung 5 fails); conv 3 ('after twenty-five years of looking at this thing for many years people thought through those twenty-five years', 'were the face is', 'every pixel of that picture took that day' force re-reading to repair, so rung 4 fails); arg 4 (one reason actually reasoned - better cameras yielded the resolution that disproved the monument - but no opposing consideration is answered and the conclusion is what the prompt implies)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "077377d",
+    "evidence_notes": "Opens by defining the Electoral College process (538 electors, 270 to win), then argues it is unfair because voters choose a slate of electors they cannot control, endorsing 'Bob Dole was right: Abolish the Electoral College' - then reverses to list defenses (trans-regional appeal, avoiding no-majority elections, winner-take-all focusing campaigns on toss-up states) and concludes it can be good and can be bad. org 3 (controlling idea stated but the position has moved by the end - the essay ends on the fence - so rung 4's 'held' fails); dev 3 (specific figures and named defenses, and one because-connection stated, but the defense paragraph reproduces source phrasing with little transformation - patchwriting caps at 3); conv 3 (countiing, thimk, Elecotoral, prestidential canidate, 'who turn in elect the president', a fragment beginning 'Also to avoid' - errors accumulate and force repair re-reads, so rung 4 fails); arg 3 (a stance is stated with commitment at one point but is not held - the defense section and the neutral conclusion leave the position drifting, so rung 4's held-throughout condition fails; the conclusion circles rather than advances)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "0775ccb",
+    "evidence_notes": "Claim: readers should sign up as seagoing cowboys to help war-affected people. Support is personal and concrete - helping on an aunt's farm gave the writer experience, cleaning stalls was disgusting at first but became routine, sightseeing in free time, and the realization that others were suffering worse. Connections are stated ('that gave me some experience'; 'thats why I joined... not just because I wanted to see the world'). org 4 (controlling idea early, opening orients and the closing calls to action, but the work paragraph and the travel/realization paragraph are parallel aspects that could swap, so rung 5 fails); dev 4 (specific personal particulars and stated connections, but elaboration is largely restatement and the broader claims about helping the world stay general, so rung 5 fails); conv 3 (pervasive apostrophe loss - its/isnt/thats - plus aswell, 'to much', and the run-on 'My favorite part has to be traveling when i get some free time its fun to go sight seeing' which needs re-reading, so rung 4 fails); arg 4 (the difficulty of the work is conceded and answered by the farm experience, giving one reason genuinely reasoned, but the conclusion is the recruitment conclusion the prompt implies, so rung 5's 'and' clause fails)."
+  ,
+    "organization": 4,
+    "development": 4,
+    "conventions": 3,
+    "argumentation": 4
+  },
+  {
+    "essay_id": "0778075",
+    "evidence_notes": "Claim restates the prompt/source: there are reasons Venus can be worthy of study despite the dangers. Support is quoted from the article - 'simple to see from the distant but safe vantage point of Earth', 97 percent carbon dioxide atmosphere, pressure that would crush a submarine and liquefy metals - with elaboration that adds nothing ('This isnt good it makes the conditions bad'). Third paragraph repeats the claim without new content. org 3 (controlling idea early, but paragraph three repeats an earlier part without adding to it and the conclusion restates again, so rung 4's every-part-relates-and-holds test fails on repetition); dev 3 (the 97 percent figure is specific so rung 3 passes, but support is listed with empty restatement in place of explanation and the borrowed phrasing is patchwritten, capping at 3); conv 2 ('so you not only you know about it but what it also contains' and 'In conclusion, is why these reasons is important' force guessing, alongside frequent misspellings - enviorment, accustimed, nad, conatins - so rung 3 fails); arg 2 (the position is the prompt's own wording handed back, and the reasons are restatements of it - 'Knowing the value of it and what it conatins is important' - so rung 3 fails)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 2,
+    "argumentation": 2
+  },
+  {
+    "essay_id": "077acd9",
+    "evidence_notes": "Claim: there are advantages to limiting car usage, because of pollution, alternative transportation, and car culture. Support is abundant and specific - Paris congestion down 60 percent, diesel at 67 percent of French vehicles, Bogota's third car-free day in a city of 7 million with the Plaza quote, US mileage peaking in 2005 with the Sivak quote - but nearly every sentence is source phrasing reproduced with minimal rewording, and no evidence is interpreted beyond the topic sentence label. org 4 (controlling idea early and held with a full frame, but the three supports are classic interchangeable blocks that could swap freely, so rung 5 fails); dev 3 (support is specific, but the reader supplies every connection and the borrowed material is patchwritten - source phrasing stitched with little transformation - which caps the trait at 3); conv 3 (the writer's own sentences run to a single repeated pattern - 'To begin with/To continue/Furthermore, there are advantages to limited car usage because of X' - and stitching errors like 'the smog rivale Beijing' and 'compared to 53.3 percent average of diesel engines' need a repair re-read, so rung 4 fails); arg 3 (the essay asserts that limiting cars is advantageous and dumps evidence but never says why any of it follows, and the conclusion restates the introduction verbatim, so rung 4 fails)."
+  ,
+    "organization": 4,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 3
+  },
+  {
+    "essay_id": "077cf8e",
+    "evidence_notes": "Staged as a two-voice exchange: opens 'I think that it was created by aliens', then the body presents NASA's evidence that the Face is a natural landform - a picture ten times clearer than the Viking photos, the website release, skeptics' wispy-cloud objection, and the April 8, 2001 return at maximum resolution - closing with 'now I believe you'. org 3 (a controlling idea, the natural landform, is stated in the writer's sentences, but the opening asserts the opposite and the closing exchange stops rather than closes, so rung 4's early-and-held test fails); dev 3 (the Viking comparison and the 2001 second look are specific, but the material is listed rather than connected to a claim and the phrasing - 'wispy, white, and fluffy clouds', 'absolute maximum resolution' - is patchwritten, capping at 3); conv 3 (belive, conseled, extraodinary, resoultion, an unclosed quotation, and a sentence broken across a paragraph break that only resolves on a second reading - errors accumulate and force repair, so rung 4 fails); arg 2 (a position is stated but the essay asserts aliens and then the opposite, so nothing is committed and rung 3 fails; the skeptics' objection is raised but never answered by the writer)."
+  ,
+    "organization": 3,
+    "development": 3,
+    "conventions": 3,
+    "argumentation": 2
+  }
+]
