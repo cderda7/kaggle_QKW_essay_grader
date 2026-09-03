@@ -826,3 +826,45 @@ sub-score with a cap rule)
     transfers across *samples*; what has not been shown is that it transfers across *corpora*. Until a
     genuinely different source is tested, the length coefficient should be read as calibrated to this
     corpus rather than to essay quality as such.
+
+---
+
+## Teacher review UI
+
+78. **The span/feedback annotation the teacher UI renders is produced by a separate additive pass
+    over frozen trait scores, not by extending the trait prompt.** The UI needs three things the
+    grader has never produced: verbatim spans of the student's text, per-criterion student-facing
+    comments, and an overview paragraph. The obvious implementation is to widen `rubric_v6.md`'s
+    output schema and ask for all of it in one pass.
+
+    That was rejected. The trait pass is the instrument every QWK number from v6 onward was measured
+    with — 0.7392 LOO on the 100, 0.7501 frozen on the 500. Changing what the grader is asked to
+    produce changes the trait scores; #50 already established that adding or removing work from the
+    grader's job moves its judgments, which is why the gate came out of the rubric in the first
+    place. Merging annotation in would mean every version comparison from v6 forward is describing a
+    different instrument than the one the numbers were computed on, and the only way to find out how
+    much had moved would be a full re-grade and a re-baseline.
+
+    **Alternatives considered.** (a) One merged prompt, re-baseline QWK — honest, but spends a
+    re-grade of 600 essays to buy nothing the product needs, and permanently forks the trait
+    instrument for a reason unrelated to scoring. (b) Render the existing `evidence_notes` blob in
+    the UI and add nothing — free, but `evidence_notes` is grader shorthand ("org 3 (controlling idea
+    buried mid-essay…)"), has no spans in it at all, and cannot be handed to a student. (c) Generate
+    annotation lazily at UI open time — no batch cost, but requires a live model call this repo has
+    never had, and makes what the teacher reviews non-deterministic across two openings of the same
+    essay, which defeats the point of a review surface.
+
+    **Tradeoffs accepted.** Two passes over every essay instead of one, so annotating a corpus costs
+    roughly double. And the annotator is shown a trait score it did not assign, so its comments are
+    post-hoc justification rather than independent judgment — it will rationalise a score it might
+    not have given. That is a real weakness and it is the price of keeping the scores frozen; the
+    mitigation is that the annotator is asked for *evidence for the score* and its spans are
+    mechanically verifiable against the essay text, so a justification with no locatable support
+    fails loudly rather than reading as fluent.
+
+    **Defense.** This is the pattern the project has already used twice — v7 and v8 added a whole
+    triage pass alongside the trait pass and composed the two at derive time, and v4 and v9 changed
+    aggregation with the trait scores carried through untouched. Keeping annotation additive means a
+    bad annotation run costs zero QWK, the two questions stay separable ("is the score right" is
+    measurable, "is the explanation right" is not), and v9's validated numbers survive a product
+    feature being built on top of them.

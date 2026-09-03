@@ -1,0 +1,18 @@
+# OS cruft
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Env / secrets — never commit these
+.env
+.env.*
+*.pem
+*.key
+
+# Claude Code — personal/local settings only (skills stay tracked and shared)
+.claude/settings.local.json
+
+# Claude Code project skills — keep local, not shared via this repo
+.claude/

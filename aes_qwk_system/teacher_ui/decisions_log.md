@@ -1,0 +1,191 @@
+# Teacher Review UI — decisions log
+
+Judgment calls for the `ui_` version ladder, numbered independently of `../decisions_log.md` (the
+QWK ladder's log). Entries are prefixed `ui_` wherever they are cited from outside this file, so
+`ui_3` is never confused with `#3` over there.
+
+**Cross-reference:** `../decisions_log.md` **#78** — *the span/feedback annotation is produced by a
+separate additive pass over frozen trait scores* — is the decision this entire subsystem rests on. It
+lives in the QWK log deliberately: it is a decision about the grading pipeline, and a reader checking
+why v9's validated numbers survive this feature needs to find it there, not here.
+
+Entries `ui_1`–`ui_7` were settled in the `/grill-me` session of 2026-09-03 and are specified in full
+in `spec_ui_v1.md`.
+
+---
+
+## ui_v1
+
+1. **The teacher UI gets its own version ladder, prefixed `ui_`.** The `v1`–`v9` ladder means "a
+   scoring change with a QWK attached". This subsystem changes no score and produces no QWK, so a
+   number in that ladder would be uncomparable to its neighbours — and `results_v9.md` §4–5 has
+   already reserved v10 for constraining β₂, a real scoring change that would collide with it.
+
+   *Alternatives:* fold it in as `v10` (collides, and puts a metric-less rung in a metric-ladder);
+   tag it `v9-annotated` as a variant (implies it is a variant of v9's *scoring*, which it is not).
+
+   *Tradeoffs:* two ladders, two logs and two trackers to keep straight, and the `ui_` prefix is ugly
+   in filenames and commit messages. Accepted because without it `v1` means two different things
+   permanently, and version collisions are unrecoverable once they are in commit history.
+
+   *Defense:* the two ladders answer genuinely different questions — QWK asks whether the number was
+   right, `ui_` asks whether the stated reasoning was right and whether a teacher can correct it —
+   and no single metric orders both. Annotation artefacts are keyed to the *trait run* they explain
+   (`annotation_v6_runB/`) rather than to a `ui_` version, since those trait scores are shared by v7,
+   v8 and v9 alike.
+
+2. **The teacher overrides trait scores; the holistic recomputes through the frozen aggregator. Direct
+   holistic override is not offered.** The holistic is `1 + #{ s ≥ cᵢ }` over a fitted `s` — it is not
+   a model output and there is nothing in it a correction could teach.
+
+   *Alternatives:* override the holistic directly (simplest UI, and what a marker expects); allow
+   both independently.
+
+   *Tradeoffs:* a teacher who is certain the essay is a 5 cannot type 5. Their trait correction may
+   be absorbed by the cut points and move nothing, which is a worse first-use experience than a text
+   box. Mitigated by surfacing the no-op explicitly and by the score-formation panel (ui_5), and by
+   the dissent flag below.
+
+   *Defense:* a direct holistic override decouples the displayed score from the evidence displayed
+   beside it, and cannot steer any future model behaviour because the aggregator is three fitted
+   coefficients rather than a promptable instrument. Allowing both independently would produce rows
+   where the traits imply 3.2 and the teacher asserts 5 with nothing recording why. Instead a distinct
+   **score dissent flag** records "I disagree with the final score but not the traits" with a
+   rationale and *no number* — that is information about the aggregator, and it is stored as such
+   rather than disguised as a trait correction it isn't. This closes Open Question 1 of the
+   superseded `../planning/teacher_override_ui_handoff.md`.
+
+3. **Spans anchor by verbatim quote plus occurrence index, re-located to offsets at build time.**
+
+   *Alternatives:* have the model emit character offsets directly; have it emit sentence or paragraph
+   indices and highlight whole sentences.
+
+   *Tradeoffs:* quoting costs output tokens proportional to the highlighted text, and a quote the
+   model mis-transcribes fails the build rather than degrading gracefully — annotation batches will
+   need re-running more often than offset-based ones would appear to.
+
+   *Defense:* models cannot count characters, so emitted offsets are silently wrong, and a
+   silently-misplaced highlight is the worst failure available here because it looks authoritative to
+   the teacher whose trust the feature exists to earn. Sentence indices are robust but discard the
+   sub-sentence precision the design needs. Quote-matching is the only option that is *mechanically
+   verifiable*: it either matches the essay exactly or it fails loudly, which is the same stance
+   `load_triage()` and the `SCORES` manifest already take. Matching runs on a whitespace-normalised
+   projection because student text has irregular spacing a model will not reproduce when quoting.
+
+4. **The human gold score is withheld from the review surface by default; revealing it stamps
+   subsequent override records `gold_revealed: true`.**
+
+   *Alternatives:* always visible (it is the researcher's own tool and comparison is the point); never
+   available in the UI at all.
+
+   *Tradeoffs:* an extra click before the comparison a researcher will often want, and a flag that has
+   to be threaded through every override record.
+
+   *Defense:* the reviewable essays come from `personal_training_set.csv`, which carries the rater's
+   score, and overrides are intended to feed a few-shot bank later. An override formed while looking
+   at the answer key would launder gold labels into the grading prompt through a door that neither the
+   `SCORES` annotation manifest nor `--strip-scores` watches — the same leakage those guards exist to
+   prevent, re-entering by a route they do not cover. Always-visible makes every override permanently
+   unusable for steering with no way to tell which; never-available is over-strict, since the
+   comparison is genuinely useful *after* the reviewer has committed to a view. Flagging preserves
+   both and costs one boolean.
+
+5. **The holistic score is never displayed without access to its derivation.** A collapsed
+   score-formation panel exposes the weighted trait mean, the `log₁₀(word_count)` term, the continuous
+   score, the band and the distance to the nearest cut point.
+
+   *Alternatives:* show only `N/6`, matching the reference mock exactly; show no holistic at all in the
+   review pane and display traits only.
+
+   *Tradeoffs:* additional UI surface on a page whose value depends on being clean, and it exposes an
+   uncomfortable fact to a teacher who may not want it.
+
+   *Defense:* `corr(word_count, system_score) = 0.820` against the human raters' 0.688 — a substantial
+   part of every holistic score is essay length, and four trait cards next to a bare `4/6` assert
+   otherwise. Showing only the number would be the first place in this project where a score appears
+   without its audit trail, in the one artefact built specifically for auditing. It is also
+   load-bearing for ui_2: a teacher whose trait correction does not move the score needs to see the
+   cut points to understand why. Collapsed by default keeps the everyday reading experience intact.
+
+6. **Override records are an *input* to `build_review`, not a mutation applied to its output.** The
+   build takes predictions, annotation batches, essay text and override records and returns the review
+   state implied by all four.
+
+   *Alternatives:* build the AI's view, then apply overrides as a separate transformation at read
+   time; apply them in the request handler.
+
+   *Tradeoffs:* every override triggers a rebuild rather than a patch, which is wasteful at larger
+   corpus sizes and will need revisiting well before this reaches hundreds of essays.
+
+   *Defense:* it collapses what would otherwise be two seams into one. With overrides as an input,
+   span anchoring, batch validation, the join, holistic recomputation and override application all sit
+   below a single pure function boundary, and the HTTP layer holds no logic worth testing. At ten
+   essays the rebuild cost is irrelevant and the testability is worth more than the efficiency. This
+   boundary is the design's main source of leverage and should be defended during implementation — if
+   override application drifts into the request handler, the test suite loses most of its value.
+
+7. **Overrides are stored append-only in a single JSON file.** One record per correction event, never
+   mutated; current state is the latest record per essay.
+
+   *Alternatives:* SQLite; one JSON file per essay; mutate a single current-state record in place.
+
+   *Tradeoffs:* the file grows without bound as a teacher revises, and reading current state is a scan
+   rather than a lookup. Both are irrelevant at this scale and both would matter at a larger one.
+
+   *Defense:* one local user over ten essays needs neither concurrency nor indexing, and SQLite would
+   make the correction history invisible to `git diff` — in a repository where every other artefact is
+   a diffable text file and the project's whole discipline is that judgment calls stay inspectable.
+   Append-only rather than in-place so that a reviewer who changes their mind twice leaves a trail;
+   the *history of the teacher's own judgment* is data, not noise, and is the raw material for any
+   future steering work.
+
+8. **A trait with nothing citable reports the absence rather than failing the batch** (decision D1,
+   taken 2026-09-03 while breaking `spec_ui_v1.md` into tickets). Guard 6 requires at least one
+   anchored span per criterion. On a very short or very weak response there may be genuinely nothing
+   to quote for a trait — most obviously Argumentation on an essay that never states a position — and
+   the frozen sample deliberately contains a 159-word bottom-band essay, so this was going to fire on
+   the first run.
+
+   *Alternatives:* keep the hard ≥1 requirement and let the annotator stretch for a quote; drop the
+   minimum entirely.
+
+   *Tradeoffs:* it is an escape hatch, and an annotator that finds a trait hard will be tempted to
+   use it instead of looking harder. Mitigated by requiring a written reason, by instrument language
+   restricting it to genuine absence, and by the fact that the reason renders on the card where a
+   teacher will see whether it was honest.
+
+   *Defense:* forcing a citation where none exists makes the annotator fabricate one to satisfy a
+   guard — precisely the failure the guards exist to prevent, arrived at by the guards themselves.
+   Dropping the minimum instead permits silent absence, which is worse than either: on a bottom-band
+   essay, *"there is no argument here to point at"* is the single most informative thing the
+   annotator can say, and it should be recorded as a finding rather than shrugged off as an empty
+   list. The absence becomes evidence.
+
+9. **An inert trait correction expands the score-formation panel instead of silently doing nothing**
+   (decision D2, same session). The override feature's dominant experience is that it does not visibly
+   work, and this was measured rather than assumed. Against `aggregator_v9.json` and the ten sampled
+   essays:
+
+   | correction | move in `s` | essays whose displayed score changes |
+   |---|---|---|
+   | +1 on argumentation alone (heaviest trait, w=0.35) | 0.239 | **2 / 10** |
+   | +1 on all four traits | 0.683 | 7 / 10 |
+   | doubling the word count | 0.868 | — |
+
+   Cut-point gaps are 0.781, 0.832, 0.844, 0.389. So the single-trait correction a teacher is most
+   likely to make is inert four times in five — and **doubling the essay's length moves the
+   continuous score further than raising every trait by a full point.**
+
+   *Alternatives:* accept it and report "no change" in text; reopen ui_2 and allow direct holistic
+   override after all.
+
+   *Tradeoffs:* auto-expanding overrides the teacher's own choice to collapse the panel, and it puts
+   the system's least flattering property in front of them at the moment they are most likely to be
+   frustrated by it.
+
+   *Defense:* the alternative is a control that appears broken, and a review surface whose first
+   interaction appears broken does not get a second use. The expansion is also true rather than
+   merely placating — the teacher is being shown a real fact about the instrument they are auditing,
+   which is the entire purpose of the panel. Reopening ui_2 would trade an honest limitation for a
+   dishonest one: a directly-typed holistic would *look* responsive while decoupling the score from
+   the evidence beside it. This decision is why the panel is not optional polish.
