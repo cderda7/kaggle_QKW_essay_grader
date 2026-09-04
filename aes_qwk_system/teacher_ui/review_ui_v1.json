@@ -1,0 +1,552 @@
+{
+  "ladder_version": "ui_v1",
+  "trait_run": "v6_runB",
+  "aggregator_source": "predictions_v6_runB.csv",
+  "aggregator_n": 100,
+  "weights": {
+    "organization": 0.25,
+    "development": 0.25,
+    "conventions": 0.15,
+    "argumentation": 0.35
+  },
+  "complete": false,
+  "essays_requested": [
+    "0079938",
+    "0105e2e",
+    "019e8c3"
+  ],
+  "essays_in_manifest": [
+    "0079938",
+    "00a541a",
+    "00a6e71",
+    "00b3311",
+    "00da297",
+    "00dd003",
+    "0105e2e",
+    "01267d1",
+    "012c9be",
+    "019e8c3"
+  ],
+  "essays": [
+    {
+      "essay_id": "0079938",
+      "text": "I don't like the idea of driveless cars. I feel like if a human can do it we should. Especially when it comes to things like that. like the idea of robots, would you really want something cleaning for you and taking care of older folks and children. I do think they are a good idea for the blind and people not going to far. Like since i live in Indiana, they would be a good idea for people in Indianapolis to get from the mall to like a resturant or something. Nothing major or far like driving from Indiana to California, not a good idea. I just don't trust things like that.\n\nDriveless cars are sort of a good idea. they're are many pros and cons about the whole thing. I feel like they are dangerous because they could malfuncting and blow up or something. Or they will drive right into a buliding at full speed or something. No car is really safe in general, but letting a robot like thing drive your car is kinda a crazy idea. Another con is that they can't really drive by itself, it still needs you to hold the steering wheel and take control when around accident ot people working on roads. I feel like if they want to have driving cars they should just bulid a car that can drive people instead of a car that half does it. Another con is that they are basically illlegal in most states except a couple. Would we have to visit somewhere else to expericence what crazy technology the world has for us now. I also think they are a bad idea because driving are probably going to be directly on their phone, no hand on the steering wheel or anything. And like it says, when the car needs you to take over it will tell you to take over. But i feel like people will just ignore it and get into accidents they could have prevented.\n\nPros are that you can half drive. You wouldn't have to really pay attention to anything around you and you could just relax while driving. ",
+      "word_count": 358,
+      "overview": "You commit to a position in your first line and you give real reasons for it, and the strongest moment in the response is where you push past listing a problem into saying what should happen instead. What holds the response back is that the position keeps moving: having opened against driverless cars, you concede that they are partly a good idea and then close on their advantages, so a reader is left unsure what you actually want to argue. Decide what you think, say it once at the start, and make every paragraph after it do work for that claim rather than adding another item to a list.",
+      "criteria": {
+        "argumentation": {
+          "comment": "You take a clear position immediately and you reason properly in at least one place, working from a problem through to what should be built instead. The difficulty is that you undercut yourself: the concession arrives without being handled, and the final paragraph argues the other side without you ever coming back. Concede a point in order to answer it, not instead of answering it.",
+          "trait_score": 3,
+          "ai_trait_score": 3,
+          "spans": [
+            {
+              "quote": "Driveless cars are sort of a good idea.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 580,
+              "end": 619
+            },
+            {
+              "quote": "I feel like if they want to have driving cars they should just bulid a car that can drive people instead of a car that half does it.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 1101,
+              "end": 1233
+            },
+            {
+              "quote": "But i feel like people will just ignore it and get into accidents they could have prevented.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 1642,
+              "end": 1734
+            },
+            {
+              "quote": "Pros are that you can half drive.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 1736,
+              "end": 1769
+            }
+          ]
+        },
+        "organization": {
+          "comment": "Your signposting inside the middle paragraph is genuinely useful — a reader can follow you from one objection to the next. The response is weaker at its edges: the opening paragraph drifts away from the position it just stated, and the last paragraph stops rather than closing. Give the ending the job of saying what your reasons add up to.",
+          "trait_score": 3,
+          "ai_trait_score": 3,
+          "spans": [
+            {
+              "quote": "I do think they are a good idea for the blind and people not going to far.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 250,
+              "end": 324
+            },
+            {
+              "quote": "Another con is that they can't really drive by itself",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 934,
+              "end": 987
+            },
+            {
+              "quote": "You wouldn't have to really pay attention to anything around you and you could just relax while driving.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 1770,
+              "end": 1874
+            }
+          ]
+        },
+        "development": {
+          "comment": "Where you reach for something concrete, it works — the local example gives the reader a specific situation to picture. Most of your other reasons stay at the level of assertion, and the phrase \"or something\" is doing the work that an explanation should be doing. Take one objection and spend three sentences on it instead of naming four.",
+          "trait_score": 3,
+          "ai_trait_score": 3,
+          "spans": [
+            {
+              "quote": "Like since i live in Indiana, they would be a good idea for people in Indianapolis to get from the mall to like a resturant or something.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 325,
+              "end": 462
+            },
+            {
+              "quote": "I feel like they are dangerous because they could malfuncting and blow up or something.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 674,
+              "end": 761
+            },
+            {
+              "quote": "Or they will drive right into a buliding at full speed or something.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 762,
+              "end": 830
+            }
+          ]
+        },
+        "conventions": {
+          "comment": "You can build a sentence that holds two ideas against each other, which is worth keeping. Against that, the response has not been re-read: there are misspellings throughout and at least one sentence where a missing word makes the meaning guesswork. Read your work aloud once before handing it in — most of these you would hear.",
+          "trait_score": 3,
+          "ai_trait_score": 3,
+          "spans": [
+            {
+              "quote": "they're are many pros and cons about the whole thing.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 620,
+              "end": 673
+            },
+            {
+              "quote": "No car is really safe in general, but letting a robot like thing drive your car is kinda a crazy idea.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 831,
+              "end": 933
+            },
+            {
+              "quote": "take control when around accident ot people working on roads",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 1039,
+              "end": 1099
+            },
+            {
+              "quote": "I also think they are a bad idea because driving are probably going to be directly on their phone",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 1415,
+              "end": 1512
+            }
+          ]
+        }
+      },
+      "ai_traits": {
+        "argumentation": 3,
+        "organization": 3,
+        "development": 3,
+        "conventions": 3
+      },
+      "traits": {
+        "argumentation": 3,
+        "organization": 3,
+        "development": 3,
+        "conventions": 3
+      },
+      "ai_holistic": 3,
+      "holistic": 3,
+      "overridden": false,
+      "score_formation": {
+        "weighted_trait_mean": 3.0,
+        "log10_word_count": 2.5538830266438746,
+        "word_count": 358,
+        "continuous_score": 2.629468846258252,
+        "band": "[2.516, 3.348)",
+        "cuts": [
+          1.7351793707145688,
+          2.5159640395136327,
+          3.3482205192392716,
+          4.192509040792514,
+          4.581705769605978
+        ],
+        "to_next_band_up": 0.7187516729810195,
+        "to_next_band_down": 0.11350480674461938,
+        "distance_to_nearest_cut": 0.11350480674461938,
+        "beta": [
+          -6.782584958393722,
+          0.6827116764114304,
+          2.883420539857224
+        ],
+        "weights": {
+          "organization": 0.25,
+          "development": 0.25,
+          "conventions": 0.15,
+          "argumentation": 0.35
+        }
+      },
+      "score_unchanged_by_override": false
+    },
+    {
+      "essay_id": "0105e2e",
+      "text": "The face on Mars was not made by aliens, and it only looked like a face because of the shadows. Michael Malin even took a better picture twenty two years later that showed it wasn't a face, but some people weren't satisfied. Three years later they took an even better one, showing that it wasn't a face at all.\n\nThis is not a face becasue the author says in paragraph two, \"Scientist figured it was just another Martian mesa, common enough around Cydonia, only this one had unusual shadows\" Some people didn't agree because \"it was winter in April '98--a cloudy time of the year\" and to disprove this they took a better picture in the summer. In paragraph ten, it says \"Nevertheless, on April 8, 2001--a cloudless summer day in Cydonia\"\n\nthe picture that he took was even clearer and it can be seen that nothing alien related is in the photo. It is all just a mesa.",
+      "word_count": 159,
+      "overview": "You answer the question directly and you do the thing the task most rewards: you go to the source, quote it, and use it to settle the point rather than just mentioning that it exists. You also anticipate the objection about the cloudy weather and show how it was answered, which is the most sophisticated move in the response. What the response needs is length and follow-through — each quotation is dropped in and left to speak for itself, and the closing paragraph asserts that the picture is clear without telling us what in it is clear. Say what each quotation proves, in your own words, immediately after you use it.",
+      "criteria": {
+        "argumentation": {
+          "comment": "Your position is stated in the first sentence and never wobbles, and you handle the strongest objection to it rather than ignoring it. What is missing is the last step of each argument: you show that a better photograph was taken, but you do not spell out why a clearer photograph settles the question. Finish the reasoning you start.",
+          "trait_score": 4,
+          "ai_trait_score": 4,
+          "spans": [
+            {
+              "quote": "The face on Mars was not made by aliens, and it only looked like a face because of the shadows.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 0,
+              "end": 95
+            },
+            {
+              "quote": "Some people didn't agree because \"it was winter in April '98--a cloudy time of the year\" and to disprove this they took a better picture in the summer.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 491,
+              "end": 642
+            },
+            {
+              "quote": "the picture that he took was even clearer and it can be seen that nothing alien related is in the photo.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 738,
+              "end": 842
+            }
+          ]
+        },
+        "organization": {
+          "comment": "You orient the reader before each piece of evidence, so it is always clear where a quotation has come from. The shape of the response is top-heavy though: the argument is essentially over by the second paragraph, and the third adds a sentence rather than closing. Use your ending to say what the evidence adds up to.",
+          "trait_score": 4,
+          "ai_trait_score": 4,
+          "spans": [
+            {
+              "quote": "This is not a face becasue the author says in paragraph two",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 312,
+              "end": 371
+            },
+            {
+              "quote": "In paragraph ten, it says",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 643,
+              "end": 668
+            },
+            {
+              "quote": "the picture that he took was even clearer and it can be seen that nothing alien related is in the photo. It is all just a mesa.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 738,
+              "end": 865
+            }
+          ]
+        },
+        "development": {
+          "comment": "You use the source properly — two direct quotations, both relevant, both placed where they do work. The problem is that they are left to argue for themselves. After each one, add a sentence in your own words saying what it shows; at the moment the reader has to make the connection you should be making.",
+          "trait_score": 4,
+          "ai_trait_score": 4,
+          "spans": [
+            {
+              "quote": "Three years later they took an even better one, showing that it wasn't a face at all.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 225,
+              "end": 310
+            },
+            {
+              "quote": "Scientist figured it was just another Martian mesa, common enough around Cydonia, only this one had unusual shadows",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 374,
+              "end": 489
+            },
+            {
+              "quote": "Nevertheless, on April 8, 2001--a cloudless summer day in Cydonia",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 670,
+              "end": 735
+            }
+          ]
+        },
+        "conventions": {
+          "comment": "Your sentences are clear and easy to follow. What lets them down is presentation: a misspelling in a key sentence, a quotation that is never closed off with punctuation, and a paragraph that begins in lower case. These are all things a single read-through would catch.",
+          "trait_score": 3,
+          "ai_trait_score": 3,
+          "spans": [
+            {
+              "quote": "This is not a face becasue the author says",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 312,
+              "end": 354
+            },
+            {
+              "quote": "only this one had unusual shadows\" Some people didn't agree",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 456,
+              "end": 515
+            },
+            {
+              "quote": "the picture that he took was even clearer",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 738,
+              "end": 779
+            }
+          ]
+        }
+      },
+      "ai_traits": {
+        "argumentation": 4,
+        "organization": 4,
+        "development": 4,
+        "conventions": 3
+      },
+      "traits": {
+        "argumentation": 4,
+        "organization": 4,
+        "development": 4,
+        "conventions": 3
+      },
+      "ai_holistic": 2,
+      "holistic": 2,
+      "overridden": false,
+      "score_formation": {
+        "weighted_trait_mean": 3.85,
+        "log10_word_count": 2.2013971243204513,
+        "word_count": 159,
+        "continuous_score": 2.1934086804385,
+        "band": "[1.735, 2.516)",
+        "cuts": [
+          1.7351793707145688,
+          2.5159640395136327,
+          3.3482205192392716,
+          4.192509040792514,
+          4.581705769605978
+        ],
+        "to_next_band_up": 0.32255535907513266,
+        "to_next_band_down": 0.45822930972393117,
+        "distance_to_nearest_cut": 0.32255535907513266,
+        "beta": [
+          -6.782584958393722,
+          0.6827116764114304,
+          2.883420539857224
+        ],
+        "weights": {
+          "organization": 0.25,
+          "development": 0.25,
+          "conventions": 0.15,
+          "argumentation": 0.35
+        }
+      },
+      "score_unchanged_by_override": false
+    },
+    {
+      "essay_id": "019e8c3",
+      "text": "Driverless cars could be the car of the future.\n\nMany companies like GM and Google are working to create the driverless car.\n\nThey are working on improving the models that were already created, but these new care could lead to bad events.\n\nBecause of the lack of human attention, computer errors, and new liability questions driverless cars should not be developed.\n\nSitting in the driver's seat of a driverless car, may cause more issues than benefits.\n\nAccording to the article, \"the human driver must remain alert and be ready to take over when the situation requires.\"\n\nIn order to drive. the human can not be distracted by phones or food, but with the idea of being in a driverless car, the human will be.\n\nIn self-driver cars, people are distracted by their phones, even though they must pay attention to road.\n\nThe distracions will be more dangerous in driverless cars because as the article states, \"none of the cars developed so far are completely driverless. When people enter the new cars, they will believe that they do not have to pay attention because the car is driverless.\n\nWhen the car malfunctions, the person is the car would be so distracted that even with devices to get the driver's attention, he or she would not be able to react quickly enough.\n\nThe extreme lack of attention would cause accidents, injuries, and deaths.\n\nDriverless cars are run by sensors, hardware, and software.\n\nIn many cases, these items are known to crash or suddenly stop working.\n\nA computer crashing can lead to bad events and having that computer crash while driving a car would make the events twice as worse.\n\nThe brakes may stop working, the car might steer itself off the road, or it could even steer into another car.\n\nIf humans have no control over the car, they can not try to steer the car the other way when it crashes.\n\nPeople would believe they are invincible with the new cars, but techhnology is know to fail.\n\nWhen technology fails, the driverless car would get into some crash.\n\nWith the crash, liabiltiy questions would erupt.\n\nThe article states that \"if the technology fails and someone is injured, who is at fault- the driver or the manufacturer?\"\n\nThe person in the driver seat would want to blame the car and the company that created it.\n\nThe car company would want to blame the person for lack of attention.\n\nAccording the the article, \"new laws will be needed in order to cover liability in case of an accident.\"\n\nThis creates more trouble for state governments.\n\nDriverless cars seem great innovative with the idea of not having to ever drive again.\n\nAlthough there is real danger that accompanies driverless cars.\n\nWith the thought of the car being invincible, humans will be less alert.\n\nWhen the system goes down, people would not be able to react in time.\n\nThe people who do not react in time would cause accidents and blame the car companies.\n\nDriverless cars would be more trouble than helpful. ",
+      "word_count": 507,
+      "overview": "This is a well-planned response. You name your three reasons in one sentence near the start and then take them in that order, which makes the argument very easy to follow, and you go to the article for evidence at each stage rather than relying on assertion. Two things would lift it. First, your paragraphing works against you: almost every sentence sits alone, so ideas that belong together never visibly group. Second, you raise the case for driverless cars at the end and then move past it — that concession deserves an answer, not just an acknowledgement.",
+      "criteria": {
+        "argumentation": {
+          "comment": "You state your position and your reasons together in one sentence, which is exactly the right move, and each reason then gets argued through to a consequence. Where you lose ground is the concession near the end: you admit the appeal of driverless cars and then simply restate your view instead of answering it. Give the other side its best case and then defeat it.",
+          "trait_score": 4,
+          "ai_trait_score": 4,
+          "spans": [
+            {
+              "quote": "Because of the lack of human attention, computer errors, and new liability questions driverless cars should not be developed.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 240,
+              "end": 365
+            },
+            {
+              "quote": "The extreme lack of attention would cause accidents, injuries, and deaths.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 1270,
+              "end": 1344
+            },
+            {
+              "quote": "Driverless cars seem great innovative with the idea of not having to ever drive again.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 2488,
+              "end": 2574
+            },
+            {
+              "quote": "Driverless cars would be more trouble than helpful.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 2874,
+              "end": 2925
+            }
+          ]
+        },
+        "organization": {
+          "comment": "The plan behind this response is strong: you announce three reasons and deliver them in the order you announced, and each new section opens by naming what it is about. The presentation undoes some of that work, because nearly every sentence is its own paragraph, so the reader cannot see which ideas belong together. Group the sentences that argue one point into one paragraph.",
+          "trait_score": 5,
+          "ai_trait_score": 5,
+          "spans": [
+            {
+              "quote": "Because of the lack of human attention, computer errors, and new liability questions driverless cars should not be developed.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 240,
+              "end": 365
+            },
+            {
+              "quote": "Driverless cars are run by sensors, hardware, and software.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 1346,
+              "end": 1405
+            },
+            {
+              "quote": "Although there is real danger that accompanies driverless cars.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 2576,
+              "end": 2639
+            }
+          ]
+        },
+        "development": {
+          "comment": "You support each reason with material from the article and, in the best moment, you spell out the specific ways a failure could play out rather than just calling it dangerous. Elsewhere you assert where you could evidence — the claim that these systems often fail is exactly the kind of statement the article could have backed up for you.",
+          "trait_score": 4,
+          "ai_trait_score": 4,
+          "spans": [
+            {
+              "quote": "In many cases, these items are known to crash or suddenly stop working.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 1407,
+              "end": 1478
+            },
+            {
+              "quote": "The brakes may stop working, the car might steer itself off the road, or it could even steer into another car.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 1613,
+              "end": 1723
+            },
+            {
+              "quote": "if the technology fails and someone is injured, who is at fault- the driver or the manufacturer?",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 2070,
+              "end": 2166
+            }
+          ]
+        },
+        "conventions": {
+          "comment": "You handle a long sentence with several parts well and keep it readable throughout. The response has not been proofread, though: there are several misspellings, a repeated word, and a place where the wrong small word makes the sentence say something you did not mean. A slow read-through would remove nearly all of these.",
+          "trait_score": 4,
+          "ai_trait_score": 4,
+          "spans": [
+            {
+              "quote": "the person is the car would be so distracted",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 1117,
+              "end": 1161
+            },
+            {
+              "quote": "The brakes may stop working, the car might steer itself off the road, or it could even steer into another car.",
+              "occurrence": 1,
+              "polarity": "strength",
+              "start": 1613,
+              "end": 1723
+            },
+            {
+              "quote": "People would believe they are invincible with the new cars, but techhnology is know to fail.",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 1831,
+              "end": 1923
+            },
+            {
+              "quote": "According the the article",
+              "occurrence": 1,
+              "polarity": "weakness",
+              "start": 2332,
+              "end": 2357
+            }
+          ]
+        }
+      },
+      "ai_traits": {
+        "argumentation": 4,
+        "organization": 5,
+        "development": 4,
+        "conventions": 4
+      },
+      "traits": {
+        "argumentation": 4,
+        "organization": 5,
+        "development": 4,
+        "conventions": 4
+      },
+      "ai_holistic": 4,
+      "holistic": 4,
+      "overridden": false,
+      "score_formation": {
+        "weighted_trait_mean": 4.25,
+        "log10_word_count": 2.705007959333336,
+        "word_count": 507,
+        "continuous_score": 3.918615176773873,
+        "band": "[3.348, 4.193)",
+        "cuts": [
+          1.7351793707145688,
+          2.5159640395136327,
+          3.3482205192392716,
+          4.192509040792514,
+          4.581705769605978
+        ],
+        "to_next_band_up": 0.2738938640186408,
+        "to_next_band_down": 0.5703946575346013,
+        "distance_to_nearest_cut": 0.2738938640186408,
+        "beta": [
+          -6.782584958393722,
+          0.6827116764114304,
+          2.883420539857224
+        ],
+        "weights": {
+          "organization": 0.25,
+          "development": 0.25,
+          "conventions": 0.15,
+          "argumentation": 0.35
+        }
+      },
+      "score_unchanged_by_override": false
+    }
+  ]
+}

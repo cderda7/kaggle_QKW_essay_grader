@@ -6,91 +6,113 @@
       "argumentation": {
         "comment": "You take a clear position immediately and you reason properly in at least one place, working from a problem through to what should be built instead. The difficulty is that you undercut yourself: the concession arrives without being handled, and the final paragraph argues the other side without you ever coming back. Concede a point in order to answer it, not instead of answering it.",
         "spans": [
-          {
-            "quote": "I feel like if they want to have driving cars they should just bulid a car that can drive people instead of a car that half does it.",
-            "occurrence": 1,
-            "polarity": "strength"
-          },
-          {
-            "quote": "But i feel like people will just ignore it and get into accidents they could have prevented.",
-            "occurrence": 1,
-            "polarity": "strength"
-          },
-          {
-            "quote": "Driveless cars are sort of a good idea.",
-            "occurrence": 1,
-            "polarity": "weakness"
-          },
-          {
-            "quote": "Pros are that you can half drive.",
-            "occurrence": 1,
-            "polarity": "weakness"
-          }
+          { "quote": "I feel like if they want to have driving cars they should just bulid a car that can drive people instead of a car that half does it.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "But i feel like people will just ignore it and get into accidents they could have prevented.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "Driveless cars are sort of a good idea.", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "Pros are that you can half drive.", "occurrence": 1, "polarity": "weakness" }
         ]
       },
       "organization": {
         "comment": "Your signposting inside the middle paragraph is genuinely useful — a reader can follow you from one objection to the next. The response is weaker at its edges: the opening paragraph drifts away from the position it just stated, and the last paragraph stops rather than closing. Give the ending the job of saying what your reasons add up to.",
         "spans": [
-          {
-            "quote": "Another con is that they can't really drive by itself",
-            "occurrence": 1,
-            "polarity": "strength"
-          },
-          {
-            "quote": "I do think they are a good idea for the blind and people not going to far.",
-            "occurrence": 1,
-            "polarity": "weakness"
-          },
-          {
-            "quote": "You wouldn't have to really pay attention to anything around you and you could just relax while driving.",
-            "occurrence": 1,
-            "polarity": "weakness"
-          }
+          { "quote": "Another con is that they can't really drive by itself", "occurrence": 1, "polarity": "strength" },
+          { "quote": "I do think they are a good idea for the blind and people not going to far.", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "You wouldn't have to really pay attention to anything around you and you could just relax while driving.", "occurrence": 1, "polarity": "weakness" }
         ]
       },
       "development": {
         "comment": "Where you reach for something concrete, it works — the local example gives the reader a specific situation to picture. Most of your other reasons stay at the level of assertion, and the phrase \"or something\" is doing the work that an explanation should be doing. Take one objection and spend three sentences on it instead of naming four.",
         "spans": [
-          {
-            "quote": "Like since i live in Indiana, they would be a good idea for people in Indianapolis to get from the mall to like a resturant or something.",
-            "occurrence": 1,
-            "polarity": "strength"
-          },
-          {
-            "quote": "I feel like they are dangerous because they could malfuncting and blow up or something.",
-            "occurrence": 1,
-            "polarity": "weakness"
-          },
-          {
-            "quote": "Or they will drive right into a buliding at full speed or something.",
-            "occurrence": 1,
-            "polarity": "weakness"
-          }
+          { "quote": "Like since i live in Indiana, they would be a good idea for people in Indianapolis to get from the mall to like a resturant or something.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "I feel like they are dangerous because they could malfuncting and blow up or something.", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "Or they will drive right into a buliding at full speed or something.", "occurrence": 1, "polarity": "weakness" }
         ]
       },
       "conventions": {
         "comment": "You can build a sentence that holds two ideas against each other, which is worth keeping. Against that, the response has not been re-read: there are misspellings throughout and at least one sentence where a missing word makes the meaning guesswork. Read your work aloud once before handing it in — most of these you would hear.",
         "spans": [
-          {
-            "quote": "No car is really safe in general, but letting a robot like thing drive your car is kinda a crazy idea.",
-            "occurrence": 1,
-            "polarity": "strength"
-          },
-          {
-            "quote": "they're are many pros and cons about the whole thing.",
-            "occurrence": 1,
-            "polarity": "weakness"
-          },
-          {
-            "quote": "I also think they are a bad idea because driving are probably going to be directly on their phone",
-            "occurrence": 1,
-            "polarity": "weakness"
-          },
-          {
-            "quote": "take control when around accident ot people working on roads",
-            "occurrence": 1,
-            "polarity": "weakness"
-          }
+          { "quote": "No car is really safe in general, but letting a robot like thing drive your car is kinda a crazy idea.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "they're are many pros and cons about the whole thing.", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "I also think they are a bad idea because driving are probably going to be directly on their phone", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "take control when around accident ot people working on roads", "occurrence": 1, "polarity": "weakness" }
+        ]
+      }
+    }
+  },
+  {
+    "essay_id": "0105e2e",
+    "overview": "You answer the question directly and you do the thing the task most rewards: you go to the source, quote it, and use it to settle the point rather than just mentioning that it exists. You also anticipate the objection about the cloudy weather and show how it was answered, which is the most sophisticated move in the response. What the response needs is length and follow-through — each quotation is dropped in and left to speak for itself, and the closing paragraph asserts that the picture is clear without telling us what in it is clear. Say what each quotation proves, in your own words, immediately after you use it.",
+    "criteria": {
+      "argumentation": {
+        "comment": "Your position is stated in the first sentence and never wobbles, and you handle the strongest objection to it rather than ignoring it. What is missing is the last step of each argument: you show that a better photograph was taken, but you do not spell out why a clearer photograph settles the question. Finish the reasoning you start.",
+        "spans": [
+          { "quote": "The face on Mars was not made by aliens, and it only looked like a face because of the shadows.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "Some people didn't agree because \"it was winter in April '98--a cloudy time of the year\" and to disprove this they took a better picture in the summer.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "the picture that he took was even clearer and it can be seen that nothing alien related is in the photo.", "occurrence": 1, "polarity": "weakness" }
+        ]
+      },
+      "organization": {
+        "comment": "You orient the reader before each piece of evidence, so it is always clear where a quotation has come from. The shape of the response is top-heavy though: the argument is essentially over by the second paragraph, and the third adds a sentence rather than closing. Use your ending to say what the evidence adds up to.",
+        "spans": [
+          { "quote": "This is not a face becasue the author says in paragraph two", "occurrence": 1, "polarity": "strength" },
+          { "quote": "In paragraph ten, it says", "occurrence": 1, "polarity": "strength" },
+          { "quote": "the picture that he took was even clearer and it can be seen that nothing alien related is in the photo. It is all just a mesa.", "occurrence": 1, "polarity": "weakness" }
+        ]
+      },
+      "development": {
+        "comment": "You use the source properly — two direct quotations, both relevant, both placed where they do work. The problem is that they are left to argue for themselves. After each one, add a sentence in your own words saying what it shows; at the moment the reader has to make the connection you should be making.",
+        "spans": [
+          { "quote": "Scientist figured it was just another Martian mesa, common enough around Cydonia, only this one had unusual shadows", "occurrence": 1, "polarity": "strength" },
+          { "quote": "Nevertheless, on April 8, 2001--a cloudless summer day in Cydonia", "occurrence": 1, "polarity": "strength" },
+          { "quote": "Three years later they took an even better one, showing that it wasn't a face at all.", "occurrence": 1, "polarity": "weakness" }
+        ]
+      },
+      "conventions": {
+        "comment": "Your sentences are clear and easy to follow. What lets them down is presentation: a misspelling in a key sentence, a quotation that is never closed off with punctuation, and a paragraph that begins in lower case. These are all things a single read-through would catch.",
+        "spans": [
+          { "quote": "This is not a face becasue the author says", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "only this one had unusual shadows\" Some people didn't agree", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "the picture that he took was even clearer", "occurrence": 1, "polarity": "weakness" }
+        ]
+      }
+    }
+  },
+  {
+    "essay_id": "019e8c3",
+    "overview": "This is a well-planned response. You name your three reasons in one sentence near the start and then take them in that order, which makes the argument very easy to follow, and you go to the article for evidence at each stage rather than relying on assertion. Two things would lift it. First, your paragraphing works against you: almost every sentence sits alone, so ideas that belong together never visibly group. Second, you raise the case for driverless cars at the end and then move past it — that concession deserves an answer, not just an acknowledgement.",
+    "criteria": {
+      "argumentation": {
+        "comment": "You state your position and your reasons together in one sentence, which is exactly the right move, and each reason then gets argued through to a consequence. Where you lose ground is the concession near the end: you admit the appeal of driverless cars and then simply restate your view instead of answering it. Give the other side its best case and then defeat it.",
+        "spans": [
+          { "quote": "Because of the lack of human attention, computer errors, and new liability questions driverless cars should not be developed.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "The extreme lack of attention would cause accidents, injuries, and deaths.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "Driverless cars seem great innovative with the idea of not having to ever drive again.", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "Driverless cars would be more trouble than helpful.", "occurrence": 1, "polarity": "weakness" }
+        ]
+      },
+      "organization": {
+        "comment": "The plan behind this response is strong: you announce three reasons and deliver them in the order you announced, and each new section opens by naming what it is about. The presentation undoes some of that work, because nearly every sentence is its own paragraph, so the reader cannot see which ideas belong together. Group the sentences that argue one point into one paragraph.",
+        "spans": [
+          { "quote": "Because of the lack of human attention, computer errors, and new liability questions driverless cars should not be developed.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "Driverless cars are run by sensors, hardware, and software.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "Although there is real danger that accompanies driverless cars.", "occurrence": 1, "polarity": "weakness" }
+        ]
+      },
+      "development": {
+        "comment": "You support each reason with material from the article and, in the best moment, you spell out the specific ways a failure could play out rather than just calling it dangerous. Elsewhere you assert where you could evidence — the claim that these systems often fail is exactly the kind of statement the article could have backed up for you.",
+        "spans": [
+          { "quote": "The brakes may stop working, the car might steer itself off the road, or it could even steer into another car.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "if the technology fails and someone is injured, who is at fault- the driver or the manufacturer?", "occurrence": 1, "polarity": "strength" },
+          { "quote": "In many cases, these items are known to crash or suddenly stop working.", "occurrence": 1, "polarity": "weakness" }
+        ]
+      },
+      "conventions": {
+        "comment": "You handle a long sentence with several parts well and keep it readable throughout. The response has not been proofread, though: there are several misspellings, a repeated word, and a place where the wrong small word makes the sentence say something you did not mean. A slow read-through would remove nearly all of these.",
+        "spans": [
+          { "quote": "The brakes may stop working, the car might steer itself off the road, or it could even steer into another car.", "occurrence": 1, "polarity": "strength" },
+          { "quote": "People would believe they are invincible with the new cars, but techhnology is know to fail.", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "According the the article", "occurrence": 1, "polarity": "weakness" },
+          { "quote": "the person is the car would be so distracted", "occurrence": 1, "polarity": "weakness" }
         ]
       }
     }

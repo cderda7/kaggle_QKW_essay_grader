@@ -1,0 +1,416 @@
+"""Join graded predictions, annotation batches, essay text and override records into one artifact.
+
+This is the single seam the teacher review UI rests on. Override records are an INPUT here rather
+than a mutation applied downstream, which puts span anchoring, batch validation, the join, holistic
+recomputation and override application all below one testable boundary and leaves the HTTP layer
+with no logic worth testing. If that boundary erodes -- if override application drifts into a
+request handler, or anchoring gets called from a template -- the test suite loses most of its value.
+See teacher_ui/decisions_log.md ui_6.
+
+Every guard below is a HARD error, and they are collected rather than raised one at a time so a bad
+batch is fixed in one pass. This follows the stance the pipeline already takes in `load_triage()`
+and `check_v4_fidelity()`: a partially-usable annotation run is not a thing.
+
+The gold score is never read into the artifact. It lives in the source CSV beside the essay text and
+is deliberately left there -- teacher_ui/decisions_log.md ui_4.
+
+    python3 build_review.py [--essays a,b,c] [--out review_ui_v1.json]
+"""
+
+import argparse
+import csv
+import glob
+import json
+import math
+import os
+import re
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(HERE, "..", "grading"))
+
+from anchor import AnchorError, resolve_spans          # noqa: E402
+from grade_essays import V4_WEIGHTS, apply_aggregator   # noqa: E402
+
+LADDER_VERSION = "ui_v1"
+TRAIT_RUN = "v6_runB"
+
+MANIFEST = os.path.join(HERE, "essays_ui_v1.json")
+ANNOTATION_DIR = os.path.join(HERE, "annotation_v6_runB")
+PREDICTIONS_CSV = os.path.join(HERE, "..", "grading", "predictions_v9.csv")
+AGGREGATOR_FILE = os.path.join(HERE, "..", "aggregator_v9.json")
+OVERRIDES_FILE = os.path.join(HERE, "overrides.json")
+SOURCE_CSV = os.environ.get("PERSONAL_TRAINING_SET_CSV",
+                            os.path.join(HERE, "..", "..", "personal_training_set.csv"))
+DEFAULT_OUT = os.path.join(HERE, "review_ui_v1.json")
+
+CRITERIA = ("argumentation", "organization", "development", "conventions")
+POLARITIES = ("strength", "weakness")
+
+MIN_QUOTE_WORDS = 3
+MAX_SPANS_PER_CRITERION = 4
+MAX_SPAN_FRACTION = 0.25
+
+ITEM_KEYS = {"essay_id", "overview", "criteria"}
+CRITERION_KEYS = {"comment", "spans", "no_evidence_reason"}
+SPAN_KEYS = {"quote", "occurrence", "polarity"}
+
+# Fields whose presence means the annotator was asked for, or improvised, something it does not own.
+# The scores belong to the grading pipeline; the annotator explains them.
+FORBIDDEN_FIELDS = ("holistic_score", "score", "human_score", "SCORES", "gate_applied",
+                    "triage_label") + CRITERIA
+
+# Prose that states or alludes to the number already on screen. The overview exists to say something
+# the number cannot; restating it turns the paragraph into a defence of a score. ui_v1 spec, and the
+# instrument's "never state the numeric score in prose" rule.
+GRADE_LANGUAGE = re.compile(
+    r"\b[1-6]\s*/\s*6\b"
+    r"|\bout of\s+(?:six|6)\b"
+    r"|\b(?:score[sd]?|scoring|grade[sd]?|grading|mark(?:s|ed)?|marking|band|rubric|"
+    r"criteri(?:on|a)|trait[s]?)\b",
+    re.IGNORECASE,
+)
+
+
+class AnnotationError(ValueError):
+    """One or more annotation batches are not usable. Lists every problem found."""
+
+
+# --------------------------------------------------------------------------------------------
+# loading
+# --------------------------------------------------------------------------------------------
+
+def load_manifest(path=MANIFEST):
+    with open(path) as f:
+        return json.load(f)
+
+
+def load_essays(source_csv=SOURCE_CSV):
+    """essay_id -> full_text. The `score` column is deliberately not read (ui_4)."""
+    with open(source_csv, newline="", encoding="utf-8") as f:
+        return {r["essay_id"]: r["full_text"] for r in csv.DictReader(f)}
+
+
+def load_predictions(path=PREDICTIONS_CSV):
+    with open(path, newline="") as f:
+        return {r["essay_id"]: r for r in csv.DictReader(f)}
+
+
+def load_overrides(path=OVERRIDES_FILE):
+    """Append-only record list. Missing file means nothing has been corrected yet."""
+    if not os.path.exists(path):
+        return []
+    with open(path) as f:
+        return json.load(f)
+
+
+def _word_count(s):
+    return len(s.split())
+
+
+# --------------------------------------------------------------------------------------------
+# guards
+# --------------------------------------------------------------------------------------------
+
+def _check_span(span, essay_text, essay_id, criterion, index, problems):
+    where = "%s %s[%d]" % (essay_id, criterion, index)
+
+    unknown = sorted(set(span) - SPAN_KEYS)
+    if unknown:
+        problems.append("%s: unknown span field(s) %s" % (where, unknown))
+    if "quote" not in span:
+        problems.append("%s: span has no quote" % where)
+        return
+    if span.get("polarity") not in POLARITIES:
+        problems.append("%s: polarity=%r is not one of %s -- every span must say whether it is "
+                        "evidence of a strength or a weakness"
+                        % (where, span.get("polarity"), list(POLARITIES)))
+
+    words = _word_count(span["quote"])
+    if words < MIN_QUOTE_WORDS:
+        problems.append("%s: quote is %d word(s), minimum is %d -- a shorter quote appears in too "
+                        "many places to be meaningful as a highlight: %r"
+                        % (where, words, MIN_QUOTE_WORDS, span["quote"]))
+
+    limit = MAX_SPAN_FRACTION * _word_count(essay_text)
+    if words > limit:
+        problems.append("%s: quote is %d words, more than %.0f%% of the %d-word response (limit "
+                        "%.0f) -- quote the sentence that carries the point, not the paragraph"
+                        % (where, words, 100 * MAX_SPAN_FRACTION, _word_count(essay_text), limit))
+
+
+def _check_item(item, essays, problems):
+    eid = item.get("essay_id")
+    if not eid:
+        problems.append("an annotation object has no essay_id")
+        return
+    if eid not in essays:
+        problems.append("%s: annotated but not present in the source corpus" % eid)
+        return
+    text = essays[eid]
+
+    unknown = sorted(set(item) - ITEM_KEYS)
+    if unknown:
+        forbidden = [k for k in unknown if k in FORBIDDEN_FIELDS]
+        if forbidden:
+            problems.append("%s: carries field(s) the annotator was never asked for: %s -- the "
+                            "scores are owned by the grading pipeline, not the annotation pass"
+                            % (eid, forbidden))
+        rest = [k for k in unknown if k not in FORBIDDEN_FIELDS]
+        if rest:
+            problems.append("%s: unknown field(s) %s" % (eid, rest))
+
+    overview = (item.get("overview") or "").strip()
+    if not overview:
+        problems.append("%s: overview is missing or empty" % eid)
+    else:
+        hit = GRADE_LANGUAGE.search(overview)
+        if hit:
+            problems.append("%s: overview names the grade (%r) -- the teacher can already see the "
+                            "number; the overview exists to say what it cannot" % (eid, hit.group(0)))
+
+    criteria = item.get("criteria")
+    if not isinstance(criteria, dict):
+        problems.append("%s: criteria is missing" % eid)
+        return
+
+    missing = [c for c in CRITERIA if c not in criteria]
+    extra = sorted(set(criteria) - set(CRITERIA))
+    if missing:
+        problems.append("%s: no annotation for %s" % (eid, missing))
+    if extra:
+        problems.append("%s: annotation for unknown criteria %s" % (eid, extra))
+
+    for name in CRITERIA:
+        crit = criteria.get(name)
+        if not isinstance(crit, dict):
+            continue
+        where = "%s %s" % (eid, name)
+
+        unknown = sorted(set(crit) - CRITERION_KEYS)
+        if unknown:
+            problems.append("%s: unknown field(s) %s" % (where, unknown))
+        if not (crit.get("comment") or "").strip():
+            problems.append("%s: comment is missing or empty" % where)
+        else:
+            hit = GRADE_LANGUAGE.search(crit["comment"])
+            if hit:
+                problems.append("%s: comment names the grade or the grading process (%r)"
+                                % (where, hit.group(0)))
+
+        spans = crit.get("spans")
+        if spans is None:
+            problems.append("%s: spans is missing" % where)
+            continue
+        if len(spans) > MAX_SPANS_PER_CRITERION:
+            problems.append("%s: %d spans, maximum is %d -- past that the highlighting stops "
+                            "selecting and starts covering"
+                            % (where, len(spans), MAX_SPANS_PER_CRITERION))
+        if not spans:
+            # ui_8: an absence is a finding, but it has to be stated as one.
+            if not (crit.get("no_evidence_reason") or "").strip():
+                problems.append("%s: no spans and no no_evidence_reason -- if there is genuinely "
+                                "nothing in the response to cite for this trait, say so; silent "
+                                "absence is not permitted" % where)
+        elif (crit.get("no_evidence_reason") or "").strip():
+            problems.append("%s: has both spans and a no_evidence_reason -- the reason is only for "
+                            "a trait with nothing to point at" % where)
+
+        for i, span in enumerate(spans or []):
+            _check_span(span, text, eid, name, i, problems)
+
+
+def load_annotation(batch_dir=ANNOTATION_DIR, essays=None, expected_ids=None):
+    """Read and validate annotation batches into {essay_id: item}. Every failure is a hard error."""
+    if essays is None:
+        essays = load_essays()
+    if not os.path.isdir(batch_dir):
+        raise AnnotationError(
+            "%s does not exist. Annotate the essays against annotation_instrument_ui_v1.md into "
+            "that directory as batch_00.json .. batch_NN.json first." % batch_dir
+        )
+
+    problems = []
+    items = {}
+    for path in sorted(glob.glob(os.path.join(batch_dir, "batch_*.json"))):
+        with open(path) as f:
+            batch = json.load(f)
+        for item in batch:
+            eid = item.get("essay_id")
+            if eid in items:
+                problems.append("%s: annotated twice" % eid)
+            _check_item(item, essays, problems)
+            if eid:
+                items[eid] = item
+
+    if expected_ids is not None:
+        missing = sorted(set(expected_ids) - set(items))
+        extra = sorted(set(items) - set(expected_ids))
+        if missing:
+            problems.append("no annotation for %d essay(s): %s" % (len(missing), missing))
+        if extra:
+            problems.append("annotation for essay(s) not in the requested set: %s" % extra)
+
+    # Anchor last: a quote can only be located once the item's shape is known to be sane.
+    for eid, item in sorted(items.items()):
+        if eid not in essays or not isinstance(item.get("criteria"), dict):
+            continue
+        try:
+            resolve_spans(essays[eid], item["criteria"], essay_id=eid)
+        except (AnchorError, KeyError) as exc:
+            problems.append(str(exc))
+
+    if problems:
+        raise AnnotationError(
+            "annotation in %s is not usable (%d problem(s)):\n  %s"
+            % (os.path.basename(batch_dir), len(problems), "\n  ".join(problems))
+        )
+    return items
+
+
+# --------------------------------------------------------------------------------------------
+# build
+# --------------------------------------------------------------------------------------------
+
+def _score_formation(aggregator, traits, word_count):
+    """Everything the teacher needs to see how the holistic was produced, and nothing recomputed
+    in the page. The holistic itself comes from the pipeline's own aggregator, not a copy of it."""
+    holistic, s, band = apply_aggregator(aggregator, traits, word_count)
+    cuts = aggregator["cuts"]
+    above = [c for c in cuts if c > s]
+    below = [c for c in cuts if c <= s]
+    to_up = (min(above) - s) if above else None
+    to_down = (s - max(below)) if below else None
+    nearest = min([d for d in (to_up, to_down) if d is not None], default=None)
+    return holistic, {
+        "weighted_trait_mean": sum(V4_WEIGHTS[k] * traits[k] for k in V4_WEIGHTS),
+        "log10_word_count": math.log10(max(word_count, 1)),
+        "word_count": word_count,
+        "continuous_score": s,
+        "band": band,
+        "cuts": list(cuts),
+        "to_next_band_up": to_up,
+        "to_next_band_down": to_down,
+        "distance_to_nearest_cut": nearest,
+        "beta": list(aggregator["beta"]),
+        "weights": dict(V4_WEIGHTS),
+    }
+
+
+def _latest_override(records, essay_id):
+    """Append-only: the current state of an essay is its most recent record."""
+    for rec in reversed(records):
+        if rec.get("essay_id") == essay_id:
+            return rec
+    return None
+
+
+def build_review(predictions=None, annotation=None, essays=None, override_records=(),
+                 expected_ids=None, aggregator=None, manifest=None):
+    """Return the review artifact implied by predictions, annotation, essay text and overrides."""
+    manifest = manifest if manifest is not None else load_manifest()
+    essays = essays if essays is not None else load_essays()
+    predictions = predictions if predictions is not None else load_predictions()
+    if aggregator is None:
+        with open(AGGREGATOR_FILE) as f:
+            aggregator = json.load(f)
+    if expected_ids is None:
+        expected_ids = list(manifest["essay_ids"])
+    if annotation is None:
+        annotation = load_annotation(essays=essays, expected_ids=expected_ids)
+
+    out_essays = []
+    for eid in sorted(expected_ids):
+        pred = predictions[eid]
+        text = essays[eid]
+        word_count = int(pred["word_count"])
+        ai_traits = {c: int(pred["system_" + c]) for c in CRITERIA}
+
+        override = _latest_override(override_records, eid)
+        traits = dict(ai_traits)
+        if override and override.get("corrected_traits"):
+            traits.update({k: int(v) for k, v in override["corrected_traits"].items()})
+
+        ai_holistic, _ = _score_formation(aggregator, ai_traits, word_count)
+        holistic, formation = _score_formation(aggregator, traits, word_count)
+
+        item = annotation[eid]
+        criteria = {}
+        for name in CRITERIA:
+            crit = item["criteria"][name]
+            criteria[name] = {
+                "comment": crit["comment"],
+                "trait_score": traits[name],
+                "ai_trait_score": ai_traits[name],
+                "spans": [],
+            }
+            if crit.get("no_evidence_reason"):
+                criteria[name]["no_evidence_reason"] = crit["no_evidence_reason"]
+
+        for span in resolve_spans(text, item["criteria"], essay_id=eid):
+            criteria[span["criterion"]]["spans"].append({
+                "quote": span["quote"],
+                "occurrence": span["occurrence"],
+                "polarity": span["polarity"],
+                "start": span["start"],
+                "end": span["end"],
+            })
+
+        out_essays.append({
+            "essay_id": eid,
+            "text": text,
+            "word_count": word_count,
+            "overview": item["overview"],
+            "criteria": criteria,
+            "ai_traits": ai_traits,
+            "traits": traits,
+            "ai_holistic": ai_holistic,
+            "holistic": holistic,
+            "overridden": bool(override),
+            "score_formation": formation,
+            "score_unchanged_by_override": bool(override) and holistic == ai_holistic,
+        })
+
+    manifest_ids = set(manifest["essay_ids"])
+    return {
+        "ladder_version": LADDER_VERSION,
+        "trait_run": TRAIT_RUN,
+        "aggregator_source": aggregator.get("source"),
+        "aggregator_n": aggregator.get("n"),
+        "weights": dict(V4_WEIGHTS),
+        "complete": set(expected_ids) == manifest_ids,
+        "essays_requested": sorted(expected_ids),
+        "essays_in_manifest": sorted(manifest_ids),
+        "essays": out_essays,
+    }
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--essays", default=None,
+                    help="comma-separated essay_ids to build over (default: the frozen manifest). "
+                         "A partial build is recorded as such in the artifact.")
+    ap.add_argument("--out", default=DEFAULT_OUT)
+    args = ap.parse_args(argv)
+
+    expected = [e.strip() for e in args.essays.split(",")] if args.essays else None
+    try:
+        artifact = build_review(override_records=load_overrides(), expected_ids=expected)
+    except (AnnotationError, AnchorError) as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+
+    with open(args.out, "w") as f:
+        json.dump(artifact, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+    n_spans = sum(len(c["spans"]) for e in artifact["essays"] for c in e["criteria"].values())
+    print("built %s: %d essay(s), %d span(s), complete=%s"
+          % (os.path.basename(args.out), len(artifact["essays"]), n_spans, artifact["complete"]))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

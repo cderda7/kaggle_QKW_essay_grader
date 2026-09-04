@@ -1,0 +1,383 @@
+"""The build seam: its guards, and the artifact it produces.
+
+Every guard test asserts two things -- that the guard fires at all, and that its message names the
+essay. A guard that rejects a batch without saying which essay is wrong makes a ten-essay run
+unfixable, so the naming is part of the behaviour, not a nicety.
+
+The artifact tests assert what a reader of the artifact would observe: that the holistic matches
+what the pipeline itself computed, that the gold score is absent, and that two builds of the same
+inputs are identical.
+"""
+
+import copy
+import json
+import os
+
+import pytest
+
+from build_review import (CRITERIA, AnnotationError, build_review, load_annotation)
+
+# A short response with predictable wording, so quote-length limits are easy to reason about.
+ESSAY = (
+    "The city should build more bicycle lanes. Cars make the air dirty and they are "
+    "dangerous for children walking to school. A bicycle costs less than a car and it "
+    "does not need petrol. Some people say the winter is too cold for cycling but a coat "
+    "solves that problem. I think the council should act now."
+)
+ESSAYS = {"E1": ESSAY}
+
+QUOTES = [
+    "The city should build more bicycle lanes.",
+    "Cars make the air dirty",
+    "A bicycle costs less than a car",
+    "I think the council should act now.",
+]
+
+
+def make_item(essay_id="E1", **kwargs):
+    item = {
+        "essay_id": essay_id,
+        "overview": "You state a clear opinion and support it with everyday reasons a reader "
+                    "can follow. Push each reason one step further before moving on.",
+        "criteria": {
+            name: {
+                "comment": "You argue this clearly and could develop it further.",
+                "spans": [{"quote": QUOTES[i], "occurrence": 1, "polarity": "strength"}],
+            }
+            for i, name in enumerate(CRITERIA)
+        },
+    }
+    item.update(kwargs)
+    return item
+
+
+@pytest.fixture
+def write_batch(tmp_path):
+    """Write annotation objects to a batch directory and return its path."""
+    def _write(*items):
+        d = tmp_path / "annotation"
+        d.mkdir(exist_ok=True)
+        (d / "batch_00.json").write_text(json.dumps(list(items)))
+        return str(d)
+    return _write
+
+
+def load(batch_dir, expected_ids=("E1",)):
+    return load_annotation(batch_dir=batch_dir, essays=ESSAYS, expected_ids=list(expected_ids))
+
+
+def fails(batch_dir, expected_ids=("E1",)):
+    with pytest.raises(AnnotationError) as exc:
+        load(batch_dir, expected_ids)
+    return str(exc.value)
+
+
+# --- the valid case ----------------------------------------------------------------------------
+
+def test_a_well_formed_batch_loads(write_batch):
+    items = load(write_batch(make_item()))
+    assert set(items) == {"E1"}
+
+
+# --- guard 1: coverage -------------------------------------------------------------------------
+
+def test_missing_essay_fails_and_names_it(write_batch):
+    message = fails(write_batch(make_item("E1")), expected_ids=("E1", "E2"))
+    assert "no annotation for 1 essay(s)" in message
+    assert "E2" in message
+
+
+def test_essay_outside_the_requested_set_fails_and_names_it(write_batch):
+    item = make_item("E1")
+    stray = make_item("E1")
+    stray["essay_id"] = "E9"
+    message = fails(write_batch(item, stray))
+    assert "not in the requested set" in message
+    assert "E9" in message
+
+
+def test_the_same_essay_annotated_twice_fails(write_batch):
+    message = fails(write_batch(make_item("E1"), make_item("E1")))
+    assert "E1: annotated twice" in message
+
+
+def test_essay_not_in_the_corpus_fails(write_batch):
+    item = make_item("E1")
+    item["essay_id"] = "NOPE"
+    message = fails(write_batch(item), expected_ids=("NOPE",))
+    assert "NOPE" in message
+    assert "not present in the source corpus" in message
+
+
+# --- guard 2: closed schema --------------------------------------------------------------------
+
+@pytest.mark.parametrize("field", ["holistic_score", "human_score", "SCORES", "argumentation"])
+def test_a_score_field_on_the_item_fails_and_names_it(write_batch, field):
+    message = fails(write_batch(make_item(**{field: 3})))
+    assert "E1" in message
+    assert field in message
+    assert "never asked for" in message
+
+
+def test_unknown_item_field_fails(write_batch):
+    message = fails(write_batch(make_item(confidence=0.9)))
+    assert "E1" in message and "confidence" in message
+
+
+def test_unknown_criterion_field_fails(write_batch):
+    item = make_item()
+    item["criteria"]["argumentation"]["severity"] = "high"
+    message = fails(write_batch(item))
+    assert "E1 argumentation" in message and "severity" in message
+
+
+def test_unknown_span_field_fails(write_batch):
+    item = make_item()
+    item["criteria"]["argumentation"]["spans"][0]["confidence"] = 0.5
+    message = fails(write_batch(item))
+    assert "E1 argumentation[0]" in message and "confidence" in message
+
+
+# --- guard 3: anchoring ------------------------------------------------------------------------
+
+def test_a_quote_that_is_not_in_the_response_fails_at_build(write_batch):
+    item = make_item()
+    item["criteria"]["development"]["spans"][0]["quote"] = "a sentence the student never wrote"
+    message = fails(write_batch(item))
+    assert "E1" in message and "not found" in message
+
+
+# --- guard 4: minimum quote length --------------------------------------------------------------
+
+def test_a_quote_shorter_than_three_words_fails(write_batch):
+    item = make_item()
+    item["criteria"]["argumentation"]["spans"][0]["quote"] = "The city"
+    message = fails(write_batch(item))
+    assert "E1 argumentation[0]" in message
+    assert "2 word(s)" in message
+
+
+# --- guard 5: maximum span length ---------------------------------------------------------------
+
+def test_a_quote_longer_than_a_quarter_of_the_response_fails(write_batch):
+    item = make_item()
+    item["criteria"]["organization"]["spans"][0]["quote"] = (
+        "Cars make the air dirty and they are dangerous for children walking to school. "
+        "A bicycle costs less"
+    )
+    message = fails(write_batch(item))
+    assert "E1 organization[0]" in message
+    assert "25%" in message
+
+
+# --- guard 6: span counts and the no-evidence path ----------------------------------------------
+
+def test_more_than_four_spans_on_one_criterion_fails(write_batch):
+    item = make_item()
+    item["criteria"]["conventions"]["spans"] = [
+        {"quote": q, "occurrence": 1, "polarity": "weakness"} for q in QUOTES
+    ] + [{"quote": "Some people say the winter", "occurrence": 1, "polarity": "weakness"}]
+    message = fails(write_batch(item))
+    assert "E1 conventions" in message
+    assert "5 spans, maximum is 4" in message
+
+
+def test_no_spans_and_no_reason_fails(write_batch):
+    item = make_item()
+    item["criteria"]["development"]["spans"] = []
+    message = fails(write_batch(item))
+    assert "E1 development" in message
+    assert "no_evidence_reason" in message
+
+
+def test_no_spans_with_a_stated_reason_is_accepted(write_batch):
+    """ui_8: on a response with nothing to cite for a trait, the absence is the finding."""
+    item = make_item()
+    item["criteria"]["development"]["spans"] = []
+    item["criteria"]["development"]["no_evidence_reason"] = (
+        "The response never supports its claims, so there is no evidence to point at."
+    )
+    items = load(write_batch(item))
+    assert items["E1"]["criteria"]["development"]["spans"] == []
+
+
+def test_spans_together_with_a_no_evidence_reason_fails(write_batch):
+    item = make_item()
+    item["criteria"]["development"]["no_evidence_reason"] = "there is nothing here"
+    message = fails(write_batch(item))
+    assert "E1 development" in message
+    assert "both spans and a no_evidence_reason" in message
+
+
+# --- guard 7: criteria and polarity in range ----------------------------------------------------
+
+def test_a_missing_criterion_fails_and_names_it(write_batch):
+    item = make_item()
+    del item["criteria"]["conventions"]
+    message = fails(write_batch(item))
+    assert "E1" in message and "conventions" in message
+
+
+def test_an_unknown_criterion_fails(write_batch):
+    item = make_item()
+    item["criteria"]["creativity"] = {"comment": "x", "spans": []}
+    message = fails(write_batch(item))
+    assert "E1" in message and "creativity" in message
+
+
+@pytest.mark.parametrize("polarity", [None, "neutral", "positive", ""])
+def test_a_span_without_a_valid_polarity_fails(write_batch, polarity):
+    item = make_item()
+    item["criteria"]["argumentation"]["spans"][0]["polarity"] = polarity
+    message = fails(write_batch(item))
+    assert "E1 argumentation[0]" in message
+    assert "polarity" in message
+
+
+# --- guard 8: prose is present and does not name the grade --------------------------------------
+
+def test_an_empty_overview_fails(write_batch):
+    message = fails(write_batch(make_item(overview="   ")))
+    assert "E1" in message and "overview" in message
+
+
+def test_an_empty_comment_fails(write_batch):
+    item = make_item()
+    item["criteria"]["conventions"]["comment"] = ""
+    message = fails(write_batch(item))
+    assert "E1 conventions" in message and "comment" in message
+
+
+@pytest.mark.parametrize("overview", [
+    "Overall this response earns a 3/6 for its clarity and its handling of the question.",
+    "A solid piece of work that is worth three out of six on the whole.",
+    "Your score here reflects a clear opinion supported by everyday reasons.",
+    "Against the rubric this sits comfortably in the middle of the range.",
+])
+def test_an_overview_that_names_the_grade_fails(write_batch, overview):
+    message = fails(write_batch(make_item(overview=overview)))
+    assert "E1" in message
+    assert "overview names the grade" in message
+
+
+def test_a_comment_that_names_the_grading_process_fails(write_batch):
+    item = make_item()
+    item["criteria"]["organization"]["comment"] = "This trait was graded on structure alone."
+    message = fails(write_batch(item))
+    assert "E1 organization" in message
+    assert "names the grade" in message
+
+
+# --- problems are collected, not reported one at a time -----------------------------------------
+
+def test_every_problem_in_a_batch_is_reported_at_once(write_batch):
+    item = make_item(overview="")
+    item["criteria"]["argumentation"]["spans"][0]["polarity"] = "neutral"
+    item["criteria"]["development"]["spans"][0]["quote"] = "The city"
+    item["criteria"]["conventions"]["comment"] = ""
+    message = fails(write_batch(item))
+    assert "4 problem(s)" in message
+
+
+# --- the artifact ------------------------------------------------------------------------------
+
+PREDICTIONS = {
+    "E1": {"essay_id": "E1", "word_count": "60", "system_argumentation": "4",
+           "system_organization": "3", "system_development": "3", "system_conventions": "2"},
+}
+MANIFEST = {"essay_ids": ["E1"]}
+
+
+def _artifact(overrides=()):
+    annotation = {"E1": make_item()}
+    return build_review(predictions=PREDICTIONS, annotation=annotation, essays=ESSAYS,
+                        override_records=list(overrides), expected_ids=["E1"],
+                        manifest=MANIFEST)
+
+
+def test_the_artifact_carries_the_response_prose_and_resolved_spans():
+    essay = _artifact()["essays"][0]
+    assert essay["text"] == ESSAY
+    assert essay["overview"]
+    for name in CRITERIA:
+        crit = essay["criteria"][name]
+        assert crit["comment"]
+        assert crit["spans"]
+        for span in crit["spans"]:
+            assert ESSAY[span["start"]:span["end"]] == span["quote"]
+            assert span["polarity"] in ("strength", "weakness")
+
+
+def test_each_criterion_card_carries_its_own_trait_score():
+    essay = _artifact()["essays"][0]
+    assert essay["criteria"]["argumentation"]["trait_score"] == 4
+    assert essay["criteria"]["conventions"]["trait_score"] == 2
+
+
+def test_the_artifact_holds_the_values_the_score_formation_panel_needs():
+    formation = _artifact()["essays"][0]["score_formation"]
+    for key in ("weighted_trait_mean", "log10_word_count", "word_count", "continuous_score",
+                "band", "cuts", "distance_to_nearest_cut", "beta", "weights"):
+        assert key in formation, key
+
+
+def test_the_gold_score_is_absent_from_the_artifact():
+    blob = json.dumps(_artifact())
+    for leak in ("human_score", '"gold"', '"human"', '"score"'):
+        assert leak not in blob, leak
+
+
+def test_two_builds_of_the_same_inputs_are_identical():
+    assert json.dumps(_artifact(), sort_keys=True) == json.dumps(_artifact(), sort_keys=True)
+
+
+def test_a_partial_build_is_recorded_as_incomplete():
+    annotation = {"E1": make_item()}
+    artifact = build_review(predictions=PREDICTIONS, annotation=annotation, essays=ESSAYS,
+                            expected_ids=["E1"], manifest={"essay_ids": ["E1", "E2"]})
+    assert artifact["complete"] is False
+    assert artifact["essays_in_manifest"] == ["E1", "E2"]
+
+
+def test_a_build_over_the_whole_manifest_is_recorded_as_complete():
+    assert _artifact()["complete"] is True
+
+
+# --- overrides are an input to the build --------------------------------------------------------
+
+def test_an_override_changes_the_traits_and_recomputes_the_holistic():
+    record = {"essay_id": "E1", "corrected_traits": {"conventions": 6, "development": 6,
+                                                     "organization": 6, "argumentation": 6}}
+    before = _artifact()["essays"][0]
+    after = _artifact([record])["essays"][0]
+    assert after["ai_traits"] == before["ai_traits"]
+    assert after["traits"]["conventions"] == 6
+    assert after["ai_holistic"] == before["holistic"]
+    assert after["holistic"] > before["holistic"]
+    assert after["overridden"] is True
+
+
+def test_an_override_that_does_not_move_the_band_is_flagged_as_such():
+    """The measured common case (ui_9): a single-trait correction usually changes nothing."""
+    record = {"essay_id": "E1", "corrected_traits": {"conventions": 3}}
+    essay = _artifact([record])["essays"][0]
+    assert essay["traits"]["conventions"] == 3
+    if essay["holistic"] == essay["ai_holistic"]:
+        assert essay["score_unchanged_by_override"] is True
+    else:
+        assert essay["score_unchanged_by_override"] is False
+
+
+def test_the_latest_override_record_wins():
+    records = [
+        {"essay_id": "E1", "corrected_traits": {"conventions": 5}},
+        {"essay_id": "E1", "corrected_traits": {"conventions": 1}},
+    ]
+    assert _artifact(records)["essays"][0]["traits"]["conventions"] == 1
+
+
+def test_an_override_for_another_essay_is_ignored():
+    record = {"essay_id": "SOMEONE_ELSE", "corrected_traits": {"conventions": 6}}
+    essay = _artifact([record])["essays"][0]
+    assert essay["overridden"] is False
+    assert essay["traits"] == essay["ai_traits"]

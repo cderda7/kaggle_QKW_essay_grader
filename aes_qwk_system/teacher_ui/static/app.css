@@ -1,0 +1,189 @@
+/* Teacher review UI.
+   Colour carries CRITERION; polarity is a separate channel (solid fill = strength, dotted underline
+   = weakness) so meaning never rests on hue alone and survives whatever colour it lands on. */
+
+:root {
+  --bg: #ffffff;
+  --panel: #fbfbfa;
+  --ink: #1a1a19;
+  --ink-soft: #55534e;
+  --ink-faint: #8b8983;
+  --rule: #e6e4df;
+
+  --argumentation: #2f7d5c;
+  --argumentation-bg: #d8efe4;
+  --organization: #2b6094;
+  --organization-bg: #d9e8f6;
+  --development: #9a6b12;
+  --development-bg: #f8ecc8;
+  --conventions: #b1512c;
+  --conventions-bg: #fadfd3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161614;
+    --panel: #1e1e1b;
+    --ink: #ece9e3;
+    --ink-soft: #b1aea6;
+    --ink-faint: #7d7a73;
+    --rule: #33322e;
+
+    --argumentation: #7fd4ac;
+    --argumentation-bg: #1e4435;
+    --organization: #8ec2ee;
+    --organization-bg: #1c3550;
+    --development: #e5c46a;
+    --development-bg: #453714;
+    --conventions: #f0a183;
+    --conventions-bg: #4d2517;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* --- top bar ------------------------------------------------------------------------------- */
+
+.topbar {
+  display: flex; align-items: center; gap: 16px;
+  padding: 12px 28px; border-bottom: 1px solid var(--rule);
+  font-size: 13px; color: var(--ink-faint);
+  position: sticky; top: 0; background: var(--bg); z-index: 5;
+}
+.topbar .essay-id { font-weight: 600; color: var(--ink); letter-spacing: .01em; }
+.topbar .wc { margin-left: auto; }
+.back { text-decoration: none; color: var(--ink-faint); }
+.back:hover { color: var(--ink); }
+
+/* --- index --------------------------------------------------------------------------------- */
+
+.index { max-width: 760px; margin: 0 auto; padding: 40px 28px 80px; }
+.index h1 { font-size: 22px; margin: 0 0 20px; letter-spacing: -.01em; }
+.partial { color: var(--ink-faint); font-size: 14px; margin: -8px 0 20px; }
+
+.essay-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.essay-table th {
+  text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--ink-faint); font-weight: 600; padding: 0 12px 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.essay-table td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--rule); }
+.essay-table td a { font-variant-numeric: tabular-nums; font-weight: 500; }
+.essay-table .num { text-align: right; font-variant-numeric: tabular-nums; padding-right: 24px; }
+.essay-table tr:hover td { background: var(--panel); }
+
+/* --- review layout ------------------------------------------------------------------------- */
+
+.review {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, .95fr);
+  gap: 56px;
+  max-width: 1340px; margin: 0 auto; padding: 32px 28px 96px;
+  align-items: start;
+}
+@media (max-width: 940px) {
+  .review { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+}
+
+.label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .09em;
+  color: var(--ink-faint); font-weight: 600; margin: 0 0 10px;
+}
+.response-pane .label + .label { margin-top: 28px; }
+.no-prompt { color: var(--ink-faint); font-size: 14px; margin: 0; font-style: italic; }
+
+.response { font-size: 16.5px; line-height: 1.85; }
+.response-para { margin: 0 0 1.15em; text-align: justify; hyphens: auto; }
+.response-para:last-child { margin-bottom: 0; }
+
+/* --- highlights ----------------------------------------------------------------------------- */
+
+mark.hl {
+  background: transparent; color: inherit;
+  padding: .08em 0; border-radius: 2px;
+  transition: background-color .12s ease, opacity .12s ease;
+}
+mark.c-argumentation { background: var(--argumentation-bg); }
+mark.c-organization  { background: var(--organization-bg); }
+mark.c-development   { background: var(--development-bg); }
+mark.c-conventions   { background: var(--conventions-bg); }
+
+/* Polarity: the non-colour channel. A weakness is underscored, a strength is not. */
+mark.p-weakness { border-bottom: 2px dotted currentColor; }
+mark.c-argumentation.p-weakness { border-bottom-color: var(--argumentation); }
+mark.c-organization.p-weakness  { border-bottom-color: var(--organization); }
+mark.c-development.p-weakness   { border-bottom-color: var(--development); }
+mark.c-conventions.p-weakness   { border-bottom-color: var(--conventions); }
+
+/* Cited by more than one trait: a bracket rather than a second fill, which would be unreadable. */
+mark.hl-multi { box-shadow: inset 2px 0 0 var(--ink-faint), inset -2px 0 0 var(--ink-faint); }
+
+mark.hl.mute { background: transparent; opacity: .32; border-bottom-color: transparent; }
+mark.hl.emph { filter: saturate(1.5) brightness(.97); }
+
+/* --- assessment pane ------------------------------------------------------------------------ */
+
+.assessment-pane { position: sticky; top: 68px; }
+
+.score { display: flex; align-items: baseline; gap: 3px; margin: 0 0 22px; }
+.score-value { font-size: 40px; font-weight: 650; letter-spacing: -.03em; line-height: 1; }
+.of { font-size: 17px; color: var(--ink-faint); font-weight: 500; }
+
+.overview-label { font-size: 14px; font-weight: 650; margin: 0 0 6px; }
+.overview { margin: 0 0 22px; font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); }
+
+.legend {
+  display: flex; flex-wrap: wrap; gap: 8px 14px;
+  padding: 10px 0 16px; margin-bottom: 6px;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  font-size: 11.5px; color: var(--ink-faint);
+}
+.key { display: inline-flex; align-items: center; gap: 5px; }
+.key-sep { margin-left: auto; }
+.swatch { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
+.swatch.c-argumentation { background: var(--argumentation-bg); }
+.swatch.c-organization  { background: var(--organization-bg); }
+.swatch.c-development   { background: var(--development-bg); }
+.swatch.c-conventions   { background: var(--conventions-bg); }
+.swatch.demo { background: var(--rule); }
+.swatch.p-weakness { border-bottom: 2px dotted var(--ink-faint); border-radius: 0; height: 9px; }
+
+/* --- cards ---------------------------------------------------------------------------------- */
+
+.card {
+  border-left: 3px solid transparent; padding: 12px 14px; margin: 0 0 10px;
+  border-radius: 0 5px 5px 0; background: var(--panel);
+  cursor: default; outline: none;
+  transition: box-shadow .12s ease, transform .12s ease;
+}
+.card.c-argumentation { border-left-color: var(--argumentation); }
+.card.c-organization  { border-left-color: var(--organization); }
+.card.c-development   { border-left-color: var(--development); }
+.card.c-conventions   { border-left-color: var(--conventions); }
+
+.card.active, .card:focus-visible { box-shadow: 0 1px 0 var(--rule), 0 6px 18px rgba(0,0,0,.07); }
+.card.dim { opacity: .45; }
+
+.card-head { display: flex; align-items: baseline; gap: 10px; }
+.card-head h3 { font-size: 13.5px; font-weight: 650; margin: 0; letter-spacing: -.005em; }
+.card.c-argumentation h3 { color: var(--argumentation); }
+.card.c-organization h3  { color: var(--organization); }
+.card.c-development h3   { color: var(--development); }
+.card.c-conventions h3   { color: var(--conventions); }
+.card-score { margin-left: auto; font-size: 17px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.card-score .of { font-size: 12px; }
+
+.card-weight { margin: 1px 0 8px; font-size: 11px; color: var(--ink-faint); }
+.card-comment { margin: 0 0 8px; font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); }
+.card-evidence { margin: 0; font-size: 11.5px; color: var(--ink-faint); }
+.card-noevidence { font-style: italic; }
