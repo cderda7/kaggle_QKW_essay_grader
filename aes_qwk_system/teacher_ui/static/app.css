@@ -128,8 +128,40 @@ mark.c-conventions.p-weakness   { border-bottom-color: var(--conventions); }
 /* Cited by more than one trait: a bracket rather than a second fill, which would be unreadable. */
 mark.hl-multi { box-shadow: inset 2px 0 0 var(--ink-faint), inset -2px 0 0 var(--ink-faint); }
 
-mark.hl.mute { background: transparent; opacity: .32; border-bottom-color: transparent; }
-mark.hl.emph { filter: saturate(1.5) brightness(.97); }
+/* Focusing one trait: everything that trait cited takes THAT trait's colour and direction, and
+   everything else recedes. A passage cited by conventions reads as a conventions passage even when
+   its resting fill belongs to an organization span that wraps it — at this point the reader is
+   asking one question ("what did conventions look at?") and the other traits are noise. */
+
+body.focusing mark.hl {
+  background: transparent;
+  opacity: .28;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+body.focus-argumentation mark.has-argumentation { background: var(--argumentation-bg); opacity: 1; }
+body.focus-organization  mark.has-organization  { background: var(--organization-bg);  opacity: 1; }
+body.focus-development   mark.has-development   { background: var(--development-bg);   opacity: 1; }
+body.focus-conventions   mark.has-conventions   { background: var(--conventions-bg);   opacity: 1; }
+
+body.focus-argumentation mark.pol-argumentation-weakness {
+  border-bottom: 2px dotted var(--argumentation);
+}
+body.focus-organization mark.pol-organization-weakness {
+  border-bottom: 2px dotted var(--organization);
+}
+body.focus-development mark.pol-development-weakness {
+  border-bottom: 2px dotted var(--development);
+}
+body.focus-conventions mark.pol-conventions-weakness {
+  border-bottom: 2px dotted var(--conventions);
+}
+
+/* A pinned trait keeps its card visibly held rather than merely hovered. */
+.card.pinned { box-shadow: 0 0 0 1px currentColor inset, 0 6px 18px rgba(0, 0, 0, .08); }
+.card.pinned .card-head h3::after { content: " ·"; opacity: .5; }
+.pin-hint { font-size: 11px; color: var(--ink-faint); margin: 0 0 10px; }
 
 /* --- assessment pane ------------------------------------------------------------------------ */
 

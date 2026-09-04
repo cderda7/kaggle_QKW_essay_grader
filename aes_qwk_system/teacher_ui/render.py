@@ -81,6 +81,15 @@ def response_html(text, spans):
             classes = ["hl", "c-" + lead["criterion"], "p-" + lead["polarity"]]
             if len(criteria) > 1:
                 classes.append("hl-multi")
+            # Per-criterion classes so that focusing one trait can repaint ITS evidence in ITS
+            # colour and ITS direction -- including passages whose resting fill belongs to whichever
+            # span happens to be outermost here. Without these, focusing conventions would leave a
+            # conventions citation blue because an organization span wraps it.
+            for s in sorted(seg["spans"], key=lambda s: (s["criterion"], s["polarity"])):
+                for cls in ("has-%s" % s["criterion"],
+                            "pol-%s-%s" % (s["criterion"], s["polarity"])):
+                    if cls not in classes:
+                        classes.append(cls)
             label = "; ".join(
                 "%s — %s" % (s["criterion"], s["polarity"])
                 for s in sorted(seg["spans"], key=lambda s: s["criterion"])

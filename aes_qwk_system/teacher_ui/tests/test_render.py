@@ -135,3 +135,43 @@ def test_all_spans_tags_each_span_with_its_criterion_and_orders_by_position():
 
 def test_all_spans_of_an_empty_criterion_contributes_nothing():
     assert all_spans({"development": {"spans": []}}) == []
+
+
+# --- focusing one trait repaints its own evidence ------------------------------------------------
+#
+# The resting fill of a segment belongs to whichever span is outermost. That is right when reading
+# the whole response, and wrong the moment a reader asks what ONE trait looked at: a conventions
+# citation wrapped by an organization span would stay blue. These per-criterion classes are what
+# let CSS repaint it in the focused trait's own colour and direction.
+
+def test_a_mark_declares_every_trait_that_cited_it():
+    html = response_html(TEXT, [span(0, 17, "organization", "strength"),
+                                span(4, 10, "conventions", "weakness")])
+    inner = [m for m in marks(html) if "conventions" in m[1]]
+    assert inner, "the inner citation produced no mark"
+    assert "has-conventions" in inner[0][0]
+    assert "has-organization" in inner[0][0]
+
+
+def test_a_mark_declares_each_traits_own_direction():
+    """The wrapping span is a strength and the inner one a weakness; both must be recoverable,
+    because whichever trait is focused supplies the underline."""
+    html = response_html(TEXT, [span(0, 17, "organization", "strength"),
+                                span(4, 10, "conventions", "weakness")])
+    classes = [m[0] for m in marks(html) if "conventions" in m[1]][0]
+    assert "pol-organization-strength" in classes
+    assert "pol-conventions-weakness" in classes
+
+
+def test_the_resting_fill_still_comes_from_the_outermost_span():
+    html = response_html(TEXT, [span(0, 17, "organization", "strength"),
+                                span(4, 10, "conventions", "weakness")])
+    classes = [m[0] for m in marks(html) if "conventions" in m[1]][0]
+    assert "c-organization" in classes and "c-conventions" not in classes.split()
+
+
+def test_a_singly_cited_mark_carries_exactly_one_has_class():
+    html = response_html(TEXT, [span(0, 17, "development", "weakness")])
+    classes = marks(html)[0][0].split()
+    assert [c for c in classes if c.startswith("has-")] == ["has-development"]
+    assert [c for c in classes if c.startswith("pol-")] == ["pol-development-weakness"]

@@ -36,8 +36,29 @@ CARD_ORDER = ("argumentation", "organization", "development", "conventions")
 TRAIT_WEIGHTS = {"argumentation": 0.35, "organization": 0.25,
                  "development": 0.25, "conventions": 0.15}
 
+class NoCacheStatic(StaticFiles):
+    """Serve assets with revalidation forced.
+
+    The HTML here is generated per request, so a stale stylesheet or script pairs new markup with
+    old behaviour -- which looks exactly like a broken feature rather than a cached one, and cost a
+    real debugging cycle. This is a local single-user tool; correctness beats caching.
+    """
+
+    def file_response(self, *args, **kwargs):
+        response = super().file_response(*args, **kwargs)
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+        return response
+
+
 app = FastAPI(title="Teacher review UI")
-app.mount("/static", StaticFiles(directory=os.path.join(HERE, "static")), name="static")
+app.mount("/static", NoCacheStatic(directory=os.path.join(HERE, "static")), name="static")
+
+
+def asset(name):
+    """A static URL stamped with the file's mtime, so an edit always changes the URL."""
+    path = os.path.join(HERE, "static", name)
+    stamp = int(os.path.getmtime(path)) if os.path.exists(path) else 0
+    return "/static/%s?v=%d" % (name, stamp)
 
 
 def annotated_ids(batch_dir=ANNOTATION_DIR):
@@ -71,9 +92,9 @@ def page(title, body):
     return (
         '<!doctype html><html lang="en"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width, initial-scale=1">'
-        '<title>%s</title><link rel="stylesheet" href="/static/app.css"></head>'
-        '<body>%s<script src="/static/app.js"></script></body></html>'
-        % (html.escape(title), body)
+        '<title>%s</title><link rel="stylesheet" href="%s"></head>'
+        '<body>%s<script src="%s"></script></body></html>'
+        % (html.escape(title), asset("app.css"), body, asset("app.js"))
     )
 
 
@@ -136,6 +157,8 @@ def review_page(essay):
         '    <h3 class="overview-label">Overview</h3>'
         '    <p class="overview">%s</p>'
         '    %s'
+        '    <p class="pin-hint">Hover a trait to see only its evidence · click to pin '
+        '· Esc to release</p>'
         '    %s'
         '  </aside>'
         '</main>'

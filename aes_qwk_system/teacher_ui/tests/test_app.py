@@ -221,3 +221,48 @@ def test_the_banner_says_when_the_sample_is_only_partly_annotated():
     banner = application._banner(data, "127.0.0.1", 8000)
     if not data["complete"]:
         assert "of %d in the frozen sample" % len(data["essays_in_manifest"]) in banner
+
+
+def test_every_served_mark_can_be_repainted_by_any_trait_that_cited_it(client, essay_id):
+    """Each mark must carry has-<criterion> and pol-<criterion>-<polarity> for every trait in its
+    data-criteria, or focusing that trait would leave its own evidence in another trait's colour."""
+    body = client.get("/essay/%s" % essay_id).text
+    for classes, criteria in re.findall(r'<mark class="([^"]*)" data-criteria="([^"]*)"', body):
+        for name in criteria.split():
+            assert "has-%s" % name in classes, "%s missing has-%s" % (classes, name)
+            assert any(c == "pol-%s-strength" % name or c == "pol-%s-weakness" % name
+                       for c in classes.split()), "%s missing a polarity for %s" % (classes, name)
+
+
+def test_the_page_explains_how_to_pin_a_trait(client, essay_id):
+    assert "click to pin" in client.get("/essay/%s" % essay_id).text
+
+
+# --- stale assets ------------------------------------------------------------------------------
+#
+# A cached app.css/app.js paired with freshly generated HTML produced new markup driven by old
+# behaviour, which is indistinguishable from a broken feature. These make that impossible.
+
+def test_asset_urls_are_stamped_with_the_files_modification_time(client, essay_id):
+    body = client.get("/essay/%s" % essay_id).text
+    assert re.search(r'href="/static/app\.css\?v=\d+"', body)
+    assert re.search(r'src="/static/app\.js\?v=\d+"', body)
+
+
+def test_editing_an_asset_changes_its_url(tmp_path, monkeypatch):
+    import app as application
+    before = application.asset("app.css")
+    monkeypatch.setattr(application.os.path, "getmtime", lambda p: 999999999)
+    assert application.asset("app.css") != before
+
+
+def test_static_assets_are_served_with_revalidation_forced(client):
+    for path in ("/static/app.css", "/static/app.js"):
+        headers = client.get(path).headers
+        assert "no-cache" in headers.get("cache-control", "")
+
+
+def test_a_stamped_asset_url_still_serves_the_file(client):
+    response = client.get("/static/app.css?v=123")
+    assert response.status_code == 200
+    assert "--argumentation" in response.text
