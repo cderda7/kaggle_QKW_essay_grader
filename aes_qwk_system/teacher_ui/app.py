@@ -193,6 +193,74 @@ def review_all():
     return artifact()
 
 
+def preflight(stream=sys.stderr):
+    """Build the artifact once before serving. Returns it, or None with the reason printed.
+
+    A broken annotation batch should fail at the command line where the message can be read and
+    acted on, not as a 500 in a browser. This is the same stance the pipeline's --assemble and
+    --derive take: validate up front, fail loudly, say which essay.
+    """
+    ids = annotated_ids()
+    if not ids:
+        print("No annotation found in %s\n" % ANNOTATION_DIR, file=stream)
+        print("Annotate essays against annotation_instrument_ui_v1.md into that directory first, "
+              "then run this again.", file=stream)
+        return None
+    try:
+        return build_review(override_records=load_overrides(), expected_ids=ids)
+    except AnnotationError as exc:
+        print("Annotation is not usable — fix these, then run this again:\n", file=stream)
+        print(str(exc), file=stream)
+        return None
+
+
+def _banner(data, host, port):
+    spans = sum(len(c["spans"]) for e in data["essays"] for c in e["criteria"].values())
+    n = len(data["essays"])
+    lines = [
+        "",
+        "  Teacher review UI · %s · trait run %s" % (data["ladder_version"], data["trait_run"]),
+        "  %d essay%s, %d cited passage%s%s"
+        % (n, "" if n == 1 else "s", spans, "" if spans == 1 else "s",
+           "" if data["complete"]
+           else "  (%d of %d in the frozen sample annotated so far)"
+                % (n, len(data["essays_in_manifest"]))),
+        "",
+        "      http://%s:%d" % (host, port),
+        "",
+        "  Essays: " + ", ".join(e["essay_id"] for e in data["essays"]),
+        "  Ctrl-C to stop.",
+        "",
+    ]
+    return "\n".join(lines)
+
+
 if __name__ == "__main__":
+    import argparse
+    import socket
+
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=int(os.environ.get("PORT", "8000")), log_level="warning")
+
+    parser = argparse.ArgumentParser(description="Serve the teacher review UI locally.")
+    parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--port", type=int, default=int(os.environ.get("PORT", "8000")))
+    options = parser.parse_args()
+
+    ready = preflight()
+    if ready is None:
+        sys.exit(1)
+
+    probe = socket.socket()
+    probe.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    try:
+        probe.bind((options.host, options.port))
+    except OSError:
+        print("\n  Port %d is already in use — something else is listening there." % options.port,
+              file=sys.stderr)
+        print("  Try:  python3 app.py --port %d\n" % (options.port + 1), file=sys.stderr)
+        sys.exit(1)
+    finally:
+        probe.close()
+
+    print(_banner(ready, options.host, options.port), flush=True)
+    uvicorn.run(app, host=options.host, port=options.port, log_level="info")

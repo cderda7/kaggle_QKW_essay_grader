@@ -166,3 +166,58 @@ def test_the_stylesheet_and_script_are_served(client):
     assert css.status_code == 200 and "text/css" in css.headers["content-type"]
     assert js.status_code == 200
     assert "--argumentation" in css.text
+
+
+# --- startup ---------------------------------------------------------------------------------
+#
+# The first version of this printed nothing at all on start (uvicorn's log level was set to
+# "warning", which suppresses its own startup banner), so a working server was indistinguishable
+# from a hung one. These cover the feedback, not just the serving.
+
+def test_preflight_returns_the_artifact_when_annotation_is_usable():
+    import app as application
+    data = application.preflight()
+    assert data is not None
+    assert data["essays"]
+
+
+def test_preflight_explains_itself_when_there_is_no_annotation(tmp_path, monkeypatch):
+    import io
+    import app as application
+    monkeypatch.setattr(application, "annotated_ids", lambda *a, **k: [])
+    stream = io.StringIO()
+    assert application.preflight(stream=stream) is None
+    assert "No annotation found" in stream.getvalue()
+
+
+def test_preflight_reports_guard_failures_rather_than_serving_them(monkeypatch):
+    import io
+    import app as application
+    from build_review import AnnotationError
+
+    def explode(**kwargs):
+        raise AnnotationError("annotation in annotation_v6_runB is not usable (1 problem(s)):\n"
+                              "  E1 argumentation[0]: quote not found in the response.")
+
+    monkeypatch.setattr(application, "build_review", explode)
+    stream = io.StringIO()
+    assert application.preflight(stream=stream) is None
+    text = stream.getvalue()
+    assert "not usable" in text and "E1 argumentation[0]" in text
+
+
+def test_the_banner_names_the_url_and_the_essays():
+    import app as application
+    data = application.preflight()
+    banner = application._banner(data, "127.0.0.1", 8000)
+    assert "http://127.0.0.1:8000" in banner
+    for essay in data["essays"]:
+        assert essay["essay_id"] in banner
+
+
+def test_the_banner_says_when_the_sample_is_only_partly_annotated():
+    import app as application
+    data = application.preflight()
+    banner = application._banner(data, "127.0.0.1", 8000)
+    if not data["complete"]:
+        assert "of %d in the frozen sample" % len(data["essays_in_manifest"]) in banner
