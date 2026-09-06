@@ -182,6 +182,7 @@
       "override_rationale": null,
       "override_records": 0,
       "latest_record_kind": null,
+      "latest_record_changed_traits": null,
       "override_trail": [],
       "score_formation": {
         "weighted_trait_mean": 3.0,
@@ -364,6 +365,7 @@
       "override_rationale": null,
       "override_records": 0,
       "latest_record_kind": null,
+      "latest_record_changed_traits": null,
       "override_trail": [],
       "score_formation": {
         "weighted_trait_mean": 3.85,
@@ -560,6 +562,7 @@
       "override_rationale": null,
       "override_records": 0,
       "latest_record_kind": null,
+      "latest_record_changed_traits": null,
       "override_trail": [],
       "score_formation": {
         "weighted_trait_mean": 4.25,

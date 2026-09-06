@@ -208,7 +208,7 @@ def formation_panel(essay):
         # ui_9/D2: the dominant experience of this control is that it appears not to work. When a
         # correction lands in the same band, the panel opens itself and shows the distance to the
         # cut -- the dead control becomes the explanation rather than a bug report.
-        % (" open" if latest_save(essay) == "same_band" else "",
+        % (" open" if score_narration(essay)["opens_panel"] else "",
            _num(f["weighted_trait_mean"]), _num(f["beta"][1], 3), _signed(f["trait_term"], 3),
            f["word_count"], _num(f["log10_word_count"], 3), _num(f["beta"][2], 3),
            _signed(f["length_term"], 3), _signed(f["intercept"], 3),
@@ -217,84 +217,138 @@ def formation_panel(essay):
     )
 
 
-def latest_save(essay):
-    """What the teacher's most recent record did, in one word, or None if nobody has been here.
+# Every state the score narration can be in, and the three things each one decides: which
+# holistic the head contrasts the current one against (None draws a single number), whether the
+# score-formation panel opens itself, and what the sentence beneath says.
+#
+# One row per state, because deriving the three separately is what went wrong. Four rounds of
+# review each found the head, the sentence and the panel disagreeing in a corner the previous
+# round's conditional had not covered -- a struck-through number beside an identical one, a
+# dissent reported as a correction that failed, "every trait still reads as it was scored"
+# printed above four corrected traits. Those were one defect, not four (decisions_log.md ui_18).
+#
+# The rules the table has to keep, checked by test_the_score_narration_states_are_coherent:
+#   * a contrast is only ever drawn between two DIFFERENT holistics -- a strikethrough asserts
+#     the value was superseded, so beside an identical number it asserts a falsehood;
+#   * "every trait still reads as it was scored" appears only where no trait differs from the
+#     AI's;
+#   * only a trait correction that edited traits and did not move the band opens the panel,
+#     because "how far is this essay from the nearest cut" is the question a trait edit raises
+#     and neither a dissent nor a withdrawal asks it.
+SCORE_NARRATION = {
+    "untouched": (None, False, None),
+    "corrected_moved": (
+        "holistic_before_latest_record", False,
+        "Your latest correction moved this from %(was)d to %(now)d, recomputed through the "
+        "same frozen aggregator that produced the original."),
+    "corrected_inert": (
+        None, True,
+        "Your latest correction did not move the score \u2014 it is still %(now)d/6, exactly "
+        "where it stood before you saved it. That is the instrument, not a failed save: the "
+        "panel below is open, showing how far this essay sits from the nearest cut point."),
+    "corrected_inert_off_ai": (
+        "ai_holistic", True,
+        "Your corrections have moved this from %(ai)d to %(now)d. The latest one did not move "
+        "it any further \u2014 it is still %(now)d/6, exactly where it stood before you saved "
+        "it. That is the instrument, not a failed save: the panel below is open, showing how "
+        "far this essay sits from the nearest cut point."),
+    "reason_revised": (
+        None, False,
+        "You revised the reason for your correction \u2014 no trait score changed, so the "
+        "score is still %(now)d/6."),
+    "reason_revised_off_ai": (
+        "ai_holistic", False,
+        "You revised the reason for your correction \u2014 no trait score changed, so the "
+        "score is still %(now)d/6, where your correction had already moved it from %(ai)d."),
+    "cleared": (
+        None, False,
+        "You withdrew your trait correction \u2014 every trait reads as the AI scored it "
+        "again, and the score is %(now)d/6. Both the correction and the withdrawal stay in the "
+        "record below."),
+    "dissent": (
+        None, False,
+        "Your dissent was recorded against the aggregator \u2014 it carries no number, so the "
+        "score is unchanged at %(now)d/6 and every trait still reads as it was scored."),
+    "dissent_over_correction": (
+        None, False,
+        "Your dissent was recorded against the aggregator \u2014 it carries no number, so the "
+        "score is unchanged at %(now)d/6. Your trait correction still stands; it did not move "
+        "the score off the one the AI gave."),
+    "dissent_over_moving_correction": (
+        "ai_holistic", False,
+        "Your dissent was recorded against the aggregator \u2014 it carries no number, so the "
+        "score above is unchanged at %(now)d/6. Your trait correction, which moved it from "
+        "%(ai)d, still stands."),
+}
 
-    The score head, the sentence under it and the score-formation panel's open state all read this
-    one value, so they cannot end up narrating different things at each other (decisions_log.md
-    ui_16). It asks what the last action WAS before asking what it moved: a dissent and a
-    withdrawal each change the score by their own rules, and measuring either against "did the
-    score move" reports it as a trait correction that failed (ui_17).
+
+def narration_state(essay):
+    """Which row of SCORE_NARRATION this essay is in.
+
+    The dimensions are independent and the table keeps them so: what the latest record WAS,
+    whether it changed any trait, whether it moved the holistic, and whether the correction now
+    standing has moved the holistic off the AI's. The last two are not the same question -- a
+    second correction can add nothing while the first has already moved the score.
     """
     kind = essay["latest_record_kind"]
     if kind is None:
-        return None
-    if kind in ("dissent", "cleared"):
-        return kind
-    return "same_band" if essay["score_unchanged_by_latest_record"] else "moved"
+        return "untouched"
+    if kind == "cleared":
+        return "cleared"
+    off_ai = essay["holistic"] != essay["ai_holistic"]
+    if kind == "dissent":
+        if not essay["overridden"]:
+            return "dissent"
+        return "dissent_over_moving_correction" if off_ai else "dissent_over_correction"
+    if not essay["latest_record_changed_traits"]:
+        return "reason_revised_off_ai" if off_ai else "reason_revised"
+    if not essay["score_unchanged_by_latest_record"]:
+        return "corrected_moved"
+    return "corrected_inert_off_ai" if off_ai else "corrected_inert"
 
 
-def _plain_score(holistic, extra=""):
-    return ('<div class="score%s"><span class="score-value">%d</span>'
-            '<span class="of">/6</span></div>' % (extra, holistic))
+def score_narration(essay):
+    """The head, the sentence and the panel's open state, decided together in one lookup."""
+    state = narration_state(essay)
+    contrast, panel, sentence = SCORE_NARRATION[state]
+    was = essay[contrast] if contrast else None
+    numbers = {"now": essay["holistic"], "ai": essay["ai_holistic"], "was": was}
+    return {
+        "state": state,
+        "was": was,
+        "opens_panel": panel,
+        "sentence": sentence % numbers if sentence else None,
+    }
 
 
-def _moved_score(was, holistic):
-    return ('<div class="score corrected">'
+def _plain_score(holistic, state):
+    return ('<div class="score score-%s"><span class="score-value">%d</span>'
+            '<span class="of">/6</span></div>' % (state.replace("_", "-"), holistic))
+
+
+def _moved_score(was, holistic, state):
+    return ('<div class="score corrected score-%s">'
             '<span class="score-was">%d</span><span class="score-arrow">\u2192</span>'
             '<span class="score-value">%d</span><span class="of">/6</span></div>'
-            % (was, holistic))
+            % (state.replace("_", "-"), was, holistic))
 
 
 def score_line(essay):
     """The holistic, and what the teacher's last action did to it.
 
-    Before and after are shown together rather than the after alone: a number that silently changed
-    cannot be checked, and a number that silently did not change reads as a broken control. The
-    "before" is the score the save was made against, which on a second correction is not the AI's.
-
-    When nothing moved there is no before to show. Showing one anyway drew a number with a line
-    through it beside an identical one, and a strikethrough asserts the value was superseded --
-    directly above a sentence saying it was not. The single number stands on its own; the sentence
-    and the self-opened panel are what say a correction is recorded.
-
-    Each kind of record is narrated as itself. A dissent carries no number and a withdrawal
-    restores the AI's, so neither is "a correction that did not work", and only a trait correction
-    that landed in the same band opens the panel -- the distance to the nearest cut answers why a
-    TRAIT edit moved nothing, which is not the question either of the others asks.
+    Before and after are shown together rather than the after alone: a number that silently
+    changed cannot be checked, and a number that silently did not change reads as a broken
+    control. Which "before" that is depends on the state, so SCORE_NARRATION names it per row
+    rather than any branch here choosing -- see the table for why that matters.
     """
-    action = latest_save(essay)
+    told = score_narration(essay)
     holistic = essay["holistic"]
-
-    if action is None:
-        return _plain_score(holistic)
-
-    if action == "moved":
-        was = essay["holistic_before_latest_record"]
-        return (_moved_score(was, holistic)
-                + '<p class="score-change">Your latest correction moved this from %d to %d, '
-                  'recomputed through the same frozen aggregator that produced the original.</p>'
-                  % (was, holistic))
-
-    if action == "same_band":
-        return (_plain_score(holistic, " corrected unchanged")
-                + '<p class="score-change unchanged">Your latest correction did not move the '
-                  'score \u2014 it is still %d/6, exactly where it stood before you saved it. '
-                  'That is the instrument, not a failed save: the panel below is open, showing '
-                  'how far this essay sits from the nearest cut point.</p>' % holistic)
-
-    if action == "cleared":
-        return (_plain_score(holistic, " withdrawn")
-                + '<p class="score-change unchanged">You withdrew your trait correction \u2014 '
-                  'every trait reads as the AI scored it again, and the score is %d/6. Both the '
-                  'correction and the withdrawal stay in the record below.</p>' % holistic)
-
-    head = (_moved_score(essay["ai_holistic"], holistic) if essay["overridden"]
-            else _plain_score(holistic, " dissented"))
-    return (head
-            + '<p class="score-change unchanged">Your dissent was recorded against the '
-              'aggregator \u2014 it carries no number, so the score above is unchanged at %d/6 '
-              'and every trait still reads as it was scored.</p>' % holistic)
+    head = (_moved_score(told["was"], holistic, told["state"]) if told["was"] is not None
+            else _plain_score(holistic, told["state"]))
+    if told["sentence"] is None:
+        return head
+    quiet = "" if told["state"] == "corrected_moved" else " unchanged"
+    return head + '<p class="score-change%s">%s</p>' % (quiet, told["sentence"])
 
 
 def override_form(essay):
@@ -315,13 +369,14 @@ def override_form(essay):
             '<div class="dissent recorded">'
             '<h4 class="dissent-head">Score dissent recorded</h4>'
             '<p class="dissent-said">%s</p>'
-            '<p class="dissent-note">Stored against the aggregator, with no number attached \u2014 '
-            'the traits above still read as they were scored. Rewriting it below records a new '
-            'dissent that supersedes this one; the record above is kept either way.</p>'
+            '<p class="dissent-note">Stored against the aggregator, with no number attached '
+            '\u2014 %s Rewriting it below records a new dissent that supersedes this one; the '
+            'record above is kept either way.</p>'
             '<textarea class="dissent-rationale" rows="2" '
             'placeholder="Why is the final score wrong?">%s</textarea>'
             '<button type="button" class="dissent-save">Replace dissent</button></div>'
-            % (said, said)
+            % (said, ("your trait corrections above still stand." if essay["overridden"]
+                      else "the traits above still read as they were scored."), said)
         )
     else:
         dissent = (

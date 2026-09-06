@@ -434,3 +434,48 @@ in `spec_ui_v1.md`.
     produces the recomputed holistic must read the record before it carries one: the POST response
     was handing back a trail entry whose `recomputed_holistic` was null where a later GET of the
     same essay returned the real number.
+
+18. **The score narration is one table of states, not a chain of conditionals** (decision D11,
+    review of ticket 05). `SCORE_NARRATION` has one row per state the essay page can be in, and
+    each row decides all three outputs together: which holistic the head contrasts the current one
+    against (or none, drawing a single number), whether the score-formation panel opens itself,
+    and the sentence beneath. `narration_state()` picks the row; nothing else branches.
+
+    *This supersedes the approach of ui_16 and ui_17, not their conclusions.* Both are still
+    right about what the page should say. What was wrong was fixing it one branch at a time:
+    ui_14 moved the ledger's baseline, ui_16 moved the page's to match, ui_17 added the record
+    kind, and each round's review found the next uncovered corner of the same function. Three more
+    arrived after ui_17 — a struck-through AI score above the words "every trait still reads as it
+    was scored"; a second correction that added nothing printing a bare number and hiding the AI's
+    holistic from the page entirely, which the ticket requires be shown; and a save that only
+    rewrote a reason being told its correction failed to move the score. Those were one defect
+    reported four times. The head, the sentence and the panel were computed by separate
+    conditionals over overlapping questions, so any state the branches did not jointly cover
+    produced a page contradicting itself.
+
+    *Alternatives:* keep patching the branch each round exposes; drop the sentence for every case
+    except the first correction, which is the smallest change and the least useful page.
+
+    *Tradeoffs:* ten rows where there were four branches, and adding a state means writing the row
+    rather than an `if`. That is the point — a missing row is a `KeyError` at the seam, where a
+    missing branch was a plausible-looking sentence.
+
+    *Defense:* the dimensions are genuinely independent and the old code conflated two of them.
+    Whether the LATEST record moved the score and whether the corrections now STANDING have moved
+    it off the AI's are different questions: a second correction can add nothing to a first that
+    already moved the band. Separating them is what lets `corrected_inert_off_ai` say both things
+    at once — the corrections moved this 1 → 2, and the latest one added nothing — where the old
+    single branch could only say one and chose the one that hid the AI's number.
+
+    Three rules are asserted over the table itself rather than trusted per row: a contrast is only
+    drawn between two different holistics, because a strikethrough beside an identical number
+    asserts a falsehood; "every trait still reads as it was scored" appears only where no trait
+    differs from the AI's; and only a trait correction that edited traits and did not move the
+    band opens the panel, because the distance to the nearest cut answers a question neither a
+    dissent nor a withdrawal asks. Every state also has a test asserting head, sentence and panel
+    together, which is the coverage that would have caught all three rounds in one pass.
+
+    A reason-only save is now its own state. The page sends every trait that differs from the
+    AI's, so rewriting just the reason re-posts the standing traits: a real record, because the
+    reason did change, but one that edited no trait. `latest_record_changed_traits` is read off
+    the two folds `override_state` already computes, so the ledger format is untouched.

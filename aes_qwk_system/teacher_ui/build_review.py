@@ -492,6 +492,11 @@ def override_state(records, essay_id):
     design, so it can only be narrated as itself; asking whether the score moved without first
     asking what the teacher actually did reports a dissent as a correction that failed. See
     decisions_log.md ui_17.
+
+    `latest_changed_traits` says whether that record altered the standing trait scores at all. A
+    correction saved only to rewrite its reason leaves them exactly as they were, and reporting it
+    as a trait edit that failed to move the score describes an edit the teacher never made. It is
+    read off the two folds rather than stored, so the ledger format is unchanged (ui_18).
     """
     mine = [r for r in records if r.get("essay_id") == essay_id]
     state = dict(_fold(mine))
@@ -506,6 +511,9 @@ def override_state(records, essay_id):
     } for rec in mine]
     state["before_latest"] = _fold(mine[:-1]) if mine else None
     state["latest_kind"] = record_kind(mine[-1].get("kind")) if mine else None
+    state["latest_changed_traits"] = (
+        None if not mine
+        else state["corrected_traits"] != state["before_latest"]["corrected_traits"])
     return state
 
 
@@ -593,6 +601,7 @@ def build_review(predictions=None, annotation=None, essays=None, override_record
             # What the most recent record was, so a consumer narrating "what did that do" names
             # the right action before asking what it moved -- decisions_log.md ui_17.
             "latest_record_kind": state["latest_kind"],
+            "latest_record_changed_traits": state["latest_changed_traits"],
             "override_trail": state["trail"],
             "score_formation": formation,
             # Two questions with two answers, named for the baseline each is measured against so

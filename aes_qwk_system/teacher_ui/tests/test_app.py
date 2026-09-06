@@ -541,8 +541,15 @@ def test_a_second_correction_that_moves_nothing_still_opens_the_panel(client, mo
 
     body = client.get("/essay/E1").text
     assert '<details class="formation" open>' in body
-    assert "did not move the score" in body
-    assert "moved this from" not in body
+    assert "did not move it any further" in body
+
+    # Both facts have to be on the page at once: this save added nothing, AND the corrections
+    # standing have moved the score off the AI's. Printing only the second number would hide the
+    # AI's holistic entirely -- it appears nowhere else on the page.
+    assert '<span class="score-was">%d</span>' % essay["ai_holistic"] in body
+    assert "Your corrections have moved this from %d to %d" % (essay["ai_holistic"],
+                                                               essay["holistic"]) in body
+    assert "Your latest correction moved this from" not in body
 
 
 def test_a_second_correction_that_moves_the_score_says_what_it_moved_from(client, monkeypatch):
@@ -586,6 +593,127 @@ def test_the_page_and_the_ledger_agree_on_what_the_last_save_did(client, essay_i
     else:
         assert "moved this from %d to %d" % (second["record"]["original_holistic"],
                                              second["record"]["recomputed_holistic"]) in body
+
+
+ONE_UP = {"conventions": 3}
+SIX_BUT_ONE = dict(ALL_SIX, conventions=5)
+
+
+def _correction(traits, rationale=None):
+    rec = {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": dict(traits)}
+    if rationale is not None:
+        rec["rationale"] = rationale
+    return rec
+
+
+def _dissent(why="length is carrying this score"):
+    return {"essay_id": "E1", "kind": "dissent", "rationale": why}
+
+
+# One row per state of app.SCORE_NARRATION. Each names the records that reach it and the three
+# things the page must then say together: whether the head contrasts two holistics, a phrase the
+# sentence must contain, and whether the score-formation panel opens itself. Asserting them one
+# at a time is what let four rounds of contradictions through (decisions_log.md ui_18).
+NARRATION_CASES = [
+    ("untouched", [], False, None, False),
+    ("corrected_moved", [_correction(ALL_SIX)], True,
+     "moved this from", False),
+    ("corrected_inert", [_correction(ONE_UP)], False,
+     "did not move the score", True),
+    ("corrected_inert_off_ai", [_correction(ALL_SIX), _correction(SIX_BUT_ONE)], True,
+     "did not move it any further", True),
+    ("reason_revised", [_correction(ONE_UP, "first"), _correction(ONE_UP, "second")], False,
+     "revised the reason", False),
+    ("reason_revised_off_ai", [_correction(ALL_SIX, "first"), _correction(ALL_SIX, "second")],
+     True, "revised the reason", False),
+    ("cleared", [_correction(ALL_SIX), {"essay_id": "E1", "kind": "cleared"}], False,
+     "withdrew your trait correction", False),
+    ("dissent", [_dissent()], False,
+     "every trait still reads as it was scored", False),
+    ("dissent_over_correction", [_correction(ONE_UP), _dissent()], False,
+     "trait correction still stands", False),
+    ("dissent_over_moving_correction", [_correction(ALL_SIX), _dissent()], True,
+     "trait correction, which moved it from", False),
+]
+
+
+@pytest.mark.parametrize("state,records,contrasts,phrase,opens",
+                         NARRATION_CASES, ids=[c[0] for c in NARRATION_CASES])
+def test_each_score_narration_state_agrees_with_itself(client, monkeypatch, state, records,
+                                                       contrasts, phrase, opens):
+    """The head, the sentence and the panel are asserted together for every state, so a change to
+    any one of them cannot silently contradict the other two."""
+    import app as application
+
+    essay = _synthetic(monkeypatch, *records)
+    assert application.narration_state(essay) == state
+
+    body = client.get("/essay/E1").text
+    assert ('<span class="score-arrow">' in body) is contrasts
+    if contrasts:
+        was = application.score_narration(essay)["was"]
+        assert was != essay["holistic"]
+        assert '<span class="score-was">%d</span>' % was in body
+    if phrase is None:
+        assert '<p class="score-change' not in body
+    else:
+        assert phrase in body
+    assert ('<details class="formation" open>' in body) is opens
+
+
+def test_a_rationale_only_save_is_narrated_as_a_reason_revision(client, essay_id,
+                                                                ledger_overrides):
+    """The page's save handler sends every trait that differs from the AI's, so rewriting only
+    the reason posts the standing traits again. That is a real record -- the reason did change --
+    but it edited no trait, and telling the teacher their correction failed to move a score they
+    never tried to move is the ui_17 misfire one step along."""
+    import app as application
+
+    first = {"corrected_traits": {"conventions": 5}, "rationale": "spelling is minor"}
+    client.post("/api/override/%s" % essay_id, json=first)
+    revised = dict(first, rationale="conventions are not the issue here")
+    essay = client.post("/api/override/%s" % essay_id, json=revised).json()["essay"]
+
+    assert essay["latest_record_changed_traits"] is False
+    assert application.narration_state(essay).startswith("reason_revised")
+    assert essay["override_rationale"] == "conventions are not the issue here"
+    assert len(json.load(open(ledger_overrides))) == 2
+
+    body = client.get("/essay/%s" % essay_id).text
+    assert "revised the reason" in body
+    assert "did not move the score" not in body
+    assert '<details class="formation" open>' not in body
+
+
+def test_a_correction_that_does_edit_a_trait_is_not_a_reason_revision(client, essay_id,
+                                                                      ledger_overrides):
+    """The other side, so the new distinction cannot collapse into always-a-revision."""
+    import app as application
+
+    client.post("/api/override/%s" % essay_id, json={"corrected_traits": {"conventions": 5}})
+    essay = client.post("/api/override/%s" % essay_id,
+                        json={"corrected_traits": {"conventions": 4}}).json()["essay"]
+    assert essay["latest_record_changed_traits"] is True
+    assert not application.narration_state(essay).startswith("reason_revised")
+
+
+def test_the_score_narration_states_are_coherent():
+    """The rules the table exists to keep, checked over every row rather than per branch."""
+    import app as application
+
+    for state, (contrast, panel, sentence) in application.SCORE_NARRATION.items():
+        if sentence is None:
+            assert contrast is None and not panel, state
+            continue
+        if "every trait still reads as it was scored" in sentence:
+            assert state == "dissent", state
+        if state.startswith("dissent") or state == "cleared":
+            assert not panel, state
+        if panel:
+            assert state.startswith("corrected_inert"), state
+    assert {s for s, row in application.SCORE_NARRATION.items() if row[1]} == {
+        "corrected_inert", "corrected_inert_off_ai"}
+    assert set(application.SCORE_NARRATION) == {c[0] for c in NARRATION_CASES}
 
 
 def test_a_dissent_after_a_correction_is_narrated_as_a_dissent(client, monkeypatch):
