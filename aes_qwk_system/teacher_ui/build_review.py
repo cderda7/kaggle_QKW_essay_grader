@@ -360,8 +360,7 @@ def _check_override(rec, index, problems):
     if not rec.get("essay_id"):
         problems.append("%s: has no essay_id" % where)
 
-    kind = rec.get("kind") or ("trait_correction" if rec.get("corrected_traits")
-                               else "trait_correction")
+    kind = rec.get("kind") or "trait_correction"
     if kind not in OVERRIDE_KINDS:
         problems.append("%s: kind=%r is not one of %s" % (where, kind, list(OVERRIDE_KINDS)))
         return

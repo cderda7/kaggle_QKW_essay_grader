@@ -302,3 +302,32 @@ in `spec_ui_v1.md`.
     instrument at the exact moment it is being audited. The reload is also what makes the panel's
     automatic expansion honest: it opens because the build said the band did not move, not because
     the page assumed it would not.
+
+14. **An override record states what *it* did, against the score it was made against, and keeps
+    the AI baseline as a separate field** (decision D7, review of ticket 05). `original_holistic`
+    is the holistic standing at the instant the record was written and `score_unchanged` compares
+    the rebuilt holistic to that same standing score; the AI's own number stays reachable as
+    `ai_holistic`, alongside `original_traits`, which remains the AI's traits because
+    `corrected_traits` is expressed relative to them.
+
+    *Alternatives:* keep both fields on the AI baseline, which is what the first cut did; make
+    every field relative to the standing state, including `original_traits`; store only the delta
+    and let a reader recover the baseline by replaying the ledger.
+
+    *Tradeoffs:* one record now carries two reference points, which a hand reader has to keep
+    apart, and the field names have to earn that distinction. Replaying the ledger would need no
+    baseline at all, but only for a reader willing to run the build.
+
+    *Defense:* on the AI baseline, a dissent recorded after a correction stored
+    `score_unchanged: false` and a 4 → 2 move that the *earlier correction* had caused, and a
+    withdrawal that moved the displayed score 2 → 4 stored `score_unchanged: true`. Both are false
+    statements in an append-only audit record that exists to be read by hand and is the evidence
+    the ladder is judged on; a record misattributing another record's movement is worse than one
+    carrying no claim. Keeping `original_traits` on the AI baseline is not an inconsistency but the
+    same principle: it is the companion to `corrected_traits`, which lists only the traits that
+    differ from the AI's, so any other baseline would make the pair unreadable.
+
+    The same reasoning governs the rationale on a withdrawal. Clearing a correction no longer
+    inherits the reason the page was rendered with — that text argues *for* the correction being
+    withdrawn — so only a reason the teacher typed for the withdrawal travels with the `cleared`
+    record.

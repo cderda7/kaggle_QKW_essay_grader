@@ -21,8 +21,9 @@ ESSAYS = ["0079938", "0105e2e", "019e8c3"]
 
 @pytest.fixture
 def ledger(tmp_path, monkeypatch):
+    """Redirecting the one name that owns the ledger path moves every reader and every writer.
+    Having to patch a second copy would mean the app could read one file and append to another."""
     path = str(tmp_path / "overrides.json")
-    monkeypatch.setattr(overrides, "OVERRIDES_FILE", path)
     monkeypatch.setattr(build_review, "OVERRIDES_FILE", path)
     return path
 
@@ -125,6 +126,59 @@ def test_a_dissent_records_a_reason_and_no_number(ledger):
     assert essay["traits"] == essay["ai_traits"]
     assert essay["holistic"] == essay["ai_holistic"]
     assert essay["dissent"]["rationale"] == "four traits at 4 cannot be a 2"
+
+
+def test_a_dissent_after_a_correction_does_not_claim_the_correction_s_movement(ledger):
+    """The ledger is read by hand, so each record has to describe its own effect. A dissent moves
+    no number; stamping it against the AI baseline would make it read as the cause of the earlier
+    correction's move."""
+    _, corrected = correct(corrected_traits={c: 6 for c in build_review.CRITERIA})
+    assert corrected["holistic"] != corrected["ai_holistic"]
+    record, essay = correct(kind="dissent", rationale="the number is still wrong")
+    assert record["original_holistic"] == corrected["holistic"]
+    assert record["recomputed_holistic"] == corrected["holistic"]
+    assert record["score_unchanged"] is True
+    assert record["ai_holistic"] == essay["ai_holistic"]
+
+
+def test_clearing_records_the_move_back_that_it_caused(ledger):
+    """Withdrawing a correction that had moved the score moves it back, and the record says so."""
+    _, corrected = correct(corrected_traits={c: 6 for c in build_review.CRITERIA})
+    record, essay = correct(kind="cleared", rationale="on reflection the AI had it right")
+    assert record["original_holistic"] == corrected["holistic"]
+    assert record["recomputed_holistic"] == essay["ai_holistic"]
+    assert record["score_unchanged"] is False
+
+
+def test_a_write_that_fails_partway_leaves_the_ledger_as_it_was(ledger, monkeypatch):
+    """The whole list is rewritten on every append, so a half-finished write must not be able to
+    take the append-only record with it."""
+    correct(corrected_traits={"conventions": 5}, rationale="first")
+    before = json.load(open(ledger))
+
+    def explode(*args, **kwargs):
+        raise IOError("no space left on device")
+
+    monkeypatch.setattr(overrides.json, "dump", explode)
+    with pytest.raises(IOError):
+        correct(corrected_traits={"conventions": 2}, rationale="second")
+    assert json.load(open(ledger)) == before
+    assert not os.path.exists(ledger + ".pending")
+
+
+def test_a_malformed_trait_score_names_itself_instead_of_raising(ledger):
+    """The values arrive from an HTTP body, so they are checked before anything coerces them --
+    otherwise int("six") raises past the guard and the caller sees an unexplained crash."""
+    for traits, expected in ((({"argumentation": "six"}), "not a whole number"),
+                             (([6]), "expected an object"),
+                             (({"argumentation": 11}), "outside the 1-6 scale")):
+        with pytest.raises(build_review.OverrideError) as exc:
+            correct(corrected_traits=traits)
+        assert expected in str(exc.value)
+    with pytest.raises(build_review.OverrideError) as exc:
+        correct(corrected_traits={"conventions": 5}, rationale=5)
+    assert "expected text" in str(exc.value)
+    assert not os.path.exists(ledger)
 
 
 def test_a_dissent_is_distinct_from_a_trait_correction(ledger):

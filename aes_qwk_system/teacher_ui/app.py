@@ -283,8 +283,8 @@ def override_form(essay):
     trail = ""
     if essay["override_records"]:
         trail = ('<p class="override-trail">%d record%s for this essay. Nothing is '
-                 'overwritten \u2014 '
-                 'each correction is appended, and the most recent one is what you see.</p>'
+                 'overwritten \u2014 each correction is appended, and what you see is the '
+                 'latest trait correction together with the latest dissent.</p>'
                  % (essay["override_records"], "" if essay["override_records"] == 1 else "s"))
 
     return (

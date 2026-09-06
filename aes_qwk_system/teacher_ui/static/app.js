@@ -151,7 +151,26 @@
 
   var essay = form.getAttribute("data-essay");
   var status = form.querySelector(".override-status");
+  var rationale = form.querySelector(".override-rationale");
+  var clear = form.querySelector(".override-clear");
   var selects = Array.prototype.slice.call(document.querySelectorAll(".card-score-select"));
+
+  // A textarea's defaultValue is the text the server rendered into it, so this asks the only
+  // question that matters: has the teacher rewritten the reason the page was drawn with?
+  function reasonRewritten() {
+    return rationale.value !== rationale.defaultValue;
+  }
+
+  function scoresMoved() {
+    return selects.some(function (s) { return s.value !== s.getAttribute("data-score"); });
+  }
+
+  function refreshDirty() {
+    var moved = scoresMoved();
+    form.classList.toggle("dirty", moved || reasonRewritten());
+    if (moved) return say("Unsaved change — save it to recompute the score.");
+    say(reasonRewritten() ? "Unsaved reason — save it to attach it to your correction." : "");
+  }
 
   // A click on the score control must not also pin the trait it sits inside.
   selects.forEach(function (select) {
@@ -161,11 +180,11 @@
     select.addEventListener("change", function () {
       var card = select.closest(".card");
       if (card) card.classList.toggle("dirty", select.value !== select.getAttribute("data-score"));
-      var dirty = selects.some(function (s) { return s.value !== s.getAttribute("data-score"); });
-      form.classList.toggle("dirty", dirty);
-      say(dirty ? "Unsaved change — save it to recompute the score." : "");
+      refreshDirty();
     });
   });
+
+  rationale.addEventListener("input", refreshDirty);
 
   function say(text, bad) {
     status.textContent = text;
@@ -197,11 +216,12 @@
   }
 
   form.querySelector(".override-save").addEventListener("click", function () {
-    // Two different "nothing to do" cases, and they need different advice. Saving an unchanged
-    // form would append a record identical to the one already stored: a trail of duplicates says
-    // the teacher acted three times when they decided once.
-    var changed = selects.some(function (s) { return s.value !== s.getAttribute("data-score"); });
-    if (!changed) {
+    // Several different "nothing to do" cases, and they need different advice. Saving an
+    // untouched form would append a record identical to the one already stored: a trail of
+    // duplicates says the teacher acted three times when they decided once. A rewritten reason is
+    // a real change though — discarding it with a message denying it happened would lose typed
+    // text, so the reason counts as much as a moved score here.
+    if (!scoresMoved() && !reasonRewritten()) {
       say("Nothing has changed since your last save.", true);
       return;
     }
@@ -211,21 +231,26 @@
       corrected[s.getAttribute("name")] = Number(s.value);
     });
     if (!Object.keys(corrected).length) {
-      say("Every trait now reads as the AI scored it — use “Clear the trait correction” to "
-          + "withdraw it, so the record says what happened.", true);
+      say(clear
+          ? "Every trait now reads as the AI scored it — use “Clear the trait correction” to "
+            + "withdraw it, so the record says what happened."
+          : "A reason belongs to a correction — change a trait score above, or record a dissent "
+            + "below if it is the final score you disagree with.", true);
       return;
     }
     post({
       kind: "trait_correction",
       corrected_traits: corrected,
-      rationale: form.querySelector(".override-rationale").value
+      rationale: rationale.value
     }, "Recomputing through the aggregator…");
   });
 
-  var clear = form.querySelector(".override-clear");
   if (clear) {
     clear.addEventListener("click", function () {
-      post({ kind: "cleared", rationale: form.querySelector(".override-rationale").value },
+      // Withdrawing does not inherit the argument for making the correction. The reason the page
+      // was rendered with justifies the correction being withdrawn, so a record carrying it would
+      // read as arguing for the very thing it undoes; only text typed for this withdrawal travels.
+      post({ kind: "cleared", rationale: reasonRewritten() ? rationale.value : "" },
            "Withdrawing the correction…");
     });
   }

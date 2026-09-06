@@ -420,20 +420,25 @@ def test_the_served_stylesheet_has_no_unterminated_comment(client):
     css = client.get("/static/app.css").text
     assert css.count("/*") == css.count("*/"), "unbalanced CSS comment markers"
 
-    position, blocks = 0, 0
+    position, blocks, live = 0, 0, []
     while True:
         start = css.find("/*", position)
         if start < 0:
+            live.append(css[position:])
             break
         end = css.find("*/", start + 2)
         assert end > start, "unterminated CSS comment at offset %d" % start
         assert "/*" not in css[start + 2:end], "nested CSS comment at offset %d" % start
+        live.append(css[position:start])
         position, blocks = end + 2, blocks + 1
     assert blocks, "no comments at all -- the file is probably not the stylesheet"
 
-    # The rules the page depends on have to survive whatever the comments do.
+    # The rules the page depends on have to survive whatever the comments do. Each selector has to
+    # still head a rule once every comment span is cut out; merely occurring in the text would
+    # also be true of a selector that a runaway comment had swallowed.
+    live = "\n".join(live)
     for selector in (".formation", ".gold", ".override", ".card-score-select"):
-        assert selector in css, selector
+        assert re.search(re.escape(selector) + r"(?![\w-])[^{};]*\{", live), selector
 
 
 def test_a_stamped_asset_url_still_serves_the_file(client):
@@ -446,11 +451,11 @@ def test_a_stamped_asset_url_still_serves_the_file(client):
 
 @pytest.fixture
 def ledger_overrides(tmp_path, monkeypatch):
-    """A temp overrides ledger. The committed one is evidence and tests must not append to it."""
+    """A temp overrides ledger. The committed one is evidence and tests must not append to it.
+
+    One name owns the path, so one patch redirects the whole app: reader, writer and guard."""
     import build_review
-    import overrides as overrides_module
     path = str(tmp_path / "overrides.json")
-    monkeypatch.setattr(overrides_module, "OVERRIDES_FILE", path)
     monkeypatch.setattr(build_review, "OVERRIDES_FILE", path)
     return path
 
@@ -606,6 +611,23 @@ def test_a_correction_made_after_a_reveal_carries_the_flag(client, essay_id, led
                            json={"corrected_traits": {"conventions": 4}}).json()["record"]
     assert plain["gold_revealed"] is False
     assert anchored["gold_revealed"] is True
+
+
+@pytest.mark.parametrize("body,names", [
+    ({"corrected_traits": {"argumentation": "six"}}, "not a whole number"),
+    ({"corrected_traits": [6]}, "expected an object"),
+    ({"corrected_traits": {"conventions": 5}, "rationale": 5}, "expected text"),
+])
+def test_a_malformed_correction_is_a_naming_400_not_a_crash(client, essay_id, ledger_overrides,
+                                                            body, names):
+    """The stance is that a bad value names itself. A body that crashed on coercion before the
+    guard ran would answer a 500 with no message, and the hand-edited file path would be the only
+    one the guard covered."""
+    response = client.post("/api/override/%s" % essay_id, json=body)
+    assert response.status_code == 400
+    assert names in response.json()["detail"]
+    assert essay_id in response.json()["detail"]
+    assert not os.path.exists(ledger_overrides)
 
 
 # --- the essay list ------------------------------------------------------------------------------
