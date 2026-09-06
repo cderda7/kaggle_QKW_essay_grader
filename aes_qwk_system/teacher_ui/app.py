@@ -26,8 +26,8 @@ from fastapi.staticfiles import StaticFiles
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-from build_review import (ANNOTATION_DIR, AnnotationError, OverrideError,  # noqa: E402
-                          build_review, load_overrides)
+from build_review import (ANNOTATION_DIR, OVERRIDES_FILE, AnnotationError,  # noqa: E402
+                          OverrideError, build_review, load_overrides)
 from render import all_spans, response_html  # noqa: E402
 import gold  # noqa: E402
 import overrides  # noqa: E402
@@ -646,9 +646,11 @@ def reveal_gold(essay_id: str):
 def preflight(stream=sys.stderr):
     """Build the artifact once before serving. Returns it, or None with the reason printed.
 
-    A broken annotation batch should fail at the command line where the message can be read and
-    acted on, not as a 500 in a browser. This is the same stance the pipeline's --assemble and
-    --derive take: validate up front, fail loudly, say which essay.
+    A broken annotation batch, or a hand-edited override record, should fail at the command line
+    where the message can be read and acted on, not as a 500 in a browser. This is the same stance
+    the pipeline's --assemble and --derive take: validate up front, fail loudly, say which essay.
+    The ledger is diffable and hand-editable on purpose, so the guard that names the offending
+    value has to reach the person who edited it.
     """
     ids = annotated_ids()
     if not ids:
@@ -660,6 +662,11 @@ def preflight(stream=sys.stderr):
         return build_review(override_records=load_overrides(), expected_ids=ids)
     except AnnotationError as exc:
         print("Annotation is not usable — fix these, then run this again:\n", file=stream)
+        print(str(exc), file=stream)
+        return None
+    except OverrideError as exc:
+        print("%s is not usable — fix these, then run this again:\n" % OVERRIDES_FILE,
+              file=stream)
         print(str(exc), file=stream)
         return None
 

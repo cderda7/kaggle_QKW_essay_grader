@@ -61,14 +61,23 @@ Added the write path, and the state the page reads back from it.
 ```
   static/app.js ──POST /api/override/{id}──▶ app.py ──▶ overrides.record_correction()
                                                              │
-                                        build #1 over existing records → standing score
-                                        build #2 with the record appended → recomputed
-                                        holistic (never a second implementation of the
-                                        fitted map — ui_13)
+                    ┌────────────────────────────────────────┴───────────────────────┐
+                    │  all of this under ledger.lock(path) — ui_19                   │
+                    │                                                                │
+                    │  build #1 over existing records → the standing score           │
+                    │  build #2 with the record appended → the recomputed holistic   │
+                    │    (never a second implementation of the fitted map — ui_13)   │
+                    │  append() → ledger.write_json: a pending file named for this   │
+                    │    process and thread, then os.replace()                       │
+                    │                                                                │
+                    │  The lock spans the builds, not just the append. A record's    │
+                    │  original_holistic is formed from the records as they stood    │
+                    │  when the save began, so a save landing in between would make  │
+                    │  it describe a ledger that never existed.                      │
+                    └────────────────────────────────────────┬───────────────────────┘
                                                              │
                                                              ▼
-                                                    append() → overrides.json
-                                                    atomic: temp file, os.replace()
+                                                       overrides.json
                                                              │
                     load_overrides() reads it at call time, through the ONE binding
                     of OVERRIDES_FILE, so redirecting that name moves every reader
@@ -77,6 +86,9 @@ Added the write path, and the state the page reads back from it.
                                                              ▼
                                         build_review → artifact → SCORE_NARRATION → page
 ```
+
+`teacher_ui/ledger.py` is the module that owns that lock and that atomic replace; `gold.py`
+writes its reveal ledger through it too, for the same reason.
 
 Two guards define the stance: override records are validated as a set with every problem collected
 and the offending value named (ui_7), and there is deliberately no direct holistic input — a

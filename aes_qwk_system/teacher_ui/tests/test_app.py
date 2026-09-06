@@ -357,6 +357,25 @@ def test_preflight_reports_guard_failures_rather_than_serving_them(monkeypatch):
     assert "not usable" in text and "E1 argumentation[0]" in text
 
 
+def test_preflight_reports_a_hand_edited_ledger_rather_than_serving_it(tmp_path, monkeypatch):
+    """The ledger is diffable and hand-editable on purpose (intent point 7), so a typo in it has
+    to name itself where the person who typed it will see it. Without this the process dies with
+    a traceback at startup instead of the block that says which essay and which value."""
+    import io
+    import app as application
+    import build_review
+
+    path = str(tmp_path / "overrides.json")
+    with open(path, "w") as f:
+        json.dump([{"essay_id": "0079938", "corrected_traits": {"argumentation": 7}}], f)
+    monkeypatch.setattr(build_review, "OVERRIDES_FILE", path)
+
+    stream = io.StringIO()
+    assert application.preflight(stream=stream) is None
+    text = stream.getvalue()
+    assert "0079938" in text and "argumentation=7" in text and "1-6" in text
+
+
 def test_the_banner_names_the_url_and_the_essays():
     import app as application
     data = application.preflight()

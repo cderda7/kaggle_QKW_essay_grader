@@ -6,8 +6,17 @@ aggregator; every correction lands in an append-only audit record that survives 
 ## Files touched
 
 `teacher_ui/overrides.py` — **new.** Writes one correction to the ledger. Owns validation
-ordering, the atomic append, and obtaining a record's `recomputed_holistic` by building the
-artifact that would result from storing it.
+ordering and obtaining a record's `recomputed_holistic` by building the artifact that would
+result from storing it.
+
+`teacher_ui/ledger.py` — **new.** Owns how either ledger reaches disk: a reentrant per-path lock
+to be held across the whole read-modify-write, and an atomic replace through a pending file named
+for the writing process and thread. Imported by `overrides.py` and `gold.py` alike, so the
+invariant has one home rather than a copy in each (ui_19).
+
+`teacher_ui/gold.py` — pre-existing, and now writes through `ledger.py` too. Its "one record per
+essay" check is a read-modify-write with the same exposure, and it truncated the real file in
+place, so an interrupted write lost every reveal already recorded rather than only the new one.
 
 `teacher_ui/build_review.py` — the single seam. Gains `load_overrides` (path resolved at call
 time), the collect-all override guards, `override_state` (the per-section latest-wins fold), and
@@ -109,8 +118,16 @@ diffable by design, which is why the guards name the offending value.
   │     direct apply_aggregator() call would drift, and the place it     │
   │     would surface is the panel built to be audited (ui_13).          │
   │  4. re-fold the trail so the POST response matches a later GET       │
-  │  5. append() — sibling temp file, then os.replace(), so the swap     │
-  │     is atomic and a half-written ledger is never left behind         │
+  │  5. append() — through ledger.write_json: a pending file named for   │
+  │     this process and thread, then os.replace(), so a half-written    │
+  │     ledger is never left behind and two writers cannot interleave    │
+  │     into one truncated file                                          │
+  │                                                                      │
+  │  Steps 1-5 run under ledger.lock(path). The lock has to span the two │
+  │  builds, not just the append: original_holistic and score_unchanged  │
+  │  are formed from the records as they stood when the save BEGAN, so a │
+  │  save landing in between would make them describe a ledger that      │
+  │  never existed (ui_19).                                              │
   └───────────────────────────────────┬──────────────────────────────────┘
                                       │
                                       ▼
@@ -129,6 +146,12 @@ diffable by design, which is why the guards name the offending value.
 **One binding owns the ledger path.** `build_review.OVERRIDES_FILE` (env-overridable via
 `TEACHER_UI_OVERRIDES_FILE`) is read at call time by every reader and every writer. A second copy
 would let a test redirect one and leave the app appending to the committed audit record.
+
+**One lock spans the whole read-modify-write.** `record_override` is a sync `def`, so FastAPI
+runs it on anyio's threadpool and two tabs really do save at once. Nothing is lost even unlocked
+— `append` re-reads under its own lock — but the record's account of ITSELF is formed before that
+re-read, so without the outer lock a record reports moving from a score another record had
+already superseded. `gold.record_reveal` holds the same lock across its own check and write.
 
 **The recomputed holistic comes from the build, not from arithmetic.** Two builds per correction is
 the deliberate cost (ui_13). A direct `apply_aggregator` call would be a second implementation of a

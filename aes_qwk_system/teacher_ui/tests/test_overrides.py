@@ -157,6 +157,15 @@ def test_clearing_records_the_move_back_that_it_caused(ledger):
     assert record["score_unchanged"] is False
 
 
+def _pending_files(path):
+    """Half-written ledgers left beside the real one.
+
+    `ledger.write_json` names each pending file for its process and thread, so no test can name
+    one in advance -- scanning the directory is the only way to ask whether one was left behind.
+    """
+    return [f for f in os.listdir(os.path.dirname(path)) if f.endswith(".pending")]
+
+
 def _unhurried_build(**kwargs):
     """The real build, with the thread yielding inside it.
 
@@ -203,7 +212,7 @@ def test_concurrent_saves_all_land_in_the_ledger(ledger):
     records = build_review.load_overrides(ledger)
     build_review.check_override_records(records)
     assert sorted(r["rationale"] for r in records) == sorted("s%d" % n for n in range(savers))
-    assert not [f for f in os.listdir(os.path.dirname(ledger)) if f.endswith(".pending")]
+    assert not _pending_files(ledger)
 
 
 def test_a_concurrent_save_still_describes_the_state_it_landed_on(ledger):
@@ -241,7 +250,7 @@ def test_a_write_that_fails_partway_leaves_the_ledger_as_it_was(ledger, monkeypa
     with pytest.raises(IOError):
         correct(corrected_traits={"conventions": 2}, rationale="second")
     assert json.load(open(ledger)) == before
-    assert not os.path.exists(ledger + ".pending")
+    assert not _pending_files(ledger)
 
 
 def test_a_malformed_trait_score_names_itself_instead_of_raising(ledger):
