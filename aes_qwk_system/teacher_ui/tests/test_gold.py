@@ -16,7 +16,7 @@ import gold
 from conftest import SOURCE_CSV
 
 pytestmark = pytest.mark.skipif(not os.path.exists(SOURCE_CSV),
-                               reason="corpus CSV not available")
+                                reason="corpus CSV not available")
 
 
 @pytest.fixture

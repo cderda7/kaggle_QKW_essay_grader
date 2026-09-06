@@ -605,7 +605,7 @@ def test_a_second_correction_that_moves_the_score_says_what_it_moved_from(client
 
 
 def test_the_page_and_the_ledger_agree_on_what_the_last_save_did(client, essay_id,
-                                                                ledger_overrides):
+                                                                 ledger_overrides):
     """The disagreement this pins down: the record says whether it moved the score, and the page
     tells the teacher the same thing about the same save."""
     client.post("/api/override/%s" % essay_id, json={"corrected_traits": ALL_SIX})
@@ -900,7 +900,7 @@ def test_a_correction_survives_a_restart(client, essay_id, ledger_overrides):
 
 
 def test_a_correction_can_be_cleared_without_erasing_it_happened(client, essay_id,
-                                                                ledger_overrides):
+                                                                 ledger_overrides):
     import json as json_module
     client.post("/api/override/%s" % essay_id, json={"corrected_traits": {"argumentation": 6}})
     cleared = client.post("/api/override/%s" % essay_id, json={"kind": "cleared"}).json()["essay"]
@@ -912,7 +912,7 @@ def test_a_correction_can_be_cleared_without_erasing_it_happened(client, essay_i
 
 
 def test_the_clear_control_appears_only_when_there_is_something_to_clear(client, essay_id,
-                                                                        ledger_overrides):
+                                                                         ledger_overrides):
     assert "override-clear" not in client.get("/essay/%s" % essay_id).text
     client.post("/api/override/%s" % essay_id, json={"corrected_traits": {"argumentation": 6}})
     assert "override-clear" in client.get("/essay/%s" % essay_id).text
@@ -964,7 +964,7 @@ def test_a_dissent_and_a_correction_coexist(client, essay_id, ledger_overrides):
 # --- refusals -----------------------------------------------------------------------------------
 
 def test_an_impossible_trait_score_is_refused_with_a_message_that_names_it(client, essay_id,
-                                                                          ledger_overrides):
+                                                                           ledger_overrides):
     response = client.post("/api/override/%s" % essay_id,
                            json={"corrected_traits": {"argumentation": 9}})
     assert response.status_code == 400
@@ -979,7 +979,7 @@ def test_a_correction_for_an_essay_outside_the_review_set_is_a_404(client, ledge
 
 
 def test_a_correction_made_after_a_reveal_carries_the_flag(client, essay_id, ledger,
-                                                          ledger_overrides):
+                                                           ledger_overrides):
     """Ticket 04 built the ledger; this is the stamp it exists for."""
     plain = client.post("/api/override/%s" % essay_id,
                         json={"corrected_traits": {"conventions": 5}}).json()["record"]
@@ -1008,7 +1008,7 @@ def test_a_malformed_correction_is_a_naming_400_not_a_crash(client, essay_id, le
 
 
 def test_an_absent_kind_is_stored_as_the_kind_the_guard_validated(client, essay_id,
-                                                                 ledger_overrides):
+                                                                  ledger_overrides):
     """An explicit JSON null validates as a trait correction, so it has to be written down as
     one. The ledger is read by hand; a record whose kind is null does not say what it is."""
     record = client.post("/api/override/%s" % essay_id,
@@ -1061,7 +1061,7 @@ def test_a_withdrawal_reason_is_not_offered_back_as_the_next_correction_s(client
 # --- the essay list ------------------------------------------------------------------------------
 
 def test_a_trait_correction_that_corrects_nothing_never_reaches_the_ledger(client, essay_id,
-                                                                          ledger_overrides):
+                                                                           ledger_overrides):
     """A correction with an empty `corrected_traits` is refused by the seam, so no client can
     write one.
 
@@ -1101,7 +1101,7 @@ def test_the_index_distinguishes_reviewed_essays_from_untouched_ones(client, ess
 
 
 def test_the_index_marks_a_dissent_as_a_visit_even_with_no_score_change(client, essay_id,
-                                                                       ledger_overrides):
+                                                                        ledger_overrides):
     client.post("/api/override/%s" % essay_id,
                 json={"kind": "dissent", "rationale": "the map is wrong"})
     body = client.get("/").text
