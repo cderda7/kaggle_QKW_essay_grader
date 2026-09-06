@@ -158,8 +158,12 @@
 
   // A textarea's defaultValue is the text the server rendered into it, so this asks the only
   // question that matters: has the teacher rewritten the reason the page was drawn with?
+  //
+  // Trimmed on both sides because the server stores a stripped rationale and renders that back:
+  // comparing a raw value against an already-stripped one makes a stray trailing space look like
+  // a decision, and appends a record whose stored reason is identical to the one standing.
   function reasonRewritten() {
-    return rationale.value !== rationale.defaultValue;
+    return rationale.value.trim() !== rationale.defaultValue.trim();
   }
 
   function scoresMoved() {

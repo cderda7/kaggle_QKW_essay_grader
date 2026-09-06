@@ -322,6 +322,14 @@ body.focus-conventions mark.pol-conventions-weakness {
   margin: -14px 0 20px; font-size: 12px; line-height: 1.6; color: var(--ink-soft);
 }
 .score-change.unchanged { color: var(--ink-faint); }
+/* The AI's own holistic, named wherever a correction has moved the score off it. The head is
+   free to contrast whatever the latest save did, so this is what keeps the number being audited
+   against on the page rather than only in the trait cards. */
+.score-origin {
+  margin: -14px 0 0; font-size: 12px; line-height: 1.6; color: var(--ink-faint);
+}
+.score-origin b { font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+.score-origin + .score-change { margin-top: 4px; }
 
 /* --- editable trait scores -------------------------------------------------------------------- */
 

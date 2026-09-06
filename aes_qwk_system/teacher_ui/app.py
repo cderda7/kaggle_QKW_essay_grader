@@ -234,7 +234,11 @@ def formation_panel(essay):
 #     AI's;
 #   * only a trait correction that edited traits and did not move the band opens the panel,
 #     because "how far is this essay from the nearest cut" is the question a trait edit raises
-#     and neither a dissent nor a withdrawal asks it.
+#     and neither a dissent nor a withdrawal asks it;
+#   * wherever a correction has moved the score off the AI's, the AI's own holistic is named on
+#     the page with a label saying whose it is. That is a property of every state rather than a
+#     column, so a row added later cannot drop it: the AI's number is what the whole surface
+#     exists to let a teacher audit, and a row is free to contrast whatever its own save did.
 SCORE_NARRATION = {
     "untouched": (None, False, None),
     "corrected_moved": (
@@ -340,11 +344,20 @@ def score_line(essay):
     changed cannot be checked, and a number that silently did not change reads as a broken
     control. Which "before" that is depends on the state, so SCORE_NARRATION names it per row
     rather than any branch here choosing -- see the table for why that matters.
+
+    The AI's own holistic is named separately, labelled, whenever a correction has moved the
+    score off it. A row is free to contrast what its own save did -- a second correction moving
+    2 to 3 says so -- but the number the teacher is auditing against must not fall off the page
+    because a later save had a nearer baseline to talk about. Labelling it is what stops the two
+    from reading as a single three-number contrast.
     """
     told = score_narration(essay)
     holistic = essay["holistic"]
     head = (_moved_score(told["was"], holistic, told["state"]) if told["was"] is not None
             else _plain_score(holistic, told["state"]))
+    if holistic != essay["ai_holistic"]:
+        head += ('<p class="score-origin">The AI scored this <b>%d</b>/6.</p>'
+                 % essay["ai_holistic"])
     if told["sentence"] is None:
         return head
     quiet = "" if told["state"] == "corrected_moved" else " unchanged"

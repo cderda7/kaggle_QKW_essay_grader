@@ -508,13 +508,22 @@ def test_a_correction_that_changes_nothing_opens_the_panel_and_explains(client, 
     assert "did not move the score" in body
 
 
-def _synthetic(monkeypatch, *records):
+def _synthetic(monkeypatch, *records, **kwargs):
     """Serve a page built from the synthetic fixture, so which corpus essay the client yields
-    cannot decide whether a correction crosses a cut."""
-    import app as application
-    from test_build_review import ESSAYS, MANIFEST, PREDICTIONS, make_item
+    cannot decide whether a correction crosses a cut.
 
-    built = application.build_review(predictions=PREDICTIONS, annotation={"E1": make_item()},
+    `word_count` shifts which band the same traits land in, which is how a sequence reaching
+    three distinct holistics is constructed."""
+    import app as application
+    from test_build_review import ESSAYS, MANIFEST, PREDICTIONS, PRED_TRAITS, make_item
+
+    word_count = kwargs.pop("word_count", None)
+    assert not kwargs, kwargs
+    predictions = PREDICTIONS
+    if word_count is not None:
+        predictions = {"E1": dict({"system_" + c: str(v) for c, v in PRED_TRAITS.items()},
+                                  essay_id="E1", word_count=str(word_count))}
+    built = application.build_review(predictions=predictions, annotation={"E1": make_item()},
                                      essays=ESSAYS, override_records=list(records),
                                      expected_ids=["E1"], manifest=MANIFEST)
     monkeypatch.setattr(application, "artifact", lambda: built)
@@ -586,13 +595,16 @@ def test_the_page_and_the_ledger_agree_on_what_the_last_save_did(client, essay_i
     assert second["record"]["original_holistic"] == essay["holistic_before_latest_record"]
     assert second["record"]["score_unchanged"] == essay["score_unchanged_by_latest_record"]
 
+    # Which of the two states this lands in depends on the corpus essay, so assert against the
+    # sentence the row it DID land in defines rather than a phrase guessed for one of them. A
+    # branch asserting a string its own state never renders reads as coverage and is not.
+    import app as application
+
     body = client.get("/essay/%s" % essay_id).text
-    if second["record"]["score_unchanged"]:
-        assert "did not move the score" in body
-        assert '<details class="formation" open>' in body
-    else:
-        assert "moved this from %d to %d" % (second["record"]["original_holistic"],
-                                             second["record"]["recomputed_holistic"]) in body
+    state = application.narration_state(essay)
+    assert state in ("corrected_moved", "corrected_inert_off_ai")
+    assert application.score_narration(essay)["sentence"] in body
+    assert ('<details class="formation" open>' in body) is (state == "corrected_inert_off_ai")
 
 
 ONE_UP = {"conventions": 3}
@@ -660,6 +672,14 @@ def test_each_score_narration_state_agrees_with_itself(client, monkeypatch, stat
         assert phrase in body
     assert ('<details class="formation" open>' in body) is opens
 
+    # A property of every row, not a column: wherever a correction has moved the score off the
+    # AI's, the AI's own holistic is on the page and labelled as the AI's. A row added later
+    # cannot quietly drop the number the whole surface exists to audit against.
+    off_ai = essay["holistic"] != essay["ai_holistic"]
+    assert ('<p class="score-origin">' in body) is off_ai
+    if off_ai:
+        assert "The AI scored this <b>%d</b>/6." % essay["ai_holistic"] in body
+
 
 def test_a_rationale_only_save_is_narrated_as_a_reason_revision(client, essay_id,
                                                                 ledger_overrides):
@@ -695,6 +715,29 @@ def test_a_correction_that_does_edit_a_trait_is_not_a_reason_revision(client, es
                         json={"corrected_traits": {"conventions": 4}}).json()["essay"]
     assert essay["latest_record_changed_traits"] is True
     assert not application.narration_state(essay).startswith("reason_revised")
+
+
+def test_a_second_correction_that_moves_the_score_still_shows_the_ai_holistic(client,
+                                                                              monkeypatch):
+    """Three distinct holistics: the AI's 1, what the first correction made it, and what the
+    second did. The head contrasts what the LATEST save did -- that is the fact ui_16 exists to
+    state -- so the AI's original has to be named separately or it leaves the page entirely.
+    It appears nowhere else: the formation panel scores the current traits, and the trait cards
+    carry per-trait AI scores only."""
+    essay = _synthetic(
+        monkeypatch,
+        _correction({"argumentation": 5, "organization": 4}),
+        _correction(ALL_SIX),
+        word_count=150,
+    )
+    ai, was, now = essay["ai_holistic"], essay["holistic_before_latest_record"], essay["holistic"]
+    assert len({ai, was, now}) == 3
+
+    body = client.get("/essay/E1").text
+    assert '<span class="score-was">%d</span>' % was in body
+    assert '<span class="score-value">%d</span>' % now in body
+    assert "Your latest correction moved this from %d to %d" % (was, now) in body
+    assert "The AI scored this <b>%d</b>/6." % ai in body
 
 
 def test_the_score_narration_states_are_coherent():
