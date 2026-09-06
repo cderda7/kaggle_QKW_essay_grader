@@ -81,10 +81,10 @@
 
 // Revealing the human rater's score.
 //
-// The value is not in this page — the server withheld it — so the click has to go and ask for it,
-// and asking is what gets recorded. That ordering is the point: there is no local toggle that could
-// show the number without the ledger entry existing (decisions_log.md ui_4). On reload the server
-// renders the revealed block itself, so this path runs once per essay.
+// The value is not in this page — the server withheld it — so the click has to go and ask for
+// it, and asking is what gets recorded. That ordering is the point: there is no local toggle
+// that could show the number without the ledger entry existing (decisions_log.md ui_4). On
+// reload the server renders the revealed block itself, so this path runs once per essay.
 
 (function () {
   var block = document.querySelector(".gold[data-essay]:not([data-revealed])");
@@ -135,4 +135,155 @@
       block.appendChild(failed);
     });
   });
+})();
+
+// Recording a correction.
+//
+// Nothing here computes a score. The selects gather what the teacher wants the traits to be, the
+// server runs the frozen aggregator and writes the record, and the page reloads to show whatever
+// the build produced — including a correction that changed nothing, which is the common case
+// (decisions_log.md ui_9). A local preview of the new holistic would be a second implementation of
+// a fitted map, and the one place its disagreement would surface is the panel built to be checked.
+
+(function () {
+  var form = document.querySelector(".override[data-essay]");
+  if (!form) return;
+
+  var essay = form.getAttribute("data-essay");
+  var status = form.querySelector(".override-status");
+  var rationale = form.querySelector(".override-rationale");
+  var clear = form.querySelector(".override-clear");
+  var dissentReason = form.querySelector(".dissent-rationale");
+  var selects = Array.prototype.slice.call(document.querySelectorAll(".card-score-select"));
+
+  // A textarea's defaultValue is the text the server rendered into it, so this asks the only
+  // question that matters: has the teacher rewritten the text the page was drawn with?
+  //
+  // Trimmed on both sides because the server stores a stripped rationale and renders that back:
+  // comparing a raw value against an already-stripped one makes a stray trailing space look like
+  // a decision, and appends a record whose stored reason is identical to the one standing. Every
+  // guard asks it through here — the correction box and the dissent box each grew their own
+  // version of this comparison, and they disagreed about whether whitespace counted.
+  function rewritten(field) {
+    return field.value.trim() !== field.defaultValue.trim();
+  }
+
+  function scoresMoved() {
+    return selects.some(function (s) { return s.value !== s.getAttribute("data-score"); });
+  }
+
+  function refreshDirty() {
+    var moved = scoresMoved();
+    form.classList.toggle("dirty", moved || rewritten(rationale));
+    if (moved) return say("Unsaved change — save it to recompute the score.");
+    say(rewritten(rationale) ? "Unsaved reason — save it to attach it to your correction." : "");
+  }
+
+  // A click on the score control must not also pin the trait it sits inside.
+  selects.forEach(function (select) {
+    ["click", "mousedown"].forEach(function (type) {
+      select.addEventListener(type, function (event) { event.stopPropagation(); });
+    });
+    // Enter and Space belong to the select, and the card above would otherwise toggle its pin
+    // underneath them. Every other key keeps bubbling — Escape releases a pin from the document
+    // handler, and swallowing it here made the page's own "Esc to release" hint a false promise.
+    select.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") event.stopPropagation();
+    });
+    select.addEventListener("change", function () {
+      var card = select.closest(".card");
+      if (card) card.classList.toggle("dirty", select.value !== select.getAttribute("data-score"));
+      refreshDirty();
+    });
+  });
+
+  rationale.addEventListener("input", refreshDirty);
+
+  function say(text, bad) {
+    status.textContent = text;
+    status.classList.toggle("bad", !!bad);
+  }
+
+  function post(body, working) {
+    var buttons = Array.prototype.slice.call(form.querySelectorAll("button"));
+    buttons.forEach(function (b) { b.disabled = true; });
+    say(working);
+
+    fetch("/api/override/" + encodeURIComponent(essay), {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (response) {
+      return response.json().then(function (data) {
+        if (!response.ok) throw new Error(data.detail || ("HTTP " + response.status));
+        return data;
+      });
+    }).then(function () {
+      // The server-rendered page is the truth: reload rather than patch the DOM, so the score,
+      // the before/after line and the panel's open state all come from the build.
+      window.location.reload();
+    }).catch(function (error) {
+      buttons.forEach(function (b) { b.disabled = false; });
+      say("Nothing was recorded — " + error.message, true);
+    });
+  }
+
+  form.querySelector(".override-save").addEventListener("click", function () {
+    // Several different "nothing to do" cases, and they need different advice. Saving an
+    // untouched form would append a record identical to the one already stored: a trail of
+    // duplicates says the teacher acted three times when they decided once. A rewritten reason is
+    // a real change though — discarding it with a message denying it happened would lose typed
+    // text, so the reason counts as much as a moved score here.
+    if (!scoresMoved() && !rewritten(rationale)) {
+      say("Nothing has changed since your last save.", true);
+      return;
+    }
+    var corrected = {};
+    selects.forEach(function (s) {
+      if (s.value === s.getAttribute("data-ai")) return;
+      corrected[s.getAttribute("name")] = Number(s.value);
+    });
+    if (!Object.keys(corrected).length) {
+      say(clear
+          ? "Every trait now reads as the AI scored it — use “Clear the trait correction” to "
+            + "withdraw it, so the record says what happened."
+          : "A reason belongs to a correction — change a trait score above, or record a dissent "
+            + "below if it is the final score you disagree with.", true);
+      return;
+    }
+    post({
+      kind: "trait_correction",
+      corrected_traits: corrected,
+      rationale: rationale.value
+    }, "Recomputing through the aggregator…");
+  });
+
+  if (clear) {
+    clear.addEventListener("click", function () {
+      // Withdrawing does not inherit the argument for making the correction. The reason the page
+      // was rendered with justifies the correction being withdrawn, so a record carrying it would
+      // read as arguing for the very thing it undoes; only text typed for this withdrawal travels.
+      post({ kind: "cleared", rationale: rewritten(rationale) ? rationale.value : "" },
+           "Withdrawing the correction…");
+    });
+  }
+
+  var dissent = form.querySelector(".dissent-save");
+  if (dissent && dissentReason) {
+    dissent.addEventListener("click", function () {
+      // A recorded dissent is replaced by writing a newer one, never edited in place: the fold
+      // reads the latest, and the one being replaced stays in the trail. Re-posting the reason
+      // already standing would append a record saying the teacher decided the same thing twice.
+      var why = dissentReason.value;
+      if (!why.trim()) {
+        say("A dissent is a reason and no number, so the reason is the whole record.", true);
+        return;
+      }
+      if (!rewritten(dissentReason)) {
+        say("That is the dissent already recorded — rewrite it to replace it.", true);
+        return;
+      }
+      post({ kind: "dissent", rationale: why }, "Recording your dissent…");
+    });
+  }
 })();

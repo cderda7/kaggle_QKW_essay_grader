@@ -24,6 +24,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
+import ledger  # noqa: E402
 from build_review import LADDER_VERSION, TRAIT_RUN  # noqa: E402
 
 # Overridable for the same reason the corpus path is: an end-to-end pass has to be able to click
@@ -79,22 +80,27 @@ def record_reveal(essay_id, path=None, ladder_version=None, trait_run=None, now=
     this correction formed with the answer key in view", and that is a property of the essay from
     the first reveal onwards. Re-revealing returns the original record and its original timestamp,
     which is the one that bounds the corrections.
+
+    "One record per essay" is a read-modify-write, so the check and the write are held under the
+    ledger's lock together: two reveals of the same essay arriving at once would otherwise both
+    find no record and both append one. `ledger.write_json` also makes the swap atomic, where
+    truncating the real file first put every reveal already recorded inside the failure window
+    rather than only the one being added. See decisions_log.md ui_19.
     """
     path = REVEALS_FILE if path is None else path
-    records = load_reveals(path)
-    for existing in records:
-        if existing["essay_id"] == essay_id:
-            return existing, False
+    with ledger.lock(path):
+        records = load_reveals(path)
+        for existing in records:
+            if existing["essay_id"] == essay_id:
+                return existing, False
 
-    stamp = now if now is not None else datetime.datetime.now().astimezone()
-    record = {
-        "essay_id": essay_id,
-        "revealed_at": stamp.isoformat(timespec="seconds"),
-        "ladder_version": ladder_version if ladder_version is not None else LADDER_VERSION,
-        "trait_run": trait_run if trait_run is not None else TRAIT_RUN,
-    }
-    records.append(record)
-    with open(path, "w") as f:
-        json.dump(records, f, indent=2)
-        f.write("\n")
+        stamp = now if now is not None else datetime.datetime.now().astimezone()
+        record = {
+            "essay_id": essay_id,
+            "revealed_at": stamp.isoformat(timespec="seconds"),
+            "ladder_version": ladder_version if ladder_version is not None else LADDER_VERSION,
+            "trait_run": trait_run if trait_run is not None else TRAIT_RUN,
+        }
+        records.append(record)
+        ledger.write_json(path, records)
     return record, True

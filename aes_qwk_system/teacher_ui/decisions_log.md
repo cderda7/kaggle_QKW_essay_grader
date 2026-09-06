@@ -247,3 +247,337 @@ in `spec_ui_v1.md`.
     cannot be used to read the answer key of an essay outside the review set. The control says what
     it is: the CSV is on disk and reading it there is neither prevented nor logged. A control that
     overstates its own reach teaches the reviewer to trust a boundary that is not there.
+
+12. **Current state is a fold over an essay's records, latest-wins *per section* rather than
+    wholesale** (decision D5, taken 2026-09-05 while building ticket 05). `override_state()` walks
+    an essay's records in order: a `trait_correction` sets the corrected traits, a `cleared`
+    withdraws them, a `dissent` sets the dissent. Each kind overwrites only its own section. The
+    artifact then distinguishes **`overridden`** (the trait scores as they now stand differ from
+    the AI's) from **`reviewed`** (a teacher has been here at all).
+
+    *Alternatives:* the spec's literal reading — the single most recent record is the whole current
+    state; or require every record to restate the full state, so latest-wins is true by
+    construction.
+
+    *Tradeoffs:* "the latest record" is no longer a complete description of what the UI shows, so a
+    reader of `overrides.json` has to know the fold rule to predict the page. Two of the three
+    kinds are also silent about the sections they do not touch, which only reads correctly once
+    you know that silence means "unchanged" rather than "cleared".
+
+    *Defense:* a dissent and a trait correction answer different questions — "the aggregator is
+    wrong" and "the traits are wrong" — and a teacher will often record both. Under wholesale
+    latest-wins, recording a dissent after a correction would silently discard the correction, and
+    the teacher's second deliberate action would undo their first with no indication. Requiring
+    every record to restate the full state avoids that but makes each record a snapshot rather than
+    an event, which destroys exactly what the steering bank needs: what the teacher *changed* and
+    why. The fold keeps the ledger a list of events and still yields one unambiguous current state.
+    Ticket 06 inherits the same rule for span verdicts and feedback edits, which is the second
+    reason to settle it here rather than there.
+
+    The `overridden`/`reviewed` split falls out of the same argument: a cleared correction and a
+    dissent both leave every trait exactly as the AI wrote it, and an essay list that called those
+    untouched would lose the two cases most worth looking at again.
+
+13. **A record's recomputed holistic is obtained by building the artifact that would result from
+    storing it** (decision D6, same session). `record_correction` runs `build_review` twice — once
+    over the existing records, once with the prospective record appended — and stores what the
+    second build produced. The page never previews a score either: saving posts, the server writes,
+    and the page reloads server-rendered.
+
+    *Alternatives:* call `apply_aggregator` directly in the writer, which is two lines; recompute in
+    the browser so the teacher sees the new score without a round trip.
+
+    *Tradeoffs:* two full builds per correction, each re-anchoring every span — measured at well
+    under a tenth of a second over the sample, but linear in essay count and wasteful in principle.
+    The reload also costs a round trip on every save and rebuilds a page that has mostly not
+    changed.
+
+    *Defense:* this is the same argument as ui_10, applied to the write path. Override records are
+    an input to the build (ui_6), so the only number that is true is the one the build produces
+    from them; anything else is a second implementation of a fitted map, and a record that
+    disagreed with the page it came from would be worse than one with no number at all. A browser
+    preview is the same mistake with a shorter half-life — and it would have to predict the
+    *cut point* a continuous score lands in, which is precisely where a correction most often does
+    nothing (ui_9). Letting the page guess "4" and then reload to "3" would discredit the
+    instrument at the exact moment it is being audited. The reload is also what makes the panel's
+    automatic expansion honest: it opens because the build said the band did not move, not because
+    the page assumed it would not.
+
+14. **An override record states what *it* did, against the score it was made against, and keeps
+    the AI baseline as a separate field** (decision D7, review of ticket 05). `original_holistic`
+    is the holistic standing at the instant the record was written and `score_unchanged` compares
+    the rebuilt holistic to that same standing score; the AI's own number stays reachable as
+    `ai_holistic`, alongside `original_traits`, which remains the AI's traits because
+    `corrected_traits` is expressed relative to them.
+
+    *Alternatives:* keep both fields on the AI baseline, which is what the first cut did; make
+    every field relative to the standing state, including `original_traits`; store only the delta
+    and let a reader recover the baseline by replaying the ledger.
+
+    *Tradeoffs:* one record now carries two reference points, which a hand reader has to keep
+    apart, and the field names have to earn that distinction. Replaying the ledger would need no
+    baseline at all, but only for a reader willing to run the build.
+
+    *Defense:* on the AI baseline, a dissent recorded after a correction stored
+    `score_unchanged: false` and a 4 → 2 move that the *earlier correction* had caused, and a
+    withdrawal that moved the displayed score 2 → 4 stored `score_unchanged: true`. Both are false
+    statements in an append-only audit record that exists to be read by hand and is the evidence
+    the ladder is judged on; a record misattributing another record's movement is worse than one
+    carrying no claim. Keeping `original_traits` on the AI baseline is not an inconsistency but the
+    same principle: it is the companion to `corrected_traits`, which lists only the traits that
+    differ from the AI's, so any other baseline would make the pair unreadable.
+
+    The same reasoning governs the rationale on a withdrawal. Clearing a correction no longer
+    inherits the reason the page was rendered with — that text argues *for* the correction being
+    withdrawn — so only a reason the teacher typed for the withdrawal travels with the `cleared`
+    record.
+
+15. **A trait correction can be withdrawn; a dissent can only be superseded** (decision D8, review
+    of ticket 05). `cleared` withdraws a trait correction and restores the AI's scores. There is
+    no kind that withdraws a dissent: a teacher who recorded one in error or with a typo writes a
+    new dissent over it, and the latest-wins fold in `override_state` makes the newest one
+    current. The dissent textarea is therefore rendered even once a dissent stands, prefilled with
+    the standing reason and beside the record it would replace.
+
+    *Alternatives:* a fourth kind (`dissent_cleared`) so both halves of the form are symmetrical;
+    leave the dissent unrevisable, which is where the first cut of ticket 05 landed.
+
+    *Tradeoffs:* the asymmetry has to be explained rather than inferred, and a dissent recorded
+    against the wrong essay stays in the trail forever, answerable only by a later dissent saying
+    so. A fourth kind would close that, at the cost of a persisted-schema change and a second
+    withdrawal concept to keep coherent with `cleared`.
+
+    *Defense:* the two disagreements are not the same shape, so a symmetrical form would be a
+    false symmetry. A trait correction *changes a number the aggregator consumes*, so withdrawing
+    it has to restore the AI's input and there is a definite state to return to. A dissent changes
+    nothing and asserts something — that the fitted map is wrong here — and the honest way to
+    retract an assertion in an append-only record is to make a better one, not to delete it. That
+    is also what the ledger is for: a dissent, a correction of it, and the reasoning between them
+    is exactly the material a later steering bank would want, and a withdrawal would erase it from
+    the readback while leaving it in the trail, which is the worst of both. Superseding needs no
+    new kind, no schema change, and no second meaning for "withdrawn", so ui_v1 stops here.
+
+    The same principle settles where a rationale lives (ui_14, mirrored). A reason travels with
+    the record kind it was typed for and no further: withdrawing a correction takes the reason
+    with it rather than offering it back as the justification for whatever the teacher does next.
+    Without that, clearing a correction with "on reflection the AI had it right" left that
+    sentence in the correction textarea, and the teacher's next correction was stored against a
+    reason arguing it should not have been made.
+
+16. **The page narrates the save the teacher just made, against the score that save was made
+    against** (decision D9, review of ticket 05). The artifact carries two separately named facts:
+    `score_unchanged_vs_ai`, whether the corrections as they now stand leave the AI's score
+    untouched, and `score_unchanged_by_latest_record`, whether the most recent record moved
+    anything, measured against `holistic_before_latest_record`. The score head, the sentence under
+    it and the score-formation panel's open state are all driven by the second.
+
+    *Alternatives:* keep one flag on the AI baseline, which is where ui_14 left it and where this
+    was found; narrate the net state instead of the last action, and drop the "did not move the
+    score" sentence for anything after the first correction.
+
+    *Tradeoffs:* two fields where there was one, and a reader of the artifact now has to notice
+    which baseline a name refers to. The before/arrow/after head no longer always shows the AI's
+    original either — on a second correction it shows the score being corrected away from, and the
+    AI's number is carried by the trait cards and the formation panel instead.
+
+    *Defense:* one flag could not answer both questions, and the page was asking the one it did
+    not hold. Against the frozen aggregator, traits {4,3,3,2} at 60 words score 1; correcting to
+    all 6 gives 2; a second correction to {4,3,3,3} gives 1 again. The old flag reported that
+    second save as *unchanged* — the page said "did not move the score" and opened the panel while
+    the record it had just written said the score went 2 → 1. The mirror case is worse: from all 6,
+    correcting conventions to 5 leaves the score at 2, and the page said "moved this from 1 to 2"
+    with the panel shut. That is precisely the "this control appears not to work" experience
+    ui_9/D2 exists to explain, unexplained for every save after the first. A teacher reads that
+    sentence in the second after clicking Save, so it is about that click; ui_14 already settled
+    the same question for the ledger, and the page and the record now say the same thing.
+
+    The same decision removes a contradiction in the unchanged render. `.score.corrected
+    .score-was` is struck through, so the dominant case — a single trait moves the score on 2 of
+    10 sampled essays — drew a struck-through 3, an arrow and an identical 3 directly above the
+    words "did not move the score". A strikethrough asserts the value was superseded. When the
+    save moved nothing there is no before to show, so the single number stands alone and the
+    sentence and the self-opened panel carry the fact that a correction is recorded.
+
+17. **Each kind of record is narrated as itself, and only a trait correction that landed in the
+    same band opens the panel** (decision D10, review of ticket 05). `latest_save()` reads
+    `latest_record_kind` first and answers with one of `moved`, `same_band`, `cleared`, `dissent`
+    or nothing at all; the score head, the sentence beneath it and the score-formation panel's
+    open state are all driven by that single value, as ui_16 requires.
+
+    *Alternatives:* keep one boolean ("did the score move since the last record") and accept that
+    a dissent reads as a correction that did nothing; suppress the sentence entirely for anything
+    that is not a trait correction.
+
+    *Tradeoffs:* four narrations to keep true instead of two, and the dissent case shows the
+    standing correction's own before/after head rather than the last record's — the one place the
+    head is not the last save's baseline, because a dissent has no baseline to speak of.
+
+    *Defense:* on the synthetic fixture a trait correction to all 6 (1 → 2) followed by a dissent
+    left `score_unchanged_by_latest_record` true, so the page said "Your latest correction did not
+    move the score" and opened the panel. Three separate false statements: the teacher's last
+    action was a dissent, not a correction; the panel offered a distance to the nearest cut for a
+    record kind that cannot approach one; and the 1 → 2 the correction did cause vanished from the
+    essay page while the index still showed "corrected 1 → 2 · dissent". A dissent moves no trait
+    and no score by design — that is the whole of decision ui_2 — so reporting it as a correction
+    that failed to move one tells a teacher their deliberate act was a broken trait edit. The
+    panel stays shut for it because "how far is this essay from the nearest cut" answers why a
+    TRAIT edit moved nothing, which is not the question a dissent raises. A withdrawal gets its
+    own sentence for the same reason: it restores the AI's scores on purpose.
+
+    Two guards moved with it. `essay_id` is now type-checked like `corrected_traits`, `rationale`
+    and every trait value already were: ids in this corpus are numeric-looking strings, so the
+    natural slip in a diffable hand-edited ledger is dropping the quotes, and `"essay_id": 79938`
+    passed every guard while matching no essay — a correction that is in the file and invisible on
+    every page, which is the exact outcome the collect-all guards exist to prevent. A record
+    naming an essay outside the review set is still ignored silently; only the type is checked.
+    And `record_correction` re-folds the trail once the record is complete, because the build that
+    produces the recomputed holistic must read the record before it carries one: the POST response
+    was handing back a trail entry whose `recomputed_holistic` was null where a later GET of the
+    same essay returned the real number.
+
+18. **The score narration is one table of states, not a chain of conditionals** (decision D11,
+    review of ticket 05). `SCORE_NARRATION` has one row per state the essay page can be in, and
+    each row decides all three outputs together: which holistic the head contrasts the current one
+    against (or none, drawing a single number), whether the score-formation panel opens itself,
+    and the sentence beneath. `narration_state()` picks the row; nothing else branches.
+
+    *This supersedes the approach of ui_16 and ui_17, not their conclusions.* Both are still
+    right about what the page should say. What was wrong was fixing it one branch at a time:
+    ui_14 moved the ledger's baseline, ui_16 moved the page's to match, ui_17 added the record
+    kind, and each round's review found the next uncovered corner of the same function. Three more
+    arrived after ui_17 — a struck-through AI score above the words "every trait still reads as it
+    was scored"; a second correction that added nothing printing a bare number and hiding the AI's
+    holistic from the page entirely, which the ticket requires be shown; and a save that only
+    rewrote a reason being told its correction failed to move the score. Those were one defect
+    reported four times. The head, the sentence and the panel were computed by separate
+    conditionals over overlapping questions, so any state the branches did not jointly cover
+    produced a page contradicting itself.
+
+    *Alternatives:* keep patching the branch each round exposes; drop the sentence for every case
+    except the first correction, which is the smallest change and the least useful page.
+
+    *Tradeoffs:* ten rows where there were four branches, and adding a state means writing the row
+    rather than an `if`. That is the point — a missing row is a `KeyError` at the seam, where a
+    missing branch was a plausible-looking sentence.
+
+    *Defense:* the dimensions are genuinely independent and the old code conflated two of them.
+    Whether the LATEST record moved the score and whether the corrections now STANDING have moved
+    it off the AI's are different questions: a second correction can add nothing to a first that
+    already moved the band. Separating them is what lets `corrected_inert_off_ai` say both things
+    at once — the corrections moved this 1 → 2, and the latest one added nothing — where the old
+    single branch could only say one and chose the one that hid the AI's number.
+
+    Three rules are asserted over the table itself rather than trusted per row: a contrast is only
+    drawn between two different holistics, because a strikethrough beside an identical number
+    asserts a falsehood; "every trait still reads as it was scored" appears only where no trait
+    differs from the AI's; and only a trait correction that edited traits and did not move the
+    band opens the panel, because the distance to the nearest cut answers a question neither a
+    dissent nor a withdrawal asks. Every state also has a test asserting head, sentence and panel
+    together, which is the coverage that would have caught all three rounds in one pass.
+
+    A reason-only save is now its own state. The page sends every trait that differs from the
+    AI's, so rewriting just the reason re-posts the standing traits: a real record, because the
+    reason did change, but one that edited no trait. `latest_record_changed_traits` is read off
+    the two folds `override_state` already computes, so the ledger format is untouched.
+
+19. **The ledgers are written under a per-file lock held across the whole read-modify-write**
+    (decision D12, review of ticket 05). An amendment to ui_7 rather than a replacement of it.
+    `ledger.py` owns two things: `lock(path)`, a reentrant per-path lock, and `write_json`, which
+    writes to a pending file named for this process and thread and then `os.replace`s it into
+    position. `overrides.record_correction` holds the lock from reading the existing records
+    through both builds to the append; `gold.record_reveal` holds it across its "one record per
+    essay" check and its write.
+
+    *What ui_7 got right, and still does.* The ledger is a plain JSON list on disk because it has
+    to be diffable, greppable and visible in a git history — the guards name an offending value
+    precisely so a person can open the file and fix it. Nothing here changes that. The record
+    format is untouched.
+
+    *The case it did not anticipate.* One teacher with two essay tabs open. `record_override` is a
+    sync `def`, so FastAPI dispatches it on anyio's threadpool rather than serialising it, and
+    ui_13 then put TWO full builds between reading the records and writing them back.
+
+    Two distinct things go wrong there, and they need different answers. Both writers used the
+    same `overrides.json.pending` name, so their `json.dump` calls could interleave into one
+    truncated file and the ledger that replaced the real one would be invalid JSON — after which
+    `load_overrides` raises on the way into every page load. That one the unique pending name
+    fixes on its own.
+
+    The second is subtler and is what the lock is really for. No record is lost even unlocked,
+    because `append` re-reads the ledger under its own lock and appends to that fresh list — a
+    fact worth stating, since the obvious lost-update story is not the defect here. What IS lost
+    is the record's account of itself. `original_holistic` and `score_unchanged` are formed from
+    a build of the records as they stood when the save BEGAN (ui_14: each record says what it
+    did, measured against the score standing immediately before it). A save landing in between
+    makes that a statement about a ledger that never existed — the record reports moving from a
+    score another record had already superseded. Measured: six concurrent saves, one record whose
+    `original_holistic` said 3 where the state it landed on was 2. A lock around the append alone
+    would not catch it, because the number is formed before that re-read.
+
+    *Alternatives:* SQLite, which serialises writes for free; making the endpoints async and
+    delegating the write to a single worker; a unique pending name alone.
+
+    *Tradeoffs:* the lock is per process, so it does not protect against a second uvicorn worker
+    or a hand edit racing a save. Two writers now queue rather than overlap, which for a
+    single-teacher tool costs nothing and for anything larger would be the wrong shape.
+
+    *Defense:* a database would trade the property ui_7 chose the format FOR — a human can read,
+    diff and repair this file — against a concurrency problem that one process's lock already
+    solves, and this is a local single-user tool by construction. A unique pending name alone is
+    not enough: it fixes the corrupt-file half and leaves the record's self-description wrong,
+    because that number is formed before the append re-reads. The lock has to span the builds,
+    which is exactly the part a lock around `append` alone would miss.
+
+    `gold.record_reveal` got the same treatment because it had the same shape — and was worse,
+    truncating the real file in place, so an interrupted write lost every reveal already recorded
+    rather than only the one being added. A second instance of one bug is how several findings in
+    this review arose; fixing one and leaving the other would have invited a ninth.
+
+20. **The 100-column convention is now written down as a `.flake8` config, not enforced by hand**
+    (decision D13, review of ticket 05). A description of existing practice, not a new
+    constraint: no file was reformatted to make the tree pass, and the config was rejected as
+    finished only once `flake8` reported clean over the repo as it already stood.
+
+    *Context.* The 100-character line limit and the continuation-indent style have been followed
+    across this whole ladder, but nothing enforced them — there was no `setup.cfg`, `.flake8`,
+    `tox.ini`, `pyproject.toml` or pre-commit config anywhere in the repo. Hand enforcement
+    demonstrably failed twice during this ticket's review. Ticket 05 introduced the only nine
+    flake8 violations in the teacher_ui tree (E128 continuation indents in `test_app.py` and
+    `test_gold.py`), every untouched file being clean; and a characters-versus-bytes
+    disagreement over two lines cost real time — `app.py:373` was exactly 100 characters but 102
+    bytes, `static/app.js:84` was 98 characters and 102 bytes, both because these files carry
+    em-dashes. E501 counts CHARACTERS, which is the intended rule; the config says so in a
+    comment so the next reader does not re-derive it, and no byte-based check was added.
+
+    *Shape.* `.flake8` at the repo root rather than `setup.cfg`, because there is no `setup.py`
+    or `pyproject.toml` — this repo is not a Python package and a `setup.cfg` would imply one.
+    `ignore` is deliberately left unset so flake8's defaults stay in force, which leaves the
+    W503/W504 line-break question answered by the tool rather than by a house rule nobody has
+    needed to make. `node_modules` is excluded via `extend-exclude` (adding to flake8's defaults
+    rather than replacing them); it holds no Python today, but 1747 committed files are not
+    worth walking, and its removal is a separate change.
+
+    *The two legacy files.* `grading/grade_essays.py` and `evaluation/compute_qwk.py` predate the
+    convention and account for all 39 violations in the repo. They are exempted through
+    `per-file-ignores`, listing exactly the codes each one trips, rather than excluded outright —
+    so pyflakes still reports real defects (undefined names, unused imports) in them. Verified:
+    a probe import added to `compute_qwk.py` was still flagged F401.
+
+    *Alternatives:* reformatting the two legacy files, which would churn code this ticket never
+    touched; excluding them entirely, which would silence pyflakes there too; ignoring E501
+    globally, which would retract the one rule the config exists to state; a formatter (black,
+    ruff) or pre-commit hooks or CI wiring, each a separate decision with its own tradeoffs.
+
+    *Tradeoffs:* the repo is now committed to flake8's rule set and version, and a future flake8
+    that adds checks can fail a tree nobody changed. The `per-file-ignores` lists will go stale
+    as the two legacy files are edited, and nothing prunes them; the config says to narrow them
+    when either file is next reformatted on purpose. Nothing runs this automatically, so it
+    still only fires when someone invokes it — writing it down is what makes that invocation
+    mean the same thing for everyone.
+
+    *Defense:* the convention was already real and already being violated; the cheapest honest
+    fix is to state it in the form a tool can check. Per-file exemptions keep the rule total for
+    every file anyone is actually writing, while refusing to reformat unrelated code as the
+    price of admission. Verified across four invocation styles (`flake8`, `flake8 .`, an
+    explicit directory, explicit file paths), since `per-file-ignores` matches on the path as
+    given and a bare relative pattern would silently miss `./`-prefixed ones.

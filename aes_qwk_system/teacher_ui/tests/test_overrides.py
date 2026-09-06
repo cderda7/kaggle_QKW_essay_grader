@@ -1,0 +1,323 @@
+"""Writing a correction down, and what the record has to carry.
+
+The ledger under test is always a temp file. A test run that appends to the committed audit record
+would corrupt the evidence the ladder is judged on.
+"""
+
+import json
+import os
+import threading
+import time
+
+import pytest
+
+import build_review
+import ledger as ledger_module
+import overrides
+from conftest import SOURCE_CSV
+
+pytestmark = pytest.mark.skipif(not os.path.exists(SOURCE_CSV),
+                                reason="corpus CSV not available")
+
+ESSAYS = ["0079938", "0105e2e", "019e8c3"]
+
+
+@pytest.fixture
+def ledger(tmp_path, monkeypatch):
+    """Redirecting the one name that owns the ledger path moves every reader and every writer.
+    Having to patch a second copy would mean the app could read one file and append to another."""
+    path = str(tmp_path / "overrides.json")
+    monkeypatch.setattr(build_review, "OVERRIDES_FILE", path)
+    return path
+
+
+def correct(essay_id=ESSAYS[0], **kwargs):
+    kwargs.setdefault("expected_ids", ESSAYS)
+    return overrides.record_correction(essay_id, **kwargs)
+
+
+def test_a_correction_recomputes_the_holistic_through_the_frozen_aggregator(ledger):
+    record, essay = correct(corrected_traits={c: 6 for c in build_review.CRITERIA})
+    assert essay["traits"] == {c: 6 for c in build_review.CRITERIA}
+    assert essay["holistic"] > essay["ai_holistic"]
+    assert record["recomputed_holistic"] == essay["holistic"]
+    assert record["original_holistic"] == essay["ai_holistic"]
+
+
+def test_the_recorded_holistic_is_the_one_the_build_produces(ledger):
+    """Not a number this module worked out: the record is the build's own output, so there is no
+    second implementation of the aggregator to drift from the first."""
+    record, essay = correct(corrected_traits={"argumentation": 6})
+    rebuilt = build_review.build_review(override_records=json.load(open(ledger)),
+                                        expected_ids=ESSAYS)
+    holistic = next(e["holistic"] for e in rebuilt["essays"] if e["essay_id"] == ESSAYS[0])
+    assert record["recomputed_holistic"] == holistic
+
+
+def test_a_correction_that_does_not_move_the_band_is_recorded_as_such(ledger):
+    """The measured common case (ui_9/D2): one trait, one point, no visible effect.
+
+    Which corpus essay this lands on decides whether the band moves, so both branches are
+    asserted rather than only the interesting one. The same-band case itself is pinned down on
+    synthetic inputs in test_build_review and test_app, where it cannot go unexercised."""
+    record, essay = correct(corrected_traits={"conventions": 6})
+    moved = record["recomputed_holistic"] != record["original_holistic"]
+    assert record["score_unchanged"] is not moved
+    assert essay["score_unchanged_by_latest_record"] is not moved
+
+
+def test_the_record_carries_what_it_was_made_against(ledger):
+    record, _ = correct(corrected_traits={"conventions": 5}, rationale="spelling is not the issue")
+    for key in ("essay_id", "kind", "recorded_at", "original_traits", "corrected_traits",
+                "original_holistic", "recomputed_holistic", "rationale", "gold_revealed",
+                "ladder_version", "trait_run", "aggregator"):
+        assert key in record, key
+    assert record["trait_run"] == "v6_runB"
+    assert record["aggregator"] == "aggregator_v9.json"
+    assert record["rationale"] == "spelling is not the issue"
+
+
+def test_a_rationale_is_optional_on_a_correction(ledger):
+    record, _ = correct(corrected_traits={"conventions": 5})
+    assert record["rationale"] is None
+
+
+def test_a_correction_made_after_a_reveal_carries_the_flag(ledger):
+    """The leakage control ticket 04 built, now stamped where it was always meant to land."""
+    plain, _ = correct(corrected_traits={"conventions": 5})
+    anchored, _ = correct(corrected_traits={"conventions": 4}, gold_revealed=True)
+    assert plain["gold_revealed"] is False
+    assert anchored["gold_revealed"] is True
+
+
+def test_records_are_appended_and_the_latest_is_current(ledger):
+    correct(corrected_traits={"conventions": 5}, rationale="first")
+    _, essay = correct(corrected_traits={"conventions": 2}, rationale="second")
+    stored = json.load(open(ledger))
+    assert len(stored) == 2
+    assert [r["rationale"] for r in stored] == ["first", "second"]
+    assert essay["traits"]["conventions"] == 2
+
+
+def test_an_earlier_record_is_never_mutated(ledger):
+    correct(corrected_traits={"conventions": 5}, rationale="first")
+    before = json.load(open(ledger))[0]
+    correct(corrected_traits={"conventions": 1}, rationale="second")
+    assert json.load(open(ledger))[0] == before
+
+
+def test_a_correction_survives_a_restart(ledger):
+    """Nothing is held in memory: the next build reads the same file from disk."""
+    _, essay = correct(corrected_traits={"argumentation": 6})
+    fresh = build_review.build_review(override_records=build_review.load_overrides(ledger),
+                                      expected_ids=ESSAYS)
+    after = next(e for e in fresh["essays"] if e["essay_id"] == ESSAYS[0])
+    assert after["traits"]["argumentation"] == 6
+    assert after["overridden"] is True
+
+
+def test_clearing_restores_the_ai_scores_and_keeps_the_history(ledger):
+    correct(corrected_traits={"argumentation": 6})
+    record, essay = correct(kind="cleared", rationale="on reflection the AI had it right")
+    assert essay["traits"] == essay["ai_traits"]
+    assert essay["overridden"] is False
+    assert essay["reviewed"] is True
+    assert len(json.load(open(ledger))) == 2
+    assert record["recomputed_holistic"] == essay["ai_holistic"]
+
+
+def test_a_dissent_records_a_reason_and_no_number(ledger):
+    record, essay = correct(kind="dissent", rationale="four traits at 4 cannot be a 2")
+    assert "corrected_traits" not in record
+    assert record["rationale"] == "four traits at 4 cannot be a 2"
+    assert essay["traits"] == essay["ai_traits"]
+    assert essay["holistic"] == essay["ai_holistic"]
+    assert essay["dissent"]["rationale"] == "four traits at 4 cannot be a 2"
+
+
+def test_a_dissent_after_a_correction_does_not_claim_the_correction_s_movement(ledger):
+    """The ledger is read by hand, so each record has to describe its own effect. A dissent moves
+    no number; stamping it against the AI baseline would make it read as the cause of the earlier
+    correction's move."""
+    _, corrected = correct(corrected_traits={c: 6 for c in build_review.CRITERIA})
+    assert corrected["holistic"] != corrected["ai_holistic"]
+    record, essay = correct(kind="dissent", rationale="the number is still wrong")
+    assert record["original_holistic"] == corrected["holistic"]
+    assert record["recomputed_holistic"] == corrected["holistic"]
+    assert record["score_unchanged"] is True
+    assert record["ai_holistic"] == essay["ai_holistic"]
+
+
+def test_clearing_records_the_move_back_that_it_caused(ledger):
+    """Withdrawing a correction that had moved the score moves it back, and the record says so."""
+    _, corrected = correct(corrected_traits={c: 6 for c in build_review.CRITERIA})
+    record, essay = correct(kind="cleared", rationale="on reflection the AI had it right")
+    assert record["original_holistic"] == corrected["holistic"]
+    assert record["recomputed_holistic"] == essay["ai_holistic"]
+    assert record["score_unchanged"] is False
+
+
+def _pending_files(path):
+    """Half-written ledgers left beside the real one.
+
+    `ledger.write_json` names each pending file for its process and thread, so no test can name
+    one in advance -- scanning the directory is the only way to ask whether one was left behind.
+    """
+    return [f for f in os.listdir(os.path.dirname(path)) if f.endswith(".pending")]
+
+
+def _unhurried_build(**kwargs):
+    """The real build, with the thread yielding inside it.
+
+    `record_correction` runs two of these between reading the ledger and writing it back, so this
+    is the window the lock has to cover -- widened from the tens of milliseconds it really takes
+    to something the scheduler is certain to interleave, rather than leaving the test to hope the
+    GIL switches at the right moment.
+    """
+    time.sleep(0.02)
+    return build_review.build_review(**kwargs)
+
+
+def _saved_together(count, **kwargs):
+    """Run `count` saves that all start at once, and return what the ledger ended up holding."""
+    ready = threading.Barrier(count)
+    failures = []
+
+    def save(n):
+        try:
+            ready.wait(timeout=10)
+            correct(rationale="s%d" % n, build=_unhurried_build,
+                    corrected_traits={"conventions": n + 1}, **kwargs)
+        except BaseException as exc:                       # noqa: BLE001 - reported below
+            failures.append(exc)
+
+    threads = [threading.Thread(target=save, args=(n,)) for n in range(count)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join(timeout=30)
+    assert not failures, failures
+
+
+def test_concurrent_saves_all_land_in_the_ledger(ledger):
+    """Two tabs, two saves inside the two-build window.
+
+    The endpoint is a sync `def`, so FastAPI runs it on anyio's threadpool and these really are
+    concurrent. The ledger's whole contract is that nothing is ever lost, so every save has to
+    survive, none may be written twice, and what lands has to still pass the guards.
+    """
+    savers = 6
+    _saved_together(savers)
+
+    records = build_review.load_overrides(ledger)
+    build_review.check_override_records(records)
+    assert sorted(r["rationale"] for r in records) == sorted("s%d" % n for n in range(savers))
+    assert not _pending_files(ledger)
+
+
+def test_a_concurrent_save_still_describes_the_state_it_landed_on(ledger):
+    """Each record says what IT did, measured against the score standing immediately before it
+    (ui_14). That claim is read off a build of the records as they stood when the save began, so
+    a save landing in between makes it a statement about a ledger that never existed: the record
+    would report a move from a score that was already superseded by the time it was written.
+
+    This is what the lock spanning the whole read-modify-write buys, and what a lock around the
+    append alone would miss -- the append re-reads, so nothing is lost either way, but the number
+    the record carries about itself is formed before that re-read.
+    """
+    savers = 6
+    _saved_together(savers)
+
+    records = build_review.load_overrides(ledger)
+    for i, record in enumerate(records):
+        landed_on = build_review.build_review(override_records=records[:i], expected_ids=ESSAYS)
+        standing = next(e["holistic"] for e in landed_on["essays"]
+                        if e["essay_id"] == record["essay_id"])
+        assert record["original_holistic"] == standing, record["rationale"]
+        assert record["score_unchanged"] is (record["recomputed_holistic"] == standing)
+
+
+def test_a_write_that_fails_partway_leaves_the_ledger_as_it_was(ledger, monkeypatch):
+    """The whole list is rewritten on every append, so a half-finished write must not be able to
+    take the append-only record with it."""
+    correct(corrected_traits={"conventions": 5}, rationale="first")
+    before = json.load(open(ledger))
+
+    def explode(*args, **kwargs):
+        raise IOError("no space left on device")
+
+    monkeypatch.setattr(ledger_module.json, "dump", explode)
+    with pytest.raises(IOError):
+        correct(corrected_traits={"conventions": 2}, rationale="second")
+    assert json.load(open(ledger)) == before
+    assert not _pending_files(ledger)
+
+
+def test_a_malformed_trait_score_names_itself_instead_of_raising(ledger):
+    """The values arrive from an HTTP body, so they are checked before anything coerces them --
+    otherwise int("six") raises past the guard and the caller sees an unexplained crash."""
+    for traits, expected in ((({"argumentation": "six"}), "not a whole number"),
+                             (([6]), "expected an object"),
+                             (({"argumentation": 11}), "outside the 1-6 scale")):
+        with pytest.raises(build_review.OverrideError) as exc:
+            correct(corrected_traits=traits)
+        assert expected in str(exc.value)
+    with pytest.raises(build_review.OverrideError) as exc:
+        correct(corrected_traits={"conventions": 5}, rationale=5)
+    assert "expected text" in str(exc.value)
+    assert not os.path.exists(ledger)
+
+
+def test_a_trait_score_that_is_not_whole_is_refused_rather_than_truncated(ledger):
+    """int() would take 5.9 to 5 and True to 1 without raising, re-scoring the essay through the
+    frozen aggregator at a value nobody wrote."""
+    for value in (5.9, True):
+        with pytest.raises(build_review.OverrideError) as exc:
+            correct(corrected_traits={"argumentation": value})
+        assert "whole number" in str(exc.value)
+        assert repr(value) in str(exc.value)
+    assert not os.path.exists(ledger)
+
+
+def test_the_kind_stored_is_the_kind_the_guard_validated(ledger):
+    """A caller that leaves the kind unset gets it defaulted for validation, so the ledger has to
+    record that same default rather than the absence."""
+    record, _ = correct(kind=None, corrected_traits={"conventions": 5})
+    assert record["kind"] == "trait_correction"
+    assert json.load(open(ledger))[0]["kind"] == "trait_correction"
+
+
+def test_a_withdrawal_reason_does_not_travel_to_the_next_correction(ledger):
+    """ui_15: a reason belongs to the record kind it was typed for. Each of the three records
+    below carries only the reason written for it."""
+    correct(corrected_traits={"conventions": 5}, rationale="spelling is minor")
+    _, cleared = correct(kind="cleared", rationale="on reflection the AI had it right")
+    assert cleared["override_rationale"] is None
+
+    correct(corrected_traits={"argumentation": 6})
+    assert [r["rationale"] for r in json.load(open(ledger))] == [
+        "spelling is minor", "on reflection the AI had it right", None]
+
+
+def test_a_dissent_is_distinct_from_a_trait_correction(ledger):
+    correct(corrected_traits={"conventions": 5}, rationale="conventions are fine")
+    _, essay = correct(kind="dissent", rationale="and the final number is still wrong")
+    assert essay["traits"]["conventions"] == 5
+    assert essay["dissent"]["rationale"] == "and the final number is still wrong"
+    kinds = [r["kind"] for r in json.load(open(ledger))]
+    assert kinds == ["trait_correction", "dissent"]
+
+
+def test_a_refused_record_is_not_written(ledger):
+    """A guard that rejects after writing would leave the ledger in the state it refused."""
+    with pytest.raises(build_review.OverrideError):
+        correct(corrected_traits={"argumentation": 11})
+    assert not os.path.exists(ledger)
+
+
+def test_a_refused_record_does_not_disturb_the_ones_already_there(ledger):
+    correct(corrected_traits={"conventions": 5})
+    before = json.load(open(ledger))
+    with pytest.raises(build_review.OverrideError):
+        correct(kind="dissent", rationale="")
+    assert json.load(open(ledger)) == before

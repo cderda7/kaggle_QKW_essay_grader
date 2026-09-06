@@ -13,8 +13,9 @@ import json
 
 import pytest
 
-from build_review import (AGGREGATOR_FILE, CRITERIA, AnnotationError, build_review,
-                          load_annotation)
+from build_review import (AGGREGATOR_FILE, CRITERIA, AnnotationError, OverrideError,
+                          build_review, check_override_records, load_annotation,
+                          override_state)
 
 # A short response with predictable wording, so quote-length limits are easy to reason about.
 ESSAY = (
@@ -420,14 +421,28 @@ def test_an_override_changes_the_traits_and_recomputes_the_holistic():
 
 
 def test_an_override_that_does_not_move_the_band_is_flagged_as_such():
-    """The measured common case (ui_9): a single-trait correction usually changes nothing."""
+    """The measured common case (ui_9/D2): a single-trait correction usually changes nothing.
+
+    The inputs are synthetic precisely so this is a fact rather than a coin toss -- the corpus
+    decides whether a given essay's correction crosses a cut, and a test that depended on that
+    could pass while asserting nothing about the case the ticket is built around."""
     record = {"essay_id": "E1", "corrected_traits": {"conventions": 3}}
     essay = _artifact([record])["essays"][0]
     assert essay["traits"]["conventions"] == 3
-    if essay["holistic"] == essay["ai_holistic"]:
-        assert essay["score_unchanged_by_override"] is True
-    else:
-        assert essay["score_unchanged_by_override"] is False
+    assert essay["overridden"] is True
+    assert essay["holistic"] == essay["ai_holistic"]
+    assert essay["score_unchanged_vs_ai"] is True
+    assert essay["score_unchanged_by_latest_record"] is True
+    assert essay["score_formation"]["distance_to_nearest_cut"] is not None
+
+
+def test_an_override_that_does_move_the_band_is_not_flagged_as_unchanged():
+    """The other half, so the flag above is not simply always true on these inputs."""
+    record = {"essay_id": "E1", "corrected_traits": {c: 6 for c in CRITERIA}}
+    essay = _artifact([record])["essays"][0]
+    assert essay["holistic"] != essay["ai_holistic"]
+    assert essay["score_unchanged_vs_ai"] is False
+    assert essay["score_unchanged_by_latest_record"] is False
 
 
 def test_the_latest_override_record_wins():
@@ -443,3 +458,229 @@ def test_an_override_for_another_essay_is_ignored():
     essay = _artifact([record])["essays"][0]
     assert essay["overridden"] is False
     assert essay["traits"] == essay["ai_traits"]
+
+
+# --- override guards ------------------------------------------------------------------------------
+#
+# overrides.json is diffable and hand-editable by design, so a typo in it must name itself rather
+# than quietly re-score an essay. Same stance as the annotation guards: hard error, all at once.
+
+def _refuses(records):
+    with pytest.raises(OverrideError) as exc:
+        check_override_records(records)
+    return str(exc.value)
+
+
+def test_a_trait_outside_the_scale_is_refused_and_named():
+    message = _refuses([{"essay_id": "E1", "corrected_traits": {"argumentation": 7}}])
+    assert "E1" in message and "argumentation=7" in message and "1-6" in message
+
+
+def test_a_correction_of_an_unknown_trait_is_refused_and_named():
+    message = _refuses([{"essay_id": "E1", "corrected_traits": {"handwriting": 4}}])
+    assert "E1" in message and "handwriting" in message
+
+
+def test_a_trait_score_that_is_not_a_number_is_refused():
+    message = _refuses([{"essay_id": "E1", "corrected_traits": {"conventions": "good"}}])
+    assert "conventions='good'" in message or "conventions=\'good\'" in message
+
+
+def test_a_fractional_trait_score_is_refused_rather_than_truncated():
+    """int(5.9) is 5, so a guard that only catches what int() rejects would re-score the essay
+    at a value nobody wrote."""
+    message = _refuses([{"essay_id": "E1", "corrected_traits": {"argumentation": 5.9}}])
+    assert "E1" in message and "argumentation=5.9" in message and "whole number" in message
+
+
+def test_a_boolean_trait_score_is_refused_rather_than_counted_as_one():
+    """int(True) is 1, a legal score, so this would otherwise pass every guard silently."""
+    message = _refuses([{"essay_id": "E1", "corrected_traits": {"conventions": True}}])
+    assert "E1" in message and "conventions=True" in message and "whole number" in message
+
+
+def test_a_whole_number_written_as_a_float_is_accepted():
+    """5.0 is how JSON may spell 5; rejecting wholeness must not mean rejecting the type."""
+    essay = _artifact([{"essay_id": "E1", "corrected_traits": {"conventions": 5.0}}])["essays"][0]
+    assert essay["traits"]["conventions"] == 5
+
+
+def test_an_essay_id_that_lost_its_quotes_is_refused_and_named():
+    """Ids in this corpus are numeric-looking strings, so dropping the quotes in a hand-edited
+    ledger is the natural slip. It matches no essay, so the record would sit in the file applying
+    to nothing at all -- the outcome the collect-all guards exist to prevent."""
+    message = _refuses([{"essay_id": 79938, "corrected_traits": {"argumentation": 4}}])
+    assert "79938" in message and "expected text" in message
+
+
+def test_a_record_naming_an_essay_outside_the_review_set_is_still_ignored():
+    """Only the type is checked. An unknown but well-typed id is a record about another essay,
+    not a mistake, and must keep passing the guard silently."""
+    records = [{"essay_id": "SOMEONE_ELSE", "corrected_traits": {"argumentation": 4}}]
+    assert check_override_records(records) == records
+    assert _artifact(records)["essays"][0]["overridden"] is False
+
+
+def test_a_record_without_an_essay_is_refused():
+    assert "no essay_id" in _refuses([{"corrected_traits": {"conventions": 3}}])
+
+
+def test_an_unknown_kind_is_refused_and_named():
+    message = _refuses([{"essay_id": "E1", "kind": "vibes",
+                         "corrected_traits": {"conventions": 3}}])
+    assert "vibes" in message
+
+
+def test_a_trait_correction_that_corrects_nothing_is_refused():
+    """Withdrawing is its own kind, so an empty correction is a mistake rather than a shorthand."""
+    message = _refuses([{"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {}}])
+    assert "corrects no trait" in message and "cleared" in message
+
+
+def test_a_dissent_carrying_a_trait_score_is_refused():
+    """A dissent is about the aggregator. A number on it would disguise it as a trait correction."""
+    message = _refuses([{"essay_id": "E1", "kind": "dissent", "rationale": "too low",
+                         "corrected_traits": {"conventions": 5}}])
+    assert "must not carry corrected_traits" in message
+
+
+def test_a_dissent_without_a_rationale_is_refused():
+    message = _refuses([{"essay_id": "E1", "kind": "dissent", "rationale": "  "}])
+    assert "rationale is the whole record" in message
+
+
+def test_every_bad_record_is_reported_at_once():
+    message = _refuses([
+        {"essay_id": "E1", "corrected_traits": {"argumentation": 9}},
+        {"essay_id": "E2", "corrected_traits": {"spelling": 3}},
+    ])
+    assert "2 override record problem(s)" in message
+    assert "E1" in message and "E2" in message
+
+
+def test_a_bad_record_fails_the_build_rather_than_re_scoring_an_essay():
+    with pytest.raises(OverrideError):
+        _artifact([{"essay_id": "E1", "corrected_traits": {"argumentation": 0}}])
+
+
+# --- current state is a fold over the trail -------------------------------------------------------
+
+def test_state_is_empty_for_an_essay_nobody_has_touched():
+    state = override_state([], "E1")
+    assert state["corrected_traits"] is None and state["dissent"] is None
+    assert state["records"] == 0
+
+
+def test_a_dissent_does_not_erase_a_trait_correction():
+    """Latest wins per section, not wholesale (ui_12). The two answer different questions, so a
+    later dissent must not silently undo an earlier correction."""
+    records = [
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 5}},
+        {"essay_id": "E1", "kind": "dissent", "rationale": "the map is wrong here"},
+    ]
+    essay = _artifact(records)["essays"][0]
+    assert essay["traits"]["conventions"] == 5
+    assert essay["dissent"]["rationale"] == "the map is wrong here"
+    assert essay["overridden"] is True
+
+
+def test_a_trait_correction_does_not_erase_a_dissent():
+    records = [
+        {"essay_id": "E1", "kind": "dissent", "rationale": "the map is wrong here"},
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 5}},
+    ]
+    essay = _artifact(records)["essays"][0]
+    assert essay["dissent"]["rationale"] == "the map is wrong here"
+    assert essay["traits"]["conventions"] == 5
+
+
+def test_a_dissent_alone_changes_no_trait_and_no_score():
+    record = {"essay_id": "E1", "kind": "dissent", "rationale": "too generous"}
+    essay = _artifact([record])["essays"][0]
+    assert essay["traits"] == essay["ai_traits"]
+    assert essay["holistic"] == essay["ai_holistic"]
+    assert essay["overridden"] is False
+    assert essay["reviewed"] is True
+
+
+# --- clearing -------------------------------------------------------------------------------------
+
+def test_clearing_returns_the_essay_to_the_ai_scores():
+    records = [
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 6}},
+        {"essay_id": "E1", "kind": "cleared"},
+    ]
+    essay = _artifact(records)["essays"][0]
+    assert essay["traits"] == essay["ai_traits"]
+    assert essay["holistic"] == essay["ai_holistic"]
+    assert essay["overridden"] is False
+
+
+def test_clearing_does_not_erase_the_record_that_it_happened():
+    records = [
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 6}},
+        {"essay_id": "E1", "kind": "cleared"},
+    ]
+    essay = _artifact(records)["essays"][0]
+    assert essay["reviewed"] is True
+    assert essay["override_records"] == 2
+    assert [t["kind"] for t in essay["override_trail"]] == ["trait_correction", "cleared"]
+
+
+def test_the_artifact_names_what_the_latest_record_was():
+    """The page narrates the last action, so it has to be told which action that was (ui_17)."""
+    correction = {"essay_id": "E1", "kind": "trait_correction",
+                  "corrected_traits": {"conventions": 5}}
+    dissent = {"essay_id": "E1", "kind": "dissent", "rationale": "the map is wrong"}
+    cleared = {"essay_id": "E1", "kind": "cleared"}
+    assert _artifact()["essays"][0]["latest_record_kind"] is None
+    assert _artifact([correction])["essays"][0]["latest_record_kind"] == "trait_correction"
+    assert _artifact([correction, dissent])["essays"][0]["latest_record_kind"] == "dissent"
+    assert _artifact([correction, cleared])["essays"][0]["latest_record_kind"] == "cleared"
+
+
+def test_a_withdrawal_reason_does_not_become_the_correction_textarea_s_content():
+    """A reason travels with the record kind it was typed for (ui_15). The reason for withdrawing
+    a correction is not a reason for making one, and `override_rationale` is what the page renders
+    back into the correction textarea and what the next save would carry."""
+    records = [
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 6},
+         "rationale": "the spelling is minor"},
+        {"essay_id": "E1", "kind": "cleared", "rationale": "on reflection the AI had it right"},
+    ]
+    essay = _artifact(records)["essays"][0]
+    assert essay["override_rationale"] is None
+    reasons = [t["rationale"] for t in essay["override_trail"]]
+    assert reasons == ["the spelling is minor", "on reflection the AI had it right"]
+
+
+def test_a_correction_after_a_clear_applies_again():
+    records = [
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 6}},
+        {"essay_id": "E1", "kind": "cleared"},
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 4}},
+    ]
+    assert _artifact(records)["essays"][0]["traits"]["conventions"] == 4
+
+
+def test_a_correction_matching_the_ai_scores_is_reviewed_but_not_overridden():
+    """`overridden` is about the scores as they stand, not about whether a record exists."""
+    record = {"essay_id": "E1", "corrected_traits": {"conventions": 2}}   # what the AI said
+    essay = _artifact([record])["essays"][0]
+    assert essay["overridden"] is False
+    assert essay["reviewed"] is True
+
+
+# --- what the record has to carry -----------------------------------------------------------------
+
+def test_the_trail_preserves_every_record_in_order():
+    records = [
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 5},
+         "recorded_at": "2026-09-05T10:00:00", "rationale": "first thought"},
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 1},
+         "recorded_at": "2026-09-05T11:00:00", "rationale": "second thought"},
+    ]
+    essay = _artifact(records)["essays"][0]
+    assert essay["traits"]["conventions"] == 1
+    assert [t["rationale"] for t in essay["override_trail"]] == ["first thought", "second thought"]
+    assert essay["override_rationale"] == "second thought"

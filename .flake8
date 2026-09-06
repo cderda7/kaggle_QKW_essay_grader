@@ -1,0 +1,27 @@
+[flake8]
+# The 100-column convention this repo already follows. Measured in CHARACTERS,
+# not bytes: several files carry em-dashes and other multi-byte characters, so a
+# byte-based check would reject lines that are within the convention. E501 counts
+# characters, which is the intended rule -- do not add a byte-based check.
+max-line-length = 100
+
+# `ignore` is deliberately left unset so flake8's own defaults stay in force
+# (E121,E123,E126,E226,E24,E704,W503,W504). That keeps the line-break-before-
+# binary-operator question (W503/W504) answered by the tool's default rather than
+# by a house rule nobody has needed to make.
+
+# node_modules is 1747 committed files from an accidental `npm i fastapi` (an
+# unrelated Express wrapper; the Python FastAPI comes from pip). It holds no
+# Python today, but the linter must not walk it. `extend-exclude` adds to
+# flake8's default exclude list instead of replacing it.
+extend-exclude =
+    node_modules
+
+# Two files predate the convention and are untouched by the ticket that added
+# this config; reformatting them here would churn unrelated code. They are
+# exempted from exactly the checks they trip -- not excluded outright -- so
+# pyflakes still reports real defects (undefined names, unused imports) in them.
+# Narrow this list when either file is next reformatted on purpose.
+per-file-ignores =
+    */evaluation/compute_qwk.py:E127,E131,E501
+    */grading/grade_essays.py:E127,E305,E501,E731,E741,F541

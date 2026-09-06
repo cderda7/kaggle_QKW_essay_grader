@@ -175,7 +175,15 @@
       },
       "ai_holistic": 3,
       "holistic": 3,
+      "holistic_before_latest_record": null,
       "overridden": false,
+      "reviewed": false,
+      "dissent": null,
+      "override_rationale": null,
+      "override_records": 0,
+      "latest_record_kind": null,
+      "latest_record_changed_traits": null,
+      "override_trail": [],
       "score_formation": {
         "weighted_trait_mean": 3.0,
         "log10_word_count": 2.5538830266438746,
@@ -214,7 +222,8 @@
           "argumentation": 0.35
         }
       },
-      "score_unchanged_by_override": false
+      "score_unchanged_vs_ai": false,
+      "score_unchanged_by_latest_record": false
     },
     {
       "essay_id": "0105e2e",
@@ -349,7 +358,15 @@
       },
       "ai_holistic": 2,
       "holistic": 2,
+      "holistic_before_latest_record": null,
       "overridden": false,
+      "reviewed": false,
+      "dissent": null,
+      "override_rationale": null,
+      "override_records": 0,
+      "latest_record_kind": null,
+      "latest_record_changed_traits": null,
+      "override_trail": [],
       "score_formation": {
         "weighted_trait_mean": 3.85,
         "log10_word_count": 2.2013971243204513,
@@ -388,7 +405,8 @@
           "argumentation": 0.35
         }
       },
-      "score_unchanged_by_override": false
+      "score_unchanged_vs_ai": false,
+      "score_unchanged_by_latest_record": false
     },
     {
       "essay_id": "019e8c3",
@@ -537,7 +555,15 @@
       },
       "ai_holistic": 4,
       "holistic": 4,
+      "holistic_before_latest_record": null,
       "overridden": false,
+      "reviewed": false,
+      "dissent": null,
+      "override_rationale": null,
+      "override_records": 0,
+      "latest_record_kind": null,
+      "latest_record_changed_traits": null,
+      "override_trail": [],
       "score_formation": {
         "weighted_trait_mean": 4.25,
         "log10_word_count": 2.705007959333336,
@@ -576,7 +602,8 @@
           "argumentation": 0.35
         }
       },
-      "score_unchanged_by_override": false
+      "score_unchanged_vs_ai": false,
+      "score_unchanged_by_latest_record": false
     }
   ]
 }
