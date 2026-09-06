@@ -12,6 +12,7 @@ what Starlette's template integration needs, and upgrading a shared dependency t
 a worse trade than a few format strings.
 """
 
+import datetime
 import glob
 import html
 import json
@@ -25,9 +26,10 @@ from fastapi.staticfiles import StaticFiles
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-from build_review import (ANNOTATION_DIR, CRITERIA, AnnotationError, build_review,  # noqa: E402
+from build_review import (ANNOTATION_DIR, AnnotationError, build_review,  # noqa: E402
                           load_overrides)
 from render import all_spans, response_html  # noqa: E402
+import gold  # noqa: E402
 
 # Cards are ordered by the weight each trait carries in the score, not alphabetically, so the trait
 # with the largest influence is read first. Organization and development tie at 0.25 and keep the
@@ -123,6 +125,119 @@ def criterion_card(name, crit):
     )
 
 
+def _num(value, places=2):
+    """A number as the page shows it: fixed places, real minus sign."""
+    return ("%.*f" % (places, value)).replace("-", "−")
+
+
+def _signed(value, places=2):
+    return ("+" if value >= 0 else "−") + ("%.*f" % (places, abs(value)))
+
+
+def _reveal_display(stamp):
+    """An ISO timestamp as a person reads it. The ledger keeps the ISO string; this is the eye's."""
+    try:
+        when = datetime.datetime.fromisoformat(stamp)
+    except ValueError:
+        return stamp
+    return when.strftime("%-d %b %Y at %H:%M")
+
+
+def formation_panel(essay):
+    """How the holistic was actually formed — collapsed, and reading straight off the artifact.
+
+    Every number here is a stored value (build_review._score_formation); nothing on this page
+    multiplies a coefficient by a feature. The panel exists because four trait cards beside a bare
+    N/6 assert that the traits produced it, and a substantial part of every score is length
+    (decisions_log.md ui_5).
+    """
+    f = essay["score_formation"]
+    band = (
+        '<p class="formation-band">s = <b>%s</b> falls in %s, the band for <b>%d/6</b>.'
+        % (_num(f["continuous_score"], 3), html.escape(f["band"]), essay["holistic"])
+    )
+    if f["distance_to_nearest_cut"] is not None:
+        up = f["nearest_cut_direction"] == "up"
+        band += (
+            ' The nearest cut point is <b>%s</b> %s — past it the score would be %d.'
+            % (_num(f["distance_to_nearest_cut"], 3), "above" if up else "below",
+               essay["holistic"] + (1 if up else -1))
+        )
+    band += "</p>"
+
+    leads = ("<b>Length moves this score further than a full point on all four traits.</b> "
+             if f["s_per_length_doubling"] > f["s_per_trait_point"] else "")
+    return (
+        '<details class="formation">'
+        '<summary>How this score was formed</summary>'
+        '<div class="formation-body">'
+        '<table class="formation-sum"><tbody>'
+        '<tr><th>Weighted trait mean</th><td class="num">%s</td>'
+        '<td class="num coef">× %s</td><td class="num term">%s</td></tr>'
+        '<tr><th>Length <span class="sub">%d words</span></th>'
+        '<td class="num">log₁₀ %s</td><td class="num coef">× %s</td>'
+        '<td class="num term">%s</td></tr>'
+        '<tr><th>Baseline</th><td class="num"></td><td class="num coef"></td>'
+        '<td class="num term">%s</td></tr>'
+        '</tbody><tfoot><tr><th>Continuous score s</th><td class="num"></td>'
+        '<td class="num coef"></td><td class="num term">%s</td></tr></tfoot></table>'
+        '%s'
+        '<dl class="formation-moves">'
+        '<div><dt>A point on every trait</dt><dd>%s</dd></div>'
+        '<div><dt>Twice as many words</dt><dd>%s</dd></div>'
+        '</dl>'
+        '<p class="formation-caveat">%sAcross the corpus, the correlation between word count and '
+        'the score this system gives is 0.820, against 0.688 for the human raters. Four trait '
+        'cards beside a single number imply the traits produced it; on their own, they did not.</p>'
+        '</div></details>'
+        # Three places on every term so the column adds up on screen: a sum whose addends are
+        # rounded harder than its total reads as an arithmetic error.
+        % (_num(f["weighted_trait_mean"]), _num(f["beta"][1], 3), _signed(f["trait_term"], 3),
+           f["word_count"], _num(f["log10_word_count"], 3), _num(f["beta"][2], 3),
+           _signed(f["length_term"], 3), _signed(f["intercept"], 3),
+           _num(f["continuous_score"], 3), band,
+           _signed(f["s_per_trait_point"]), _signed(f["s_per_length_doubling"]), leads)
+    )
+
+
+def gold_block(essay, record=None, score=None):
+    """The human rater's score: absent until asked for, and the asking goes on the record.
+
+    Nothing about it reaches the browser until a reveal has been recorded — this is a leakage
+    control, not a disclosure toggle, because a correction formed against the answer key would
+    launder gold labels into a later steering bank (decisions_log.md ui_4). It says what it is: the
+    CSV is on disk, and reading it there is neither prevented nor recorded.
+    """
+    if record is None:
+        return (
+            '<section class="gold" data-essay="%s">'
+            '<h3 class="gold-head">Human rater’s score</h3>'
+            '<p class="gold-note">Hidden so your own judgment forms first. Revealing it is '
+            'recorded, and every correction you make to this essay afterwards is flagged '
+            '<code>gold_revealed</code> — so corrections made with the answer key in view stay '
+            'identifiable, and can be kept out of anything that later steers the model.</p>'
+            '<button class="gold-reveal" type="button">Reveal the rater’s score</button>'
+            '<p class="gold-caveat">A record, not a restriction: the score sits in '
+            'personal_training_set.csv, and reading it there is neither prevented nor logged.</p>'
+            '</section>' % html.escape(essay["essay_id"])
+        )
+
+    gap = score - essay["holistic"]
+    comparison = ("same as this system’s" if gap == 0 else
+                  "%d %s this system’s %d"
+                  % (abs(gap), "above" if gap > 0 else "below", essay["holistic"]))
+    return (
+        '<section class="gold revealed" data-essay="%s" data-revealed="true">'
+        '<h3 class="gold-head">Human rater’s score</h3>'
+        '<p class="gold-value"><span class="gold-number">%d</span><span class="of">/6</span>'
+        '<span class="gold-gap">%s</span></p>'
+        '<p class="gold-note">Revealed %s. Corrections to this essay from here on carry '
+        '<code>gold_revealed: true</code> in their record.</p></section>'
+        % (html.escape(essay["essay_id"]), score, comparison,
+           html.escape(_reveal_display(record["revealed_at"])))
+    )
+
+
 def legend():
     swatches = "".join(
         '<span class="key"><span class="swatch c-%s"></span>%s</span>' % (c, c.capitalize())
@@ -139,6 +254,12 @@ def legend():
 def review_page(essay):
     spans = all_spans(essay["criteria"])
     cards = "".join(criterion_card(n, essay["criteria"][n]) for n in CARD_ORDER)
+
+    # Read at render time rather than joined into the artifact: the artifact is what /api/review
+    # serves, and the rater's score must not be in it.
+    record = next((r for r in gold.load_reveals() if r["essay_id"] == essay["essay_id"]), None)
+    revealed = gold_block(essay, record,
+                          gold.gold_score(essay["essay_id"]) if record else None)
     return page(
         "Review %s" % essay["essay_id"],
         '<header class="topbar"><a class="back" href="/">← all essays</a>'
@@ -154,17 +275,19 @@ def review_page(essay):
         '  </article>'
         '  <aside class="assessment-pane">'
         '    <div class="score"><span class="score-value">%d</span><span class="of">/6</span></div>'
+        '    %s'
         '    <h3 class="overview-label">Overview</h3>'
         '    <p class="overview">%s</p>'
         '    %s'
         '    <p class="pin-hint">Hover a trait to see only its evidence · click to pin '
         '· Esc to release</p>'
         '    %s'
+        '    %s'
         '  </aside>'
         '</main>'
         % (html.escape(essay["essay_id"]), essay["word_count"],
            response_html(essay["text"], spans), essay["holistic"],
-           html.escape(essay["overview"]), legend(), cards)
+           formation_panel(essay), html.escape(essay["overview"]), legend(), cards, revealed)
     )
 
 
@@ -214,6 +337,26 @@ def review_json(essay_id: str):
 @app.get("/api/review")
 def review_all():
     return artifact()
+
+
+@app.post("/api/gold/{essay_id}")
+def reveal_gold(essay_id: str):
+    """Disclose the human rater's score for one essay, and put the disclosure on the record.
+
+    POST rather than GET because it changes state: it writes the ledger entry ticket 05 reads to
+    stamp `gold_revealed` on later corrections. `find()` runs first, so this cannot be used to read
+    the answer key of an essay outside the review set.
+    """
+    essay = find(essay_id)
+    record, is_new = gold.record_reveal(essay_id)
+    return {
+        "essay_id": essay_id,
+        "gold_score": gold.gold_score(essay_id),
+        "holistic": essay["holistic"],
+        "revealed_at": record["revealed_at"],
+        "revealed_display": _reveal_display(record["revealed_at"]),
+        "already_revealed": not is_new,
+    }
 
 
 def preflight(stream=sys.stderr):

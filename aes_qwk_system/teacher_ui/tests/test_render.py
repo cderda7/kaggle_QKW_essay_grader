@@ -2,8 +2,6 @@
 
 import re
 
-import pytest
-
 from render import all_spans, paragraph_ranges, primary, response_html, segment
 
 TEXT = "Alpha beta gamma.\n\nDelta epsilon zeta.\n\nEta theta."

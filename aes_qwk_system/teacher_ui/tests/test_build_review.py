@@ -9,13 +9,12 @@ what the pipeline itself computed, that the gold score is absent, and that two b
 inputs are identical.
 """
 
-import copy
 import json
-import os
 
 import pytest
 
-from build_review import (CRITERIA, AnnotationError, build_review, load_annotation)
+from build_review import (AGGREGATOR_FILE, CRITERIA, AnnotationError, build_review,
+                          load_annotation)
 
 # A short response with predictable wording, so quote-length limits are easy to reason about.
 ESSAY = (
@@ -281,9 +280,10 @@ def test_every_problem_in_a_batch_is_reported_at_once(write_batch):
 
 # --- the artifact ------------------------------------------------------------------------------
 
+PRED_TRAITS = {"argumentation": 4, "organization": 3, "development": 3, "conventions": 2}
 PREDICTIONS = {
-    "E1": {"essay_id": "E1", "word_count": "60", "system_argumentation": "4",
-           "system_organization": "3", "system_development": "3", "system_conventions": "2"},
+    "E1": dict({"system_" + c: str(v) for c, v in PRED_TRAITS.items()},
+               essay_id="E1", word_count="60"),
 }
 MANIFEST = {"essay_ids": ["E1"]}
 
@@ -319,6 +319,68 @@ def test_the_artifact_holds_the_values_the_score_formation_panel_needs():
     for key in ("weighted_trait_mean", "log10_word_count", "word_count", "continuous_score",
                 "band", "cuts", "distance_to_nearest_cut", "beta", "weights"):
         assert key in formation, key
+
+
+def test_the_formation_terms_add_up_to_the_continuous_score():
+    """The panel shows a sum, so the stored terms have to be that sum -- a page that displays
+    addends which do not reach the total is worse than showing no derivation at all."""
+    formation = _artifact()["essays"][0]["score_formation"]
+    total = formation["intercept"] + sum(formation["terms"].values())
+    assert total == pytest.approx(formation["continuous_score"])
+    assert (formation["trait_term"] + formation["length_term"] + formation["intercept"]
+            == pytest.approx(formation["continuous_score"]))
+
+
+def test_each_term_is_labelled_with_the_feature_it_came_from():
+    """Terms are zipped from the aggregator's own feature list, so a future feature set cannot
+    silently relabel a coefficient."""
+    with open(AGGREGATOR_FILE) as f:
+        aggregator = json.load(f)
+    formation = _artifact()["essays"][0]["score_formation"]
+    assert list(formation["terms"]) == list(aggregator["features"])
+
+
+def test_the_length_contribution_is_stored_rather_than_left_to_be_inferred():
+    formation = _artifact()["essays"][0]["score_formation"]
+    assert formation["length_term"] is not None
+    assert formation["length_term"] == pytest.approx(
+        formation["beta"][2] * formation["log10_word_count"])
+
+
+def test_a_point_on_every_trait_moves_the_score_by_the_stated_amount():
+    """The sensitivity the panel prints is measured against the aggregator, not asserted."""
+    formation = _artifact()["essays"][0]["score_formation"]
+    raised = {"essay_id": "E1", "corrected_traits": {c: PRED_TRAITS[c] + 1 for c in CRITERIA}}
+    after = _artifact([raised])["essays"][0]["score_formation"]
+    assert (after["continuous_score"] - formation["continuous_score"]
+            == pytest.approx(formation["s_per_trait_point"]))
+
+
+def test_doubling_the_length_moves_the_score_by_the_stated_amount():
+    formation = _artifact()["essays"][0]["score_formation"]
+    doubled = dict(PREDICTIONS["E1"], word_count=str(2 * int(PREDICTIONS["E1"]["word_count"])))
+    after = build_review(predictions={"E1": doubled}, annotation={"E1": make_item()},
+                         essays=ESSAYS, expected_ids=["E1"],
+                         manifest=MANIFEST)["essays"][0]["score_formation"]
+    assert (after["continuous_score"] - formation["continuous_score"]
+            == pytest.approx(formation["s_per_length_doubling"]))
+
+
+def test_length_moves_this_system_further_than_the_traits_do():
+    """The uncomfortable fact the panel exists to state (ui_5). If this ever stops being true the
+    panel's lead sentence must stop being printed, so it is asserted rather than assumed."""
+    formation = _artifact()["essays"][0]["score_formation"]
+    assert formation["s_per_length_doubling"] > formation["s_per_trait_point"]
+
+
+def test_the_nearest_cut_point_is_named_with_its_direction():
+    formation = _artifact()["essays"][0]["score_formation"]
+    s, nearest = formation["continuous_score"], formation["distance_to_nearest_cut"]
+    assert formation["nearest_cut_direction"] in ("up", "down")
+    if formation["nearest_cut_direction"] == "up":
+        assert min(c for c in formation["cuts"] if c > s) - s == pytest.approx(nearest)
+    else:
+        assert s - max(c for c in formation["cuts"] if c <= s) == pytest.approx(nearest)
 
 
 def test_the_gold_score_is_absent_from_the_artifact():

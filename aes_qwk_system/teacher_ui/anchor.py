@@ -105,7 +105,7 @@ def anchor(essay_text, quote, occurrence=1, *, essay_id=None, criterion=None):
 
 
 def resolve_spans(essay_text, criteria, essay_id=None):
-    """Anchor every span in an annotation object's `criteria`. Returns a flat list of resolved spans.
+    """Anchor every span in an annotation object's `criteria`. Returns a flat list of spans.
 
     Collects every failure before raising, so one run reports all the bad quotes in an essay rather
     than making the annotator fix them one at a time.

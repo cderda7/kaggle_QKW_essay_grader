@@ -19,11 +19,13 @@ the source data directly is still possible and unrecorded — and it should be d
 
 **Status:** ready-for-agent
 
-- [ ] A score-formation panel is collapsed by default and preserves the page's ordinary reading experience
-- [ ] Expanded, it shows the weighted trait mean, the word count and its length term, the continuous score, the band, and the distance to the nearest cut point
-- [ ] Those values are read from the build artifact rather than recomputed in the page
-- [ ] The panel makes the length contribution explicit rather than leaving it to be inferred
-- [ ] The gold score is not present in the served page at all until it is deliberately revealed
-- [ ] Revealing the gold score for an essay is recorded
-- [ ] Override records created for that essay after a reveal carry the flag
-- [ ] The reveal control states plainly that it is recorded and why
+- [x] A score-formation panel is collapsed by default and preserves the page's ordinary reading experience
+- [x] Expanded, it shows the weighted trait mean, the word count and its length term, the continuous score, the band, and the distance to the nearest cut point
+- [x] Those values are read from the build artifact rather than recomputed in the page
+- [x] The panel makes the length contribution explicit rather than leaving it to be inferred
+- [x] The gold score is not present in the served page at all until it is deliberately revealed
+- [x] Revealing the gold score for an essay is recorded
+- [ ] Override records created for that essay after a reveal carry the flag — *the seam is
+      built and tested (`gold.was_revealed()` flips on reveal and survives restart), but no
+      override record exists to carry it until 05, which stamps from it*
+- [x] The reveal control states plainly that it is recorded and why
