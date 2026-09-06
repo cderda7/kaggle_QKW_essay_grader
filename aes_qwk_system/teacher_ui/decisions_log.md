@@ -532,3 +532,52 @@ in `spec_ui_v1.md`.
     truncating the real file in place, so an interrupted write lost every reveal already recorded
     rather than only the one being added. A second instance of one bug is how several findings in
     this review arose; fixing one and leaving the other would have invited a ninth.
+
+20. **The 100-column convention is now written down as a `.flake8` config, not enforced by hand**
+    (decision D13, review of ticket 05). A description of existing practice, not a new
+    constraint: no file was reformatted to make the tree pass, and the config was rejected as
+    finished only once `flake8` reported clean over the repo as it already stood.
+
+    *Context.* The 100-character line limit and the continuation-indent style have been followed
+    across this whole ladder, but nothing enforced them — there was no `setup.cfg`, `.flake8`,
+    `tox.ini`, `pyproject.toml` or pre-commit config anywhere in the repo. Hand enforcement
+    demonstrably failed twice during this ticket's review. Ticket 05 introduced the only nine
+    flake8 violations in the teacher_ui tree (E128 continuation indents in `test_app.py` and
+    `test_gold.py`), every untouched file being clean; and a characters-versus-bytes
+    disagreement over two lines cost real time — `app.py:373` was exactly 100 characters but 102
+    bytes, `static/app.js:84` was 98 characters and 102 bytes, both because these files carry
+    em-dashes. E501 counts CHARACTERS, which is the intended rule; the config says so in a
+    comment so the next reader does not re-derive it, and no byte-based check was added.
+
+    *Shape.* `.flake8` at the repo root rather than `setup.cfg`, because there is no `setup.py`
+    or `pyproject.toml` — this repo is not a Python package and a `setup.cfg` would imply one.
+    `ignore` is deliberately left unset so flake8's defaults stay in force, which leaves the
+    W503/W504 line-break question answered by the tool rather than by a house rule nobody has
+    needed to make. `node_modules` is excluded via `extend-exclude` (adding to flake8's defaults
+    rather than replacing them); it holds no Python today, but 1747 committed files are not
+    worth walking, and its removal is a separate change.
+
+    *The two legacy files.* `grading/grade_essays.py` and `evaluation/compute_qwk.py` predate the
+    convention and account for all 39 violations in the repo. They are exempted through
+    `per-file-ignores`, listing exactly the codes each one trips, rather than excluded outright —
+    so pyflakes still reports real defects (undefined names, unused imports) in them. Verified:
+    a probe import added to `compute_qwk.py` was still flagged F401.
+
+    *Alternatives:* reformatting the two legacy files, which would churn code this ticket never
+    touched; excluding them entirely, which would silence pyflakes there too; ignoring E501
+    globally, which would retract the one rule the config exists to state; a formatter (black,
+    ruff) or pre-commit hooks or CI wiring, each a separate decision with its own tradeoffs.
+
+    *Tradeoffs:* the repo is now committed to flake8's rule set and version, and a future flake8
+    that adds checks can fail a tree nobody changed. The `per-file-ignores` lists will go stale
+    as the two legacy files are edited, and nothing prunes them; the config says to narrow them
+    when either file is next reformatted on purpose. Nothing runs this automatically, so it
+    still only fires when someone invokes it — writing it down is what makes that invocation
+    mean the same thing for everyone.
+
+    *Defense:* the convention was already real and already being violated; the cheapest honest
+    fix is to state it in the form a tool can check. Per-file exemptions keep the rule total for
+    every file anyone is actually writing, while refusing to reformat unrelated code as the
+    price of admission. Verified across four invocation styles (`flake8`, `flake8 .`, an
+    explicit directory, explicit file paths), since `per-file-ignores` matches on the path as
+    given and a bare relative pattern would silently miss `./`-prefixed ones.
