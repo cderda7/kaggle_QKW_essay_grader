@@ -6,10 +6,13 @@ would corrupt the evidence the ladder is judged on.
 
 import json
 import os
+import threading
+import time
 
 import pytest
 
 import build_review
+import ledger as ledger_module
 import overrides
 from conftest import SOURCE_CSV
 
@@ -154,6 +157,77 @@ def test_clearing_records_the_move_back_that_it_caused(ledger):
     assert record["score_unchanged"] is False
 
 
+def _unhurried_build(**kwargs):
+    """The real build, with the thread yielding inside it.
+
+    `record_correction` runs two of these between reading the ledger and writing it back, so this
+    is the window the lock has to cover -- widened from the tens of milliseconds it really takes
+    to something the scheduler is certain to interleave, rather than leaving the test to hope the
+    GIL switches at the right moment.
+    """
+    time.sleep(0.02)
+    return build_review.build_review(**kwargs)
+
+
+def _saved_together(count, **kwargs):
+    """Run `count` saves that all start at once, and return what the ledger ended up holding."""
+    ready = threading.Barrier(count)
+    failures = []
+
+    def save(n):
+        try:
+            ready.wait(timeout=10)
+            correct(rationale="s%d" % n, build=_unhurried_build,
+                    corrected_traits={"conventions": n + 1}, **kwargs)
+        except BaseException as exc:                       # noqa: BLE001 - reported below
+            failures.append(exc)
+
+    threads = [threading.Thread(target=save, args=(n,)) for n in range(count)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join(timeout=30)
+    assert not failures, failures
+
+
+def test_concurrent_saves_all_land_in_the_ledger(ledger):
+    """Two tabs, two saves inside the two-build window.
+
+    The endpoint is a sync `def`, so FastAPI runs it on anyio's threadpool and these really are
+    concurrent. The ledger's whole contract is that nothing is ever lost, so every save has to
+    survive, none may be written twice, and what lands has to still pass the guards.
+    """
+    savers = 6
+    _saved_together(savers)
+
+    records = build_review.load_overrides(ledger)
+    build_review.check_override_records(records)
+    assert sorted(r["rationale"] for r in records) == sorted("s%d" % n for n in range(savers))
+    assert not [f for f in os.listdir(os.path.dirname(ledger)) if f.endswith(".pending")]
+
+
+def test_a_concurrent_save_still_describes_the_state_it_landed_on(ledger):
+    """Each record says what IT did, measured against the score standing immediately before it
+    (ui_14). That claim is read off a build of the records as they stood when the save began, so
+    a save landing in between makes it a statement about a ledger that never existed: the record
+    would report a move from a score that was already superseded by the time it was written.
+
+    This is what the lock spanning the whole read-modify-write buys, and what a lock around the
+    append alone would miss -- the append re-reads, so nothing is lost either way, but the number
+    the record carries about itself is formed before that re-read.
+    """
+    savers = 6
+    _saved_together(savers)
+
+    records = build_review.load_overrides(ledger)
+    for i, record in enumerate(records):
+        landed_on = build_review.build_review(override_records=records[:i], expected_ids=ESSAYS)
+        standing = next(e["holistic"] for e in landed_on["essays"]
+                        if e["essay_id"] == record["essay_id"])
+        assert record["original_holistic"] == standing, record["rationale"]
+        assert record["score_unchanged"] is (record["recomputed_holistic"] == standing)
+
+
 def test_a_write_that_fails_partway_leaves_the_ledger_as_it_was(ledger, monkeypatch):
     """The whole list is rewritten on every append, so a half-finished write must not be able to
     take the append-only record with it."""
@@ -163,7 +237,7 @@ def test_a_write_that_fails_partway_leaves_the_ledger_as_it_was(ledger, monkeypa
     def explode(*args, **kwargs):
         raise IOError("no space left on device")
 
-    monkeypatch.setattr(overrides.json, "dump", explode)
+    monkeypatch.setattr(ledger_module.json, "dump", explode)
     with pytest.raises(IOError):
         correct(corrected_traits={"conventions": 2}, rationale="second")
     assert json.load(open(ledger)) == before

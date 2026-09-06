@@ -479,3 +479,56 @@ in `spec_ui_v1.md`.
     AI's, so rewriting just the reason re-posts the standing traits: a real record, because the
     reason did change, but one that edited no trait. `latest_record_changed_traits` is read off
     the two folds `override_state` already computes, so the ledger format is untouched.
+
+19. **The ledgers are written under a per-file lock held across the whole read-modify-write**
+    (decision D12, review of ticket 05). An amendment to ui_7 rather than a replacement of it.
+    `ledger.py` owns two things: `lock(path)`, a reentrant per-path lock, and `write_json`, which
+    writes to a pending file named for this process and thread and then `os.replace`s it into
+    position. `overrides.record_correction` holds the lock from reading the existing records
+    through both builds to the append; `gold.record_reveal` holds it across its "one record per
+    essay" check and its write.
+
+    *What ui_7 got right, and still does.* The ledger is a plain JSON list on disk because it has
+    to be diffable, greppable and visible in a git history — the guards name an offending value
+    precisely so a person can open the file and fix it. Nothing here changes that. The record
+    format is untouched.
+
+    *The case it did not anticipate.* One teacher with two essay tabs open. `record_override` is a
+    sync `def`, so FastAPI dispatches it on anyio's threadpool rather than serialising it, and
+    ui_13 then put TWO full builds between reading the records and writing them back.
+
+    Two distinct things go wrong there, and they need different answers. Both writers used the
+    same `overrides.json.pending` name, so their `json.dump` calls could interleave into one
+    truncated file and the ledger that replaced the real one would be invalid JSON — after which
+    `load_overrides` raises on the way into every page load. That one the unique pending name
+    fixes on its own.
+
+    The second is subtler and is what the lock is really for. No record is lost even unlocked,
+    because `append` re-reads the ledger under its own lock and appends to that fresh list — a
+    fact worth stating, since the obvious lost-update story is not the defect here. What IS lost
+    is the record's account of itself. `original_holistic` and `score_unchanged` are formed from
+    a build of the records as they stood when the save BEGAN (ui_14: each record says what it
+    did, measured against the score standing immediately before it). A save landing in between
+    makes that a statement about a ledger that never existed — the record reports moving from a
+    score another record had already superseded. Measured: six concurrent saves, one record whose
+    `original_holistic` said 3 where the state it landed on was 2. A lock around the append alone
+    would not catch it, because the number is formed before that re-read.
+
+    *Alternatives:* SQLite, which serialises writes for free; making the endpoints async and
+    delegating the write to a single worker; a unique pending name alone.
+
+    *Tradeoffs:* the lock is per process, so it does not protect against a second uvicorn worker
+    or a hand edit racing a save. Two writers now queue rather than overlap, which for a
+    single-teacher tool costs nothing and for anything larger would be the wrong shape.
+
+    *Defense:* a database would trade the property ui_7 chose the format FOR — a human can read,
+    diff and repair this file — against a concurrency problem that one process's lock already
+    solves, and this is a local single-user tool by construction. A unique pending name alone is
+    not enough: it fixes the corrupt-file half and leaves the record's self-description wrong,
+    because that number is formed before the append re-reads. The lock has to span the builds,
+    which is exactly the part a lock around `append` alone would miss.
+
+    `gold.record_reveal` got the same treatment because it had the same shape — and was worse,
+    truncating the real file in place, so an interrupted write lost every reveal already recorded
+    rather than only the one being added. A second instance of one bug is how several findings in
+    this review arose; fixing one and leaving the other would have invited a ninth.

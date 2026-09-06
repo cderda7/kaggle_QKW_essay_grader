@@ -13,7 +13,6 @@ than a revision.
 """
 
 import datetime
-import json
 import os
 import sys
 
@@ -21,6 +20,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 import build_review  # noqa: E402
+import ledger  # noqa: E402
 
 
 def _now():
@@ -41,24 +41,16 @@ def append(record, path=None):
     it: a second copy here could be redirected on its own and leave this module appending to the
     committed audit record while the app read a temp one.
 
-    The whole list is rewritten, so the swap is made atomic with a sibling temp file and
-    `os.replace`. Truncating the real file first would put the entire append-only record, not just
-    the record being added, inside the window between truncation and a completed write.
+    The whole list is rewritten, so `ledger.write_json` makes the swap atomic, and the read and
+    the write happen under `ledger.lock` so a second writer cannot read this list before this
+    record has landed in it (ui_19).
     """
     path = build_review.OVERRIDES_FILE if path is None else path
-    records = build_review.load_overrides(path)
-    build_review.check_override_records(records + [record])
-    records.append(record)
-    pending = path + ".pending"
-    try:
-        with open(pending, "w") as f:
-            json.dump(records, f, indent=2, ensure_ascii=False)
-            f.write("\n")
-        os.replace(pending, path)
-    except BaseException:
-        if os.path.exists(pending):
-            os.remove(pending)
-        raise
+    with ledger.lock(path):
+        records = build_review.load_overrides(path)
+        build_review.check_override_records(records + [record])
+        records.append(record)
+        ledger.write_json(path, records)
     return record
 
 
@@ -89,44 +81,50 @@ def record_correction(essay_id, kind="trait_correction", corrected_traits=None, 
     holistic necessarily reads the record before it carries one, so the trail it returned quotes
     this record a field short; `override_state` is a pure fold over the records, not a third
     build, so the essay handed back matches the one a later GET rebuilds from the file.
+
+    The whole event runs under the ledger's lock, not just the append. Between reading the
+    existing records and writing the new one sit two full builds, and a concurrent save that read
+    the ledger inside that window would write a list this record was never in (ui_19).
     """
     path = build_review.OVERRIDES_FILE if path is None else path
     build = build_review.build_review if build is None else build
     kind = build_review.record_kind(kind)
 
-    existing = build_review.load_overrides(path)
-    build_review.check_override_records(existing + [{
-        "essay_id": essay_id,
-        "kind": kind,
-        "corrected_traits": corrected_traits or None,
-        "rationale": rationale,
-    }])
-    before = _essay(build(override_records=existing, **build_kwargs), essay_id)
+    with ledger.lock(path):
+        existing = build_review.load_overrides(path)
+        build_review.check_override_records(existing + [{
+            "essay_id": essay_id,
+            "kind": kind,
+            "corrected_traits": corrected_traits or None,
+            "rationale": rationale,
+        }])
+        before = _essay(build(override_records=existing, **build_kwargs), essay_id)
 
-    record = {
-        "essay_id": essay_id,
-        "kind": kind,
-        "recorded_at": now if now is not None else _now(),
-        "original_traits": dict(before["ai_traits"]),
-        "corrected_traits": {k: int(v) for k, v in (corrected_traits or {}).items()} or None,
-        "original_holistic": before["holistic"],
-        "ai_holistic": before["ai_holistic"],
-        "rationale": (rationale or "").strip() or None,
-        "gold_revealed": bool(gold_revealed),
-        "ladder_version": build_review.LADDER_VERSION,
-        "trait_run": build_review.TRAIT_RUN,
-        "aggregator": os.path.basename(build_review.AGGREGATOR_FILE),
-    }
-    if record["corrected_traits"] is None:
-        del record["corrected_traits"]
+        record = {
+            "essay_id": essay_id,
+            "kind": kind,
+            "recorded_at": now if now is not None else _now(),
+            "original_traits": dict(before["ai_traits"]),
+            "corrected_traits": {k: int(v) for k, v in (corrected_traits or {}).items()} or None,
+            "original_holistic": before["holistic"],
+            "ai_holistic": before["ai_holistic"],
+            "rationale": (rationale or "").strip() or None,
+            "gold_revealed": bool(gold_revealed),
+            "ladder_version": build_review.LADDER_VERSION,
+            "trait_run": build_review.TRAIT_RUN,
+            "aggregator": os.path.basename(build_review.AGGREGATOR_FILE),
+        }
+        if record["corrected_traits"] is None:
+            del record["corrected_traits"]
 
-    # The recomputed holistic is whatever the frozen aggregator produces for this record, obtained
-    # by running the build that would result from storing it -- never by recomputing it here.
-    stored = existing + [record]
-    after = _essay(build(override_records=stored, **build_kwargs), essay_id)
-    record["recomputed_holistic"] = after["holistic"]
-    record["score_unchanged"] = after["holistic"] == before["holistic"]
-    after["override_trail"] = build_review.override_state(stored, essay_id)["trail"]
+        # The recomputed holistic is whatever the frozen aggregator produces for this record,
+        # obtained by running the build that would result from storing it -- never by
+        # recomputing it here.
+        stored = existing + [record]
+        after = _essay(build(override_records=stored, **build_kwargs), essay_id)
+        record["recomputed_holistic"] = after["holistic"]
+        record["score_unchanged"] = after["holistic"] == before["holistic"]
+        after["override_trail"] = build_review.override_state(stored, essay_id)["trail"]
 
-    append(record, path)
-    return record, after
+        append(record, path)
+        return record, after

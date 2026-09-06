@@ -8,6 +8,7 @@ the value can be obtained through the app at all.
 import datetime
 import json
 import os
+import threading
 
 import pytest
 
@@ -88,3 +89,28 @@ def test_the_build_never_reads_the_score_column():
     from build_review import load_essays
     essays = load_essays()
     assert all(isinstance(v, str) for v in essays.values())
+
+
+def test_concurrent_reveals_of_one_essay_record_it_once(ledger):
+    """"One record per essay" is a read-modify-write, so it needs the same protection the
+    override ledger needs (ui_19). Two reveals arriving together would otherwise both find no
+    record and both append one, and the flag that says whether a correction was formed with the
+    answer key in view would be answered from a ledger that disagrees with itself."""
+    watchers = 6
+    ready = threading.Barrier(watchers)
+    results = []
+
+    def reveal():
+        ready.wait(timeout=10)
+        results.append(gold.record_reveal("0079938")[1])
+
+    threads = [threading.Thread(target=reveal) for _ in range(watchers)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join(timeout=30)
+
+    stored = json.load(open(ledger))
+    assert [r["essay_id"] for r in stored] == ["0079938"]
+    assert results.count(True) == 1
+    assert results.count(False) == watchers - 1

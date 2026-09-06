@@ -413,30 +413,32 @@ def test_static_assets_are_served_with_revalidation_forced(client):
         assert "no-cache" in headers.get("cache-control", "")
 
 
-def test_the_served_stylesheet_has_no_unterminated_comment(client):
-    """A stylesheet whose comment never closes swallows every rule after it, and the page renders
-    unstyled rather than broken -- nothing raises, nothing 500s, and every other test still
-    passes. Caught exactly that way while reflowing a section divider, so it is covered now."""
-    css = client.get("/static/app.css").text
-    assert css.count("/*") == css.count("*/"), "unbalanced CSS comment markers"
+def _live_css(css):
+    """The stylesheet as a browser is left with it: every comment span removed.
 
-    position, blocks, live = 0, 0, []
+    CSS comments do not nest, so a span runs to the first `*/`; an unterminated one runs to the
+    end of the file and takes every rule after it. Modelling that is the point -- the regression
+    this guards is a broken terminator, which raises nothing and 500s nothing and leaves the page
+    rendering unstyled while every other test still passes.
+    """
+    live, position = [], 0
     while True:
         start = css.find("/*", position)
         if start < 0:
             live.append(css[position:])
-            break
-        end = css.find("*/", start + 2)
-        assert end > start, "unterminated CSS comment at offset %d" % start
-        assert "/*" not in css[start + 2:end], "nested CSS comment at offset %d" % start
+            return "".join(live)
         live.append(css[position:start])
-        position, blocks = end + 2, blocks + 1
-    assert blocks, "no comments at all -- the file is probably not the stylesheet"
+        end = css.find("*/", start + 2)
+        if end < 0:
+            return "".join(live)
+        position = end + 2
 
-    # The rules the page depends on have to survive whatever the comments do. Each selector has to
-    # still head a rule once every comment span is cut out; merely occurring in the text would
-    # also be true of a selector that a runaway comment had swallowed.
-    live = "\n".join(live)
+
+def test_the_served_stylesheet_still_carries_the_rules_the_page_depends_on(client):
+    """Caught exactly this way while reflowing a section divider: one broken terminator commented
+    out the rest of the file. Each selector has to still head a live rule once the comment spans
+    are cut away -- merely occurring in the text is also true of a swallowed rule."""
+    live = _live_css(client.get("/static/app.css").text)
     for selector in (".formation", ".gold", ".override", ".card-score-select"):
         assert re.search(re.escape(selector) + r"(?![\w-])[^{};]*\{", live), selector
 
@@ -1048,7 +1050,7 @@ def test_a_trait_correction_that_corrects_nothing_never_reaches_the_ledger(clien
     is accepted by the server on purpose and appends a second record: the seam has no opinion
     about whether a teacher meant to decide the same thing twice, and the append-only ledger is
     the wrong place to start dropping records. What stops the accidental duplicate is a page
-    affordance -- `scoresMoved()`/`reasonRewritten()` in static/app.js, which refuses to POST an
+    affordance -- `scoresMoved()`/`rewritten()` in static/app.js, which refuses to POST an
     untouched form at all.
     """
     response = client.post("/api/override/%s" % essay_id,
