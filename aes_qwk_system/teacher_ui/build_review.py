@@ -56,6 +56,7 @@ POLARITIES = ("strength", "weakness")
 # the final score is wrong while the traits are not, and carries a rationale and no number;
 # `cleared` withdraws a trait correction without erasing the fact that it was made.
 OVERRIDE_KINDS = ("trait_correction", "dissent", "cleared")
+DEFAULT_OVERRIDE_KIND = "trait_correction"
 MIN_TRAIT, MAX_TRAIT = 1, 6
 
 MIN_QUOTE_WORDS = 3
@@ -355,12 +356,38 @@ def _score_formation(aggregator, traits, word_count):
     }
 
 
+def record_kind(kind):
+    """The kind a record counts as, in one place. The guard, the fold and the writer have to agree:
+    a record validated as a trait correction must be stored and read back as one, so none of them
+    may carry its own copy of this default."""
+    return kind or DEFAULT_OVERRIDE_KIND
+
+
+def _whole_number(value):
+    """A trait score has to be a whole number, and `int()` alone does not say so -- it truncates
+    5.9 to 5 and turns True into 1, either of which would re-score an essay through the frozen
+    aggregator without anything raising."""
+    if isinstance(value, bool):
+        return False
+    if isinstance(value, int):
+        return True
+    if isinstance(value, float):
+        return value.is_integer()
+    if isinstance(value, str):
+        try:
+            int(value)
+        except ValueError:
+            return False
+        return True
+    return False
+
+
 def _check_override(rec, index, problems):
     where = "override record %d (%s)" % (index, rec.get("essay_id") or "no essay_id")
     if not rec.get("essay_id"):
         problems.append("%s: has no essay_id" % where)
 
-    kind = rec.get("kind") or "trait_correction"
+    kind = record_kind(rec.get("kind"))
     if kind not in OVERRIDE_KINDS:
         problems.append("%s: kind=%r is not one of %s" % (where, kind, list(OVERRIDE_KINDS)))
         return
@@ -391,11 +418,10 @@ def _check_override(rec, index, problems):
             problems.append("%s: corrects unknown trait %r, expected one of %s"
                             % (where, name, list(CRITERIA)))
             continue
-        try:
-            score = int(value)
-        except (TypeError, ValueError):
+        if not _whole_number(value):
             problems.append("%s: %s=%r is not a whole number" % (where, name, value))
             continue
+        score = int(value)
         if not MIN_TRAIT <= score <= MAX_TRAIT:
             problems.append("%s: %s=%d is outside the %d-%d scale the rubric defines"
                             % (where, name, score, MIN_TRAIT, MAX_TRAIT))
@@ -426,13 +452,20 @@ def override_state(records, essay_id):
     record's silence on the other erase it would make a teacher's second action quietly undo their
     first. The append-only trail is preserved either way; this only decides how it is read back.
     See teacher_ui/decisions_log.md ui_12.
+
+    `rationale` belongs to the standing trait correction and to nothing else. Withdrawing a
+    correction takes its reason with it rather than inheriting the withdrawal's own reason: a
+    justification that survived the record it was written for would be offered back as the reason
+    for whatever the teacher does next, which is how a reason arguing the AI was right ends up
+    stored against a fresh correction. The withdrawal's reason stays in `trail`, where it names
+    the record it was typed for. See decisions_log.md ui_14 and ui_15.
     """
     mine = [r for r in records if r.get("essay_id") == essay_id]
     state = {"corrected_traits": None, "dissent": None, "rationale": None,
              "records": len(mine), "trail": []}
 
     for rec in mine:
-        kind = rec.get("kind") or "trait_correction"
+        kind = record_kind(rec.get("kind"))
         rationale = (rec.get("rationale") or "").strip() or None
         if kind == "trait_correction":
             state["corrected_traits"] = {k: int(v)
@@ -440,7 +473,7 @@ def override_state(records, essay_id):
             state["rationale"] = rationale
         elif kind == "cleared":
             state["corrected_traits"] = None
-            state["rationale"] = rationale
+            state["rationale"] = None
         elif kind == "dissent":
             state["dissent"] = {"rationale": rationale, "recorded_at": rec.get("recorded_at")}
         state["trail"].append({

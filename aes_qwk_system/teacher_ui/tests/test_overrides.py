@@ -52,11 +52,15 @@ def test_the_recorded_holistic_is_the_one_the_build_produces(ledger):
 
 
 def test_a_correction_that_does_not_move_the_band_is_recorded_as_such(ledger):
-    """The measured common case (ui_9/D2): one trait, one point, no visible effect."""
+    """The measured common case (ui_9/D2): one trait, one point, no visible effect.
+
+    Which corpus essay this lands on decides whether the band moves, so both branches are
+    asserted rather than only the interesting one. The same-band case itself is pinned down on
+    synthetic inputs in test_build_review and test_app, where it cannot go unexercised."""
     record, essay = correct(corrected_traits={"conventions": 6})
-    if record["recomputed_holistic"] == record["original_holistic"]:
-        assert record["score_unchanged"] is True
-        assert essay["score_unchanged_by_override"] is True
+    moved = record["recomputed_holistic"] != record["original_holistic"]
+    assert record["score_unchanged"] is not moved
+    assert essay["score_unchanged_by_override"] is not moved
 
 
 def test_the_record_carries_what_it_was_made_against(ledger):
@@ -179,6 +183,37 @@ def test_a_malformed_trait_score_names_itself_instead_of_raising(ledger):
         correct(corrected_traits={"conventions": 5}, rationale=5)
     assert "expected text" in str(exc.value)
     assert not os.path.exists(ledger)
+
+
+def test_a_trait_score_that_is_not_whole_is_refused_rather_than_truncated(ledger):
+    """int() would take 5.9 to 5 and True to 1 without raising, re-scoring the essay through the
+    frozen aggregator at a value nobody wrote."""
+    for value in (5.9, True):
+        with pytest.raises(build_review.OverrideError) as exc:
+            correct(corrected_traits={"argumentation": value})
+        assert "whole number" in str(exc.value)
+        assert repr(value) in str(exc.value)
+    assert not os.path.exists(ledger)
+
+
+def test_the_kind_stored_is_the_kind_the_guard_validated(ledger):
+    """A caller that leaves the kind unset gets it defaulted for validation, so the ledger has to
+    record that same default rather than the absence."""
+    record, _ = correct(kind=None, corrected_traits={"conventions": 5})
+    assert record["kind"] == "trait_correction"
+    assert json.load(open(ledger))[0]["kind"] == "trait_correction"
+
+
+def test_a_withdrawal_reason_does_not_travel_to_the_next_correction(ledger):
+    """ui_15: a reason belongs to the record kind it was typed for. Each of the three records
+    below carries only the reason written for it."""
+    correct(corrected_traits={"conventions": 5}, rationale="spelling is minor")
+    _, cleared = correct(kind="cleared", rationale="on reflection the AI had it right")
+    assert cleared["override_rationale"] is None
+
+    correct(corrected_traits={"argumentation": 6})
+    assert [r["rationale"] for r in json.load(open(ledger))] == [
+        "spelling is minor", "on reflection the AI had it right", None]
 
 
 def test_a_dissent_is_distinct_from_a_trait_correction(ledger):

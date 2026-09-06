@@ -259,13 +259,18 @@ def override_form(essay):
     rationale = html.escape(essay["override_rationale"] or "")
 
     if essay["dissent"]:
+        said = html.escape(essay["dissent"]["rationale"] or "")
         dissent = (
             '<div class="dissent recorded">'
             '<h4 class="dissent-head">Score dissent recorded</h4>'
             '<p class="dissent-said">%s</p>'
             '<p class="dissent-note">Stored against the aggregator, with no number attached \u2014 '
-            'the traits above still read as they were scored.</p></div>'
-            % html.escape(essay["dissent"]["rationale"] or "")
+            'the traits above still read as they were scored. Rewriting it below records a new '
+            'dissent that supersedes this one; the record above is kept either way.</p>'
+            '<textarea class="dissent-rationale" rows="2" '
+            'placeholder="Why is the final score wrong?">%s</textarea>'
+            '<button type="button" class="dissent-save">Replace dissent</button></div>'
+            % (said, said)
         )
     else:
         dissent = (
@@ -370,8 +375,8 @@ def review_page(essay):
         '<main class="review">'
         '  <article class="response-pane">'
         '    <h2 class="label">Instructions</h2>'
-        '    <p class="no-prompt">This corpus does not include the task prompt — the released data '
-        'is essay text and score only, so there are no instructions to show here.</p>'
+        '    <p class="no-prompt">This corpus does not include the task prompt — the released '
+        'data is essay text and score only, so there are no instructions to show here.</p>'
         '    <h2 class="label">Response</h2>'
         '    <div class="response">%s</div>'
         '  </article>'

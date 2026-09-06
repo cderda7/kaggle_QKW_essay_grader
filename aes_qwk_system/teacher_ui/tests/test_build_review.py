@@ -421,14 +421,26 @@ def test_an_override_changes_the_traits_and_recomputes_the_holistic():
 
 
 def test_an_override_that_does_not_move_the_band_is_flagged_as_such():
-    """The measured common case (ui_9): a single-trait correction usually changes nothing."""
+    """The measured common case (ui_9/D2): a single-trait correction usually changes nothing.
+
+    The inputs are synthetic precisely so this is a fact rather than a coin toss -- the corpus
+    decides whether a given essay's correction crosses a cut, and a test that depended on that
+    could pass while asserting nothing about the case the ticket is built around."""
     record = {"essay_id": "E1", "corrected_traits": {"conventions": 3}}
     essay = _artifact([record])["essays"][0]
     assert essay["traits"]["conventions"] == 3
-    if essay["holistic"] == essay["ai_holistic"]:
-        assert essay["score_unchanged_by_override"] is True
-    else:
-        assert essay["score_unchanged_by_override"] is False
+    assert essay["overridden"] is True
+    assert essay["holistic"] == essay["ai_holistic"]
+    assert essay["score_unchanged_by_override"] is True
+    assert essay["score_formation"]["distance_to_nearest_cut"] is not None
+
+
+def test_an_override_that_does_move_the_band_is_not_flagged_as_unchanged():
+    """The other half, so the flag above is not simply always true on these inputs."""
+    record = {"essay_id": "E1", "corrected_traits": {c: 6 for c in CRITERIA}}
+    essay = _artifact([record])["essays"][0]
+    assert essay["holistic"] != essay["ai_holistic"]
+    assert essay["score_unchanged_by_override"] is False
 
 
 def test_the_latest_override_record_wins():
@@ -470,6 +482,25 @@ def test_a_correction_of_an_unknown_trait_is_refused_and_named():
 def test_a_trait_score_that_is_not_a_number_is_refused():
     message = _refuses([{"essay_id": "E1", "corrected_traits": {"conventions": "good"}}])
     assert "conventions='good'" in message or "conventions=\'good\'" in message
+
+
+def test_a_fractional_trait_score_is_refused_rather_than_truncated():
+    """int(5.9) is 5, so a guard that only catches what int() rejects would re-score the essay
+    at a value nobody wrote."""
+    message = _refuses([{"essay_id": "E1", "corrected_traits": {"argumentation": 5.9}}])
+    assert "E1" in message and "argumentation=5.9" in message and "whole number" in message
+
+
+def test_a_boolean_trait_score_is_refused_rather_than_counted_as_one():
+    """int(True) is 1, a legal score, so this would otherwise pass every guard silently."""
+    message = _refuses([{"essay_id": "E1", "corrected_traits": {"conventions": True}}])
+    assert "E1" in message and "conventions=True" in message and "whole number" in message
+
+
+def test_a_whole_number_written_as_a_float_is_accepted():
+    """5.0 is how JSON may spell 5; rejecting wholeness must not mean rejecting the type."""
+    essay = _artifact([{"essay_id": "E1", "corrected_traits": {"conventions": 5.0}}])["essays"][0]
+    assert essay["traits"]["conventions"] == 5
 
 
 def test_a_record_without_an_essay_is_refused():
@@ -576,6 +607,21 @@ def test_clearing_does_not_erase_the_record_that_it_happened():
     assert essay["reviewed"] is True
     assert essay["override_records"] == 2
     assert [t["kind"] for t in essay["override_trail"]] == ["trait_correction", "cleared"]
+
+
+def test_a_withdrawal_reason_does_not_become_the_correction_textarea_s_content():
+    """A reason travels with the record kind it was typed for (ui_15). The reason for withdrawing
+    a correction is not a reason for making one, and `override_rationale` is what the page renders
+    back into the correction textarea and what the next save would carry."""
+    records = [
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 6},
+         "rationale": "the spelling is minor"},
+        {"essay_id": "E1", "kind": "cleared", "rationale": "on reflection the AI had it right"},
+    ]
+    essay = _artifact(records)["essays"][0]
+    assert essay["override_rationale"] is None
+    reasons = [t["rationale"] for t in essay["override_trail"]]
+    assert reasons == ["the spelling is minor", "on reflection the AI had it right"]
 
 
 def test_a_correction_after_a_clear_applies_again():

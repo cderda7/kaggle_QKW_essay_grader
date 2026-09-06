@@ -331,3 +331,35 @@ in `spec_ui_v1.md`.
     inherits the reason the page was rendered with — that text argues *for* the correction being
     withdrawn — so only a reason the teacher typed for the withdrawal travels with the `cleared`
     record.
+
+15. **A trait correction can be withdrawn; a dissent can only be superseded** (decision D8, review
+    of ticket 05). `cleared` withdraws a trait correction and restores the AI's scores. There is
+    no kind that withdraws a dissent: a teacher who recorded one in error or with a typo writes a
+    new dissent over it, and the latest-wins fold in `override_state` makes the newest one
+    current. The dissent textarea is therefore rendered even once a dissent stands, prefilled with
+    the standing reason and beside the record it would replace.
+
+    *Alternatives:* a fourth kind (`dissent_cleared`) so both halves of the form are symmetrical;
+    leave the dissent unrevisable, which is where the first cut of ticket 05 landed.
+
+    *Tradeoffs:* the asymmetry has to be explained rather than inferred, and a dissent recorded
+    against the wrong essay stays in the trail forever, answerable only by a later dissent saying
+    so. A fourth kind would close that, at the cost of a persisted-schema change and a second
+    withdrawal concept to keep coherent with `cleared`.
+
+    *Defense:* the two disagreements are not the same shape, so a symmetrical form would be a
+    false symmetry. A trait correction *changes a number the aggregator consumes*, so withdrawing
+    it has to restore the AI's input and there is a definite state to return to. A dissent changes
+    nothing and asserts something — that the fitted map is wrong here — and the honest way to
+    retract an assertion in an append-only record is to make a better one, not to delete it. That
+    is also what the ledger is for: a dissent, a correction of it, and the reasoning between them
+    is exactly the material a later steering bank would want, and a withdrawal would erase it from
+    the readback while leaving it in the trail, which is the worst of both. Superseding needs no
+    new kind, no schema change, and no second meaning for "withdrawn", so ui_v1 stops here.
+
+    The same principle settles where a rationale lives (ui_14, mirrored). A reason travels with
+    the record kind it was typed for and no further: withdrawing a correction takes the reason
+    with it rather than offering it back as the justification for whatever the teacher does next.
+    Without that, clearing a correction with "on reflection the AI had it right" left that
+    sentence in the correction textarea, and the teacher's next correction was stored against a
+    reason arguing it should not have been made.

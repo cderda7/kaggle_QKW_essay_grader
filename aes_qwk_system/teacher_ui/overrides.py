@@ -81,10 +81,13 @@ def record_correction(essay_id, kind="trait_correction", corrected_traits=None, 
 
     The incoming values are checked before anything coerces them, so a malformed trait score names
     itself through the guard a hand-edited ledger would hit rather than raising a TypeError at the
-    coercion and reaching the caller as an unexplained crash.
+    coercion and reaching the caller as an unexplained crash. The kind is normalised through the
+    same rule the guard applies, so what the ledger stores is the kind that was actually
+    validated rather than whatever the caller left unset.
     """
     path = build_review.OVERRIDES_FILE if path is None else path
     build = build_review.build_review if build is None else build
+    kind = build_review.record_kind(kind)
 
     existing = build_review.load_overrides(path)
     build_review.check_override_records(existing + [{

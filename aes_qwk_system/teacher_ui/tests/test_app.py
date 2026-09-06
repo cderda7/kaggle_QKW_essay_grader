@@ -489,20 +489,60 @@ def test_a_correction_recomputes_the_holistic_and_shows_both(client, essay_id, l
     assert "moved this from %d to %d" % (after["ai_holistic"], after["holistic"]) in body
 
 
-def test_a_correction_that_changes_nothing_opens_the_panel_and_explains(client, essay_id,
-                                                                       ledger_overrides):
+@pytest.fixture
+def same_band_essay(monkeypatch):
+    """An essay whose correction provably lands in the same band, served through the real route.
+
+    Which corpus essay the fixture yields decides whether a correction crosses a cut, so a test
+    built on it could pass without ever reaching the case ui_9/D2 exists for. The build seam
+    accepts injected predictions, essays and a manifest, so the case is constructed instead."""
+    import app as application
+    from test_build_review import ESSAYS, MANIFEST, PREDICTIONS, make_item
+
+    record = {"essay_id": "E1", "kind": "trait_correction",
+              "corrected_traits": {"conventions": 3}}
+    built = application.build_review(predictions=PREDICTIONS, annotation={"E1": make_item()},
+                                     essays=ESSAYS, override_records=[record],
+                                     expected_ids=["E1"], manifest=MANIFEST)
+    monkeypatch.setattr(application, "artifact", lambda: built)
+    return built["essays"][0]
+
+
+def test_a_correction_that_changes_nothing_opens_the_panel_and_explains(client, same_band_essay):
     """ui_9/D2: the control's dominant experience is that it appears not to work. The panel
     opening itself is what turns that into an explanation instead of a bug report."""
-    response = client.post("/api/override/%s" % essay_id,
-                           json={"corrected_traits": {"conventions": 6}})
-    essay = response.json()["essay"]
-    if not essay["score_unchanged_by_override"]:
-        pytest.skip("this essay's conventions correction did move the band")
+    essay = same_band_essay
+    assert essay["overridden"] is True
+    assert essay["holistic"] == essay["ai_holistic"]
+    assert essay["score_unchanged_by_override"] is True
 
-    body = client.get("/essay/%s" % essay_id).text
+    body = client.get("/essay/E1").text
     assert '<details class="formation" open>' in body
+    distance = ("%.3f" % essay["score_formation"]["distance_to_nearest_cut"]).replace("-", "\u2212")
+    assert "The nearest cut point is <b>%s</b>" % distance in body
     assert "did not move the score" in body
-    assert "nearest cut point" in body
+
+
+def test_a_correction_that_moves_the_score_leaves_the_panel_collapsed(client, monkeypatch):
+    """The panel opens itself only when the correction appeared to do nothing, so the same
+    synthetic inputs are used for the other half rather than a corpus essay that may do either."""
+    import app as application
+    from test_build_review import ESSAYS, MANIFEST, PREDICTIONS, make_item
+
+    record = {"essay_id": "E1", "kind": "trait_correction",
+              "corrected_traits": {"argumentation": 6, "organization": 6,
+                                   "development": 6, "conventions": 6}}
+    built = application.build_review(predictions=PREDICTIONS, annotation={"E1": make_item()},
+                                     essays=ESSAYS, override_records=[record],
+                                     expected_ids=["E1"], manifest=MANIFEST)
+    monkeypatch.setattr(application, "artifact", lambda: built)
+    essay = built["essays"][0]
+    assert essay["holistic"] != essay["ai_holistic"]
+
+    body = client.get("/essay/E1").text
+    assert '<details class="formation">' in body
+    assert "did not move the score" not in body
+    assert "moved this from %d to %d" % (essay["ai_holistic"], essay["holistic"]) in body
 
 
 def test_the_page_shows_the_ai_score_beside_a_corrected_trait(client, essay_id, ledger_overrides):
@@ -628,6 +668,57 @@ def test_a_malformed_correction_is_a_naming_400_not_a_crash(client, essay_id, le
     assert names in response.json()["detail"]
     assert essay_id in response.json()["detail"]
     assert not os.path.exists(ledger_overrides)
+
+
+def test_an_absent_kind_is_stored_as_the_kind_the_guard_validated(client, essay_id,
+                                                                 ledger_overrides):
+    """An explicit JSON null validates as a trait correction, so it has to be written down as
+    one. The ledger is read by hand; a record whose kind is null does not say what it is."""
+    record = client.post("/api/override/%s" % essay_id,
+                         json={"kind": None,
+                               "corrected_traits": {"conventions": 5}}).json()["record"]
+    assert record["kind"] == "trait_correction"
+    assert json.load(open(ledger_overrides))[0]["kind"] == "trait_correction"
+
+
+def test_a_recorded_dissent_can_be_replaced_by_writing_a_newer_one(client, essay_id,
+                                                                   ledger_overrides):
+    """ui_15: a dissent is not withdrawn, it is superseded. The page has to keep offering the
+    control, or a dissent recorded with a typo is permanent."""
+    client.post("/api/override/%s" % essay_id,
+                json={"kind": "dissent", "rationale": "the map is wrong here"})
+    body = client.get("/essay/%s" % essay_id).text
+    assert "the map is wrong here" in body
+    assert 'class="dissent-rationale"' in body
+    assert 'class="dissent-save"' in body
+
+    client.post("/api/override/%s" % essay_id,
+                json={"kind": "dissent", "rationale": "length is carrying this score"})
+    essay = client.get("/api/review/%s" % essay_id).json()
+    assert essay["dissent"]["rationale"] == "length is carrying this score"
+    assert [r["kind"] for r in json.load(open(ledger_overrides))] == ["dissent", "dissent"]
+    assert [t["rationale"] for t in essay["override_trail"]] == ["the map is wrong here",
+                                                                 "length is carrying this score"]
+
+
+def test_a_withdrawal_reason_is_not_offered_back_as_the_next_correction_s(client, essay_id,
+                                                                          ledger_overrides):
+    """The full sequence from the finding: correct with reason A, clear with reason B, correct
+    again typing nothing. Record three must carry no reason rather than B."""
+    client.post("/api/override/%s" % essay_id,
+                json={"corrected_traits": {"conventions": 5}, "rationale": "spelling is minor"})
+    client.post("/api/override/%s" % essay_id,
+                json={"kind": "cleared", "rationale": "on reflection the AI had it right"})
+
+    essay = client.get("/api/review/%s" % essay_id).json()
+    assert essay["override_rationale"] is None
+    assert "on reflection the AI had it right" not in client.get("/essay/%s" % essay_id).text
+
+    client.post("/api/override/%s" % essay_id,
+                json={"corrected_traits": {"argumentation": 4}, "rationale": ""})
+    stored = json.load(open(ledger_overrides))
+    assert [r["rationale"] for r in stored] == ["spelling is minor",
+                                                "on reflection the AI had it right", None]
 
 
 # --- the essay list ------------------------------------------------------------------------------

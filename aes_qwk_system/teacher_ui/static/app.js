@@ -81,10 +81,10 @@
 
 // Revealing the human rater's score.
 //
-// The value is not in this page — the server withheld it — so the click has to go and ask for it,
-// and asking is what gets recorded. That ordering is the point: there is no local toggle that could
-// show the number without the ledger entry existing (decisions_log.md ui_4). On reload the server
-// renders the revealed block itself, so this path runs once per essay.
+// The value is not in this page — the server withheld it — so the click has to go and ask for
+// it, and asking is what gets recorded. That ordering is the point: there is no local toggle
+// that could show the number without the ledger entry existing (decisions_log.md ui_4). On
+// reload the server renders the revealed block itself, so this path runs once per essay.
 
 (function () {
   var block = document.querySelector(".gold[data-essay]:not([data-revealed])");
@@ -153,6 +153,7 @@
   var status = form.querySelector(".override-status");
   var rationale = form.querySelector(".override-rationale");
   var clear = form.querySelector(".override-clear");
+  var dissentReason = form.querySelector(".dissent-rationale");
   var selects = Array.prototype.slice.call(document.querySelectorAll(".card-score-select"));
 
   // A textarea's defaultValue is the text the server rendered into it, so this asks the only
@@ -256,11 +257,18 @@
   }
 
   var dissent = form.querySelector(".dissent-save");
-  if (dissent) {
+  if (dissent && dissentReason) {
     dissent.addEventListener("click", function () {
-      var why = form.querySelector(".dissent-rationale").value;
+      // A recorded dissent is replaced by writing a newer one, never edited in place: the fold
+      // reads the latest, and the one being replaced stays in the trail. Re-posting the reason
+      // already standing would append a record saying the teacher decided the same thing twice.
+      var why = dissentReason.value;
       if (!why.trim()) {
         say("A dissent is a reason and no number, so the reason is the whole record.", true);
+        return;
+      }
+      if (why === dissentReason.defaultValue) {
+        say("That is the dissent already recorded — rewrite it to replace it.", true);
         return;
       }
       post({ kind: "dissent", rationale: why }, "Recording your dissent…");
