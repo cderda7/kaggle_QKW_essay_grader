@@ -136,3 +136,109 @@
     });
   });
 })();
+
+// Recording a correction.
+//
+// Nothing here computes a score. The selects gather what the teacher wants the traits to be, the
+// server runs the frozen aggregator and writes the record, and the page reloads to show whatever
+// the build produced — including a correction that changed nothing, which is the common case
+// (decisions_log.md ui_9). A local preview of the new holistic would be a second implementation of
+// a fitted map, and the one place its disagreement would surface is the panel built to be checked.
+
+(function () {
+  var form = document.querySelector(".override[data-essay]");
+  if (!form) return;
+
+  var essay = form.getAttribute("data-essay");
+  var status = form.querySelector(".override-status");
+  var selects = Array.prototype.slice.call(document.querySelectorAll(".card-score-select"));
+
+  // A click on the score control must not also pin the trait it sits inside.
+  selects.forEach(function (select) {
+    ["click", "keydown", "mousedown"].forEach(function (type) {
+      select.addEventListener(type, function (event) { event.stopPropagation(); });
+    });
+    select.addEventListener("change", function () {
+      var card = select.closest(".card");
+      if (card) card.classList.toggle("dirty", select.value !== select.getAttribute("data-score"));
+      var dirty = selects.some(function (s) { return s.value !== s.getAttribute("data-score"); });
+      form.classList.toggle("dirty", dirty);
+      say(dirty ? "Unsaved change — save it to recompute the score." : "");
+    });
+  });
+
+  function say(text, bad) {
+    status.textContent = text;
+    status.classList.toggle("bad", !!bad);
+  }
+
+  function post(body, working) {
+    var buttons = Array.prototype.slice.call(form.querySelectorAll("button"));
+    buttons.forEach(function (b) { b.disabled = true; });
+    say(working);
+
+    fetch("/api/override/" + encodeURIComponent(essay), {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (response) {
+      return response.json().then(function (data) {
+        if (!response.ok) throw new Error(data.detail || ("HTTP " + response.status));
+        return data;
+      });
+    }).then(function () {
+      // The server-rendered page is the truth: reload rather than patch the DOM, so the score,
+      // the before/after line and the panel's open state all come from the build.
+      window.location.reload();
+    }).catch(function (error) {
+      buttons.forEach(function (b) { b.disabled = false; });
+      say("Nothing was recorded — " + error.message, true);
+    });
+  }
+
+  form.querySelector(".override-save").addEventListener("click", function () {
+    // Two different "nothing to do" cases, and they need different advice. Saving an unchanged
+    // form would append a record identical to the one already stored: a trail of duplicates says
+    // the teacher acted three times when they decided once.
+    var changed = selects.some(function (s) { return s.value !== s.getAttribute("data-score"); });
+    if (!changed) {
+      say("Nothing has changed since your last save.", true);
+      return;
+    }
+    var corrected = {};
+    selects.forEach(function (s) {
+      if (s.value === s.getAttribute("data-ai")) return;
+      corrected[s.getAttribute("name")] = Number(s.value);
+    });
+    if (!Object.keys(corrected).length) {
+      say("Every trait now reads as the AI scored it — use “Clear the trait correction” to "
+          + "withdraw it, so the record says what happened.", true);
+      return;
+    }
+    post({
+      kind: "trait_correction",
+      corrected_traits: corrected,
+      rationale: form.querySelector(".override-rationale").value
+    }, "Recomputing through the aggregator…");
+  });
+
+  var clear = form.querySelector(".override-clear");
+  if (clear) {
+    clear.addEventListener("click", function () {
+      post({ kind: "cleared", rationale: form.querySelector(".override-rationale").value },
+           "Withdrawing the correction…");
+    });
+  }
+
+  var dissent = form.querySelector(".dissent-save");
+  if (dissent) {
+    dissent.addEventListener("click", function () {
+      var why = form.querySelector(".dissent-rationale").value;
+      if (!why.trim()) {
+        say("A dissent is a reason and no number, so the reason is the whole record.", true);
+        return;
+      }
+      post({ kind: "dissent", rationale: why }, "Recording your dissent…");
+    });
+  }
+})();

@@ -247,3 +247,58 @@ in `spec_ui_v1.md`.
     cannot be used to read the answer key of an essay outside the review set. The control says what
     it is: the CSV is on disk and reading it there is neither prevented nor logged. A control that
     overstates its own reach teaches the reviewer to trust a boundary that is not there.
+
+12. **Current state is a fold over an essay's records, latest-wins *per section* rather than
+    wholesale** (decision D5, taken 2026-09-05 while building ticket 05). `override_state()` walks
+    an essay's records in order: a `trait_correction` sets the corrected traits, a `cleared`
+    withdraws them, a `dissent` sets the dissent. Each kind overwrites only its own section. The
+    artifact then distinguishes **`overridden`** (the trait scores as they now stand differ from
+    the AI's) from **`reviewed`** (a teacher has been here at all).
+
+    *Alternatives:* the spec's literal reading — the single most recent record is the whole current
+    state; or require every record to restate the full state, so latest-wins is true by
+    construction.
+
+    *Tradeoffs:* "the latest record" is no longer a complete description of what the UI shows, so a
+    reader of `overrides.json` has to know the fold rule to predict the page. Two of the three
+    kinds are also silent about the sections they do not touch, which only reads correctly once
+    you know that silence means "unchanged" rather than "cleared".
+
+    *Defense:* a dissent and a trait correction answer different questions — "the aggregator is
+    wrong" and "the traits are wrong" — and a teacher will often record both. Under wholesale
+    latest-wins, recording a dissent after a correction would silently discard the correction, and
+    the teacher's second deliberate action would undo their first with no indication. Requiring
+    every record to restate the full state avoids that but makes each record a snapshot rather than
+    an event, which destroys exactly what the steering bank needs: what the teacher *changed* and
+    why. The fold keeps the ledger a list of events and still yields one unambiguous current state.
+    Ticket 06 inherits the same rule for span verdicts and feedback edits, which is the second
+    reason to settle it here rather than there.
+
+    The `overridden`/`reviewed` split falls out of the same argument: a cleared correction and a
+    dissent both leave every trait exactly as the AI wrote it, and an essay list that called those
+    untouched would lose the two cases most worth looking at again.
+
+13. **A record's recomputed holistic is obtained by building the artifact that would result from
+    storing it** (decision D6, same session). `record_correction` runs `build_review` twice — once
+    over the existing records, once with the prospective record appended — and stores what the
+    second build produced. The page never previews a score either: saving posts, the server writes,
+    and the page reloads server-rendered.
+
+    *Alternatives:* call `apply_aggregator` directly in the writer, which is two lines; recompute in
+    the browser so the teacher sees the new score without a round trip.
+
+    *Tradeoffs:* two full builds per correction, each re-anchoring every span — measured at well
+    under a tenth of a second over the sample, but linear in essay count and wasteful in principle.
+    The reload also costs a round trip on every save and rebuilds a page that has mostly not
+    changed.
+
+    *Defense:* this is the same argument as ui_10, applied to the write path. Override records are
+    an input to the build (ui_6), so the only number that is true is the one the build produces
+    from them; anything else is a second implementation of a fitted map, and a record that
+    disagreed with the page it came from would be worse than one with no number at all. A browser
+    preview is the same mistake with a shorter half-life — and it would have to predict the
+    *cut point* a continuous score lands in, which is precisely where a correction most often does
+    nothing (ui_9). Letting the page guess "4" and then reload to "3" would discredit the
+    instrument at the exact moment it is being audited. The reload is also what makes the panel's
+    automatic expansion honest: it opens because the build said the band did not move, not because
+    the page assumed it would not.

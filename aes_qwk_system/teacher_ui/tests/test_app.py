@@ -95,9 +95,10 @@ def test_the_four_trait_cards_appear_in_weight_order(client, essay_id):
 
 
 def test_each_card_shows_its_own_trait_score(client, essay_id):
+    """The score is a control now (ticket 05), so it is read off the selected option."""
     body = client.get("/essay/%s" % essay_id).text
     data = client.get("/api/review/%s" % essay_id).json()
-    shown = [int(x) for x in re.findall(r'card-score">(\d)<', body)]
+    shown = [int(x) for x in re.findall(r'<option value="(\d)" selected>', body)]
     expected = [data["criteria"][c]["trait_score"]
                 for c in ("argumentation", "organization", "development", "conventions")]
     assert shown == expected
@@ -412,7 +413,229 @@ def test_static_assets_are_served_with_revalidation_forced(client):
         assert "no-cache" in headers.get("cache-control", "")
 
 
+def test_the_served_stylesheet_has_no_unterminated_comment(client):
+    """A stylesheet whose comment never closes swallows every rule after it, and the page renders
+    unstyled rather than broken -- nothing raises, nothing 500s, and every other test still
+    passes. Caught exactly that way while reflowing a section divider, so it is covered now."""
+    css = client.get("/static/app.css").text
+    assert css.count("/*") == css.count("*/"), "unbalanced CSS comment markers"
+
+    position, blocks = 0, 0
+    while True:
+        start = css.find("/*", position)
+        if start < 0:
+            break
+        end = css.find("*/", start + 2)
+        assert end > start, "unterminated CSS comment at offset %d" % start
+        assert "/*" not in css[start + 2:end], "nested CSS comment at offset %d" % start
+        position, blocks = end + 2, blocks + 1
+    assert blocks, "no comments at all -- the file is probably not the stylesheet"
+
+    # The rules the page depends on have to survive whatever the comments do.
+    for selector in (".formation", ".gold", ".override", ".card-score-select"):
+        assert selector in css, selector
+
+
 def test_a_stamped_asset_url_still_serves_the_file(client):
     response = client.get("/static/app.css?v=123")
     assert response.status_code == 200
     assert "--argumentation" in response.text
+
+
+# --- correcting a trait ---------------------------------------------------------------------------
+
+@pytest.fixture
+def ledger_overrides(tmp_path, monkeypatch):
+    """A temp overrides ledger. The committed one is evidence and tests must not append to it."""
+    import build_review
+    import overrides as overrides_module
+    path = str(tmp_path / "overrides.json")
+    monkeypatch.setattr(overrides_module, "OVERRIDES_FILE", path)
+    monkeypatch.setattr(build_review, "OVERRIDES_FILE", path)
+    return path
+
+
+def test_every_trait_score_is_editable_on_its_card(client, essay_id):
+    body = client.get("/essay/%s" % essay_id).text
+    for criterion in ("argumentation", "organization", "development", "conventions"):
+        assert 'class="card-score-select" name="%s"' % criterion in body
+    assert body.count('<option value="6">') + body.count('<option value="6" selected>') == 4
+
+
+def test_the_card_control_remembers_what_the_ai_said(client, essay_id):
+    """Needed to tell a real correction from a re-selection of the same number."""
+    body = client.get("/essay/%s" % essay_id).text
+    data = client.get("/api/review/%s" % essay_id).json()
+    for criterion, score in data["ai_traits"].items():
+        assert 'name="%s" data-ai="%d"' % (criterion, score) in body
+
+
+def test_a_correction_recomputes_the_holistic_and_shows_both(client, essay_id, ledger_overrides):
+    response = client.post("/api/override/%s" % essay_id,
+                           json={"corrected_traits": {"argumentation": 6, "organization": 6,
+                                                      "development": 6, "conventions": 6},
+                                 "rationale": "this is a strong response"})
+    assert response.status_code == 200
+    after = response.json()["essay"]
+
+    body = client.get("/essay/%s" % essay_id).text
+    assert '<span class="score-was">%d</span>' % after["ai_holistic"] in body
+    assert '<span class="score-value">%d</span>' % after["holistic"] in body
+    assert "moved this from %d to %d" % (after["ai_holistic"], after["holistic"]) in body
+
+
+def test_a_correction_that_changes_nothing_opens_the_panel_and_explains(client, essay_id,
+                                                                       ledger_overrides):
+    """ui_9/D2: the control's dominant experience is that it appears not to work. The panel
+    opening itself is what turns that into an explanation instead of a bug report."""
+    response = client.post("/api/override/%s" % essay_id,
+                           json={"corrected_traits": {"conventions": 6}})
+    essay = response.json()["essay"]
+    if not essay["score_unchanged_by_override"]:
+        pytest.skip("this essay's conventions correction did move the band")
+
+    body = client.get("/essay/%s" % essay_id).text
+    assert '<details class="formation" open>' in body
+    assert "did not move the score" in body
+    assert "nearest cut point" in body
+
+
+def test_the_page_shows_the_ai_score_beside_a_corrected_trait(client, essay_id, ledger_overrides):
+    data = client.get("/api/review/%s" % essay_id).json()
+    was = data["ai_traits"]["conventions"]
+    client.post("/api/override/%s" % essay_id,
+                json={"corrected_traits": {"conventions": 1 if was != 1 else 6}})
+    assert "AI said %d" % was in client.get("/essay/%s" % essay_id).text
+
+
+def test_a_correction_survives_a_restart(client, essay_id, ledger_overrides):
+    """The app holds nothing in memory -- every page load rebuilds from the file on disk."""
+    client.post("/api/override/%s" % essay_id, json={"corrected_traits": {"argumentation": 6}})
+    from fastapi.testclient import TestClient
+    import app as application
+    fresh = TestClient(application.app)
+    assert fresh.get("/api/review/%s" % essay_id).json()["traits"]["argumentation"] == 6
+
+
+def test_a_correction_can_be_cleared_without_erasing_it_happened(client, essay_id,
+                                                                ledger_overrides):
+    import json as json_module
+    client.post("/api/override/%s" % essay_id, json={"corrected_traits": {"argumentation": 6}})
+    cleared = client.post("/api/override/%s" % essay_id, json={"kind": "cleared"}).json()["essay"]
+
+    assert cleared["traits"] == cleared["ai_traits"]
+    assert cleared["overridden"] is False
+    assert cleared["reviewed"] is True
+    assert len(json_module.load(open(ledger_overrides))) == 2
+
+
+def test_the_clear_control_appears_only_when_there_is_something_to_clear(client, essay_id,
+                                                                        ledger_overrides):
+    assert "override-clear" not in client.get("/essay/%s" % essay_id).text
+    client.post("/api/override/%s" % essay_id, json={"corrected_traits": {"argumentation": 6}})
+    assert "override-clear" in client.get("/essay/%s" % essay_id).text
+
+
+def test_a_rationale_is_kept_and_shown_back(client, essay_id, ledger_overrides):
+    client.post("/api/override/%s" % essay_id,
+                json={"corrected_traits": {"conventions": 5}, "rationale": "the spelling is minor"})
+    assert "the spelling is minor" in client.get("/essay/%s" % essay_id).text
+
+
+# --- dissent --------------------------------------------------------------------------------------
+
+def test_no_direct_holistic_override_is_offered(client, essay_id):
+    """ui_2: a typed holistic cannot steer anything and would decouple the score from its
+    evidence. What stands in its place is a dissent."""
+    body = client.get("/essay/%s" % essay_id).text
+    assert 'name="holistic"' not in body
+    assert "dissent-save" in body
+
+
+def test_a_dissent_records_a_reason_and_no_number(client, essay_id, ledger_overrides):
+    response = client.post("/api/override/%s" % essay_id,
+                           json={"kind": "dissent", "rationale": "the length term is doing this"})
+    essay = response.json()["essay"]
+    assert "corrected_traits" not in response.json()["record"]
+    assert essay["traits"] == essay["ai_traits"]
+    assert essay["holistic"] == essay["ai_holistic"]
+
+    body = client.get("/essay/%s" % essay_id).text
+    assert "Score dissent recorded" in body
+    assert "the length term is doing this" in body
+
+
+def test_a_dissent_without_a_reason_is_refused_and_says_why(client, essay_id, ledger_overrides):
+    response = client.post("/api/override/%s" % essay_id, json={"kind": "dissent"})
+    assert response.status_code == 400
+    assert "rationale is the whole record" in response.json()["detail"]
+
+
+def test_a_dissent_and_a_correction_coexist(client, essay_id, ledger_overrides):
+    client.post("/api/override/%s" % essay_id, json={"corrected_traits": {"conventions": 5}})
+    client.post("/api/override/%s" % essay_id, json={"kind": "dissent", "rationale": "still wrong"})
+    essay = client.get("/api/review/%s" % essay_id).json()
+    assert essay["traits"]["conventions"] == 5
+    assert essay["dissent"]["rationale"] == "still wrong"
+
+
+# --- refusals -----------------------------------------------------------------------------------
+
+def test_an_impossible_trait_score_is_refused_with_a_message_that_names_it(client, essay_id,
+                                                                          ledger_overrides):
+    response = client.post("/api/override/%s" % essay_id,
+                           json={"corrected_traits": {"argumentation": 9}})
+    assert response.status_code == 400
+    assert "argumentation=9" in response.json()["detail"]
+    assert not os.path.exists(ledger_overrides)
+
+
+def test_a_correction_for_an_essay_outside_the_review_set_is_a_404(client, ledger_overrides):
+    assert client.post("/api/override/does-not-exist",
+                       json={"corrected_traits": {"conventions": 3}}).status_code == 404
+    assert not os.path.exists(ledger_overrides)
+
+
+def test_a_correction_made_after_a_reveal_carries_the_flag(client, essay_id, ledger,
+                                                          ledger_overrides):
+    """Ticket 04 built the ledger; this is the stamp it exists for."""
+    plain = client.post("/api/override/%s" % essay_id,
+                        json={"corrected_traits": {"conventions": 5}}).json()["record"]
+    client.post("/api/gold/%s" % essay_id)
+    anchored = client.post("/api/override/%s" % essay_id,
+                           json={"corrected_traits": {"conventions": 4}}).json()["record"]
+    assert plain["gold_revealed"] is False
+    assert anchored["gold_revealed"] is True
+
+
+# --- the essay list ------------------------------------------------------------------------------
+
+def test_saving_an_unchanged_form_is_refused_before_it_reaches_the_ledger(client, essay_id,
+                                                                          ledger_overrides):
+    """A correction identical to the one already stored is not a second decision. The control is
+    guarded in the page; this asserts the seam agrees that an empty correction is a mistake."""
+    import build_review
+    with pytest.raises(build_review.OverrideError) as exc:
+        build_review.check_override_records(
+            [{"essay_id": essay_id, "kind": "trait_correction", "corrected_traits": {}}])
+    assert "corrects no trait" in str(exc.value)
+
+
+def test_the_index_distinguishes_reviewed_essays_from_untouched_ones(client, essay_id,
+                                                                     ledger_overrides):
+    assert "status-touched" not in client.get("/").text
+    client.post("/api/override/%s" % essay_id,
+                json={"corrected_traits": {"argumentation": 6, "organization": 6,
+                                           "development": 6, "conventions": 6}})
+    body = client.get("/").text
+    assert "status-touched" in body
+    assert "corrected" in body
+
+
+def test_the_index_marks_a_dissent_as_a_visit_even_with_no_score_change(client, essay_id,
+                                                                       ledger_overrides):
+    client.post("/api/override/%s" % essay_id,
+                json={"kind": "dissent", "rationale": "the map is wrong"})
+    body = client.get("/").text
+    assert "dissent" in body
+    assert "status-touched" in body

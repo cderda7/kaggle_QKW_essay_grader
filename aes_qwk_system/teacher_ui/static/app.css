@@ -223,7 +223,7 @@ body.focus-conventions mark.pol-conventions-weakness {
 .card-evidence { margin: 0; font-size: 11.5px; color: var(--ink-faint); }
 .card-noevidence { font-style: italic; }
 
-/* --- score formation ------------------------------------------------------------------------
+/* --- score formation --------------------------------------------------------------------------
    Collapsed by default: the everyday read is score, overview, cards, and this sits under the
    number for the reader who asks where it came from. Open, it is a sum that adds up on screen —
    the length term is a row like any other rather than a footnote, because it is the largest one. */
@@ -310,3 +310,87 @@ body.focus-conventions mark.pol-conventions-weakness {
 .gold-number { font-size: 26px; font-weight: 650; letter-spacing: -.02em; line-height: 1; }
 .gold-gap { margin-left: 8px; font-size: 11.5px; color: var(--ink-faint); }
 .gold-error { margin: 8px 0 0; font-size: 11.5px; color: var(--conventions); }
+
+/* --- the corrected score --------------------------------------------------------------------- */
+
+.score.corrected .score-was {
+  font-size: 26px; font-weight: 500; color: var(--ink-faint);
+  text-decoration: line-through; text-decoration-thickness: 1.5px; letter-spacing: -.02em;
+}
+.score-arrow { font-size: 17px; color: var(--ink-faint); margin: 0 2px; }
+.score-change {
+  margin: -14px 0 20px; font-size: 12px; line-height: 1.6; color: var(--ink-soft);
+}
+.score-change.unchanged { color: var(--ink-faint); }
+
+/* --- editable trait scores -------------------------------------------------------------------- */
+
+.card-score-select {
+  font: inherit; font-size: 17px; font-weight: 650; font-variant-numeric: tabular-nums;
+  color: inherit; background: transparent; border: 0; border-radius: 4px;
+  padding: 0 2px; margin: -2px -2px 0 0; cursor: pointer;
+  -webkit-appearance: none; appearance: none; text-align: right;
+}
+.card-score-select:hover { background: var(--rule); }
+.card-score-select:focus-visible { outline: 2px solid var(--ink-faint); outline-offset: 1px; }
+.card.dirty { box-shadow: 0 0 0 1px var(--ink-faint) inset; }
+.card.dirty .card-score-select { background: var(--rule); }
+.card-was {
+  margin-left: 8px; color: var(--ink-faint);
+  text-decoration: line-through; text-decoration-thickness: 1px;
+}
+
+/* --- the correction record -------------------------------------------------------------------- */
+
+.override { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.override-head, .dissent-head {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--ink-faint); font-weight: 600; margin: 0 0 8px;
+}
+.override-hint, .dissent-note {
+  margin: 0 0 10px; font-size: 11.5px; line-height: 1.6; color: var(--ink-faint);
+}
+.override textarea, .dissent textarea {
+  width: 100%; font: inherit; font-size: 12.5px; line-height: 1.5; color: var(--ink);
+  background: var(--bg); border: 1px solid var(--rule); border-radius: 5px;
+  padding: 8px 10px; resize: vertical;
+}
+.override textarea:focus-visible, .dissent textarea:focus-visible {
+  outline: none; border-color: var(--ink-faint);
+}
+.override-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.override button, .dissent button {
+  font: inherit; font-size: 12.5px; color: var(--ink);
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 5px;
+  padding: 7px 13px; cursor: pointer;
+  transition: border-color .12s ease, background-color .12s ease;
+}
+.override button:hover, .dissent button:hover { border-color: var(--ink-faint); }
+.override button:focus-visible, .dissent button:focus-visible {
+  outline: 2px solid var(--ink-faint); outline-offset: 2px;
+}
+.override button[disabled] { opacity: .5; cursor: progress; }
+.override.dirty .override-save { border-color: var(--ink-faint); font-weight: 600; }
+.override-clear { color: var(--ink-faint); }
+
+.override-status {
+  margin: 8px 0 0; font-size: 11.5px; line-height: 1.55; color: var(--ink-faint);
+}
+.override-status:empty { margin: 0; }
+.override-status.bad { color: var(--conventions); }
+.override-trail {
+  margin: 12px 0 0; font-size: 11px; line-height: 1.55; color: var(--ink-faint);
+  font-style: italic;
+}
+
+.dissent { margin-top: 20px; padding-top: 14px; border-top: 1px dashed var(--rule); }
+.dissent button { margin-top: 8px; }
+.dissent.recorded .dissent-said {
+  margin: 0 0 8px; font-size: 12.5px; line-height: 1.6; color: var(--ink);
+  padding-left: 10px; border-left: 2px solid var(--ink-faint);
+}
+
+/* --- index status --------------------------------------------------------------------------- */
+
+.essay-table .status { color: var(--ink-faint); font-size: 13.5px; }
+.essay-table .status-touched { color: var(--ink); }

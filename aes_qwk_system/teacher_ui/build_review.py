@@ -41,13 +41,22 @@ MANIFEST = os.path.join(HERE, "essays_ui_v1.json")
 ANNOTATION_DIR = os.path.join(HERE, "annotation_v6_runB")
 PREDICTIONS_CSV = os.path.join(HERE, "..", "grading", "predictions_v9.csv")
 AGGREGATOR_FILE = os.path.join(HERE, "..", "aggregator_v9.json")
-OVERRIDES_FILE = os.path.join(HERE, "overrides.json")
+# Overridable for the same reason the corpus path and the reveal ledger are: an end-to-end pass,
+# or a test, has to be able to record a correction without writing into the committed audit record.
+OVERRIDES_FILE = os.environ.get("TEACHER_UI_OVERRIDES_FILE",
+                                os.path.join(HERE, "overrides.json"))
 SOURCE_CSV = os.environ.get("PERSONAL_TRAINING_SET_CSV",
                             os.path.join(HERE, "..", "..", "personal_training_set.csv"))
 DEFAULT_OUT = os.path.join(HERE, "review_ui_v1.json")
 
 CRITERIA = ("argumentation", "organization", "development", "conventions")
 POLARITIES = ("strength", "weakness")
+
+# A record says what kind of disagreement it is. `trait_correction` changes scores; `dissent` says
+# the final score is wrong while the traits are not, and carries a rationale and no number;
+# `cleared` withdraws a trait correction without erasing the fact that it was made.
+OVERRIDE_KINDS = ("trait_correction", "dissent", "cleared")
+MIN_TRAIT, MAX_TRAIT = 1, 6
 
 MIN_QUOTE_WORDS = 3
 MAX_SPANS_PER_CRITERION = 4
@@ -78,6 +87,10 @@ class AnnotationError(ValueError):
     """One or more annotation batches are not usable. Lists every problem found."""
 
 
+class OverrideError(ValueError):
+    """One or more override records are not usable. Lists every problem found."""
+
+
 # --------------------------------------------------------------------------------------------
 # loading
 # --------------------------------------------------------------------------------------------
@@ -98,8 +111,14 @@ def load_predictions(path=PREDICTIONS_CSV):
         return {r["essay_id"]: r for r in csv.DictReader(f)}
 
 
-def load_overrides(path=OVERRIDES_FILE):
-    """Append-only record list. Missing file means nothing has been corrected yet."""
+def load_overrides(path=None):
+    """Append-only record list. Missing file means nothing has been corrected yet.
+
+    The path resolves at call time, not at import time: a default bound when this module was first
+    imported cannot be redirected afterwards, which would silently point every caller at the
+    committed ledger no matter what they asked for.
+    """
+    path = OVERRIDES_FILE if path is None else path
     if not os.path.exists(path):
         return []
     with open(path) as f:
@@ -336,12 +355,104 @@ def _score_formation(aggregator, traits, word_count):
     }
 
 
-def _latest_override(records, essay_id):
-    """Append-only: the current state of an essay is its most recent record."""
-    for rec in reversed(records):
-        if rec.get("essay_id") == essay_id:
-            return rec
-    return None
+def _check_override(rec, index, problems):
+    where = "override record %d (%s)" % (index, rec.get("essay_id") or "no essay_id")
+    if not rec.get("essay_id"):
+        problems.append("%s: has no essay_id" % where)
+
+    kind = rec.get("kind") or ("trait_correction" if rec.get("corrected_traits")
+                               else "trait_correction")
+    if kind not in OVERRIDE_KINDS:
+        problems.append("%s: kind=%r is not one of %s" % (where, kind, list(OVERRIDE_KINDS)))
+        return
+
+    corrected = rec.get("corrected_traits") or {}
+    if not isinstance(corrected, dict):
+        problems.append("%s: corrected_traits is %r, expected an object"
+                        % (where, type(corrected).__name__))
+        return
+
+    if kind == "trait_correction" and not corrected:
+        problems.append("%s: a trait correction that corrects no trait -- to withdraw a "
+                        "correction, record kind=cleared instead" % where)
+    if kind in ("dissent", "cleared") and corrected:
+        problems.append("%s: kind=%s must not carry corrected_traits (found %s) -- a dissent is "
+                        "about the aggregator, not the traits, and clearing withdraws rather than "
+                        "sets" % (where, kind, sorted(corrected)))
+
+    rationale = rec.get("rationale")
+    if rationale is not None and not isinstance(rationale, str):
+        problems.append("%s: rationale is %r, expected text" % (where, type(rationale).__name__))
+    if kind == "dissent" and not (rationale or "").strip():
+        problems.append("%s: a dissent records a rationale and no number, so the rationale is the "
+                        "whole record -- it cannot be empty" % where)
+
+    for name, value in sorted(corrected.items()):
+        if name not in CRITERIA:
+            problems.append("%s: corrects unknown trait %r, expected one of %s"
+                            % (where, name, list(CRITERIA)))
+            continue
+        try:
+            score = int(value)
+        except (TypeError, ValueError):
+            problems.append("%s: %s=%r is not a whole number" % (where, name, value))
+            continue
+        if not MIN_TRAIT <= score <= MAX_TRAIT:
+            problems.append("%s: %s=%d is outside the %d-%d scale the rubric defines"
+                            % (where, name, score, MIN_TRAIT, MAX_TRAIT))
+
+
+def check_override_records(records):
+    """Every override record is usable, or none of them are. Collects all problems, like the
+    annotation guards -- overrides.json is hand-editable and diffable by design, so a typo in it
+    has to name itself rather than quietly re-scoring an essay."""
+    problems = []
+    for index, rec in enumerate(records):
+        if not isinstance(rec, dict):
+            problems.append("override record %d is %r, expected an object"
+                            % (index, type(rec).__name__))
+            continue
+        _check_override(rec, index, problems)
+    if problems:
+        raise OverrideError("%d override record problem(s):\n  %s"
+                            % (len(problems), "\n  ".join(problems)))
+    return records
+
+
+def override_state(records, essay_id):
+    """Fold one essay's records into its current state.
+
+    Latest wins PER SECTION rather than wholesale. A dissent and a trait correction answer
+    different questions -- "the aggregator is wrong" and "the traits are wrong" -- so letting one
+    record's silence on the other erase it would make a teacher's second action quietly undo their
+    first. The append-only trail is preserved either way; this only decides how it is read back.
+    See teacher_ui/decisions_log.md ui_12.
+    """
+    mine = [r for r in records if r.get("essay_id") == essay_id]
+    state = {"corrected_traits": None, "dissent": None, "rationale": None,
+             "records": len(mine), "trail": []}
+
+    for rec in mine:
+        kind = rec.get("kind") or "trait_correction"
+        rationale = (rec.get("rationale") or "").strip() or None
+        if kind == "trait_correction":
+            state["corrected_traits"] = {k: int(v)
+                                         for k, v in (rec.get("corrected_traits") or {}).items()}
+            state["rationale"] = rationale
+        elif kind == "cleared":
+            state["corrected_traits"] = None
+            state["rationale"] = rationale
+        elif kind == "dissent":
+            state["dissent"] = {"rationale": rationale, "recorded_at": rec.get("recorded_at")}
+        state["trail"].append({
+            "kind": kind,
+            "recorded_at": rec.get("recorded_at"),
+            "corrected_traits": rec.get("corrected_traits") or None,
+            "recomputed_holistic": rec.get("recomputed_holistic"),
+            "rationale": rationale,
+            "gold_revealed": bool(rec.get("gold_revealed")),
+        })
+    return state
 
 
 def build_review(predictions=None, annotation=None, essays=None, override_records=(),
@@ -357,6 +468,7 @@ def build_review(predictions=None, annotation=None, essays=None, override_record
         expected_ids = list(manifest["essay_ids"])
     if annotation is None:
         annotation = load_annotation(essays=essays, expected_ids=expected_ids)
+    check_override_records(override_records)
 
     out_essays = []
     for eid in sorted(expected_ids):
@@ -365,10 +477,10 @@ def build_review(predictions=None, annotation=None, essays=None, override_record
         word_count = int(pred["word_count"])
         ai_traits = {c: int(pred["system_" + c]) for c in CRITERIA}
 
-        override = _latest_override(override_records, eid)
+        state = override_state(override_records, eid)
         traits = dict(ai_traits)
-        if override and override.get("corrected_traits"):
-            traits.update({k: int(v) for k, v in override["corrected_traits"].items()})
+        if state["corrected_traits"]:
+            traits.update(state["corrected_traits"])
 
         ai_holistic, _ = _score_formation(aggregator, ai_traits, word_count)
         holistic, formation = _score_formation(aggregator, traits, word_count)
@@ -405,9 +517,17 @@ def build_review(predictions=None, annotation=None, essays=None, override_record
             "traits": traits,
             "ai_holistic": ai_holistic,
             "holistic": holistic,
-            "overridden": bool(override),
+            # `overridden` is about the scores as they now stand, `reviewed` about whether a
+            # teacher has been here at all -- a cleared correction is reviewed but not overridden,
+            # and a dissent is reviewed while every trait still reads as the AI left it.
+            "overridden": traits != ai_traits,
+            "reviewed": state["records"] > 0,
+            "dissent": state["dissent"],
+            "override_rationale": state["rationale"],
+            "override_records": state["records"],
+            "override_trail": state["trail"],
             "score_formation": formation,
-            "score_unchanged_by_override": bool(override) and holistic == ai_holistic,
+            "score_unchanged_by_override": traits != ai_traits and holistic == ai_holistic,
         })
 
     manifest_ids = set(manifest["essay_ids"])
@@ -436,7 +556,7 @@ def main(argv=None):
     expected = [e.strip() for e in args.essays.split(",")] if args.essays else None
     try:
         artifact = build_review(override_records=load_overrides(), expected_ids=expected)
-    except (AnnotationError, AnchorError) as exc:
+    except (AnnotationError, AnchorError, OverrideError) as exc:
         print(str(exc), file=sys.stderr)
         return 1
 
