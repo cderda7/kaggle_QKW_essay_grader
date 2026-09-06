@@ -28,88 +28,100 @@ diffable by design, which is why the guards name the offending value.
 ## How it connects
 
 ```
-                    ┌─────────────────────────────────────────────────────────┐
-                    │  FROZEN INPUTS — ticket 05 changes none of these         │
-                    │                                                          │
-                    │  aggregator_v9.json     predictions_v9.csv               │
-                    │  (3 OLS coefficients    (system_* trait scores)          │
-                    │   + 5 cut points)                                        │
-                    │  annotation_v6_runB/    personal_training_set.csv        │
-                    │  (batches, comments,    (essay text; the gold score      │
-                    │   quoted spans)          stays here — never in the       │
-                    │                          artifact, decision ui_4)        │
-                    └────────────────────────────┬─────────────────────────────┘
-                                                 │
-                                                 ▼
-   overrides.json  ─────────────────────▶  build_review.build_review()
-   (append-only     load_overrides()      ─────────────────────────────
-    audit ledger)   reads it at CALL      THE SINGLE SEAM (ui_6).
-          ▲         time, through the     Override records are an INPUT here,
-          │         one binding of        not a mutation applied downstream.
-          │         OVERRIDES_FILE        Joins predictions + annotation + text
-          │                                + override records, anchors spans
-          │                                via anchor.resolve_spans(), applies
-          │                                the aggregator, emits the artifact.
-          │                                        │
-          │                                        │  calls
-          │                                        ▼
-          │                          check_override_records()   ← hard errors, collected,
-          │                          ─────────────────────────    naming the essay and the
-          │                          override_state()             offending value (ui_7)
-          │                          ─────────────────────────
-          │                          Folds one essay's records
-          │                          LATEST-WINS PER SECTION (ui_12):
-          │                          a dissent does not erase a
-          │                          correction. Also yields the
-          │                          fold one record short, which
-          │                          is what "what did this save
-          │                          do" is measured against.
-          │                                        │
-          │                                        ▼
-          │                          ┌──────────────────────────────────┐
-          │                          │ artifact essay dict              │
-          │                          │  ai_traits / traits              │
-          │                          │  ai_holistic / holistic          │
-          │                          │  holistic_before_latest_record   │
-          │                          │  latest_record_kind              │
-          │                          │  latest_record_changed_traits    │
-          │                          │  overridden / reviewed           │
-          │                          │  score_unchanged_vs_ai           │
-          │                          │  score_unchanged_by_latest_record│
-          │                          │  score_formation / override_trail│
-          │                          └───────────┬──────────────────────┘
-          │                                      │
-          │            ┌─────────────────────────┴───────────────────────┐
-          │            ▼                                                 ▼
-          │   app.py  GET /essay/{id}                      app.py  POST /api/override/{id}
-          │   ───────────────────────                      ─────────────────────────────
-          │   narration_state()  ──▶ SCORE_NARRATION       membership-checks the essay
-          │     one row per state; the row decides         against annotated_ids(), then
-          │     ALL THREE of the score head, its           delegates to overrides.py
-          │     sentence, and whether the formation                    │
-          │     panel opens itself (ui_16/ui_17/ui_18).                │
-          │   render.py renders the marked-up response.                │
-          │   gold.py withholds the rater score until                  │
-          │     a POST reveal is ledgered (ticket 04).                 │
-          │            │                                               │
-          │            ▼                                               ▼
-          │      HTML page ──▶ static/app.js                overrides.record_correction()
-          │                    ───────────────              ─────────────────────────────
-          │                    Gathers selects +            1. guards run on RAW values,
-          │                    reason, POSTs, then             before any coercion
-          │                    RELOADS. Computes no         2. build #1 over existing
-          │                    score: predicting which         records → the standing score
-          │                    cut point a continuous       3. build #2 with the prospective
-          │                    score lands in is where        record appended → THE
-          │                    a correction most often        recomputed holistic (ui_13:
-          │                    does nothing (ui_13).           never a second implementation
-          │                         │                          of the fitted map)
-          │                         │                       4. re-fold the trail so the POST
-          │                         │                          response matches a later GET
-          │                         └──────POST────────────▶ 5. append()
-          │                                                          │
-          └──────────────────────────────────────────────────────────┘
-                        atomic: write sibling temp file, os.replace()
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  FROZEN INPUTS — ticket 05 changes none of these                     │
+  │                                                                      │
+  │  aggregator_v9.json          3 OLS coefficients + 5 cut points       │
+  │  predictions_v9.csv          per-trait system_* scores               │
+  │  annotation_v6_runB/         batches, comments, quoted spans         │
+  │  personal_training_set.csv   essay text; the gold score stays here   │
+  │                              and never enters the artifact (ui_4)    │
+  └───────────────────────────────────┬──────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌───────────────────────────────────┴──────────────────────────────────┐
+  │  build_review.build_review()  —  THE SINGLE SEAM (ui_6)              │
+  │                                                                      │
+  │  Override records are an INPUT here, not a mutation applied          │
+  │  downstream. Joins predictions, annotation, essay text and override  │
+  │  records; anchors spans via anchor.resolve_spans(); applies the      │
+  │  frozen aggregator; emits the artifact.                              │
+  │                                                                      │
+  │    load_overrides()          reads overrides.json at CALL time,      │
+  │                              through the ONE binding of              │
+  │                              OVERRIDES_FILE                          │
+  │    check_override_records()  hard errors, collected, naming the      │
+  │                              essay and the offending value (ui_7)    │
+  │    override_state()          folds one essay's records LATEST-WINS   │
+  │                              PER SECTION (ui_12) — and again one     │
+  │                              record short, which is what "what did   │
+  │                              this save do" is measured against       │
+  └───────────────────────────────────┬──────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌───────────────────────────────────┴──────────────────────────────────┐
+  │  artifact essay dict                                                 │
+  │                                                                      │
+  │    ai_traits / traits                overridden / reviewed           │
+  │    ai_holistic / holistic            score_unchanged_vs_ai           │
+  │    holistic_before_latest_record     score_unchanged_by_latest_record│
+  │    latest_record_kind                score_formation                 │
+  │    latest_record_changed_traits      override_trail                  │
+  └───────────────────────────────────┬──────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌───────────────────────────────────┴──────────────────────────────────┐
+  │  app.py — the HTTP layer, holding no logic worth testing             │
+  │                                                                      │
+  │  GET  /essay/{id}      narration_state() picks one SCORE_NARRATION   │
+  │                        row; that row decides ALL THREE of the score  │
+  │                        head, its sentence, and whether the formation │
+  │                        panel opens itself (ui_16 → ui_18).           │
+  │                        render.py marks up the response text; gold.py │
+  │                        withholds the rater score until a reveal is   │
+  │                        ledgered (ticket 04).                         │
+  │                                                                      │
+  │  POST /api/override/{id}                                             │
+  │                        membership-checks the essay against           │
+  │                        annotated_ids(), then delegates to            │
+  │                        overrides.record_correction().                │
+  └───────────────────────────────────┬──────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌───────────────────────────────────┴──────────────────────────────────┐
+  │  static/app.js — the browser half                                    │
+  │                                                                      │
+  │  Gathers the trait selects and the reason, POSTs, then RELOADS.      │
+  │  Computes no score: predicting which cut point a continuous score    │
+  │  lands in is exactly where a correction most often does nothing,     │
+  │  so a local preview would discredit the instrument at the moment     │
+  │  it is being audited (ui_13).                                        │
+  └───────────────────────────────────┬──────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌───────────────────────────────────┴──────────────────────────────────┐
+  │  overrides.record_correction()                                       │
+  │                                                                      │
+  │  1. guards run on the RAW values, before any coercion                │
+  │  2. build #1 over the existing records → the standing score          │
+  │  3. build #2 with the prospective record appended → THE recomputed   │
+  │     holistic. Never a second implementation of the fitted map: a     │
+  │     direct apply_aggregator() call would drift, and the place it     │
+  │     would surface is the panel built to be audited (ui_13).          │
+  │  4. re-fold the trail so the POST response matches a later GET       │
+  │  5. append() — sibling temp file, then os.replace(), so the swap     │
+  │     is atomic and a half-written ledger is never left behind         │
+  └───────────────────────────────────┬──────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌───────────────────────────────────┴──────────────────────────────────┐
+  │  overrides.json — the append-only audit ledger                       │
+  │                                                                      │
+  │  Hand-editable and diffable by design, which is why the guards       │
+  │  name the offending value rather than quietly re-scoring an essay.   │
+  │  Read back by load_overrides() on the very next build: the ledger    │
+  │  is both an output of this path and an input to the seam above.      │
+  └──────────────────────────────────────────────────────────────────────┘
 ```
 
 ## The three things worth knowing

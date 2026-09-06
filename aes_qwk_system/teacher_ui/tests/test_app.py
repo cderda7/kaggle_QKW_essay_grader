@@ -673,12 +673,17 @@ def test_each_score_narration_state_agrees_with_itself(client, monkeypatch, stat
     assert ('<details class="formation" open>' in body) is opens
 
     # A property of every row, not a column: wherever a correction has moved the score off the
-    # AI's, the AI's own holistic is on the page and labelled as the AI's. A row added later
-    # cannot quietly drop the number the whole surface exists to audit against.
-    off_ai = essay["holistic"] != essay["ai_holistic"]
-    assert ('<p class="score-origin">' in body) is off_ai
-    if off_ai:
-        assert "The AI scored this <b>%d</b>/6." % essay["ai_holistic"] in body
+    # AI's, the AI's own holistic is surfaced EXACTLY ONCE -- by the head where the head already
+    # contrasts against it, by the labelled line where it does not. Asserting "exactly one"
+    # rather than "at least one" is what stops a row either dropping the number the whole
+    # surface exists to audit against, or stating it twice in a header a few lines tall.
+    ai = essay["ai_holistic"]
+    in_head = '<span class="score-was">%d</span>' % ai in body
+    in_line = "The AI scored this <b>%d</b>/6." % ai in body
+    off_ai = essay["holistic"] != ai
+    assert [in_head, in_line].count(True) == (1 if off_ai else 0)
+    if not off_ai:
+        assert '<span class="score-value">%d</span>' % ai in body
 
 
 def test_a_rationale_only_save_is_narrated_as_a_reason_revision(client, essay_id,

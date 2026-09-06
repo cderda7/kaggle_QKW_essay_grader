@@ -14,15 +14,15 @@ issue files, and are deliberately not backfilled here.
             │
             ▼
   aes_qwk_system/grading/             the scoring pipeline (frozen for the UI ladder)
-  ─────────────────────────
+  ───────────────────────
   grade_essays.py  ──▶ predictions_v9.csv     per-trait system_* scores
   aggregator_v9.json                          3 fitted OLS coefficients + 5 cut points
             │
-            |   annotation_v6_runB/           per-trait comments and quoted spans
+            │   annotation_v6_runB/           per-trait comments and quoted spans
             │            │
             ▼            ▼
   aes_qwk_system/teacher_ui/build_review.py   ◀── overrides.json  (append-only audit ledger)
-  ==========================================      gold_reveals.json (one record per disclosure)
+  ─────────────────────────────────────────       gold_reveals.json (one record per disclosure)
   THE SINGLE SEAM. Joins predictions, annotation, essay text and override
   records into one artifact. Span anchoring, batch validation, the join,
   holistic recomputation and override application all sit below this
@@ -34,18 +34,18 @@ issue files, and are deliberately not backfilled here.
             │
             ▼
   aes_qwk_system/teacher_ui/app.py             the served pages and the JSON API
-  ---------------------------------
+  ────────────────────────────────
   Rebuilds the artifact per request — nothing is cached, so a hand edit to
   overrides.json shows up on the next page load.
             │
             ├── render.py          essay text with per-criterion span marks
             ├── SCORE_NARRATION    one row per state; each row decides the score head,
-            |                      its sentence and the formation panel together (ui_18)
+            │                      its sentence and the formation panel together (ui_18)
             └── overrides.py       writes one correction, through the same seam (ui_13)
             │
             ▼
   static/app.js + static/app.css               the browser half
-  ------------------------------
+  ──────────────────────────────
   Pins evidence to a trait, gathers corrections, POSTs, reloads. Computes no
   score: there is no client-side aggregator, by decision (ui_13).
 ```

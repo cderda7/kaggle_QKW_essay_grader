@@ -157,13 +157,15 @@
   var selects = Array.prototype.slice.call(document.querySelectorAll(".card-score-select"));
 
   // A textarea's defaultValue is the text the server rendered into it, so this asks the only
-  // question that matters: has the teacher rewritten the reason the page was drawn with?
+  // question that matters: has the teacher rewritten the text the page was drawn with?
   //
   // Trimmed on both sides because the server stores a stripped rationale and renders that back:
   // comparing a raw value against an already-stripped one makes a stray trailing space look like
-  // a decision, and appends a record whose stored reason is identical to the one standing.
-  function reasonRewritten() {
-    return rationale.value.trim() !== rationale.defaultValue.trim();
+  // a decision, and appends a record whose stored reason is identical to the one standing. Every
+  // guard asks it through here — the correction box and the dissent box each grew their own
+  // version of this comparison, and they disagreed about whether whitespace counted.
+  function rewritten(field) {
+    return field.value.trim() !== field.defaultValue.trim();
   }
 
   function scoresMoved() {
@@ -172,9 +174,9 @@
 
   function refreshDirty() {
     var moved = scoresMoved();
-    form.classList.toggle("dirty", moved || reasonRewritten());
+    form.classList.toggle("dirty", moved || rewritten(rationale));
     if (moved) return say("Unsaved change — save it to recompute the score.");
-    say(reasonRewritten() ? "Unsaved reason — save it to attach it to your correction." : "");
+    say(rewritten(rationale) ? "Unsaved reason — save it to attach it to your correction." : "");
   }
 
   // A click on the score control must not also pin the trait it sits inside.
@@ -232,7 +234,7 @@
     // duplicates says the teacher acted three times when they decided once. A rewritten reason is
     // a real change though — discarding it with a message denying it happened would lose typed
     // text, so the reason counts as much as a moved score here.
-    if (!scoresMoved() && !reasonRewritten()) {
+    if (!scoresMoved() && !rewritten(rationale)) {
       say("Nothing has changed since your last save.", true);
       return;
     }
@@ -261,7 +263,7 @@
       // Withdrawing does not inherit the argument for making the correction. The reason the page
       // was rendered with justifies the correction being withdrawn, so a record carrying it would
       // read as arguing for the very thing it undoes; only text typed for this withdrawal travels.
-      post({ kind: "cleared", rationale: reasonRewritten() ? rationale.value : "" },
+      post({ kind: "cleared", rationale: rewritten(rationale) ? rationale.value : "" },
            "Withdrawing the correction…");
     });
   }
@@ -277,7 +279,7 @@
         say("A dissent is a reason and no number, so the reason is the whole record.", true);
         return;
       }
-      if (why === dissentReason.defaultValue) {
+      if (!rewritten(dissentReason)) {
         say("That is the dissent already recorded — rewrite it to replace it.", true);
         return;
       }
