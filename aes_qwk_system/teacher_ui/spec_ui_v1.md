@@ -276,6 +276,11 @@ trail. JSON rather than SQLite because this is a single local user over ten essa
 to be diffable and greppable like every other artefact here — SQLite would buy concurrency and
 indexing with no use for either, and would make the override history invisible to `git diff`.
 
+*Amended while building ticket 05:* the fold is latest-wins per **section**, not wholesale — a
+trait correction and a dissent answer different questions, so recording a dissent must not
+silently discard an earlier correction. `decisions_log.md` ui_12 owns that rule and the argument
+for departing from the wording above.
+
 Each record carries: essay id, timestamp, original trait scores and holistic, corrected trait scores,
 recomputed holistic, span verdicts, feedback edits, rationale, `gold_revealed`, and the trait-run and
 aggregator versions active. That last pair is what stops a correction made against `v6_runB` traits

@@ -141,7 +141,7 @@ diffable by design, which is why the guards name the offending value.
   └──────────────────────────────────────────────────────────────────────┘
 ```
 
-## The three things worth knowing
+## The four things worth knowing
 
 **One binding owns the ledger path.** `build_review.OVERRIDES_FILE` (env-overridable via
 `TEACHER_UI_OVERRIDES_FILE`) is read at call time by every reader and every writer. A second copy

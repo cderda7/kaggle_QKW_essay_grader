@@ -39,6 +39,7 @@ CARD_ORDER = ("argumentation", "organization", "development", "conventions")
 TRAIT_WEIGHTS = {"argumentation": 0.35, "organization": 0.25,
                  "development": 0.25, "conventions": 0.15}
 
+
 class NoCacheStatic(StaticFiles):
     """Serve assets with revalidation forced.
 
