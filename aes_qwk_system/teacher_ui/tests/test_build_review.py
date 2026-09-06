@@ -505,6 +505,22 @@ def test_a_whole_number_written_as_a_float_is_accepted():
     assert essay["traits"]["conventions"] == 5
 
 
+def test_an_essay_id_that_lost_its_quotes_is_refused_and_named():
+    """Ids in this corpus are numeric-looking strings, so dropping the quotes in a hand-edited
+    ledger is the natural slip. It matches no essay, so the record would sit in the file applying
+    to nothing at all -- the outcome the collect-all guards exist to prevent."""
+    message = _refuses([{"essay_id": 79938, "corrected_traits": {"argumentation": 4}}])
+    assert "79938" in message and "expected text" in message
+
+
+def test_a_record_naming_an_essay_outside_the_review_set_is_still_ignored():
+    """Only the type is checked. An unknown but well-typed id is a record about another essay,
+    not a mistake, and must keep passing the guard silently."""
+    records = [{"essay_id": "SOMEONE_ELSE", "corrected_traits": {"argumentation": 4}}]
+    assert check_override_records(records) == records
+    assert _artifact(records)["essays"][0]["overridden"] is False
+
+
 def test_a_record_without_an_essay_is_refused():
     assert "no essay_id" in _refuses([{"corrected_traits": {"conventions": 3}}])
 
@@ -609,6 +625,18 @@ def test_clearing_does_not_erase_the_record_that_it_happened():
     assert essay["reviewed"] is True
     assert essay["override_records"] == 2
     assert [t["kind"] for t in essay["override_trail"]] == ["trait_correction", "cleared"]
+
+
+def test_the_artifact_names_what_the_latest_record_was():
+    """The page narrates the last action, so it has to be told which action that was (ui_17)."""
+    correction = {"essay_id": "E1", "kind": "trait_correction",
+                  "corrected_traits": {"conventions": 5}}
+    dissent = {"essay_id": "E1", "kind": "dissent", "rationale": "the map is wrong"}
+    cleared = {"essay_id": "E1", "kind": "cleared"}
+    assert _artifact()["essays"][0]["latest_record_kind"] is None
+    assert _artifact([correction])["essays"][0]["latest_record_kind"] == "trait_correction"
+    assert _artifact([correction, dissent])["essays"][0]["latest_record_kind"] == "dissent"
+    assert _artifact([correction, cleared])["essays"][0]["latest_record_kind"] == "cleared"
 
 
 def test_a_withdrawal_reason_does_not_become_the_correction_textarea_s_content():

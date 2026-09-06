@@ -175,8 +175,14 @@
 
   // A click on the score control must not also pin the trait it sits inside.
   selects.forEach(function (select) {
-    ["click", "keydown", "mousedown"].forEach(function (type) {
+    ["click", "mousedown"].forEach(function (type) {
       select.addEventListener(type, function (event) { event.stopPropagation(); });
+    });
+    // Enter and Space belong to the select, and the card above would otherwise toggle its pin
+    // underneath them. Every other key keeps bubbling — Escape releases a pin from the document
+    // handler, and swallowing it here made the page's own "Esc to release" hint a false promise.
+    select.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") event.stopPropagation();
     });
     select.addEventListener("change", function () {
       var card = select.closest(".card");

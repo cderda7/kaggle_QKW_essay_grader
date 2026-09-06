@@ -397,3 +397,40 @@ in `spec_ui_v1.md`.
     words "did not move the score". A strikethrough asserts the value was superseded. When the
     save moved nothing there is no before to show, so the single number stands alone and the
     sentence and the self-opened panel carry the fact that a correction is recorded.
+
+17. **Each kind of record is narrated as itself, and only a trait correction that landed in the
+    same band opens the panel** (decision D10, review of ticket 05). `latest_save()` reads
+    `latest_record_kind` first and answers with one of `moved`, `same_band`, `cleared`, `dissent`
+    or nothing at all; the score head, the sentence beneath it and the score-formation panel's
+    open state are all driven by that single value, as ui_16 requires.
+
+    *Alternatives:* keep one boolean ("did the score move since the last record") and accept that
+    a dissent reads as a correction that did nothing; suppress the sentence entirely for anything
+    that is not a trait correction.
+
+    *Tradeoffs:* four narrations to keep true instead of two, and the dissent case shows the
+    standing correction's own before/after head rather than the last record's — the one place the
+    head is not the last save's baseline, because a dissent has no baseline to speak of.
+
+    *Defense:* on the synthetic fixture a trait correction to all 6 (1 → 2) followed by a dissent
+    left `score_unchanged_by_latest_record` true, so the page said "Your latest correction did not
+    move the score" and opened the panel. Three separate false statements: the teacher's last
+    action was a dissent, not a correction; the panel offered a distance to the nearest cut for a
+    record kind that cannot approach one; and the 1 → 2 the correction did cause vanished from the
+    essay page while the index still showed "corrected 1 → 2 · dissent". A dissent moves no trait
+    and no score by design — that is the whole of decision ui_2 — so reporting it as a correction
+    that failed to move one tells a teacher their deliberate act was a broken trait edit. The
+    panel stays shut for it because "how far is this essay from the nearest cut" answers why a
+    TRAIT edit moved nothing, which is not the question a dissent raises. A withdrawal gets its
+    own sentence for the same reason: it restores the AI's scores on purpose.
+
+    Two guards moved with it. `essay_id` is now type-checked like `corrected_traits`, `rationale`
+    and every trait value already were: ids in this corpus are numeric-looking strings, so the
+    natural slip in a diffable hand-edited ledger is dropping the quotes, and `"essay_id": 79938`
+    passed every guard while matching no essay — a correction that is in the file and invisible on
+    every page, which is the exact outcome the collect-all guards exist to prevent. A record
+    naming an essay outside the review set is still ignored silently; only the type is checked.
+    And `record_correction` re-folds the trail once the record is complete, because the build that
+    produces the recomputed holistic must read the record before it carries one: the POST response
+    was handing back a trail entry whose `recomputed_holistic` was null where a later GET of the
+    same essay returned the real number.

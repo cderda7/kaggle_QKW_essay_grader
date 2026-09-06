@@ -208,7 +208,7 @@ def formation_panel(essay):
         # ui_9/D2: the dominant experience of this control is that it appears not to work. When a
         # correction lands in the same band, the panel opens itself and shows the distance to the
         # cut -- the dead control becomes the explanation rather than a bug report.
-        % (" open" if latest_save_did_nothing(essay) else "",
+        % (" open" if latest_save(essay) == "same_band" else "",
            _num(f["weighted_trait_mean"]), _num(f["beta"][1], 3), _signed(f["trait_term"], 3),
            f["word_count"], _num(f["log10_word_count"], 3), _num(f["beta"][2], 3),
            _signed(f["length_term"], 3), _signed(f["intercept"], 3),
@@ -217,51 +217,84 @@ def formation_panel(essay):
     )
 
 
-def latest_save_did_nothing(essay):
-    """Whether the most recent correction left the displayed score exactly where it found it.
+def latest_save(essay):
+    """What the teacher's most recent record did, in one word, or None if nobody has been here.
 
-    The score head, the sentence under it and the panel's open state all ask this one question, so
-    they cannot end up narrating different baselines at each other (decisions_log.md ui_16).
+    The score head, the sentence under it and the score-formation panel's open state all read this
+    one value, so they cannot end up narrating different things at each other (decisions_log.md
+    ui_16). It asks what the last action WAS before asking what it moved: a dissent and a
+    withdrawal each change the score by their own rules, and measuring either against "did the
+    score move" reports it as a trait correction that failed (ui_17).
     """
-    return essay["overridden"] and essay["score_unchanged_by_latest_record"]
+    kind = essay["latest_record_kind"]
+    if kind is None:
+        return None
+    if kind in ("dissent", "cleared"):
+        return kind
+    return "same_band" if essay["score_unchanged_by_latest_record"] else "moved"
+
+
+def _plain_score(holistic, extra=""):
+    return ('<div class="score%s"><span class="score-value">%d</span>'
+            '<span class="of">/6</span></div>' % (extra, holistic))
+
+
+def _moved_score(was, holistic):
+    return ('<div class="score corrected">'
+            '<span class="score-was">%d</span><span class="score-arrow">\u2192</span>'
+            '<span class="score-value">%d</span><span class="of">/6</span></div>'
+            % (was, holistic))
 
 
 def score_line(essay):
-    """The holistic, and what the teacher's last save did to it.
+    """The holistic, and what the teacher's last action did to it.
 
     Before and after are shown together rather than the after alone: a number that silently changed
     cannot be checked, and a number that silently did not change reads as a broken control. The
     "before" is the score the save was made against, which on a second correction is not the AI's.
 
-    When the save moved nothing there is no before to show. Showing one anyway drew a number with
-    a line through it beside an identical one, and a strikethrough asserts the value was
-    superseded -- directly above a sentence saying it was not. The single number stands on its
-    own; the sentence and the self-opened panel are what say a correction is recorded.
+    When nothing moved there is no before to show. Showing one anyway drew a number with a line
+    through it beside an identical one, and a strikethrough asserts the value was superseded --
+    directly above a sentence saying it was not. The single number stands on its own; the sentence
+    and the self-opened panel are what say a correction is recorded.
+
+    Each kind of record is narrated as itself. A dissent carries no number and a withdrawal
+    restores the AI's, so neither is "a correction that did not work", and only a trait correction
+    that landed in the same band opens the panel -- the distance to the nearest cut answers why a
+    TRAIT edit moved nothing, which is not the question either of the others asks.
     """
-    if not essay["overridden"]:
-        return ('<div class="score"><span class="score-value">%d</span>'
-                '<span class="of">/6</span></div>' % essay["holistic"])
+    action = latest_save(essay)
+    holistic = essay["holistic"]
 
-    if latest_save_did_nothing(essay):
-        return (
-            '<div class="score corrected unchanged">'
-            '<span class="score-value">%d</span><span class="of">/6</span></div>'
-            '<p class="score-change unchanged">Your latest correction did not move the score '
-            '\u2014 it is still %d/6, exactly where it stood before you saved it. That is the '
-            'instrument, not a failed save: the panel below is open, showing how far this essay '
-            'sits from the nearest cut point.</p>'
-            % (essay["holistic"], essay["holistic"])
-        )
+    if action is None:
+        return _plain_score(holistic)
 
-    was = essay["holistic_before_latest_record"]
-    return (
-        '<div class="score corrected">'
-        '<span class="score-was">%d</span><span class="score-arrow">\u2192</span>'
-        '<span class="score-value">%d</span><span class="of">/6</span></div>'
-        '<p class="score-change">Your latest correction moved this from %d to %d, recomputed '
-        'through the same frozen aggregator that produced the original.</p>'
-        % (was, essay["holistic"], was, essay["holistic"])
-    )
+    if action == "moved":
+        was = essay["holistic_before_latest_record"]
+        return (_moved_score(was, holistic)
+                + '<p class="score-change">Your latest correction moved this from %d to %d, '
+                  'recomputed through the same frozen aggregator that produced the original.</p>'
+                  % (was, holistic))
+
+    if action == "same_band":
+        return (_plain_score(holistic, " corrected unchanged")
+                + '<p class="score-change unchanged">Your latest correction did not move the '
+                  'score \u2014 it is still %d/6, exactly where it stood before you saved it. '
+                  'That is the instrument, not a failed save: the panel below is open, showing '
+                  'how far this essay sits from the nearest cut point.</p>' % holistic)
+
+    if action == "cleared":
+        return (_plain_score(holistic, " withdrawn")
+                + '<p class="score-change unchanged">You withdrew your trait correction \u2014 '
+                  'every trait reads as the AI scored it again, and the score is %d/6. Both the '
+                  'correction and the withdrawal stay in the record below.</p>' % holistic)
+
+    head = (_moved_score(essay["ai_holistic"], holistic) if essay["overridden"]
+            else _plain_score(holistic, " dissented"))
+    return (head
+            + '<p class="score-change unchanged">Your dissent was recorded against the '
+              'aggregator \u2014 it carries no number, so the score above is unchanged at %d/6 '
+              'and every trait still reads as it was scored.</p>' % holistic)
 
 
 def override_form(essay):

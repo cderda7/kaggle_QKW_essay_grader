@@ -384,8 +384,13 @@ def _whole_number(value):
 
 def _check_override(rec, index, problems):
     where = "override record %d (%s)" % (index, rec.get("essay_id") or "no essay_id")
-    if not rec.get("essay_id"):
+    essay_id = rec.get("essay_id")
+    if essay_id is None or (isinstance(essay_id, str) and not essay_id.strip()):
         problems.append("%s: has no essay_id" % where)
+    elif not isinstance(essay_id, str):
+        problems.append("%s: essay_id is %r, expected text -- an id written without its quotes "
+                        "matches no essay, so the record would apply to nothing at all"
+                        % (where, type(essay_id).__name__))
 
     kind = record_kind(rec.get("kind"))
     if kind not in OVERRIDE_KINDS:
@@ -482,6 +487,11 @@ def override_state(records, essay_id):
     against. A page that tells a teacher what their save just did needs the score that save met,
     not the AI's -- on a second correction those are different numbers. It is None when the essay
     has no records at all. See decisions_log.md ui_16.
+
+    `latest_kind` names what that most recent record was. A dissent moves no trait and no score by
+    design, so it can only be narrated as itself; asking whether the score moved without first
+    asking what the teacher actually did reports a dissent as a correction that failed. See
+    decisions_log.md ui_17.
     """
     mine = [r for r in records if r.get("essay_id") == essay_id]
     state = dict(_fold(mine))
@@ -495,6 +505,7 @@ def override_state(records, essay_id):
         "gold_revealed": bool(rec.get("gold_revealed")),
     } for rec in mine]
     state["before_latest"] = _fold(mine[:-1]) if mine else None
+    state["latest_kind"] = record_kind(mine[-1].get("kind")) if mine else None
     return state
 
 
@@ -579,6 +590,9 @@ def build_review(predictions=None, annotation=None, essays=None, override_record
             "dissent": state["dissent"],
             "override_rationale": state["rationale"],
             "override_records": state["records"],
+            # What the most recent record was, so a consumer narrating "what did that do" names
+            # the right action before asking what it moved -- decisions_log.md ui_17.
+            "latest_record_kind": state["latest_kind"],
             "override_trail": state["trail"],
             "score_formation": formation,
             # Two questions with two answers, named for the baseline each is measured against so

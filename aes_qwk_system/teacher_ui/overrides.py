@@ -84,6 +84,11 @@ def record_correction(essay_id, kind="trait_correction", corrected_traits=None, 
     coercion and reaching the caller as an unexplained crash. The kind is normalised through the
     same rule the guard applies, so what the ledger stores is the kind that was actually
     validated rather than whatever the caller left unset.
+
+    The trail is re-folded once the record is complete. The build that produces the recomputed
+    holistic necessarily reads the record before it carries one, so the trail it returned quotes
+    this record a field short; `override_state` is a pure fold over the records, not a third
+    build, so the essay handed back matches the one a later GET rebuilds from the file.
     """
     path = build_review.OVERRIDES_FILE if path is None else path
     build = build_review.build_review if build is None else build
@@ -117,9 +122,11 @@ def record_correction(essay_id, kind="trait_correction", corrected_traits=None, 
 
     # The recomputed holistic is whatever the frozen aggregator produces for this record, obtained
     # by running the build that would result from storing it -- never by recomputing it here.
-    after = _essay(build(override_records=existing + [record], **build_kwargs), essay_id)
+    stored = existing + [record]
+    after = _essay(build(override_records=stored, **build_kwargs), essay_id)
     record["recomputed_holistic"] = after["holistic"]
     record["score_unchanged"] = after["holistic"] == before["holistic"]
+    after["override_trail"] = build_review.override_state(stored, essay_id)["trail"]
 
     append(record, path)
     return record, after

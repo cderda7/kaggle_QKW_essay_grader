@@ -588,6 +588,71 @@ def test_the_page_and_the_ledger_agree_on_what_the_last_save_did(client, essay_i
                                              second["record"]["recomputed_holistic"]) in body
 
 
+def test_a_dissent_after_a_correction_is_narrated_as_a_dissent(client, monkeypatch):
+    """ui_17: a dissent moves no trait and no score by design, so it is never "a correction that
+    did nothing". The correction standing under it keeps its own before/after head, and the panel
+    stays shut -- the distance to the nearest cut answers a question a dissent never asked."""
+    essay = _synthetic(
+        monkeypatch,
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": dict(ALL_SIX)},
+        {"essay_id": "E1", "kind": "dissent", "rationale": "length is carrying this score"},
+    )
+    assert essay["latest_record_kind"] == "dissent"
+    assert essay["score_unchanged_by_latest_record"] is True
+
+    body = client.get("/essay/E1").text
+    assert "Your dissent was recorded" in body
+    assert "did not move the score" not in body
+    assert '<details class="formation" open>' not in body
+    assert ('<span class="score-was">%d</span>' % essay["ai_holistic"]) in body
+    assert ('<span class="score-value">%d</span>' % essay["holistic"]) in body
+
+
+def test_a_withdrawal_is_narrated_as_a_withdrawal(client, monkeypatch):
+    """ui_17: clearing restores the AI's scores on purpose, so it is not a correction that
+    failed either, and it does not open the panel."""
+    essay = _synthetic(
+        monkeypatch,
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": dict(ALL_SIX)},
+        {"essay_id": "E1", "kind": "cleared"},
+    )
+    assert essay["latest_record_kind"] == "cleared"
+    assert essay["overridden"] is False
+
+    body = client.get("/essay/E1").text
+    assert "You withdrew your trait correction" in body
+    assert "did not move the score" not in body
+    assert "Your dissent was recorded" not in body
+    assert '<details class="formation" open>' not in body
+
+
+def test_an_untouched_essay_is_narrated_as_nothing_at_all(client, monkeypatch):
+    """The fourth branch, so no narration leaks onto an essay nobody has opened."""
+    essay = _synthetic(monkeypatch)
+    assert essay["latest_record_kind"] is None
+
+    body = client.get("/essay/E1").text
+    for claim in ("did not move the score", "moved this from", "Your dissent was recorded",
+                  "You withdrew your trait correction"):
+        assert claim not in body
+    assert '<details class="formation" open>' not in body
+
+
+def test_the_post_response_and_a_later_get_agree_on_the_trail(client, essay_id,
+                                                              ledger_overrides):
+    """The build that produces a record's recomputed holistic has to read the record before it
+    carries one, so the trail it returns quotes this record a field short unless it is re-folded.
+    The same essay asked for twice must not answer differently."""
+    posted = client.post("/api/override/%s" % essay_id,
+                         json={"corrected_traits": {"conventions": 5}}).json()
+    fetched = client.get("/api/review/%s" % essay_id).json()
+
+    entry = posted["essay"]["override_trail"][-1]
+    assert entry["recomputed_holistic"] == posted["record"]["recomputed_holistic"]
+    assert entry == fetched["override_trail"][-1]
+    assert posted["essay"]["override_trail"] == fetched["override_trail"]
+
+
 def test_an_unchanged_save_does_not_render_a_struck_through_duplicate(client, monkeypatch):
     """`.score.corrected .score-was` is struck through, and a strikethrough asserts the value was
     superseded. Beside an identical number, above a sentence saying nothing moved, it contradicts
