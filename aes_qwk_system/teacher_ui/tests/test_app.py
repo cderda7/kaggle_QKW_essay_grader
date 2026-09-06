@@ -4,6 +4,7 @@ These run against the real annotation batches, so they double as a check that th
 predictions, annotation, anchoring, build, render -- survives a page load.
 """
 
+import json
 import os
 import re
 from html.parser import HTMLParser
@@ -143,12 +144,161 @@ def test_the_legend_explains_both_channels(client, essay_id):
         assert criterion in body
 
 
-# --- the gold score never reaches the page --------------------------------------------------
+# --- the score-formation panel ----------------------------------------------------------------
 
-def test_no_gold_score_appears_in_the_served_page(client, essay_id):
+def test_the_formation_panel_is_collapsed_by_default(client, essay_id):
+    """Collapsed keeps the ordinary read intact: score, overview, cards. `<details>` without
+    `open` is closed in every browser and still readable with JS off or by a screen reader."""
     body = client.get("/essay/%s" % essay_id).text
-    for leak in ("human_score", "gold", "human score"):
-        assert leak not in body
+    assert '<details class="formation">' in body
+    assert '<details class="formation" open' not in body
+
+
+def test_the_panel_shows_every_step_between_the_traits_and_the_number(client, essay_id):
+    body = client.get("/essay/%s" % essay_id).text
+    panel = body[body.index('<details class="formation">'):body.index("</details>")]
+    for step in ("Weighted trait mean", "Length", "words", "log", "Baseline",
+                 "Continuous score s", "band", "cut point"):
+        assert step in panel, step
+
+
+def test_the_panel_prints_the_values_the_build_produced(client, essay_id):
+    """Read from the artifact, not recomputed in the page: every number on the panel has to be a
+    formatted stored value, or the page is a second implementation of the aggregator."""
+    body = client.get("/essay/%s" % essay_id).text
+    panel = body[body.index('<details class="formation">'):body.index("</details>")]
+    f = client.get("/api/review/%s" % essay_id).json()["score_formation"]
+
+    assert "%.3f" % f["continuous_score"] in panel
+    assert "%.2f" % f["weighted_trait_mean"] in panel
+    assert "%d words" % f["word_count"] in panel
+    assert "%.3f" % f["log10_word_count"] in panel
+    assert "%.3f" % abs(f["length_term"]) in panel
+    assert "%.3f" % abs(f["trait_term"]) in panel
+    assert "%.3f" % abs(f["intercept"]) in panel
+    assert "%.3f" % f["distance_to_nearest_cut"] in panel
+
+
+def test_the_panel_states_the_length_contribution_rather_than_implying_it(client, essay_id):
+    """The panel's whole reason for existing (ui_5): four trait cards next to one number assert
+    that the traits produced it, and a substantial part of every score is length."""
+    body = client.get("/essay/%s" % essay_id).text
+    panel = body[body.index('<details class="formation">'):body.index("</details>")]
+    f = client.get("/api/review/%s" % essay_id).json()["score_formation"]
+
+    assert "A point on every trait" in panel and "Twice as many words" in panel
+    assert "+%.2f" % f["s_per_trait_point"] in panel
+    assert "+%.2f" % f["s_per_length_doubling"] in panel
+    assert "0.820" in panel and "0.688" in panel
+
+
+def test_the_panel_column_adds_up_on_screen(client, essay_id):
+    """A sum whose printed addends do not reach its printed total reads as an arithmetic error and
+    would discredit the one panel built to be checked."""
+    body = client.get("/essay/%s" % essay_id).text
+    panel = body[body.index('<details class="formation">'):body.index("</details>")]
+    terms = [float(t.replace("\u2212", "-").replace("+", ""))
+             for t in re.findall(r'class="num term">([^<]+)</td>', panel)]
+    assert len(terms) == 4, terms
+    assert round(sum(terms[:3]), 3) == terms[3]
+
+
+# --- the rater's score is not in the page until it is deliberately revealed --------------------
+
+@pytest.fixture
+def ledger(tmp_path, monkeypatch):
+    """Point the reveal ledger at a temp file: a test run must not append to the audit record."""
+    import gold
+    monkeypatch.setattr(gold, "REVEALS_FILE", str(tmp_path / "gold_reveals.json"))
+    return str(tmp_path / "gold_reveals.json")
+
+
+def test_the_raters_score_is_not_in_the_served_page_before_a_reveal(client, essay_id, ledger,
+                                                                    monkeypatch):
+    """Asserting the real score is absent proves nothing -- it is a digit from 1 to 6 and the page
+    is full of those. A sentinel the corpus could never produce does prove it: if it is anywhere in
+    the markup, the page asked for the answer key before anyone deliberately revealed it."""
+    import gold
+    monkeypatch.setattr(gold, "gold_score", lambda *a, **k: 987654)
+
+    body = client.get("/essay/%s" % essay_id).text
+    assert "987654" not in body
+    assert 'class="gold-value"' not in body
+    assert "data-revealed" not in body
+
+
+def test_the_review_artifact_never_carries_the_raters_score(client):
+    """The artifact is what /api/review serves, so the withholding has to hold there too."""
+    def keys(node):
+        if isinstance(node, dict):
+            for k, v in node.items():
+                yield k
+                for sub in keys(v):
+                    yield sub
+        elif isinstance(node, list):
+            for item in node:
+                for sub in keys(item):
+                    yield sub
+
+    found = set(keys(client.get("/api/review").json()))
+    assert not found & {"gold", "gold_score", "human_score", "score", "rater_score"}
+
+
+def test_the_reveal_control_says_it_is_recorded_and_why(client, essay_id, ledger):
+    body = client.get("/essay/%s" % essay_id).text
+    block = body[body.index('<section class="gold"'):]
+    block = block[:block.index("</section>")]
+    assert "recorded" in block
+    assert "gold_revealed" in block
+    assert "steers the model" in block
+    # A flag, not a ban -- overstating its reach teaches trust in a boundary that is not there.
+    assert "personal_training_set.csv" in block
+    assert "neither prevented nor logged" in block
+
+
+def test_revealing_returns_the_score_and_records_it(client, essay_id, ledger):
+    import gold
+    response = client.post("/api/gold/%s" % essay_id)
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["gold_score"] == gold.gold_score(essay_id)
+    assert payload["already_revealed"] is False
+    assert json.load(open(ledger))[0]["essay_id"] == essay_id
+
+
+def test_after_a_reveal_the_page_shows_the_score_and_says_it_was_recorded(client, essay_id, ledger):
+    import gold
+    client.post("/api/gold/%s" % essay_id)
+    body = client.get("/essay/%s" % essay_id).text
+    assert 'data-revealed="true"' in body
+    assert '<span class="gold-number">%d</span>' % gold.gold_score(essay_id) in body
+    assert "gold_revealed: true" in body
+    assert "gold-reveal" not in body, "the reveal control should be gone once it has fired"
+
+
+def test_a_second_reveal_does_not_add_a_second_record(client, essay_id, ledger):
+    client.post("/api/gold/%s" % essay_id)
+    assert client.post("/api/gold/%s" % essay_id).json()["already_revealed"] is True
+    assert len(json.load(open(ledger))) == 1
+
+
+def test_the_reveal_flag_is_readable_for_the_records_that_follow(client, essay_id, ledger):
+    """What ticket 05 stamps `gold_revealed` from."""
+    import gold
+    assert gold.was_revealed(essay_id) is False
+    client.post("/api/gold/%s" % essay_id)
+    assert gold.was_revealed(essay_id) is True
+
+
+def test_an_essay_outside_the_review_set_cannot_be_revealed(client, ledger):
+    """The endpoint must not become a way to read the answer key of an arbitrary corpus essay."""
+    assert client.post("/api/gold/does-not-exist").status_code == 404
+    assert not os.path.exists(ledger)
+
+
+def test_the_reveal_is_a_post_because_it_writes_the_record(client, essay_id, ledger):
+    assert client.get("/api/gold/%s" % essay_id).status_code == 405
+    assert not os.path.exists(ledger)
 
 
 # --- api and static -------------------------------------------------------------------------

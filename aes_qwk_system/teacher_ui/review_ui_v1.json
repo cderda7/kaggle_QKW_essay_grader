@@ -180,6 +180,13 @@
         "weighted_trait_mean": 3.0,
         "log10_word_count": 2.5538830266438746,
         "word_count": 358,
+        "intercept": -6.782584958393722,
+        "terms": {
+          "weighted_trait_mean": 2.0481350292342912,
+          "log10_word_count": 7.363918775417682
+        },
+        "trait_term": 2.0481350292342912,
+        "length_term": 7.363918775417682,
         "continuous_score": 2.629468846258252,
         "band": "[2.516, 3.348)",
         "cuts": [
@@ -192,6 +199,9 @@
         "to_next_band_up": 0.7187516729810195,
         "to_next_band_down": 0.11350480674461938,
         "distance_to_nearest_cut": 0.11350480674461938,
+        "nearest_cut_direction": "down",
+        "s_per_trait_point": 0.6827116764114294,
+        "s_per_length_doubling": 0.8679960726106533,
         "beta": [
           -6.782584958393722,
           0.6827116764114304,
@@ -344,6 +354,13 @@
         "weighted_trait_mean": 3.85,
         "log10_word_count": 2.2013971243204513,
         "word_count": 159,
+        "intercept": -6.782584958393722,
+        "terms": {
+          "weighted_trait_mean": 2.6284399541840067,
+          "log10_word_count": 6.347553684648216
+        },
+        "trait_term": 2.6284399541840067,
+        "length_term": 6.347553684648216,
         "continuous_score": 2.1934086804385,
         "band": "[1.735, 2.516)",
         "cuts": [
@@ -356,6 +373,9 @@
         "to_next_band_up": 0.32255535907513266,
         "to_next_band_down": 0.45822930972393117,
         "distance_to_nearest_cut": 0.32255535907513266,
+        "nearest_cut_direction": "up",
+        "s_per_trait_point": 0.6827116764114312,
+        "s_per_length_doubling": 0.867996072610655,
         "beta": [
           -6.782584958393722,
           0.6827116764114304,
@@ -522,6 +542,13 @@
         "weighted_trait_mean": 4.25,
         "log10_word_count": 2.705007959333336,
         "word_count": 507,
+        "intercept": -6.782584958393722,
+        "terms": {
+          "weighted_trait_mean": 2.9015246247485793,
+          "log10_word_count": 7.799675510419015
+        },
+        "trait_term": 2.9015246247485793,
+        "length_term": 7.799675510419015,
         "continuous_score": 3.918615176773873,
         "band": "[3.348, 4.193)",
         "cuts": [
@@ -534,6 +561,9 @@
         "to_next_band_up": 0.2738938640186408,
         "to_next_band_down": 0.5703946575346013,
         "distance_to_nearest_cut": 0.2738938640186408,
+        "nearest_cut_direction": "up",
+        "s_per_trait_point": 0.6827116764114312,
+        "s_per_length_doubling": 0.8679960726106533,
         "beta": [
           -6.782584958393722,
           0.6827116764114304,

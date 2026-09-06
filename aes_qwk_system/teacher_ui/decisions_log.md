@@ -189,3 +189,61 @@ in `spec_ui_v1.md`.
    which is the entire purpose of the panel. Reopening ui_2 would trade an honest limitation for a
    dishonest one: a directly-typed holistic would *look* responsive while decoupling the score from
    the evidence beside it. This decision is why the panel is not optional polish.
+
+10. **The panel's arithmetic lives in the build artifact, not in the page** (decision D3, taken
+    2026-09-05 while building ticket 04). `_score_formation` gained the additive terms
+    (`intercept`, `trait_term`, `length_term`, and a `terms` map keyed by the aggregator's own
+    feature names) and two sensitivities (`s_per_trait_point`, `s_per_length_doubling`), each
+    measured by running the frozen aggregator again rather than by multiplying coefficients. The
+    renderer formats these numbers and derives none of them.
+
+    *Alternatives:* store only the raw features and `beta` — which the artifact already did — and
+    let the page multiply them out; compute the sensitivities once by hand and hard-code the two
+    constants in the copy.
+
+    *Tradeoffs:* a wider artifact, four more stored fields per essay, and two extra aggregator
+    calls per essay per build. Some of the stored values are trivially derivable from the ones
+    beside them, which reads as redundancy in the JSON.
+
+    *Defense:* a page that multiplies β by a feature is a second implementation of the aggregator,
+    and the ticket's own acceptance criterion — values read from the build artifact rather than
+    recomputed in the page — is a statement about exactly that. Two implementations of a fitted map
+    eventually disagree, and the one place that disagreement would surface is the panel built to be
+    checked. Hard-coding the sensitivities is worse still: they are properties of
+    `aggregator_v9.json`, so a v10 with a smaller β₂ would leave the page asserting v9's numbers in
+    prose. Building the terms by zipping the aggregator's own `features` list rather than by
+    position means a future feature set cannot silently relabel a coefficient — it would produce a
+    term under a new name instead of mislabelling an old one. The cost is measured: the build is
+    still under a tenth of a second over the sample.
+
+    A consequence worth recording: the panel prints every term to three decimals so the column adds
+    up on screen (+2.048 + 7.364 − 6.783 = 2.629). Two-decimal addends under a three-decimal total
+    read as an arithmetic error, and this is the one panel whose whole purpose is being checked.
+
+11. **A reveal is recorded once per essay, in its own ledger, not once per look** (decision D4,
+    same session). `gold_reveals.json` holds one record per essay — essay id, timestamp, ladder
+    version and trait run — written on the first reveal. Re-revealing returns the original record
+    and its original timestamp. It is a separate file from `overrides.json`, and `gold.py` is the
+    only module that reads the corpus `score` column at all.
+
+    *Alternatives:* append an event per click, giving a full viewing history; store the flag inside
+    the override records only, with no ledger of its own; keep a per-session flag in memory.
+
+    *Tradeoffs:* the ledger cannot answer "how often was this looked at", and a reveal made and
+    then regretted cannot be taken back — the essay is marked from that moment on.
+
+    *Defense:* the question the flag has to answer is "was this correction formed with the answer
+    key in view", and that is a property of the essay from the first reveal onward, not of any
+    individual click. Once revealed, the score renders with the page on every subsequent load, so a
+    second look takes no action that could be recorded — an event log would therefore undercount by
+    construction while looking authoritative. The first timestamp is the one that bounds the
+    corrections, which is why it survives. A separate file rather than a field inside overrides
+    because a reveal precedes any correction and often produces none: storing it inside the record
+    it is meant to qualify would mean the flag only exists once it is too late to be informative,
+    and ticket 05 needs to read it before it writes. In-memory was rejected outright: a leakage
+    control that a restart clears is not a control.
+
+    The reveal is a **POST**, and `find()` runs before the ledger is touched, so the endpoint
+    cannot be used to read the answer key of an essay outside the review set. The control says what
+    it is: the CSV is on disk and reading it there is neither prevented nor logged. A control that
+    overstates its own reach teaches the reviewer to trust a boundary that is not there.

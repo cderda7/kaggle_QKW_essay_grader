@@ -99,7 +99,8 @@ a { color: inherit; }
   font-size: 11px; text-transform: uppercase; letter-spacing: .09em;
   color: var(--ink-faint); font-weight: 600; margin: 0 0 10px;
 }
-.response-pane .label + .label { margin-top: 28px; }
+.response-pane .label + .label,
+.response-pane .no-prompt + .label { margin-top: 28px; }
 .no-prompt { color: var(--ink-faint); font-size: 14px; margin: 0; font-style: italic; }
 
 .response { font-size: 16.5px; line-height: 1.85; }
@@ -212,10 +213,100 @@ body.focus-conventions mark.pol-conventions-weakness {
 .card.c-organization h3  { color: var(--organization); }
 .card.c-development h3   { color: var(--development); }
 .card.c-conventions h3   { color: var(--conventions); }
-.card-score { margin-left: auto; font-size: 17px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.card-score {
+  margin-left: auto; font-size: 17px; font-weight: 650; font-variant-numeric: tabular-nums;
+}
 .card-score .of { font-size: 12px; }
 
 .card-weight { margin: 1px 0 8px; font-size: 11px; color: var(--ink-faint); }
 .card-comment { margin: 0 0 8px; font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); }
 .card-evidence { margin: 0; font-size: 11.5px; color: var(--ink-faint); }
 .card-noevidence { font-style: italic; }
+
+/* --- score formation ------------------------------------------------------------------------
+   Collapsed by default: the everyday read is score, overview, cards, and this sits under the
+   number for the reader who asks where it came from. Open, it is a sum that adds up on screen —
+   the length term is a row like any other rather than a footnote, because it is the largest one. */
+
+.formation {
+  margin: -12px 0 20px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 12.5px; color: var(--ink-soft);
+}
+.formation > summary {
+  cursor: pointer; list-style: none;
+  padding: 0 0 12px; color: var(--ink-faint);
+  font-size: 11.5px; letter-spacing: .01em;
+  display: flex; align-items: center; gap: 6px;
+}
+.formation > summary::-webkit-details-marker { display: none; }
+.formation > summary::before {
+  content: "▸"; font-size: 11px; line-height: 1; transition: transform .12s ease;
+  display: inline-block; transform-origin: 45% 50%;
+}
+.formation[open] > summary::before { transform: rotate(90deg); }
+.formation > summary:hover { color: var(--ink); }
+.formation-body { padding: 0 0 16px; }
+
+.formation-sum { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.formation-sum th {
+  text-align: left; font-weight: 500; color: var(--ink-soft); padding: 3px 8px 3px 0;
+}
+.formation-sum td { padding: 3px 0 3px 8px; text-align: right; white-space: nowrap; }
+.formation-sum .sub { color: var(--ink-faint); font-size: 11px; }
+.formation-sum .coef { color: var(--ink-faint); }
+.formation-sum .term { font-weight: 600; color: var(--ink); }
+.formation-sum tfoot th, .formation-sum tfoot td {
+  border-top: 1px solid var(--rule); padding-top: 7px; font-weight: 650; color: var(--ink);
+}
+
+.formation-band { margin: 12px 0 0; line-height: 1.55; }
+.formation-band b { font-variant-numeric: tabular-nums; }
+
+.formation-moves {
+  display: flex; gap: 22px; margin: 14px 0 0;
+  padding: 10px 12px; background: var(--panel); border-radius: 4px;
+}
+.formation-moves div { margin: 0; }
+.formation-moves dt { font-size: 11px; color: var(--ink-faint); }
+.formation-moves dd {
+  margin: 1px 0 0; font-size: 15px; font-weight: 650; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.formation-caveat {
+  margin: 12px 0 0; font-size: 11.5px; color: var(--ink-faint); line-height: 1.6;
+}
+
+/* --- the human rater's score ------------------------------------------------------------------
+   Last in the pane on purpose: it must not sit in the eye-line while a view is being formed. */
+
+.gold {
+  margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.gold-head {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--ink-faint); font-weight: 600; margin: 0 0 8px;
+}
+.gold-note { margin: 0 0 10px; font-size: 11.5px; line-height: 1.6; color: var(--ink-faint); }
+.gold-caveat {
+  margin: 8px 0 0; font-size: 11px; line-height: 1.55; color: var(--ink-faint); font-style: italic;
+}
+.gold code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10.5px;
+  background: var(--panel); padding: 1px 4px; border-radius: 3px;
+}
+
+.gold-reveal {
+  font: inherit; font-size: 12.5px; color: var(--ink);
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 5px;
+  padding: 7px 13px; cursor: pointer;
+  transition: border-color .12s ease, background-color .12s ease;
+}
+.gold-reveal:hover { border-color: var(--ink-faint); }
+.gold-reveal:focus-visible { outline: 2px solid var(--ink-faint); outline-offset: 2px; }
+.gold-reveal[disabled] { opacity: .5; cursor: progress; }
+
+.gold-value { display: flex; align-items: baseline; gap: 4px; margin: 0 0 8px; }
+.gold-number { font-size: 26px; font-weight: 650; letter-spacing: -.02em; line-height: 1; }
+.gold-gap { margin-left: 8px; font-size: 11.5px; color: var(--ink-faint); }
+.gold-error { margin: 8px 0 0; font-size: 11.5px; color: var(--conventions); }

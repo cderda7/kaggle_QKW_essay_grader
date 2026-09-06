@@ -31,7 +31,8 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "..", "grading"))
 
 from anchor import AnchorError, resolve_spans          # noqa: E402
-from grade_essays import V4_WEIGHTS, apply_aggregator   # noqa: E402
+from grade_essays import (V4_WEIGHTS, aggregator_features,  # noqa: E402
+                          apply_aggregator)
 
 LADDER_VERSION = "ui_v1"
 TRAIT_RUN = "v6_runB"
@@ -167,8 +168,9 @@ def _check_item(item, essays, problems):
     else:
         hit = GRADE_LANGUAGE.search(overview)
         if hit:
-            problems.append("%s: overview names the grade (%r) -- the teacher can already see the "
-                            "number; the overview exists to say what it cannot" % (eid, hit.group(0)))
+            problems.append("%s: overview names the grade (%r) -- the teacher can already see "
+                            "the number; the overview exists to say what it cannot"
+                            % (eid, hit.group(0)))
 
     criteria = item.get("criteria")
     if not isinstance(criteria, dict):
@@ -273,9 +275,21 @@ def load_annotation(batch_dir=ANNOTATION_DIR, essays=None, expected_ids=None):
 # build
 # --------------------------------------------------------------------------------------------
 
+def _continuous(aggregator, traits, word_count):
+    """The continuous score `s` alone, through the pipeline's own aggregator."""
+    return apply_aggregator(aggregator, traits, word_count)[1]
+
+
 def _score_formation(aggregator, traits, word_count):
     """Everything the teacher needs to see how the holistic was produced, and nothing recomputed
-    in the page. The holistic itself comes from the pipeline's own aggregator, not a copy of it."""
+    in the page. The holistic itself comes from the pipeline's own aggregator, not a copy of it.
+
+    The additive terms and the two sensitivities are computed here for the same reason: a page that
+    multiplies a coefficient by a feature is a second implementation of the aggregator, and two
+    implementations eventually disagree. The renderer formats these numbers; it never derives one
+    (ui_10). Terms are built by zipping the aggregator's own `features` list rather than by
+    positional assumption, so a future feature set cannot silently mislabel a term.
+    """
     holistic, s, band = apply_aggregator(aggregator, traits, word_count)
     cuts = aggregator["cuts"]
     above = [c for c in cuts if c > s]
@@ -283,17 +297,41 @@ def _score_formation(aggregator, traits, word_count):
     to_up = (min(above) - s) if above else None
     to_down = (s - max(below)) if below else None
     nearest = min([d for d in (to_up, to_down) if d is not None], default=None)
+    if nearest is None:
+        direction = None
+    elif to_up is not None and nearest == to_up:
+        direction = "up"
+    else:
+        direction = "down"
+
+    beta = aggregator["beta"]
+    features = list(aggregator["features"])
+    terms = dict(zip(features,
+                     (b * v for b, v in zip(beta[1:],
+                                            aggregator_features(traits, word_count, features)))))
+
+    # What actually moves the score, stated as movement rather than left to be inferred from three
+    # coefficients. Both are measured against this essay's own aggregator rather than derived by
+    # hand: a point on every trait, and twice the length. decisions_log.md ui_5 and D2.
+    raised = {k: v + 1 for k, v in traits.items()}
     return holistic, {
         "weighted_trait_mean": sum(V4_WEIGHTS[k] * traits[k] for k in V4_WEIGHTS),
         "log10_word_count": math.log10(max(word_count, 1)),
         "word_count": word_count,
+        "intercept": beta[0],
+        "terms": terms,
+        "trait_term": terms.get("weighted_trait_mean"),
+        "length_term": terms.get("log10_word_count"),
         "continuous_score": s,
         "band": band,
         "cuts": list(cuts),
         "to_next_band_up": to_up,
         "to_next_band_down": to_down,
         "distance_to_nearest_cut": nearest,
-        "beta": list(aggregator["beta"]),
+        "nearest_cut_direction": direction,
+        "s_per_trait_point": _continuous(aggregator, raised, word_count) - s,
+        "s_per_length_doubling": _continuous(aggregator, traits, word_count * 2) - s,
+        "beta": list(beta),
         "weights": dict(V4_WEIGHTS),
     }
 
