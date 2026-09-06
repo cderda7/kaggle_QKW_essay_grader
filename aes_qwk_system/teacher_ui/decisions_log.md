@@ -363,3 +363,37 @@ in `spec_ui_v1.md`.
     Without that, clearing a correction with "on reflection the AI had it right" left that
     sentence in the correction textarea, and the teacher's next correction was stored against a
     reason arguing it should not have been made.
+
+16. **The page narrates the save the teacher just made, against the score that save was made
+    against** (decision D9, review of ticket 05). The artifact carries two separately named facts:
+    `score_unchanged_vs_ai`, whether the corrections as they now stand leave the AI's score
+    untouched, and `score_unchanged_by_latest_record`, whether the most recent record moved
+    anything, measured against `holistic_before_latest_record`. The score head, the sentence under
+    it and the score-formation panel's open state are all driven by the second.
+
+    *Alternatives:* keep one flag on the AI baseline, which is where ui_14 left it and where this
+    was found; narrate the net state instead of the last action, and drop the "did not move the
+    score" sentence for anything after the first correction.
+
+    *Tradeoffs:* two fields where there was one, and a reader of the artifact now has to notice
+    which baseline a name refers to. The before/arrow/after head no longer always shows the AI's
+    original either — on a second correction it shows the score being corrected away from, and the
+    AI's number is carried by the trait cards and the formation panel instead.
+
+    *Defense:* one flag could not answer both questions, and the page was asking the one it did
+    not hold. Against the frozen aggregator, traits {4,3,3,2} at 60 words score 1; correcting to
+    all 6 gives 2; a second correction to {4,3,3,3} gives 1 again. The old flag reported that
+    second save as *unchanged* — the page said "did not move the score" and opened the panel while
+    the record it had just written said the score went 2 → 1. The mirror case is worse: from all 6,
+    correcting conventions to 5 leaves the score at 2, and the page said "moved this from 1 to 2"
+    with the panel shut. That is precisely the "this control appears not to work" experience
+    ui_9/D2 exists to explain, unexplained for every save after the first. A teacher reads that
+    sentence in the second after clicking Save, so it is about that click; ui_14 already settled
+    the same question for the ledger, and the page and the record now say the same thing.
+
+    The same decision removes a contradiction in the unchanged render. `.score.corrected
+    .score-was` is struck through, so the dominant case — a single trait moves the score on 2 of
+    10 sampled essays — drew a struck-through 3, an arrow and an identical 3 directly above the
+    words "did not move the score". A strikethrough asserts the value was superseded. When the
+    save moved nothing there is no before to show, so the single number stands alone and the
+    sentence and the self-opened panel carry the fact that a correction is recorded.

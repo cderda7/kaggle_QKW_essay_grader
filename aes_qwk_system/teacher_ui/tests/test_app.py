@@ -489,32 +489,17 @@ def test_a_correction_recomputes_the_holistic_and_shows_both(client, essay_id, l
     assert "moved this from %d to %d" % (after["ai_holistic"], after["holistic"]) in body
 
 
-@pytest.fixture
-def same_band_essay(monkeypatch):
-    """An essay whose correction provably lands in the same band, served through the real route.
-
-    Which corpus essay the fixture yields decides whether a correction crosses a cut, so a test
-    built on it could pass without ever reaching the case ui_9/D2 exists for. The build seam
-    accepts injected predictions, essays and a manifest, so the case is constructed instead."""
-    import app as application
-    from test_build_review import ESSAYS, MANIFEST, PREDICTIONS, make_item
-
-    record = {"essay_id": "E1", "kind": "trait_correction",
-              "corrected_traits": {"conventions": 3}}
-    built = application.build_review(predictions=PREDICTIONS, annotation={"E1": make_item()},
-                                     essays=ESSAYS, override_records=[record],
-                                     expected_ids=["E1"], manifest=MANIFEST)
-    monkeypatch.setattr(application, "artifact", lambda: built)
-    return built["essays"][0]
-
-
-def test_a_correction_that_changes_nothing_opens_the_panel_and_explains(client, same_band_essay):
+def test_a_correction_that_changes_nothing_opens_the_panel_and_explains(client, monkeypatch):
     """ui_9/D2: the control's dominant experience is that it appears not to work. The panel
     opening itself is what turns that into an explanation instead of a bug report."""
-    essay = same_band_essay
+    essay = _synthetic(
+        monkeypatch,
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 3}},
+    )
     assert essay["overridden"] is True
     assert essay["holistic"] == essay["ai_holistic"]
-    assert essay["score_unchanged_by_override"] is True
+    assert essay["score_unchanged_by_latest_record"] is True
+    assert essay["score_unchanged_vs_ai"] is True
 
     body = client.get("/essay/E1").text
     assert '<details class="formation" open>' in body
@@ -523,20 +508,110 @@ def test_a_correction_that_changes_nothing_opens_the_panel_and_explains(client, 
     assert "did not move the score" in body
 
 
-def test_a_correction_that_moves_the_score_leaves_the_panel_collapsed(client, monkeypatch):
-    """The panel opens itself only when the correction appeared to do nothing, so the same
-    synthetic inputs are used for the other half rather than a corpus essay that may do either."""
+def _synthetic(monkeypatch, *records):
+    """Serve a page built from the synthetic fixture, so which corpus essay the client yields
+    cannot decide whether a correction crosses a cut."""
     import app as application
     from test_build_review import ESSAYS, MANIFEST, PREDICTIONS, make_item
 
-    record = {"essay_id": "E1", "kind": "trait_correction",
-              "corrected_traits": {"argumentation": 6, "organization": 6,
-                                   "development": 6, "conventions": 6}}
     built = application.build_review(predictions=PREDICTIONS, annotation={"E1": make_item()},
-                                     essays=ESSAYS, override_records=[record],
+                                     essays=ESSAYS, override_records=list(records),
                                      expected_ids=["E1"], manifest=MANIFEST)
     monkeypatch.setattr(application, "artifact", lambda: built)
-    essay = built["essays"][0]
+    return built["essays"][0]
+
+
+ALL_SIX = {"argumentation": 6, "organization": 6, "development": 6, "conventions": 6}
+
+
+def test_a_second_correction_that_moves_nothing_still_opens_the_panel(client, monkeypatch):
+    """ui_9/D2 has to hold for every save, not only the first. From all traits at 6 the score is
+    2; dropping conventions to 5 leaves it at 2, so that save did nothing and has to say so --
+    measured against the score it was made against, not against the AI's."""
+    essay = _synthetic(
+        monkeypatch,
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": dict(ALL_SIX)},
+        {"essay_id": "E1", "kind": "trait_correction",
+         "corrected_traits": dict(ALL_SIX, conventions=5)},
+    )
+    assert essay["holistic"] != essay["ai_holistic"]
+    assert essay["holistic_before_latest_record"] == essay["holistic"]
+    assert essay["score_unchanged_by_latest_record"] is True
+    assert essay["score_unchanged_vs_ai"] is False
+
+    body = client.get("/essay/E1").text
+    assert '<details class="formation" open>' in body
+    assert "did not move the score" in body
+    assert "moved this from" not in body
+
+
+def test_a_second_correction_that_moves_the_score_says_what_it_moved_from(client, monkeypatch):
+    """The mirror: from all 6 (score 2) back to near the AI's traits gives 1, so the save moved
+    2 to 1. Narrating it from the AI's 1 would credit this save with going nowhere."""
+    essay = _synthetic(
+        monkeypatch,
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": dict(ALL_SIX)},
+        {"essay_id": "E1", "kind": "trait_correction",
+         "corrected_traits": {"argumentation": 4, "organization": 3, "development": 3,
+                              "conventions": 3}},
+    )
+    assert essay["holistic"] == essay["ai_holistic"]
+    assert essay["holistic_before_latest_record"] != essay["holistic"]
+    assert essay["score_unchanged_by_latest_record"] is False
+    assert essay["score_unchanged_vs_ai"] is True
+
+    body = client.get("/essay/E1").text
+    assert '<details class="formation" open>' not in body
+    assert "moved this from %d to %d" % (essay["holistic_before_latest_record"],
+                                         essay["holistic"]) in body
+    assert "did not move the score" not in body
+
+
+def test_the_page_and_the_ledger_agree_on_what_the_last_save_did(client, essay_id,
+                                                                ledger_overrides):
+    """The disagreement this pins down: the record says whether it moved the score, and the page
+    tells the teacher the same thing about the same save."""
+    client.post("/api/override/%s" % essay_id, json={"corrected_traits": ALL_SIX})
+    second = client.post("/api/override/%s" % essay_id,
+                         json={"corrected_traits": {"conventions": 1}}).json()
+
+    essay = second["essay"]
+    assert second["record"]["original_holistic"] == essay["holistic_before_latest_record"]
+    assert second["record"]["score_unchanged"] == essay["score_unchanged_by_latest_record"]
+
+    body = client.get("/essay/%s" % essay_id).text
+    if second["record"]["score_unchanged"]:
+        assert "did not move the score" in body
+        assert '<details class="formation" open>' in body
+    else:
+        assert "moved this from %d to %d" % (second["record"]["original_holistic"],
+                                             second["record"]["recomputed_holistic"]) in body
+
+
+def test_an_unchanged_save_does_not_render_a_struck_through_duplicate(client, monkeypatch):
+    """`.score.corrected .score-was` is struck through, and a strikethrough asserts the value was
+    superseded. Beside an identical number, above a sentence saying nothing moved, it contradicts
+    both -- and this is the dominant render."""
+    essay = _synthetic(
+        monkeypatch,
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": {"conventions": 3}},
+    )
+    assert essay["score_unchanged_by_latest_record"] is True
+
+    body = client.get("/essay/E1").text
+    assert "score-was" not in body
+    assert "score-arrow" not in body
+    assert body.count('<span class="score-value">%d</span>' % essay["holistic"]) == 1
+    assert "did not move the score" in body
+
+
+def test_a_correction_that_moves_the_score_leaves_the_panel_collapsed(client, monkeypatch):
+    """The panel opens itself only when the correction appeared to do nothing, so the same
+    synthetic inputs are used for the other half rather than a corpus essay that may do either."""
+    essay = _synthetic(
+        monkeypatch,
+        {"essay_id": "E1", "kind": "trait_correction", "corrected_traits": dict(ALL_SIX)},
+    )
     assert essay["holistic"] != essay["ai_holistic"]
 
     body = client.get("/essay/E1").text
@@ -723,15 +798,33 @@ def test_a_withdrawal_reason_is_not_offered_back_as_the_next_correction_s(client
 
 # --- the essay list ------------------------------------------------------------------------------
 
-def test_saving_an_unchanged_form_is_refused_before_it_reaches_the_ledger(client, essay_id,
+def test_a_trait_correction_that_corrects_nothing_never_reaches_the_ledger(client, essay_id,
                                                                           ledger_overrides):
-    """A correction identical to the one already stored is not a second decision. The control is
-    guarded in the page; this asserts the seam agrees that an empty correction is a mistake."""
-    import build_review
-    with pytest.raises(build_review.OverrideError) as exc:
-        build_review.check_override_records(
-            [{"essay_id": essay_id, "kind": "trait_correction", "corrected_traits": {}}])
-    assert "corrects no trait" in str(exc.value)
+    """A correction with an empty `corrected_traits` is refused by the seam, so no client can
+    write one.
+
+    This is NOT the duplicate-save guard. Re-POSTing traits identical to the standing correction
+    is accepted by the server on purpose and appends a second record: the seam has no opinion
+    about whether a teacher meant to decide the same thing twice, and the append-only ledger is
+    the wrong place to start dropping records. What stops the accidental duplicate is a page
+    affordance -- `scoresMoved()`/`reasonRewritten()` in static/app.js, which refuses to POST an
+    untouched form at all.
+    """
+    response = client.post("/api/override/%s" % essay_id,
+                           json={"kind": "trait_correction", "corrected_traits": {}})
+    assert response.status_code == 400
+    assert "corrects no trait" in response.json()["detail"]
+    assert not os.path.exists(ledger_overrides)
+
+
+def test_an_identical_correction_posted_twice_is_recorded_twice(client, essay_id,
+                                                                ledger_overrides):
+    """The other half of the sentence above, stated as behaviour so it cannot drift silently:
+    the server does not deduplicate, and the duplicate guard is a client affordance."""
+    body = {"corrected_traits": {"conventions": 5}}
+    assert client.post("/api/override/%s" % essay_id, json=body).status_code == 200
+    assert client.post("/api/override/%s" % essay_id, json=body).status_code == 200
+    assert len(json.load(open(ledger_overrides))) == 2
 
 
 def test_the_index_distinguishes_reviewed_essays_from_untouched_ones(client, essay_id,

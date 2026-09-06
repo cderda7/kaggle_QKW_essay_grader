@@ -431,7 +431,8 @@ def test_an_override_that_does_not_move_the_band_is_flagged_as_such():
     assert essay["traits"]["conventions"] == 3
     assert essay["overridden"] is True
     assert essay["holistic"] == essay["ai_holistic"]
-    assert essay["score_unchanged_by_override"] is True
+    assert essay["score_unchanged_vs_ai"] is True
+    assert essay["score_unchanged_by_latest_record"] is True
     assert essay["score_formation"]["distance_to_nearest_cut"] is not None
 
 
@@ -440,7 +441,8 @@ def test_an_override_that_does_move_the_band_is_not_flagged_as_unchanged():
     record = {"essay_id": "E1", "corrected_traits": {c: 6 for c in CRITERIA}}
     essay = _artifact([record])["essays"][0]
     assert essay["holistic"] != essay["ai_holistic"]
-    assert essay["score_unchanged_by_override"] is False
+    assert essay["score_unchanged_vs_ai"] is False
+    assert essay["score_unchanged_by_latest_record"] is False
 
 
 def test_the_latest_override_record_wins():

@@ -444,6 +444,24 @@ def check_override_records(records):
     return records
 
 
+def _fold(records):
+    """The per-section latest-wins fold itself, over any slice of one essay's records."""
+    fold = {"corrected_traits": None, "dissent": None, "rationale": None}
+    for rec in records:
+        kind = record_kind(rec.get("kind"))
+        rationale = (rec.get("rationale") or "").strip() or None
+        if kind == "trait_correction":
+            fold["corrected_traits"] = {k: int(v)
+                                        for k, v in (rec.get("corrected_traits") or {}).items()}
+            fold["rationale"] = rationale
+        elif kind == "cleared":
+            fold["corrected_traits"] = None
+            fold["rationale"] = None
+        elif kind == "dissent":
+            fold["dissent"] = {"rationale": rationale, "recorded_at": rec.get("recorded_at")}
+    return fold
+
+
 def override_state(records, essay_id):
     """Fold one essay's records into its current state.
 
@@ -459,31 +477,24 @@ def override_state(records, essay_id):
     for whatever the teacher does next, which is how a reason arguing the AI was right ends up
     stored against a fresh correction. The withdrawal's reason stays in `trail`, where it names
     the record it was typed for. See decisions_log.md ui_14 and ui_15.
+
+    `before_latest` is the same fold one record short: the state the most recent record was made
+    against. A page that tells a teacher what their save just did needs the score that save met,
+    not the AI's -- on a second correction those are different numbers. It is None when the essay
+    has no records at all. See decisions_log.md ui_16.
     """
     mine = [r for r in records if r.get("essay_id") == essay_id]
-    state = {"corrected_traits": None, "dissent": None, "rationale": None,
-             "records": len(mine), "trail": []}
-
-    for rec in mine:
-        kind = record_kind(rec.get("kind"))
-        rationale = (rec.get("rationale") or "").strip() or None
-        if kind == "trait_correction":
-            state["corrected_traits"] = {k: int(v)
-                                         for k, v in (rec.get("corrected_traits") or {}).items()}
-            state["rationale"] = rationale
-        elif kind == "cleared":
-            state["corrected_traits"] = None
-            state["rationale"] = None
-        elif kind == "dissent":
-            state["dissent"] = {"rationale": rationale, "recorded_at": rec.get("recorded_at")}
-        state["trail"].append({
-            "kind": kind,
-            "recorded_at": rec.get("recorded_at"),
-            "corrected_traits": rec.get("corrected_traits") or None,
-            "recomputed_holistic": rec.get("recomputed_holistic"),
-            "rationale": rationale,
-            "gold_revealed": bool(rec.get("gold_revealed")),
-        })
+    state = dict(_fold(mine))
+    state["records"] = len(mine)
+    state["trail"] = [{
+        "kind": record_kind(rec.get("kind")),
+        "recorded_at": rec.get("recorded_at"),
+        "corrected_traits": rec.get("corrected_traits") or None,
+        "recomputed_holistic": rec.get("recomputed_holistic"),
+        "rationale": (rec.get("rationale") or "").strip() or None,
+        "gold_revealed": bool(rec.get("gold_revealed")),
+    } for rec in mine]
+    state["before_latest"] = _fold(mine[:-1]) if mine else None
     return state
 
 
@@ -517,6 +528,13 @@ def build_review(predictions=None, annotation=None, essays=None, override_record
         ai_holistic, _ = _score_formation(aggregator, ai_traits, word_count)
         holistic, formation = _score_formation(aggregator, traits, word_count)
 
+        before_latest = None
+        if state["before_latest"] is not None:
+            standing = dict(ai_traits)
+            if state["before_latest"]["corrected_traits"]:
+                standing.update(state["before_latest"]["corrected_traits"])
+            before_latest, _ = _score_formation(aggregator, standing, word_count)
+
         item = annotation[eid]
         criteria = {}
         for name in CRITERIA:
@@ -549,6 +567,10 @@ def build_review(predictions=None, annotation=None, essays=None, override_record
             "traits": traits,
             "ai_holistic": ai_holistic,
             "holistic": holistic,
+            # The score standing when the most recent record was written, or None if there is
+            # none. Every "what did this save do" question is answered against this, not against
+            # the AI -- decisions_log.md ui_16.
+            "holistic_before_latest_record": before_latest,
             # `overridden` is about the scores as they now stand, `reviewed` about whether a
             # teacher has been here at all -- a cleared correction is reviewed but not overridden,
             # and a dissent is reviewed while every trait still reads as the AI left it.
@@ -559,7 +581,12 @@ def build_review(predictions=None, annotation=None, essays=None, override_record
             "override_records": state["records"],
             "override_trail": state["trail"],
             "score_formation": formation,
-            "score_unchanged_by_override": traits != ai_traits and holistic == ai_holistic,
+            # Two questions with two answers, named for the baseline each is measured against so
+            # a consumer cannot reach for the wrong one: whether the corrections as they now stand
+            # leave the AI's score untouched, and whether the last one written moved anything.
+            "score_unchanged_vs_ai": traits != ai_traits and holistic == ai_holistic,
+            "score_unchanged_by_latest_record": (state["records"] > 0
+                                                 and holistic == before_latest),
         })
 
     manifest_ids = set(manifest["essay_ids"])

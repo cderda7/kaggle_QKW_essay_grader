@@ -60,7 +60,7 @@ def test_a_correction_that_does_not_move_the_band_is_recorded_as_such(ledger):
     record, essay = correct(corrected_traits={"conventions": 6})
     moved = record["recomputed_holistic"] != record["original_holistic"]
     assert record["score_unchanged"] is not moved
-    assert essay["score_unchanged_by_override"] is not moved
+    assert essay["score_unchanged_by_latest_record"] is not moved
 
 
 def test_the_record_carries_what_it_was_made_against(ledger):

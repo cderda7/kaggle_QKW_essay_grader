@@ -208,7 +208,7 @@ def formation_panel(essay):
         # ui_9/D2: the dominant experience of this control is that it appears not to work. When a
         # correction lands in the same band, the panel opens itself and shows the distance to the
         # cut -- the dead control becomes the explanation rather than a bug report.
-        % (" open" if essay["score_unchanged_by_override"] else "",
+        % (" open" if latest_save_did_nothing(essay) else "",
            _num(f["weighted_trait_mean"]), _num(f["beta"][1], 3), _signed(f["trait_term"], 3),
            f["word_count"], _num(f["log10_word_count"], 3), _num(f["beta"][2], 3),
            _signed(f["length_term"], 3), _signed(f["intercept"], 3),
@@ -217,33 +217,51 @@ def formation_panel(essay):
     )
 
 
+def latest_save_did_nothing(essay):
+    """Whether the most recent correction left the displayed score exactly where it found it.
+
+    The score head, the sentence under it and the panel's open state all ask this one question, so
+    they cannot end up narrating different baselines at each other (decisions_log.md ui_16).
+    """
+    return essay["overridden"] and essay["score_unchanged_by_latest_record"]
+
+
 def score_line(essay):
-    """The holistic, and what a correction did to it.
+    """The holistic, and what the teacher's last save did to it.
 
     Before and after are shown together rather than the after alone: a number that silently changed
-    cannot be checked, and a number that silently did not change reads as a broken control.
+    cannot be checked, and a number that silently did not change reads as a broken control. The
+    "before" is the score the save was made against, which on a second correction is not the AI's.
+
+    When the save moved nothing there is no before to show. Showing one anyway drew a number with
+    a line through it beside an identical one, and a strikethrough asserts the value was
+    superseded -- directly above a sentence saying it was not. The single number stands on its
+    own; the sentence and the self-opened panel are what say a correction is recorded.
     """
     if not essay["overridden"]:
         return ('<div class="score"><span class="score-value">%d</span>'
                 '<span class="of">/6</span></div>' % essay["holistic"])
 
-    moved = essay["holistic"] != essay["ai_holistic"]
-    head = (
+    if latest_save_did_nothing(essay):
+        return (
+            '<div class="score corrected unchanged">'
+            '<span class="score-value">%d</span><span class="of">/6</span></div>'
+            '<p class="score-change unchanged">Your latest correction did not move the score '
+            '\u2014 it is still %d/6, exactly where it stood before you saved it. That is the '
+            'instrument, not a failed save: the panel below is open, showing how far this essay '
+            'sits from the nearest cut point.</p>'
+            % (essay["holistic"], essay["holistic"])
+        )
+
+    was = essay["holistic_before_latest_record"]
+    return (
         '<div class="score corrected">'
         '<span class="score-was">%d</span><span class="score-arrow">\u2192</span>'
         '<span class="score-value">%d</span><span class="of">/6</span></div>'
-        % (essay["ai_holistic"], essay["holistic"])
+        '<p class="score-change">Your latest correction moved this from %d to %d, recomputed '
+        'through the same frozen aggregator that produced the original.</p>'
+        % (was, essay["holistic"], was, essay["holistic"])
     )
-    if moved:
-        note = ('<p class="score-change">Your correction moved this from %d to %d, recomputed '
-                'through the same frozen aggregator that produced the original.</p>'
-                % (essay["ai_holistic"], essay["holistic"]))
-    else:
-        note = ('<p class="score-change unchanged">Your correction did not move the score \u2014 '
-                'it is still %d/6. That is the instrument, not a failed save: the panel below is '
-                'open, showing how far this essay sits from the nearest cut point.</p>'
-                % essay["holistic"])
-    return head + note
 
 
 def override_form(essay):
@@ -475,8 +493,15 @@ def record_override(essay_id: str, body: dict = Body(default_factory=dict)):
     the frozen aggregator actually produces, not a number this handler worked out. The teacher
     corrects traits; a dissent carries a rationale and no number; clearing withdraws a correction
     without erasing the record that it was made.
+
+    The review set is checked against `annotated_ids()` rather than by building the artifact and
+    looking for the essay in it: `find()` searches an artifact built over exactly those ids, so
+    the answer is the same, and ui_13 defends the two builds that produce the recomputed holistic
+    rather than a third that only answers a membership question.
     """
-    find(essay_id)
+    ids = annotated_ids()
+    if essay_id not in ids:
+        raise HTTPException(status_code=404, detail="no review for essay %s" % essay_id)
     kind = body.get("kind", "trait_correction")
     try:
         record, essay = overrides.record_correction(
@@ -485,7 +510,7 @@ def record_override(essay_id: str, body: dict = Body(default_factory=dict)):
             corrected_traits=body.get("corrected_traits"),
             rationale=body.get("rationale"),
             gold_revealed=gold.was_revealed(essay_id),
-            expected_ids=annotated_ids(),
+            expected_ids=ids,
         )
     except OverrideError as exc:
         # The guards name the essay and the offending value; handing that text back is more use

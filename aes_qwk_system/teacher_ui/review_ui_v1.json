@@ -175,6 +175,7 @@
       },
       "ai_holistic": 3,
       "holistic": 3,
+      "holistic_before_latest_record": null,
       "overridden": false,
       "reviewed": false,
       "dissent": null,
@@ -219,7 +220,8 @@
           "argumentation": 0.35
         }
       },
-      "score_unchanged_by_override": false
+      "score_unchanged_vs_ai": false,
+      "score_unchanged_by_latest_record": false
     },
     {
       "essay_id": "0105e2e",
@@ -354,6 +356,7 @@
       },
       "ai_holistic": 2,
       "holistic": 2,
+      "holistic_before_latest_record": null,
       "overridden": false,
       "reviewed": false,
       "dissent": null,
@@ -398,7 +401,8 @@
           "argumentation": 0.35
         }
       },
-      "score_unchanged_by_override": false
+      "score_unchanged_vs_ai": false,
+      "score_unchanged_by_latest_record": false
     },
     {
       "essay_id": "019e8c3",
@@ -547,6 +551,7 @@
       },
       "ai_holistic": 4,
       "holistic": 4,
+      "holistic_before_latest_record": null,
       "overridden": false,
       "reviewed": false,
       "dissent": null,
@@ -591,7 +596,8 @@
           "argumentation": 0.35
         }
       },
-      "score_unchanged_by_override": false
+      "score_unchanged_vs_ai": false,
+      "score_unchanged_by_latest_record": false
     }
   ]
 }
